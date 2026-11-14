@@ -1,0 +1,98 @@
+{
+  "Variant": "pulse-back",
+  "Configuration": {
+    "Variant": "pulse-back",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_CHASSIS_LCD_ENABLED=1",
+      "APP_DEBUG_CLI_ENABLED=1",
+      "APP_TUNE_UART_ENABLED=1",
+      "APP_SERVO_CLI_DEBUG_ENABLED=1",
+      "APP_SERVO_PULSE_ENABLED=1",
+      "APP_HMI_LINK_DIAG_ENABLED=1",
+      "APP_NRF_DIAGNOSTIC_ENABLED=0",
+      "APP_CAN_SERVO_DIAG_ENABLED=0",
+      "APP_CAN_ARM_DIAG_ENABLED=0",
+      "APP_SERVO_RS485_DIAG_ENABLED=1",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "Values": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "NoLcd": false,
+    "DebugCli": true,
+    "TuneUart": true,
+    "ServoCli": true,
+    "Pulse": true,
+    "NoUartRx": false,
+    "DiagnosticEnabled": true,
+    "UsesUnmodifiedSourceConfiguration": false
+  },
+  "Head": "474a40971cf415041239a81854e4e2dab1ba1ad5",
+  "TrackedChanges": [
+    " M APP/app_rtos_task.c",
+    " M \"BSP/NRF24L01/NRF24L01_\\344\\275\\277\\347\\224\\250\\350\\257\\264\\346\\230\\216.md\"",
+    " M Tests/board_key_mocks/main.h",
+    " M Tests/test_board_key_startup.c"
+  ],
+  "SourceDigest": "AF4BB1866D987E4AFBB744D472652A0A8F4C22A26D9253DAFC7DDBD1183B5E53",
+  "Started": "2026-11-08T18:56:41.1940820+08:00",
+  "Completed": "2026-11-08T18:58:12.8573125+08:00",
+  "Exit": 0,
+  "Errors": 0,
+  "Warnings": 0,
+  "PhysicalRam": 175188,
+  "SameMacroComparison": false,
+  "DeltaSameMacroBaseline": null,
+  "ActualObjectMacroEvidence": true,
+  "Ram": {
+    "PhysicalRam": 175188,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Capacity": 65536,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 105736,
+        "Capacity": 114688,
+        "Free": 8952
+      },
+      "RW_IRAM2": {
+        "Bytes": 6916,
+        "Capacity": 15872,
+        "Free": 8956
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Capacity": 512,
+        "Free": 0
+      }
+    }
+  },
+  "Hashes": {
+    "RailInspectionCar_V1.hex": "CA87E4CFAAAD27E2A0A4DA92313D089175792CA49FEB6FCA3E75170A41DB27C0",
+    "RailInspectionCar_V1.axf": "7C1931472F60D70E0062115D47C0D11FA498704AA95697F8D460B4D22629DE3B",
+    "RailInspectionCar_V1.map": "FDABC733666248C681EC90CD4FACC25AFEB7C4AA4D8F8EA59F2CBA60425D0AE5",
+    "RailInspectionCar_V1.htm": "E7F9A5A58294FE3C5D691827E56271C28D21D57FC3DA35C04BBC4AAC88F3E0C2",
+    "keil-rebuild.log": "1F85F07CAD3E5B988C82C6DBDDFACB2B82C9C92D09C16ED567E0D39DF79DC7C7",
+    "project.uvprojx.snapshot": "2F840B0816041CD5900BA02C885D8C23B7339E8AF4AB81FF16313B089EA7C851",
+    "configuration.json": "16C17531B6EF5F9F4BD2C4E7EE8FDA76E19D778982FA735044638FFAD8078C84",
+    "memory-stack.log": "C72AA7B18A3B0872FE10C29308C44B624CFA6D0E66E7F27C096EA2F785CCE485",
+    "object-macro-evidence.json": "8171D5F8E1D5B5B5F5A113DF2671FDA3F7C15194040502E2C427DF23443BD2C8"
+  },
+  "HardwareAcceptance": "pending"
+}

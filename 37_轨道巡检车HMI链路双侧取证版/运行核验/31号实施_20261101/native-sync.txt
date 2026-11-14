@@ -1,0 +1,54 @@
+RUN P1_Main
+System.Management.Automation.MethodInvocationException: Exception calling "Invoke" with "2" argument(s): "Object reference not set to an instance of an object." ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.wxsaZIMFqZBvGcmWjFYRfsvBDvxNb.zsYbiFKJcOrsCbdWGMcqQVtqMraO()
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.fHLpkUtoewbPEwAdtFPwclgTyVhgA.bdWKKGcijrFbiEGzlbmBzxzKtNTBA(Action )
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.rGSQMnBljBHaLbQwBFqqGvKDmbYY.VQHJIGmODxYDIDwmGPtbcmCSENze()
+   --- End of inner exception stack trace ---
+   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)
+   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+ERR 
+MODE 0
+RUN themeToggle
+System.Management.Automation.MethodInvocationException: Exception calling "Invoke" with "2" argument(s): "Object reference not set to an instance of an object." ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.wxsaZIMFqZBvGcmWjFYRfsvBDvxNb.zsYbiFKJcOrsCbdWGMcqQVtqMraO()
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.fHLpkUtoewbPEwAdtFPwclgTyVhgA.bdWKKGcijrFbiEGzlbmBzxzKtNTBA(Action )
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.rGSQMnBljBHaLbQwBFqqGvKDmbYY.VQHJIGmODxYDIDwmGPtbcmCSENze()
+   --- End of inner exception stack trace ---
+   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)
+   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+ERR 
+MODE 1
+STATE 0 日间 / 切夜间
+STATE 1 夜间 / 切日间
+STATE 0 日间 / 切夜间
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+wxsaZIMFqZBvGcmWjFYRfsvBDvxNb
+0000 ldarg.0 
+0001 ldfld System.Threading.SynchronizationContext QXSWDBVLntKWausEsPxMvGMBNpKc
+0006 ldarg.0 
+0007 ldftn Void MValCezVyIHZDBkhGmPqpppkEcLG(System.Object)
+000D newobj Void .ctor(System.Object, IntPtr)
+0012 ldnull 
+0013 call Void ​‭⁫​‌⁬‍‏‮‭⁮‭‭⁪‬‬⁪‪‍⁬‮‪⁫‍⁬‭⁭‬‪‍⁬⁯⁭⁪⁬⁯⁮⁬⁯⁭‮(System.Threading.SynchronizationContext, System.Threading.SendOrPostCallback, System.Object)
+0018 ret 
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+cDQJaMNqInhaShABVmxuwLXEDpPQ
+0000 ldarg.0 
+0001 ldfld Visual_PIX.Modules.Home.ViewModels.DebugViewModel KlfNMexCflBJYCMmDkOYOqhUwLTS
+0006 ldarg.0 
+0007 ldfld System.Action xSMpjBzeSORNRIYiKJjTjdJxBUUS
+000C dup 
+000D brtrue.s 22
+000F pop 
+0010 ldarg.0 
+0011 ldarg.0 
+0012 ldftn Void lHSruBdvQqAgqweFhTgYaWZBfWGO()
+0018 newobj Void .ctor(System.Object, IntPtr)
+001D dup 
+001E stloc.0 
+001F stfld System.Action xSMpjBzeSORNRIYiKJjTjdJxBUUS
+0024 ldloc.0 
+0025 call Void MvbkFoSjUQvVInjDGQCgqZuOjykH(System.Action)
+002A ret 

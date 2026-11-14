@@ -1,0 +1,98 @@
+
+
+Char       : 中
+PixelWidth : 14
+DataList   : {}
+Data       : {0, 0, 0, 0...}
+
+
+
+
+
+Id             : b5253ee0-98d1-44b4-a957-0f967fca32cf
+SourceFontName : 微软雅黑
+PixelHeight    : 20
+FontName       : 微软雅黑
+FontType       : AntiAliasing4
+Chars          : {Visual_PIX.Model.PixelChar, Visual_PIX.Model.PixelChar, Visual_PIX.Model.PixelChar, Visual_PIX.Model.
+                 PixelChar...}
+Option         : Visual_PIX.Model.FontConverter.PixelFontOption
+MaxPixelWidth  : 15
+
+
+
+Visual_PIX.Modules.Home.ViewModels.ScreenCommandViewModel
+QupbeOluQoAuRIUJlAKBNhYicMJr ComDeviceSelect
+System.Collections.ObjectModel.ObservableCollection`1[NmGfDLHpnIUhdJahUXoJBvatHyTfb[System.String]] Commands
+NmGfDLHpnIUhdJahUXoJBvatHyTfb[System.String] SelectedCommand
+System.String DisplayName
+System.String Status
+Int32 Progress
+Boolean IsDownloading
+Boolean IsDownloadSuccess
+Boolean IsSerialPortConnected
+System.String Time
+System.Windows.Input.ICommand DownloadCommand
+System.Windows.Input.ICommand CloseCommand
+System.Windows.Input.ICommand SendCommand
+System.Windows.Input.ICommand SyncTimeCommand
+System.Windows.Input.ICommand SyncHostTimeCommand
+System.Windows.Input.ICommand OpenSerialPortCommand
+System.Windows.Input.ICommand CloseSerialPortCommand
+System.Object Parent
+Boolean IsActive
+Boolean IsInitialized
+Boolean IsNotifying
+System.String MinimumVpVersion
+System.String Name
+System.String ScreenId
+Visual_PIX.Controls.ShowDirect ShowMode
+Byte RotateMode
+Boolean EnableSendCoordinate
+Boolean EnableSendTick
+Boolean EnableSendCommandHandleResult
+Boolean GenerateHeadFile
+Boolean GenerateBinaryFile
+Byte Baudrate
+System.IO.Ports.Parity Parity
+System.IO.Ports.StopBits StopBits
+Byte Lightness
+Int32 NoSerialportDataSleepTime
+Int32 NoTouchSleepTime
+Boolean WeekOnSerialportDataReceived
+Boolean WeekOnTouched
+Byte CommandResultReturnMode
+Byte TickAddValue
+Int32 CRC16Polynomial
+mTnGeGdRDgCRwSDUfsZockhcRwXz Encode
+Int32 UserFlashSize
+Byte CANBaudrate
+Int32 CANMask
+Int32 CANFilter
+TEwaOoCxnlOvpFrQfGsuldDLSylnA ModbusDeviceType
+Byte ModbusClientAddress
+Byte SerialPortRecieveTimeout
+System.String UserMethodCode
+DldMuANwYmFhcldBHwRvgwawkxfQ ExtendModuleType
+YWfwvoqKdsZmnqCOMbrTpHsxRSOR ExtendInterfaceType
+Boolean WatchDog
+UxUnkuOGUcBGuFawLtMabRHIhttT SleepMode
+Int32 StartPageId
+Byte TouchBuzzerMode
+Byte TouchBuzzerTone
+Byte TouchBuzzerVolume
+jromASRovApKxyPMsYkRJWvGbTHi SystemPriority
+System.String Pwd
+ZZMnkvUEVPBgEFvLjKUPhGVYpqsEb Firmware
+System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixLayer] Layers
+System.Collections.Generic.List`1[Visual_PIX.Model.ImageData] Images
+System.Collections.Generic.List`1[Visual_PIX.Model.GifImageData] GifImages
+System.Collections.Generic.List`1[Visual_PIX.Model.PixelFont] FontList
+System.Collections.Generic.List`1[Visual_PIX.Model.FontData] Fonts
+System.Collections.Generic.List`1[Visual_PIX.Model.AudioData] Audios
+System.Collections.Generic.List`1[Visual_PIX.Model.VideoData] Videos
+System.Collections.Generic.List`1[Visual_PIX.Model.KeyboardData] Keyboards
+Visual_PIX.Model.PixMultiLangPack MultiLangPack
+Boolean EnablePropertyChanged
+Boolean EnablePropertyValueChanged
+Boolean EnablePropertyValueChanging

@@ -1,0 +1,148 @@
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS remote diagnostics: unchanged control regression, RX correlation, fresh ages, first cause, upgrade, completion, compact SYNC
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS remote diagnostics: unchanged control regression, RX correlation, fresh ages, first cause, upgrade, completion, compact SYNC
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS remote diagnostics: unchanged control regression, RX correlation, fresh ages, first cause, upgrade, completion, compact SYNC
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS remote diagnostics: unchanged control regression, RX correlation, fresh ages, first cause, upgrade, completion, compact SYNC
+NRF protocol/application tests passed
+PASS NRF diagnostics: 150ms boundary, recovery/rebaseline, CRC, independent ACK stages and compact projections without side effects
+PASS NRF SPI DMA: hot boot/first ACK/fair RX/check/errors/backoff
+PASS NRF driver compact diagnostics: cache equivalence, pending vs loaded, failure registers, no driver changes
+sparse interval=10 type=81 queued=1201 max_gap=100 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=480 max_gap=250 overdue=0
+sparse interval=10 type=84 queued=480 max_gap=260 overdue=1
+sparse interval=10 type=85 queued=60 max_gap=2000 overdue=0
+sparse interval=10 type=86 queued=24 max_gap=5000 overdue=0
+sparse interval=10 type=87 queued=120 max_gap=1000 overdue=0
+sparse interval=10 type=88 queued=1200 max_gap=100 overdue=0
+sparse interval=10 type=89 queued=240 max_gap=520 overdue=3
+sparse interval=10 type=8A queued=120 max_gap=1000 overdue=0
+sparse interval=22 type=81 queued=1091 max_gap=110 overdue=1090
+sparse interval=22 type=82 queued=546 max_gap=242 overdue=545
+sparse interval=22 type=83 queued=437 max_gap=286 overdue=436
+sparse interval=22 type=84 queued=436 max_gap=330 overdue=435
+sparse interval=22 type=85 queued=59 max_gap=2134 overdue=58
+sparse interval=22 type=86 queued=24 max_gap=5126 overdue=23
+sparse interval=22 type=87 queued=109 max_gap=1188 overdue=108
+sparse interval=22 type=88 queued=1091 max_gap=110 overdue=1090
+sparse interval=22 type=89 queued=218 max_gap=704 overdue=217
+sparse interval=22 type=8A queued=109 max_gap=1122 overdue=108
+sparse interval=50 type=81 queued=672 max_gap=300 overdue=602
+sparse interval=50 type=82 queued=258 max_gap=600 overdue=257
+sparse interval=50 type=83 queued=215 max_gap=700 overdue=214
+sparse interval=50 type=84 queued=214 max_gap=700 overdue=213
+sparse interval=50 type=85 queued=50 max_gap=2500 overdue=49
+sparse interval=50 type=86 queued=23 max_gap=5500 overdue=22
+sparse interval=50 type=87 queued=86 max_gap=1500 overdue=85
+sparse interval=50 type=88 queued=672 max_gap=300 overdue=602
+sparse interval=50 type=89 queued=126 max_gap=1050 overdue=125
+sparse interval=50 type=8A queued=85 max_gap=1500 overdue=84
+sparse interval=100 type=81 queued=234 max_gap=900 overdue=233
+sparse interval=100 type=82 queued=153 max_gap=1000 overdue=152
+sparse interval=100 type=83 queued=141 max_gap=1100 overdue=140
+sparse interval=100 type=84 queued=140 max_gap=1100 overdue=139
+sparse interval=100 type=85 queued=44 max_gap=2900 overdue=43
+sparse interval=100 type=86 queued=21 max_gap=5900 overdue=20
+sparse interval=100 type=87 queued=70 max_gap=2000 overdue=69
+sparse interval=100 type=88 queued=233 max_gap=700 overdue=232
+sparse interval=100 type=89 queued=95 max_gap=1400 overdue=94
+sparse interval=100 type=8A queued=70 max_gap=1900 overdue=69
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS telemetry compact diagnostics: all types, cached evidence only, no scheduling side effects
+NRF protocol/application tests passed
+PASS NRF diagnostics: 150ms boundary, recovery/rebaseline, CRC, independent ACK stages and compact projections without side effects
+PASS NRF SPI DMA: hot boot/first ACK/fair RX/check/errors/backoff
+PASS NRF driver compact diagnostics: cache equivalence, pending vs loaded, failure registers, no driver changes
+sparse interval=10 type=81 queued=1201 max_gap=100 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=480 max_gap=250 overdue=0
+sparse interval=10 type=84 queued=480 max_gap=260 overdue=1
+sparse interval=10 type=85 queued=60 max_gap=2000 overdue=0
+sparse interval=10 type=86 queued=24 max_gap=5000 overdue=0
+sparse interval=10 type=87 queued=120 max_gap=1000 overdue=0
+sparse interval=10 type=88 queued=1200 max_gap=100 overdue=0
+sparse interval=10 type=89 queued=240 max_gap=520 overdue=3
+sparse interval=10 type=8A queued=120 max_gap=1000 overdue=0
+sparse interval=22 type=81 queued=1091 max_gap=110 overdue=1090
+sparse interval=22 type=82 queued=546 max_gap=242 overdue=545
+sparse interval=22 type=83 queued=437 max_gap=286 overdue=436
+sparse interval=22 type=84 queued=436 max_gap=330 overdue=435
+sparse interval=22 type=85 queued=59 max_gap=2134 overdue=58
+sparse interval=22 type=86 queued=24 max_gap=5126 overdue=23
+sparse interval=22 type=87 queued=109 max_gap=1188 overdue=108
+sparse interval=22 type=88 queued=1091 max_gap=110 overdue=1090
+sparse interval=22 type=89 queued=218 max_gap=704 overdue=217
+sparse interval=22 type=8A queued=109 max_gap=1122 overdue=108
+sparse interval=50 type=81 queued=672 max_gap=300 overdue=602
+sparse interval=50 type=82 queued=258 max_gap=600 overdue=257
+sparse interval=50 type=83 queued=215 max_gap=700 overdue=214
+sparse interval=50 type=84 queued=214 max_gap=700 overdue=213
+sparse interval=50 type=85 queued=50 max_gap=2500 overdue=49
+sparse interval=50 type=86 queued=23 max_gap=5500 overdue=22
+sparse interval=50 type=87 queued=86 max_gap=1500 overdue=85
+sparse interval=50 type=88 queued=672 max_gap=300 overdue=602
+sparse interval=50 type=89 queued=126 max_gap=1050 overdue=125
+sparse interval=50 type=8A queued=85 max_gap=1500 overdue=84
+sparse interval=100 type=81 queued=234 max_gap=900 overdue=233
+sparse interval=100 type=82 queued=153 max_gap=1000 overdue=152
+sparse interval=100 type=83 queued=141 max_gap=1100 overdue=140
+sparse interval=100 type=84 queued=140 max_gap=1100 overdue=139
+sparse interval=100 type=85 queued=44 max_gap=2900 overdue=43
+sparse interval=100 type=86 queued=21 max_gap=5900 overdue=20
+sparse interval=100 type=87 queued=70 max_gap=2000 overdue=69
+sparse interval=100 type=88 queued=233 max_gap=700 overdue=232
+sparse interval=100 type=89 queued=95 max_gap=1400 overdue=94
+sparse interval=100 type=8A queued=70 max_gap=1900 overdue=69
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS telemetry compact diagnostics: all types, cached evidence only, no scheduling side effects

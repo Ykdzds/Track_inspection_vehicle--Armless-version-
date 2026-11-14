@@ -1,0 +1,98 @@
+[
+  {
+    "Page": "P8_ServoControl",
+    "Control": "h13Service",
+    "Event": "定时事件",
+    "Source": "HMI13事务服务.txt",
+    "Matches": true,
+    "SHA256": "2DD223619BEF3912D0B9C7FC1595C653F8F9E411DB785EBD8C5A26D1CD8EAFDE"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "authorize",
+    "Event": "按下事件",
+    "Source": "事件/授权_按下.txt",
+    "Matches": true,
+    "SHA256": "A25762B9955AC1D61217F9B16570ACBAD8F84DCC6407BDD936542BCEA29EF8CB"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "authorize",
+    "Event": "弹起事件",
+    "Source": "事件/授权_弹起.txt",
+    "Matches": true,
+    "SHA256": "E15EB0881B898FAFD7EA4CC35F2F10CEDFB2D3B64735F53A0E5FF390FB88B3E2"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "estop",
+    "Event": "按下事件",
+    "Source": "事件/急停_按下.txt",
+    "Matches": true,
+    "SHA256": "BDD5B64A2DD70B6F17457AB98D6AFE6F6FF205F6F44527E4DC4E5FE5E220829C"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "backHome",
+    "Event": "弹起事件",
+    "Source": "事件/返回_弹起.txt",
+    "Matches": true,
+    "SHA256": "7129A6CC586C42495736659F44A94889E56A90761FC6BB2F8A49280A928353F4"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "rpmSlider",
+    "Event": "值改变事件",
+    "Source": "事件/滑块_滑动.txt",
+    "Matches": true,
+    "SHA256": "98C5AE4642590FE47A31C3DE522413FE0E791A524423DAAE12365DD6159D7EB3"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "",
+    "Event": "加载页面",
+    "Source": "事件/P8_加载.txt",
+    "Matches": true,
+    "SHA256": "8B46DDF89E7E8B60383050F18B2A7E3E5911AF0F00BCA61F4C7CC8E527A99F20"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "",
+    "Event": "离开页面",
+    "Source": "事件/P8_离开.txt",
+    "Matches": true,
+    "SHA256": "6E4D9FD8A2481BE78ECD2702B04F9E6FCD226379D5FFE45650D230662CA90D38"
+  },
+  {
+    "Page": "P1_Main",
+    "Control": "servoEntry",
+    "Event": "按下事件",
+    "Source": "事件/主页入口_按下.txt",
+    "Matches": true,
+    "SHA256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+  },
+  {
+    "Page": "P1_Main",
+    "Control": "servoEntry",
+    "Event": "弹起事件",
+    "Source": "事件/主页入口_弹起.txt",
+    "Matches": true,
+    "SHA256": "9F64EA98AFA33402C63CF12084A24717AB0A54F3CD3883CFD907FDE129FC9B07"
+  },
+  {
+    "Page": "P0_Boot",
+    "Control": "refreshTick",
+    "Event": "定时事件",
+    "Source": "全局计龄刷新.txt",
+    "Matches": true,
+    "SHA256": "FC94D2B11E36FCA6A0F5EA0EA2EEA4318873FF304E9BFB4C131C33B853C91E79"
+  },
+  {
+    "Page": "P0_Boot",
+    "Control": "mod",
+    "Event": "数据接收",
+    "Source": "Default模式中断.txt",
+    "Matches": true,
+    "SHA256": "7957B9BBF6BC2C8B064D33B7C14D2D78BFDE8CC05412E7CA10510ED789D4B2A3"
+  }
+]

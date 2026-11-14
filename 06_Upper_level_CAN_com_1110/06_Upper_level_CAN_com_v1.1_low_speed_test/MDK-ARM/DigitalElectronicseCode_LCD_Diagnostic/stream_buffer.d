@@ -1,0 +1,14 @@
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\string.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+digitalelectronicsecode_lcd_diagnostic\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h

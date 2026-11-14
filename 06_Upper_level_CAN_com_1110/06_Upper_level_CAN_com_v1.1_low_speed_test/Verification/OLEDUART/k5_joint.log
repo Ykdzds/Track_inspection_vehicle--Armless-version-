@@ -1,0 +1,15 @@
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+PASS K5 recovery axis=1
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+PASS K5 recovery axis=2
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+PASS K5 recovery axis=3
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token

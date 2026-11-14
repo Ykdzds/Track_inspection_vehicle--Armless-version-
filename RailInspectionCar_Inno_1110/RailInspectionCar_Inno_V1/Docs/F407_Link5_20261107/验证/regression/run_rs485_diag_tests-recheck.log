@@ -1,0 +1,20 @@
+PASS production RS485 diagnostics: real TC validity, owner, queue identity, cancellation, safety, CRC/raw zero first evidence
+RS485 RX tests passed
+PASS production RS485 diagnostic wire timestamps: RX DMA != UART TC, actual TC, capture, missing TC
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS pulse completion: fresh feedback, stable position, enabled hold
+PASS driver ramp: guard=1, deceleration retained, both readbacks, mismatches/read/write failures deny enable
+PASS maintenance: segment word order, one trigger, offline latch
+PASS device/motion: readback, zero once, mode lock, limits, reverse, stop latch
+PASS ARM3 production driver: final nonzero write denied under work lock
+PASS dual bus: critical polling fairness, speed writes, cancellation and linked stop
+PASS production position: response timestamps, zero generations, paired background polls
+ALL CORE TESTS PASSED (host mocks; not hardware validation)
+PASS production AIMtor diagnostic hooks: normal/cold/watchdog zero samples, cached narrow projection, no extra query

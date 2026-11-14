@@ -1,0 +1,12 @@
+{
+  "CapturedAt": "2026-10-17T14:27:44.8510118+08:00",
+  "PIX": "FFFC1C84F0C2AB03BB5487EFCEE385E5E1D57435DDF783843FEB55C0AE332F5D",
+  "Reopened": true,
+  "StateArrayLength": 161,
+  "AuthorizeControlType": "TOGGLE_BUTTON",
+  "AuthorizeEvents": [
+    "TOGGLE_BUTTON.按下事件 +.1",
+    "TOGGLE_BUTTON.弹起事件 +.2"
+  ],
+  "PhysicalOperationVerified": false
+}

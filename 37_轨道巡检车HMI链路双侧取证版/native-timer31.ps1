@@ -1,0 +1,3 @@
+﻿. (Join-Path $PSScriptRoot 'native-run31.ps1')
+foreach($fn31 in @('rwjNaJQpoUjcsdiYgWBdFWXxIrlB','ucxAFPcQCaISpGyFBbKbHfxCFRQZb')){foreach($o31 in $t.GetField($fn31,$flags).GetValue($d)){Write-Output ($fn31+' '+$o31.GetType().FullName);for($tt31=$o31.GetType();$tt31;$tt31=$tt31.BaseType){$tt31.GetFields($flags)|ForEach-Object {Write-Output ($_.ToString()+' VALUE='+$_.GetValue($o31))}}}}
+[Environment]::Exit(0)

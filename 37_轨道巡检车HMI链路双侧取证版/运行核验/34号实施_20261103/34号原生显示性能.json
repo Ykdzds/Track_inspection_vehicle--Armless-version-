@@ -1,0 +1,182 @@
+﻿[
+    {
+        "Theme":  0,
+        "Page":  "P0_Boot",
+        "MinMs":  3.5941,
+        "MaxMs":  24.7638,
+        "AverageMs":  5.0891846153846165,
+        "SteadyMaxMs":  5.5626000000000007,
+        "SteadyAverageMs":  4.229388,
+        "EntryMaxMs":  24.7638
+    },
+    {
+        "Theme":  0,
+        "Page":  "P1_Main",
+        "MinMs":  4.3687000000000005,
+        "MaxMs":  14.972000000000001,
+        "AverageMs":  6.414439999999999,
+        "SteadyMaxMs":  7.1148000000000007,
+        "SteadyAverageMs":  5.2819360000000009,
+        "EntryMaxMs":  14.972000000000001
+    },
+    {
+        "Theme":  0,
+        "Page":  "P2_Diag",
+        "MinMs":  3.4592,
+        "MaxMs":  17.8005,
+        "AverageMs":  5.9069507692307672,
+        "SteadyMaxMs":  7.6983000000000006,
+        "SteadyAverageMs":  4.405336,
+        "EntryMaxMs":  17.8005
+    },
+    {
+        "Theme":  0,
+        "Page":  "P3_Position",
+        "MinMs":  3.4489,
+        "MaxMs":  13.6485,
+        "AverageMs":  4.9545999999999983,
+        "SteadyMaxMs":  5.082,
+        "SteadyAverageMs":  4.15718,
+        "EntryMaxMs":  13.6485
+    },
+    {
+        "Theme":  0,
+        "Page":  "P4_Info",
+        "MinMs":  3.6625,
+        "MaxMs":  11.3903,
+        "AverageMs":  4.884647692307694,
+        "SteadyMaxMs":  5.2531,
+        "SteadyAverageMs":  4.175556,
+        "EntryMaxMs":  11.3903
+    },
+    {
+        "Theme":  0,
+        "Page":  "P5_Alarm",
+        "MinMs":  3.2956000000000003,
+        "MaxMs":  12.884300000000001,
+        "AverageMs":  4.8880353846153861,
+        "SteadyMaxMs":  4.9528,
+        "SteadyAverageMs":  4.1714560000000009,
+        "EntryMaxMs":  12.884300000000001
+    },
+    {
+        "Theme":  0,
+        "Page":  "P6_Sync",
+        "MinMs":  3.563,
+        "MaxMs":  20.4223,
+        "AverageMs":  5.0079107692307714,
+        "SteadyMaxMs":  4.8056,
+        "SteadyAverageMs":  4.148084,
+        "EntryMaxMs":  20.4223
+    },
+    {
+        "Theme":  0,
+        "Page":  "P7_System_Ext",
+        "MinMs":  3.4013,
+        "MaxMs":  12.536200000000001,
+        "AverageMs":  5.07030153846154,
+        "SteadyMaxMs":  7.3180000000000005,
+        "SteadyAverageMs":  4.314468,
+        "EntryMaxMs":  12.536200000000001
+    },
+    {
+        "Theme":  0,
+        "Page":  "P8_ServoControl",
+        "MinMs":  4.4302,
+        "MaxMs":  14.602300000000001,
+        "AverageMs":  7.0966169230769234,
+        "SteadyMaxMs":  7.3416000000000006,
+        "SteadyAverageMs":  6.2292519999999989,
+        "EntryMaxMs":  14.602300000000001
+    },
+    {
+        "Theme":  1,
+        "Page":  "P0_Boot",
+        "MinMs":  3.4832,
+        "MaxMs":  19.6299,
+        "AverageMs":  5.1018415384615405,
+        "SteadyMaxMs":  4.7972,
+        "SteadyAverageMs":  4.200784,
+        "EntryMaxMs":  19.6299
+    },
+    {
+        "Theme":  1,
+        "Page":  "P1_Main",
+        "MinMs":  4.2272,
+        "MaxMs":  12.909,
+        "AverageMs":  6.15520923076923,
+        "SteadyMaxMs":  5.558,
+        "SteadyAverageMs":  4.804572,
+        "EntryMaxMs":  12.909
+    },
+    {
+        "Theme":  1,
+        "Page":  "P2_Diag",
+        "MinMs":  3.379,
+        "MaxMs":  13.9381,
+        "AverageMs":  5.7315246153846138,
+        "SteadyMaxMs":  5.0862,
+        "SteadyAverageMs":  4.2120320000000007,
+        "EntryMaxMs":  13.9381
+    },
+    {
+        "Theme":  1,
+        "Page":  "P3_Position",
+        "MinMs":  3.5514,
+        "MaxMs":  13.572600000000001,
+        "AverageMs":  5.144400000000001,
+        "SteadyMaxMs":  6.0511,
+        "SteadyAverageMs":  4.2379359999999995,
+        "EntryMaxMs":  13.572600000000001
+    },
+    {
+        "Theme":  1,
+        "Page":  "P4_Info",
+        "MinMs":  3.5012000000000003,
+        "MaxMs":  11.5129,
+        "AverageMs":  4.7677999999999985,
+        "SteadyMaxMs":  5.2304,
+        "SteadyAverageMs":  4.274572,
+        "EntryMaxMs":  11.5129
+    },
+    {
+        "Theme":  1,
+        "Page":  "P5_Alarm",
+        "MinMs":  3.5579,
+        "MaxMs":  11.7856,
+        "AverageMs":  4.8085600000000008,
+        "SteadyMaxMs":  5.6519,
+        "SteadyAverageMs":  4.2594160000000008,
+        "EntryMaxMs":  11.7856
+    },
+    {
+        "Theme":  1,
+        "Page":  "P6_Sync",
+        "MinMs":  3.8079,
+        "MaxMs":  13.903400000000001,
+        "AverageMs":  5.3676,
+        "SteadyMaxMs":  6.041,
+        "SteadyAverageMs":  4.5465519999999993,
+        "EntryMaxMs":  13.903400000000001
+    },
+    {
+        "Theme":  1,
+        "Page":  "P7_System_Ext",
+        "MinMs":  3.7979000000000003,
+        "MaxMs":  18.9741,
+        "AverageMs":  5.9368784615384653,
+        "SteadyMaxMs":  7.3294000000000006,
+        "SteadyAverageMs":  4.940428,
+        "EntryMaxMs":  18.9741
+    },
+    {
+        "Theme":  1,
+        "Page":  "P8_ServoControl",
+        "MinMs":  5.1324000000000005,
+        "MaxMs":  40.953500000000005,
+        "AverageMs":  11.654578461538462,
+        "SteadyMaxMs":  8.752600000000001,
+        "SteadyAverageMs":  6.5047480000000011,
+        "EntryMaxMs":  19.266000000000002
+    }
+]

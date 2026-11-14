@@ -1,0 +1,58 @@
+BEFORE 404 5 2
+STEP 0 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 0 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 1 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 0 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 2 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 3 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 4 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 5 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 6 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 7 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 8 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 9 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 10 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 11 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 12 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+STEP 13 state 5 cmd 0 intent 0 seq 21 ready 2 advanced 1 s 0 result [ 21, 0, 16, 3, 0 ]
+✔ final PIX array lengths and a single enabled 50ms timer (1.7224ms)
+✔ healthy navigation and rendering consume wall time, target read/write serialized (235.7535ms)
+✔ releasing ordinary authorization key cannot cancel a newly authorized session (36.2153ms)
+✔ 300ms stall clears old target; later manual authorization starts at zero (178.4877ms)
+✔ 600ms host stall advances controller TTL independently (91.9919ms)
+✔ emergency generation survives all local states and historical stop candidates (69.9257ms)
+✔ freeze/CRC/wrong station and short frame never renew nonzero target (56.3156ms)
+✖ repeat authorization after completed stop never settles an old stop (418.7882ms)
+✔ display refreshes only visible page, max six fields, and retains last numeric history (43.3882ms)
+✔ all nine pages and themes navigate with bounded arrays (206.94ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1567.7814
+
+✖ failing tests:
+
+test at hmi33.test.cjs:34:1
+✖ repeat authorization after completed stop never settles an old stop (418.7882ms)
+  AssertionError [ERR_ASSERTION]: authorization 5
+  
+  5 !== 3
+  
+      at Object.authorize (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\33_轨道巡检车调度与会话稳定修复版\hmi33.test.cjs:23:106)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\33_轨道巡检车调度与会话稳定修复版\hmi33.test.cjs:34:222)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 5,
+    expected: 3,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

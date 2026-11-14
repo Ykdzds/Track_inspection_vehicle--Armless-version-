@@ -1,0 +1,29 @@
+{
+  "Variant": "source-current",
+  "Defines": [
+    "USE_HAL_DRIVER",
+    "STM32F407xx"
+  ],
+  "Values": [
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "NoLcd": false,
+  "DebugCli": false,
+  "TuneUart": false,
+  "ServoCli": false,
+  "Pulse": false,
+  "NoUartRx": true,
+  "DiagnosticEnabled": true,
+  "UsesUnmodifiedSourceConfiguration": true
+}

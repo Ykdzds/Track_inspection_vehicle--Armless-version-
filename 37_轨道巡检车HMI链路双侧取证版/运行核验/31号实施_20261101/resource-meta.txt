@@ -1,0 +1,1276 @@
+Visual_PIX.Model.PixLayer
+Int32 Id
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 1
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.ReadOnlyAttribute
+
+
+IsReadOnly : True
+TypeId     : System.ComponentModel.ReadOnlyAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : id
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 1
+Name                          : id
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : 
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : False
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Int32 Index
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 2
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+System.String Name
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 3
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : name
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 页面的名称。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 2
+Name                          : name
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Page_Name_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : False
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 2
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Int32 ColorValue
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 5
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : bgColor
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 背景颜色。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr System.ComponentModel.EditorAttribute
+
+
+EditorBaseTypeName : PKukftMwwpEbpTFgMWxBWTPyfsaT, Visual-PIX, Version=1.7.2.179, Culture=neutral, PublicKeyToken=null
+EditorTypeName     : PKukftMwwpEbpTFgMWxBWTPyfsaT, Visual-PIX, Version=1.7.2.179, Culture=neutral, PublicKeyToken=null
+TypeId             : System.ComponentModel.EditorAttributePKukftMwwpEbpTFgMWxBWTPyfsaT
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : {OneColor}
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 37
+Name                          : bgColor
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Page_BackgroundColor_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+System.String ImageId
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 6
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : bgImg
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 背景图片。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+Type   : hnoNkkrtaOJkDNgCMJVeDDXgOvYx
+TypeId : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : {OneImage}
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 38
+Name                          : bgImg
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_BackgroundImage_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : hwFuBrKVDGDISdBdcjIylLmgZOWK
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Boolean EnablePropertyValueChanged
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+Boolean EnablePropertyValueChanging
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+_propertyInfos=
+_methodInfos2=
+_methodInfos=
+StartId=0
+Visual_PIX.Model.Controls.TextCtrl
+System.String FontId
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 70
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : font
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 文本的字体。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+Type   : rhxUcPqpIPKEnLgCdwBNHAWvAPVjA
+TypeId : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : {InFlash}
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 24
+Name                          : font
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_FontId_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : QAbCrxbbHRemtjVisQnLmnreObaX
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+System.String FontIdDisplay
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+System.String ImageId
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 110
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : bgImg
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 背景图片。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+Type   : hnoNkkrtaOJkDNgCMJVeDDXgOvYx
+TypeId : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 38
+Name                          : bgImg
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_BackgroundImage_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : hwFuBrKVDGDISdBdcjIylLmgZOWK
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+System.String KeyboardId
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 1010
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : kbId
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 显示的键盘。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+Type   : dUTpgEuyGRNePJszdxeDILghZgdk
+TypeId : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+
+Boolean KeyboardInitilizeValue
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 1040
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : kbInitVal
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 是否为键盘初始化值。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+Int32 Width
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 5
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : width
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 控件的宽度。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 5
+Name                          : width
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_Width_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Int32 Id
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 1
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.ReadOnlyAttribute
+
+
+IsReadOnly : False
+TypeId     : System.ComponentModel.ReadOnlyAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : id
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 1
+Name                          : id
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : 
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : False
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+System.String Name
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 2
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : name
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 对象的名称。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 2
+Name                          : name
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_Name_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : False
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 2
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Boolean NameCompile
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 2
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : nameCpl
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 编译时是否保留名称。某些功能需要名称才能工作，如果不需要这些功能，不编译名称可以节约内存空间。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+Boolean EnablePropertyValueChanged
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+Boolean EnablePropertyValueChanging
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+_propertyInfos=
+Visual_PIX.Model.Controls.ImageCtrl
+System.String ImageId
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 40
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : img
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 显示的图片。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+Type   : hnoNkkrtaOJkDNgCMJVeDDXgOvYx
+TypeId : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.ItemsSourceAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : {InFlash}
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 101
+Name                          : img
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Image_ImageId_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : hwFuBrKVDGDISdBdcjIylLmgZOWK
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Int32 Width
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 5
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : width
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 控件的宽度。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 5
+Name                          : width
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_Width_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : True
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Int32 Id
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 1
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.ReadOnlyAttribute
+
+
+IsReadOnly : False
+TypeId     : System.ComponentModel.ReadOnlyAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : id
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 1
+Name                          : id
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : 
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : False
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 1
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+System.String Name
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 2
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : name
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 对象的名称。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+attr TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+dLLloXHgdQLsAfAYaunVClhCODNS  : 
+cyuIWkWqoArHGUMZqeXTYAfsxMEP  : 
+Id                            : 2
+Name                          : name
+VqrkBByEpzSfQkozFzPfUfxxmxWM  : Ctrl_Common_Name_Desc
+YksfkyvnHCkzyIkSaRBySPaqjHQo  : False
+yEBqEiRpJbcADddBsqFgbnxLAmtvA : 
+WUMlPGAlDlaEKTSCBKEytrCJbQxD  : 2
+JFQwvbiNXzUrCDHIQdshzGOEiKZK  : System.Func`2[System.Byte[],System.Object]
+TypeId                        : TnOeuWsmDcRFnUDEEIkvECyIERxV
+
+
+
+Boolean NameCompile
+attr Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+Order        : 2
+UsageContext : Both
+TypeId       : Xceed.Wpf.Toolkit.PropertyGrid.Attributes.PropertyOrderAttribute
+
+
+
+attr System.ComponentModel.DisplayNameAttribute
+
+
+DisplayName : nameCpl
+TypeId      : System.ComponentModel.DisplayNameAttribute
+
+
+
+attr WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+Description : 编译时是否保留名称。某些功能需要名称才能工作，如果不需要这些功能，不编译名称可以节约内存空间。
+TypeId      : WLZehxCiunGwMHCIhCuCqyMPuagBA
+
+
+
+Boolean EnablePropertyValueChanged
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+Boolean EnablePropertyValueChanging
+attr System.Xml.Serialization.XmlIgnoreAttribute
+
+
+TypeId : System.Xml.Serialization.XmlIgnoreAttribute
+
+
+
+attr System.ComponentModel.BrowsableAttribute
+
+
+Browsable : False
+TypeId    : System.ComponentModel.BrowsableAttribute
+
+
+
+_propertyInfos=
+Visual_PIX.Model.Controls.PropertyIdDefinition
+Id=1
+Name=2
+X=3
+Y=4
+Width=5
+Height=6
+Visbile=7
+Opacity=8
+Enable=9
+MaxTextLength=21
+Text=22
+FontColor=23
+Font=24
+TextHorizontalAlignment=25
+TextVerticalAlignment=26
+Text_HorizontalSpacing=27
+Text_VerticalSpacing=28
+Text_WordWrap=29
+FontLocation=30
+FontPath=31
+BackgroundType=36
+BackgroundColor=37
+BackgroundImage=38
+BackgroundImageAlignMode=39
+DisableBackgroundColor=40
+DisableBackgroundImage=41
+DisableBackgroundImageAlignMode=42
+MinValue=46
+MaxValue=47
+Value=48
+MinValueF=49
+MaxValueF=50
+ValueF=51
+Orientation=56
+SourceLocation=57
+FilePath=58
+RotateOrientation=59
+Text_Mask=101
+CheckBox_Checked=101
+ScrollText_ScrollFrequency=101
+ScrollText_ScrollDistance=102
+ScrollText_ScrollMode=103
+ScrollText_ScrollStatus=104
+NumberText_ShowTextLength=101
+NumberText_DecimalCount=102
+NumberText_ShowStartPlusSign=103
+NumberText_ShowStartZero=104
+Button_PressBackgroundColor=101
+Button_PressBackgroundImage=102
+Button_PressBackgroundImageAlignMode=103
+Button_Press=104
+Button_PressupEx=105
+Image_Image=101
+Image_ImageAlignMode=102
+GifImage_Image=101
+GifImage_PlaySpeed=102
+GifImage_PlayStatus=103
+ProgressBar_ForegroundType=101
+ProgressBar_ForegroundColor=102
+ProgressBar_ForegroundImage=103
+ProgressBar_ForegroundImageAlignMode=104
+Slider_ThumbType=101
+Slider_ThumbColor=102
+Slider_ThumbImage=103
+Slider_ThumbWidth=104
+Slider_ThumbHeight=105
+Slider_ShowSelectionRange=106
+Slider_SelectionBackgroundColor=107
+Slider_SelectionBackgroundImage=108
+Slider_SelectionBackgroundImageAlignMode=109
+Slider_ValueEventLimit=110
+CurvedLine_GridWidth=101
+CurvedLine_GridHeight=102
+CurvedLine_HorizontalGridLineWidth=103
+CurvedLine_VerticalGridLineWidth=104
+CurvedLine_HorizontalGridColor=105
+CurvedLine_VerticalGridColor=106
+CurvedLine_XStepSize=107
+CurvedLine_DrawingMode=108
+CurvedLine_NumberType=109
+CurvedLine_PointCount=110
+CurvedLine_DataScalingPercentage=105
+CurvedLine_ChannelCount=111
+CurvedLine_Channel1Color=112
+CurvedLine_Channel2Color=113
+CurvedLine_Channel3Color=114
+CurvedLine_Channel4Color=115
+CurvedLine_Channel1LineWidth=116
+CurvedLine_Channel2LineWidth=117
+CurvedLine_Channel3LineWidth=118
+CurvedLine_Channel4LineWidth=119
+CurvedLine_Channel1Value=124
+CurvedLine_Channel2Value=125
+CurvedLine_Channel3Value=126
+CurvedLine_Channel4Value=127
+CurvedLine_Channel1CurrentX=128
+CurvedLine_Channel2CurrentX=129
+CurvedLine_Channel3CurrentX=130
+CurvedLine_Channel4CurrentX=131
+CurvedLine_DataSpace=132
+CurvedLine_MaxValueX=133
+CurvedLine_MinValueX=134
+RadioButtonGroup_SelectedItem=102
+RadioButtonGroup_ItemWidth=103
+RadioButtonGroup_ItemHeight=104
+RadioButtonGroup_CheckBoxSize=105
+RadioButtonGroup_ValueEventLimit=110
+Var_Type=101
+Var_IntValue=102
+Var_DoubleValue=104
+Var_FloatValue=103
+Pointer_PointerAngle=101
+Pointer_PointerAngleOffset=102
+Pointer_LongEndLength=103
+Pointer_LongEndWidth=104
+Pointer_ShortEndLength=105
+Pointer_ShortEndWidth=106
+Pointer_CenterWidth=107
+Pointer_CenterOffset=108
+Pointer_PointerColor=109
+Pointer_CenterCircleWidth=110
+Pointer_CenterCircleColor=111
+Pointer_PointerCount=112
+Pointer1_PointerAngle=113
+Pointer1_PointerAngleOffset=114
+Pointer1_LongEndLength=115
+Pointer1_LongEndWidth=116
+Pointer1_ShortEndLength=117
+Pointer1_ShortEndWidth=118
+Pointer1_CenterWidth=119
+Pointer1_CenterOffset=120
+Pointer1_PointerColor=121
+Pointer1_CenterCircleWidth=122
+Pointer1_CenterCircleColor=123
+Pointer2_PointerAngle=124
+Pointer2_PointerAngleOffset=125
+Pointer2_LongEndLength=126
+Pointer2_LongEndWidth=127
+Pointer2_ShortEndLength=128
+Pointer2_ShortEndWidth=129
+Pointer2_CenterWidth=130
+Pointer2_CenterOffset=131
+Pointer2_PointerColor=132
+Pointer2_CenterCircleWidth=133
+Pointer2_CenterCircleColor=134
+Timer_Enable=101
+Timer_Interval=102
+Line_StrokeColor=101
+Line_StrokeWidth=102
+Line_X1=104
+Line_Y1=105
+Line_X2=106
+Line_Y2=107
+Rectangle_StrokeColor=101
+Rectangle_StrokeWidth=102
+Rectangle_FillColor=103
+Rectangle_RadiusX=104
+Rectangle_RadiusY=105
+Ellipse_StrokeColor=101
+Ellipse_StrokeWidth=102
+Ellipse_FillColor=103
+Audio_Audio=101
+Audio_PlayStatus=103
+Audio_Loop=104
+Audio_Volume=105
+Audio_Duration=106
+Audio_Progress=107
+Video_Video=101
+Video_PlayStatus=103
+Video_Loop=104
+Video_Volume=105
+Video_Duration=106
+Video_Progress=107
+Video_PlayStartTime=108
+Video_PlayEndTime=109
+Protocol_RxBuf=101
+Protocol_RxBufLen=102
+Protocol_RxLen=103
+Protocol_TxBuf=104
+Protocol_TxBufLen=105
+Protocol_TxLen=106
+Protocol_Tx=107
+Rtc_Year=101
+Rtc_Month=102
+Rtc_Day=103
+Rtc_Hour=104
+Rtc_Minute=105
+Rtc_Second=106
+Rtc_Week=108
+Keyboard_Keyboard=101
+Keyboard_Mask=102
+CircularProgressBar_StartAngle=101
+CircularProgressBar_Angle=102
+CircularProgressBar_ForegroundImage=103
+CircularProgressBar_ForegroundImageAlignMode=104
+CircularProgressBar_ProgressBackgroundColor=105
+CircularProgressBar_ProgressColor=106
+CircularProgressBar_ProgressWidth=107
+CircularProgressBar_ProgressRadius=108
+CircularProgressBar_ProgressEndType=109
+CANProtocol_RxId=101
+CANProtocol_RxDataBuf=102
+CANProtocol_RxFrameType=103
+CANProtocol_RxDataLen=104
+CANProtocol_BaudRate=105
+CANProtocol_Mask=106
+CANProtocol_Filter=107
+DataGrid_BorderColor=101
+DataGrid_BorderWidth=102
+DataGrid_HorizontalGridLineWidth=103
+DataGrid_HorizontalGridLineColor=104
+DataGrid_VerticalGridLineWidth=105
+DataGrid_VerticalGridLineColor=106
+DataGrid_ColumnHeaderHeight=108
+DataGrid_ColumnHeaderFontColor=109
+DataGrid_ColumnHeaderFont=110
+DataGrid_ColumnHeaderBackgroudColor=111
+DataGrid_SelectMode=112
+DataGrid_SelectItemBackgroundColor=113
+DataGrid_SelectItemBackgroundImage=114
+DataGrid_SelectItemBackgroundImageAlignMode=115
+DataGrid_SelectRow=116
+DataGrid_SelectCol=117
+DataGrid_MaxRowNumber=118
+DataGrid_RowNumber=119
+DataGrid_RowHeight=120
+DataGrid_PageIndex=121
+DataGrid_DataPath=122
+ModbusProtocol_Addr=101
+ModbusProtocol_Fcode=102
+ModbusProtocol_RxBuf=103
+ModbusProtocol_RxBufLen=104
+ModbusProtocol_RxLen=105
+ModbusProtocol_InterruptCode=106
+ModbusProtocol_ClientAddress=107
+ModbusProtocol_DataAddr=108
+ModbusProtocol_DataCount=109
+ModbusProtocol_DataIndex=110
+ModbusProtocol_DataBuffer=111
+Polygon_StrokeColor=101
+Polygon_StrokeWidth=102
+Polygon_FillColor=103
+Polygon_MaxVertexCount=104
+Polygon_Vertexs=105
+Polygon_VertexCount=106
+Drawing_MaxDataLength=101
+Drawing_Data=102
+Array_Type=101
+Array_Length=102
+Array_ByteValues=103
+Array_IntValues=104
+Array_FloatValues=105
+Array_Size=106
+IO_Pin=101
+IO_Mode=102
+IO_Interrupt=103
+ADC_Pin=101
+PWM_Pin=101
+PWM_Frequency=102
+PWM_DutyRatio=103
+PWM_Pulse=104
+Protocol_ClientAddress=104
+Protocol_Addr=105
+Protocol_Fcode=106
+Protocol_Baudrate=107
+Protocol_Parity=108
+Protocol_StopBits=109
+Protocol_RecieveTimeout=110
+ExProtocol_InterruptCode=111
+ExProtocol_ClientAddress=112
+ExProtocol_DataAddr=113
+ExProtocol_DataCount=114
+ExProtocol_DataIndex=115
+ExProtocol_DataBuffer=116
+InputCapture_Pin=101
+InputCapture_Frequency=102
+InputCapture_DutyRatio=103
+InputCapture_PulseCount=104
+InputCapture_EnableDutyRatio=105
+List_ItemCount=101
+List_ItemSpace=102
+List_SelectedItem=103
+List_SelectItemBackgroundColor=104
+List_SelectItemBackgroundImage=105
+List_SelectItemBackgroundImageAlignMode=106
+List_SelectItemFontColor=107
+List_CharSpace=108
+List_BorderColor=109
+List_BorderWidth=110
+List_BorderColor1=111
+List_BorderWidth1=112
+Network_ConnectMode=101
+Network_ApMode=102
+Network_ApName=103
+Network_ApPwd=104
+Network_Dhcp=105
+Network_ApConnected=106
+Network_WorkMode=107
+Network_LocalAddr=108
+Network_LocalPort=109
+Network_SubnetMask=110
+Network_Gateway=111
+Network_RemoteAddr=112
+Network_RemotePort=113
+Network_Connected=114
+Network_ApName2=115
+Network_ApPwd2=116
+Network_Dhcp2=117
+Network_ApConnected2=118
+Network_WorkMode2=119
+Network_LocalAddr2=120
+Network_LocalPort2=121
+Network_SubnetMask2=122
+Network_Gateway2=123
+Network_RemoteAddr2=124
+Network_RemotePort2=125
+Network_Connected2=126
+Network_RxBuf=127
+Network_RxBufLen=128
+Network_RxLen=129
+Network_RxAddr=130
+Network_RxPort=131
+Network_RxConnectId=132
+Network_MqttClientId=133
+Network_MqttUserName=134
+Network_MqttPwd=135
+Network_MqttRxTopic=136
+Network_FirmwareVersion=137
+Battery_Charge=101
+Battery_Level=102
+Ble_WorkMode=101
+Ble_DeviceName=102
+Ble_RxConnIndex=104
+Ble_RxSrvUuid=105
+Ble_RxCharUuid=106
+Ble_RxBuf=107
+Ble_RxBufLen=108
+Ble_RxLen=109
+Ble_Mac=110
+Panel_HorizontalScrollPertange=103
+Panel_VerticalScrollPertange=104
+WheelList_ItemCount=101
+WheelList_ItemSpace=102
+WheelList_SelectedItem=103
+WheelList_SelectItemBackgroundColor=104
+WheelList_SelectItemBackgroundImage=105
+WheelList_SelectItemBackgroundImageAlignMode=106
+WheelList_SelectItemFontColor=107
+WheelList_CharSpace=108
+WheelList_BorderColor=109
+WheelList_BorderWidth=110
+WheelList_BorderColor1=111
+WheelList_BorderWidth1=112
+CircleSlider_StartAngle=101
+CircleSlider_Angle=102
+CircleSlider_ProgressBackgroundColor=103
+CircleSlider_ProgressColor=104
+CircleSlider_ProgressImageId=105
+CircleSlider_ProgressImageAlignMode=106
+CircleSlider_ProgressWidth=107
+CircleSlider_ProgressRadius=108
+CircleSlider_ThumbType=109
+CircleSlider_ThumbColor=110
+CircleSlider_ThumbImageId=111
+CircleSlider_ThumbWidth=112
+CircleSlider_Free=113
+OrthogonalEncoder_PulseCount=101
+OrthogonalEncoder_Press=102
+Usb_RxBuf=101
+Usb_RxBufLen=102
+Usb_RxLen=103
+Flash_Len=101
+Flash_MaxLen=102
+Visual_PIX.Model.Controls.PropertyConst
+Int32 Id
+System.String Name
+Visual_PIX.Model.Controls.PropertyConsts
+Id=Visual_PIX.Model.Controls.PropertyConst
+LHNDqqIicLDDptgwnLaDrksySGEp
+Byte Id
+System.String Name
+Byte ckgCdffieSHgcDMFztlhPnZNAilkA()
+Void ZlZDqIlLwtuozDkCXjnEYBlTfFAu(Byte)
+System.String zDBrAPcfKmbTmGnPVIOAhVYhBoXyB()
+Void gqYEXzDuHuFBLBNYNvqGGwOaonZEc(System.String)
+Int32 KIQYdYrlZnzeUtTgERbvwBduHLqjA()
+Void mcXAtmhTGekYDOInIhAXQSlRODrjA(Int32)
+Boolean RygCmtadzPWeLxHwyNLcdPDTacyAA()
+Void YxGkQyQxBPCVYIlMcoRvZioEBUsR(Boolean)
+System.String HnvaQnJeHlfALrZzScGIyTWzpoNF()
+Void CXDPDJvaOqBVeWPNUfxlOFdRKZVL(System.String)
+System.String RQGVSfJjfdzwAIoUxIoLkFolpgeW()
+Void MBXJTdDyosWyOLAtxxzyloDuwTVr(System.String)
+System.Type GBQiHAtKyszbQCDaFhHYybXZekAG()
+Void GDnFwzCrNPbjWlgMvlyjeuZVFdZr(System.Type)
+System.Reflection.MethodInfo[] MtCqlvkcafmypGTqrjjZKBwwotcu()
+Void NXowiqlKjwfLtAEsZovxcJRSlHZVA(System.Reflection.MethodInfo[])
+Boolean zyQdFmajFmUHxezEvGVtztJbWjJc(System.Object)
+System.String yHuIetkJLJhbopPMfdkWBHBBWMrcA()
+Void FUIibCofYrPbHvHqwGcsiwKDVknc(System.Object, System.Object)
+Boolean wFdPUYpuHqHAleLVZeDSkZNUPvtM(System.Object)
+System.Object hpotTqLAnSYDsHbuDaXPTOUYhtRH(System.Object)
+Void ricCsexIggGppCzKsnmNMFHAcefPA(System.Object, Int32, System.Object)
+System.Object XIJNkBYUEvvEJXgDxeLDQRHIUVgu(System.Object, Int32)
+Int32 UsHwzttAcUHmxMDrJTYFSUWqFZVF(Int32, System.Reflection.PropertyInfo)
+Boolean BCFEQNdGTgDuezmedYIbDzWqoQuF(System.Object)
+Boolean pzZLHmKAXFGSlpmWSPZNaowMcFCP(System.Object)
+System.Reflection.PropertyInfo FYbOghLjGKONVzOXtwDLpPFswakO(System.Object)
+System.String VOEPmFsOcdvOupjEmPpZMfDFXOBj()
+Boolean oyKcOwcaHSzQUUTeALQyjLBkYkxvA()
+Boolean CWHipxnQdReINtQGwcGwTNygxakG(System.Reflection.PropertyInfo)
+System.String ⁯‬‪⁪‮⁫⁭⁪​‌‌‭⁪⁬⁪​⁫‬​‬‮‮‏⁭‫⁮⁭⁫​‬‬‍‎⁫⁮⁪‎‭‭‫‮(System.Resources.ResourceManager, System.String, System.Globalization.CultureInfo)
+System.String ‎⁪‌‪⁫⁬‎⁪‪⁯‌‮‭‬‮⁯‪‫⁬‬⁪⁭‍⁪⁫⁯‌⁫‎‬‮‌⁭‮‫‏‍⁫‎⁮‮(System.String, System.String, System.String, System.String)
+System.Type ‎⁯‬⁭‮​​⁬⁬‎‍⁮⁬‌⁯⁮‍‍⁯‬⁫⁮​⁭‬⁬‫⁭⁬⁪​‌‎⁫‌‍‫⁯‮⁫‮(System.Reflection.PropertyInfo)
+Boolean ‫‍⁬‫‍‎⁬⁬​‎‮‌⁮‌‌‍⁪​​​‌⁬⁫⁪‭‬‌⁫⁯​‎‭‏⁮⁯⁬⁭‭‌‪‮(System.Type)
+System.Object ‬⁫⁯‏​​‪⁫‫⁬‍​​⁫‎‫‌⁭‏‍‮‮‎‫‭‭‮​‭‫‎‫‎⁯‭‫‎‪⁮‮‮(System.Type, System.Object)
+Void ⁮​‪⁫‌‏‪‪‭‮‮‎‭​⁫‌⁪⁮‮⁭‎⁭‮⁮⁮‍‌⁬⁬‌‌⁪​​⁫⁫⁭⁯⁪‍‮(System.Reflection.PropertyInfo, System.Object, System.Object)
+System.Type ‏⁬​‫‍‭⁪⁬‬‏​‌⁯‏‭‏‮⁬‍⁬‮‬​⁯⁬​⁪‫‌⁪‎‬​‫‮‪‌‭​‌‮(System.RuntimeTypeHandle)
+Boolean ‍​⁯‍⁮⁪‏‫‌​‮⁮⁭⁮⁬‏‎⁫⁯‪‪⁪⁫‪‫⁪‫⁫‭⁯⁯⁫‪⁭⁪‬⁭‎⁭‮(System.Type, System.Type)
+Boolean ⁫​‍‫‪‫‌⁮‌⁬‮‌‌⁯‮⁫⁭‮‫⁮‫⁪‭​‏‌⁪⁭‎⁬⁪‭⁫‌‌‪‎​⁪⁬‮(System.Reflection.MethodInfo, System.Reflection.MethodInfo)
+System.Object ‮‏‏‏‫⁯‭​‪‍⁭⁭‏‬‏‌‬​‫⁭‎⁬‮‫⁮‏‫⁪‎‏​‍‫‎‏⁯‭⁯⁫⁭‮(System.Reflection.MethodBase, System.Object, System.Object[])
+System.Object ⁭⁮‍‌⁬⁪‬‏‬⁮‏⁪‍‎⁬‍⁪‬‫⁫⁭⁪‪‭⁮‎⁪‏‌⁯‌‪‏‍⁬⁯⁭‍​⁮‮(System.Reflection.PropertyInfo, System.Object)
+Int32 ‫‫‬‌⁯⁭‭‏‬⁭​‌‌‫‫⁬‍​‫‬⁪⁪‫‌‫⁭⁭‭⁪⁫⁪‍‭​⁪‪⁫‮‬‬‮(System.Object)
+Boolean ‪‪‮⁪​‫⁯‭⁮‫⁯‍⁪‫​⁭⁪‏⁭⁮‍⁯‮‎⁮‌⁪‎‪‍⁭‫⁬‬‏‮​‌‏⁪‮(System.Type)
+Void ⁮⁮⁪⁫‌⁮‭‪​⁫‏‮‍‮‍⁬‌‪⁯‎⁮⁯‭‌⁮⁫‍⁭‫⁭⁭​‎⁬‏‫‌⁮‬‬‮(System.Array, System.Object, Int32)
+System.Object ‍⁫‌‪‎⁭‬‍‎⁭⁬‪‏⁬‮‮‏‍‪⁬‫⁮‭‭‫‌⁪‬‍‍‭‌⁮⁫⁭‏​⁭⁮‏‮(System.Array, Int32)
+Boolean ‍​​‍⁬⁫⁫⁬‫⁫‮⁪‍⁮⁮‭‌‭‮‪⁬‎‍‌‮‏‎‭‫⁫⁮⁫‪⁬‎‏‍‎‌‎‮(System.Reflection.PropertyInfo, System.Reflection.PropertyInfo)
+Boolean ​⁪‪⁫‫⁪⁮⁮⁮‫⁯⁮⁪⁫‮⁯‍‬‍⁮‎⁫​⁪‪⁮‍‌⁫⁭⁬⁬⁬​⁪⁯⁭⁭‌⁫‮(System.Reflection.PropertyInfo, System.Reflection.PropertyInfo)
+System.Type ‬‍​‏⁮‭‏‭‎⁪⁬‍⁭‮‌⁫‫‮‏‏‬⁮‪‬⁫‬‮‍⁪⁮‮⁬‫‏‎‮​‎‮⁯‮(System.Object)
+System.Reflection.PropertyInfo[] ‬‬‌⁭‪‮⁫‍⁬⁫⁭‌⁫‍⁪‍‍⁭​‪‍‭⁯​‍‬‫‬‫‮‍⁬​‫‎‭​⁯⁯‬‮(System.Type)
+System.String ‭‫‎⁫‏⁯‭⁪⁮⁫‫⁪‫⁫⁮‪⁫⁪⁫⁪‏‪‪‌‎⁪​‪‮‬⁮‬‏‭‍‎‫⁮‍⁮‮(System.String, System.Object)
+System.Exception ‏​‬⁮⁯⁫‬⁯​‍⁯⁬​‍​‏‌‌‫‭‭⁮‭‌⁮‪‍‍⁬⁬‫‫‎⁬‌⁫⁭‏⁮‭‮(System.String)
+System.String ​⁯‬⁬‪‭‮⁮‌⁮‌‏‮‏⁫‏​⁭‍‭⁯⁭‫⁪‪​‏‍⁪​‪⁫‍‭‏‭⁭​‬‍‮(System.String, System.Object, System.Object, System.Object)
+Boolean ⁫​‬‫‎‭⁫‍‫​‬⁬‏‪‪⁭⁪‌⁭‏‮⁮⁮⁯⁬⁯‎‭⁫‫‭‌‪‮⁭⁮‌⁪‌‍‮(System.Type, System.Type)
+System.Object ‏‫‭‍⁮⁯‫​‌‫‍‭⁫‍​‮⁯‬‬⁯‮‌⁭‬⁬⁯‬⁫⁮‏⁫‍‫‫‌‬⁬⁯⁬‪‮(System.Type)
+System.String ‌⁯‏⁬‭‌‪⁬​‫‮​‎‮‬‎‌⁯⁯‪‫⁬⁯‍⁮⁬‬‮⁫‭‬⁮⁬⁮⁭‫‬‎‪⁪‮(System.Reflection.MemberInfo)
+Boolean ​​‭⁯‫⁯⁫‬​‮⁬‫⁭​⁫‪⁪‎⁬⁬⁬‏‬⁭‏‮‎‏‍⁫‫⁪⁫‫​‌‪⁯⁪⁫‮(System.String, System.String)

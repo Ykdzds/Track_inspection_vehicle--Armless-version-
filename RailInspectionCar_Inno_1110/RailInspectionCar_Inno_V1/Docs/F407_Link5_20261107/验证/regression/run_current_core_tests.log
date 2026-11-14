@@ -1,0 +1,139 @@
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS pulse completion: fresh feedback, stable position, enabled hold
+PASS driver ramp: guard=1, deceleration retained, both readbacks, mismatches/read/write failures deny enable
+PASS maintenance: segment word order, one trigger, offline latch
+PASS device/motion: readback, zero once, mode lock, limits, reverse, stop latch
+PASS ARM3 production driver: final nonzero write denied under work lock
+PASS dual bus: critical polling fairness, speed writes, cancellation and linked stop
+PASS production position: response timestamps, zero generations, paired background polls
+ALL CORE TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS pulse completion: fresh feedback, stable position, enabled hold
+PASS driver ramp: guard=1, deceleration retained, both readbacks, mismatches/read/write failures deny enable
+PASS maintenance: segment word order, one trigger, offline latch
+PASS device/motion: readback, zero once, mode lock, limits, reverse, stop latch
+PASS ARM3 production driver: final nonzero write denied under work lock
+PASS dual bus: critical polling fairness, speed writes, cancellation and linked stop
+PASS production position: response timestamps, zero generations, paired background polls
+ALL CORE TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS readonly: selected-axis polling, unselected-axis isolation, write gate
+ALL READONLY TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS readonly: selected-axis polling, unselected-axis isolation, write gate
+ALL READONLY TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS readonly: selected-axis polling, unselected-axis isolation, write gate
+ALL READONLY TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS readonly: selected-axis polling, unselected-axis isolation, write gate
+ALL READONLY TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS readonly: selected-axis polling, unselected-axis isolation, write gate
+ALL READONLY TESTS PASSED (host mocks; not hardware validation)
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS K5 production hold: independent startup switch, fresh enable read, disturbance, no re-enable/config writes, fault/timeout/disable/zero failure
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS protocol: CRC, long frame, timeout, retry, exception, address, cancel
+PASS pulse: limits, direction, gate, exact count, completion restart latch
+PASS boot zero: POR gate, reset skip, offline wait, bounded retry, zero readback
+PASS startup stop: forced disable, zero feedback, reset skip, retry and POR chain
+PASS watchdog recovery: controlled ramp, signed speed, wrap, zero confirmation, failure latch
+PASS startup hold: all resets, POR-only zero, enable readback, gate, safe stop and failure latch
+PASS readonly: selected-axis polling, unselected-axis isolation, write gate
+ALL READONLY TESTS PASSED (host mocks; not hardware validation)
+RS485 RX tests passed
+PASS 120ms fresh batches, held samples, strict expiry, recovery, faults and bounded long-gap P slew
+Remote P synchronization algorithm tests passed
+PASS 120ms fresh batches, held samples, strict expiry, recovery, faults and bounded long-gap P slew
+Remote P synchronization algorithm tests passed

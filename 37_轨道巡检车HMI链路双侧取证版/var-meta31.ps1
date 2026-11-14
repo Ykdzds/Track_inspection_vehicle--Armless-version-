@@ -1,0 +1,2 @@
+﻿. (Join-Path $PSScriptRoot 'vp-reflect.ps1')
+$t=$vp.GetType('Visual_PIX.Model.Controls.VarCtrl');foreach($p in $t.GetProperties()|Where-Object Name -in @('Int','VarType')){$p|Format-List;$p.GetCustomAttributes($true)|ForEach-Object {$_|Format-List *}}

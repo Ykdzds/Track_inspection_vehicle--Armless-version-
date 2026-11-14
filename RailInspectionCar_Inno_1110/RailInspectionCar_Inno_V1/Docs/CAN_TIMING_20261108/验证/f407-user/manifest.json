@@ -1,0 +1,48 @@
+{
+  "Variant": "f407-user",
+  "BaselineCommit": "819077b",
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1.uvprojx",
+  "SourceDefaults": true,
+  "Defines": [],
+  "Started": "2026-11-08T22:47:26.9086963+08:00",
+  "Completed": "2026-11-08T22:48:41.7612603+08:00",
+  "Exit": 0,
+  "Errors": 0,
+  "Warnings": 0,
+  "Ram": {
+    "PhysicalBytes": 167700,
+    "Regions": {
+      "RW_CCM": {
+        "Used": 62136,
+        "Capacity": 65536,
+        "Free": 3400
+      },
+      "RW_IRAM1": {
+        "Used": 101944,
+        "Capacity": 114688,
+        "Free": 12744
+      },
+      "RW_IRAM2": {
+        "Used": 3108,
+        "Capacity": 15872,
+        "Free": 12764
+      },
+      "RETAINED_FAULT": {
+        "Used": 512,
+        "Capacity": 512,
+        "Free": 0
+      }
+    }
+  },
+  "Hashes": {
+    "keil-rebuild.log": "D2987CFC6B416AE5A71FD7BE60B9C9C251E33B677709BAB297507F4916B13C51",
+    "memory-stack.log": "BC3C2C7FC097698F126DC53CEF2B2AF222377515683EFEFDE1D2EDBE4AF81AE8",
+    "project.snapshot": "E34114D077148D352D4D391691764F8BCE23ADDA9C537050BFEBC394EF81EDA3",
+    "RailInspectionCar_V1.axf": "5B90CAB299CD6D0AB2FCA285BD537769150335A1D2420E8EFC022843F42734BC",
+    "RailInspectionCar_V1.bin": "C1E5C5E31F215BC5D31873AC208BE18ACFE71E4F6880CADDC7A69B58A3A340D3",
+    "RailInspectionCar_V1.hex": "0ABDDDF8F3E94ABAA63F9DA7A23848165E50422CEE5475D86C3E4E2BC98C1380",
+    "RailInspectionCar_V1.htm": "03D12AD6D48B2CDB4F33917BD422BF0AD8CF6E2A013187D3C9CF61C453E61182",
+    "RailInspectionCar_V1.map": "E4047F7DF355A546453BDF848B597644A2470D015045A21C44DC4253FBB0FB37"
+  },
+  "HardwareAcceptance": "pending"
+}

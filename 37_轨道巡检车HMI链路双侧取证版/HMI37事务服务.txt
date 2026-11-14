@@ -1,0 +1,853 @@
+﻿int i33;
+int cmd33;
+int r33;
+int ok33;
+int v33;
+int hi33;
+int gap33;
+int safe33;
+int did33;
+int seqDelta33;
+// One global serial scheduler. Cycles schedule work; never represent elapsed ms.
+if(P8_ServoControl.h13.vals[80]==0){
+P8_ServoControl.h13.vals[80]=1;P0_Boot.s33.vals[27]=0;did33=0;cmd33=0;
+P0_Boot.s33.vals[2]=P0_Boot.s33.vals[2]+1;P8_ServoControl.h13.vals[1]=P0_Boot.s33.vals[2]*50;P8_ServoControl.h13.vals[96]=P8_ServoControl.h13.vals[96]+1;
+if(P0_Boot.s33.vals[51]!=sys_run_time){P0_Boot.s33.vals[53]=P0_Boot.s33.vals[52];P0_Boot.s33.vals[52]=0;P0_Boot.s33.vals[51]=sys_run_time;}P0_Boot.s33.vals[52]=P0_Boot.s33.vals[52]+1;
+if(P8_ServoControl.h13.vals[116]==1 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1]){P0_Boot.s33.vals[0]=P0_Boot.s33.vals[0]+1;}
+if(P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || (P0_Boot.u34.vals[26]==1 && P0_Boot.u34.vals[27]==0)){cmd33=16;P8_ServoControl.h13.vals[10]=0;}
+else if(P8_ServoControl.h13.vals[11]==3){cmd33=3;if(P8_ServoControl.h13.vals[6]==0 && P8_ServoControl.h13.vals[7]==0){cmd33=16;}P8_ServoControl.h13.vals[10]=0;}
+if(P8_ServoControl.h13.vals[11]==16){cmd33=16;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1){
+
+if(cmd33==33 && (P0_Boot.u34.vals[26]==1 || P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16)){cmd33=0;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33==16 && (P0_Boot.u34.vals[26]==0 || P0_Boot.u34.vals[32]!=P0_Boot.s33.vals[0])){P0_Boot.u34.vals[26]=1;P0_Boot.u34.vals[27]=0;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[32]=P0_Boot.s33.vals[0];P0_Boot.u34.vals[35]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534 && cmd33!=16){cmd33=16;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=25;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;}
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=26;HMI37Capture();P8_ServoControl.h13.vals[2]=6;cmd33=0;}
+ if(cmd33!=0){
+ if(cmd33!=16 || P0_Boot.u34.vals[33]==0){P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}}else{P8_ServoControl.h13.vals[8]=P0_Boot.u34.vals[28];P8_ServoControl.h13.vals[9]=P0_Boot.u34.vals[29];}
+ for(i33=0;i33<48;i33++){P8_ServoControl.h13Tx.valbs[i33]=(byte)(0);}
+ P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+ P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+ if(cmd33==33 || cmd33==3){P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);}
+ P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+ P8_ServoControl.h13Tx.valbs[17]=(byte)(cmd33);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+ if(cmd33==33){if(P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[10]=0;}P0_Boot.u34.vals[8]=P8_ServoControl.h13.vals[10];P0_Boot.u34.vals[9]=P0_Boot.u34.vals[2];P0_Boot.u34.vals[10]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[11]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[12]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[13]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[14]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[15]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[17]=1;v33=P8_ServoControl.h13.vals[10];hi33=0;if(v33<0){hi33=65535;v33=v33+65536;}P8_ServoControl.h13Tx.valbs[20]=(byte)(hi33/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hi33&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(v33/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(v33&255);P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);}
+ if(cmd33==17){P8_ServoControl.h13Tx.valbs[24]=(byte)(P8_ServoControl.h13.vals[125]/256);P8_ServoControl.h13Tx.valbs[25]=(byte)(P8_ServoControl.h13.vals[125]&255);P8_ServoControl.h13Tx.valbs[26]=(byte)(P8_ServoControl.h13.vals[126]/256);P8_ServoControl.h13Tx.valbs[27]=(byte)(P8_ServoControl.h13.vals[126]&255);}
+ if(cmd33!=33){P8_ServoControl.h13.vals[26]=cmd33;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P0_Boot.s33.vals[2];}
+ if((cmd33==16 && P0_Boot.u34.vals[33]==0) || cmd33==3){P0_Boot.s33.vals[45]=P8_ServoControl.h13Status.vals[48];P0_Boot.s33.vals[46]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[47]=P8_ServoControl.h13.vals[4];P0_Boot.s33.vals[48]=P8_ServoControl.h13.vals[5];P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=1;P0_Boot.s33.vals[8]=0;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[43]=P0_Boot.s33.vals[0];}
+ P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+ if(cmd33==16 && P0_Boot.u34.vals[33]==0){P0_Boot.u34.vals[28]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[29]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[30]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[31]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[33]=1;}
+P0_Boot.d37c.vals[7]=256;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=16;r33=modbusWrites(1,16,256,24,P8_ServoControl.h13Tx.valbs,48,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();
+ ok33=0;if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==16 && P0_Boot.mod.rxLen==4 && bytesToShort(P0_Boot.mod.rxBuf,0,1)==256 && bytesToShort(P0_Boot.mod.rxBuf,2,1)==24){ok33=1;P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;}
+ if(ok33==1){
+  if(cmd33==16 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[43]){P0_Boot.s33.vals[1]=P0_Boot.s33.vals[43];P8_ServoControl.h13.vals[116]=0;P0_Boot.u34.vals[27]=1;}
+  // HMI34: application status, not transport ACK, confirms a target.
+ }else{P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=1;P0_Boot.d37c.vals[18]=46;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;if(cmd33==16){P8_ServoControl.h13.vals[2]=4;}}
+ P8_ServoControl.h13.vals[39]=0;
+ }
+}
+did33=1;P8_ServoControl.h13.vals[11]=0;
+}
+if(did33==0 && (P8_ServoControl.h13.vals[74]==0 || P0_Boot.s33.vals[44]==1 || (P8_ServoControl.h13.vals[2]!=3 && P0_Boot.s33.vals[2]-P0_Boot.s33.vals[33]>=40))){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=512;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,512,24,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==49 && P0_Boot.mod.rxBuf[0]==48){
+ok33=1;
+if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21065 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=1){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<24;i33++){P0_Boot.metaRegs.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+
+if(ok33==1){
+ P0_Boot.s33.vals[44]=0;if(P0_Boot.metaRegs.vals[3]!=2 || (P0_Boot.metaRegs.vals[2]&240)!=240){P0_Boot.s33.vals[44]=1;}
+ if(P8_ServoControl.h13.vals[74]==0 || P8_ServoControl.h13.vals[4]!=P0_Boot.metaRegs.vals[4] || P8_ServoControl.h13.vals[5]!=P0_Boot.metaRegs.vals[5]){
+P0_Boot.d37c.vals[17]=512;P0_Boot.d37c.vals[18]=69;HMI37Capture();  P8_ServoControl.h13.vals[4]=P0_Boot.metaRegs.vals[4];P8_ServoControl.h13.vals[5]=P0_Boot.metaRegs.vals[5];P8_ServoControl.h13.vals[74]=1;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[27]=0;P8_ServoControl.h13.vals[8]=0;P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[133]=0;P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[8]=0;P0_Boot.s33.vals[7]=0;P0_Boot.s33.vals[23]=0;P0_Boot.s33.vals[18]=P0_Boot.s33.vals[18]+1;P0_Boot.s33.vals[50]=0;P0_Boot.s33.vals[20]=0;P0_Boot.s33.vals[56]=P0_Boot.s33.vals[56]+1;
+  for(i33=0;i33<208;i33++){P0_Boot.dRaw.vals[i33]=65535;}for(i33=0;i33<96;i33++){P0_Boot.dStatus.vals[i33]=65535;if(i33>=18 && i33<=24){P0_Boot.dStatus.vals[i33]=32767;}}
+  for(i33=0;i33<5;i33++){P0_Boot.regionSeen.vals[i33]=0;}
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ P8_ServoControl.h13.vals[47]=1;P8_ServoControl.h13.vals[22]=P8_ServoControl.h13.vals[1];P0_Boot.metaSeen.vals[0]=1;P0_Boot.metaValid.vals[0]=1;P0_Boot.s33.vals[33]=P0_Boot.s33.vals[2];
+}
+did33=1;}
+if(did33==0 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.s33.vals[2]-P0_Boot.s33.vals[3]>=3){
+if(P0_Boot.s33.vals[2]-P0_Boot.s33.vals[9]>=20){
+P0_Boot.s33.vals[10]=1;
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=1120;P0_Boot.d37c.vals[8]=96;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,1120,96,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==193 && P0_Boot.mod.rxBuf[0]==192){
+ok33=1;
+if(P8_ServoControl.h13.vals[74]!=1 || bytesToShort(P0_Boot.mod.rxBuf,5,1)!=P8_ServoControl.h13.vals[4] || bytesToShort(P0_Boot.mod.rxBuf,7,1)!=P8_ServoControl.h13.vals[5]){ok33=0;}if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21325 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=2){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<96;i33++){P8_ServoControl.h13Status.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<96;i33++){v33=P8_ServoControl.h13Status.vals[i33];if(i33<18 || i33>24 || v33!=32767){if(P0_Boot.dStatus.vals[i33]!=v33 && (i33<4 || i33>7) && i33!=14 && i33!=15 && i33!=16 && i33!=17){P0_Boot.dRev.vals[6]=P0_Boot.dRev.vals[6]+1;}P0_Boot.dStatus.vals[i33]=v33;}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=2;P0_Boot.d37c.vals[18]=94;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}
+
+P0_Boot.s33.vals[4]=0;P0_Boot.s33.vals[34]=0;
+if(ok33==1 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5]){
+P0_Boot.s33.vals[34]=1;P8_ServoControl.h13.vals[86]=1;P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];
+// Compare uint32 sequence halves explicitly; do not depend on signed overflow.
+hi33=(P8_ServoControl.h13Status.vals[4]-P0_Boot.s33.vals[21]+65536)%65536;seqDelta33=0;
+if((hi33==0 && P8_ServoControl.h13Status.vals[5]>P0_Boot.s33.vals[22]) || (hi33>0 && hi33<32768) || (hi33==32768 && P8_ServoControl.h13Status.vals[5]<P0_Boot.s33.vals[22])){seqDelta33=1;}
+if(P0_Boot.s33.vals[23]==0 || seqDelta33>0){
+ P0_Boot.s33.vals[4]=1;P0_Boot.s33.vals[21]=P8_ServoControl.h13Status.vals[4];P0_Boot.s33.vals[22]=P8_ServoControl.h13Status.vals[5];P0_Boot.s33.vals[23]=1;P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+ gap33=0;if(P0_Boot.s33.vals[7]==1){hi33=(P8_ServoControl.h13Status.vals[6]-P0_Boot.s33.vals[5]+65536)%65536;gap33=300;if(hi33<=1){gap33=hi33*65536+P8_ServoControl.h13Status.vals[7]-P0_Boot.s33.vals[6];}}
+ P0_Boot.d37c.vals[24]=gap33;P0_Boot.s33.vals[24]=gap33;P0_Boot.s33.vals[5]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[6]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[7]=1;
+ if(P8_ServoControl.h13.vals[8]<P8_ServoControl.h13Status.vals[16] || (P8_ServoControl.h13.vals[8]==P8_ServoControl.h13Status.vals[16] && P8_ServoControl.h13.vals[9]<P8_ServoControl.h13Status.vals[17])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+}
+if(P0_Boot.s33.vals[4]==1){
+ safe33=0;
+ if(P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[12]==0 && P8_ServoControl.h13Status.vals[13]==0 && (P8_ServoControl.h13Status.vals[11]&102)==0 && P8_ServoControl.h13Status.vals[37]==0 && P8_ServoControl.h13Status.vals[9]>0 && P8_ServoControl.h13Status.vals[9]<=3 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || (P8_ServoControl.h13Status.vals[23]==0 && P8_ServoControl.h13Status.vals[46]<500)) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || (P8_ServoControl.h13Status.vals[24]==0 && P8_ServoControl.h13Status.vals[47]<500))){safe33=1;}
+ if(safe33==1){if(P0_Boot.s33.vals[8]<2){P0_Boot.s33.vals[8]=P0_Boot.s33.vals[8]+1;}}else{P0_Boot.s33.vals[8]=0;}
+ if(P8_ServoControl.h13.vals[2]==3){
+  if(gap33<0 || gap33>=300 || P8_ServoControl.h13Status.vals[15]>=300 || P8_ServoControl.h13Status.vals[14]<=200 || P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&102)!=2 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){
+   P0_Boot.d37c.vals[17]=0;P0_Boot.d37c.vals[18]=114;if(gap33<0 || gap33>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|4;}if(P8_ServoControl.h13Status.vals[15]>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|8;}if(P8_ServoControl.h13Status.vals[14]<=200){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|16;}if(P8_ServoControl.h13Status.vals[8]!=1){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|32;}if((P8_ServoControl.h13Status.vals[11]&102)!=2){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|64;}if(P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|128;}HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P0_Boot.s33.vals[27]=1;
+   if(P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==2 && P0_Boot.s33.vals[26]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&102)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+  P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Status.vals[12];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Status.vals[13];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[138]=1;
+  P8_ServoControl.h13.vals[59]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[60]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;P0_Boot.s33.vals[38]=P0_Boot.s33.vals[2];
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ if(P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && P8_ServoControl.h13.vals[2]!=1 && P8_ServoControl.h13.vals[2]!=5 && P8_ServoControl.h13.vals[2]!=2 && P8_ServoControl.h13.vals[2]!=3){
+  if(P8_ServoControl.h13.vals[2]!=4 || (P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[49]==1 && P0_Boot.s33.vals[47]==P8_ServoControl.h13.vals[4] && P0_Boot.s33.vals[48]==P8_ServoControl.h13.vals[5] && ((P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13Status.vals[53]==3 && (P8_ServoControl.h13Status.vals[48]!=P0_Boot.s33.vals[45] || P8_ServoControl.h13Status.vals[49]!=P0_Boot.s33.vals[46])) || (P8_ServoControl.h13Status.vals[48]==P0_Boot.s33.vals[45] && P8_ServoControl.h13Status.vals[49]==P0_Boot.s33.vals[46] && P8_ServoControl.h13Result.vals[7]==3 && P8_ServoControl.h13Status.vals[10]==0)))){
+   P8_ServoControl.h13.vals[2]=1;if(P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[2]=5;}P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[30]=0;P0_Boot.s33.vals[49]=0;
+   P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==0){P0_Boot.d37c.vals[17]=32768;P0_Boot.d37c.vals[18]=133;HMI37Capture();P8_ServoControl.h13.vals[2]=6;}
+ if(P8_ServoControl.h13.vals[2]==6 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+ if(P0_Boot.s33.vals[10]==1){
+  P0_Boot.s33.vals[9]=P0_Boot.s33.vals[2];P0_Boot.s33.vals[50]=1;P0_Boot.s33.vals[36]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[37]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[54]=P0_Boot.s33.vals[54]+1;
+  if(P8_ServoControl.h13Status.vals[89]>=1 && P8_ServoControl.h13Status.vals[89]<=5){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=137;HMI37Capture();P8_ServoControl.h13.vals[10]=0;if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[2]=6;}}
+  if(P8_ServoControl.h13Status.vals[89]==6 && P8_ServoControl.h13.vals[133]==3){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=138;HMI37Capture();P8_ServoControl.h13.vals[133]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;}
+  if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=100+P8_ServoControl.h13Status.vals[93];}
+ }
+}
+if(P0_Boot.s33.vals[4]==1){P0_Boot.s33.vals[35]=0;}else if(P8_ServoControl.h13.vals[2]==3){P0_Boot.s33.vals[35]=P0_Boot.s33.vals[35]+1;if(P0_Boot.s33.vals[35]>=6){P0_Boot.d37c.vals[17]=256;P0_Boot.d37c.vals[18]=142;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P0_Boot.s33.vals[27]=1;}}
+}else{P0_Boot.s33.vals[34]=0;P8_ServoControl.h13.vals[86]=0;}
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[26]==0 && P8_ServoControl.h13.vals[116]==0 && P0_Boot.u34.vals[17]==1 && P0_Boot.u34.vals[12]==P8_ServoControl.h13.vals[4] && P0_Boot.u34.vals[13]==P8_ServoControl.h13.vals[5] && P0_Boot.u34.vals[14]==P8_ServoControl.h13Status.vals[12] && P0_Boot.u34.vals[15]==P8_ServoControl.h13Status.vals[13] && (P8_ServoControl.h13Status.vals[16]>P0_Boot.u34.vals[10] || (P8_ServoControl.h13Status.vals[16]==P0_Boot.u34.vals[10] && P8_ServoControl.h13Status.vals[17]>=P0_Boot.u34.vals[11]))){
+ v33=P8_ServoControl.h13Status.vals[18];if(v33>32767){v33=v33-65536;}
+ if(v33==P0_Boot.u34.vals[8]){
+  P0_Boot.u34.vals[18]=v33;P0_Boot.u34.vals[19]=P0_Boot.u34.vals[9];P0_Boot.u34.vals[20]=1;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[36]=1;
+  if(v33==0 && P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[138]=0;P0_Boot.u34.vals[16]=1;}
+  if(P0_Boot.u34.vals[2]==P0_Boot.u34.vals[9] && P0_Boot.u34.vals[1]==v33){P0_Boot.u34.vals[37]=0;}
+ }
+}
+
+HMI34Input();
+
+}else{
+P0_Boot.s33.vals[10]=0;
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=1120;P0_Boot.d37c.vals[8]=64;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,1120,64,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==129 && P0_Boot.mod.rxBuf[0]==128){
+ok33=1;
+if(P8_ServoControl.h13.vals[74]!=1 || bytesToShort(P0_Boot.mod.rxBuf,5,1)!=P8_ServoControl.h13.vals[4] || bytesToShort(P0_Boot.mod.rxBuf,7,1)!=P8_ServoControl.h13.vals[5]){ok33=0;}if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21325 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=2){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<64;i33++){P8_ServoControl.h13Status.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<64;i33++){v33=P8_ServoControl.h13Status.vals[i33];if(i33<18 || i33>24 || v33!=32767){if(P0_Boot.dStatus.vals[i33]!=v33 && (i33<4 || i33>7) && i33!=14 && i33!=15 && i33!=16 && i33!=17){P0_Boot.dRev.vals[5]=P0_Boot.dRev.vals[5]+1;}P0_Boot.dStatus.vals[i33]=v33;}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=2;P0_Boot.d37c.vals[18]=169;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}
+
+P0_Boot.s33.vals[4]=0;P0_Boot.s33.vals[34]=0;
+if(ok33==1 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5]){
+P0_Boot.s33.vals[34]=1;P8_ServoControl.h13.vals[86]=1;P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];
+// Compare uint32 sequence halves explicitly; do not depend on signed overflow.
+hi33=(P8_ServoControl.h13Status.vals[4]-P0_Boot.s33.vals[21]+65536)%65536;seqDelta33=0;
+if((hi33==0 && P8_ServoControl.h13Status.vals[5]>P0_Boot.s33.vals[22]) || (hi33>0 && hi33<32768) || (hi33==32768 && P8_ServoControl.h13Status.vals[5]<P0_Boot.s33.vals[22])){seqDelta33=1;}
+if(P0_Boot.s33.vals[23]==0 || seqDelta33>0){
+ P0_Boot.s33.vals[4]=1;P0_Boot.s33.vals[21]=P8_ServoControl.h13Status.vals[4];P0_Boot.s33.vals[22]=P8_ServoControl.h13Status.vals[5];P0_Boot.s33.vals[23]=1;P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+ gap33=0;if(P0_Boot.s33.vals[7]==1){hi33=(P8_ServoControl.h13Status.vals[6]-P0_Boot.s33.vals[5]+65536)%65536;gap33=300;if(hi33<=1){gap33=hi33*65536+P8_ServoControl.h13Status.vals[7]-P0_Boot.s33.vals[6];}}
+ P0_Boot.d37c.vals[24]=gap33;P0_Boot.s33.vals[24]=gap33;P0_Boot.s33.vals[5]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[6]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[7]=1;
+ if(P8_ServoControl.h13.vals[8]<P8_ServoControl.h13Status.vals[16] || (P8_ServoControl.h13.vals[8]==P8_ServoControl.h13Status.vals[16] && P8_ServoControl.h13.vals[9]<P8_ServoControl.h13Status.vals[17])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+}
+if(P0_Boot.s33.vals[4]==1){
+ safe33=0;
+ if(P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[12]==0 && P8_ServoControl.h13Status.vals[13]==0 && (P8_ServoControl.h13Status.vals[11]&102)==0 && P8_ServoControl.h13Status.vals[37]==0 && P8_ServoControl.h13Status.vals[9]>0 && P8_ServoControl.h13Status.vals[9]<=3 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || (P8_ServoControl.h13Status.vals[23]==0 && P8_ServoControl.h13Status.vals[46]<500)) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || (P8_ServoControl.h13Status.vals[24]==0 && P8_ServoControl.h13Status.vals[47]<500))){safe33=1;}
+ if(safe33==1){if(P0_Boot.s33.vals[8]<2){P0_Boot.s33.vals[8]=P0_Boot.s33.vals[8]+1;}}else{P0_Boot.s33.vals[8]=0;}
+ if(P8_ServoControl.h13.vals[2]==3){
+  if(gap33<0 || gap33>=300 || P8_ServoControl.h13Status.vals[15]>=300 || P8_ServoControl.h13Status.vals[14]<=200 || P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&102)!=2 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){
+   P0_Boot.d37c.vals[17]=0;P0_Boot.d37c.vals[18]=189;if(gap33<0 || gap33>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|4;}if(P8_ServoControl.h13Status.vals[15]>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|8;}if(P8_ServoControl.h13Status.vals[14]<=200){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|16;}if(P8_ServoControl.h13Status.vals[8]!=1){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|32;}if((P8_ServoControl.h13Status.vals[11]&102)!=2){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|64;}if(P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|128;}HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P0_Boot.s33.vals[27]=1;
+   if(P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==2 && P0_Boot.s33.vals[26]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&102)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+  P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Status.vals[12];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Status.vals[13];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[138]=1;
+  P8_ServoControl.h13.vals[59]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[60]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;P0_Boot.s33.vals[38]=P0_Boot.s33.vals[2];
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ if(P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && P8_ServoControl.h13.vals[2]!=1 && P8_ServoControl.h13.vals[2]!=5 && P8_ServoControl.h13.vals[2]!=2 && P8_ServoControl.h13.vals[2]!=3){
+  if(P8_ServoControl.h13.vals[2]!=4 || (P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[49]==1 && P0_Boot.s33.vals[47]==P8_ServoControl.h13.vals[4] && P0_Boot.s33.vals[48]==P8_ServoControl.h13.vals[5] && ((P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13Status.vals[53]==3 && (P8_ServoControl.h13Status.vals[48]!=P0_Boot.s33.vals[45] || P8_ServoControl.h13Status.vals[49]!=P0_Boot.s33.vals[46])) || (P8_ServoControl.h13Status.vals[48]==P0_Boot.s33.vals[45] && P8_ServoControl.h13Status.vals[49]==P0_Boot.s33.vals[46] && P8_ServoControl.h13Result.vals[7]==3 && P8_ServoControl.h13Status.vals[10]==0)))){
+   P8_ServoControl.h13.vals[2]=1;if(P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[2]=5;}P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[30]=0;P0_Boot.s33.vals[49]=0;
+   P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==0){P0_Boot.d37c.vals[17]=32768;P0_Boot.d37c.vals[18]=208;HMI37Capture();P8_ServoControl.h13.vals[2]=6;}
+ if(P8_ServoControl.h13.vals[2]==6 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+ if(P0_Boot.s33.vals[10]==1){
+  P0_Boot.s33.vals[9]=P0_Boot.s33.vals[2];P0_Boot.s33.vals[50]=1;P0_Boot.s33.vals[36]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[37]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[54]=P0_Boot.s33.vals[54]+1;
+  if(P8_ServoControl.h13Status.vals[89]>=1 && P8_ServoControl.h13Status.vals[89]<=5){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=212;HMI37Capture();P8_ServoControl.h13.vals[10]=0;if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[2]=6;}}
+  if(P8_ServoControl.h13Status.vals[89]==6 && P8_ServoControl.h13.vals[133]==3){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=213;HMI37Capture();P8_ServoControl.h13.vals[133]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;}
+  if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=100+P8_ServoControl.h13Status.vals[93];}
+ }
+}
+if(P0_Boot.s33.vals[4]==1){P0_Boot.s33.vals[35]=0;}else if(P8_ServoControl.h13.vals[2]==3){P0_Boot.s33.vals[35]=P0_Boot.s33.vals[35]+1;if(P0_Boot.s33.vals[35]>=6){P0_Boot.d37c.vals[17]=256;P0_Boot.d37c.vals[18]=217;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P0_Boot.s33.vals[27]=1;}}
+}else{P0_Boot.s33.vals[34]=0;P8_ServoControl.h13.vals[86]=0;}
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[26]==0 && P8_ServoControl.h13.vals[116]==0 && P0_Boot.u34.vals[17]==1 && P0_Boot.u34.vals[12]==P8_ServoControl.h13.vals[4] && P0_Boot.u34.vals[13]==P8_ServoControl.h13.vals[5] && P0_Boot.u34.vals[14]==P8_ServoControl.h13Status.vals[12] && P0_Boot.u34.vals[15]==P8_ServoControl.h13Status.vals[13] && (P8_ServoControl.h13Status.vals[16]>P0_Boot.u34.vals[10] || (P8_ServoControl.h13Status.vals[16]==P0_Boot.u34.vals[10] && P8_ServoControl.h13Status.vals[17]>=P0_Boot.u34.vals[11]))){
+ v33=P8_ServoControl.h13Status.vals[18];if(v33>32767){v33=v33-65536;}
+ if(v33==P0_Boot.u34.vals[8]){
+  P0_Boot.u34.vals[18]=v33;P0_Boot.u34.vals[19]=P0_Boot.u34.vals[9];P0_Boot.u34.vals[20]=1;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[36]=1;
+  if(v33==0 && P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[138]=0;P0_Boot.u34.vals[16]=1;}
+  if(P0_Boot.u34.vals[2]==P0_Boot.u34.vals[9] && P0_Boot.u34.vals[1]==v33){P0_Boot.u34.vals[37]=0;}
+ }
+}
+
+HMI34Input();
+
+}
+P0_Boot.s33.vals[3]=P0_Boot.s33.vals[2];did33=1;
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0){cmd33=33;
+
+if(cmd33==33 && (P0_Boot.u34.vals[26]==1 || P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16)){cmd33=0;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33==16 && (P0_Boot.u34.vals[26]==0 || P0_Boot.u34.vals[32]!=P0_Boot.s33.vals[0])){P0_Boot.u34.vals[26]=1;P0_Boot.u34.vals[27]=0;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[32]=P0_Boot.s33.vals[0];P0_Boot.u34.vals[35]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534 && cmd33!=16){cmd33=16;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=237;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;}
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=238;HMI37Capture();P8_ServoControl.h13.vals[2]=6;cmd33=0;}
+ if(cmd33!=0){
+ if(cmd33!=16 || P0_Boot.u34.vals[33]==0){P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}}else{P8_ServoControl.h13.vals[8]=P0_Boot.u34.vals[28];P8_ServoControl.h13.vals[9]=P0_Boot.u34.vals[29];}
+ for(i33=0;i33<48;i33++){P8_ServoControl.h13Tx.valbs[i33]=(byte)(0);}
+ P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+ P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+ if(cmd33==33 || cmd33==3){P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);}
+ P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+ P8_ServoControl.h13Tx.valbs[17]=(byte)(cmd33);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+ if(cmd33==33){if(P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[10]=0;}P0_Boot.u34.vals[8]=P8_ServoControl.h13.vals[10];P0_Boot.u34.vals[9]=P0_Boot.u34.vals[2];P0_Boot.u34.vals[10]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[11]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[12]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[13]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[14]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[15]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[17]=1;v33=P8_ServoControl.h13.vals[10];hi33=0;if(v33<0){hi33=65535;v33=v33+65536;}P8_ServoControl.h13Tx.valbs[20]=(byte)(hi33/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hi33&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(v33/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(v33&255);P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);}
+ if(cmd33==17){P8_ServoControl.h13Tx.valbs[24]=(byte)(P8_ServoControl.h13.vals[125]/256);P8_ServoControl.h13Tx.valbs[25]=(byte)(P8_ServoControl.h13.vals[125]&255);P8_ServoControl.h13Tx.valbs[26]=(byte)(P8_ServoControl.h13.vals[126]/256);P8_ServoControl.h13Tx.valbs[27]=(byte)(P8_ServoControl.h13.vals[126]&255);}
+ if(cmd33!=33){P8_ServoControl.h13.vals[26]=cmd33;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P0_Boot.s33.vals[2];}
+ if((cmd33==16 && P0_Boot.u34.vals[33]==0) || cmd33==3){P0_Boot.s33.vals[45]=P8_ServoControl.h13Status.vals[48];P0_Boot.s33.vals[46]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[47]=P8_ServoControl.h13.vals[4];P0_Boot.s33.vals[48]=P8_ServoControl.h13.vals[5];P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=1;P0_Boot.s33.vals[8]=0;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[43]=P0_Boot.s33.vals[0];}
+ P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+ if(cmd33==16 && P0_Boot.u34.vals[33]==0){P0_Boot.u34.vals[28]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[29]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[30]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[31]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[33]=1;}
+P0_Boot.d37c.vals[7]=256;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=16;r33=modbusWrites(1,16,256,24,P8_ServoControl.h13Tx.valbs,48,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();
+ ok33=0;if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==16 && P0_Boot.mod.rxLen==4 && bytesToShort(P0_Boot.mod.rxBuf,0,1)==256 && bytesToShort(P0_Boot.mod.rxBuf,2,1)==24){ok33=1;P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;}
+ if(ok33==1){
+  if(cmd33==16 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[43]){P0_Boot.s33.vals[1]=P0_Boot.s33.vals[43];P8_ServoControl.h13.vals[116]=0;P0_Boot.u34.vals[27]=1;}
+  // HMI34: application status, not transport ACK, confirms a target.
+ }else{P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=1;P0_Boot.d37c.vals[18]=258;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;if(cmd33==16){P8_ServoControl.h13.vals[2]=4;}}
+ P8_ServoControl.h13.vals[39]=0;
+ }
+}
+}
+else{if(P8_ServoControl.h13.vals[2]==3){P0_Boot.d37c.vals[17]=8192;P0_Boot.d37c.vals[18]=263;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}P0_Boot.s33.vals[27]=1;}
+}
+if(did33==0 && P8_ServoControl.h13.vals[11]==1){
+P0_Boot.s33.vals[10]=1;
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=1120;P0_Boot.d37c.vals[8]=96;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,1120,96,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==193 && P0_Boot.mod.rxBuf[0]==192){
+ok33=1;
+if(P8_ServoControl.h13.vals[74]!=1 || bytesToShort(P0_Boot.mod.rxBuf,5,1)!=P8_ServoControl.h13.vals[4] || bytesToShort(P0_Boot.mod.rxBuf,7,1)!=P8_ServoControl.h13.vals[5]){ok33=0;}if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21325 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=2){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<96;i33++){P8_ServoControl.h13Status.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<96;i33++){v33=P8_ServoControl.h13Status.vals[i33];if(i33<18 || i33>24 || v33!=32767){if(P0_Boot.dStatus.vals[i33]!=v33 && (i33<4 || i33>7) && i33!=14 && i33!=15 && i33!=16 && i33!=17){P0_Boot.dRev.vals[6]=P0_Boot.dRev.vals[6]+1;}P0_Boot.dStatus.vals[i33]=v33;}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=2;P0_Boot.d37c.vals[18]=279;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}
+
+P0_Boot.s33.vals[4]=0;P0_Boot.s33.vals[34]=0;
+if(ok33==1 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5]){
+P0_Boot.s33.vals[34]=1;P8_ServoControl.h13.vals[86]=1;P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];
+// Compare uint32 sequence halves explicitly; do not depend on signed overflow.
+hi33=(P8_ServoControl.h13Status.vals[4]-P0_Boot.s33.vals[21]+65536)%65536;seqDelta33=0;
+if((hi33==0 && P8_ServoControl.h13Status.vals[5]>P0_Boot.s33.vals[22]) || (hi33>0 && hi33<32768) || (hi33==32768 && P8_ServoControl.h13Status.vals[5]<P0_Boot.s33.vals[22])){seqDelta33=1;}
+if(P0_Boot.s33.vals[23]==0 || seqDelta33>0){
+ P0_Boot.s33.vals[4]=1;P0_Boot.s33.vals[21]=P8_ServoControl.h13Status.vals[4];P0_Boot.s33.vals[22]=P8_ServoControl.h13Status.vals[5];P0_Boot.s33.vals[23]=1;P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+ gap33=0;if(P0_Boot.s33.vals[7]==1){hi33=(P8_ServoControl.h13Status.vals[6]-P0_Boot.s33.vals[5]+65536)%65536;gap33=300;if(hi33<=1){gap33=hi33*65536+P8_ServoControl.h13Status.vals[7]-P0_Boot.s33.vals[6];}}
+ P0_Boot.d37c.vals[24]=gap33;P0_Boot.s33.vals[24]=gap33;P0_Boot.s33.vals[5]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[6]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[7]=1;
+ if(P8_ServoControl.h13.vals[8]<P8_ServoControl.h13Status.vals[16] || (P8_ServoControl.h13.vals[8]==P8_ServoControl.h13Status.vals[16] && P8_ServoControl.h13.vals[9]<P8_ServoControl.h13Status.vals[17])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+}
+if(P0_Boot.s33.vals[4]==1){
+ safe33=0;
+ if(P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[12]==0 && P8_ServoControl.h13Status.vals[13]==0 && (P8_ServoControl.h13Status.vals[11]&102)==0 && P8_ServoControl.h13Status.vals[37]==0 && P8_ServoControl.h13Status.vals[9]>0 && P8_ServoControl.h13Status.vals[9]<=3 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || (P8_ServoControl.h13Status.vals[23]==0 && P8_ServoControl.h13Status.vals[46]<500)) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || (P8_ServoControl.h13Status.vals[24]==0 && P8_ServoControl.h13Status.vals[47]<500))){safe33=1;}
+ if(safe33==1){if(P0_Boot.s33.vals[8]<2){P0_Boot.s33.vals[8]=P0_Boot.s33.vals[8]+1;}}else{P0_Boot.s33.vals[8]=0;}
+ if(P8_ServoControl.h13.vals[2]==3){
+  if(gap33<0 || gap33>=300 || P8_ServoControl.h13Status.vals[15]>=300 || P8_ServoControl.h13Status.vals[14]<=200 || P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&102)!=2 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){
+   P0_Boot.d37c.vals[17]=0;P0_Boot.d37c.vals[18]=299;if(gap33<0 || gap33>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|4;}if(P8_ServoControl.h13Status.vals[15]>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|8;}if(P8_ServoControl.h13Status.vals[14]<=200){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|16;}if(P8_ServoControl.h13Status.vals[8]!=1){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|32;}if((P8_ServoControl.h13Status.vals[11]&102)!=2){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|64;}if(P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|128;}HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P0_Boot.s33.vals[27]=1;
+   if(P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==2 && P0_Boot.s33.vals[26]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&102)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+  P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Status.vals[12];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Status.vals[13];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[138]=1;
+  P8_ServoControl.h13.vals[59]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[60]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;P0_Boot.s33.vals[38]=P0_Boot.s33.vals[2];
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ if(P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && P8_ServoControl.h13.vals[2]!=1 && P8_ServoControl.h13.vals[2]!=5 && P8_ServoControl.h13.vals[2]!=2 && P8_ServoControl.h13.vals[2]!=3){
+  if(P8_ServoControl.h13.vals[2]!=4 || (P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[49]==1 && P0_Boot.s33.vals[47]==P8_ServoControl.h13.vals[4] && P0_Boot.s33.vals[48]==P8_ServoControl.h13.vals[5] && ((P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13Status.vals[53]==3 && (P8_ServoControl.h13Status.vals[48]!=P0_Boot.s33.vals[45] || P8_ServoControl.h13Status.vals[49]!=P0_Boot.s33.vals[46])) || (P8_ServoControl.h13Status.vals[48]==P0_Boot.s33.vals[45] && P8_ServoControl.h13Status.vals[49]==P0_Boot.s33.vals[46] && P8_ServoControl.h13Result.vals[7]==3 && P8_ServoControl.h13Status.vals[10]==0)))){
+   P8_ServoControl.h13.vals[2]=1;if(P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[2]=5;}P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[30]=0;P0_Boot.s33.vals[49]=0;
+   P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==0){P0_Boot.d37c.vals[17]=32768;P0_Boot.d37c.vals[18]=318;HMI37Capture();P8_ServoControl.h13.vals[2]=6;}
+ if(P8_ServoControl.h13.vals[2]==6 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+ if(P0_Boot.s33.vals[10]==1){
+  P0_Boot.s33.vals[9]=P0_Boot.s33.vals[2];P0_Boot.s33.vals[50]=1;P0_Boot.s33.vals[36]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[37]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[54]=P0_Boot.s33.vals[54]+1;
+  if(P8_ServoControl.h13Status.vals[89]>=1 && P8_ServoControl.h13Status.vals[89]<=5){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=322;HMI37Capture();P8_ServoControl.h13.vals[10]=0;if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[2]=6;}}
+  if(P8_ServoControl.h13Status.vals[89]==6 && P8_ServoControl.h13.vals[133]==3){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=323;HMI37Capture();P8_ServoControl.h13.vals[133]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;}
+  if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=100+P8_ServoControl.h13Status.vals[93];}
+ }
+}
+if(P0_Boot.s33.vals[4]==1){P0_Boot.s33.vals[35]=0;}else if(P8_ServoControl.h13.vals[2]==3){P0_Boot.s33.vals[35]=P0_Boot.s33.vals[35]+1;if(P0_Boot.s33.vals[35]>=6){P0_Boot.d37c.vals[17]=256;P0_Boot.d37c.vals[18]=327;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P0_Boot.s33.vals[27]=1;}}
+}else{P0_Boot.s33.vals[34]=0;P8_ServoControl.h13.vals[86]=0;}
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[26]==0 && P8_ServoControl.h13.vals[116]==0 && P0_Boot.u34.vals[17]==1 && P0_Boot.u34.vals[12]==P8_ServoControl.h13.vals[4] && P0_Boot.u34.vals[13]==P8_ServoControl.h13.vals[5] && P0_Boot.u34.vals[14]==P8_ServoControl.h13Status.vals[12] && P0_Boot.u34.vals[15]==P8_ServoControl.h13Status.vals[13] && (P8_ServoControl.h13Status.vals[16]>P0_Boot.u34.vals[10] || (P8_ServoControl.h13Status.vals[16]==P0_Boot.u34.vals[10] && P8_ServoControl.h13Status.vals[17]>=P0_Boot.u34.vals[11]))){
+ v33=P8_ServoControl.h13Status.vals[18];if(v33>32767){v33=v33-65536;}
+ if(v33==P0_Boot.u34.vals[8]){
+  P0_Boot.u34.vals[18]=v33;P0_Boot.u34.vals[19]=P0_Boot.u34.vals[9];P0_Boot.u34.vals[20]=1;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[36]=1;
+  if(v33==0 && P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[138]=0;P0_Boot.u34.vals[16]=1;}
+  if(P0_Boot.u34.vals[2]==P0_Boot.u34.vals[9] && P0_Boot.u34.vals[1]==v33){P0_Boot.u34.vals[37]=0;}
+ }
+}
+
+HMI34Input();
+
+
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[44]==0 && (P8_ServoControl.h13.vals[2]==1 || P8_ServoControl.h13.vals[2]==5) && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1]){cmd33=1;P8_ServoControl.h13.vals[2]=2;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[8]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;
+
+if(cmd33==33 && (P0_Boot.u34.vals[26]==1 || P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16)){cmd33=0;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33==16 && (P0_Boot.u34.vals[26]==0 || P0_Boot.u34.vals[32]!=P0_Boot.s33.vals[0])){P0_Boot.u34.vals[26]=1;P0_Boot.u34.vals[27]=0;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[32]=P0_Boot.s33.vals[0];P0_Boot.u34.vals[35]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534 && cmd33!=16){cmd33=16;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=346;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;}
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=347;HMI37Capture();P8_ServoControl.h13.vals[2]=6;cmd33=0;}
+ if(cmd33!=0){
+ if(cmd33!=16 || P0_Boot.u34.vals[33]==0){P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}}else{P8_ServoControl.h13.vals[8]=P0_Boot.u34.vals[28];P8_ServoControl.h13.vals[9]=P0_Boot.u34.vals[29];}
+ for(i33=0;i33<48;i33++){P8_ServoControl.h13Tx.valbs[i33]=(byte)(0);}
+ P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+ P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+ if(cmd33==33 || cmd33==3){P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);}
+ P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+ P8_ServoControl.h13Tx.valbs[17]=(byte)(cmd33);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+ if(cmd33==33){if(P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[10]=0;}P0_Boot.u34.vals[8]=P8_ServoControl.h13.vals[10];P0_Boot.u34.vals[9]=P0_Boot.u34.vals[2];P0_Boot.u34.vals[10]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[11]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[12]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[13]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[14]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[15]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[17]=1;v33=P8_ServoControl.h13.vals[10];hi33=0;if(v33<0){hi33=65535;v33=v33+65536;}P8_ServoControl.h13Tx.valbs[20]=(byte)(hi33/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hi33&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(v33/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(v33&255);P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);}
+ if(cmd33==17){P8_ServoControl.h13Tx.valbs[24]=(byte)(P8_ServoControl.h13.vals[125]/256);P8_ServoControl.h13Tx.valbs[25]=(byte)(P8_ServoControl.h13.vals[125]&255);P8_ServoControl.h13Tx.valbs[26]=(byte)(P8_ServoControl.h13.vals[126]/256);P8_ServoControl.h13Tx.valbs[27]=(byte)(P8_ServoControl.h13.vals[126]&255);}
+ if(cmd33!=33){P8_ServoControl.h13.vals[26]=cmd33;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P0_Boot.s33.vals[2];}
+ if((cmd33==16 && P0_Boot.u34.vals[33]==0) || cmd33==3){P0_Boot.s33.vals[45]=P8_ServoControl.h13Status.vals[48];P0_Boot.s33.vals[46]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[47]=P8_ServoControl.h13.vals[4];P0_Boot.s33.vals[48]=P8_ServoControl.h13.vals[5];P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=1;P0_Boot.s33.vals[8]=0;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[43]=P0_Boot.s33.vals[0];}
+ P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+ if(cmd33==16 && P0_Boot.u34.vals[33]==0){P0_Boot.u34.vals[28]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[29]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[30]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[31]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[33]=1;}
+P0_Boot.d37c.vals[7]=256;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=16;r33=modbusWrites(1,16,256,24,P8_ServoControl.h13Tx.valbs,48,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();
+ ok33=0;if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==16 && P0_Boot.mod.rxLen==4 && bytesToShort(P0_Boot.mod.rxBuf,0,1)==256 && bytesToShort(P0_Boot.mod.rxBuf,2,1)==24){ok33=1;P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;}
+ if(ok33==1){
+  if(cmd33==16 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[43]){P0_Boot.s33.vals[1]=P0_Boot.s33.vals[43];P8_ServoControl.h13.vals[116]=0;P0_Boot.u34.vals[27]=1;}
+  // HMI34: application status, not transport ACK, confirms a target.
+ }else{P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=1;P0_Boot.d37c.vals[18]=367;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;if(cmd33==16){P8_ServoControl.h13.vals[2]=4;}}
+ P8_ServoControl.h13.vals[39]=0;
+ }
+}
+}
+if(cmd33==1 || P0_Boot.s33.vals[34]==0 || P8_ServoControl.h13Status.vals[8]!=0 || P0_Boot.s33.vals[44]==1){P8_ServoControl.h13.vals[11]=0;}did33=1;}
+if(did33==0 && P0_Boot.s33.vals[29]==1){
+P0_Boot.s33.vals[10]=1;
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=1120;P0_Boot.d37c.vals[8]=96;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,1120,96,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==193 && P0_Boot.mod.rxBuf[0]==192){
+ok33=1;
+if(P8_ServoControl.h13.vals[74]!=1 || bytesToShort(P0_Boot.mod.rxBuf,5,1)!=P8_ServoControl.h13.vals[4] || bytesToShort(P0_Boot.mod.rxBuf,7,1)!=P8_ServoControl.h13.vals[5]){ok33=0;}if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21325 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=2){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<96;i33++){P8_ServoControl.h13Status.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<96;i33++){v33=P8_ServoControl.h13Status.vals[i33];if(i33<18 || i33>24 || v33!=32767){if(P0_Boot.dStatus.vals[i33]!=v33 && (i33<4 || i33>7) && i33!=14 && i33!=15 && i33!=16 && i33!=17){P0_Boot.dRev.vals[6]=P0_Boot.dRev.vals[6]+1;}P0_Boot.dStatus.vals[i33]=v33;}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=2;P0_Boot.d37c.vals[18]=387;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}
+
+P0_Boot.s33.vals[4]=0;P0_Boot.s33.vals[34]=0;
+if(ok33==1 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5]){
+P0_Boot.s33.vals[34]=1;P8_ServoControl.h13.vals[86]=1;P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];
+// Compare uint32 sequence halves explicitly; do not depend on signed overflow.
+hi33=(P8_ServoControl.h13Status.vals[4]-P0_Boot.s33.vals[21]+65536)%65536;seqDelta33=0;
+if((hi33==0 && P8_ServoControl.h13Status.vals[5]>P0_Boot.s33.vals[22]) || (hi33>0 && hi33<32768) || (hi33==32768 && P8_ServoControl.h13Status.vals[5]<P0_Boot.s33.vals[22])){seqDelta33=1;}
+if(P0_Boot.s33.vals[23]==0 || seqDelta33>0){
+ P0_Boot.s33.vals[4]=1;P0_Boot.s33.vals[21]=P8_ServoControl.h13Status.vals[4];P0_Boot.s33.vals[22]=P8_ServoControl.h13Status.vals[5];P0_Boot.s33.vals[23]=1;P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+ gap33=0;if(P0_Boot.s33.vals[7]==1){hi33=(P8_ServoControl.h13Status.vals[6]-P0_Boot.s33.vals[5]+65536)%65536;gap33=300;if(hi33<=1){gap33=hi33*65536+P8_ServoControl.h13Status.vals[7]-P0_Boot.s33.vals[6];}}
+ P0_Boot.d37c.vals[24]=gap33;P0_Boot.s33.vals[24]=gap33;P0_Boot.s33.vals[5]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[6]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[7]=1;
+ if(P8_ServoControl.h13.vals[8]<P8_ServoControl.h13Status.vals[16] || (P8_ServoControl.h13.vals[8]==P8_ServoControl.h13Status.vals[16] && P8_ServoControl.h13.vals[9]<P8_ServoControl.h13Status.vals[17])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+}
+if(P0_Boot.s33.vals[4]==1){
+ safe33=0;
+ if(P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[12]==0 && P8_ServoControl.h13Status.vals[13]==0 && (P8_ServoControl.h13Status.vals[11]&102)==0 && P8_ServoControl.h13Status.vals[37]==0 && P8_ServoControl.h13Status.vals[9]>0 && P8_ServoControl.h13Status.vals[9]<=3 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || (P8_ServoControl.h13Status.vals[23]==0 && P8_ServoControl.h13Status.vals[46]<500)) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || (P8_ServoControl.h13Status.vals[24]==0 && P8_ServoControl.h13Status.vals[47]<500))){safe33=1;}
+ if(safe33==1){if(P0_Boot.s33.vals[8]<2){P0_Boot.s33.vals[8]=P0_Boot.s33.vals[8]+1;}}else{P0_Boot.s33.vals[8]=0;}
+ if(P8_ServoControl.h13.vals[2]==3){
+  if(gap33<0 || gap33>=300 || P8_ServoControl.h13Status.vals[15]>=300 || P8_ServoControl.h13Status.vals[14]<=200 || P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&102)!=2 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){
+   P0_Boot.d37c.vals[17]=0;P0_Boot.d37c.vals[18]=407;if(gap33<0 || gap33>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|4;}if(P8_ServoControl.h13Status.vals[15]>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|8;}if(P8_ServoControl.h13Status.vals[14]<=200){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|16;}if(P8_ServoControl.h13Status.vals[8]!=1){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|32;}if((P8_ServoControl.h13Status.vals[11]&102)!=2){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|64;}if(P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|128;}HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P0_Boot.s33.vals[27]=1;
+   if(P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==2 && P0_Boot.s33.vals[26]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&102)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+  P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Status.vals[12];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Status.vals[13];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[138]=1;
+  P8_ServoControl.h13.vals[59]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[60]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;P0_Boot.s33.vals[38]=P0_Boot.s33.vals[2];
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ if(P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && P8_ServoControl.h13.vals[2]!=1 && P8_ServoControl.h13.vals[2]!=5 && P8_ServoControl.h13.vals[2]!=2 && P8_ServoControl.h13.vals[2]!=3){
+  if(P8_ServoControl.h13.vals[2]!=4 || (P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[49]==1 && P0_Boot.s33.vals[47]==P8_ServoControl.h13.vals[4] && P0_Boot.s33.vals[48]==P8_ServoControl.h13.vals[5] && ((P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13Status.vals[53]==3 && (P8_ServoControl.h13Status.vals[48]!=P0_Boot.s33.vals[45] || P8_ServoControl.h13Status.vals[49]!=P0_Boot.s33.vals[46])) || (P8_ServoControl.h13Status.vals[48]==P0_Boot.s33.vals[45] && P8_ServoControl.h13Status.vals[49]==P0_Boot.s33.vals[46] && P8_ServoControl.h13Result.vals[7]==3 && P8_ServoControl.h13Status.vals[10]==0)))){
+   P8_ServoControl.h13.vals[2]=1;if(P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[2]=5;}P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[30]=0;P0_Boot.s33.vals[49]=0;
+   P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==0){P0_Boot.d37c.vals[17]=32768;P0_Boot.d37c.vals[18]=426;HMI37Capture();P8_ServoControl.h13.vals[2]=6;}
+ if(P8_ServoControl.h13.vals[2]==6 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+ if(P0_Boot.s33.vals[10]==1){
+  P0_Boot.s33.vals[9]=P0_Boot.s33.vals[2];P0_Boot.s33.vals[50]=1;P0_Boot.s33.vals[36]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[37]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[54]=P0_Boot.s33.vals[54]+1;
+  if(P8_ServoControl.h13Status.vals[89]>=1 && P8_ServoControl.h13Status.vals[89]<=5){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=430;HMI37Capture();P8_ServoControl.h13.vals[10]=0;if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[2]=6;}}
+  if(P8_ServoControl.h13Status.vals[89]==6 && P8_ServoControl.h13.vals[133]==3){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=431;HMI37Capture();P8_ServoControl.h13.vals[133]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;}
+  if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=100+P8_ServoControl.h13Status.vals[93];}
+ }
+}
+if(P0_Boot.s33.vals[4]==1){P0_Boot.s33.vals[35]=0;}else if(P8_ServoControl.h13.vals[2]==3){P0_Boot.s33.vals[35]=P0_Boot.s33.vals[35]+1;if(P0_Boot.s33.vals[35]>=6){P0_Boot.d37c.vals[17]=256;P0_Boot.d37c.vals[18]=435;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P0_Boot.s33.vals[27]=1;}}
+}else{P0_Boot.s33.vals[34]=0;P8_ServoControl.h13.vals[86]=0;}
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[26]==0 && P8_ServoControl.h13.vals[116]==0 && P0_Boot.u34.vals[17]==1 && P0_Boot.u34.vals[12]==P8_ServoControl.h13.vals[4] && P0_Boot.u34.vals[13]==P8_ServoControl.h13.vals[5] && P0_Boot.u34.vals[14]==P8_ServoControl.h13Status.vals[12] && P0_Boot.u34.vals[15]==P8_ServoControl.h13Status.vals[13] && (P8_ServoControl.h13Status.vals[16]>P0_Boot.u34.vals[10] || (P8_ServoControl.h13Status.vals[16]==P0_Boot.u34.vals[10] && P8_ServoControl.h13Status.vals[17]>=P0_Boot.u34.vals[11]))){
+ v33=P8_ServoControl.h13Status.vals[18];if(v33>32767){v33=v33-65536;}
+ if(v33==P0_Boot.u34.vals[8]){
+  P0_Boot.u34.vals[18]=v33;P0_Boot.u34.vals[19]=P0_Boot.u34.vals[9];P0_Boot.u34.vals[20]=1;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[36]=1;
+  if(v33==0 && P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[138]=0;P0_Boot.u34.vals[16]=1;}
+  if(P0_Boot.u34.vals[2]==P0_Boot.u34.vals[9] && P0_Boot.u34.vals[1]==v33){P0_Boot.u34.vals[37]=0;}
+ }
+}
+
+HMI34Input();
+
+
+if(P0_Boot.s33.vals[4]==1 && P8_ServoControl.h13Status.vals[88]==1 && P8_ServoControl.h13Status.vals[89]==2 && P8_ServoControl.h13Status.vals[90]==1 && (P8_ServoControl.h13.vals[125]!=P8_ServoControl.h13Status.vals[91] || P8_ServoControl.h13.vals[126]!=P8_ServoControl.h13Status.vals[92])){
+ P8_ServoControl.h13.vals[125]=P8_ServoControl.h13Status.vals[91];P8_ServoControl.h13.vals[126]=P8_ServoControl.h13Status.vals[92];P8_ServoControl.h13.vals[133]=2;P8_ServoControl.h13.vals[10]=0;cmd33=17;
+
+if(cmd33==33 && (P0_Boot.u34.vals[26]==1 || P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16)){cmd33=0;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33==16 && (P0_Boot.u34.vals[26]==0 || P0_Boot.u34.vals[32]!=P0_Boot.s33.vals[0])){P0_Boot.u34.vals[26]=1;P0_Boot.u34.vals[27]=0;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[32]=P0_Boot.s33.vals[0];P0_Boot.u34.vals[35]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534 && cmd33!=16){cmd33=16;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=455;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;}
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=456;HMI37Capture();P8_ServoControl.h13.vals[2]=6;cmd33=0;}
+ if(cmd33!=0){
+ if(cmd33!=16 || P0_Boot.u34.vals[33]==0){P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}}else{P8_ServoControl.h13.vals[8]=P0_Boot.u34.vals[28];P8_ServoControl.h13.vals[9]=P0_Boot.u34.vals[29];}
+ for(i33=0;i33<48;i33++){P8_ServoControl.h13Tx.valbs[i33]=(byte)(0);}
+ P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+ P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+ if(cmd33==33 || cmd33==3){P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);}
+ P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+ P8_ServoControl.h13Tx.valbs[17]=(byte)(cmd33);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+ if(cmd33==33){if(P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[10]=0;}P0_Boot.u34.vals[8]=P8_ServoControl.h13.vals[10];P0_Boot.u34.vals[9]=P0_Boot.u34.vals[2];P0_Boot.u34.vals[10]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[11]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[12]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[13]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[14]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[15]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[17]=1;v33=P8_ServoControl.h13.vals[10];hi33=0;if(v33<0){hi33=65535;v33=v33+65536;}P8_ServoControl.h13Tx.valbs[20]=(byte)(hi33/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hi33&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(v33/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(v33&255);P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);}
+ if(cmd33==17){P8_ServoControl.h13Tx.valbs[24]=(byte)(P8_ServoControl.h13.vals[125]/256);P8_ServoControl.h13Tx.valbs[25]=(byte)(P8_ServoControl.h13.vals[125]&255);P8_ServoControl.h13Tx.valbs[26]=(byte)(P8_ServoControl.h13.vals[126]/256);P8_ServoControl.h13Tx.valbs[27]=(byte)(P8_ServoControl.h13.vals[126]&255);}
+ if(cmd33!=33){P8_ServoControl.h13.vals[26]=cmd33;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P0_Boot.s33.vals[2];}
+ if((cmd33==16 && P0_Boot.u34.vals[33]==0) || cmd33==3){P0_Boot.s33.vals[45]=P8_ServoControl.h13Status.vals[48];P0_Boot.s33.vals[46]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[47]=P8_ServoControl.h13.vals[4];P0_Boot.s33.vals[48]=P8_ServoControl.h13.vals[5];P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=1;P0_Boot.s33.vals[8]=0;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[43]=P0_Boot.s33.vals[0];}
+ P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+ if(cmd33==16 && P0_Boot.u34.vals[33]==0){P0_Boot.u34.vals[28]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[29]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[30]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[31]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[33]=1;}
+P0_Boot.d37c.vals[7]=256;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=16;r33=modbusWrites(1,16,256,24,P8_ServoControl.h13Tx.valbs,48,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();
+ ok33=0;if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==16 && P0_Boot.mod.rxLen==4 && bytesToShort(P0_Boot.mod.rxBuf,0,1)==256 && bytesToShort(P0_Boot.mod.rxBuf,2,1)==24){ok33=1;P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;}
+ if(ok33==1){
+  if(cmd33==16 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[43]){P0_Boot.s33.vals[1]=P0_Boot.s33.vals[43];P8_ServoControl.h13.vals[116]=0;P0_Boot.u34.vals[27]=1;}
+  // HMI34: application status, not transport ACK, confirms a target.
+ }else{P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=1;P0_Boot.d37c.vals[18]=476;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;if(cmd33==16){P8_ServoControl.h13.vals[2]=4;}}
+ P8_ServoControl.h13.vals[39]=0;
+ }
+}
+}else{P8_ServoControl.h13.vals[136]=3;}P0_Boot.s33.vals[29]=0;did33=1;}
+if(did33==0 && P8_ServoControl.h13.vals[26]!=0){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=288;P0_Boot.d37c.vals[8]=20;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,288,20,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==41 && P0_Boot.mod.rxBuf[0]==40){
+ok33=1;
+
+if(ok33==1){
+for(i33=0;i33<20;i33++){P8_ServoControl.h13Result.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+
+if(ok33==1 && P8_ServoControl.h13Result.vals[0]==P8_ServoControl.h13.vals[5] && P8_ServoControl.h13Result.vals[1]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Result.vals[4]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Result.vals[5]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Result.vals[6]==P8_ServoControl.h13.vals[26]){
+ if(P8_ServoControl.h13Result.vals[7]==3){
+  if(P8_ServoControl.h13.vals[26]==1){P0_Boot.s33.vals[26]=1;}
+  if(P8_ServoControl.h13.vals[26]==16 || P8_ServoControl.h13.vals[26]==3){P0_Boot.s33.vals[25]=1;}
+ }
+ if(P8_ServoControl.h13.vals[26]==17 && (P8_ServoControl.h13Result.vals[7]==2 || P8_ServoControl.h13Result.vals[7]==3)){P8_ServoControl.h13.vals[133]=3;}
+ if(P8_ServoControl.h13Result.vals[7]>=4){P8_ServoControl.h13.vals[30]=P8_ServoControl.h13Result.vals[8];P0_Boot.d37c.vals[17]=2048;P0_Boot.d37c.vals[18]=501;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;if(P8_ServoControl.h13.vals[26]==17){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=200+P8_ServoControl.h13.vals[30];}P8_ServoControl.h13.vals[26]=0;}
+}
+P0_Boot.s33.vals[10]=1;
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=1120;P0_Boot.d37c.vals[8]=96;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,1120,96,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==193 && P0_Boot.mod.rxBuf[0]==192){
+ok33=1;
+if(P8_ServoControl.h13.vals[74]!=1 || bytesToShort(P0_Boot.mod.rxBuf,5,1)!=P8_ServoControl.h13.vals[4] || bytesToShort(P0_Boot.mod.rxBuf,7,1)!=P8_ServoControl.h13.vals[5]){ok33=0;}if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21325 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=2){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<96;i33++){P8_ServoControl.h13Status.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<96;i33++){v33=P8_ServoControl.h13Status.vals[i33];if(i33<18 || i33>24 || v33!=32767){if(P0_Boot.dStatus.vals[i33]!=v33 && (i33<4 || i33>7) && i33!=14 && i33!=15 && i33!=16 && i33!=17){P0_Boot.dRev.vals[6]=P0_Boot.dRev.vals[6]+1;}P0_Boot.dStatus.vals[i33]=v33;}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=2;P0_Boot.d37c.vals[18]=516;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}
+
+P0_Boot.s33.vals[4]=0;P0_Boot.s33.vals[34]=0;
+if(ok33==1 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5]){
+P0_Boot.s33.vals[34]=1;P8_ServoControl.h13.vals[86]=1;P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];
+// Compare uint32 sequence halves explicitly; do not depend on signed overflow.
+hi33=(P8_ServoControl.h13Status.vals[4]-P0_Boot.s33.vals[21]+65536)%65536;seqDelta33=0;
+if((hi33==0 && P8_ServoControl.h13Status.vals[5]>P0_Boot.s33.vals[22]) || (hi33>0 && hi33<32768) || (hi33==32768 && P8_ServoControl.h13Status.vals[5]<P0_Boot.s33.vals[22])){seqDelta33=1;}
+if(P0_Boot.s33.vals[23]==0 || seqDelta33>0){
+ P0_Boot.s33.vals[4]=1;P0_Boot.s33.vals[21]=P8_ServoControl.h13Status.vals[4];P0_Boot.s33.vals[22]=P8_ServoControl.h13Status.vals[5];P0_Boot.s33.vals[23]=1;P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+ gap33=0;if(P0_Boot.s33.vals[7]==1){hi33=(P8_ServoControl.h13Status.vals[6]-P0_Boot.s33.vals[5]+65536)%65536;gap33=300;if(hi33<=1){gap33=hi33*65536+P8_ServoControl.h13Status.vals[7]-P0_Boot.s33.vals[6];}}
+ P0_Boot.d37c.vals[24]=gap33;P0_Boot.s33.vals[24]=gap33;P0_Boot.s33.vals[5]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[6]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[7]=1;
+ if(P8_ServoControl.h13.vals[8]<P8_ServoControl.h13Status.vals[16] || (P8_ServoControl.h13.vals[8]==P8_ServoControl.h13Status.vals[16] && P8_ServoControl.h13.vals[9]<P8_ServoControl.h13Status.vals[17])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+}
+if(P0_Boot.s33.vals[4]==1){
+ safe33=0;
+ if(P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[12]==0 && P8_ServoControl.h13Status.vals[13]==0 && (P8_ServoControl.h13Status.vals[11]&102)==0 && P8_ServoControl.h13Status.vals[37]==0 && P8_ServoControl.h13Status.vals[9]>0 && P8_ServoControl.h13Status.vals[9]<=3 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || (P8_ServoControl.h13Status.vals[23]==0 && P8_ServoControl.h13Status.vals[46]<500)) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || (P8_ServoControl.h13Status.vals[24]==0 && P8_ServoControl.h13Status.vals[47]<500))){safe33=1;}
+ if(safe33==1){if(P0_Boot.s33.vals[8]<2){P0_Boot.s33.vals[8]=P0_Boot.s33.vals[8]+1;}}else{P0_Boot.s33.vals[8]=0;}
+ if(P8_ServoControl.h13.vals[2]==3){
+  if(gap33<0 || gap33>=300 || P8_ServoControl.h13Status.vals[15]>=300 || P8_ServoControl.h13Status.vals[14]<=200 || P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&102)!=2 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){
+   P0_Boot.d37c.vals[17]=0;P0_Boot.d37c.vals[18]=536;if(gap33<0 || gap33>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|4;}if(P8_ServoControl.h13Status.vals[15]>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|8;}if(P8_ServoControl.h13Status.vals[14]<=200){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|16;}if(P8_ServoControl.h13Status.vals[8]!=1){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|32;}if((P8_ServoControl.h13Status.vals[11]&102)!=2){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|64;}if(P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|128;}HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P0_Boot.s33.vals[27]=1;
+   if(P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==2 && P0_Boot.s33.vals[26]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&102)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+  P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Status.vals[12];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Status.vals[13];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[138]=1;
+  P8_ServoControl.h13.vals[59]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[60]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;P0_Boot.s33.vals[38]=P0_Boot.s33.vals[2];
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ if(P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && P8_ServoControl.h13.vals[2]!=1 && P8_ServoControl.h13.vals[2]!=5 && P8_ServoControl.h13.vals[2]!=2 && P8_ServoControl.h13.vals[2]!=3){
+  if(P8_ServoControl.h13.vals[2]!=4 || (P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[49]==1 && P0_Boot.s33.vals[47]==P8_ServoControl.h13.vals[4] && P0_Boot.s33.vals[48]==P8_ServoControl.h13.vals[5] && ((P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13Status.vals[53]==3 && (P8_ServoControl.h13Status.vals[48]!=P0_Boot.s33.vals[45] || P8_ServoControl.h13Status.vals[49]!=P0_Boot.s33.vals[46])) || (P8_ServoControl.h13Status.vals[48]==P0_Boot.s33.vals[45] && P8_ServoControl.h13Status.vals[49]==P0_Boot.s33.vals[46] && P8_ServoControl.h13Result.vals[7]==3 && P8_ServoControl.h13Status.vals[10]==0)))){
+   P8_ServoControl.h13.vals[2]=1;if(P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[2]=5;}P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[30]=0;P0_Boot.s33.vals[49]=0;
+   P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==0){P0_Boot.d37c.vals[17]=32768;P0_Boot.d37c.vals[18]=555;HMI37Capture();P8_ServoControl.h13.vals[2]=6;}
+ if(P8_ServoControl.h13.vals[2]==6 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+ if(P0_Boot.s33.vals[10]==1){
+  P0_Boot.s33.vals[9]=P0_Boot.s33.vals[2];P0_Boot.s33.vals[50]=1;P0_Boot.s33.vals[36]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[37]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[54]=P0_Boot.s33.vals[54]+1;
+  if(P8_ServoControl.h13Status.vals[89]>=1 && P8_ServoControl.h13Status.vals[89]<=5){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=559;HMI37Capture();P8_ServoControl.h13.vals[10]=0;if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[2]=6;}}
+  if(P8_ServoControl.h13Status.vals[89]==6 && P8_ServoControl.h13.vals[133]==3){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=560;HMI37Capture();P8_ServoControl.h13.vals[133]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;}
+  if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=100+P8_ServoControl.h13Status.vals[93];}
+ }
+}
+if(P0_Boot.s33.vals[4]==1){P0_Boot.s33.vals[35]=0;}else if(P8_ServoControl.h13.vals[2]==3){P0_Boot.s33.vals[35]=P0_Boot.s33.vals[35]+1;if(P0_Boot.s33.vals[35]>=6){P0_Boot.d37c.vals[17]=256;P0_Boot.d37c.vals[18]=564;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P0_Boot.s33.vals[27]=1;}}
+}else{P0_Boot.s33.vals[34]=0;P8_ServoControl.h13.vals[86]=0;}
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[26]==0 && P8_ServoControl.h13.vals[116]==0 && P0_Boot.u34.vals[17]==1 && P0_Boot.u34.vals[12]==P8_ServoControl.h13.vals[4] && P0_Boot.u34.vals[13]==P8_ServoControl.h13.vals[5] && P0_Boot.u34.vals[14]==P8_ServoControl.h13Status.vals[12] && P0_Boot.u34.vals[15]==P8_ServoControl.h13Status.vals[13] && (P8_ServoControl.h13Status.vals[16]>P0_Boot.u34.vals[10] || (P8_ServoControl.h13Status.vals[16]==P0_Boot.u34.vals[10] && P8_ServoControl.h13Status.vals[17]>=P0_Boot.u34.vals[11]))){
+ v33=P8_ServoControl.h13Status.vals[18];if(v33>32767){v33=v33-65536;}
+ if(v33==P0_Boot.u34.vals[8]){
+  P0_Boot.u34.vals[18]=v33;P0_Boot.u34.vals[19]=P0_Boot.u34.vals[9];P0_Boot.u34.vals[20]=1;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[36]=1;
+  if(v33==0 && P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[138]=0;P0_Boot.u34.vals[16]=1;}
+  if(P0_Boot.u34.vals[2]==P0_Boot.u34.vals[9] && P0_Boot.u34.vals[1]==v33){P0_Boot.u34.vals[37]=0;}
+ }
+}
+
+HMI34Input();
+
+did33=1;
+if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[138]==1 && P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1]){cmd33=33;P0_Boot.s33.vals[3]=P0_Boot.s33.vals[2];
+
+if(cmd33==33 && (P0_Boot.u34.vals[26]==1 || P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16)){cmd33=0;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33==16 && (P0_Boot.u34.vals[26]==0 || P0_Boot.u34.vals[32]!=P0_Boot.s33.vals[0])){P0_Boot.u34.vals[26]=1;P0_Boot.u34.vals[27]=0;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[32]=P0_Boot.s33.vals[0];P0_Boot.u34.vals[35]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534 && cmd33!=16){cmd33=16;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=583;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;}
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=584;HMI37Capture();P8_ServoControl.h13.vals[2]=6;cmd33=0;}
+ if(cmd33!=0){
+ if(cmd33!=16 || P0_Boot.u34.vals[33]==0){P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}}else{P8_ServoControl.h13.vals[8]=P0_Boot.u34.vals[28];P8_ServoControl.h13.vals[9]=P0_Boot.u34.vals[29];}
+ for(i33=0;i33<48;i33++){P8_ServoControl.h13Tx.valbs[i33]=(byte)(0);}
+ P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+ P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+ if(cmd33==33 || cmd33==3){P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);}
+ P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+ P8_ServoControl.h13Tx.valbs[17]=(byte)(cmd33);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+ if(cmd33==33){if(P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[10]=0;}P0_Boot.u34.vals[8]=P8_ServoControl.h13.vals[10];P0_Boot.u34.vals[9]=P0_Boot.u34.vals[2];P0_Boot.u34.vals[10]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[11]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[12]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[13]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[14]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[15]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[17]=1;v33=P8_ServoControl.h13.vals[10];hi33=0;if(v33<0){hi33=65535;v33=v33+65536;}P8_ServoControl.h13Tx.valbs[20]=(byte)(hi33/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hi33&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(v33/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(v33&255);P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);}
+ if(cmd33==17){P8_ServoControl.h13Tx.valbs[24]=(byte)(P8_ServoControl.h13.vals[125]/256);P8_ServoControl.h13Tx.valbs[25]=(byte)(P8_ServoControl.h13.vals[125]&255);P8_ServoControl.h13Tx.valbs[26]=(byte)(P8_ServoControl.h13.vals[126]/256);P8_ServoControl.h13Tx.valbs[27]=(byte)(P8_ServoControl.h13.vals[126]&255);}
+ if(cmd33!=33){P8_ServoControl.h13.vals[26]=cmd33;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P0_Boot.s33.vals[2];}
+ if((cmd33==16 && P0_Boot.u34.vals[33]==0) || cmd33==3){P0_Boot.s33.vals[45]=P8_ServoControl.h13Status.vals[48];P0_Boot.s33.vals[46]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[47]=P8_ServoControl.h13.vals[4];P0_Boot.s33.vals[48]=P8_ServoControl.h13.vals[5];P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=1;P0_Boot.s33.vals[8]=0;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[43]=P0_Boot.s33.vals[0];}
+ P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+ if(cmd33==16 && P0_Boot.u34.vals[33]==0){P0_Boot.u34.vals[28]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[29]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[30]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[31]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[33]=1;}
+P0_Boot.d37c.vals[7]=256;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=16;r33=modbusWrites(1,16,256,24,P8_ServoControl.h13Tx.valbs,48,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();
+ ok33=0;if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==16 && P0_Boot.mod.rxLen==4 && bytesToShort(P0_Boot.mod.rxBuf,0,1)==256 && bytesToShort(P0_Boot.mod.rxBuf,2,1)==24){ok33=1;P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;}
+ if(ok33==1){
+  if(cmd33==16 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[43]){P0_Boot.s33.vals[1]=P0_Boot.s33.vals[43];P8_ServoControl.h13.vals[116]=0;P0_Boot.u34.vals[27]=1;}
+  // HMI34: application status, not transport ACK, confirms a target.
+ }else{P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=1;P0_Boot.d37c.vals[18]=604;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;if(cmd33==16){P8_ServoControl.h13.vals[2]=4;}}
+ P8_ServoControl.h13.vals[39]=0;
+ }
+}
+}
+if(P8_ServoControl.h13.vals[26]==1 && P0_Boot.s33.vals[2]-P8_ServoControl.h13.vals[29]>46){P0_Boot.d37c.vals[17]=16384;P0_Boot.d37c.vals[18]=609;HMI37Capture();P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[39]=16;}
+}
+if(did33==0 && (P8_ServoControl.h13.vals[2]!=3 || P0_Boot.s33.vals[2]-P0_Boot.s33.vals[33]>=40)){
+if(P0_Boot.s33.vals[2]-P0_Boot.s33.vals[3]>=3 || P8_ServoControl.h13.vals[39]==16){
+P0_Boot.s33.vals[10]=1;
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=1120;P0_Boot.d37c.vals[8]=96;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,1120,96,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==193 && P0_Boot.mod.rxBuf[0]==192){
+ok33=1;
+if(P8_ServoControl.h13.vals[74]!=1 || bytesToShort(P0_Boot.mod.rxBuf,5,1)!=P8_ServoControl.h13.vals[4] || bytesToShort(P0_Boot.mod.rxBuf,7,1)!=P8_ServoControl.h13.vals[5]){ok33=0;}if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21325 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=2){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<96;i33++){P8_ServoControl.h13Status.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<96;i33++){v33=P8_ServoControl.h13Status.vals[i33];if(i33<18 || i33>24 || v33!=32767){if(P0_Boot.dStatus.vals[i33]!=v33 && (i33<4 || i33>7) && i33!=14 && i33!=15 && i33!=16 && i33!=17){P0_Boot.dRev.vals[6]=P0_Boot.dRev.vals[6]+1;}P0_Boot.dStatus.vals[i33]=v33;}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=2;P0_Boot.d37c.vals[18]=626;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[3]=0;}
+
+P0_Boot.s33.vals[4]=0;P0_Boot.s33.vals[34]=0;
+if(ok33==1 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5]){
+P0_Boot.s33.vals[34]=1;P8_ServoControl.h13.vals[86]=1;P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];
+// Compare uint32 sequence halves explicitly; do not depend on signed overflow.
+hi33=(P8_ServoControl.h13Status.vals[4]-P0_Boot.s33.vals[21]+65536)%65536;seqDelta33=0;
+if((hi33==0 && P8_ServoControl.h13Status.vals[5]>P0_Boot.s33.vals[22]) || (hi33>0 && hi33<32768) || (hi33==32768 && P8_ServoControl.h13Status.vals[5]<P0_Boot.s33.vals[22])){seqDelta33=1;}
+if(P0_Boot.s33.vals[23]==0 || seqDelta33>0){
+ P0_Boot.s33.vals[4]=1;P0_Boot.s33.vals[21]=P8_ServoControl.h13Status.vals[4];P0_Boot.s33.vals[22]=P8_ServoControl.h13Status.vals[5];P0_Boot.s33.vals[23]=1;P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+ gap33=0;if(P0_Boot.s33.vals[7]==1){hi33=(P8_ServoControl.h13Status.vals[6]-P0_Boot.s33.vals[5]+65536)%65536;gap33=300;if(hi33<=1){gap33=hi33*65536+P8_ServoControl.h13Status.vals[7]-P0_Boot.s33.vals[6];}}
+ P0_Boot.d37c.vals[24]=gap33;P0_Boot.s33.vals[24]=gap33;P0_Boot.s33.vals[5]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[6]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[7]=1;
+ if(P8_ServoControl.h13.vals[8]<P8_ServoControl.h13Status.vals[16] || (P8_ServoControl.h13.vals[8]==P8_ServoControl.h13Status.vals[16] && P8_ServoControl.h13.vals[9]<P8_ServoControl.h13Status.vals[17])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+}
+if(P0_Boot.s33.vals[4]==1){
+ safe33=0;
+ if(P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[12]==0 && P8_ServoControl.h13Status.vals[13]==0 && (P8_ServoControl.h13Status.vals[11]&102)==0 && P8_ServoControl.h13Status.vals[37]==0 && P8_ServoControl.h13Status.vals[9]>0 && P8_ServoControl.h13Status.vals[9]<=3 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || (P8_ServoControl.h13Status.vals[23]==0 && P8_ServoControl.h13Status.vals[46]<500)) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || (P8_ServoControl.h13Status.vals[24]==0 && P8_ServoControl.h13Status.vals[47]<500))){safe33=1;}
+ if(safe33==1){if(P0_Boot.s33.vals[8]<2){P0_Boot.s33.vals[8]=P0_Boot.s33.vals[8]+1;}}else{P0_Boot.s33.vals[8]=0;}
+ if(P8_ServoControl.h13.vals[2]==3){
+  if(gap33<0 || gap33>=300 || P8_ServoControl.h13Status.vals[15]>=300 || P8_ServoControl.h13Status.vals[14]<=200 || P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&102)!=2 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){
+   P0_Boot.d37c.vals[17]=0;P0_Boot.d37c.vals[18]=646;if(gap33<0 || gap33>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|4;}if(P8_ServoControl.h13Status.vals[15]>=300){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|8;}if(P8_ServoControl.h13Status.vals[14]<=200){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|16;}if(P8_ServoControl.h13Status.vals[8]!=1){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|32;}if((P8_ServoControl.h13Status.vals[11]&102)!=2){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|64;}if(P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7]){P0_Boot.d37c.vals[17]=P0_Boot.d37c.vals[17]|128;}HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P0_Boot.s33.vals[27]=1;
+   if(P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==2 && P0_Boot.s33.vals[26]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&102)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+  P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Status.vals[12];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Status.vals[13];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[138]=1;
+  P8_ServoControl.h13.vals[59]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[60]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=0;P0_Boot.s33.vals[38]=P0_Boot.s33.vals[2];
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ if(P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && P8_ServoControl.h13.vals[2]!=1 && P8_ServoControl.h13.vals[2]!=5 && P8_ServoControl.h13.vals[2]!=2 && P8_ServoControl.h13.vals[2]!=3){
+  if(P8_ServoControl.h13.vals[2]!=4 || (P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[49]==1 && P0_Boot.s33.vals[47]==P8_ServoControl.h13.vals[4] && P0_Boot.s33.vals[48]==P8_ServoControl.h13.vals[5] && ((P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13Status.vals[53]==3 && (P8_ServoControl.h13Status.vals[48]!=P0_Boot.s33.vals[45] || P8_ServoControl.h13Status.vals[49]!=P0_Boot.s33.vals[46])) || (P8_ServoControl.h13Status.vals[48]==P0_Boot.s33.vals[45] && P8_ServoControl.h13Status.vals[49]==P0_Boot.s33.vals[46] && P8_ServoControl.h13Result.vals[7]==3 && P8_ServoControl.h13Status.vals[10]==0)))){
+   P8_ServoControl.h13.vals[2]=1;if(P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[2]=5;}P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;P8_ServoControl.h13.vals[30]=0;P0_Boot.s33.vals[49]=0;
+   P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+  }
+ }
+ if(P8_ServoControl.h13.vals[2]==0){P0_Boot.d37c.vals[17]=32768;P0_Boot.d37c.vals[18]=665;HMI37Capture();P8_ServoControl.h13.vals[2]=6;}
+ if(P8_ServoControl.h13.vals[2]==6 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){P8_ServoControl.h13.vals[39]=16;}
+ if(P0_Boot.s33.vals[10]==1){
+  P0_Boot.s33.vals[9]=P0_Boot.s33.vals[2];P0_Boot.s33.vals[50]=1;P0_Boot.s33.vals[36]=P8_ServoControl.h13Status.vals[6];P0_Boot.s33.vals[37]=P8_ServoControl.h13Status.vals[7];P0_Boot.s33.vals[54]=P0_Boot.s33.vals[54]+1;
+  if(P8_ServoControl.h13Status.vals[89]>=1 && P8_ServoControl.h13Status.vals[89]<=5){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=669;HMI37Capture();P8_ServoControl.h13.vals[10]=0;if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[2]=6;}}
+  if(P8_ServoControl.h13Status.vals[89]==6 && P8_ServoControl.h13.vals[133]==3){P0_Boot.d37c.vals[17]=4096;P0_Boot.d37c.vals[18]=670;HMI37Capture();P8_ServoControl.h13.vals[133]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[2]=6;}
+  if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.h13.vals[133]=7;P8_ServoControl.h13.vals[136]=100+P8_ServoControl.h13Status.vals[93];}
+ }
+}
+if(P0_Boot.s33.vals[4]==1){P0_Boot.s33.vals[35]=0;}else if(P8_ServoControl.h13.vals[2]==3){P0_Boot.s33.vals[35]=P0_Boot.s33.vals[35]+1;if(P0_Boot.s33.vals[35]>=6){P0_Boot.d37c.vals[17]=256;P0_Boot.d37c.vals[18]=674;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P0_Boot.s33.vals[27]=1;}}
+}else{P0_Boot.s33.vals[34]=0;P8_ServoControl.h13.vals[86]=0;}
+if(P0_Boot.s33.vals[4]==1 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[26]==0 && P8_ServoControl.h13.vals[116]==0 && P0_Boot.u34.vals[17]==1 && P0_Boot.u34.vals[12]==P8_ServoControl.h13.vals[4] && P0_Boot.u34.vals[13]==P8_ServoControl.h13.vals[5] && P0_Boot.u34.vals[14]==P8_ServoControl.h13Status.vals[12] && P0_Boot.u34.vals[15]==P8_ServoControl.h13Status.vals[13] && (P8_ServoControl.h13Status.vals[16]>P0_Boot.u34.vals[10] || (P8_ServoControl.h13Status.vals[16]==P0_Boot.u34.vals[10] && P8_ServoControl.h13Status.vals[17]>=P0_Boot.u34.vals[11]))){
+ v33=P8_ServoControl.h13Status.vals[18];if(v33>32767){v33=v33-65536;}
+ if(v33==P0_Boot.u34.vals[8]){
+  P0_Boot.u34.vals[18]=v33;P0_Boot.u34.vals[19]=P0_Boot.u34.vals[9];P0_Boot.u34.vals[20]=1;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[36]=1;
+  if(v33==0 && P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[138]=0;P0_Boot.u34.vals[16]=1;}
+  if(P0_Boot.u34.vals[2]==P0_Boot.u34.vals[9] && P0_Boot.u34.vals[1]==v33){P0_Boot.u34.vals[37]=0;}
+ }
+}
+
+HMI34Input();
+
+P0_Boot.s33.vals[3]=P0_Boot.s33.vals[2];did33=1;
+if(P8_ServoControl.h13.vals[39]==16 && P0_Boot.s33.vals[34]==1 && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&4)==0){cmd33=16;
+
+if(cmd33==33 && (P0_Boot.u34.vals[26]==1 || P0_Boot.s33.vals[0]!=P0_Boot.s33.vals[1] || P8_ServoControl.h13.vals[116]==1 || P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16)){cmd33=0;P8_ServoControl.h13.vals[10]=0;}
+if(cmd33==16 && (P0_Boot.u34.vals[26]==0 || P0_Boot.u34.vals[32]!=P0_Boot.s33.vals[0])){P0_Boot.u34.vals[26]=1;P0_Boot.u34.vals[27]=0;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[32]=P0_Boot.s33.vals[0];P0_Boot.u34.vals[35]=0;}
+if(cmd33!=0 && P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534 && cmd33!=16){cmd33=16;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=693;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;}
+ if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P0_Boot.d37c.vals[17]=1024;P0_Boot.d37c.vals[18]=694;HMI37Capture();P8_ServoControl.h13.vals[2]=6;cmd33=0;}
+ if(cmd33!=0){
+ if(cmd33!=16 || P0_Boot.u34.vals[33]==0){P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}}else{P8_ServoControl.h13.vals[8]=P0_Boot.u34.vals[28];P8_ServoControl.h13.vals[9]=P0_Boot.u34.vals[29];}
+ for(i33=0;i33<48;i33++){P8_ServoControl.h13Tx.valbs[i33]=(byte)(0);}
+ P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+ P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+ if(cmd33==33 || cmd33==3){P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);}
+ P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+ P8_ServoControl.h13Tx.valbs[17]=(byte)(cmd33);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+ if(cmd33==33){if(P8_ServoControl.h13.vals[138]==1){P8_ServoControl.h13.vals[10]=0;}P0_Boot.u34.vals[8]=P8_ServoControl.h13.vals[10];P0_Boot.u34.vals[9]=P0_Boot.u34.vals[2];P0_Boot.u34.vals[10]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[11]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[12]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[13]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[14]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[15]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[17]=1;v33=P8_ServoControl.h13.vals[10];hi33=0;if(v33<0){hi33=65535;v33=v33+65536;}P8_ServoControl.h13Tx.valbs[20]=(byte)(hi33/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hi33&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(v33/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(v33&255);P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);}
+ if(cmd33==17){P8_ServoControl.h13Tx.valbs[24]=(byte)(P8_ServoControl.h13.vals[125]/256);P8_ServoControl.h13Tx.valbs[25]=(byte)(P8_ServoControl.h13.vals[125]&255);P8_ServoControl.h13Tx.valbs[26]=(byte)(P8_ServoControl.h13.vals[126]/256);P8_ServoControl.h13Tx.valbs[27]=(byte)(P8_ServoControl.h13.vals[126]&255);}
+ if(cmd33!=33){P8_ServoControl.h13.vals[26]=cmd33;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P0_Boot.s33.vals[2];}
+ if((cmd33==16 && P0_Boot.u34.vals[33]==0) || cmd33==3){P0_Boot.s33.vals[45]=P8_ServoControl.h13Status.vals[48];P0_Boot.s33.vals[46]=P8_ServoControl.h13Status.vals[49];P0_Boot.s33.vals[47]=P8_ServoControl.h13.vals[4];P0_Boot.s33.vals[48]=P8_ServoControl.h13.vals[5];P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[49]=1;P0_Boot.s33.vals[8]=0;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P0_Boot.s33.vals[43]=P0_Boot.s33.vals[0];}
+ P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+ if(cmd33==16 && P0_Boot.u34.vals[33]==0){P0_Boot.u34.vals[28]=P8_ServoControl.h13.vals[8];P0_Boot.u34.vals[29]=P8_ServoControl.h13.vals[9];P0_Boot.u34.vals[30]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[31]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[33]=1;}
+P0_Boot.d37c.vals[7]=256;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=16;r33=modbusWrites(1,16,256,24,P8_ServoControl.h13Tx.valbs,48,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();
+ ok33=0;if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==16 && P0_Boot.mod.rxLen==4 && bytesToShort(P0_Boot.mod.rxBuf,0,1)==256 && bytesToShort(P0_Boot.mod.rxBuf,2,1)==24){ok33=1;P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;}
+ if(ok33==1){
+  if(cmd33==16 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[43]){P0_Boot.s33.vals[1]=P0_Boot.s33.vals[43];P8_ServoControl.h13.vals[116]=0;P0_Boot.u34.vals[27]=1;}
+  // HMI34: application status, not transport ACK, confirms a target.
+ }else{P0_Boot.s33.vals[27]=1;P0_Boot.d37c.vals[17]=1;P0_Boot.d37c.vals[18]=714;HMI37Capture();P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;if(cmd33==16){P8_ServoControl.h13.vals[2]=4;}}
+ P8_ServoControl.h13.vals[39]=0;
+ }
+}
+}
+}}
+// Auxiliary work consumes idle slots only. No catch-up queue.
+if(did33==0){
+if(P0_Boot.s33.vals[2]-P0_Boot.s33.vals[33]>=40){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=512;P0_Boot.d37c.vals[8]=24;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,512,24,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==49 && P0_Boot.mod.rxBuf[0]==48){
+ok33=1;
+if(bytesToShort(P0_Boot.mod.rxBuf,1,1)!=21065 || bytesToShort(P0_Boot.mod.rxBuf,3,1)!=1){ok33=0;}
+if(ok33==1){
+for(i33=0;i33<24;i33++){P0_Boot.metaRegs.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+
+if(ok33==1){
+ P0_Boot.s33.vals[44]=0;if(P0_Boot.metaRegs.vals[3]!=2 || (P0_Boot.metaRegs.vals[2]&240)!=240){P0_Boot.s33.vals[44]=1;}
+ if(P8_ServoControl.h13.vals[74]==0 || P8_ServoControl.h13.vals[4]!=P0_Boot.metaRegs.vals[4] || P8_ServoControl.h13.vals[5]!=P0_Boot.metaRegs.vals[5]){
+P0_Boot.d37c.vals[17]=512;P0_Boot.d37c.vals[18]=739;HMI37Capture();  P8_ServoControl.h13.vals[4]=P0_Boot.metaRegs.vals[4];P8_ServoControl.h13.vals[5]=P0_Boot.metaRegs.vals[5];P8_ServoControl.h13.vals[74]=1;P0_Boot.u34.vals[33]=0;P0_Boot.u34.vals[27]=0;P8_ServoControl.h13.vals[8]=0;P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[133]=0;P0_Boot.s33.vals[26]=0;P0_Boot.s33.vals[25]=0;P0_Boot.s33.vals[8]=0;P0_Boot.s33.vals[7]=0;P0_Boot.s33.vals[23]=0;P0_Boot.s33.vals[18]=P0_Boot.s33.vals[18]+1;P0_Boot.s33.vals[50]=0;P0_Boot.s33.vals[20]=0;P0_Boot.s33.vals[56]=P0_Boot.s33.vals[56]+1;
+  for(i33=0;i33<208;i33++){P0_Boot.dRaw.vals[i33]=65535;}for(i33=0;i33<96;i33++){P0_Boot.dStatus.vals[i33]=65535;if(i33>=18 && i33<=24){P0_Boot.dStatus.vals[i33]=32767;}}
+  for(i33=0;i33<5;i33++){P0_Boot.regionSeen.vals[i33]=0;}
+  P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P0_Boot.u34.vals[0]=P8_ServoControl.rpmSlider.val;P0_Boot.u34.vals[3]=0;P0_Boot.u34.vals[17]=0;P0_Boot.u34.vals[16]=0;P0_Boot.u34.vals[20]=0;P0_Boot.u34.vals[37]=0;P0_Boot.u34.vals[36]=1;P0_Boot.u34.vals[25]=0;
+if(P8_ServoControl.h13.vals[2]==3){P0_Boot.u34.vals[21]=P8_ServoControl.h13.vals[6];P0_Boot.u34.vals[22]=P8_ServoControl.h13.vals[7];P0_Boot.u34.vals[23]=P8_ServoControl.h13.vals[4];P0_Boot.u34.vals[24]=P8_ServoControl.h13.vals[5];P0_Boot.u34.vals[25]=1;}
+P8_ServoControl.h13.vals[32]=0;
+ }
+ P8_ServoControl.h13.vals[47]=1;P8_ServoControl.h13.vals[22]=P8_ServoControl.h13.vals[1];P0_Boot.metaSeen.vals[0]=1;P0_Boot.metaValid.vals[0]=1;P0_Boot.s33.vals[33]=P0_Boot.s33.vals[2];
+}
+}else{
+P0_Boot.s33.vals[28]=(P0_Boot.s33.vals[28]+1)%5;
+if(P0_Boot.s33.vals[28]==0){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=0;P0_Boot.d37c.vals[8]=64;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,0,64,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==129 && P0_Boot.mod.rxBuf[0]==128){
+ok33=1;
+
+if(ok33==1){
+for(i33=0;i33<64;i33++){P0_Boot.rawRegs.vals[0+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<64;i33++){v33=P0_Boot.rawRegs.vals[0+i33];if((1==1) && ((v33!=65535 && v33!=32767) || ((0+i33==26 || 0+i33==34 || 0+i33==35 || 0+i33==36 || 0+i33==37 || 0+i33==44 || 0+i33==45 || 0+i33==46 || 0+i33==47 || 0+i33==52 || 0+i33==132 || 0+i33==133 || 0+i33==134 || 0+i33==202) && v33!=32767))){if(P0_Boot.dRaw.vals[0+i33]!=v33){P0_Boot.dRev.vals[0]=P0_Boot.dRev.vals[0]+1;P0_Boot.dRaw.vals[0+i33]=v33;}}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+if(ok33==1){P0_Boot.regionSeen.vals[0]=1;P0_Boot.regionValid.vals[0]=1;P0_Boot.regionAge.vals[0]=0;P0_Boot.regionBadRun.vals[0]=0;P8_ServoControl.h13.vals[109]=P8_ServoControl.h13.vals[109]+1;P0_Boot.regionGoodRun.vals[0]=2;}}
+if(P0_Boot.s33.vals[28]==1){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=80;P0_Boot.d37c.vals[8]=32;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,80,32,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==65 && P0_Boot.mod.rxBuf[0]==64){
+ok33=1;
+
+if(ok33==1){
+for(i33=0;i33<32;i33++){P0_Boot.rawRegs.vals[80+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<32;i33++){v33=P0_Boot.rawRegs.vals[80+i33];if((1==1) && ((v33!=65535 && v33!=32767) || ((80+i33==26 || 80+i33==34 || 80+i33==35 || 80+i33==36 || 80+i33==37 || 80+i33==44 || 80+i33==45 || 80+i33==46 || 80+i33==47 || 80+i33==52 || 80+i33==132 || 80+i33==133 || 80+i33==134 || 80+i33==202) && v33!=32767))){if(P0_Boot.dRaw.vals[80+i33]!=v33){P0_Boot.dRev.vals[1]=P0_Boot.dRev.vals[1]+1;P0_Boot.dRaw.vals[80+i33]=v33;}}}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+if(ok33==1){P0_Boot.regionSeen.vals[1]=1;P0_Boot.regionValid.vals[1]=1;P0_Boot.regionAge.vals[1]=0;P0_Boot.regionBadRun.vals[1]=0;P8_ServoControl.h13.vals[110]=P8_ServoControl.h13.vals[110]+1;P0_Boot.regionGoodRun.vals[1]=2;}}
+if(P0_Boot.s33.vals[28]==2){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=112;P0_Boot.d37c.vals[8]=32;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,112,32,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==65 && P0_Boot.mod.rxBuf[0]==64){
+ok33=1;
+
+if(ok33==1){
+for(i33=0;i33<32;i33++){P0_Boot.rawRegs.vals[112+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+if(P0_Boot.s33.vals[20]==1 && P0_Boot.rawRegs.vals[127]!=65535 && P0_Boot.s33.vals[19]!=P0_Boot.rawRegs.vals[127]){
+P0_Boot.s33.vals[56]=P0_Boot.s33.vals[56]+1;for(i33=116;i33<124;i33++){P0_Boot.dRaw.vals[i33]=65535;}P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;
+}
+if(P0_Boot.rawRegs.vals[127]!=65535){P0_Boot.s33.vals[20]=1;P0_Boot.s33.vals[19]=P0_Boot.rawRegs.vals[127];}
+v33=P0_Boot.rawRegs.vals[124];
+if(v33==P0_Boot.s33.vals[57]){P0_Boot.s33.vals[58]=P0_Boot.s33.vals[58]+1;}else{P0_Boot.s33.vals[57]=v33;P0_Boot.s33.vals[58]=1;}
+if(P0_Boot.s33.vals[58]>=2){P0_Boot.s33.vals[59]=v33;}
+for(i33=0;i33<32;i33++){v33=P0_Boot.rawRegs.vals[112+i33];if((112+i33!=112 && 112+i33!=113 && 112+i33!=114 && 112+i33!=115 && 112+i33!=116 && 112+i33!=117 && 112+i33!=118 && 112+i33!=119 && 112+i33!=120 && 112+i33!=121 && 112+i33!=122 && 112+i33!=123 && 112+i33!=130 && 112+i33!=131) && ((v33!=65535 && v33!=32767) || ((112+i33==26 || 112+i33==34 || 112+i33==35 || 112+i33==36 || 112+i33==37 || 112+i33==44 || 112+i33==45 || 112+i33==46 || 112+i33==47 || 112+i33==52 || 112+i33==132 || 112+i33==133 || 112+i33==134 || 112+i33==202) && v33!=32767))){if(P0_Boot.dRaw.vals[112+i33]!=v33){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;P0_Boot.dRaw.vals[112+i33]=v33;}}}
+if(P0_Boot.rawRegs.vals[140]==1){if(P0_Boot.dRaw.vals[112]!=P0_Boot.rawRegs.vals[112] || P0_Boot.dRaw.vals[113]!=P0_Boot.rawRegs.vals[113]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[112]=P0_Boot.rawRegs.vals[112];P0_Boot.dRaw.vals[113]=P0_Boot.rawRegs.vals[113];}
+if(P0_Boot.rawRegs.vals[141]==1){if(P0_Boot.dRaw.vals[114]!=P0_Boot.rawRegs.vals[114] || P0_Boot.dRaw.vals[115]!=P0_Boot.rawRegs.vals[115]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[114]=P0_Boot.rawRegs.vals[114];P0_Boot.dRaw.vals[115]=P0_Boot.rawRegs.vals[115];}
+if((P0_Boot.rawRegs.vals[124]&6)==2){if(P0_Boot.dRaw.vals[116]!=P0_Boot.rawRegs.vals[116] || P0_Boot.dRaw.vals[117]!=P0_Boot.rawRegs.vals[117]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[116]=P0_Boot.rawRegs.vals[116];P0_Boot.dRaw.vals[117]=P0_Boot.rawRegs.vals[117];}
+if((P0_Boot.rawRegs.vals[124]&6)==2){if(P0_Boot.dRaw.vals[118]!=P0_Boot.rawRegs.vals[118] || P0_Boot.dRaw.vals[119]!=P0_Boot.rawRegs.vals[119]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[118]=P0_Boot.rawRegs.vals[118];P0_Boot.dRaw.vals[119]=P0_Boot.rawRegs.vals[119];}
+if((P0_Boot.rawRegs.vals[124]&6)==2){if(P0_Boot.dRaw.vals[120]!=P0_Boot.rawRegs.vals[120] || P0_Boot.dRaw.vals[121]!=P0_Boot.rawRegs.vals[121]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[120]=P0_Boot.rawRegs.vals[120];P0_Boot.dRaw.vals[121]=P0_Boot.rawRegs.vals[121];}
+if((P0_Boot.rawRegs.vals[124]&6)==2){if(P0_Boot.dRaw.vals[122]!=P0_Boot.rawRegs.vals[122] || P0_Boot.dRaw.vals[123]!=P0_Boot.rawRegs.vals[123]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[122]=P0_Boot.rawRegs.vals[122];P0_Boot.dRaw.vals[123]=P0_Boot.rawRegs.vals[123];}
+if(P0_Boot.rawRegs.vals[142]==1){if(P0_Boot.dRaw.vals[130]!=P0_Boot.rawRegs.vals[130] || P0_Boot.dRaw.vals[131]!=P0_Boot.rawRegs.vals[131]){P0_Boot.dRev.vals[2]=P0_Boot.dRev.vals[2]+1;}P0_Boot.dRaw.vals[130]=P0_Boot.rawRegs.vals[130];P0_Boot.dRaw.vals[131]=P0_Boot.rawRegs.vals[131];}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+if(ok33==1){P0_Boot.regionSeen.vals[2]=1;P0_Boot.regionValid.vals[2]=1;P0_Boot.regionAge.vals[2]=0;P0_Boot.regionBadRun.vals[2]=0;P8_ServoControl.h13.vals[111]=P8_ServoControl.h13.vals[111]+1;P0_Boot.regionGoodRun.vals[2]=2;}}
+if(P0_Boot.s33.vals[28]==3){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=144;P0_Boot.d37c.vals[8]=32;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,144,32,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==65 && P0_Boot.mod.rxBuf[0]==64){
+ok33=1;
+
+if(ok33==1){
+for(i33=0;i33<32;i33++){P0_Boot.rawRegs.vals[144+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<32;i33++){v33=P0_Boot.rawRegs.vals[144+i33];if((144+i33!=148 && 144+i33!=149 && 144+i33!=150 && 144+i33!=151 && 144+i33!=152 && 144+i33!=153 && 144+i33!=158 && 144+i33!=159 && 144+i33!=164 && 144+i33!=165 && 144+i33!=166 && 144+i33!=167) && ((v33!=65535 && v33!=32767) || ((144+i33==26 || 144+i33==34 || 144+i33==35 || 144+i33==36 || 144+i33==37 || 144+i33==44 || 144+i33==45 || 144+i33==46 || 144+i33==47 || 144+i33==52 || 144+i33==132 || 144+i33==133 || 144+i33==134 || 144+i33==202) && v33!=32767))){if(P0_Boot.dRaw.vals[144+i33]!=v33){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;P0_Boot.dRaw.vals[144+i33]=v33;}}}
+if(P0_Boot.rawRegs.vals[157]==1){if(P0_Boot.dRaw.vals[148]!=P0_Boot.rawRegs.vals[148] || P0_Boot.dRaw.vals[149]!=P0_Boot.rawRegs.vals[149]){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;}P0_Boot.dRaw.vals[148]=P0_Boot.rawRegs.vals[148];P0_Boot.dRaw.vals[149]=P0_Boot.rawRegs.vals[149];}
+if(P0_Boot.rawRegs.vals[157]==1){if(P0_Boot.dRaw.vals[150]!=P0_Boot.rawRegs.vals[150] || P0_Boot.dRaw.vals[151]!=P0_Boot.rawRegs.vals[151]){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;}P0_Boot.dRaw.vals[150]=P0_Boot.rawRegs.vals[150];P0_Boot.dRaw.vals[151]=P0_Boot.rawRegs.vals[151];}
+if(P0_Boot.rawRegs.vals[157]==1){if(P0_Boot.dRaw.vals[152]!=P0_Boot.rawRegs.vals[152] || P0_Boot.dRaw.vals[153]!=P0_Boot.rawRegs.vals[153]){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;}P0_Boot.dRaw.vals[152]=P0_Boot.rawRegs.vals[152];P0_Boot.dRaw.vals[153]=P0_Boot.rawRegs.vals[153];}
+if(1==1){if(P0_Boot.dRaw.vals[158]!=P0_Boot.rawRegs.vals[158] || P0_Boot.dRaw.vals[159]!=P0_Boot.rawRegs.vals[159]){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;}P0_Boot.dRaw.vals[158]=P0_Boot.rawRegs.vals[158];P0_Boot.dRaw.vals[159]=P0_Boot.rawRegs.vals[159];}
+if(P0_Boot.rawRegs.vals[172]==1){if(P0_Boot.dRaw.vals[164]!=P0_Boot.rawRegs.vals[164] || P0_Boot.dRaw.vals[165]!=P0_Boot.rawRegs.vals[165]){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;}P0_Boot.dRaw.vals[164]=P0_Boot.rawRegs.vals[164];P0_Boot.dRaw.vals[165]=P0_Boot.rawRegs.vals[165];}
+if(P0_Boot.rawRegs.vals[172]==1){if(P0_Boot.dRaw.vals[166]!=P0_Boot.rawRegs.vals[166] || P0_Boot.dRaw.vals[167]!=P0_Boot.rawRegs.vals[167]){P0_Boot.dRev.vals[3]=P0_Boot.dRev.vals[3]+1;}P0_Boot.dRaw.vals[166]=P0_Boot.rawRegs.vals[166];P0_Boot.dRaw.vals[167]=P0_Boot.rawRegs.vals[167];}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+if(ok33==1){P0_Boot.regionSeen.vals[3]=1;P0_Boot.regionValid.vals[3]=1;P0_Boot.regionAge.vals[3]=0;P0_Boot.regionBadRun.vals[3]=0;P8_ServoControl.h13.vals[112]=P8_ServoControl.h13.vals[112]+1;P0_Boot.regionGoodRun.vals[3]=2;}}
+if(P0_Boot.s33.vals[28]==4){
+P0_Boot.s33.vals[39]=P0_Boot.s33.vals[39]+1;
+P0_Boot.d37c.vals[7]=176;P0_Boot.d37c.vals[8]=32;P0_Boot.d37c.vals[28]=3;r33=modbusRead(1,3,176,32,50);P0_Boot.d37c.vals[9]=r33;HMI37Reply();ok33=0;
+if(r33==0 && P0_Boot.mod.addr==1 && P0_Boot.mod.fcode==3 && P0_Boot.mod.rxLen==65 && P0_Boot.mod.rxBuf[0]==64){
+ok33=1;
+
+if(ok33==1){
+for(i33=0;i33<32;i33++){P0_Boot.rawRegs.vals[176+i33]=bytesToShort(P0_Boot.mod.rxBuf,1+i33*2,1)&65535;}
+for(i33=0;i33<32;i33++){v33=P0_Boot.rawRegs.vals[176+i33];if((176+i33!=188 && 176+i33!=189 && 176+i33!=190 && 176+i33!=191) && ((v33!=65535 && v33!=32767) || ((176+i33==26 || 176+i33==34 || 176+i33==35 || 176+i33==36 || 176+i33==37 || 176+i33==44 || 176+i33==45 || 176+i33==46 || 176+i33==47 || 176+i33==52 || 176+i33==132 || 176+i33==133 || 176+i33==134 || 176+i33==202) && v33!=32767))){if(P0_Boot.dRaw.vals[176+i33]!=v33){P0_Boot.dRev.vals[4]=P0_Boot.dRev.vals[4]+1;P0_Boot.dRaw.vals[176+i33]=v33;}}}
+if(1==1){if(P0_Boot.dRaw.vals[188]!=P0_Boot.rawRegs.vals[188] || P0_Boot.dRaw.vals[189]!=P0_Boot.rawRegs.vals[189]){P0_Boot.dRev.vals[4]=P0_Boot.dRev.vals[4]+1;}P0_Boot.dRaw.vals[188]=P0_Boot.rawRegs.vals[188];P0_Boot.dRaw.vals[189]=P0_Boot.rawRegs.vals[189];}
+if(1==1){if(P0_Boot.dRaw.vals[190]!=P0_Boot.rawRegs.vals[190] || P0_Boot.dRaw.vals[191]!=P0_Boot.rawRegs.vals[191]){P0_Boot.dRev.vals[4]=P0_Boot.dRev.vals[4]+1;}P0_Boot.dRaw.vals[190]=P0_Boot.rawRegs.vals[190];P0_Boot.dRaw.vals[191]=P0_Boot.rawRegs.vals[191];}
+
+P0_Boot.s33.vals[11]=sys_run_time;P0_Boot.s33.vals[12]=1;P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[45]=0;
+}
+}
+if(ok33==0){P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P0_Boot.s33.vals[27]=1;}
+if(ok33==1){P0_Boot.regionSeen.vals[4]=1;P0_Boot.regionValid.vals[4]=1;P0_Boot.regionAge.vals[4]=0;P0_Boot.regionBadRun.vals[4]=0;P8_ServoControl.h13.vals[113]=P8_ServoControl.h13.vals[113]+1;P0_Boot.regionGoodRun.vals[4]=2;}}
+}}
+P8_ServoControl.h13.vals[3]=0;if(P0_Boot.s33.vals[34]==1 && P0_Boot.s33.vals[44]==0 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && (P8_ServoControl.h13.vals[2]==1 || P8_ServoControl.h13.vals[2]==3 || P8_ServoControl.h13.vals[2]==5)){P8_ServoControl.h13.vals[3]=1;}
+if(P8_ServoControl.h13.vals[2]!=3){P8_ServoControl.h13.vals[10]=0;}
+if(P0_Boot.u34.vals[26]==1 && P0_Boot.u34.vals[27]==1 && P0_Boot.s33.vals[25]==1 && P0_Boot.s33.vals[8]>=2 && P0_Boot.s33.vals[0]==P0_Boot.s33.vals[1] && P8_ServoControl.h13.vals[116]==0 && (P8_ServoControl.h13.vals[2]==1 || P8_ServoControl.h13.vals[2]==5) && P8_ServoControl.h13.vals[26]==0){P0_Boot.u34.vals[26]=0;P0_Boot.u34.vals[35]=1;P0_Boot.u34.vals[33]=0;}
+HMI37Upload();
+P8_ServoControl.h13.vals[80]=0;
+}

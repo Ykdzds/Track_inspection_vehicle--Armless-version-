@@ -1,0 +1,290 @@
+[
+  {
+    "runner": "Tests/run_hmi_state_window_tests.ps1",
+    "exit": 0,
+    "seconds": 4.912,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_state_window_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_state_tests.ps1",
+    "exit": 0,
+    "seconds": 42.582,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_state_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_snapshot_freshness_tests.ps1",
+    "exit": 0,
+    "seconds": 4.228,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_snapshot_freshness_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_modbus_tests.ps1",
+    "exit": 0,
+    "seconds": 1.718,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_modbus_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_control_tests.ps1",
+    "exit": 0,
+    "seconds": 45.875,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_control_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 8.728,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_link_wire_tests.ps1",
+    "exit": 0,
+    "seconds": 7.658,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_link_wire_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_diag_hook_tests.ps1",
+    "exit": 0,
+    "seconds": 6.844,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_diag_hook_tests.log"
+  },
+  {
+    "runner": "Tests/run_system_snapshot_tests.ps1",
+    "exit": 0,
+    "seconds": 4.802,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_system_snapshot_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_remote_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 17.661,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_hmi_remote_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_hmi_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 10.054,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_can_hmi_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 2.5,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_arm3_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_lcd_recovery_tests.ps1",
+    "exit": 0,
+    "seconds": 2.999,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_lcd_recovery_tests.log"
+  },
+  {
+    "runner": "Tests/run_normal_timing_tests.ps1",
+    "exit": 0,
+    "seconds": 92.782,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_normal_timing_tests.log"
+  },
+  {
+    "runner": "Tests/run_runtime_metrics_tests.ps1",
+    "exit": 0,
+    "seconds": 1.558,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_runtime_metrics_tests.log"
+  },
+  {
+    "runner": "Tests/run_production_guard_tests.ps1",
+    "exit": 0,
+    "seconds": 2.806,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_production_guard_tests.log"
+  },
+  {
+    "runner": "Tests/check_irq_dma_integration.ps1",
+    "exit": 0,
+    "seconds": 0.885,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\check_irq_dma_integration.log"
+  },
+  {
+    "runner": "Tests/check_usart1_dma.ps1",
+    "exit": 0,
+    "seconds": 0.858,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\check_usart1_dma.log"
+  },
+  {
+    "runner": "Tests/check_nrf_dma.ps1",
+    "exit": 0,
+    "seconds": 0.886,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\check_nrf_dma.log"
+  },
+  {
+    "runner": "Tests/run_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 69.499,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_remote_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 25.578,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_remote_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_link_can_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 7.583,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_link_can_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_rs485_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 6.127,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_rs485_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_control_tests.ps1",
+    "exit": 0,
+    "seconds": 17.426,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_can_control_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_protocol_tests.ps1",
+    "exit": 0,
+    "seconds": 29.422,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_can_protocol_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_tests.ps1",
+    "exit": 0,
+    "seconds": 3.957,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_arm3_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_port_tests.ps1",
+    "exit": 0,
+    "seconds": 4.428,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_arm3_port_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_core_tests.ps1",
+    "exit": 0,
+    "seconds": 70.258,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_current_core_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_watchdog_tests.ps1",
+    "exit": 0,
+    "seconds": 85.921,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_current_watchdog_tests.log"
+  },
+  {
+    "runner": "Tests/run_cold_startup_tests.ps1",
+    "exit": 0,
+    "seconds": 3.012,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_cold_startup_tests.log"
+  },
+  {
+    "runner": "Tests/run_startup_timing_tests.ps1",
+    "exit": 0,
+    "seconds": 8.165,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_startup_timing_tests.log"
+  },
+  {
+    "runner": "Tests/run_position_projection_tests.ps1",
+    "exit": 0,
+    "seconds": 15.22,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_position_projection_tests.log"
+  },
+  {
+    "runner": "Tests/run_disabled_local_feature_tests.ps1",
+    "exit": 0,
+    "seconds": 10.63,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_disabled_local_feature_tests.log"
+  },
+  {
+    "runner": "Tests/run_cli_profile_tests.ps1",
+    "exit": 0,
+    "seconds": 19.404,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_cli_profile_tests.log"
+  },
+  {
+    "runner": "Tests/run_cli_session_tests.ps1",
+    "exit": 0,
+    "seconds": 97.003,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_cli_session_tests.log"
+  },
+  {
+    "runner": "Tests/run_debug_uart_tests.ps1",
+    "exit": 0,
+    "seconds": 4.345,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_debug_uart_tests.log"
+  },
+  {
+    "runner": "Tests/run_tune_tests.ps1",
+    "exit": 0,
+    "seconds": 4.096,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_tune_tests.log"
+  },
+  {
+    "runner": "Tests/run_tune_diagnostics_tests.ps1",
+    "exit": 0,
+    "seconds": 4.271,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_tune_diagnostics_tests.log"
+  },
+  {
+    "runner": "Tests/run_sync_storage_tests.ps1",
+    "exit": 0,
+    "seconds": 8.443,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_sync_storage_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_diagnostic_tests.ps1",
+    "exit": 0,
+    "seconds": 26.771,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_current_diagnostic_tests.log"
+  },
+  {
+    "runner": "Tests/run_safety_stop_tests.ps1",
+    "exit": 0,
+    "seconds": 14.385,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_safety_stop_tests.log"
+  },
+  {
+    "runner": "Tests/run_ramp_driver_tests.ps1",
+    "exit": 0,
+    "seconds": 33.342,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_ramp_driver_tests.log"
+  },
+  {
+    "runner": "Tests/run_disabled_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 8.31,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_disabled_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_communication_key_tests.ps1",
+    "exit": 0,
+    "seconds": 56.56,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_communication_key_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_k5_recovery_tests.ps1",
+    "exit": 0,
+    "seconds": 28.1,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_can_k5_recovery_tests.log"
+  },
+  {
+    "runner": "Tests/test_link5_log_analyzer.py",
+    "exit": 0,
+    "seconds": 0.673,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\test_link5_log_analyzer.log"
+  },
+  {
+    "runner": "Tests/run_startup_first_tests.ps1",
+    "exit": 0,
+    "seconds": 3.338,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_startup_first_tests.log"
+  },
+  {
+    "runner": "Tests/run_board_key_startup_tests.ps1",
+    "exit": 0,
+    "seconds": 1.488,
+    "log": "Docs\\F407_BOOT_20261108\\验证\\regression\\run_board_key_startup_tests.log"
+  }
+]

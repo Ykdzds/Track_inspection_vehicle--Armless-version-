@@ -1,0 +1,274 @@
+[
+  {
+    "runner": "Tests/run_hmi_state_window_tests.ps1",
+    "exit": 0,
+    "seconds": 6.671,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_state_window_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_state_tests.ps1",
+    "exit": 0,
+    "seconds": 44.736,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_state_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_snapshot_freshness_tests.ps1",
+    "exit": 0,
+    "seconds": 5.109,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_snapshot_freshness_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_modbus_tests.ps1",
+    "exit": 0,
+    "seconds": 5.43,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_modbus_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_control_tests.ps1",
+    "exit": 0,
+    "seconds": 34.972,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_control_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 5.967,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_link_wire_tests.ps1",
+    "exit": 0,
+    "seconds": 6.095,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_link_wire_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_diag_hook_tests.ps1",
+    "exit": 0,
+    "seconds": 7.065,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_diag_hook_tests.log"
+  },
+  {
+    "runner": "Tests/run_system_snapshot_tests.ps1",
+    "exit": 0,
+    "seconds": 5.675,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_system_snapshot_tests.log",
+    "previous_attempts": [
+      {
+        "exit": 0,
+        "seconds": 6.892,
+        "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_system_snapshot_tests.attempt1.log"
+      }
+    ]
+  },
+  {
+    "runner": "Tests/run_hmi_remote_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 20.386,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_hmi_remote_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_hmi_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 8.907,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_can_hmi_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 2.088,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_arm3_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_lcd_recovery_tests.ps1",
+    "exit": 0,
+    "seconds": 2.706,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_lcd_recovery_tests.log"
+  },
+  {
+    "runner": "Tests/run_normal_timing_tests.ps1",
+    "exit": 0,
+    "seconds": 56.697,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_normal_timing_tests.log"
+  },
+  {
+    "runner": "Tests/run_runtime_metrics_tests.ps1",
+    "exit": 0,
+    "seconds": 1.68,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_runtime_metrics_tests.log"
+  },
+  {
+    "runner": "Tests/run_production_guard_tests.ps1",
+    "exit": 0,
+    "seconds": 5.457,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_production_guard_tests.log",
+    "previous_attempts": [
+      {
+        "exit": 1,
+        "seconds": 7.649,
+        "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_production_guard_tests.attempt1.log"
+      }
+    ]
+  },
+  {
+    "runner": "Tests/check_irq_dma_integration.ps1",
+    "exit": 0,
+    "seconds": 1.207,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\check_irq_dma_integration.log"
+  },
+  {
+    "runner": "Tests/check_usart1_dma.ps1",
+    "exit": 0,
+    "seconds": 1.028,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\check_usart1_dma.log"
+  },
+  {
+    "runner": "Tests/check_nrf_dma.ps1",
+    "exit": 0,
+    "seconds": 1.119,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\check_nrf_dma.log"
+  },
+  {
+    "runner": "Tests/run_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 86.007,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_remote_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 23.504,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_remote_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_link_can_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 7.749,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_link_can_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_rs485_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 8.465,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_rs485_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_control_tests.ps1",
+    "exit": 0,
+    "seconds": 43.464,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_can_control_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_protocol_tests.ps1",
+    "exit": 0,
+    "seconds": 41.94,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_can_protocol_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_tests.ps1",
+    "exit": 0,
+    "seconds": 3.021,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_arm3_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_port_tests.ps1",
+    "exit": 0,
+    "seconds": 2.321,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_arm3_port_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_core_tests.ps1",
+    "exit": 0,
+    "seconds": 84.043,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_current_core_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_watchdog_tests.ps1",
+    "exit": 0,
+    "seconds": 80.617,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_current_watchdog_tests.log"
+  },
+  {
+    "runner": "Tests/run_position_projection_tests.ps1",
+    "exit": 0,
+    "seconds": 17.494,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_position_projection_tests.log",
+    "previous_attempts": [
+      {
+        "exit": 0,
+        "seconds": 35.092,
+        "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_position_projection_tests.attempt1.log"
+      }
+    ]
+  },
+  {
+    "runner": "Tests/run_disabled_local_feature_tests.ps1",
+    "exit": 0,
+    "seconds": 10.135,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_disabled_local_feature_tests.log"
+  },
+  {
+    "runner": "Tests/run_cli_profile_tests.ps1",
+    "exit": 0,
+    "seconds": 13.869,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_cli_profile_tests.log"
+  },
+  {
+    "runner": "Tests/run_cli_session_tests.ps1",
+    "exit": 0,
+    "seconds": 107.569,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_cli_session_tests.log"
+  },
+  {
+    "runner": "Tests/run_debug_uart_tests.ps1",
+    "exit": 0,
+    "seconds": 2.432,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_debug_uart_tests.log"
+  },
+  {
+    "runner": "Tests/run_tune_tests.ps1",
+    "exit": 0,
+    "seconds": 3.608,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_tune_tests.log"
+  },
+  {
+    "runner": "Tests/run_tune_diagnostics_tests.ps1",
+    "exit": 0,
+    "seconds": 3.516,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_tune_diagnostics_tests.log"
+  },
+  {
+    "runner": "Tests/run_sync_storage_tests.ps1",
+    "exit": 0,
+    "seconds": 4.91,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_sync_storage_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_diagnostic_tests.ps1",
+    "exit": 0,
+    "seconds": 21.877,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_current_diagnostic_tests.log"
+  },
+  {
+    "runner": "Tests/run_safety_stop_tests.ps1",
+    "exit": 0,
+    "seconds": 29.414,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_safety_stop_tests.log"
+  },
+  {
+    "runner": "Tests/run_ramp_driver_tests.ps1",
+    "exit": 0,
+    "seconds": 54.817,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_ramp_driver_tests.log"
+  },
+  {
+    "runner": "Tests/test_link5_log_analyzer.py",
+    "exit": 0,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\log-analyzer.log"
+  },
+  {
+    "runner": "Tests/run_disabled_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 5.565,
+    "log": "Docs\\F407_SRAM_20261108\\验证\\regression\\run_disabled_diag_tests.log"
+  }
+]

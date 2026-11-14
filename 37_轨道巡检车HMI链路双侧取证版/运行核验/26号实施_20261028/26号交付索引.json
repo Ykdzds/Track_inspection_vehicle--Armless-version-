@@ -1,0 +1,22 @@
+{
+  "CapturedAt": "2026-10-29T08:31:52.1540124+08:00",
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\26_轨道巡检车安全停车与恢复修复版",
+  "PIX": "17_轨道巡检车.pix",
+  "PIX_SHA256": "1599DC92154C716C788D845DB4475360392F8C7A90169B36ADD3F7FE1EA7C2C8",
+  "BIN": "17_轨道巡检车.pix.bin",
+  "BIN_SHA256": "36AC92BDED167B7A11423811EE158AFF3CB16E40279D81C4E4C6986A6490E20F",
+  "BIN_Length": 260653,
+  "VisualPIX": "1.7.2.179",
+  "CompileSuccess": true,
+  "Reopened": true,
+  "ReadbackEventCount": 14,
+  "SoftwareTests": 331,
+  "SoftwareTestsFailed": 0,
+  "Protected25Files": 365,
+  "Protected25Unchanged": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "F407ModifiedThisRound": false,
+  "RemoteModifiedThisRound": false,
+  "F103ModifiedThisRound": false
+}

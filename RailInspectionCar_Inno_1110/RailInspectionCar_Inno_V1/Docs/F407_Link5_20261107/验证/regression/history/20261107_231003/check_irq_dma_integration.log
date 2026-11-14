@@ -1,0 +1,1 @@
+PASS IRQ/DMA integration: unique BSP handlers; UART5 DMA retained; LCD DMA2 Stream3 Channel3 IRQ6; nine DMA requests.

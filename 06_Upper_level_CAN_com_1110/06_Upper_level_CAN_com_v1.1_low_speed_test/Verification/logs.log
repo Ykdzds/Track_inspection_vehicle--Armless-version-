@@ -1,0 +1,40 @@
+
+PASS STOP_FIRST: 80 bytes, production 499/500 and 299/300 gates, wrap, key sample, queue pressure and UART retry
+PASS STOP_FAIL: exact111/114 scenes, 30s boundary, independent queue/UART retry, pending immutable and no deadline reset
+PASS bounded STOP_VERIFY log contains retained predicate and full scene
+PASS logs: basic/fragment suppression, READY/token events, Bus-off/overflow first event and repeat gate
+PASS logs: 0x53 summary, no default payload expansion, first-at-zero and 5000ms record gate
+PASS logs: bounded static queue, priority eviction/order, FIFO peers and event-drop accounting
+PASS compact record prefix/truncation/partial RAW bounds
+PASS logs: 100ms target traffic limited to 1000ms summaries; control transitions and UART byte/error counts
+PASS logs: unchanged heartbeat/boot counts and 100ms/300ms target configuration across log levels
+PASS synthetic steady log volume=358 bytes/s (not hardware throughput)
+PASS AUTHFIX logs: first diagnostic, complete axis snapshot, same-cause 1s gate and final timeout retained
+PASS TXFIX logs: final transaction evidence and operation rejection 1s rate limit
+PASS F103 actual log task mode=0 motion=1; software only
+PASS STOP_FIRST: 80 bytes, production 499/500 and 299/300 gates, wrap, key sample, queue pressure and UART retry
+PASS STOP_FAIL: exact111/114 scenes, 30s boundary, independent queue/UART retry, pending immutable and no deadline reset
+PASS bounded STOP_VERIFY log contains retained predicate and full scene
+PASS logs: basic/fragment suppression, READY/token events, Bus-off/overflow first event and repeat gate
+PASS logs: 0x53 summary, no default payload expansion, first-at-zero and 5000ms record gate
+PASS logs: bounded static queue, priority eviction/order, FIFO peers and event-drop accounting
+PASS compact record prefix/truncation/partial RAW bounds
+PASS logs: 100ms target traffic limited to 1000ms summaries; control transitions and UART byte/error counts
+PASS logs: unchanged heartbeat/boot counts and 100ms/300ms target configuration across log levels
+PASS synthetic steady log volume=905 bytes/s (not hardware throughput)
+PASS AUTHFIX logs: first diagnostic, complete axis snapshot, same-cause 1s gate and final timeout retained
+PASS TXFIX logs: final transaction evidence and operation rejection 1s rate limit
+PASS F103 actual log task mode=1 motion=1; software only
+PASS STOP_FIRST: 80 bytes, production 499/500 and 299/300 gates, wrap, key sample, queue pressure and UART retry
+PASS STOP_FAIL: exact111/114 scenes, 30s boundary, independent queue/UART retry, pending immutable and no deadline reset
+PASS bounded STOP_VERIFY log contains retained predicate and full scene
+PASS logs: basic/fragment suppression, READY/token events, Bus-off/overflow first event and repeat gate
+PASS logs: 0x53 summary, no default payload expansion, first-at-zero and 5000ms record gate
+PASS logs: bounded static queue, priority eviction/order, FIFO peers and event-drop accounting
+PASS compact record prefix/truncation/partial RAW bounds
+PASS logs: 100ms target traffic limited to 1000ms summaries; control transitions and UART byte/error counts
+PASS logs: unchanged heartbeat/boot counts and 100ms/300ms target configuration across log levels
+PASS synthetic steady log volume=905 bytes/s (not hardware throughput)
+PASS AUTHFIX logs: first diagnostic, complete axis snapshot, same-cause 1s gate and final timeout retained
+PASS TXFIX logs: final transaction evidence and operation rejection 1s rate limit
+PASS F103 actual log task mode=2 motion=1; software only

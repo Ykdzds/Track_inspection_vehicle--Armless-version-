@@ -1,0 +1,154 @@
+int uiAxis;
+int uiBit;
+int uiValue;
+int uiOffset;
+P8_ServoControl.linkStatus.txt="通信：等待主控 / HMI13-R2";
+if(P8_ServoControl.h13.vals[78]>0){P8_ServoControl.linkStatus.txt="通信：请求已提交，尚无有效回复";}
+if(P8_ServoControl.h13.vals[104]>0){P8_ServoControl.linkStatus.txt="通信：已收到回复，R2未确认";}
+if(P8_ServoControl.h13.vals[104]>0 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[107]>=500){P8_ServoControl.linkStatus.txt="通信：历史回复已过期";}
+if(P8_ServoControl.h13.vals[124]>0 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[118]<500){P8_ServoControl.linkStatus.txt="通信：回调失配 R"+intToString(P8_ServoControl.h13.vals[124])+" B"+intToString(P8_ServoControl.h13.vals[103])+" E"+intToString(P8_ServoControl.h13.vals[121])+" N"+intToString(P8_ServoControl.h13.vals[102]);}
+if(P8_ServoControl.h13.vals[3]==1){P8_ServoControl.linkStatus.txt="通信：正常 / R2接口匹配";}
+if(P8_ServoControl.h13.vals[47]==1 && (metaRegs.vals[3]!=2 || (metaRegs.vals[2]&240)!=240)){P8_ServoControl.linkStatus.txt="只读：当前固件未提供13号控制接口";}
+P8_ServoControl.ownerStatus.txt="控制源：未知";
+if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300){
+    if(P8_ServoControl.h13Status.vals[8]==0){P8_ServoControl.ownerStatus.txt="控制源：无";}
+    if(P8_ServoControl.h13Status.vals[8]==1){P8_ServoControl.ownerStatus.txt="控制源：HMI";}
+    if(P8_ServoControl.h13Status.vals[8]==2){P8_ServoControl.ownerStatus.txt="控制源：遥控";}
+    if(P8_ServoControl.h13Status.vals[8]==3){P8_ServoControl.ownerStatus.txt="控制源：CAN";}
+    if(P8_ServoControl.h13Status.vals[8]==4){P8_ServoControl.ownerStatus.txt="控制源：CLI";}
+}
+P8_ServoControl.axisMode.txt="执行轴：未知（主控决定）";
+if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300){
+    if(P8_ServoControl.h13Status.vals[9]==1){P8_ServoControl.axisMode.txt="执行轴：左轴";}
+    if(P8_ServoControl.h13Status.vals[9]==2){P8_ServoControl.axisMode.txt="执行轴：右轴";}
+    if(P8_ServoControl.h13Status.vals[9]==3){P8_ServoControl.axisMode.txt="执行轴：双轴";}
+}
+P8_ServoControl.leftActual.txt="左轴实际：--";P8_ServoControl.rightActual.txt="右轴实际：--";
+P8_ServoControl.leftTarget.txt="左轴目标：--";P8_ServoControl.rightTarget.txt="右轴目标：--";
+P8_ServoControl.leftOutput.txt="左轴输出：--";P8_ServoControl.rightOutput.txt="右轴输出：--";
+P8_ServoControl.leftEnable.txt="左轴使能：未知";P8_ServoControl.rightEnable.txt="右轴使能：未知";
+for(uiAxis=0;uiAxis<2;uiAxis++){
+    uiBit=1;if(uiAxis==1){uiBit=2;}
+    if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300){
+        if((P8_ServoControl.h13Status.vals[9]&uiBit)==0){
+            if(uiAxis==0){P8_ServoControl.leftActual.txt="左轴：未参与";P8_ServoControl.leftTarget.txt="目标：未参与";P8_ServoControl.leftOutput.txt="输出：未参与";P8_ServoControl.leftEnable.txt="使能：未参与";}
+            else{P8_ServoControl.rightActual.txt="右轴：未参与";P8_ServoControl.rightTarget.txt="目标：未参与";P8_ServoControl.rightOutput.txt="输出：未参与";P8_ServoControl.rightEnable.txt="使能：未参与";}
+        }else{
+            if((P8_ServoControl.h13Status.vals[25]&uiBit)!=0 && P8_ServoControl.h13Status.vals[46+uiAxis]<500 && P8_ServoControl.h13Status.vals[23+uiAxis]!=32767){
+                uiValue=P8_ServoControl.h13Status.vals[23+uiAxis];if(uiValue>=32768){uiValue=uiValue-65536;}
+                if(uiAxis==0){P8_ServoControl.leftActual.txt="左轴实际："+intToString(uiValue)+" rpm";}else{P8_ServoControl.rightActual.txt="右轴实际："+intToString(uiValue)+" rpm";}
+            }
+            if(P8_ServoControl.h13Status.vals[19+uiAxis]!=32767){
+                uiValue=P8_ServoControl.h13Status.vals[19+uiAxis];if(uiValue>=32768){uiValue=uiValue-65536;}
+                if(uiAxis==0){P8_ServoControl.leftTarget.txt="最终目标："+intToString(uiValue)+" rpm";}else{P8_ServoControl.rightTarget.txt="最终目标："+intToString(uiValue)+" rpm";}
+            }
+            if((P8_ServoControl.h13Status.vals[57]&uiBit)!=0 && P8_ServoControl.h13Status.vals[21+uiAxis]!=32767){
+                uiValue=P8_ServoControl.h13Status.vals[21+uiAxis];if(uiValue>=32768){uiValue=uiValue-65536;}
+                if(uiAxis==0){P8_ServoControl.leftOutput.txt="执行输出："+intToString(uiValue)+" rpm";}else{P8_ServoControl.rightOutput.txt="执行输出："+intToString(uiValue)+" rpm";}
+            }
+            if((P8_ServoControl.h13Status.vals[26]&uiBit)!=0){
+                if(uiAxis==0){P8_ServoControl.leftEnable.txt="使能反馈：关";if((P8_ServoControl.h13Status.vals[27]&uiBit)!=0){P8_ServoControl.leftEnable.txt="使能反馈：开";}}
+                else{P8_ServoControl.rightEnable.txt="使能反馈：关";if((P8_ServoControl.h13Status.vals[27]&uiBit)!=0){P8_ServoControl.rightEnable.txt="使能反馈：开";}}
+            }
+        }
+    }
+}
+P8_ServoControl.commonTarget.txt="设定："+intToString(P8_ServoControl.h13.vals[10])+" rpm / 主控接受：--";
+if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13Status.vals[18]!=32767){uiValue=P8_ServoControl.h13Status.vals[18];if(uiValue>=32768){uiValue=uiValue-65536;}P8_ServoControl.commonTarget.txt="设定："+intToString(P8_ServoControl.h13.vals[10])+" / 接受："+intToString(uiValue)+" rpm";}
+P8_ServoControl.authorityStatus.txt="未授权";
+P8_ServoControl.h13.vals[160]=1;
+if(P8_ServoControl.h13.vals[2]==2 || P8_ServoControl.h13.vals[2]==3){if(P8_ServoControl.authorize.press!=1){P8_ServoControl.authorize.press=1;}}
+else{if(P8_ServoControl.authorize.press!=0){P8_ServoControl.authorize.press=0;}}
+P8_ServoControl.h13.vals[160]=0;
+if(P8_ServoControl.h13.vals[2]==2){P8_ServoControl.authorityStatus.txt="申请中，等待主控确认";}
+if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.authorityStatus.txt="已授权：新滑动调整共同目标";}
+if(P8_ServoControl.h13.vals[2]==4){P8_ServoControl.authorityStatus.txt="停车中：滑动无效";}
+if(P8_ServoControl.h13.vals[2]==4 && P8_ServoControl.h13.vals[56]==1){P8_ServoControl.authorityStatus.txt="全局停车中：滑动无效";}
+if(P8_ServoControl.h13.vals[2]==5){P8_ServoControl.authorityStatus.txt="已停车，未授权";}
+if(P8_ServoControl.h13.vals[2]==6 || P8_ServoControl.h13.vals[83]==1){P8_ServoControl.authorityStatus.txt="停车未确认 / 禁止恢复旧目标";}
+if(P8_ServoControl.h13.vals[2]==7){P8_ServoControl.authorityStatus.txt="停车失败，检查主控和驱动";}
+P8_ServoControl.recoveryStatus.txt="等待有效数据";
+P8_ServoControl.recoveryDetail.txt="恢复详情：--";
+P8_ServoControl.recoveryButton.txt="故障恢复";P8_ServoControl.recoveryButton.enable=0;
+if(P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13.vals[47]==1 && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[22]<3000 && P0_Boot.metaRegs.vals[0]==21065 && P0_Boot.metaRegs.vals[1]==1 && P0_Boot.metaRegs.vals[3]==2 && (P0_Boot.metaRegs.vals[2]&240)==240 && P0_Boot.metaRegs.vals[4]==P8_ServoControl.h13.vals[4] && P0_Boot.metaRegs.vals[5]==P8_ServoControl.h13.vals[5] && P8_ServoControl.h13Status.vals[0]==21325 && P8_ServoControl.h13Status.vals[1]==2 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5] && P8_ServoControl.h13Status.vals[88]==1 && (P8_ServoControl.h13Status.vals[91]!=0 || P8_ServoControl.h13Status.vals[92]!=0)){
+    if(P8_ServoControl.h13Status.vals[89]==0){P8_ServoControl.recoveryStatus.txt="无需恢复";}
+    if(P8_ServoControl.h13Status.vals[89]==1){P8_ServoControl.recoveryStatus.txt="等待健康";}
+    if(P8_ServoControl.h13Status.vals[89]==2){P8_ServoControl.recoveryStatus.txt="可恢复";if(P8_ServoControl.h13Status.vals[90]==1 && !(P8_ServoControl.h13.vals[125]==P8_ServoControl.h13Status.vals[91] && P8_ServoControl.h13.vals[126]==P8_ServoControl.h13Status.vals[92])){P8_ServoControl.recoveryButton.enable=1;}}
+    if(P8_ServoControl.h13Status.vals[89]>=3 && P8_ServoControl.h13Status.vals[89]<=5){P8_ServoControl.recoveryStatus.txt="恢复中";}
+    if(P8_ServoControl.h13Status.vals[89]==6){P8_ServoControl.recoveryStatus.txt="恢复完成，请重新授权";}
+    if(P8_ServoControl.h13Status.vals[89]==7){P8_ServoControl.recoveryStatus.txt="恢复失败";}
+    P8_ServoControl.recoveryDetail.txt="原因 "+intToString(P8_ServoControl.h13Status.vals[93])+" 首错轴/项 "+intToString(P8_ServoControl.h13Status.vals[94]&255)+"/"+intToString(P8_ServoControl.h13Status.vals[94]/256)+" 健康 "+intToString(P8_ServoControl.h13Status.vals[95])+"ms";
+    if(P8_ServoControl.h13.vals[133]>=1 && P8_ServoControl.h13.vals[133]<=3){P8_ServoControl.recoveryButton.txt="恢复请求中";P8_ServoControl.recoveryStatus.txt="恢复中：等待结果与快照";}
+}
+if(P8_ServoControl.h13.vals[136]==1){P8_ServoControl.recoveryDetail.txt="拒绝：等待有效数据";}
+if(P8_ServoControl.h13.vals[136]==2){P8_ServoControl.recoveryDetail.txt="拒绝：身份或恢复代次变化";}
+if(P8_ServoControl.h13.vals[136]==3){P8_ServoControl.recoveryDetail.txt="拒绝：当前不具备恢复资格";}
+if(P8_ServoControl.h13.vals[136]==4){P8_ServoControl.recoveryDetail.txt="本代恢复已申请";}
+if(P8_ServoControl.h13.vals[136]==5){P8_ServoControl.recoveryDetail.txt="恢复结果未知，请检查通信";}
+if(P8_ServoControl.h13.vals[136]>=200){P8_ServoControl.recoveryDetail.txt="恢复申请被拒绝，错误 "+intToString(P8_ServoControl.h13.vals[136]-200);}
+if(P8_ServoControl.h13.vals[136]>=100 && P8_ServoControl.h13.vals[136]<200){P8_ServoControl.recoveryDetail.txt="恢复失败，原因 "+intToString(P8_ServoControl.h13.vals[136]-100);}
+P8_ServoControl.stopStatus.txt="停车阶段：无";
+if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300){
+    if(P8_ServoControl.h13Status.vals[30]==1){P8_ServoControl.stopStatus.txt="停车：按要求减速";}
+    if(P8_ServoControl.h13Status.vals[30]==2){P8_ServoControl.stopStatus.txt="停车：等待新鲜零速反馈";}
+    if(P8_ServoControl.h13Status.vals[30]==3){P8_ServoControl.stopStatus.txt="停车：确认零速及使能";}
+    if(P8_ServoControl.h13Status.vals[30]==4){P8_ServoControl.stopStatus.txt="停车：确认同步中";if(P8_ServoControl.h13Status.vals[37]==0 && (P8_ServoControl.h13Status.vals[11]&96)==0 && ((P8_ServoControl.h13Status.vals[9]&1)==0 || P8_ServoControl.h13Status.vals[23]==0) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || P8_ServoControl.h13Status.vals[24]==0) && P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[53]==3 && P8_ServoControl.h13Status.vals[9]>0 && (P8_ServoControl.h13Status.vals[28]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[26]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && (P8_ServoControl.h13Status.vals[27]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || P8_ServoControl.h13Status.vals[46]<500) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || P8_ServoControl.h13Status.vals[47]<500)){P8_ServoControl.stopStatus.txt="已停车，未授权";}}
+    if(P8_ServoControl.h13Status.vals[30]==5){P8_ServoControl.stopStatus.txt="停车失败，检查主控和驱动";}
+    if((P8_ServoControl.h13Status.vals[11]&16)!=0){P8_ServoControl.stopStatus.txt="换向：减速过零";}
+    else if(P8_ServoControl.h13.vals[170]==2 && (P8_ServoControl.h13Status.vals[25]&P8_ServoControl.h13Status.vals[9])==P8_ServoControl.h13Status.vals[9] && ((P8_ServoControl.h13Status.vals[9]&1)==0 || P8_ServoControl.h13Status.vals[46]<500) && ((P8_ServoControl.h13Status.vals[9]&2)==0 || P8_ServoControl.h13Status.vals[47]<500)){P8_ServoControl.stopStatus.txt="换向：反向加速";}
+}
+P8_ServoControl.errorStatus.txt="错误：无";
+if(P8_ServoControl.h13.vals[30]==1){P8_ServoControl.errorStatus.txt="拒绝：固件只读";}
+if(P8_ServoControl.h13.vals[30]==2){P8_ServoControl.errorStatus.txt="拒绝：主控身份变化";}
+if(P8_ServoControl.h13.vals[30]==3){P8_ServoControl.errorStatus.txt="拒绝：无有效会话";}
+if(P8_ServoControl.h13.vals[30]==4){P8_ServoControl.errorStatus.txt="拒绝：会话过期";}
+if(P8_ServoControl.h13.vals[30]==5){P8_ServoControl.errorStatus.txt="拒绝：其他控制源占用";}
+if(P8_ServoControl.h13.vals[30]==6){P8_ServoControl.errorStatus.txt="拒绝：安全条件未满足";}
+if(P8_ServoControl.h13.vals[30]==7){P8_ServoControl.errorStatus.txt="拒绝：驱动反馈过期";}
+if(P8_ServoControl.h13.vals[30]==8){P8_ServoControl.errorStatus.txt="拒绝：目标越界";}
+if(P8_ServoControl.h13.vals[30]==9){P8_ServoControl.errorStatus.txt="拒绝：模式不支持";}
+if(P8_ServoControl.h13.vals[30]==10){P8_ServoControl.errorStatus.txt="拒绝：序号冲突";}
+if(P8_ServoControl.h13.vals[30]==11){P8_ServoControl.errorStatus.txt="拒绝：旧序号";}
+if(P8_ServoControl.h13.vals[30]==12){P8_ServoControl.errorStatus.txt="拒绝：队列满/序号耗尽";}
+if(P8_ServoControl.h13.vals[30]==13){P8_ServoControl.errorStatus.txt="失败：执行超时";}
+if(P8_ServoControl.h13.vals[30]==14){P8_ServoControl.errorStatus.txt="停车失败";}
+if(P8_ServoControl.h13.vals[30]==15){P8_ServoControl.errorStatus.txt="拒绝：不支持命令";}
+P8_ServoControl.errorStatus.txt=P8_ServoControl.errorStatus.txt+" S"+intToString(P8_ServoControl.h13.vals[2])+" C"+intToString(P8_ServoControl.h13.vals[26])+" R"+intToString(P8_ServoControl.h13Result.vals[7])+" E"+intToString(P8_ServoControl.h13Result.vals[8])+" G"+intToString(P8_ServoControl.h13.vals[66]);
+if(P8_ServoControl.h13.vals[161]>0){P8_ServoControl.errorStatus.txt="错误：D"+intToString(P8_ServoControl.h13.vals[161])+" A"+intToString(P8_ServoControl.h13.vals[162])+"/"+intToString(P8_ServoControl.h13.vals[163])+" M"+intToString(P8_ServoControl.h13.vals[164])+" X"+intToString(P8_ServoControl.h13.vals[167])+":"+intToString(P8_ServoControl.h13.vals[168]);}
+if((P8_ServoControl.h13.vals[2]==6 || P8_ServoControl.h13.vals[2]==7) && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300){
+    P8_ServoControl.errorStatus.txt=P8_ServoControl.errorStatus.txt+" L"+intToString(P8_ServoControl.h13Status.vals[37])+" F"+intToString(P8_ServoControl.h13Status.vals[11])+" P"+intToString(P8_ServoControl.h13Status.vals[30]);
+}
+if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300 && P8_ServoControl.h13Status.vals[59]==1){
+    uiValue=P8_ServoControl.h13Status.vals[58];if(uiValue>=32768){uiValue=uiValue-65536;}
+    P8_ServoControl.commonTarget.txt="整车目标："+intToString(uiValue)+" mm/s";
+    if(P8_ServoControl.h13Status.vals[8]!=1){
+        uiValue=P8_ServoControl.h13Status.vals[58];if(uiValue>=32768){uiValue=uiValue-65536;}
+        if((P8_ServoControl.h13Status.vals[9]&1)!=0){P8_ServoControl.leftTarget.txt="最终目标："+intToString(uiValue)+" mm/s";}
+        if((P8_ServoControl.h13Status.vals[9]&2)!=0){P8_ServoControl.rightTarget.txt="最终目标："+intToString(uiValue)+" mm/s";}
+        uiValue=P8_ServoControl.h13Status.vals[60];if(uiValue>=32768){uiValue=uiValue-65536;}
+        if((P8_ServoControl.h13Status.vals[9]&1)!=0 && P8_ServoControl.h13Status.vals[60]!=32767){P8_ServoControl.leftOutput.txt="执行输出："+intToString(uiValue)+" mm/s";}
+        uiValue=P8_ServoControl.h13Status.vals[61];if(uiValue>=32768){uiValue=uiValue-65536;}
+        if((P8_ServoControl.h13Status.vals[9]&2)!=0 && P8_ServoControl.h13Status.vals[61]!=32767){P8_ServoControl.rightOutput.txt="执行输出："+intToString(uiValue)+" mm/s";}
+    }
+
+    P8_ServoControl.linkStatus.txt="统一快照 S"+intToString(P8_ServoControl.h13Status.vals[4])+":"+intToString(P8_ServoControl.h13Status.vals[5])+" A"+intToString(P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21])+" ms";
+}
+if(sys_pid==P2_Diag.id && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13Status.vals[59]==1 && (P8_ServoControl.h13.vals[1]/2000)%2==0){
+    for(uiAxis=0;uiAxis<2;uiAxis++){
+        uiOffset=64+uiAxis*12;
+        if(uiAxis==0){P2_Diag.diagAxis1SpeedAge.txt="轴1反馈年龄："+intToString(P8_ServoControl.h13Status.vals[74])+" ms";}
+        if(uiAxis==1){P2_Diag.diagAxis2SpeedAge.txt="轴2反馈年龄："+intToString(P8_ServoControl.h13Status.vals[86])+" ms";}
+    }
+    P2_Diag.reqCount.txt="轴1转矩/负载：--";P2_Diag.respCount.txt="轴2转矩/负载：--";
+    P2_Diag.retryCount.txt="轴1I/V：--";P2_Diag.timeoutCount.txt="轴2I/V：--";
+    if((P8_ServoControl.h13Status.vals[64]&3)==3 && (P8_ServoControl.h13Status.vals[65]&3)==0){uiValue=P8_ServoControl.h13Status.vals[66];if(uiValue>=32768){uiValue=uiValue-65536;}P2_Diag.reqCount.txt="轴1转矩/负载："+floatToString(uiValue*0.1,1)+" / "+floatToString(P8_ServoControl.h13Status.vals[67]*0.1,1)+" %";}
+    if((P8_ServoControl.h13Status.vals[76]&3)==3 && (P8_ServoControl.h13Status.vals[77]&3)==0){uiValue=P8_ServoControl.h13Status.vals[78];if(uiValue>=32768){uiValue=uiValue-65536;}P2_Diag.respCount.txt="轴2转矩/负载："+floatToString(uiValue*0.1,1)+" / "+floatToString(P8_ServoControl.h13Status.vals[79]*0.1,1)+" %";}
+    if((P8_ServoControl.h13Status.vals[64]&12)==12 && (P8_ServoControl.h13Status.vals[65]&12)==0){uiValue=P8_ServoControl.h13Status.vals[68];if(uiValue>=32768){uiValue=uiValue-65536;}P2_Diag.retryCount.txt="轴1I/V："+floatToString(uiValue*0.1,1)+" A / "+floatToString(P8_ServoControl.h13Status.vals[69]*0.1,1)+" V";}
+    if((P8_ServoControl.h13Status.vals[76]&12)==12 && (P8_ServoControl.h13Status.vals[77]&12)==0){uiValue=P8_ServoControl.h13Status.vals[80];if(uiValue>=32768){uiValue=uiValue-65536;}P2_Diag.timeoutCount.txt="轴2I/V："+floatToString(uiValue*0.1,1)+" A / "+floatToString(P8_ServoControl.h13Status.vals[81]*0.1,1)+" V";}
+    P2_Diag.frameCount.txt="诊断值年龄："+intToString(P8_ServoControl.h13Status.vals[70])+" / "+intToString(P8_ServoControl.h13Status.vals[82])+" ms";
+}
+if(sys_pid==P4_Info.id && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13Status.vals[59]==1){
+    P4_Info.heartbeat.txt="统一快照："+intToString(P8_ServoControl.h13Status.vals[4])+":"+intToString(P8_ServoControl.h13Status.vals[5])+" 年龄 "+intToString(P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21])+" ms";
+    P4_Info.ctrlVersion.txt="采集时间："+intToString(P8_ServoControl.h13Status.vals[6])+":"+intToString(P8_ServoControl.h13Status.vals[7])+" ms";
+}
+P8_ServoControl.rpmSlider.visible=1;

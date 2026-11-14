@@ -1,0 +1,13 @@
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+digitalelectronicsecode_lcd_diagnostic\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

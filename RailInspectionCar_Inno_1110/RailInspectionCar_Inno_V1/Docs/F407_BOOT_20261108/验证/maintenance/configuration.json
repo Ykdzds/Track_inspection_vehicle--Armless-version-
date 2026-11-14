@@ -1,0 +1,41 @@
+{
+  "Variant": "maintenance",
+  "Defines": [
+    "USE_HAL_DRIVER",
+    "STM32F407xx",
+    "APP_CHASSIS_LCD_ENABLED=1",
+    "APP_DEBUG_CLI_ENABLED=1",
+    "APP_TUNE_UART_ENABLED=1",
+    "APP_SERVO_CLI_DEBUG_ENABLED=1",
+    "APP_SERVO_PULSE_ENABLED=0",
+    "APP_HMI_LINK_DIAG_ENABLED=1",
+    "APP_NRF_DIAGNOSTIC_ENABLED=0",
+    "APP_CAN_SERVO_DIAG_ENABLED=0",
+    "APP_CAN_ARM_DIAG_ENABLED=0",
+    "APP_SERVO_RS485_DIAG_ENABLED=1",
+    "APP_CAN_DEBUG_ENABLED=0",
+    "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+  ],
+  "Values": [
+    1,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "NoLcd": false,
+  "DebugCli": true,
+  "TuneUart": true,
+  "ServoCli": true,
+  "Pulse": false,
+  "NoUartRx": false,
+  "DiagnosticEnabled": true,
+  "UsesUnmodifiedSourceConfiguration": false
+}

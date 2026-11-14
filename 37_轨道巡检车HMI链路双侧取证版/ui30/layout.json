@@ -1,0 +1,1502 @@
+{
+  "pages": {
+    "P0_Boot": {
+      "id": 0,
+      "controls": {
+        "text0": {
+          "x": 40,
+          "y": 40,
+          "w": 660,
+          "h": 48,
+          "font": 36,
+          "text": "1435 轨道巡检车",
+          "background": "#0B1426"
+        },
+        "text1": {
+          "x": 42,
+          "y": 94,
+          "w": 600,
+          "h": 30,
+          "font": 24,
+          "background": "#0B1426"
+        },
+        "swVer": {
+          "x": 734,
+          "y": 52,
+          "w": 250,
+          "h": 32,
+          "font": 24,
+          "background": "#0B1426"
+        },
+        "mainState": {
+          "x": 48,
+          "y": 156,
+          "w": 928,
+          "h": 40,
+          "font": 32
+        },
+        "stageText": {
+          "x": 48,
+          "y": 204,
+          "w": 928,
+          "h": 30,
+          "font": 24
+        },
+        "progressText": {
+          "x": 48,
+          "y": 242,
+          "w": 928,
+          "h": 30,
+          "font": 20
+        },
+        "ctrlStatus": {
+          "x": 48,
+          "y": 336,
+          "w": 440,
+          "h": 36,
+          "font": 24
+        },
+        "leftStatus": {
+          "x": 536,
+          "y": 336,
+          "w": 440,
+          "h": 36,
+          "font": 24
+        },
+        "rightStatus": {
+          "x": 48,
+          "y": 388,
+          "w": 440,
+          "h": 36,
+          "font": 24
+        },
+        "safeStatus": {
+          "x": 536,
+          "y": 388,
+          "w": 440,
+          "h": 36,
+          "font": 24
+        },
+        "resetReason": {
+          "x": 48,
+          "y": 440,
+          "w": 440,
+          "h": 36,
+          "font": 24
+        },
+        "protoVer": {
+          "x": 536,
+          "y": 440,
+          "w": 440,
+          "h": 36,
+          "font": 24
+        },
+        "faultText": {
+          "x": 48,
+          "y": 512,
+          "w": 928,
+          "h": 36,
+          "font": 24
+        },
+        "bootProgress": {
+          "x": 48,
+          "y": 282,
+          "w": 928,
+          "h": 16,
+          "font": 20
+        }
+      },
+      "add": []
+    },
+    "P1_Main": {
+      "id": 1,
+      "controls": {
+        "P1_Title": {
+          "x": 24,
+          "y": 12,
+          "w": 480,
+          "h": 40,
+          "font": 32,
+          "background": "#0B1426",
+          "text": "车辆运行总览"
+        },
+        "ctrlComm": {
+          "x": 24,
+          "y": 64,
+          "w": 652,
+          "h": 30,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "state": {
+          "x": 776,
+          "y": 16,
+          "w": 224,
+          "h": 36,
+          "font": 24,
+          "background": "#0B1426"
+        },
+        "leftOnline": {
+          "x": 32,
+          "y": 336,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "rightOnline": {
+          "x": 536,
+          "y": 336,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "leftSpeed": {
+          "x": 32,
+          "y": 240,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "rightSpeed": {
+          "x": 536,
+          "y": 240,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "safe": {
+          "x": 696,
+          "y": 64,
+          "w": 304,
+          "h": 30,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "leftFault": {
+          "x": 32,
+          "y": 368,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "rightFault": {
+          "x": 536,
+          "y": 368,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "vehicleSpeed": {
+          "x": 32,
+          "y": 118,
+          "w": 456,
+          "h": 40,
+          "font": 32
+        },
+        "targetSpeed": {
+          "x": 536,
+          "y": 118,
+          "w": 456,
+          "h": 40,
+          "font": 32
+        },
+        "currentMode": {
+          "x": 32,
+          "y": 400,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "controlSource": {
+          "x": 536,
+          "y": 400,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "controlAuthority": {
+          "x": 32,
+          "y": 432,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "stopState": {
+          "x": 536,
+          "y": 432,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "axisEnableSummary": {
+          "x": 32,
+          "y": 464,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "alarmSummary": {
+          "x": 536,
+          "y": 464,
+          "w": 456,
+          "h": 30,
+          "font": 20
+        },
+        "openDiag": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "openPosition": {
+          "x": 184,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "openInfo": {
+          "x": 352,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "openAlarm": {
+          "x": 520,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "openSync": {
+          "x": 688,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "openExtension": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 576,
+          "y": 12,
+          "w": 176,
+          "h": 44,
+          "font": 24
+        }
+      },
+      "add": [
+        {
+          "name": "vehicleSpeedUnits",
+          "text": "-- km/h | 等效转速 -- rpm",
+          "x": 32,
+          "y": 162,
+          "w": 456,
+          "h": 30,
+          "font": 20,
+          "global_": true
+        },
+        {
+          "name": "targetSpeedUnits",
+          "text": "-- km/h | 等效转速 -- rpm",
+          "x": 536,
+          "y": 162,
+          "w": 456,
+          "h": 30,
+          "font": 20,
+          "global_": true
+        },
+        {
+          "name": "leftSpeedUnits",
+          "text": "-- km/h | 等效转速 -- rpm",
+          "x": 32,
+          "y": 284,
+          "w": 456,
+          "h": 30,
+          "font": 20,
+          "global_": true
+        },
+        {
+          "name": "rightSpeedUnits",
+          "text": "-- km/h | 等效转速 -- rpm",
+          "x": 536,
+          "y": 284,
+          "w": 456,
+          "h": 30,
+          "font": 20,
+          "global_": true
+        }
+      ]
+    },
+    "P2_Diag": {
+      "id": 2,
+      "controls": {
+        "diagTitle": {
+          "x": 24,
+          "y": 12,
+          "w": 680,
+          "h": 40,
+          "font": 32,
+          "text": "伺服与通信诊断",
+          "background": "#0B1426"
+        },
+        "diagReadonly": {
+          "x": 792,
+          "y": 22,
+          "w": 208,
+          "h": 28,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "leftState": {
+          "x": 32,
+          "y": 104,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "rightState": {
+          "x": 536,
+          "y": 104,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagLeftFault": {
+          "x": 32,
+          "y": 136,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagRightFault": {
+          "x": 536,
+          "y": 136,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1Online": {
+          "x": 32,
+          "y": 168,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2Online": {
+          "x": 536,
+          "y": 168,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1Enable": {
+          "x": 32,
+          "y": 200,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2Enable": {
+          "x": 536,
+          "y": 200,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1SpeedValid": {
+          "x": 32,
+          "y": 232,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2SpeedValid": {
+          "x": 536,
+          "y": 232,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1SpeedAge": {
+          "x": 32,
+          "y": 264,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2SpeedAge": {
+          "x": 536,
+          "y": 264,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1FaultValid": {
+          "x": 32,
+          "y": 296,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2FaultValid": {
+          "x": 536,
+          "y": 296,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1Zero": {
+          "x": 32,
+          "y": 328,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2Zero": {
+          "x": 536,
+          "y": 328,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagModeVerified": {
+          "x": 32,
+          "y": 360,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagSafetyLocked": {
+          "x": 536,
+          "y": 360,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis1CommFail": {
+          "x": 32,
+          "y": 392,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagAxis2CommFail": {
+          "x": 536,
+          "y": 392,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "reqCount": {
+          "x": 32,
+          "y": 424,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "respCount": {
+          "x": 536,
+          "y": 424,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "retryCount": {
+          "x": 32,
+          "y": 456,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "timeoutCount": {
+          "x": 536,
+          "y": 456,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "crcCount": {
+          "x": 32,
+          "y": 488,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "frameCount": {
+          "x": 536,
+          "y": 488,
+          "w": 456,
+          "h": 28,
+          "font": 20
+        },
+        "diagBack": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "diagPosition": {
+          "x": 184,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "diagSync": {
+          "x": 352,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "diagAlarm": {
+          "x": 520,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "diagExtension": {
+          "x": 688,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": [
+        {
+          "name": "leftHeading",
+          "text": "左轴 / AXIS 01",
+          "x": 32,
+          "y": 70,
+          "w": 440,
+          "h": 28,
+          "font": 24,
+          "color": "#22D3EE"
+        },
+        {
+          "name": "rightHeading",
+          "text": "右轴 / AXIS 02",
+          "x": 536,
+          "y": 70,
+          "w": 440,
+          "h": 28,
+          "font": 24,
+          "color": "#22D3EE"
+        }
+      ]
+    },
+    "P3_Position": {
+      "id": 3,
+      "controls": {
+        "axis1Position": {
+          "x": 32,
+          "y": 94,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "positionTitle": {
+          "x": 24,
+          "y": 12,
+          "w": 680,
+          "h": 40,
+          "font": 32,
+          "text": "位置与里程",
+          "background": "#0B1426"
+        },
+        "axis2Position": {
+          "x": 536,
+          "y": 94,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "startupDisplacement": {
+          "x": 32,
+          "y": 154,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "startupTravel": {
+          "x": 32,
+          "y": 204,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "segmentTravel": {
+          "x": 32,
+          "y": 254,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "axisPositionDiff": {
+          "x": 32,
+          "y": 314,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "positionValid": {
+          "x": 536,
+          "y": 314,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "mileageValid": {
+          "x": 32,
+          "y": 350,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "positionIncomplete": {
+          "x": 536,
+          "y": 350,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "positionBaseline": {
+          "x": 32,
+          "y": 386,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "positionSample": {
+          "x": 536,
+          "y": 386,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "positionAge": {
+          "x": 32,
+          "y": 422,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "lostInterval": {
+          "x": 536,
+          "y": 422,
+          "w": 456,
+          "h": 34,
+          "font": 20
+        },
+        "mileageNote": {
+          "x": 32,
+          "y": 472,
+          "w": 960,
+          "h": 24,
+          "font": 20
+        },
+        "mileageNoteTail": {
+          "x": 32,
+          "y": 496,
+          "w": 960,
+          "h": 24,
+          "font": 20
+        },
+        "positionBack": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "positionSync": {
+          "x": 184,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "positionAlarm": {
+          "x": 352,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": []
+    },
+    "P4_Info": {
+      "id": 4,
+      "controls": {
+        "infoTitle": {
+          "x": 24,
+          "y": 12,
+          "w": 680,
+          "h": 40,
+          "font": 32,
+          "text": "系统信息",
+          "background": "#0B1426"
+        },
+        "ctrlVersion": {
+          "x": 32,
+          "y": 86,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "screenVersion": {
+          "x": 32,
+          "y": 130,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "protocolVersion": {
+          "x": 32,
+          "y": 174,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "resetCode": {
+          "x": 32,
+          "y": 218,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "diagLow": {
+          "x": 32,
+          "y": 262,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "diagHigh": {
+          "x": 32,
+          "y": 306,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "heartbeat": {
+          "x": 32,
+          "y": 350,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "minStack": {
+          "x": 32,
+          "y": 394,
+          "w": 960,
+          "h": 36,
+          "font": 24
+        },
+        "infoBack": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": [
+        {
+          "name": "mechanicalNote",
+          "text": "速度换算：轮径 0.185 m | 总传动比 8/3 | 方向 +1 / +1\n线速度由轮速换算，非独立地面测速",
+          "x": 32,
+          "y": 454,
+          "w": 960,
+          "h": 64,
+          "font": 20
+        }
+      ]
+    },
+    "P5_Alarm": {
+      "id": 5,
+      "controls": {
+        "alarmLevel": {
+          "x": 32,
+          "y": 94,
+          "w": 456,
+          "h": 40,
+          "font": 32
+        },
+        "alarmTitle": {
+          "x": 24,
+          "y": 12,
+          "w": 680,
+          "h": 40,
+          "font": 32,
+          "text": "告警与维护",
+          "background": "#0B1426"
+        },
+        "alarmCode": {
+          "x": 536,
+          "y": 98,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "alarmSource": {
+          "x": 32,
+          "y": 154,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "alarmActive": {
+          "x": 536,
+          "y": 154,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "alarmEmergency": {
+          "x": 32,
+          "y": 204,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "alarmStopResult": {
+          "x": 536,
+          "y": 204,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "alarmSequence": {
+          "x": 32,
+          "y": 268,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "alarmEventTime": {
+          "x": 32,
+          "y": 312,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "alarmExtra": {
+          "x": 32,
+          "y": 356,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "alarmFaultSummary": {
+          "x": 32,
+          "y": 408,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "alarmHistory": {
+          "x": 32,
+          "y": 476,
+          "w": 960,
+          "h": 34,
+          "font": 20
+        },
+        "alarmBack": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "alarmSync": {
+          "x": 184,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "alarmExtension": {
+          "x": 352,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": []
+    },
+    "P6_Sync": {
+      "id": 6,
+      "controls": {
+        "syncTitle": {
+          "x": 24,
+          "y": 12,
+          "w": 680,
+          "h": 40,
+          "font": 32,
+          "text": "双轴同步诊断",
+          "background": "#0B1426"
+        },
+        "syncMacro": {
+          "x": 32,
+          "y": 92,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "syncState": {
+          "x": 536,
+          "y": 92,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "syncActualDiff": {
+          "x": 32,
+          "y": 156,
+          "w": 960,
+          "h": 40,
+          "font": 32
+        },
+        "syncEffectiveError": {
+          "x": 32,
+          "y": 212,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "syncCompensation": {
+          "x": 32,
+          "y": 260,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "syncPairValid": {
+          "x": 32,
+          "y": 330,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "syncRejectReason": {
+          "x": 536,
+          "y": 330,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "syncSkew": {
+          "x": 32,
+          "y": 376,
+          "w": 960,
+          "h": 34,
+          "font": 24
+        },
+        "syncAxis1Age": {
+          "x": 32,
+          "y": 422,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "syncAxis2Age": {
+          "x": 536,
+          "y": 422,
+          "w": 456,
+          "h": 34,
+          "font": 24
+        },
+        "syncReadonly": {
+          "x": 32,
+          "y": 480,
+          "w": 960,
+          "h": 34,
+          "font": 20
+        },
+        "syncBack": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "syncAlarm": {
+          "x": 184,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "syncExtension": {
+          "x": 352,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": []
+    },
+    "P7_System_Ext": {
+      "id": 7,
+      "controls": {
+        "batteryState": {
+          "x": 32,
+          "y": 92,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "extensionTitle": {
+          "x": 24,
+          "y": 12,
+          "w": 680,
+          "h": 40,
+          "font": 32,
+          "text": "整机扩展状态",
+          "background": "#0B1426"
+        },
+        "batteryPercent": {
+          "x": 536,
+          "y": 92,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "positioningState": {
+          "x": 32,
+          "y": 150,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "positioningAccuracy": {
+          "x": 536,
+          "y": 150,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "positioningX": {
+          "x": 32,
+          "y": 208,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "positioningY": {
+          "x": 536,
+          "y": 208,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "armState": {
+          "x": 32,
+          "y": 266,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "lightingState": {
+          "x": 536,
+          "y": 266,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "cameraState": {
+          "x": 32,
+          "y": 324,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "acquisitionState": {
+          "x": 536,
+          "y": 324,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "storageState": {
+          "x": 32,
+          "y": 382,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "extensionComm": {
+          "x": 536,
+          "y": 382,
+          "w": 456,
+          "h": 40,
+          "font": 24
+        },
+        "extensionFault": {
+          "x": 32,
+          "y": 440,
+          "w": 456,
+          "h": 40,
+          "font": 20
+        },
+        "extensionReadonly": {
+          "x": 536,
+          "y": 440,
+          "w": 456,
+          "h": 40,
+          "font": 20
+        },
+        "extensionBack": {
+          "x": 16,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "extensionAlarm": {
+          "x": 184,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "extensionPosition": {
+          "x": 352,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        },
+        "servoEntry": {
+          "x": 856,
+          "y": 532,
+          "w": 152,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": []
+    },
+    "P8_ServoControl": {
+      "id": 8,
+      "controls": {
+        "controlTitle": {
+          "x": 24,
+          "y": 8,
+          "w": 976,
+          "h": 40,
+          "font": 32,
+          "background": "#0B1426",
+          "text": "伺服控制 / 30"
+        },
+        "linkStatus": {
+          "x": 24,
+          "y": 50,
+          "w": 976,
+          "h": 28,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "ownerStatus": {
+          "x": 24,
+          "y": 82,
+          "w": 460,
+          "h": 28,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "axisMode": {
+          "x": 536,
+          "y": 82,
+          "w": 464,
+          "h": 28,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "leftActual": {
+          "x": 32,
+          "y": 112,
+          "w": 456,
+          "h": 40,
+          "font": 32
+        },
+        "rightActual": {
+          "x": 536,
+          "y": 112,
+          "w": 456,
+          "h": 40,
+          "font": 32
+        },
+        "leftTarget": {
+          "x": 32,
+          "y": 174,
+          "w": 456,
+          "h": 44,
+          "font": 20,
+          "text": "最终目标：-- rpm\n-- m/s | -- km/h"
+        },
+        "rightTarget": {
+          "x": 536,
+          "y": 174,
+          "w": 456,
+          "h": 44,
+          "font": 20,
+          "text": "最终目标：-- rpm\n-- m/s | -- km/h"
+        },
+        "leftOutput": {
+          "x": 32,
+          "y": 218,
+          "w": 456,
+          "h": 44,
+          "font": 20,
+          "text": "执行输出：-- rpm\n-- m/s | -- km/h"
+        },
+        "rightOutput": {
+          "x": 536,
+          "y": 218,
+          "w": 456,
+          "h": 44,
+          "font": 20,
+          "text": "执行输出：-- rpm\n-- m/s | -- km/h"
+        },
+        "leftEnable": {
+          "x": 32,
+          "y": 262,
+          "w": 456,
+          "h": 24,
+          "font": 20
+        },
+        "rightEnable": {
+          "x": 536,
+          "y": 262,
+          "w": 456,
+          "h": 24,
+          "font": 20
+        },
+        "commonTarget": {
+          "x": 32,
+          "y": 286,
+          "w": 456,
+          "h": 44,
+          "font": 20,
+          "text": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "x": 24,
+          "y": 404,
+          "w": 976,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "stopStatus": {
+          "x": 24,
+          "y": 428,
+          "w": 476,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "errorStatus": {
+          "x": 24,
+          "y": 476,
+          "w": 976,
+          "h": 44,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "safetyNote": {
+          "x": 24,
+          "y": 520,
+          "w": 976,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426",
+          "color": "#A9BBD0"
+        },
+        "rpmSlider": {
+          "x": 24,
+          "y": 332,
+          "w": 976,
+          "h": 48,
+          "font": 24
+        },
+        "authorize": {
+          "x": 16,
+          "y": 544,
+          "w": 236,
+          "h": 52,
+          "font": 24
+        },
+        "estop": {
+          "x": 268,
+          "y": 544,
+          "w": 236,
+          "h": 52,
+          "font": 24
+        },
+        "backHome": {
+          "x": 772,
+          "y": 544,
+          "w": 236,
+          "h": 52,
+          "font": 24
+        },
+        "recoveryStatus": {
+          "x": 536,
+          "y": 428,
+          "w": 464,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "recoveryDetail": {
+          "x": 24,
+          "y": 452,
+          "w": 976,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426"
+        },
+        "recoveryButton": {
+          "x": 520,
+          "y": 544,
+          "w": 236,
+          "h": 52,
+          "font": 24
+        }
+      },
+      "add": [
+        {
+          "name": "leftActualUnits",
+          "text": "-- m/s | -- km/h",
+          "x": 32,
+          "y": 152,
+          "w": 456,
+          "h": 22,
+          "font": 20,
+          "global_": true
+        },
+        {
+          "name": "rightActualUnits",
+          "text": "-- m/s | -- km/h",
+          "x": 536,
+          "y": 152,
+          "w": 456,
+          "h": 22,
+          "font": 20,
+          "global_": true
+        },
+        {
+          "name": "acceptedTarget",
+          "text": "主控接受：-- rpm\n-- m/s | -- km/h",
+          "x": 536,
+          "y": 286,
+          "w": 456,
+          "h": 44,
+          "font": 20,
+          "global_": true
+        },
+        {
+          "name": "sliderScale",
+          "text": "负向 -1600 rpm",
+          "x": 32,
+          "y": 380,
+          "w": 280,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426",
+          "color": "#A9BBD0"
+        },
+        {
+          "name": "sliderZero",
+          "text": "0",
+          "x": 506,
+          "y": 380,
+          "w": 32,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426",
+          "color": "#A9BBD0"
+        },
+        {
+          "name": "sliderPositive",
+          "text": "正向 +1600 rpm",
+          "x": 812,
+          "y": 380,
+          "w": 188,
+          "h": 22,
+          "font": 20,
+          "background": "#0B1426",
+          "color": "#A9BBD0"
+        }
+      ]
+    }
+  },
+  "palette": {
+    "background": "#0B1426",
+    "card": "#14243B",
+    "text": "#EDF5FF",
+    "muted": "#A9BBD0",
+    "accent": "#22D3EE"
+  },
+  "mechanics": {
+    "diameter_m": 0.185,
+    "gear_num": 8,
+    "gear_den": 3,
+    "sign": [
+      1,
+      1
+    ]
+  }
+}

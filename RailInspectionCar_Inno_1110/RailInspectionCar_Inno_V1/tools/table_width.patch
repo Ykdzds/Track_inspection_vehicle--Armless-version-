@@ -1,0 +1,16 @@
+*** Begin Patch
+*** Update File: tools/create_stop_plan_doc.py
+@@
+ def add_table(doc, headers, rows, widths=None, header_fill=BLUE, font_size=8.5):
+@@
+-    if widths:
+-        set_col_widths(table, widths)
++    if widths:
++        # 纵向页面正文可用宽度约为174 mm，超宽表格按比例缩放，避免左右裁切。
++        available_width = 174.0
++        total_width = float(sum(widths))
++        if total_width > available_width:
++            scale = available_width / total_width
++            widths = [max(10.0, width * scale) for width in widths]
++        set_col_widths(table, widths)
+*** End Patch

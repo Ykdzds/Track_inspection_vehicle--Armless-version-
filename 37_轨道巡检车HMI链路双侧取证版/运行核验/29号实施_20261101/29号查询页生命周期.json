@@ -1,0 +1,82 @@
+[
+  {
+    "Page": "P1_Main",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P1_Main",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P2_Diag",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P2_Diag",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P3_Position",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P3_Position",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P4_Info",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P4_Info",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P5_Alarm",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P5_Alarm",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P6_Sync",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P6_Sync",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P7_System_Ext",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P7_System_Ext",
+    "Event": "离开页面",
+    "Script": ""
+  },
+  {
+    "Page": "P0_Boot",
+    "Event": "加载页面",
+    "Script": ""
+  },
+  {
+    "Page": "P0_Boot",
+    "Event": "离开页面",
+    "Script": ""
+  }
+]

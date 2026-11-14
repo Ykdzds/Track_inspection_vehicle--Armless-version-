@@ -1,0 +1,19 @@
+{
+  "CapturedAt": "2026-10-17T13:04:32.9184023+08:00",
+  "Mode": "Default",
+  "Service": "HMI13事务服务.txt",
+  "PIX": "13_轨道巡检车.pix",
+  "PIX_SHA256": "35739960FB37153911A88ADB27C56BCFC288C6081BB14287FD615B1F77853550",
+  "BIN": "13_轨道巡检车.pix.bin",
+  "BIN_Length": 222281,
+  "BIN_SHA256": "759DB4BE928C7B06FD834AA65C822AF03B43CF163DE0BFDCDAC78FA03F7B8FCE",
+  "Compile": "运行核验/全量修复VisualPIX编译日志_20261016.txt",
+  "EventBindings": 11,
+  "BusinessTestExecutions": 138,
+  "LegacyDisplayTests": 33,
+  "BusinessTestLog": "运行核验/Default同步业务回归_20261017.txt",
+  "LegacyTestLog": "运行核验/Default同步旧页回归_20261017.txt",
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "Notes": "当前固件未下载实屏；rxLen语义与真实目标/状态间隔待验证；历史BIN不可替代本版"
+}

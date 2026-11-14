@@ -1,0 +1,1 @@
+if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==1 && P8_ServoControl.h13.vals[32]==0){P8_ServoControl.h13.vals[10]=P8_ServoControl.rpmSlider.val-1600;}

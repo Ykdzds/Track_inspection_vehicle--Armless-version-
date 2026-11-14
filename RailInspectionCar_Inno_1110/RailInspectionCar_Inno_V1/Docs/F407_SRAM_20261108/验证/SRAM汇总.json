@@ -1,0 +1,1734 @@
+{
+  "baseline_commit": "a2c49d354a1c61a1636eda2d91d2398337ab5688",
+  "baseline_map_sha256": "6831CB7E1EC89BEBB64E3DA49A87225CAF564E3C8F977FD21881538BE09DAE21",
+  "baseline_physical": 175136,
+  "baseline_heap": {
+    "base": "0x200013c0",
+    "array_bytes": 49152,
+    "initial_usable_bytes": 49144
+  },
+  "matrix_profile_count": 14,
+  "official_variant": "source-default",
+  "source_default_status": "verified",
+  "profiles": [
+    {
+      "variant": "compat",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 170560,
+      "static_saved": 4576,
+      "ordinary_free": 22536,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x200018ec",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49136
+      },
+      "startup_allocation_reduction": 0,
+      "estimated_startup_free_increase": -8,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "37E88C7E50A2DEDFB3F48C655D9C1BDF56BD91156E78B42D54CB23404200D4FA"
+    },
+    {
+      "variant": "lcd-off",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 162196,
+      "static_saved": 12940,
+      "ordinary_free": 30900,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x2000197c",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49136
+      },
+      "startup_allocation_reduction": 7112,
+      "estimated_startup_free_increase": 7104,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "D0CC79AE2E232BDCDA8058BB707944791CC86A7695DA0103F18A5F5FA368F461"
+    },
+    {
+      "variant": "hmi",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167368,
+      "static_saved": 7768,
+      "ordinary_free": 25728,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001438",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "1D59E7626953E0008166F0FBE371B0251090013743B4DDFF93A425FCB165C3DD"
+    },
+    {
+      "variant": "remote",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167256,
+      "static_saved": 7880,
+      "ordinary_free": 25840,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001764",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49136
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3152,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "BE4CB81C77969334092050E36B5BF5EC9AB3C41C072F5C50CFECD75BD2FF063A"
+    },
+    {
+      "variant": "canservo",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167220,
+      "static_saved": 7916,
+      "ordinary_free": 25876,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001850",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "B4E833FAC4BF1EC8C69121359D1DC96094CAA617A804D7861A2734C6B0DB993E"
+    },
+    {
+      "variant": "canarm",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167220,
+      "static_saved": 7916,
+      "ordinary_free": 25876,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001850",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "2FF0A707D3CD84C84020F003BD4A3F92F6B4DD2FFE1EC94CFCFFC8527B6F4A69"
+    },
+    {
+      "variant": "rs485",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167368,
+      "static_saved": 7768,
+      "ordinary_free": 25728,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x200017d0",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "68EDB3BC86853F01600F2B3CF55E3C83294370EB36A5F63CAE532408D161DDA7"
+    },
+    {
+      "variant": "all",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167544,
+      "static_saved": 7592,
+      "ordinary_free": 25552,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001630",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "04A2C466D6E7FEFA29B2A5D92DD3839B58A18C0B645724D7295FED9A0168E239"
+    },
+    {
+      "variant": "lcd-off-all",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 165056,
+      "static_saved": 10080,
+      "ordinary_free": 28040,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001608",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 7112,
+      "estimated_startup_free_increase": 7112,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "17BC8359D5E2A9755B823C0B4E35E09F1148FBB7615A1C11CC315A5C5D2428FF"
+    },
+    {
+      "variant": "maintenance",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 171432,
+      "static_saved": 3704,
+      "ordinary_free": 21664,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001128",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 0,
+      "estimated_startup_free_increase": 0,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "FA8DD917E8688E2FC468EA6DA6FC711C93E55DF089C797D318481A8DCC795695"
+    },
+    {
+      "variant": "tune-only",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 169336,
+      "static_saved": 5800,
+      "ordinary_free": 23760,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x20001504",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49136
+      },
+      "startup_allocation_reduction": 0,
+      "estimated_startup_free_increase": -8,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "8E7BE3CF7F8876B146362CDCECD9A40B95830B40A267B294A9C1D83ECDC15993"
+    },
+    {
+      "variant": "pulse-back",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 171960,
+      "static_saved": 3176,
+      "ordinary_free": 21136,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x200013f8",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 0,
+      "estimated_startup_free_increase": 0,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "0B695AD80828EB6768E9CE12919CB0F8CD2FC6B3F934F6C9C91AD089D2452513"
+    },
+    {
+      "variant": "legacy",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 167560,
+      "static_saved": 7576,
+      "ordinary_free": 25552,
+      "ccm_free": 3496,
+      "heap": {
+        "base": "0x20001630",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 264,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "A5888601A03EEAC074BDDC59E6AF3D0B7D3661F35D1681A6581366E3DA694898"
+    },
+    {
+      "variant": "default",
+      "origin": "matrix",
+      "official_artifact": false,
+      "physical_ram": 164496,
+      "static_saved": 10640,
+      "ordinary_free": 28600,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x200018e0",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "A35411F4F5FA5970D20274C2AD2B8DCA8B5528A6426CB64F434961610E0ADC1E"
+    },
+    {
+      "variant": "source-default",
+      "origin": "restored-project-build",
+      "official_artifact": true,
+      "physical_ram": 164496,
+      "static_saved": 10640,
+      "ordinary_free": 28600,
+      "ccm_free": 3512,
+      "heap": {
+        "base": "0x200018e0",
+        "array_bytes": 49152,
+        "initial_usable_bytes": 49144
+      },
+      "startup_allocation_reduction": 3160,
+      "estimated_startup_free_increase": 3160,
+      "current_heap_free": null,
+      "minimum_ever_heap_free": null,
+      "minimum_static_stack_margin": 360,
+      "hardware_acceptance": "pending",
+      "hex_sha256": "A35411F4F5FA5970D20274C2AD2B8DCA8B5528A6426CB64F434961610E0ADC1E"
+    }
+  ],
+  "object_changes": [
+    {
+      "variant": "compat",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        }
+      ]
+    },
+    {
+      "variant": "lcd-off",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_lcd_show.o",
+          "baseline": 518,
+          "current": 0,
+          "saved": 518
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "bsp_lcd.o",
+          "baseline": 732,
+          "current": 0,
+          "saved": 732
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "lcd_core.o",
+          "baseline": 108,
+          "current": 0,
+          "saved": 108
+        },
+        {
+          "object": "lcd_port.o",
+          "baseline": 768,
+          "current": 0,
+          "saved": 768
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "spi.o",
+          "baseline": 464,
+          "current": 280,
+          "saved": 184
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "hmi",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi.o",
+          "baseline": 1636,
+          "current": 1780,
+          "saved": -144
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "remote",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_remote_servo.o",
+          "baseline": 2448,
+          "current": 2485,
+          "saved": -37
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "canservo",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "canarm",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "rs485",
+      "objects": [
+        {
+          "object": "aimtor_servo.o",
+          "baseline": 2702,
+          "current": 2710,
+          "saved": -8
+        },
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_health.o",
+          "baseline": 260,
+          "current": 269,
+          "saved": -9
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "bsp_rs485.o",
+          "baseline": 892,
+          "current": 908,
+          "saved": -16
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "modbus_rtu.o",
+          "baseline": 384,
+          "current": 496,
+          "saved": -112
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "all",
+      "objects": [
+        {
+          "object": "aimtor_servo.o",
+          "baseline": 2702,
+          "current": 2710,
+          "saved": -8
+        },
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_health.o",
+          "baseline": 260,
+          "current": 269,
+          "saved": -9
+        },
+        {
+          "object": "app_hmi.o",
+          "baseline": 1636,
+          "current": 1780,
+          "saved": -144
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_remote_servo.o",
+          "baseline": 2448,
+          "current": 2485,
+          "saved": -37
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "bsp_rs485.o",
+          "baseline": 892,
+          "current": 908,
+          "saved": -16
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "modbus_rtu.o",
+          "baseline": 384,
+          "current": 496,
+          "saved": -112
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "lcd-off-all",
+      "objects": [
+        {
+          "object": "aimtor_servo.o",
+          "baseline": 2702,
+          "current": 2710,
+          "saved": -8
+        },
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_health.o",
+          "baseline": 260,
+          "current": 269,
+          "saved": -9
+        },
+        {
+          "object": "app_hmi.o",
+          "baseline": 1636,
+          "current": 1780,
+          "saved": -144
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2538,
+          "saved": -2538
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_lcd_show.o",
+          "baseline": 518,
+          "current": 0,
+          "saved": 518
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_remote_servo.o",
+          "baseline": 2448,
+          "current": 2485,
+          "saved": -37
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "bsp_lcd.o",
+          "baseline": 732,
+          "current": 0,
+          "saved": 732
+        },
+        {
+          "object": "bsp_rs485.o",
+          "baseline": 892,
+          "current": 908,
+          "saved": -16
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "lcd_core.o",
+          "baseline": 108,
+          "current": 0,
+          "saved": 108
+        },
+        {
+          "object": "lcd_port.o",
+          "baseline": 768,
+          "current": 0,
+          "saved": 768
+        },
+        {
+          "object": "modbus_rtu.o",
+          "baseline": 384,
+          "current": 496,
+          "saved": -112
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "spi.o",
+          "baseline": 464,
+          "current": 280,
+          "saved": 184
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "maintenance",
+      "objects": [
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4552,
+          "saved": 2224
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 8450,
+          "saved": 96
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 43,
+          "saved": 92
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "tune-only",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 204,
+          "saved": 928
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "pulse-back",
+      "objects": [
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4600,
+          "saved": 2176
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        }
+      ]
+    },
+    {
+      "variant": "legacy",
+      "objects": [
+        {
+          "object": "aimtor_servo.o",
+          "baseline": 2702,
+          "current": 2710,
+          "saved": -8
+        },
+        {
+          "object": "app_can.o",
+          "baseline": 13380,
+          "current": 13392,
+          "saved": -12
+        },
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_health.o",
+          "baseline": 260,
+          "current": 269,
+          "saved": -9
+        },
+        {
+          "object": "app_hmi.o",
+          "baseline": 1636,
+          "current": 1780,
+          "saved": -144
+        },
+        {
+          "object": "app_hmi_link_diag.o",
+          "baseline": 0,
+          "current": 2718,
+          "saved": -2718
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_remote_servo.o",
+          "baseline": 2448,
+          "current": 2485,
+          "saved": -37
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "bsp_rs485.o",
+          "baseline": 892,
+          "current": 908,
+          "saved": -16
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "modbus_rtu.o",
+          "baseline": 384,
+          "current": 496,
+          "saved": -112
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "default",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    },
+    {
+      "variant": "source-default",
+      "objects": [
+        {
+          "object": "app_cli_servo_session.o",
+          "baseline": 112,
+          "current": 0,
+          "saved": 112
+        },
+        {
+          "object": "app_debug_cli.o",
+          "baseline": 1132,
+          "current": 0,
+          "saved": 1132
+        },
+        {
+          "object": "app_hmi_snapshot.o",
+          "baseline": 6776,
+          "current": 4216,
+          "saved": 2560
+        },
+        {
+          "object": "app_position_monitor.o",
+          "baseline": 2120,
+          "current": 1120,
+          "saved": 1000
+        },
+        {
+          "object": "app_system_snapshot.o",
+          "baseline": 8546,
+          "current": 7778,
+          "saved": 768
+        },
+        {
+          "object": "app_tune_cli.o",
+          "baseline": 3046,
+          "current": 0,
+          "saved": 3046
+        },
+        {
+          "object": "app_tune_diagnostics.o",
+          "baseline": 1024,
+          "current": 0,
+          "saved": 1024
+        },
+        {
+          "object": "debug_uart.o",
+          "baseline": 8908,
+          "current": 8352,
+          "saved": 556
+        },
+        {
+          "object": "motion_control.o",
+          "baseline": 49,
+          "current": 5,
+          "saved": 44
+        },
+        {
+          "object": "servo_debug_control.o",
+          "baseline": 135,
+          "current": 0,
+          "saved": 135
+        },
+        {
+          "object": "servo_pulse.o",
+          "baseline": 96,
+          "current": 0,
+          "saved": 96
+        },
+        {
+          "object": "stdout.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "strtok.o",
+          "baseline": 4,
+          "current": 0,
+          "saved": 4
+        },
+        {
+          "object": "tim.o",
+          "baseline": 216,
+          "current": 72,
+          "saved": 144
+        }
+      ]
+    }
+  ],
+  "hardware_acceptance": "pending"
+}

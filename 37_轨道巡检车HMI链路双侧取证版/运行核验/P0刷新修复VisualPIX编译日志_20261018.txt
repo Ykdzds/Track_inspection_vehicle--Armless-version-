@@ -1,0 +1,8 @@
+Visual-PIX编译成功
+工程：17_轨道巡检车.pix
+对象：P0_Boot.refreshTick
+global=True
+enable=True
+interval=5
+脚本：全局计龄刷新.txt
+时间：2026-10-18 17:39:59 +08:00

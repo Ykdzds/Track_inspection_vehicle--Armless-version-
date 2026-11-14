@@ -1,0 +1,12 @@
+{
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\29_轨道巡检车跨页运行与伺服快捷导航版",
+  "CompiledAt": "2026-11-01T17:47:29.9044823+08:00",
+  "PIX": "17_轨道巡检车.pix",
+  "PIX_SHA256": "83221B6577F76D9ACD9D65CB57AB45D0B77A38E43B63FAFBB2D8DA7CC733EFDB",
+  "BIN": "17_轨道巡检车.pix.bin",
+  "BIN_SHA256": "4D92DE6707E0F527B4184DA87CC029E69821F17BAACEBDA60CD9BDA9C2FC3EC5",
+  "BIN_Length": 263831,
+  "NewBinary": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

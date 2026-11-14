@@ -1,0 +1,12 @@
+﻿{
+    "Engine":  "Visual-PIX native compiled events",
+    "CaptureExecuted":  true,
+    "EventId":  1,
+    "Reason":  8,
+    "ScheduleHigh":  4660,
+    "ScheduleLow":  22136,
+    "NegativeGapHigh":  65535,
+    "NegativeGapLow":  65413,
+    "Errors":  0,
+    "PhysicalVerified":  false
+}

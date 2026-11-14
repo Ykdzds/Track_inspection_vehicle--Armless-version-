@@ -1,0 +1,14 @@
+{
+  "pass": 6,
+  "fail": 0,
+  "sliderEvaluations": 6402,
+  "checks": [
+    "31 actual binding and synchronized display sources",
+    "31 original controls, protocol, safety events and 50ms timers preserved",
+    "31 toggle only on release, preserves theme over all nine pages and reboot resets day",
+    "31 all 3201 values in allowed and protected conditions, direction, 12px spacing, bounds and read-only state",
+    "31 every original guard blocks motion and reports preview",
+    "31 signed extrema, sentinels, separate left/right values and source-dependent fonts"
+  ],
+  "native": false
+}

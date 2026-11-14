@@ -1,0 +1,351 @@
+CWD: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1
+ENV HMI34_BASELINE: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\37_轨道巡检车HMI链路双侧取证版
+COMMAND_ARGS: ["D:\\codex_\\node.exe", "--test", "--test-reporter=tap", "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37.test.cjs", "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-inherited.test.cjs", "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-diag.test.cjs", "C:\\Users\\15056\\AppData\\Local\\Temp\\rail_screen37_single_failure_20261107.test.cjs"]
+START: 2026-11-07T20:24:16.122943+08:00
+
+TAP version 13
+# SINGLE_FAILURE {"mode":"FC83/02","injected":1,"captureAt":2410,"stopAt":2560,"stopDelay":150,"firstPage":[18500,256,0,1,2,169,16,0,1,131,1,1120,64,8,0,48,4660,22136,0,9,0,11,0,2],"finalState":5,"stopCount":1}
+# SINGLE_FAILURE {"mode":"timeout","injected":1,"captureAt":2410,"stopAt":2560,"stopDelay":150,"firstPage":[18500,256,0,1,2,169,16,65535,0,0,0,1120,64,8,0,48,4660,22136,0,9,0,11,0,2],"finalState":5,"stopCount":1}
+# Subtest: one valid FC83/02 critical reply triggers frozen first cause then protective STOP without target replay
+ok 1 - one valid FC83/02 critical reply triggers frozen first cause then protective STOP without target replay
+  ---
+  duration_ms: 180.8509
+  type: 'test'
+  ...
+# Subtest: one missing critical reply triggers frozen raw FFFF then protective STOP without target replay
+ok 2 - one missing critical reply triggers frozen raw FFFF then protective STOP without target replay
+  ---
+  duration_ms: 132.267
+  type: 'test'
+  ...
+# Subtest: startup identity state6 does not create a running anomaly
+ok 3 - startup identity state6 does not create a running anomaly
+  ---
+  duration_ms: 68.7398
+  type: 'test'
+  ...
+# Subtest: one short critical reply freezes request and raw header before clearing target
+ok 4 - one short critical reply freezes request and raw header before clearing target
+  ---
+  duration_ms: 64.4448
+  type: 'test'
+  ...
+# Subtest: wrong snapshot identity keeps expected and observed boot distinct
+ok 5 - wrong snapshot identity keeps expected and observed boot distinct
+  ---
+  duration_ms: 55.6542
+  type: 'test'
+  ...
+# Subtest: target age boundary has a separate first-cause bit without a transport failure
+ok 6 - target age boundary has a separate first-cause bit without a transport failure
+  ---
+  duration_ms: 57.7914
+  type: 'test'
+  ...
+# Subtest: lease boundary has a separate first-cause bit
+ok 7 - lease boundary has a separate first-cause bit
+  ---
+  duration_ms: 62.47
+  type: 'test'
+  ...
+# Subtest: missing reply retains last snapshot with fallback validity
+ok 8 - missing reply retains last snapshot with fallback validity
+  ---
+  duration_ms: 56.3655
+  type: 'test'
+  ...
+# Subtest: diagnostic remains frozen through stop and uses two matching standard write ACKs
+ok 9 - diagnostic remains frozen through stop and uses two matching standard write ACKs
+  ---
+  duration_ms: 136.8611
+  type: 'test'
+  ...
+# Subtest: failed diagnostic ACK retries same page at no more than one per second
+ok 10 - failed diagnostic ACK retries same page at no more than one per second
+  ---
+  duration_ms: 157.0115
+  type: 'test'
+  ...
+# Subtest: STOP pending prevents an eligible diagnostic upload
+ok 11 - STOP pending prevents an eligible diagnostic upload
+  ---
+  duration_ms: 77.5525
+  type: 'test'
+  ...
+# Subtest: STOP arriving during diagnostic transport is served first on the next scheduler tick
+ok 12 - STOP arriving during diagnostic transport is served first on the next scheduler tick
+  ---
+  duration_ms: 93.282
+  type: 'test'
+  ...
+# Subtest: recovery branches freeze before clearing the target or recovery command state
+ok 13 - recovery branches freeze before clearing the target or recovery command state
+  ---
+  duration_ms: 119.7372
+  type: 'test'
+  ...
+# Subtest: reauthorization pauses upload and old cause survives until acknowledged
+ok 14 - reauthorization pauses upload and old cause survives until acknowledged
+  ---
+  duration_ms: 116.2236
+  type: 'test'
+  ...
+# Subtest: a new session anomaly cannot overwrite an unacknowledged first record
+ok 15 - a new session anomaly cannot overwrite an unacknowledged first record
+  ---
+  duration_ms: 83.1277
+  type: 'test'
+  ...
+# Subtest: after both ACKs a new session gets a new event identifier
+ok 16 - after both ACKs a new session gets a new event identifier
+  ---
+  duration_ms: 133.313
+  type: 'test'
+  ...
+# Subtest: final PIX array lengths and a single enabled 50ms timer
+ok 17 - final PIX array lengths and a single enabled 50ms timer
+  ---
+  duration_ms: 1.2925
+  type: 'test'
+  ...
+# Subtest: healthy navigation and rendering consume wall time, target read/write serialized
+ok 18 - healthy navigation and rendering consume wall time, target read/write serialized
+  ---
+  duration_ms: 214.3838
+  type: 'test'
+  ...
+# Subtest: releasing ordinary authorization key cannot cancel a newly authorized session
+ok 19 - releasing ordinary authorization key cannot cancel a newly authorized session
+  ---
+  duration_ms: 43.2005
+  type: 'test'
+  ...
+# Subtest: 300ms stall clears old target; later manual authorization starts at zero
+ok 20 - 300ms stall clears old target; later manual authorization starts at zero
+  ---
+  duration_ms: 173.4544
+  type: 'test'
+  ...
+# Subtest: 600ms host stall advances controller TTL independently
+ok 21 - 600ms host stall advances controller TTL independently
+  ---
+  duration_ms: 84.3076
+  type: 'test'
+  ...
+# Subtest: emergency generation survives all local states and historical stop candidates
+ok 22 - emergency generation survives all local states and historical stop candidates
+  ---
+  duration_ms: 185.5321
+  type: 'test'
+  ...
+# Subtest: wrong station, short frame and wrong function never renew nonzero target
+ok 23 - wrong station, short frame and wrong function never renew nonzero target
+  ---
+  duration_ms: 123.1694
+  type: 'test'
+  ...
+# Subtest: repeat authorization after completed stop never settles an old stop
+ok 24 - repeat authorization after completed stop never settles an old stop
+  ---
+  duration_ms: 366.7822
+  type: 'test'
+  ...
+# Subtest: display refreshes only visible page, max six fields, and retains last numeric history
+ok 25 - display refreshes only visible page, max six fields, and retains last numeric history
+  ---
+  duration_ms: 49.0166
+  type: 'test'
+  ...
+# Subtest: all nine pages and themes navigate with bounded arrays
+ok 26 - all nine pages and themes navigate with bounded arrays
+  ---
+  duration_ms: 200.5719
+  type: 'test'
+  ...
+# Subtest: CRC rejection and no callback cannot renew target or erase history
+ok 27 - CRC rejection and no callback cannot renew target or erase history
+  ---
+  duration_ms: 137.0201
+  type: 'test'
+  ...
+# Subtest: 100ms blocking can continue; 300/600ms cannot replay a nonzero target
+ok 28 - 100ms blocking can continue; 300/600ms cannot replay a nonzero target
+  ---
+  duration_ms: 151.5882
+  type: 'test'
+  ...
+# Subtest: 1000 page switches with theme changes retain session and bounded transactions
+ok 29 - 1000 page switches with theme changes retain session and bounded transactions
+  ---
+  duration_ms: 768.4395
+  type: 'test'
+  ...
+# Subtest: controller reboot clears old identity cache and never restores motion
+ok 30 - controller reboot clears old identity cache and never restores motion
+  ---
+  duration_ms: 80.5642
+  type: 'test'
+  ...
+# Subtest: position partial/expired samples hold values and baseline change invalidates only mileage
+ok 31 - position partial/expired samples hold values and baseline change invalidates only mileage
+  ---
+  duration_ms: 76.5775
+  type: 'test'
+  ...
+# Subtest: signed -1 and zero are valid speed cache values; sentinel retains preceding value
+ok 32 - signed -1 and zero are valid speed cache values; sentinel retains preceding value
+  ---
+  duration_ms: 36.1503
+  type: 'test'
+  ...
+# Subtest: first invalid speed remains unknown; ten seconds without any frame retains business values
+ok 33 - first invalid speed remains unknown; ten seconds without any frame retains business values
+  ---
+  duration_ms: 58.6298
+  type: 'test'
+  ...
+# Subtest: stop settlement and a newer emergency in the same event boundary keep the emergency generation
+ok 34 - stop settlement and a newer emergency in the same event boundary keep the emergency generation
+  ---
+  duration_ms: 32.816
+  type: 'test'
+  ...
+# Subtest: reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization
+ok 35 - reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization
+  ---
+  duration_ms: 48.3369
+  type: 'test'
+  ...
+# Subtest: negative, zero and speed bounds have explicit valid cache semantics
+ok 36 - negative, zero and speed bounds have explicit valid cache semantics
+  ---
+  duration_ms: 81.0301
+  type: 'test'
+  ...
+# Subtest: backward snapshot high word is rejected without depending on host integer overflow
+ok 37 - backward snapshot high word is rejected without depending on host integer overflow
+  ---
+  duration_ms: 41.9418
+  type: 'test'
+  ...
+# Subtest: snapshot uint32 wrap advances while backward master clock rejects renewal
+ok 38 - snapshot uint32 wrap advances while backward master clock rejects renewal
+  ---
+  duration_ms: 79.0274
+  type: 'test'
+  ...
+# Subtest: missing slider callback is compensated by sampled control value
+ok 39 - missing slider callback is compensated by sampled control value
+  ---
+  duration_ms: 79.5503
+  type: 'test'
+  ...
+# Subtest: candidate captured during initial zero confirmation is retained
+ok 40 - candidate captured during initial zero confirmation is retained
+  ---
+  duration_ms: 52.5044
+  type: 'test'
+  ...
+# Subtest: preview follows every thumb position at a fixed 12px gap
+ok 41 - preview follows every thumb position at a fixed 12px gap
+  ---
+  duration_ms: 40.2595
+  type: 'test'
+  ...
+# Subtest: transport loss retries exactly the same emergency request without another touch
+ok 42 - transport loss retries exactly the same emergency request without another touch
+  ---
+  duration_ms: 56.765
+  type: 'test'
+  ...
+# Subtest: release-only emergency is a fallback and down/up is one intent
+ok 43 - release-only emergency is a fallback and down/up is one intent
+  ---
+  duration_ms: 87.0276
+  type: 'test'
+  ...
+# Subtest: page lifecycle and reload preserve target, session and restored thumb
+ok 44 - page lifecycle and reload preserve target, session and restored thumb
+  ---
+  duration_ms: 1115.9236
+  type: 'test'
+  ...
+# Subtest: emergency inserted after a status reply prevents the next nonzero write
+ok 45 - emergency inserted after a status reply prevents the next nonzero write
+  ---
+  duration_ms: 49.5124
+  type: 'test'
+  ...
+# Subtest: a lost callback while unauthorized never becomes a target after new authorization
+ok 46 - a lost callback while unauthorized never becomes a target after new authorization
+  ---
+  duration_ms: 58.1165
+  type: 'test'
+  ...
+# Subtest: offline and 600ms blocking still stop and cannot replay old target
+ok 47 - offline and 600ms blocking still stop and cannot replay old target
+  ---
+  duration_ms: 109.3092
+  type: 'test'
+  ...
+# Subtest: rapid changes coalesce to the last target and preserve serial ownership
+ok 48 - rapid changes coalesce to the last target and preserve serial ownership
+  ---
+  duration_ms: 42.4283
+  type: 'test'
+  ...
+# Subtest: an old target confirmation cannot label a newer candidate as set
+ok 49 - an old target confirmation cannot label a newer candidate as set
+  ---
+  duration_ms: 41.8001
+  type: 'test'
+  ...
+# Subtest: new input arriving during target transport survives the older write reply
+ok 50 - new input arriving during target transport survives the older write reply
+  ---
+  duration_ms: 49.4453
+  type: 'test'
+  ...
+# Subtest: authorization is blocked for the entire pending emergency operation
+ok 51 - authorization is blocked for the entire pending emergency operation
+  ---
+  duration_ms: 37.1221
+  type: 'test'
+  ...
+# Subtest: a newer emergency while the previous transport is running stays latched
+ok 52 - a newer emergency while the previous transport is running stays latched
+  ---
+  duration_ms: 64.8181
+  type: 'test'
+  ...
+# Subtest: controller reboot during emergency retry never restores the old session
+ok 53 - controller reboot during emergency retry never restores the old session
+  ---
+  duration_ms: 135.2493
+  type: 'test'
+  ...
+# Subtest: 200 independent track clicks including missed callbacks reach the final values
+ok 54 - 200 independent track clicks including missed callbacks reach the final values
+  ---
+  duration_ms: 795.41
+  type: 'test'
+  ...
+# Subtest: 100 independent emergency touches settle and allow fresh zero authorization
+ok 55 - 100 independent emergency touches settle and allow fresh zero authorization
+  ---
+  duration_ms: 5628.239
+  type: 'test'
+  ...
+1..55
+# tests 55
+# suites 0
+# pass 55
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8628.2226
+
+EXIT: 0
+FINISH: 2026-11-07T20:24:26.416769+08:00
+SCREEN_HASHES_UNCHANGED: True

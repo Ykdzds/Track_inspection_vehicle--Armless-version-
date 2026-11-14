@@ -1,0 +1,46 @@
+int irqIndex;
+int irqValue;
+int irqAccepted;
+int irqRegion;
+// 中断只接收和提交缓存，不派发第二条事务。
+mod.modbusBufferCheckStatus();
+irqAccepted=0;
+P8_ServoControl.h13.vals[100]=mod.interruptCode;P8_ServoControl.h13.vals[101]=mod.bdaddr;P8_ServoControl.h13.vals[102]=mod.bdcount;P8_ServoControl.h13.vals[103]=mod.bdindex;
+if(P8_ServoControl.h13.vals[13]==1 && P8_ServoControl.h13.vals[14]==1 && (mod.interruptCode==1 || mod.interruptCode==2) && mod.bcaddr==1 && mod.bdindex==P8_ServoControl.h13.vals[15] && mod.bdaddr==P8_ServoControl.h13.vals[16] && mod.bdcount==P8_ServoControl.h13.vals[17]){
+    irqAccepted=1;
+    if(mod.interruptCode==1){
+        if(P8_ServoControl.h13.vals[15]==5 && metaValid.vals[0]==1 && bytesToShort(mod.bdbuf,0,1)==21065 && bytesToShort(mod.bdbuf,2,1)==1 && ((bytesToShort(mod.bdbuf,8,1)&65535)!=metaRegs.vals[4] || (bytesToShort(mod.bdbuf,10,1)&65535)!=metaRegs.vals[5])){
+            for(irqRegion=0;irqRegion<5;irqRegion++){regionSeen.vals[irqRegion]=0;regionValid.vals[irqRegion]=0;regionAge.vals[irqRegion]=0;regionGoodRun.vals[irqRegion]=0;regionBadRun.vals[irqRegion]=0;}
+        }
+        for(irqIndex=0;irqIndex<P8_ServoControl.h13.vals[17];irqIndex++){
+            irqValue=bytesToShort(mod.bdbuf,irqIndex*2,1)&65535;
+            if(P8_ServoControl.h13.vals[15]<5){rawRegs.vals[P8_ServoControl.h13.vals[16]+irqIndex]=irqValue;}
+            if(P8_ServoControl.h13.vals[15]==5){metaRegs.vals[irqIndex]=irqValue;}
+            if(P8_ServoControl.h13.vals[15]==6){P8_ServoControl.h13Result.vals[irqIndex]=irqValue;}
+            if(P8_ServoControl.h13.vals[15]==7){P8_ServoControl.h13Status.vals[irqIndex]=irqValue;}
+        }
+        if(P8_ServoControl.h13.vals[15]<5){regionSeen.vals[P8_ServoControl.h13.vals[15]]=1;regionValid.vals[P8_ServoControl.h13.vals[15]]=1;regionAge.vals[P8_ServoControl.h13.vals[15]]=0;regionBadRun.vals[P8_ServoControl.h13.vals[15]]=0;if(regionGoodRun.vals[P8_ServoControl.h13.vals[15]]<65535){regionGoodRun.vals[P8_ServoControl.h13.vals[15]]=regionGoodRun.vals[P8_ServoControl.h13.vals[15]]+1;}}
+        if(P8_ServoControl.h13.vals[15]==5){P8_ServoControl.h13.vals[47]=1;P8_ServoControl.h13.vals[22]=P8_ServoControl.h13.vals[1];metaSeen.vals[0]=1;metaAge.vals[0]=0;metaValid.vals[0]=0;if(metaRegs.vals[0]==21065 && metaRegs.vals[1]==1){metaValid.vals[0]=1;}}
+        if(P8_ServoControl.h13.vals[15]==6){P8_ServoControl.h13.vals[23]=1;}
+        if(P8_ServoControl.h13.vals[15]==7){P8_ServoControl.h13.vals[20]=1;P8_ServoControl.h13.vals[21]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[24]=1;}
+        P8_ServoControl.h13.vals[104]=P8_ServoControl.h13.vals[104]+1;P8_ServoControl.h13.vals[106]=P8_ServoControl.h13.vals[15];P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[108]=0;
+        if(P8_ServoControl.h13.vals[15]==0){P8_ServoControl.h13.vals[109]=P8_ServoControl.h13.vals[109]+1;}
+        if(P8_ServoControl.h13.vals[15]==1){P8_ServoControl.h13.vals[110]=P8_ServoControl.h13.vals[110]+1;}
+        if(P8_ServoControl.h13.vals[15]==2){P8_ServoControl.h13.vals[111]=P8_ServoControl.h13.vals[111]+1;}
+        if(P8_ServoControl.h13.vals[15]==3){P8_ServoControl.h13.vals[112]=P8_ServoControl.h13.vals[112]+1;}
+        if(P8_ServoControl.h13.vals[15]==4){P8_ServoControl.h13.vals[113]=P8_ServoControl.h13.vals[113]+1;}
+        if(P8_ServoControl.h13.vals[15]==5){P8_ServoControl.h13.vals[114]=P8_ServoControl.h13.vals[114]+1;}
+        if(P8_ServoControl.h13.vals[15]==6 || P8_ServoControl.h13.vals[15]==7){P8_ServoControl.h13.vals[115]=P8_ServoControl.h13.vals[115]+1;}
+        P8_ServoControl.h13.vals[45]=0;P8_ServoControl.h13.vals[79]=P8_ServoControl.h13.vals[79]+1;
+}else{
+    P8_ServoControl.h13.vals[105]=P8_ServoControl.h13.vals[105]+1;P8_ServoControl.h13.vals[108]=1;
+        P8_ServoControl.h13.vals[45]=2;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;
+        if(P8_ServoControl.h13.vals[15]<5){regionGoodRun.vals[P8_ServoControl.h13.vals[15]]=0;regionBadRun.vals[P8_ServoControl.h13.vals[15]]=regionBadRun.vals[P8_ServoControl.h13.vals[15]]+1;regionFails.vals[P8_ServoControl.h13.vals[15]]=regionFails.vals[P8_ServoControl.h13.vals[15]]+1;}
+    }
+}
+if(P8_ServoControl.h13.vals[13]==1 && P8_ServoControl.h13.vals[14]==2 && (mod.interruptCode==3 || mod.interruptCode==4) && mod.bcaddr==1 && mod.bdaddr==256 && mod.bdcount==24){
+    irqAccepted=1;
+    if(mod.interruptCode==3){P8_ServoControl.h13.vals[90]=1;P8_ServoControl.h13.vals[79]=P8_ServoControl.h13.vals[79]+1;P8_ServoControl.h13.vals[45]=0;}
+    else{P8_ServoControl.h13.vals[45]=4;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;}
+}
+if(irqAccepted==1){P8_ServoControl.h13.vals[13]=0;P8_ServoControl.h13.vals[19]=P8_ServoControl.h13.vals[1]+10;}else{P8_ServoControl.h13.vals[76]=P8_ServoControl.h13.vals[76]+1;}

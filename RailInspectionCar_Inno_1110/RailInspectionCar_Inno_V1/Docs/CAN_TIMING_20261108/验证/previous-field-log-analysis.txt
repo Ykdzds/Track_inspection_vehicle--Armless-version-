@@ -1,0 +1,230 @@
+Link5: 15912 records, 1 boot IDs, 0 parse warnings
+HMI complete maximum: UNKNOWN (requires TIMING tc/hz, SLOW stamps/hz or --dwt-hz).
+First stop: boot 656, event 1, at=114073 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 2, at=130076 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 3, at=159726 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 4, at=209785 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 5, at=235000 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 6, at=298173 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 7, at=335196 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 8, at=371320 ms, owner=5, requester=1, reason=2, decel=600 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event 9, at=382443 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event A, at=401873 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+First stop: boot 656, event B, at=433713 ms, owner=5, requester=5, reason=5, decel=500 mm/s^2 (legacy decimal fields).
+Route FIRST: boot 656 src=S485 kind=10 event=2F3, complete
+Route FIRST: boot 656 src=S485 kind=10 event=2FC, complete
+Route FIRST: boot 656 src=CS kind=110 event=8C0, complete
+Route FIRST: boot 656 src=CS kind=110 event=ABA, complete
+Route FIRST: boot 656 src=CS kind=105 event=AC2, complete
+Route FIRST: boot 656 src=CS kind=105 event=C01, complete
+Route FIRST: boot 656 src=CS kind=105 event=CF9, complete
+Route FIRST: boot 656 src=CS kind=105 event=E60, complete
+Route FIRST: boot 656 src=CS kind=105 event=F92, complete
+Route FIRST: boot 656 src=CS kind=105 event=109F, complete
+Route FIRST: boot 656 src=CS kind=105 event=1205, complete
+Route FIRST: boot 656 src=CS kind=105 event=12BD, complete
+Route FIRST: boot 656 src=CS kind=105 event=13A6, complete
+Route FIRST: boot 656 src=CS kind=105 event=1474, complete
+Route FIRST: boot 656 src=CS kind=105 event=1500, complete
+Route FIRST: boot 656 src=CS kind=105 event=15F0, complete
+Route FIRST: boot 656 src=CS kind=105 event=16B8, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1761, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1799, complete
+Route FIRST: boot 656 src=S485 kind=10 event=179B, complete
+Route FIRST: boot 656 src=CS kind=110 event=1870, complete
+Route FIRST: boot 656 src=CS kind=105 event=1878, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1A0F, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1A11, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1AB3, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1ABE, complete
+Route FIRST: boot 656 src=S485 kind=10 event=1AC5, complete
+Route FIRST: boot 656 src=CS kind=110 event=1C55, complete
+Route FIRST: boot 656 src=CS kind=105 event=1C58, complete
+Route FIRST: boot 656 src=CS kind=105 event=20DA, complete
+Route FIRST: boot 656 src=CS kind=105 event=21BD, complete
+Route FIRST: boot 656 src=CS kind=105 event=2257, complete
+Route FIRST: boot 656 src=CS kind=105 event=2328, complete
+Route FIRST: boot 656 src=CS kind=105 event=23E8, complete
+Route FIRST: boot 656 src=CS kind=105 event=24F5, complete
+Route FIRST: boot 656 src=CS kind=105 event=25EA, complete
+Route FIRST: boot 656 src=CS kind=105 event=2748, complete
+Route FIRST: boot 656 src=CS kind=105 event=286F, complete
+Route FIRST: boot 656 src=S485 kind=10 event=28DE, complete
+Route FIRST: boot 656 src=S485 kind=10 event=293C, complete
+Route FIRST: boot 656 src=S485 kind=10 event=2B36, complete
+Route FIRST: boot 656 src=S485 kind=10 event=2B3A, complete
+Route FIRST: boot 656 src=CS kind=110 event=2D00, complete
+Route FIRST: boot 656 src=CS kind=105 event=2D06, complete
+Route FIRST: boot 656 src=CS kind=105 event=2EED, complete
+Route FIRST: boot 656 src=CS kind=105 event=302B, complete
+Route FIRST: boot 656 src=CS kind=105 event=3139, complete
+Route FIRST: boot 656 src=CS kind=105 event=32D2, complete
+Route FIRST: boot 656 src=CS kind=105 event=339E, complete
+Route FIRST: boot 656 src=CS kind=105 event=341D, complete
+Route FIRST: boot 656 src=CS kind=105 event=34B9, complete
+Route FIRST: boot 656 src=CS kind=105 event=3579, complete
+Route FIRST: boot 656 src=CS kind=105 event=3660, complete
+Route FIRST: boot 656 src=CS kind=105 event=36E2, complete
+Route FIRST: boot 656 src=CS kind=105 event=37C6, complete
+Route FIRST: boot 656 src=CS kind=105 event=386A, complete
+Route FIRST: boot 656 src=CS kind=105 event=394E, complete
+Route FIRST: boot 656 src=S485 kind=10 event=3990, complete
+Route FIRST: boot 656 src=CS kind=110 event=39F7, complete
+Route FIRST: boot 656 src=S485 kind=10 event=39F8, complete
+Route FIRST: boot 656 src=S485 kind=10 event=39FA, complete
+Route FIRST: boot 656 src=S485 kind=10 event=3ACC, complete
+Route FIRST: boot 656 src=CS kind=110 event=3C0C, complete
+Route FIRST: boot 656 src=CS kind=105 event=3C14, complete
+Route FIRST: boot 656 src=CS kind=105 event=3E2A, complete
+Route FIRST: boot 656 src=CS kind=105 event=4019, complete
+Route FIRST: boot 656 src=CS kind=105 event=41B6, complete
+Route FIRST: boot 656 src=CS kind=105 event=4274, complete
+Route FIRST: boot 656 src=CS kind=105 event=4327, complete
+Route FIRST: boot 656 src=CS kind=105 event=440F, complete
+Route FIRST: boot 656 src=CS kind=105 event=44DE, complete
+Route FIRST: boot 656 src=CS kind=105 event=45A6, complete
+Route FIRST: boot 656 src=CS kind=105 event=4667, complete
+Route FIRST: boot 656 src=CS kind=105 event=472C, complete
+Route FIRST: boot 656 src=CS kind=105 event=47D9, complete
+Route FIRST: boot 656 src=S485 kind=10 event=4897, complete
+Route FIRST: boot 656 src=CS kind=105 event=48A8, complete
+Route FIRST: boot 656 src=S485 kind=10 event=48FC, complete
+Route FIRST: boot 656 src=S485 kind=10 event=48FE, complete
+Route FIRST: boot 656 src=S485 kind=10 event=49BB, complete
+Route FIRST: boot 656 src=S485 kind=10 event=49BD, complete
+Route FIRST: boot 656 src=S485 kind=10 event=4A59, complete
+Route FIRST: boot 656 src=S485 kind=10 event=4A63, complete
+Route FIRST: boot 656 src=S485 kind=10 event=4A68, complete
+Route FIRST: boot 656 src=CS kind=110 event=4EDE, complete
+Route FIRST: boot 656 src=CS kind=105 event=4EE9, complete
+Route FIRST: boot 656 src=CS kind=105 event=510E, complete
+Route FIRST: boot 656 src=CS kind=105 event=520A, complete
+Route FIRST: boot 656 src=CS kind=105 event=5399, complete
+Route FIRST: boot 656 src=CS kind=105 event=5498, complete
+Route FIRST: boot 656 src=CS kind=105 event=5588, complete
+Route FIRST: boot 656 src=CS kind=105 event=56B6, complete
+Route FIRST: boot 656 src=CS kind=105 event=57A6, complete
+Route FIRST: boot 656 src=CS kind=105 event=5870, complete
+Route FIRST: boot 656 src=CS kind=105 event=5928, complete
+Route FIRST: boot 656 src=CS kind=105 event=5A48, complete
+Route FIRST: boot 656 src=CS kind=105 event=5B49, complete
+Route FIRST: boot 656 src=S485 kind=10 event=5B7C, complete
+Route FIRST: boot 656 src=S485 kind=10 event=5BF6, complete
+Route FIRST: boot 656 src=S485 kind=10 event=5CFE, complete
+Route FIRST: boot 656 src=S485 kind=10 event=5D05, complete
+Route FIRST: boot 656 src=CS kind=110 event=5EFF, complete
+Route FIRST: boot 656 src=CS kind=105 event=5F05, complete
+Route FIRST: boot 656 src=CS kind=105 event=605A, complete
+Route FIRST: boot 656 src=CS kind=105 event=61F8, complete
+Route FIRST: boot 656 src=CS kind=105 event=6515, complete
+Route FIRST: boot 656 src=CS kind=105 event=6657, complete
+Route FIRST: boot 656 src=CS kind=105 event=66EF, complete
+Route FIRST: boot 656 src=CS kind=105 event=67B5, complete
+Route FIRST: boot 656 src=CS kind=105 event=685A, complete
+Route FIRST: boot 656 src=CS kind=105 event=6905, complete
+Route FIRST: boot 656 src=CS kind=105 event=6A50, complete
+Route FIRST: boot 656 src=CS kind=105 event=6B56, complete
+Route FIRST: boot 656 src=S485 kind=10 event=6B93, complete
+Route FIRST: boot 656 src=S485 kind=10 event=6D26, complete
+Route FIRST: boot 656 src=S485 kind=10 event=6D2D, complete
+Route FIRST: boot 656 src=CS kind=105 event=6ED8, complete
+Route FIRST: boot 656 src=CS kind=101 event=6EE6, complete
+Route FIRST: boot 656 src=CS kind=105 event=704B, complete
+Route FIRST: boot 656 src=CS kind=105 event=716A, complete
+Route FIRST: boot 656 src=CS kind=105 event=726A, complete
+Route FIRST: boot 656 src=CS kind=105 event=731D, complete
+Route FIRST: boot 656 src=CS kind=105 event=73C2, complete
+Route FIRST: boot 656 src=CS kind=105 event=745B, complete
+Route FIRST: boot 656 src=CS kind=105 event=7525, complete
+Route FIRST: boot 656 src=CS kind=105 event=75AF, complete
+Route FIRST: boot 656 src=CS kind=105 event=7672, complete
+Route FIRST: boot 656 src=CS kind=105 event=7744, complete
+Route FIRST: boot 656 src=S485 kind=10 event=7799, complete
+Route FIRST: boot 656 src=S485 kind=10 event=77FC, complete
+Route FIRST: boot 656 src=S485 kind=10 event=77FE, complete
+Route FIRST: boot 656 src=CS kind=110 event=78A7, complete
+Route FIRST: boot 656 src=CS kind=105 event=78AF, complete
+Route FIRST: boot 656 src=S485 kind=10 event=7A26, complete
+Route FIRST: boot 656 src=S485 kind=10 event=7A2B, complete
+Route FIRST: boot 656 src=CS kind=110 event=7B66, complete
+Route FIRST: boot 656 src=CS kind=105 event=7B6E, complete
+Route FIRST: boot 656 src=CS kind=105 event=7CE3, complete
+Route FIRST: boot 656 src=CS kind=105 event=7E29, complete
+Route FIRST: boot 656 src=CS kind=105 event=7FDD, complete
+Route FIRST: boot 656 src=CS kind=105 event=810F, complete
+Route FIRST: boot 656 src=CS kind=105 event=81EF, complete
+Route FIRST: boot 656 src=CS kind=105 event=82B7, complete
+Route FIRST: boot 656 src=CS kind=105 event=8377, complete
+Route FIRST: boot 656 src=CS kind=105 event=8409, complete
+Route FIRST: boot 656 src=CS kind=105 event=84C0, complete
+Route FIRST: boot 656 src=CS kind=105 event=8572, complete
+Route FIRST: boot 656 src=CS kind=105 event=8669, complete
+Route FIRST: boot 656 src=CS kind=105 event=8727, complete
+Route FIRST: boot 656 src=S485 kind=10 event=87EC, complete
+Route FIRST: boot 656 src=CS kind=105 event=87F3, complete
+Route FIRST: boot 656 src=S485 kind=10 event=89B2, complete
+Route FIRST: boot 656 src=S485 kind=10 event=89B8, complete
+Route FIRST: boot 656 src=CS kind=110 event=8AEC, complete
+Route FIRST: boot 656 src=CS kind=110 event=8AF3, complete
+Route FIRST: boot 656 src=CS kind=105 event=8CA0, complete
+Route FIRST: boot 656 src=CS kind=105 event=8DAB, complete
+Route FIRST: boot 656 src=CS kind=105 event=8ED0, complete
+Route FIRST: boot 656 src=CS kind=105 event=8FF4, complete
+Route FIRST: boot 656 src=CS kind=105 event=90F0, complete
+Route FIRST: boot 656 src=CS kind=105 event=91B5, complete
+Route FIRST: boot 656 src=CS kind=105 event=92A0, complete
+Route FIRST: boot 656 src=CS kind=105 event=9377, complete
+Route FIRST: boot 656 src=CS kind=105 event=946B, complete
+Route FIRST: boot 656 src=CS kind=105 event=9542, complete
+Route FIRST: boot 656 src=CS kind=105 event=9617, complete
+Route FIRST: boot 656 src=CS kind=105 event=96B0, complete
+Route FIRST: boot 656 src=S485 kind=10 event=975F, complete
+Route FIRST: boot 656 src=S485 kind=10 event=97F1, complete
+Route FIRST: boot 656 src=S485 kind=10 event=97F3, complete
+RS485 zero: boot 656 transaction D39, previous=0 rpm, ACK command=1 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction D45, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 3046, previous=3 rpm, ACK command=0 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 16CF, previous=14 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 16D0, previous=18 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 3947, previous=0 rpm, ACK command=1 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 394D, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 1C33, previous=16 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 3B99, previous=0 rpm, ACK command=-1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 3BA6, previous=0 rpm, ACK command=-1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 4390, previous=-1 rpm, ACK command=0 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 1FB8, previous=-15 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 4F8D, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 4F98, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 57AA, previous=6 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 2983, previous=15 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 2984, previous=7 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 5BC5, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 623E, previous=3 rpm, ACK command=0 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 2E6F, previous=8 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 2E70, previous=14 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 6665, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 6672, previous=1 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 68AE, previous=2 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 3128, previous=14 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 68C1, previous=0 rpm, ACK command=-1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 7C87, previous=-1 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 3AC4, previous=-27 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 823E, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 824A, previous=0 rpm, ACK command=4 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 8C09, previous=3 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 9312, previous=0 rpm, ACK command=1 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 931F, previous=1 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 9ACC, previous=10 rpm, ACK command=0 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 48F7, previous=14 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 48F8, previous=15 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction A1AF, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction A1B5, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction A7BC, previous=12 rpm, ACK command=0 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction AE63, previous=0 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction AE70, previous=1 rpm, ACK command=1 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction B43F, previous=13 rpm, ACK command=0 rpm, raw confirmed=True.
+RS485 zero: boot 656 transaction 553F, previous=9 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 zero: boot 656 transaction 5540, previous=14 rpm, ACK command=0 rpm, raw confirmed=False.
+RS485 transitions: 8 health, 1 safety observations (FIRST/EVENT may describe the same change); electrical cause unknown.
+Boot 656: heap free observed=10496..10496 bytes (211 samples); lowest observed task stack=404 bytes.
+Periodic records stay independent; IDs are logical groups, not atomic snapshots. Missing evidence remains unknown.

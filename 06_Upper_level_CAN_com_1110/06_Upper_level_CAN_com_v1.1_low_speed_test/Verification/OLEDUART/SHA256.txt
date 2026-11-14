@@ -1,0 +1,21 @@
+
+Algorithm : SHA256
+Hash      : 5AD365D965F494764C970C3F926C806DC1B22C8BA98B0FE461273605B27290E4
+Path      : D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\F103_TEST\06_Upper_level_CAN_com_v1.1_low_speed_test\Verification\OLEDUART\default\F103_OLEDUART_default.hex
+
+Algorithm : SHA256
+Hash      : 32EA609556FA529D06A45040BAAA89606DF25AC63226C4D0A7E8D37A5A607CC4
+Path      : D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\F103_TEST\06_Upper_level_CAN_com_v1.1_low_speed_test\Verification\OLEDUART\quiet\F103_OLEDUART_quiet.hex
+
+Algorithm : SHA256
+Hash      : 34DC230742A8CEE60E92AB90809D82B0116BA346738BD54B8E7B873FE2B5EC0D
+Path      : D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\F103_TEST\06_Upper_level_CAN_com_v1.1_low_speed_test\Verification\OLEDUART\raw\F103_OLEDUART_raw.hex
+
+Algorithm : SHA256
+Hash      : 8A6D9F84CA1C5ECE0BA29B1BA20D017A85A2CEF0000E8CD3BC7EEB8DFAE41E8D
+Path      : D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\F103_TEST\06_Upper_level_CAN_com_v1.1_low_speed_test\Verification\OLEDUART\rollback\F103_before.hex
+
+Algorithm : SHA256
+Hash      : FD22A27112347C3C165B4E1655B4B5A17BB81C432935653BE99B34FDADBF35AC
+Path      : D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\F103_TEST\06_Upper_level_CAN_com_v1.1_low_speed_test\Verification\OLEDUART\summary\F103_OLEDUART_summary.hex
+

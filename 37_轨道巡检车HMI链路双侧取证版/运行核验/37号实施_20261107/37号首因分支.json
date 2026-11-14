@@ -1,0 +1,297 @@
+﻿[
+  {
+    "site": 25,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 26,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 46,
+    "reason": 1,
+    "kind": "control_ack"
+  },
+  {
+    "site": 69,
+    "reason": 512,
+    "kind": "boot_changed"
+  },
+  {
+    "site": 94,
+    "reason": 2,
+    "kind": "critical_read"
+  },
+  {
+    "site": 114,
+    "reason": 0,
+    "kind": "running_gate"
+  },
+  {
+    "site": 133,
+    "reason": 32768,
+    "kind": "unexpected_idle"
+  },
+  {
+    "site": 137,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 138,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 142,
+    "reason": 256,
+    "kind": "no_new_snapshot"
+  },
+  {
+    "site": 169,
+    "reason": 2,
+    "kind": "critical_read"
+  },
+  {
+    "site": 189,
+    "reason": 0,
+    "kind": "running_gate"
+  },
+  {
+    "site": 208,
+    "reason": 32768,
+    "kind": "unexpected_idle"
+  },
+  {
+    "site": 212,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 213,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 217,
+    "reason": 256,
+    "kind": "no_new_snapshot"
+  },
+  {
+    "site": 237,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 238,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 258,
+    "reason": 1,
+    "kind": "control_ack"
+  },
+  {
+    "site": 263,
+    "reason": 8192,
+    "kind": "renewal_ineligible"
+  },
+  {
+    "site": 279,
+    "reason": 2,
+    "kind": "critical_read"
+  },
+  {
+    "site": 299,
+    "reason": 0,
+    "kind": "running_gate"
+  },
+  {
+    "site": 318,
+    "reason": 32768,
+    "kind": "unexpected_idle"
+  },
+  {
+    "site": 322,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 323,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 327,
+    "reason": 256,
+    "kind": "no_new_snapshot"
+  },
+  {
+    "site": 346,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 347,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 367,
+    "reason": 1,
+    "kind": "control_ack"
+  },
+  {
+    "site": 387,
+    "reason": 2,
+    "kind": "critical_read"
+  },
+  {
+    "site": 407,
+    "reason": 0,
+    "kind": "running_gate"
+  },
+  {
+    "site": 426,
+    "reason": 32768,
+    "kind": "unexpected_idle"
+  },
+  {
+    "site": 430,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 431,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 435,
+    "reason": 256,
+    "kind": "no_new_snapshot"
+  },
+  {
+    "site": 455,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 456,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 476,
+    "reason": 1,
+    "kind": "control_ack"
+  },
+  {
+    "site": 501,
+    "reason": 2048,
+    "kind": "command_rejected"
+  },
+  {
+    "site": 516,
+    "reason": 2,
+    "kind": "critical_read"
+  },
+  {
+    "site": 536,
+    "reason": 0,
+    "kind": "running_gate"
+  },
+  {
+    "site": 555,
+    "reason": 32768,
+    "kind": "unexpected_idle"
+  },
+  {
+    "site": 559,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 560,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 564,
+    "reason": 256,
+    "kind": "no_new_snapshot"
+  },
+  {
+    "site": 583,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 584,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 604,
+    "reason": 1,
+    "kind": "control_ack"
+  },
+  {
+    "site": 609,
+    "reason": 16384,
+    "kind": "authorization_wait"
+  },
+  {
+    "site": 626,
+    "reason": 2,
+    "kind": "critical_read"
+  },
+  {
+    "site": 646,
+    "reason": 0,
+    "kind": "running_gate"
+  },
+  {
+    "site": 665,
+    "reason": 32768,
+    "kind": "unexpected_idle"
+  },
+  {
+    "site": 669,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 670,
+    "reason": 4096,
+    "kind": "recovery_state"
+  },
+  {
+    "site": 674,
+    "reason": 256,
+    "kind": "no_new_snapshot"
+  },
+  {
+    "site": 693,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 694,
+    "reason": 1024,
+    "kind": "sequence_exhausted"
+  },
+  {
+    "site": 714,
+    "reason": 1,
+    "kind": "control_ack"
+  },
+  {
+    "site": 739,
+    "reason": 512,
+    "kind": "boot_changed"
+  }
+]

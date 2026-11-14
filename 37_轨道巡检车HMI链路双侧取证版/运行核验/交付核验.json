@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-10-15T21:11:42+08:00",
+  "project": "13_轨道巡检车UART5共同目标转速控制版",
+  "pix": "13_轨道巡检车.pix",
+  "baseline": "08_轨道巡检车UART5正式协议适配版",
+  "software": {
+    "visualPix": "1.7.2.179",
+    "compiled": true,
+    "compiledLengthBytes": 212300,
+    "pixFileLengthBytes": 88047,
+    "binFileLengthBytes": 212852,
+    "savedReopenedAndEventBindingsVerified": true,
+    "eventBindingEvidence": "重开事件绑定核验.json",
+    "compileEvidence": "VisualPIX编译日志.txt",
+    "pixSha256": "E4BD6A1DF2CBAC00254AD5A0121A898AADD9B01FF6B9C096384F0EAC2E7D0700",
+    "binSha256": "4A5B2BB969F60D53623CAD80BC0A455748CED8378E0960C85F5BA2F836128727"
+  },
+  "automatedVerification": {
+    "r2ProtocolAndEventTests": {
+      "tests": 25,
+      "passed": 25,
+      "failed": 0,
+      "evidence": "R2协议与事件回归.txt"
+    },
+    "readonlyRegression": {
+      "tests": 33,
+      "passed": 33,
+      "evidence": "全模式只读显示回归测试.cjs"
+    },
+    "hmi13CoreSimulation": {
+      "tests": 25,
+      "passed": 25,
+      "failed": 0,
+      "evidence": "R2协议与事件回归.txt"
+    },
+    "schedulerModel": {
+      "durationMs": 120000,
+      "targetFrames": 1200,
+      "targetMaxGapMs": 100,
+      "statusReads": 600,
+      "statusMaxGapMs": 200,
+      "maximumInflight": 1,
+      "physicalValidated": false,
+      "evidence": "调度压力记录.json"
+    },
+    "pythonSyntax": true,
+    "powershellSyntax": true
+  },
+  "baselineIntegrity": {
+    "unchanged": true,
+    "checkedFiles": 57,
+    "evidence": "08基线未修改核验.json"
+  },
+  "physicalBoundary": {
+    "downloadedToDisplay": false,
+    "stm32FirmwareFlashed": false,
+    "uartCaptureValidated": false,
+    "physicalControlValidated": false,
+    "motorTestExecuted": false,
+    "highSpeedAcceptanceExecuted": false,
+    "note": "当前为已保存、重开核验并编译的可编译联调候选工程；实屏、STM32F4、UART5和架空电机联合验收仍需现场执行。"
+  },
+  "knownReleaseLimits": [
+    "Visual-PIX定时器最小可保存interval为5，单位10ms；当前候选服务节拍为50ms。",
+    "目标刷新和状态读取间隔须通过实屏抓帧确认，模型结果不等同于实屏时序证据。",
+    "CRC、短帧、截断、异常响应和2ms静默须通过物理链路验证。",
+    "软件受控急停不等同于硬件急停或STO。",
+    "不以本记录标记13号屏与STM32F4功能对接通过。"
+  ]
+}

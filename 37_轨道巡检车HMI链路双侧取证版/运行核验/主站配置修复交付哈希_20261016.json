@@ -1,0 +1,39 @@
+{
+  "CapturedAt": "2026-10-16T16:57:46.3826691+08:00",
+  "Baseline08Unchanged": true,
+  "Baseline08Files": 1333,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "Files": [
+    {
+      "Name": "13_轨道巡检车.pix",
+      "Length": 88050,
+      "LastWriteTime": "2026-10-16T16:57:08.0914439+08:00",
+      "SHA256": "B1223ECFD84632A86E8B7D5DE9208E12A0596C0B4252304F96C6ADD4EB57C158"
+    },
+    {
+      "Name": "13_轨道巡检车.pix.bin",
+      "Length": 212980,
+      "LastWriteTime": "2026-10-16T16:57:08.6454481+08:00",
+      "SHA256": "95CB7525ABE41B009CD082EF182234D9AAF94EBAD614661158BFB03FB50AEAB9"
+    },
+    {
+      "Name": "配置13号Buffer.ps1",
+      "Length": 4181,
+      "LastWriteTime": "2026-10-16T16:36:37.0154194+08:00",
+      "SHA256": "AADD9A0CA396C02CD99331DCF946672B4157C64CD62725887CD61763FC52AB7D"
+    },
+    {
+      "Name": "HMI13事务服务.txt",
+      "Length": 20441,
+      "LastWriteTime": "2026-10-16T16:53:06.4738867+08:00",
+      "SHA256": "3117FFD6AD1132987ACACDDE799D585D0124603439006E0562F54F01F60CA3E4"
+    },
+    {
+      "Name": "Modbus中断只读解析.txt",
+      "Length": 4862,
+      "LastWriteTime": "2026-10-15T18:48:16.1665154+08:00",
+      "SHA256": "B8B4CCB48D790B0B7EDB2D1B2185F85D934BDF068D3C80871FB107B1861C4039"
+    }
+  ]
+}

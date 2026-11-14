@@ -1,0 +1,9 @@
+﻿. (Join-Path $PSScriptRoot 'native-run31.ps1')
+[Windows.Application]::ResourceAssembly=$vp
+foreach($file31 in @('resource/buttontheme.xaml','resource/pixcontroldatatemplate.xaml','resource/pixcontroldatatemplatedebug.xaml','themes/generic.xaml')){$rd31=[Windows.ResourceDictionary]::new();$rd31.GetType().GetProperty('Source').SetValue($rd31,[Uri]('pack://application:,,,/Visual-PIX;component/'+$file31),$null);[Windows.Application]::Current.Resources.MergedDictionaries.Add($rd31)}
+$copy=$t.GetField('EgErvQLbNxVTVEjeyfsODMZZZGgcA',$flags).GetValue($d)
+$key31=[Windows.DataTemplateKey]::new($vp.GetType('Visual_PIX.Model.Controls.SliderCtrl'));$dt31=[Windows.Application]::Current.FindResource($key31);$el31=$dt31.LoadContent();$sl31=$copy.Layers[8].Elements|Where-Object Name -eq 'rpmSlider';$el31.DataContext=$sl31
+foreach($val31 in @(0,800,1600,2400,3200)){$sl31.Value=$val31;$el31.Measure([Windows.Size]::new(976,48));$el31.Arrange([Windows.Rect]::new(0,0,976,48));$el31.UpdateLayout();$thumb31=$el31.Template.FindName('PART_Thumb',$el31);$pt31=$thumb31.TransformToAncestor($el31).Transform([Windows.Point]::new(0,0));Write-Output ('NATIVE THUMB '+$val31+' Value='+$el31.Value+' Left='+$pt31.X+' Width='+$thumb31.ActualWidth)}
+$key31=[Windows.DataTemplateKey]::new($vp.GetType('Visual_PIX.Model.Controls.TextCtrl'));$dt31=[Windows.Application]::Current.FindResource($key31);$text31=$dt31.LoadContent();$c31=$copy.Layers[8].Elements|Where-Object Name -eq 'sliderSpeedHint';$text31.DataContext=$c31
+Write-Output ('TEXT root Hit='+$text31.IsHitTestVisible+' Enabled='+$text31.IsEnabled+' Opacity='+$text31.Opacity)
+[Environment]::Exit(0)

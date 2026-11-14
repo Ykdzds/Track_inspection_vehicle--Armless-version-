@@ -1,0 +1,203 @@
+// UI31_THEME: presentation properties only.
+if(P0_Boot.themeMode.val==0){
+P0_Boot.themeInk.val=-15719366;
+P0_Boot.themeMuted.val=-12429715;
+P0_Boot.themeGood.val=-15438781;
+P0_Boot.themeWarn.val=-7714048;
+P0_Boot.themeFault.val=-4971752;
+P0_Boot.bgImg=user.image.Day_P0_Boot;
+P0_Boot.text0.bgColor=-1;
+if(P0_Boot.text0.fontColor==-15438781 || P0_Boot.text0.fontColor==-10624850){P0_Boot.text0.fontColor=-15438781;}
+else if(P0_Boot.text0.fontColor==-7714048 || P0_Boot.text0.fontColor==-14490){P0_Boot.text0.fontColor=-7714048;}
+else if(P0_Boot.text0.fontColor==-4971752 || P0_Boot.text0.fontColor==-39558){P0_Boot.text0.fontColor=-4971752;}
+else if(P0_Boot.text0.fontColor==-12429715 || P0_Boot.text0.fontColor==-5653552){P0_Boot.text0.fontColor=-12429715;}
+else if(P0_Boot.text0.fontColor==-16750426 || P0_Boot.text0.fontColor==-14494738){P0_Boot.text0.fontColor=-16750426;}
+else{P0_Boot.text0.fontColor=-15719366;}
+P0_Boot.text1.bgColor=-1;
+if(P0_Boot.text1.fontColor==-15438781 || P0_Boot.text1.fontColor==-10624850){P0_Boot.text1.fontColor=-15438781;}
+else if(P0_Boot.text1.fontColor==-7714048 || P0_Boot.text1.fontColor==-14490){P0_Boot.text1.fontColor=-7714048;}
+else if(P0_Boot.text1.fontColor==-4971752 || P0_Boot.text1.fontColor==-39558){P0_Boot.text1.fontColor=-4971752;}
+else if(P0_Boot.text1.fontColor==-12429715 || P0_Boot.text1.fontColor==-5653552){P0_Boot.text1.fontColor=-12429715;}
+else if(P0_Boot.text1.fontColor==-16750426 || P0_Boot.text1.fontColor==-14494738){P0_Boot.text1.fontColor=-16750426;}
+else{P0_Boot.text1.fontColor=-15719366;}
+P0_Boot.swVer.bgColor=-1;
+if(P0_Boot.swVer.fontColor==-15438781 || P0_Boot.swVer.fontColor==-10624850){P0_Boot.swVer.fontColor=-15438781;}
+else if(P0_Boot.swVer.fontColor==-7714048 || P0_Boot.swVer.fontColor==-14490){P0_Boot.swVer.fontColor=-7714048;}
+else if(P0_Boot.swVer.fontColor==-4971752 || P0_Boot.swVer.fontColor==-39558){P0_Boot.swVer.fontColor=-4971752;}
+else if(P0_Boot.swVer.fontColor==-12429715 || P0_Boot.swVer.fontColor==-5653552){P0_Boot.swVer.fontColor=-12429715;}
+else if(P0_Boot.swVer.fontColor==-16750426 || P0_Boot.swVer.fontColor==-14494738){P0_Boot.swVer.fontColor=-16750426;}
+else{P0_Boot.swVer.fontColor=-15719366;}
+P0_Boot.mainState.bgColor=-919812;
+if(P0_Boot.mainState.fontColor==-15438781 || P0_Boot.mainState.fontColor==-10624850){P0_Boot.mainState.fontColor=-15438781;}
+else if(P0_Boot.mainState.fontColor==-7714048 || P0_Boot.mainState.fontColor==-14490){P0_Boot.mainState.fontColor=-7714048;}
+else if(P0_Boot.mainState.fontColor==-4971752 || P0_Boot.mainState.fontColor==-39558){P0_Boot.mainState.fontColor=-4971752;}
+else if(P0_Boot.mainState.fontColor==-12429715 || P0_Boot.mainState.fontColor==-5653552){P0_Boot.mainState.fontColor=-12429715;}
+else if(P0_Boot.mainState.fontColor==-16750426 || P0_Boot.mainState.fontColor==-14494738){P0_Boot.mainState.fontColor=-16750426;}
+else{P0_Boot.mainState.fontColor=-15719366;}
+P0_Boot.stageText.bgColor=-919812;
+if(P0_Boot.stageText.fontColor==-15438781 || P0_Boot.stageText.fontColor==-10624850){P0_Boot.stageText.fontColor=-15438781;}
+else if(P0_Boot.stageText.fontColor==-7714048 || P0_Boot.stageText.fontColor==-14490){P0_Boot.stageText.fontColor=-7714048;}
+else if(P0_Boot.stageText.fontColor==-4971752 || P0_Boot.stageText.fontColor==-39558){P0_Boot.stageText.fontColor=-4971752;}
+else if(P0_Boot.stageText.fontColor==-12429715 || P0_Boot.stageText.fontColor==-5653552){P0_Boot.stageText.fontColor=-12429715;}
+else if(P0_Boot.stageText.fontColor==-16750426 || P0_Boot.stageText.fontColor==-14494738){P0_Boot.stageText.fontColor=-16750426;}
+else{P0_Boot.stageText.fontColor=-15719366;}
+P0_Boot.progressText.bgColor=-919812;
+if(P0_Boot.progressText.fontColor==-15438781 || P0_Boot.progressText.fontColor==-10624850){P0_Boot.progressText.fontColor=-15438781;}
+else if(P0_Boot.progressText.fontColor==-7714048 || P0_Boot.progressText.fontColor==-14490){P0_Boot.progressText.fontColor=-7714048;}
+else if(P0_Boot.progressText.fontColor==-4971752 || P0_Boot.progressText.fontColor==-39558){P0_Boot.progressText.fontColor=-4971752;}
+else if(P0_Boot.progressText.fontColor==-12429715 || P0_Boot.progressText.fontColor==-5653552){P0_Boot.progressText.fontColor=-12429715;}
+else if(P0_Boot.progressText.fontColor==-16750426 || P0_Boot.progressText.fontColor==-14494738){P0_Boot.progressText.fontColor=-16750426;}
+else{P0_Boot.progressText.fontColor=-15719366;}
+P0_Boot.ctrlStatus.bgColor=-919812;
+if(P0_Boot.ctrlStatus.fontColor==-15438781 || P0_Boot.ctrlStatus.fontColor==-10624850){P0_Boot.ctrlStatus.fontColor=-15438781;}
+else if(P0_Boot.ctrlStatus.fontColor==-7714048 || P0_Boot.ctrlStatus.fontColor==-14490){P0_Boot.ctrlStatus.fontColor=-7714048;}
+else if(P0_Boot.ctrlStatus.fontColor==-4971752 || P0_Boot.ctrlStatus.fontColor==-39558){P0_Boot.ctrlStatus.fontColor=-4971752;}
+else if(P0_Boot.ctrlStatus.fontColor==-12429715 || P0_Boot.ctrlStatus.fontColor==-5653552){P0_Boot.ctrlStatus.fontColor=-12429715;}
+else if(P0_Boot.ctrlStatus.fontColor==-16750426 || P0_Boot.ctrlStatus.fontColor==-14494738){P0_Boot.ctrlStatus.fontColor=-16750426;}
+else{P0_Boot.ctrlStatus.fontColor=-15719366;}
+P0_Boot.leftStatus.bgColor=-919812;
+if(P0_Boot.leftStatus.fontColor==-15438781 || P0_Boot.leftStatus.fontColor==-10624850){P0_Boot.leftStatus.fontColor=-15438781;}
+else if(P0_Boot.leftStatus.fontColor==-7714048 || P0_Boot.leftStatus.fontColor==-14490){P0_Boot.leftStatus.fontColor=-7714048;}
+else if(P0_Boot.leftStatus.fontColor==-4971752 || P0_Boot.leftStatus.fontColor==-39558){P0_Boot.leftStatus.fontColor=-4971752;}
+else if(P0_Boot.leftStatus.fontColor==-12429715 || P0_Boot.leftStatus.fontColor==-5653552){P0_Boot.leftStatus.fontColor=-12429715;}
+else if(P0_Boot.leftStatus.fontColor==-16750426 || P0_Boot.leftStatus.fontColor==-14494738){P0_Boot.leftStatus.fontColor=-16750426;}
+else{P0_Boot.leftStatus.fontColor=-15719366;}
+P0_Boot.rightStatus.bgColor=-919812;
+if(P0_Boot.rightStatus.fontColor==-15438781 || P0_Boot.rightStatus.fontColor==-10624850){P0_Boot.rightStatus.fontColor=-15438781;}
+else if(P0_Boot.rightStatus.fontColor==-7714048 || P0_Boot.rightStatus.fontColor==-14490){P0_Boot.rightStatus.fontColor=-7714048;}
+else if(P0_Boot.rightStatus.fontColor==-4971752 || P0_Boot.rightStatus.fontColor==-39558){P0_Boot.rightStatus.fontColor=-4971752;}
+else if(P0_Boot.rightStatus.fontColor==-12429715 || P0_Boot.rightStatus.fontColor==-5653552){P0_Boot.rightStatus.fontColor=-12429715;}
+else if(P0_Boot.rightStatus.fontColor==-16750426 || P0_Boot.rightStatus.fontColor==-14494738){P0_Boot.rightStatus.fontColor=-16750426;}
+else{P0_Boot.rightStatus.fontColor=-15719366;}
+P0_Boot.safeStatus.bgColor=-919812;
+if(P0_Boot.safeStatus.fontColor==-15438781 || P0_Boot.safeStatus.fontColor==-10624850){P0_Boot.safeStatus.fontColor=-15438781;}
+else if(P0_Boot.safeStatus.fontColor==-7714048 || P0_Boot.safeStatus.fontColor==-14490){P0_Boot.safeStatus.fontColor=-7714048;}
+else if(P0_Boot.safeStatus.fontColor==-4971752 || P0_Boot.safeStatus.fontColor==-39558){P0_Boot.safeStatus.fontColor=-4971752;}
+else if(P0_Boot.safeStatus.fontColor==-12429715 || P0_Boot.safeStatus.fontColor==-5653552){P0_Boot.safeStatus.fontColor=-12429715;}
+else if(P0_Boot.safeStatus.fontColor==-16750426 || P0_Boot.safeStatus.fontColor==-14494738){P0_Boot.safeStatus.fontColor=-16750426;}
+else{P0_Boot.safeStatus.fontColor=-15719366;}
+P0_Boot.resetReason.bgColor=-919812;
+if(P0_Boot.resetReason.fontColor==-15438781 || P0_Boot.resetReason.fontColor==-10624850){P0_Boot.resetReason.fontColor=-15438781;}
+else if(P0_Boot.resetReason.fontColor==-7714048 || P0_Boot.resetReason.fontColor==-14490){P0_Boot.resetReason.fontColor=-7714048;}
+else if(P0_Boot.resetReason.fontColor==-4971752 || P0_Boot.resetReason.fontColor==-39558){P0_Boot.resetReason.fontColor=-4971752;}
+else if(P0_Boot.resetReason.fontColor==-12429715 || P0_Boot.resetReason.fontColor==-5653552){P0_Boot.resetReason.fontColor=-12429715;}
+else if(P0_Boot.resetReason.fontColor==-16750426 || P0_Boot.resetReason.fontColor==-14494738){P0_Boot.resetReason.fontColor=-16750426;}
+else{P0_Boot.resetReason.fontColor=-15719366;}
+P0_Boot.protoVer.bgColor=-919812;
+if(P0_Boot.protoVer.fontColor==-15438781 || P0_Boot.protoVer.fontColor==-10624850){P0_Boot.protoVer.fontColor=-15438781;}
+else if(P0_Boot.protoVer.fontColor==-7714048 || P0_Boot.protoVer.fontColor==-14490){P0_Boot.protoVer.fontColor=-7714048;}
+else if(P0_Boot.protoVer.fontColor==-4971752 || P0_Boot.protoVer.fontColor==-39558){P0_Boot.protoVer.fontColor=-4971752;}
+else if(P0_Boot.protoVer.fontColor==-12429715 || P0_Boot.protoVer.fontColor==-5653552){P0_Boot.protoVer.fontColor=-12429715;}
+else if(P0_Boot.protoVer.fontColor==-16750426 || P0_Boot.protoVer.fontColor==-14494738){P0_Boot.protoVer.fontColor=-16750426;}
+else{P0_Boot.protoVer.fontColor=-15719366;}
+P0_Boot.faultText.bgColor=-919812;
+if(P0_Boot.faultText.fontColor==-15438781 || P0_Boot.faultText.fontColor==-10624850){P0_Boot.faultText.fontColor=-15438781;}
+else if(P0_Boot.faultText.fontColor==-7714048 || P0_Boot.faultText.fontColor==-14490){P0_Boot.faultText.fontColor=-7714048;}
+else if(P0_Boot.faultText.fontColor==-4971752 || P0_Boot.faultText.fontColor==-39558){P0_Boot.faultText.fontColor=-4971752;}
+else if(P0_Boot.faultText.fontColor==-12429715 || P0_Boot.faultText.fontColor==-5653552){P0_Boot.faultText.fontColor=-12429715;}
+else if(P0_Boot.faultText.fontColor==-16750426 || P0_Boot.faultText.fontColor==-14494738){P0_Boot.faultText.fontColor=-16750426;}
+else{P0_Boot.faultText.fontColor=-15719366;}
+P0_Boot.bootProgress.bgColor=-2299661;
+P0_Boot.bootProgress.fgColor=-16750426;
+}
+if(P0_Boot.themeMode.val!=0){
+P0_Boot.themeInk.val=-1182209;
+P0_Boot.themeMuted.val=-5653552;
+P0_Boot.themeGood.val=-10624850;
+P0_Boot.themeWarn.val=-14490;
+P0_Boot.themeFault.val=-39558;
+P0_Boot.bgImg=user.image.Night_P0_Boot;
+P0_Boot.text0.bgColor=-16051162;
+if(P0_Boot.text0.fontColor==-15438781 || P0_Boot.text0.fontColor==-10624850){P0_Boot.text0.fontColor=-10624850;}
+else if(P0_Boot.text0.fontColor==-7714048 || P0_Boot.text0.fontColor==-14490){P0_Boot.text0.fontColor=-14490;}
+else if(P0_Boot.text0.fontColor==-4971752 || P0_Boot.text0.fontColor==-39558){P0_Boot.text0.fontColor=-39558;}
+else if(P0_Boot.text0.fontColor==-12429715 || P0_Boot.text0.fontColor==-5653552){P0_Boot.text0.fontColor=-5653552;}
+else if(P0_Boot.text0.fontColor==-16750426 || P0_Boot.text0.fontColor==-14494738){P0_Boot.text0.fontColor=-14494738;}
+else{P0_Boot.text0.fontColor=-1182209;}
+P0_Boot.text1.bgColor=-16051162;
+if(P0_Boot.text1.fontColor==-15438781 || P0_Boot.text1.fontColor==-10624850){P0_Boot.text1.fontColor=-10624850;}
+else if(P0_Boot.text1.fontColor==-7714048 || P0_Boot.text1.fontColor==-14490){P0_Boot.text1.fontColor=-14490;}
+else if(P0_Boot.text1.fontColor==-4971752 || P0_Boot.text1.fontColor==-39558){P0_Boot.text1.fontColor=-39558;}
+else if(P0_Boot.text1.fontColor==-12429715 || P0_Boot.text1.fontColor==-5653552){P0_Boot.text1.fontColor=-5653552;}
+else if(P0_Boot.text1.fontColor==-16750426 || P0_Boot.text1.fontColor==-14494738){P0_Boot.text1.fontColor=-14494738;}
+else{P0_Boot.text1.fontColor=-1182209;}
+P0_Boot.swVer.bgColor=-16051162;
+if(P0_Boot.swVer.fontColor==-15438781 || P0_Boot.swVer.fontColor==-10624850){P0_Boot.swVer.fontColor=-10624850;}
+else if(P0_Boot.swVer.fontColor==-7714048 || P0_Boot.swVer.fontColor==-14490){P0_Boot.swVer.fontColor=-14490;}
+else if(P0_Boot.swVer.fontColor==-4971752 || P0_Boot.swVer.fontColor==-39558){P0_Boot.swVer.fontColor=-39558;}
+else if(P0_Boot.swVer.fontColor==-12429715 || P0_Boot.swVer.fontColor==-5653552){P0_Boot.swVer.fontColor=-5653552;}
+else if(P0_Boot.swVer.fontColor==-16750426 || P0_Boot.swVer.fontColor==-14494738){P0_Boot.swVer.fontColor=-14494738;}
+else{P0_Boot.swVer.fontColor=-1182209;}
+P0_Boot.mainState.bgColor=-15457221;
+if(P0_Boot.mainState.fontColor==-15438781 || P0_Boot.mainState.fontColor==-10624850){P0_Boot.mainState.fontColor=-10624850;}
+else if(P0_Boot.mainState.fontColor==-7714048 || P0_Boot.mainState.fontColor==-14490){P0_Boot.mainState.fontColor=-14490;}
+else if(P0_Boot.mainState.fontColor==-4971752 || P0_Boot.mainState.fontColor==-39558){P0_Boot.mainState.fontColor=-39558;}
+else if(P0_Boot.mainState.fontColor==-12429715 || P0_Boot.mainState.fontColor==-5653552){P0_Boot.mainState.fontColor=-5653552;}
+else if(P0_Boot.mainState.fontColor==-16750426 || P0_Boot.mainState.fontColor==-14494738){P0_Boot.mainState.fontColor=-14494738;}
+else{P0_Boot.mainState.fontColor=-1182209;}
+P0_Boot.stageText.bgColor=-15457221;
+if(P0_Boot.stageText.fontColor==-15438781 || P0_Boot.stageText.fontColor==-10624850){P0_Boot.stageText.fontColor=-10624850;}
+else if(P0_Boot.stageText.fontColor==-7714048 || P0_Boot.stageText.fontColor==-14490){P0_Boot.stageText.fontColor=-14490;}
+else if(P0_Boot.stageText.fontColor==-4971752 || P0_Boot.stageText.fontColor==-39558){P0_Boot.stageText.fontColor=-39558;}
+else if(P0_Boot.stageText.fontColor==-12429715 || P0_Boot.stageText.fontColor==-5653552){P0_Boot.stageText.fontColor=-5653552;}
+else if(P0_Boot.stageText.fontColor==-16750426 || P0_Boot.stageText.fontColor==-14494738){P0_Boot.stageText.fontColor=-14494738;}
+else{P0_Boot.stageText.fontColor=-1182209;}
+P0_Boot.progressText.bgColor=-15457221;
+if(P0_Boot.progressText.fontColor==-15438781 || P0_Boot.progressText.fontColor==-10624850){P0_Boot.progressText.fontColor=-10624850;}
+else if(P0_Boot.progressText.fontColor==-7714048 || P0_Boot.progressText.fontColor==-14490){P0_Boot.progressText.fontColor=-14490;}
+else if(P0_Boot.progressText.fontColor==-4971752 || P0_Boot.progressText.fontColor==-39558){P0_Boot.progressText.fontColor=-39558;}
+else if(P0_Boot.progressText.fontColor==-12429715 || P0_Boot.progressText.fontColor==-5653552){P0_Boot.progressText.fontColor=-5653552;}
+else if(P0_Boot.progressText.fontColor==-16750426 || P0_Boot.progressText.fontColor==-14494738){P0_Boot.progressText.fontColor=-14494738;}
+else{P0_Boot.progressText.fontColor=-1182209;}
+P0_Boot.ctrlStatus.bgColor=-15457221;
+if(P0_Boot.ctrlStatus.fontColor==-15438781 || P0_Boot.ctrlStatus.fontColor==-10624850){P0_Boot.ctrlStatus.fontColor=-10624850;}
+else if(P0_Boot.ctrlStatus.fontColor==-7714048 || P0_Boot.ctrlStatus.fontColor==-14490){P0_Boot.ctrlStatus.fontColor=-14490;}
+else if(P0_Boot.ctrlStatus.fontColor==-4971752 || P0_Boot.ctrlStatus.fontColor==-39558){P0_Boot.ctrlStatus.fontColor=-39558;}
+else if(P0_Boot.ctrlStatus.fontColor==-12429715 || P0_Boot.ctrlStatus.fontColor==-5653552){P0_Boot.ctrlStatus.fontColor=-5653552;}
+else if(P0_Boot.ctrlStatus.fontColor==-16750426 || P0_Boot.ctrlStatus.fontColor==-14494738){P0_Boot.ctrlStatus.fontColor=-14494738;}
+else{P0_Boot.ctrlStatus.fontColor=-1182209;}
+P0_Boot.leftStatus.bgColor=-15457221;
+if(P0_Boot.leftStatus.fontColor==-15438781 || P0_Boot.leftStatus.fontColor==-10624850){P0_Boot.leftStatus.fontColor=-10624850;}
+else if(P0_Boot.leftStatus.fontColor==-7714048 || P0_Boot.leftStatus.fontColor==-14490){P0_Boot.leftStatus.fontColor=-14490;}
+else if(P0_Boot.leftStatus.fontColor==-4971752 || P0_Boot.leftStatus.fontColor==-39558){P0_Boot.leftStatus.fontColor=-39558;}
+else if(P0_Boot.leftStatus.fontColor==-12429715 || P0_Boot.leftStatus.fontColor==-5653552){P0_Boot.leftStatus.fontColor=-5653552;}
+else if(P0_Boot.leftStatus.fontColor==-16750426 || P0_Boot.leftStatus.fontColor==-14494738){P0_Boot.leftStatus.fontColor=-14494738;}
+else{P0_Boot.leftStatus.fontColor=-1182209;}
+P0_Boot.rightStatus.bgColor=-15457221;
+if(P0_Boot.rightStatus.fontColor==-15438781 || P0_Boot.rightStatus.fontColor==-10624850){P0_Boot.rightStatus.fontColor=-10624850;}
+else if(P0_Boot.rightStatus.fontColor==-7714048 || P0_Boot.rightStatus.fontColor==-14490){P0_Boot.rightStatus.fontColor=-14490;}
+else if(P0_Boot.rightStatus.fontColor==-4971752 || P0_Boot.rightStatus.fontColor==-39558){P0_Boot.rightStatus.fontColor=-39558;}
+else if(P0_Boot.rightStatus.fontColor==-12429715 || P0_Boot.rightStatus.fontColor==-5653552){P0_Boot.rightStatus.fontColor=-5653552;}
+else if(P0_Boot.rightStatus.fontColor==-16750426 || P0_Boot.rightStatus.fontColor==-14494738){P0_Boot.rightStatus.fontColor=-14494738;}
+else{P0_Boot.rightStatus.fontColor=-1182209;}
+P0_Boot.safeStatus.bgColor=-15457221;
+if(P0_Boot.safeStatus.fontColor==-15438781 || P0_Boot.safeStatus.fontColor==-10624850){P0_Boot.safeStatus.fontColor=-10624850;}
+else if(P0_Boot.safeStatus.fontColor==-7714048 || P0_Boot.safeStatus.fontColor==-14490){P0_Boot.safeStatus.fontColor=-14490;}
+else if(P0_Boot.safeStatus.fontColor==-4971752 || P0_Boot.safeStatus.fontColor==-39558){P0_Boot.safeStatus.fontColor=-39558;}
+else if(P0_Boot.safeStatus.fontColor==-12429715 || P0_Boot.safeStatus.fontColor==-5653552){P0_Boot.safeStatus.fontColor=-5653552;}
+else if(P0_Boot.safeStatus.fontColor==-16750426 || P0_Boot.safeStatus.fontColor==-14494738){P0_Boot.safeStatus.fontColor=-14494738;}
+else{P0_Boot.safeStatus.fontColor=-1182209;}
+P0_Boot.resetReason.bgColor=-15457221;
+if(P0_Boot.resetReason.fontColor==-15438781 || P0_Boot.resetReason.fontColor==-10624850){P0_Boot.resetReason.fontColor=-10624850;}
+else if(P0_Boot.resetReason.fontColor==-7714048 || P0_Boot.resetReason.fontColor==-14490){P0_Boot.resetReason.fontColor=-14490;}
+else if(P0_Boot.resetReason.fontColor==-4971752 || P0_Boot.resetReason.fontColor==-39558){P0_Boot.resetReason.fontColor=-39558;}
+else if(P0_Boot.resetReason.fontColor==-12429715 || P0_Boot.resetReason.fontColor==-5653552){P0_Boot.resetReason.fontColor=-5653552;}
+else if(P0_Boot.resetReason.fontColor==-16750426 || P0_Boot.resetReason.fontColor==-14494738){P0_Boot.resetReason.fontColor=-14494738;}
+else{P0_Boot.resetReason.fontColor=-1182209;}
+P0_Boot.protoVer.bgColor=-15457221;
+if(P0_Boot.protoVer.fontColor==-15438781 || P0_Boot.protoVer.fontColor==-10624850){P0_Boot.protoVer.fontColor=-10624850;}
+else if(P0_Boot.protoVer.fontColor==-7714048 || P0_Boot.protoVer.fontColor==-14490){P0_Boot.protoVer.fontColor=-14490;}
+else if(P0_Boot.protoVer.fontColor==-4971752 || P0_Boot.protoVer.fontColor==-39558){P0_Boot.protoVer.fontColor=-39558;}
+else if(P0_Boot.protoVer.fontColor==-12429715 || P0_Boot.protoVer.fontColor==-5653552){P0_Boot.protoVer.fontColor=-5653552;}
+else if(P0_Boot.protoVer.fontColor==-16750426 || P0_Boot.protoVer.fontColor==-14494738){P0_Boot.protoVer.fontColor=-14494738;}
+else{P0_Boot.protoVer.fontColor=-1182209;}
+P0_Boot.faultText.bgColor=-15457221;
+if(P0_Boot.faultText.fontColor==-15438781 || P0_Boot.faultText.fontColor==-10624850){P0_Boot.faultText.fontColor=-10624850;}
+else if(P0_Boot.faultText.fontColor==-7714048 || P0_Boot.faultText.fontColor==-14490){P0_Boot.faultText.fontColor=-14490;}
+else if(P0_Boot.faultText.fontColor==-4971752 || P0_Boot.faultText.fontColor==-39558){P0_Boot.faultText.fontColor=-39558;}
+else if(P0_Boot.faultText.fontColor==-12429715 || P0_Boot.faultText.fontColor==-5653552){P0_Boot.faultText.fontColor=-5653552;}
+else if(P0_Boot.faultText.fontColor==-16750426 || P0_Boot.faultText.fontColor==-14494738){P0_Boot.faultText.fontColor=-14494738;}
+else{P0_Boot.faultText.fontColor=-1182209;}
+P0_Boot.bootProgress.bgColor=-14336682;
+P0_Boot.bootProgress.fgColor=-14494738;
+}

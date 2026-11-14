@@ -1,0 +1,11 @@
+'use strict';
+const fs=require('node:fs');
+const path=require('node:path');
+const root=__dirname;
+const parser=fs.readFileSync(path.join(root,'Modbus中断只读解析.txt'),'utf8').replace(/\r/g,'');
+const body=parser.replace(/^int \w+;\n/gm,'').replace('mod.modbusBufferCheckStatus();','').replace(/mod\.interruptCode/g,'hReplyCode').replace(/mod\.bcaddr/g,'hReplyStation').replace(/mod\.bdindex/g,'hReplyIndex').replace(/mod\.bdaddr/g,'hReplyStart').replace(/mod\.bdcount/g,'hReplyCount').replace(/bytesToShort\(mod\.bdbuf,([^,]+),1\)/g,'bytesToShort(P0_Boot.mod.rxBuf,($1)+hReplyOffset,1)').replace(/\b(metaValid|metaRegs|rawRegs|regionSeen|regionValid|regionAge|regionGoodRun|regionBadRun|regionFails|metaSeen|metaAge)\.vals/g,'P0_Boot.$1.vals');
+const template=fs.readFileSync(path.join(root,'HMI13事务服务模板.txt'),'utf8').replace(/\r/g,'');
+if(!template.includes('SYNC_PARSE_BODY;'))throw Error('缺少同步解析插入点');
+const generate=()=>template.replace('SYNC_PARSE_BODY;',body);
+module.exports={generate};
+if(require.main===module)fs.writeFileSync(path.join(root,'HMI13事务服务.txt'),generate());

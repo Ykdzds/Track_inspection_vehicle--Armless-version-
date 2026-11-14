@@ -1,0 +1,347 @@
+﻿[
+  {
+    "File": ".gitattributes",
+    "Bytes": 154,
+    "SHA256": "83ACB5B8287F957A3EA6442F3B8BF2A861E6E3F5B3A460A6FD97B304F57EF518"
+  },
+  {
+    "File": "33号修复与回归报告.md",
+    "Bytes": 7578,
+    "SHA256": "7A49C6A1DCA89A589CC55A902B2721EAB9606529DCB4225FEE6AA9906F48F900"
+  },
+  {
+    "File": "33号台架验收与UART视频索引.md",
+    "Bytes": 3416,
+    "SHA256": "8DDC5A3073EAEC27BACB980AB3E662BC0D614CF6B947B988B29C9A0B211D9845"
+  },
+  {
+    "File": "33号屏端相对32源码差异.patch",
+    "Bytes": 424144,
+    "SHA256": "F80ACAA2F03EB3EBAE6A585B2697B2AE1E52E1F9F3787F2D906E5CB0A3D9D776"
+  },
+  {
+    "File": "33号配套烧录与回退说明.md",
+    "Bytes": 2548,
+    "SHA256": "870C3504A9461D431862E49D4A28B02AA95127F8DAAB57B9397929653A865D53"
+  },
+  {
+    "File": "build-matrix.log",
+    "Bytes": 6846,
+    "SHA256": "0592C916E42C0AD3C1884B8DF52C70EB3FC238D47FC0F752D3BD21F38227BF44"
+  },
+  {
+    "File": "changed-files.json",
+    "Bytes": 239,
+    "SHA256": "16DEB9CC36ADE533670529EF57B7519DDE9FAF129832EA8A29A789A334899E37"
+  },
+  {
+    "File": "README.md",
+    "Bytes": 879,
+    "SHA256": "BDB18B4097FEEC765DE784BC15D1EDDC2B1D37F231DE8627592E3F86337660BB"
+  },
+  {
+    "File": "screen-source/17_轨道巡检车.pix",
+    "Bytes": 960287,
+    "SHA256": "C7D902BF0743D9F036660CCF14FCD6EE0AB4CCB9DA72F834862459E5284CED13"
+  },
+  {
+    "File": "screen-source/apply33.ps1",
+    "Bytes": 9078,
+    "SHA256": "214550AE95F17D7211C99F55838D2DDAADDBED23E6C608CC0473E22E76F1671F"
+  },
+  {
+    "File": "screen-source/audit-layout33.py",
+    "Bytes": 5382,
+    "SHA256": "14F9A1EF5948ADEAB93AD910DA040803F9A2E7E0FE29CB9464C4717973738648"
+  },
+  {
+    "File": "screen-source/audit33.py",
+    "Bytes": 1794,
+    "SHA256": "7A04A8F669D8532039A39A1972269FC5980694434513BA51CE34ED3E2F67B4DE"
+  },
+  {
+    "File": "screen-source/build33.py",
+    "Bytes": 34656,
+    "SHA256": "A1967C5742544536F83048570FF748AFC2E9C8BD3B954FBA1DDEBDFE18AAC0AA"
+  },
+  {
+    "File": "screen-source/finalize33.py",
+    "Bytes": 3291,
+    "SHA256": "B77CC9A9B8228D1F9E9305DA188DDD5F172E62D01A20E42FA534A0034766C7EA"
+  },
+  {
+    "File": "screen-source/hmi33.test.cjs",
+    "Bytes": 13618,
+    "SHA256": "535530EC1AE493DBCF4CED5AC1B583B0B56A055C3B3E51A84B34B2016D3EC4A1"
+  },
+  {
+    "File": "screen-source/HMI33事务服务.txt",
+    "Bytes": 99034,
+    "SHA256": "8AC46BABAC07B76C1CEE3E1BE7702DE1658C60EFD482943CE60ED9DDC6B3C6B9"
+  },
+  {
+    "File": "screen-source/HMI33显示刷新.txt",
+    "Bytes": 9865,
+    "SHA256": "DAEF717604768C8332460C7B06BD3C5D0C12B8A47AA14E81934D44A14C4D2561"
+  },
+  {
+    "File": "screen-source/HMI33自定义函数.txt",
+    "Bytes": 438787,
+    "SHA256": "B312A6428736475D5B93B4F0CC1C66DEFDCD383A26F4FDB36F65E91BF342442B"
+  },
+  {
+    "File": "screen-source/native33.ps1",
+    "Bytes": 5958,
+    "SHA256": "C3B6B24746B981D117DAD9D1D4DCE418C2294E494A3335E2615E2583E245DDC8"
+  },
+  {
+    "File": "screen-source/prepare-native33.cjs",
+    "Bytes": 1267,
+    "SHA256": "0EE4BCDD1BA290CC605262006F3E75A4CB862792910A3A89BBC808540C59F774"
+  },
+  {
+    "File": "screen-source/verify-saved33.ps1",
+    "Bytes": 2379,
+    "SHA256": "71EA735CEBCA5DE8FDFBE6059888527046F40DFD9324103F4B5B329D2F52F85C"
+  },
+  {
+    "File": "screen-source/write-delivery33.py",
+    "Bytes": 20547,
+    "SHA256": "B53AD1ABA4642F0CCAA56AEDE5B29BE8825C7E69DCEB9C3B0F8233891559B469"
+  },
+  {
+    "File": "screen-source/事件/急停_按下.txt",
+    "Bytes": 186,
+    "SHA256": "17929858B5432CD347577810314AE36C94F9CAE5C79346A5A444614408CED77C"
+  },
+  {
+    "File": "screen-source/事件/授权_弹起.txt",
+    "Bytes": 61,
+    "SHA256": "11CD294A3230AC35F25632B0800F0DA6EC58DB36D87B1083C1F04A0E9A119E46"
+  },
+  {
+    "File": "screen-source/事件/授权_按下.txt",
+    "Bytes": 369,
+    "SHA256": "478CCE24A0A7D824C691EF508DA288649F363A107E86F4BFCF4EE1E5BE5A3F18"
+  },
+  {
+    "File": "screen-source/事件/故障恢复按钮_按下.txt",
+    "Bytes": 72,
+    "SHA256": "DC07E4A9ED6468AC2306566859548F9FC95CE21BC03E0BE5CB4C55AA0668D9B4"
+  },
+  {
+    "File": "screen-source/事件/滑块_滑动.txt",
+    "Bytes": 334,
+    "SHA256": "C97E7ED1042309AA531A7D58C19FF384BB2D5B0C0B821B834138E275225089D2"
+  },
+  {
+    "File": "screen-source/事件33/P0_Boot_加载.txt",
+    "Bytes": 213,
+    "SHA256": "D4B483A53C75E5A4A9679F251CEF1F17F03218E4023A0B8E74BF2A4691BF5B85"
+  },
+  {
+    "File": "screen-source/事件33/P1_Main_加载.txt",
+    "Bytes": 213,
+    "SHA256": "B8F5D5E7EFE69E37FA49F5FC163CFD99C1363D8FFA8725A7893E33F51B7BFF10"
+  },
+  {
+    "File": "screen-source/事件33/P2_Diag_加载.txt",
+    "Bytes": 213,
+    "SHA256": "5DC153A267FE63853B3B04C894CA13B89F57FB8D4FB3DCD00112B08274E9CB7A"
+  },
+  {
+    "File": "screen-source/事件33/P3_Position_加载.txt",
+    "Bytes": 229,
+    "SHA256": "2FB9AEEAD4F35993F74012101FE7E043C5A19A64DA56AB213DF839A455E6012A"
+  },
+  {
+    "File": "screen-source/事件33/P4_Info_加载.txt",
+    "Bytes": 213,
+    "SHA256": "A169A0C9264FDB1AE60CA281156616E4F4D20F7674B2D525ABDF459D2B83EF8D"
+  },
+  {
+    "File": "screen-source/事件33/P5_Alarm_加载.txt",
+    "Bytes": 217,
+    "SHA256": "F5A2F6CB0CD41337098C3A0D3DFAF6E9F6B93E15B41C0C5310A94EC89E7CC572"
+  },
+  {
+    "File": "screen-source/事件33/P6_Sync_加载.txt",
+    "Bytes": 213,
+    "SHA256": "A4683386FB4B308D47AA73E8DEA6CFB1E92AD913063029AAB77C0FC433C6CEA9"
+  },
+  {
+    "File": "screen-source/事件33/P7_System_Ext_加载.txt",
+    "Bytes": 237,
+    "SHA256": "321A0014382DF503E8A256D6483EF99AC83AFD600194A92866303C8531AD8344"
+  },
+  {
+    "File": "screen-source/事件33/P8_ServoControl_加载.txt",
+    "Bytes": 245,
+    "SHA256": "461FB3D1AE7B7D81B65B9238FE6DE621BB781295E7F785FDE2543D8BE61196F7"
+  },
+  {
+    "File": "screen-source/事件33/主题切换.txt",
+    "Bytes": 299,
+    "SHA256": "E7F391EE91904E74FFC6496A2B14FF109ABECE3BF07509ACF85ACBAE0A06AC95"
+  },
+  {
+    "File": "screen-source/全局计龄刷新.txt",
+    "Bytes": 109763,
+    "SHA256": "058B2F9BC5188819F579E5FC8D090EBEA2E30EA86B430651ECD7D8A9515E5B1A"
+  },
+  {
+    "File": "screen-source/编译33号工程.ps1",
+    "Bytes": 3085,
+    "SHA256": "C6A272A3220C8796A42F16ABFBE4C9247226F2A89AD8CA06D5B0DB7DA980C1A2"
+  },
+  {
+    "File": "screen-validation/31_32最终保护复核.json",
+    "Bytes": 71,
+    "SHA256": "847772D8E5E8008922738C6DCAF97C8AEBE2EB1DA69083FD83CA8611DFDF94A5"
+  },
+  {
+    "File": "screen-validation/33号VisualPIX编译.log",
+    "Bytes": 104,
+    "SHA256": "9E9054A1713A0145FD0C7E7CF876B6DDF3BC95275BE3FB4E66C0B3FF8EDE0CB6"
+  },
+  {
+    "File": "screen-validation/33号九页日夜总览.png",
+    "Bytes": 644642,
+    "SHA256": "93FF9691C3DA32E1F1ECBAD8620C7CC379C21351C2E2B03B7086CEB509B5E80F"
+  },
+  {
+    "File": "screen-validation/33号事件绑定SHA256.json",
+    "Bytes": 67030,
+    "SHA256": "9788DB4B6630C5E88290E1AE09C5DBABBEAE0C243035B819EE88CFCDCCAB7DCD"
+  },
+  {
+    "File": "screen-validation/33号保存源码一致性.json",
+    "Bytes": 4978,
+    "SHA256": "597907BA11050B79CCF2C0E52674E5DCAC3E46D1A8E7F6743DE919E5E024950D"
+  },
+  {
+    "File": "screen-validation/33号保护与配套复核.json",
+    "Bytes": 171,
+    "SHA256": "7B2A320F3CB390C36105AE6B052D9B9EB946474A42B568A51B0C646069235C5E"
+  },
+  {
+    "File": "screen-validation/33号原生执行.log",
+    "Bytes": 1215,
+    "SHA256": "1B8BBFC4A3C38734ECFDEAAD17A60C6AA7D0B18E98200F0CD5E31B72B1B32805"
+  },
+  {
+    "File": "screen-validation/33号原生显示性能.json",
+    "Bytes": 5157,
+    "SHA256": "2EB0F72F2CF0CE789F84C24E7EDB1FEAD6A4EB6F1489A8333A4EE5E7A98EF7C8"
+  },
+  {
+    "File": "screen-validation/33号回归最终.log",
+    "Bytes": 2183,
+    "SHA256": "71529DE7C43E6B70419CFB6B00E315AC44E99D8D1458074489519E150D5126C2"
+  },
+  {
+    "File": "screen-validation/33号布局字模核验.json",
+    "Bytes": 144706,
+    "SHA256": "95B1D46C4158FDF9AA245A10280BDAE6363710AACDCD69F4F10C451E6FD2FFDB"
+  },
+  {
+    "File": "screen-validation/33号布局核验.log",
+    "Bytes": 200,
+    "SHA256": "3F92D9611FFDDC61541995016F7D53B57D349A1AEE212A362A6CA7532D47BED1"
+  },
+  {
+    "File": "screen-validation/33号快照高字回退修复前.log",
+    "Bytes": 3126,
+    "SHA256": "3CA2EA0CE477862DD56DC28F2211CA20E5C1CF8E186B1028E1F69FD0C3B5F113"
+  },
+  {
+    "File": "screen-validation/33号显示字段.json",
+    "Bytes": 23021,
+    "SHA256": "9591399A097F382A394C4889DC6120465C656783420ECD001A7B319273E496E7"
+  },
+  {
+    "File": "screen-validation/33号版本状态.json",
+    "Bytes": 501,
+    "SHA256": "A85304CAA259342943A5D8D28C0ED466C6E813FC5A09F26C5E75C5770DD40B42"
+  },
+  {
+    "File": "screen-validation/33号状态索引.json",
+    "Bytes": 1421,
+    "SHA256": "1642F3FB91AF53689AE0CB21C10EA9C27C9B6692D2F2BAE7B0B56EAA3F5EA940"
+  },
+  {
+    "File": "screen-validation/33号编译产物.json",
+    "Bytes": 454,
+    "SHA256": "03F7434F3188424CDE494728CDA7EAB893BEECC18FB251C9B3F633BC124CAEF3"
+  },
+  {
+    "File": "screen-validation/33号边界绑定核验.json",
+    "Bytes": 957,
+    "SHA256": "60996A31B5E5E6807BBB5963003041F5984CC6AA71C6DF2C4B22C379C9DCD5F4"
+  },
+  {
+    "File": "screen-validation/主控修改前近10条提交.txt",
+    "Bytes": 985,
+    "SHA256": "577C89B407231319FAB34E8132BE5BA4E4171546768AB6D522DA35DD7C0738A8"
+  },
+  {
+    "File": "screen-validation/主控基线.txt",
+    "Bytes": 42,
+    "SHA256": "54BC5FAF4BE90A83B0EB2C53B44C4AF6FC911F4311BD7E08CB0CC19A6FCFC276"
+  },
+  {
+    "File": "screen-validation/视频与UART证据索引.json",
+    "Bytes": 483,
+    "SHA256": "DCF920E8D36C77654875E037CAF1E80F30A20836F8048115888CBC76EC49C46B"
+  },
+  {
+    "File": "source-before-commit.diff",
+    "Bytes": 17186,
+    "SHA256": "0EA2015152C164D8F63E610B8A4A575B47C627694BB533558371E49272A5C737"
+  },
+  {
+    "File": "tests/hmi33-can.log",
+    "Bytes": 1656,
+    "SHA256": "A384E0FA62AA0F5CCD236E1664A97B9D9FA9763F929A0D5689DB1FF1E026E6D1"
+  },
+  {
+    "File": "tests/hmi33-control.log",
+    "Bytes": 2496,
+    "SHA256": "1D8E4859423EDF35A9D39FDBD30DFBEBAED67B4CD448BB7659806FA1B4047723"
+  },
+  {
+    "File": "tests/hmi33-k5.log",
+    "Bytes": 38313,
+    "SHA256": "FEECAE7EED42F00639C93BB78C079B88B662521F20685A4434E063C8C30DAF32"
+  },
+  {
+    "File": "tests/hmi33-modbus.log",
+    "Bytes": 63,
+    "SHA256": "6AA0E22158B7ED51C754BA5DE687F6233582A30F770DBC3398B66E22E5527A00"
+  },
+  {
+    "File": "tests/hmi33-remote.log",
+    "Bytes": 846,
+    "SHA256": "5562552EEFC6A022C85D244C16310030854DAA0F108161DC5976B2B03EB2409E"
+  },
+  {
+    "File": "tests/hmi33-snapshot.log",
+    "Bytes": 1773,
+    "SHA256": "89C0885EB8789C8D1D13E6F926E118CFA82FA44EA3FEF38E592199D8566AD420"
+  },
+  {
+    "File": "tests/hmi33-state.log",
+    "Bytes": 29242,
+    "SHA256": "A7FAD72C09D1E467075289357A73C8E154A096BF7D5F1A72C0BC138E55CBD748"
+  },
+  {
+    "File": "tests/hmi33-wdg.log",
+    "Bytes": 10848,
+    "SHA256": "CB6889FEE56B15744230695666C9BB20F768ACDF17A2AA3C433E4DD317E3208E"
+  },
+  {
+    "File": "配套交付SHA256.json",
+    "Bytes": 1473,
+    "SHA256": "1D221EE77B41CBDC5FB702F5582BB99BDBF16D1245AF946740B913829968544A"
+  }
+]

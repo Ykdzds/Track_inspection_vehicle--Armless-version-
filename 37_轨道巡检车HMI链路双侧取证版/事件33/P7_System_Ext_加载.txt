@@ -1,0 +1,2 @@
+﻿P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=1;P0_Boot.s33.vals[13]=0-1;
+if(P0_Boot.themeMode.val==0){P7_System_Ext.bgImg=user.image.Day_P7_System_Ext;}else{P7_System_Ext.bgImg=user.image.Night_P7_System_Ext;}

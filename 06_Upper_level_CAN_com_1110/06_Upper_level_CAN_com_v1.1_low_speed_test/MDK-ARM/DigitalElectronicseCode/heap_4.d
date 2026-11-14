@@ -1,0 +1,13 @@
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
+digitalelectronicsecode\heap_4.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+digitalelectronicsecode\heap_4.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+digitalelectronicsecode\heap_4.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+digitalelectronicsecode\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+digitalelectronicsecode\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

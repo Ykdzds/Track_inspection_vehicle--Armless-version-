@@ -1,0 +1,12 @@
+✔ 29 actual reopened PIX event scripts match current sources (9.5809ms)
+✔ 29 reopened properties retain timer, global slider and navigation geometry (1.5572ms)
+✔ 29 compiled binary and project match actual VP compile evidence (2.1224ms)
+✔ 29 new visible text uses existing Chinese glyphs (0.4191ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 83.0431

@@ -1,0 +1,40 @@
+Tests/test_hmi_diag_hooks.c:10:6: error: redefinition of 'app_hmi_link_diag_init'
+ void app_hmi_link_diag_init(void) { }
+      ^
+In file included from Tests/test_hmi_diag_hooks.c:5:0:
+APP/HMI/app_hmi_link_diag.h:48:20: note: previous definition of 'app_hmi_link_diag_init' was here
+ static inline void app_hmi_link_diag_init(void) { }
+                    ^
+Tests/test_hmi_diag_hooks.c:11:6: error: redefinition of 'app_hmi_link_diag_service'
+ void app_hmi_link_diag_service(void) { }
+      ^
+In file included from Tests/test_hmi_diag_hooks.c:5:0:
+APP/HMI/app_hmi_link_diag.h:49:20: note: previous definition of 'app_hmi_link_diag_service' was here
+ static inline void app_hmi_link_diag_service(void) { }
+                    ^
+Tests/test_hmi_diag_hooks.c:12:9: error: redefinition of 'app_hmi_link_diag_screen'
+ uint8_t app_hmi_link_diag_screen(const uint16_t *words, uint16_t count)
+         ^
+In file included from Tests/test_hmi_diag_hooks.c:5:0:
+APP/HMI/app_hmi_link_diag.h:57:23: note: previous definition of 'app_hmi_link_diag_screen' was here
+ static inline uint8_t app_hmi_link_diag_screen(const uint16_t *words, uint16_t count)
+                       ^
+Tests/test_hmi_diag_hooks.c:14:6: error: redefinition of 'app_hmi_link_diag_record'
+ void app_hmi_link_diag_record(uint16_t kind, uint32_t a, uint32_t b,
+      ^
+In file included from Tests/test_hmi_diag_hooks.c:5:0:
+APP/HMI/app_hmi_link_diag.h:50:20: note: previous definition of 'app_hmi_link_diag_record' was here
+ static inline void app_hmi_link_diag_record(uint16_t kind, uint32_t a, uint32_t b,
+                    ^
+Tests/test_hmi_diag_hooks.c:23:6: error: redefinition of 'app_hmi_link_diag_stop'
+ void app_hmi_link_diag_stop(const app_control_stop_t *stop, uint16_t kind)
+      ^
+In file included from Tests/test_hmi_diag_hooks.c:5:0:
+APP/HMI/app_hmi_link_diag.h:55:20: note: previous definition of 'app_hmi_link_diag_stop' was here
+ static inline void app_hmi_link_diag_stop(const app_control_stop_t *stop, uint16_t kind)
+                    ^
+Exception: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_diag_hook_tests.ps1:7
+Line |
+   7 |      if($LASTEXITCODE){throw 'HMI diagnostic hook compile failed'}
+     |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | HMI diagnostic hook compile failed

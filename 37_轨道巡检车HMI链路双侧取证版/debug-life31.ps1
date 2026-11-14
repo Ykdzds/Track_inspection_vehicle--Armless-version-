@@ -1,0 +1,2 @@
+﻿. (Join-Path $PSScriptRoot 'vp-reflect.ps1')
+$t=$vp.GetType('Visual_PIX.Modules.Home.ViewModels.DebugViewModel');$t.GetMethods($flags)|Where-Object {$_.Name -match '^On|aJl|eKG|mibo|GWv|pRch|eFj|IYl'}|ForEach-Object {$_.ToString()}

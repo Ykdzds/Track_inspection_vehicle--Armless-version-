@@ -1,0 +1,40 @@
+✔ final PIX array lengths and a single enabled 50ms timer (0.9881ms)
+✔ healthy navigation and rendering consume wall time, target read/write serialized (129.7361ms)
+✔ releasing ordinary authorization key cannot cancel a newly authorized session (29.9832ms)
+✔ 300ms stall clears old target; later manual authorization starts at zero (113.4075ms)
+✔ 600ms host stall advances controller TTL independently (72.324ms)
+✔ emergency generation survives all local states and historical stop candidates (141.983ms)
+✔ wrong station, short frame and wrong function never renew nonzero target (105.2737ms)
+✔ repeat authorization after completed stop never settles an old stop (279.783ms)
+✔ display refreshes only visible page, max six fields, and retains last numeric history (31.0817ms)
+✔ all nine pages and themes navigate with bounded arrays (129.8236ms)
+✔ CRC rejection and no callback cannot renew target or erase history (98.5075ms)
+✔ 100ms blocking can continue; 300/600ms cannot replay a nonzero target (113.6431ms)
+✔ 1000 page switches with theme changes retain session and bounded transactions (523.3315ms)
+✔ controller reboot clears old identity cache and never restores motion (61.2898ms)
+✔ position partial/expired samples hold values and baseline change invalidates only mileage (57.8277ms)
+✔ signed -1 and zero are valid speed cache values; sentinel retains preceding value (23.144ms)
+✔ first invalid speed remains unknown; ten seconds without any frame retains business values (38.3757ms)
+✔ stop settlement and a newer emergency in the same event boundary keep the emergency generation (23.5959ms)
+✔ reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization (41.5038ms)
+✔ negative, zero and speed bounds have explicit valid cache semantics (61.0938ms)
+✔ backward snapshot high word is rejected without depending on host integer overflow (27.2739ms)
+✔ snapshot uint32 wrap advances while backward master clock rejects renewal (58.8385ms)
+✔ missing slider callback is compensated by sampled control value (48.2908ms)
+✔ candidate captured during initial zero confirmation is retained (35.7268ms)
+✔ preview follows every thumb position at a fixed 12px gap (26.3426ms)
+✔ transport loss retries exactly the same emergency request without another touch (37.977ms)
+✔ release-only emergency is a fallback and down/up is one intent (54.1669ms)
+✔ page lifecycle and reload preserve target, session and restored thumb (833.7394ms)
+✔ emergency inserted after a status reply prevents the next nonzero write (37.6774ms)
+✔ a lost callback while unauthorized never becomes a target after new authorization (39.9994ms)
+✔ offline and 600ms blocking still stop and cannot replay old target (85.3581ms)
+✔ rapid changes coalesce to the last target and preserve serial ownership (29.8743ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2287.6696

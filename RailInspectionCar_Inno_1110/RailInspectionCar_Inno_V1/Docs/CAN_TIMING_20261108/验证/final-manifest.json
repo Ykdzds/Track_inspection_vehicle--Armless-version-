@@ -1,0 +1,102 @@
+{
+  "F407Revision": "link5-can-r3",
+  "F103Revision": "CANAGE_20261108_R1",
+  "Builds": [
+    {
+      "Variant": "f407-user",
+      "Source": {
+        "Head": "819077b218f004f00ec1d1d7aefe7757f7657655",
+        "SourceManifestSha256": "3BA251109793B91EEBC94F6850FCD3FCBDC00D28D7AA8B36020D7F28D1D5AE38",
+        "SourceFiles": 289,
+        "WorkingTreeImplementation": true
+      },
+      "ProjectSha256": "E34114D077148D352D4D391691764F8BCE23ADDA9C537050BFEBC394EF81EDA3",
+      "FormalOutputsMatchArchive": true,
+      "SourceDefaults": true,
+      "PhysicalRam": 167700,
+      "FirmwareHashes": {
+        "RailInspectionCar_V1.hex": "0ABDDDF8F3E94ABAA63F9DA7A23848165E50422CEE5475D86C3E4E2BC98C1380",
+        "RailInspectionCar_V1.axf": "5B90CAB299CD6D0AB2FCA285BD537769150335A1D2420E8EFC022843F42734BC",
+        "RailInspectionCar_V1.map": "E4047F7DF355A546453BDF848B597644A2470D015045A21C44DC4253FBB0FB37",
+        "RailInspectionCar_V1.htm": "03D12AD6D48B2CDB4F33917BD422BF0AD8CF6E2A013187D3C9CF61C453E61182",
+        "RailInspectionCar_V1.bin": "C1E5C5E31F215BC5D31873AC208BE18ACFE71E4F6880CADDC7A69B58A3A340D3"
+      }
+    },
+    {
+      "Variant": "f103-debug",
+      "Source": {
+        "Head": "2c6078263d8dfcbbf09356ae86a9b3b95162bcdf",
+        "SourceManifestSha256": "D45A52490DBE79AFA1B85C24541404DA560D6BEDAFDF882940C148CB2C1AACA7",
+        "SourceFiles": 160,
+        "WorkingTreeImplementation": true
+      },
+      "ProjectSha256": "B288E86908A592E12BD17C3B24061CC96D7ECCA0F79C4ECFDEFC079F32511C2B",
+      "FormalOutputsMatchArchive": true,
+      "SourceDefaults": true,
+      "PhysicalRam": 18416,
+      "FirmwareHashes": {
+        "DigitalElectronicseCode.hex": "ED99278901BB67ECE236D0F3E2FBD1D6759C82315919270B826DAFB829E0645E",
+        "DigitalElectronicseCode.axf": "37B74DC94EDDAC72AEB41D281E40ED4DA6B06498F9991913755C294A09854892",
+        "DigitalElectronicseCode.map": "63BFA78EEEB71C4FFDBA84BE394D5C1B84835D9A2C3D7E081320B4AD5B96707F",
+        "DigitalElectronicseCode.htm": "486B1130FCF28E685BB04B76EEA1B5315106DBD2282ECC94D03D7301AB592A3C",
+        "DigitalElectronicseCode.bin": "858B2EFDEC4725B436AE90E495733A72E174E20D7D11D93A8FCC89C3F0C597A0"
+      }
+    }
+  ],
+  "RamComparisons": [
+    {
+      "Variant": "f407-off",
+      "Baseline": 164500,
+      "Physical": 164532,
+      "Delta": 32,
+      "Budget": 256,
+      "Passed": true
+    },
+    {
+      "Variant": "f407-all",
+      "Baseline": 167768,
+      "Physical": 167880,
+      "Delta": 112,
+      "Budget": 256,
+      "Passed": true
+    },
+    {
+      "Variant": "f407-user",
+      "Baseline": 167588,
+      "Physical": 167700,
+      "Delta": 112,
+      "Budget": 256,
+      "Passed": true
+    },
+    {
+      "Variant": "f103-debug",
+      "Baseline": 18336,
+      "Physical": 18416,
+      "Delta": 80,
+      "Budget": 96,
+      "Passed": true
+    }
+  ],
+  "MacroF407": {
+    "HMI": 0,
+    "Remote": 0,
+    "CANServo": 1,
+    "CANArm": 0,
+    "RS485": 1,
+    "LCD": 1,
+    "CLI": 0,
+    "Tune": 0,
+    "Pulse": 0
+  },
+  "MacroF103": {
+    "USART1Debug": 1,
+    "Summary": 1,
+    "Raw": 0
+  },
+  "BaselineF407": "819077b",
+  "BaselineF103": "2c60782",
+  "NewCommits": 0,
+  "Pushed": false,
+  "Flashed": false,
+  "HardwareAcceptance": "pending"
+}

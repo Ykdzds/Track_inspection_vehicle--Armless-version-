@@ -1,0 +1,10 @@
+﻿3eaa1fa fix: 修复HMI关键状态源采样与LCD DMA误超时并补齐诊断
+ce2a698 feat: 增加HMI37双侧链路取证与首次停车原因诊断
+82d6a0c fix: 修复Flash保存门禁诊断与NRF故障恢复状态
+8883212 feat: 完善ARM3 R2 CAN控制链路与三端输入安全互锁
+01b1751 feat: 增加双轴参数Flash追加保存与增强配对遥测
+4cccd62 fix: 修复双轴动态补偿步长并补充同步时序诊断
+da12838 chore: 同步Keil调试配置中的诊断与运行时模块
+1c9b1f0 fix: 隔离USART1调试通信并保留复位故障诊断
+15db06e chore: 关闭RF周期串口诊断并更新ST-LINK调试配置
+124d25a fix: 修复HMI新会话停车状态并增加33号联动诊断

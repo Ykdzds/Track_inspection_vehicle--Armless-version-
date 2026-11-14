@@ -1,0 +1,8 @@
+HorizontalAlignment Visual_PIX.Controls.Gravity
+LEFT=0
+RIGHT=1
+TOP=2
+BOTTOM=3
+CENTER=4
+Enable System.Boolean
+Visbile System.Boolean

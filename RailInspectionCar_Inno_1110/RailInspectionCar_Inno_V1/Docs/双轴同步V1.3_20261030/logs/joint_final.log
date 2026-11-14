@@ -1,0 +1,15 @@
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=4 stop=4 reason=1 emergency=0 elapsed=110 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/configured telemetry
+PASS CAN/HMI/remote joint axis=1
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=4 stop=4 reason=1 emergency=0 elapsed=110 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/configured telemetry
+PASS CAN/HMI/remote joint axis=2
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=4 stop=4 reason=1 emergency=0 elapsed=120 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/configured telemetry
+PASS CAN/HMI/remote joint axis=3

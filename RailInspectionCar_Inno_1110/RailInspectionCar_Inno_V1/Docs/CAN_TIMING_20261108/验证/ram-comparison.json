@@ -1,0 +1,34 @@
+[
+  {
+    "Variant": "f407-off",
+    "Baseline": 164500,
+    "Physical": 164532,
+    "Delta": 32,
+    "Budget": 256,
+    "Passed": true
+  },
+  {
+    "Variant": "f407-all",
+    "Baseline": 167768,
+    "Physical": 167880,
+    "Delta": 112,
+    "Budget": 256,
+    "Passed": true
+  },
+  {
+    "Variant": "f407-user",
+    "Baseline": 167588,
+    "Physical": 167700,
+    "Delta": 112,
+    "Budget": 256,
+    "Passed": true
+  },
+  {
+    "Variant": "f103-debug",
+    "Baseline": 18336,
+    "Physical": 18416,
+    "Delta": 80,
+    "Budget": 96,
+    "Passed": true
+  }
+]

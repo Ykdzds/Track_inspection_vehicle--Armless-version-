@@ -1,0 +1,330 @@
+[
+  {
+    "Variant": "hmi",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=1",
+      "APP_NRF_DIAGNOSTIC_ENABLED=0",
+      "APP_CAN_SERVO_DIAG_ENABLED=0",
+      "APP_CAN_ARM_DIAG_ENABLED=0",
+      "APP_SERVO_RS485_DIAG_ENABLED=0",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:17:19.8860643+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 178000,
+    "Delta82d6a0c": 3124,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 107136,
+        "Free": 7552
+      },
+      "RW_IRAM2": {
+        "Bytes": 8328,
+        "Free": 7544
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "7C986B91C3F22107971393C9DC82DDDB539A538C5F26DA65FEAB74A1D3FBAA1E",
+    "AxfSha256": "11691F5E5CCF623A9926359539E768A63FDCE3F8B54E62D52DCB649226A84FAB"
+  },
+  {
+    "Variant": "remote",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=0",
+      "APP_NRF_DIAGNOSTIC_ENABLED=1",
+      "APP_CAN_SERVO_DIAG_ENABLED=0",
+      "APP_CAN_ARM_DIAG_ENABLED=0",
+      "APP_SERVO_RS485_DIAG_ENABLED=0",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:19:11.2286241+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 177888,
+    "Delta82d6a0c": 3012,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 107088,
+        "Free": 7600
+      },
+      "RW_IRAM2": {
+        "Bytes": 8264,
+        "Free": 7608
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "81436DE9DE9BA256DBE6DE852A6101D0BD60FE614929E6B87D60882237866E4B",
+    "AxfSha256": "573906DFC83E1B0878A2B8A068E7D17515123AFD9DD673863A9682B0E8A5C8F3"
+  },
+  {
+    "Variant": "canservo",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=0",
+      "APP_NRF_DIAGNOSTIC_ENABLED=0",
+      "APP_CAN_SERVO_DIAG_ENABLED=1",
+      "APP_CAN_ARM_DIAG_ENABLED=0",
+      "APP_SERVO_RS485_DIAG_ENABLED=0",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:21:03.3718674+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 177856,
+    "Delta82d6a0c": 2980,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 107072,
+        "Free": 7616
+      },
+      "RW_IRAM2": {
+        "Bytes": 8248,
+        "Free": 7624
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "CC92C84B9D63CFB365FC673C4504CB548014CAF7233BF56343AB76353AC4246D",
+    "AxfSha256": "7A3BEC207B87CD57E387C7D1192194D6D6954A100E5B3092EA561BFA8ED0B812"
+  },
+  {
+    "Variant": "canarm",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=0",
+      "APP_NRF_DIAGNOSTIC_ENABLED=0",
+      "APP_CAN_SERVO_DIAG_ENABLED=0",
+      "APP_CAN_ARM_DIAG_ENABLED=1",
+      "APP_SERVO_RS485_DIAG_ENABLED=0",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:22:55.8026923+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 177856,
+    "Delta82d6a0c": 2980,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 107072,
+        "Free": 7616
+      },
+      "RW_IRAM2": {
+        "Bytes": 8248,
+        "Free": 7624
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "EE643672F4BBA700AD521BAE0CD67D856AFC659E3A01DF8E529B2A48AC1C8A6E",
+    "AxfSha256": "6DA6F9A3613AD2B5DCBAE7FB01BCC04F071CB534562F76802CA5E812239AF06C"
+  },
+  {
+    "Variant": "rs485",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=0",
+      "APP_NRF_DIAGNOSTIC_ENABLED=0",
+      "APP_CAN_SERVO_DIAG_ENABLED=0",
+      "APP_CAN_ARM_DIAG_ENABLED=0",
+      "APP_SERVO_RS485_DIAG_ENABLED=1",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:24:39.5641026+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 178008,
+    "Delta82d6a0c": 3132,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 107152,
+        "Free": 7536
+      },
+      "RW_IRAM2": {
+        "Bytes": 8320,
+        "Free": 7552
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "05842A04C1C899A1472B788023FDB6487CAC2C15B50D519E3EBB048DAB13E0F2",
+    "AxfSha256": "4D41CE2028C5E1AD98C471F0555D9B6941E792678A11EDE64037065C80D6842C"
+  },
+  {
+    "Variant": "all",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=1",
+      "APP_NRF_DIAGNOSTIC_ENABLED=1",
+      "APP_CAN_SERVO_DIAG_ENABLED=1",
+      "APP_CAN_ARM_DIAG_ENABLED=1",
+      "APP_SERVO_RS485_DIAG_ENABLED=1",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:26:18.8009104+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 178176,
+    "Delta82d6a0c": 3300,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 107232,
+        "Free": 7456
+      },
+      "RW_IRAM2": {
+        "Bytes": 8408,
+        "Free": 7464
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "181B90C0B6141A79401CAC7CAF55121A933E9E5A62DA2A87716C2BBE6828AE97",
+    "AxfSha256": "D1B42BC08ADA918259C1E984015E554E563E7348485DE93C716C95794B45C39B"
+  },
+  {
+    "Variant": "legacy",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=1",
+      "APP_NRF_DIAGNOSTIC_ENABLED=1",
+      "APP_CAN_SERVO_DIAG_ENABLED=1",
+      "APP_CAN_ARM_DIAG_ENABLED=1",
+      "APP_SERVO_RS485_DIAG_ENABLED=1",
+      "APP_CAN_DEBUG_ENABLED=1",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=1"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:27:59.4916592+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 178192,
+    "Delta82d6a0c": 3316,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62040,
+        "Free": 3496
+      },
+      "RW_IRAM1": {
+        "Bytes": 107232,
+        "Free": 7456
+      },
+      "RW_IRAM2": {
+        "Bytes": 8408,
+        "Free": 7464
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "8030C35A8F3BC0D5AD3E71B8DDAD92E4ED9674E3487BF373D58A4B1F44A435C5",
+    "AxfSha256": "8A43A33D3FD7A08B2A767EED55084D1CFA5D141EE09F96965E9BD6FA638B82E8"
+  },
+  {
+    "Variant": "alloff",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx",
+      "APP_HMI_LINK_DIAG_ENABLED=0",
+      "APP_NRF_DIAGNOSTIC_ENABLED=0",
+      "APP_CAN_SERVO_DIAG_ENABLED=0",
+      "APP_CAN_ARM_DIAG_ENABLED=0",
+      "APP_SERVO_RS485_DIAG_ENABLED=0",
+      "APP_CAN_DEBUG_ENABLED=0",
+      "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED=0"
+    ],
+    "SourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E",
+    "Started": "2026-11-07T23:29:45.0939488+08:00",
+    "Exit": 0,
+    "Errors": 0,
+    "Warnings": 0,
+    "PhysicalRam": 175136,
+    "Delta82d6a0c": 260,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 105712,
+        "Free": 8976
+      },
+      "RW_IRAM2": {
+        "Bytes": 6888,
+        "Free": 8984
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Free": 0
+      }
+    },
+    "HexSha256": "7982E084392A2B1243CF778EE2CAA8F94417EC07271736694FF55EDE5C45D964",
+    "AxfSha256": "640A46C7A58B53BBC93E69B8544B38F52269A004F386A7F0E35ECB22A5BF81AF"
+  }
+]

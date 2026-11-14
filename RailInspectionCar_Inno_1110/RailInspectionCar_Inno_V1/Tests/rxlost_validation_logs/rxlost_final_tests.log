@@ -1,0 +1,224 @@
+PASS NRF SPI DMA: hot boot/first ACK/fair RX/check/errors/backoff
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF SPI DMA: hot boot/first ACK/fair RX/check/errors/backoff
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS NRF SPI DMA: hot boot/first ACK/fair RX/check/errors/backoff
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1000 overdue=0
+sparse interval=10 type=84 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=86 queued=24 max_gap=5000 overdue=0
+sparse interval=10 type=87 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=89 queued=120 max_gap=1000 overdue=0
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=229 max_gap=600 overdue=228
+sparse interval=50 type=83 queued=51 max_gap=2850 overdue=50
+sparse interval=50 type=84 queued=229 max_gap=600 overdue=228
+sparse interval=50 type=86 queued=10 max_gap=11700 overdue=9
+sparse interval=50 type=87 queued=229 max_gap=600 overdue=228
+sparse interval=50 type=89 queued=52 max_gap=2400 overdue=51
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=100 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=100 type=84 queued=115 max_gap=1200 overdue=114
+sparse interval=100 type=86 queued=5 max_gap=23400 overdue=4
+sparse interval=100 type=87 queued=115 max_gap=1200 overdue=114
+sparse interval=100 type=89 queued=25 max_gap=5700 overdue=24
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+sparse interval=10 type=81 queued=2401 max_gap=50 overdue=0
+sparse interval=10 type=82 queued=600 max_gap=200 overdue=0
+sparse interval=10 type=83 queued=120 max_gap=1010 overdue=1
+sparse interval=10 type=84 queued=600 max_gap=210 overdue=1
+sparse interval=10 type=86 queued=24 max_gap=5020 overdue=1
+sparse interval=10 type=87 queued=600 max_gap=220 overdue=3
+sparse interval=10 type=88 queued=2376 max_gap=70 overdue=96
+sparse interval=10 type=89 queued=120 max_gap=1010 overdue=1
+sparse interval=50 type=81 queued=1601 max_gap=100 overdue=800
+sparse interval=50 type=82 queued=115 max_gap=1200 overdue=114
+sparse interval=50 type=83 queued=25 max_gap=5400 overdue=24
+sparse interval=50 type=84 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=86 queued=5 max_gap=23100 overdue=4
+sparse interval=50 type=87 queued=114 max_gap=1200 overdue=113
+sparse interval=50 type=88 queued=401 max_gap=300 overdue=400
+sparse interval=50 type=89 queued=26 max_gap=4800 overdue=25
+sparse interval=100 type=81 queued=801 max_gap=200 overdue=800
+sparse interval=100 type=82 queued=58 max_gap=2400 overdue=57
+sparse interval=100 type=83 queued=12 max_gap=9600 overdue=11
+sparse interval=100 type=84 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=86 queued=2 max_gap=46200 overdue=1
+sparse interval=100 type=87 queued=57 max_gap=2400 overdue=56
+sparse interval=100 type=88 queued=201 max_gap=600 overdue=200
+sparse interval=100 type=89 queued=13 max_gap=9000 overdue=12
+PASS NRF telemetry: 32-byte layouts/CRC/units/invalid/saturation/scheduling/states
+PASS end-to-end: production scheduler + DMA/FIFO driver + remote model, duplicates and return loss
+PASS F407 diagnostic: production service, one snapshot/second, bounded lines, busy drops, switch
+PASS F407 diagnostic: production service, one snapshot/second, bounded lines, busy drops, switch
+PASS K5 scanner: immediate release, repeated short, long-only release, K1/K6 ordinary keys
+PASS remote protocol/model: layouts, CRC, invalid, session, sequence, timeouts
+PASS OLED: nine pages, retained fields, OLD/LOST, axes, units, fixed point and extremes
+PASS DRV: fixed point, selected axes, last-good, stale, loss, session and width
+PASS ACK driver: PTX, simultaneous IRQ, FIFO, widths, empty ACK, SPI, fallback
+PASS application: local keys, event retry, control CRC/cadence, frozen OLED, session, UART busy
+PASS application: local keys, event retry, control CRC/cadence, frozen OLED, session, UART busy
+PASS dual firmware: main encoder -> remote decoder, all 9 types, sentinels and CRC
+PASS RX/LOST targeted regression matrix

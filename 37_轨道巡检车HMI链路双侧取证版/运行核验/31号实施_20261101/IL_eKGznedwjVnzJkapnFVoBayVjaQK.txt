@@ -1,0 +1,42 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 ldarg.1 
+0001 brfalse.s 122
+0003 ldc.i4 1812338640
+0008 ldc.i4 1455137843
+000D xor 
+000E dup 
+000F stloc.0 
+0010 ldc.i4.4 
+0011 rem.un 
+0012 switch 4
+0027 br.s 84
+0029 ldarg.0 
+002A call Void oEJzKyWkmMrDKqvFcoRJpWcdPjbp()
+002F ldloc.0 
+0030 ldc.i4 -1846715998
+0035 mul 
+0036 ldc.i4 1064329888
+003B xor 
+003C br.s -54
+003E ldarg.0 
+003F ldfld qPKDtUfTXoEQyAiGJXwstFKkVrlBB hkVPhPgZpnWQuiWmLMSXwsgKVxct
+0044 callvirt Boolean qNXNdaBGTfcdJYQJggKdoGjjsuxo()
+0049 stsfld Boolean zdKTTzrpfGxEqbwjpDhpBnrSnOuJ
+004E ldarg.0 
+004F ldfld qPKDtUfTXoEQyAiGJXwstFKkVrlBB LBEEnYGzGMcdDASDwnjNNCZIwciR
+0054 callvirt Boolean qNXNdaBGTfcdJYQJggKdoGjjsuxo()
+0059 stsfld Boolean jQxivTHuhFxWXWiaiCQKlwMOFqGs
+005E ldarg.0 
+005F ldfld bghOfvrVYYkkWWKrnFQRkvHmBgIj aOUupshcanqlhdMUKnZEPWasskvq
+0064 callvirt Boolean OluKUqiWMIvVGICXMQBkYBkVitfj()
+0069 stsfld Boolean jEocMMBzkoGrcUJlQNpKAmqqhMIWA
+006E ldloc.0 
+006F ldc.i4 -1987479845
+0074 mul 
+0075 ldc.i4 1134055846
+007A xor 
+007B br.s -117
+007D ldarg.0 
+007E ldarg.1 
+007F call Void OnDeactivate(Boolean)
+0084 ret 

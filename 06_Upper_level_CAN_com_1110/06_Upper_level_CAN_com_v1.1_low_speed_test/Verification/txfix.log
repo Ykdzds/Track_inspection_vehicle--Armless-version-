@@ -1,0 +1,2 @@
+PASS STOP50 bounded quick x4/100ms, command x4/300ms, queue failure throttling, unchanged sequence/deadline, fresh correlated release
+PASS TXFIX 3489 assertions: bottom-controlled reversal, invalid feedback, real failures, old token, K1 locked and K3 recovery

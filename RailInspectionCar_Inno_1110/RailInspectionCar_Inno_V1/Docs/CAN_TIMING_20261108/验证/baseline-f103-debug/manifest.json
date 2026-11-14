@@ -1,0 +1,34 @@
+{
+  "Variant": "baseline-f103-debug",
+  "BaselineCommit": "2c60782",
+  "Project": "C:\\Users\\15056\\AppData\\Local\\Temp\\rail_can_rebuild_f103_8121cbcd48584d4b95eb6d543d0d86dc\\MDK-ARM\\DigitalElectronicseCode.uvprojx",
+  "SourceDefaults": false,
+  "Defines": [
+    "UPPER_USART1_DEBUG_ENABLE=1"
+  ],
+  "Started": "2026-11-08T22:24:46.0083176+08:00",
+  "Completed": "2026-11-08T22:25:04.5087934+08:00",
+  "Exit": 0,
+  "Errors": 0,
+  "Warnings": 0,
+  "Ram": {
+    "PhysicalBytes": 18336,
+    "Regions": {
+      "RW_IRAM1": {
+        "Used": 18336,
+        "Capacity": 20480,
+        "Free": 2144
+      }
+    }
+  },
+  "Hashes": {
+    "DigitalElectronicseCode.axf": "45C1AF5871C21B9B3030EBA71D18E47F0AB6CFAB1B7258625AE58BAB63E87AD9",
+    "DigitalElectronicseCode.bin": "535A45708E1DA9379F9E1E4518AA38723B017BBDCAB1BCB7715F406F06A22578",
+    "DigitalElectronicseCode.hex": "0C8617A3F91210215AB174173476377FD36EC52629F38F6673B3484C930CC3BF",
+    "DigitalElectronicseCode.htm": "DD64DBC4E5B342AF8DFB6FB7EDC0E623DBFDC64E05483C6A7004CC72344CAAD9",
+    "DigitalElectronicseCode.map": "5EBFCDC4EBD04E8CCE0284BDE7537401F84181529F810DB157A484A75D499349",
+    "keil-rebuild.log": "FA348A19BCFD2FE3944F5DD35216AB3F423E3398CD02C33FE40B54205F0333DF",
+    "project.snapshot": "D722ED6929FFE4101B92165043021CCD11244F1F548BB4B5BD0363ED0129CA57"
+  },
+  "HardwareAcceptance": "pending"
+}

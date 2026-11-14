@@ -1,0 +1,15 @@
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
+digitalelectronicsecode\queue.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+digitalelectronicsecode\queue.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\string.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+digitalelectronicsecode\queue.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+digitalelectronicsecode\queue.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+digitalelectronicsecode\queue.o: ../Core/Inc/FreeRTOSConfig.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+digitalelectronicsecode\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h

@@ -1,0 +1,7 @@
+No compiled event refreshTick
+At D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\native-verify31.ps1:8 char:59
++ ... nts31[$name31];if(!$w31){throw ('No compiled event '+$name31)};$w31.G ...
++                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (No compiled event refreshTick:String) [], RuntimeException
+    + FullyQualifiedErrorId : No compiled event refreshTick
+ 

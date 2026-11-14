@@ -1,0 +1,2 @@
+﻿P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=0;if(P0_Boot.t34.vals[0]!=P0_Boot.themeMode.val){P0_Boot.s33.vals[17]=1;}P0_Boot.s33.vals[13]=0-1;
+if(P0_Boot.b34.vals[0]!=P0_Boot.themeMode.val){if(P0_Boot.themeMode.val==0){P0_Boot.bgImg=user.image.Day_P0_Boot;}else{P0_Boot.bgImg=user.image.Night_P0_Boot;}P0_Boot.b34.vals[0]=P0_Boot.themeMode.val;}

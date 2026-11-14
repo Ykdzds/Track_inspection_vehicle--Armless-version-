@@ -1,0 +1,18 @@
+[
+  {
+    "Page": "P8_ServoControl",
+    "Control": "",
+    "Event": "加载页面",
+    "Source": "事件/P8_加载.txt",
+    "Matches": true,
+    "SHA256": "8B46DDF89E7E8B60383050F18B2A7E3E5911AF0F00BCA61F4C7CC8E527A99F20"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "",
+    "Event": "离开页面",
+    "Source": "事件/P8_离开.txt",
+    "Matches": true,
+    "SHA256": "6E4D9FD8A2481BE78ECD2702B04F9E6FCD226379D5FFE45650D230662CA90D38"
+  }
+]

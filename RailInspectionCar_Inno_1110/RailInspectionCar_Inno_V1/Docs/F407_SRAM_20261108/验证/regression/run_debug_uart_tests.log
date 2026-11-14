@@ -1,0 +1,2 @@
+PASS USART1 RX circular DMA, overwrite/error epochs, async recovery, TX publication and ISR isolation
+PASS production CLI DMA parser: bounded work, residual discard, non-ASCII, long lines and queue congestion

@@ -1,0 +1,4 @@
+﻿int vEntry34;
+P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=0;if(P0_Boot.t34.vals[8]!=P0_Boot.themeMode.val){P0_Boot.s33.vals[17]=1;}P0_Boot.s33.vals[13]=0-1;
+if(P0_Boot.b34.vals[8]!=P0_Boot.themeMode.val){if(P0_Boot.themeMode.val==0){P8_ServoControl.bgImg=user.image.Day_P8_ServoControl;}else{P8_ServoControl.bgImg=user.image.Night_P8_ServoControl;}P0_Boot.b34.vals[8]=P0_Boot.themeMode.val;}
+P8_ServoControl.h13.vals[32]=1;vEntry34=P8_ServoControl.h13.vals[10]+1600;if(P8_ServoControl.h13.vals[2]!=3){vEntry34=1600;}if(P8_ServoControl.h13.vals[2]==3 && P0_Boot.u34.vals[3]==1 && P0_Boot.u34.vals[6]==P8_ServoControl.h13.vals[6] && P0_Boot.u34.vals[7]==P8_ServoControl.h13.vals[7]){vEntry34=P0_Boot.u34.vals[1]+1600;}P8_ServoControl.rpmSlider.val=vEntry34;P0_Boot.u34.vals[0]=vEntry34;P0_Boot.u34.vals[38]=1;P8_ServoControl.h13.vals[32]=0;HMI34Hint();

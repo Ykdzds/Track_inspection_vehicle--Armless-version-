@@ -1,0 +1,16 @@
+In file included from Tests/mocks/FreeRTOS.h:5:0,
+                 from APP/app_health.h:7,
+                 from APP/app_system_snapshot.h:5,
+                 from APP/HMI/app_hmi_state.h:4,
+                 from Tests/test_hmi_integration.c:6,
+                 from Tests/test_hmi_link_wire.c:3:
+Tests/test_hmi_link_wire.c: In function 'slow_wire_transaction':
+Tests/test_hmi_link_wire.c:52:58: error: 's_diag_active' undeclared (first use in this function)
+     assert(response_size == 197U && response[1] == 3U && s_diag_active.id == 1U);
+                                                          ^
+Tests/test_hmi_link_wire.c:52:58: note: each undeclared identifier is reported only once for each function it appears in
+Exception: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_link_wire_tests.ps1:7
+Line |
+   7 |  … LASTEXITCODE){throw 'HMI diagnostic wire integration compile failed'}
+     |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | HMI diagnostic wire integration compile failed

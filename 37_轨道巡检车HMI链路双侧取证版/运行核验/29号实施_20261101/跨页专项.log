@@ -1,0 +1,59 @@
+{"scenario":"29 navigation simulated","rpm":-100,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+✔ 固定读帧与CRC向量 (1.0103ms)
+✔ 完整24字申请帧及特殊字序 (0.3112ms)
+✔ RPM边界及保留参数 (0.5128ms)
+✔ 重复目标不续期且旧序号拒绝 (0.3583ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (118.1279ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (46.2867ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (199.4523ms)
+✔ 主控重启清会话与旧目标，不自动授权 (118.8886ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (107.9138ms)
+✔ 只读固件不能授权 (66.8592ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.2453ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3868ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1729ms)
+✔ 29 cross-page 120s/page target=-100 (10251.8647ms)
+✔ 29 cross-page 120s/page target=0 (10337.0947ms)
+✔ 29 cross-page 120s/page target=100 (10971.4992ms)
+✔ 29 repeated navigation and view reload axis=1 (239.4881ms)
+✔ 29 repeated navigation and view reload axis=2 (196.7991ms)
+✔ 29 repeated navigation and view reload axis=3 (165.0014ms)
+✔ 29 authorization pending navigates immediately and completes at zero (57.9184ms)
+✔ 29 cancel survives navigation and does not force delayed page jump (249.5436ms)
+✔ 29 estop survives navigation and does not force delayed page jump (238.5675ms)
+✔ 29 background K5 stop and fresh reauthorization (282.6ms)
+✔ 29 background PB10 stop and fresh reauthorization (280.2093ms)
+✔ 29 background offline invalidates old motion (171.2832ms)
+✔ 29 background frozen invalidates old motion (223.1113ms)
+✔ 29 background boot invalidates old motion (241.2446ms)
+✔ 29 read-only navigation never acquires other owner=2 (61.9103ms)
+✔ 29 read-only navigation never acquires other owner=3 (57.7552ms)
+✔ 29 all fault states allow navigation without changing control state (35.747ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 34835.5796

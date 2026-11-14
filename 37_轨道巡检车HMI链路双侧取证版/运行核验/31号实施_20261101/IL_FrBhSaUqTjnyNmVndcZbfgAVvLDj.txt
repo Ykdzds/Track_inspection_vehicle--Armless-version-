@@ -1,0 +1,19 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 ldarg.0 
+0001 ldarg.1 
+0002 ldarg.2 
+0003 call Visual_PIX.Model.PixControl XNztpRNKugbhywpKtjhvCfMNErPqA(Byte, Byte)
+0008 dup 
+0009 brtrue.s 28
+000B call System.String get_Can_not_find_control()
+0010 ldarg.1 
+0011 box System.Byte
+0016 ldarg.2 
+0017 box System.Byte
+001C call System.String ‮‎⁬‪‫‍‍⁬‫‌⁬‍‮⁮⁪⁫⁫‮⁭‎‍⁭⁬⁪‬‏‍⁮⁭‍‌​‮⁭‏‎⁭⁫‮‬‮(System.String, System.Object, System.Object)
+0021 newobj Void .ctor(System.String)
+0026 throw 
+0027 ldarg.3 
+0028 ldarg.s 4
+002A call Void SQGJjlnqLGCrBFyvDWrQAFlrwHaOA(System.Object, Byte, System.Object)
+002F ret 

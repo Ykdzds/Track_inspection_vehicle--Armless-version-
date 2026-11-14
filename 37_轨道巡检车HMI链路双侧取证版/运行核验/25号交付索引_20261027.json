@@ -1,0 +1,15 @@
+{
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\25_轨道巡检车授权时序修复版",
+  "Version": "25号授权时序修复版",
+  "CompiledAt": "2026-10-27T19:37:09.9242399+08:00",
+  "PIX": "17_轨道巡检车.pix",
+  "PIX_SHA256": "D12B0D93C8150E847970BBAC31A577529106CFFDF1C8024F0ADD8BD9E474379F",
+  "BIN": "17_轨道巡检车.pix.bin",
+  "BIN_SHA256": "07128FB09A13B6180490A855C74997B90EC1F7979BDC6A02338565595341DE78",
+  "BIN_Length": 241968,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "HostFirmware": "stop_final_current.hex",
+  "HostFirmwareSHA256": "9C838B658759B6F81CAA46189C63D6CD76FA46F45759FF0F0CB74C43F010401C",
+  "Notes": "主控使用F407普通冷启动修订基线；屏端已完成事件安装与编译，尚未烧录/实机验证"
+}

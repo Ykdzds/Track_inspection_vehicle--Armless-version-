@@ -1,0 +1,1 @@
+PASS USART1 RX DMA2S2 circular / TX DMA2S7 normal, priority 6; USART2 priority 5, bounded task parser and asynchronous recovery

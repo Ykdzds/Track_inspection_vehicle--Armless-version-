@@ -1,0 +1,5861 @@
+{
+  "Evidence": "Saved PIX native event states + embedded bitmap resources; not physical screenshots",
+  "States": 18,
+  "TextChecks": 390,
+  "MinContrast": 5.947726987623851,
+  "Issues": [],
+  "Measurements": [
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "text0",
+      "Text": "1435 轨道巡检车",
+      "Width": 207,
+      "Available": 660,
+      "Height": 36,
+      "AvailableHeight": 48,
+      "FontHeight": 36
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "text1",
+      "Text": "底盘控制系统",
+      "Width": 108,
+      "Available": 600,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "swVer",
+      "Text": "软件码 0",
+      "Width": 74,
+      "Available": 250,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "mainState",
+      "Text": "RUNNING",
+      "Width": 110,
+      "Available": 928,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "stageText",
+      "Text": "初始化完成",
+      "Width": 90,
+      "Available": 928,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "progressText",
+      "Text": "初始化进度：100%",
+      "Width": 124,
+      "Available": 928,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "ctrlStatus",
+      "Text": "控制器通信：正常",
+      "Width": 144,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "leftStatus",
+      "Text": "轴1通信：正常",
+      "Width": 119,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "rightStatus",
+      "Text": "轴2通信：正常",
+      "Width": 119,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "safeStatus",
+      "Text": "安全状态：主控允许",
+      "Width": 162,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "resetReason",
+      "Text": "复位原因码：0",
+      "Width": 119,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "protoVer",
+      "Text": "协议码：0",
+      "Width": 83,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "faultText",
+      "Text": "主故障：无",
+      "Width": 90,
+      "Available": 928,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "P1_Title",
+      "Text": "车辆运行总览",
+      "Width": 132,
+      "Available": 344,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "ctrlComm",
+      "Text": "控制器通信：超时",
+      "Width": 112,
+      "Available": 652,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "state",
+      "Text": "RUNNING",
+      "Width": 91,
+      "Available": 224,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftOnline",
+      "Text": "轴1通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightOnline",
+      "Text": "轴2通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftSpeed",
+      "Text": "轴1速度：1.525 m/s",
+      "Width": 175,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightSpeed",
+      "Text": "轴2速度：1.529 m/s",
+      "Width": 175,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "safe",
+      "Text": "门禁：主控允许",
+      "Width": 98,
+      "Available": 304,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftFault",
+      "Text": "轴1故障：无",
+      "Width": 79,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightFault",
+      "Text": "轴2故障：无",
+      "Width": 79,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "vehicleSpeed",
+      "Text": "整车实际：1.527 m/s",
+      "Width": 221,
+      "Available": 456,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "targetSpeed",
+      "Text": "整车目标：1.529 m/s",
+      "Width": 221,
+      "Available": 456,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "currentMode",
+      "Text": "轴模式码：0/0",
+      "Width": 94,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "controlSource",
+      "Text": "控制源：车载屏",
+      "Width": 98,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "controlAuthority",
+      "Text": "屏幕控制：已授权",
+      "Width": 112,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "stopState",
+      "Text": "屏幕运动锁定：未锁定",
+      "Width": 140,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "axisEnableSummary",
+      "Text": "使能反馈：1/1",
+      "Width": 94,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "alarmSummary",
+      "Text": "最高告警：无",
+      "Width": 84,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openDiag",
+      "Text": "伺服诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openPosition",
+      "Text": "位置里程",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openInfo",
+      "Text": "系统信息",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openSync",
+      "Text": "同步诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 176,
+      "Height": 24,
+      "AvailableHeight": 44,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "vehicleSpeedUnits",
+      "Text": "5.497 km/h | 等效转速 420.4 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "targetSpeedUnits",
+      "Text": "5.504 km/h | 等效转速 420.9 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftSpeedUnits",
+      "Text": "5.490 km/h | 等效转速 419.8 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightSpeedUnits",
+      "Text": "5.504 km/h | 等效转速 420.9 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "themeToggle",
+      "Text": "日间 / 切夜间",
+      "Width": 116,
+      "Available": 176,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagTitle",
+      "Text": "伺服与通信诊断",
+      "Width": 154,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "leftState",
+      "Text": "轴1状态字：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "rightState",
+      "Text": "轴2状态字：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagLeftFault",
+      "Text": "轴1故障码：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagRightFault",
+      "Text": "轴2故障码：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1Online",
+      "Text": "轴1通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2Online",
+      "Text": "轴2通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1Enable",
+      "Text": "轴1使能：使能",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2Enable",
+      "Text": "轴2使能：使能",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1SpeedValid",
+      "Text": "轴1速度反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2SpeedValid",
+      "Text": "轴2速度反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1SpeedAge",
+      "Text": "轴1反馈年龄：0 ms",
+      "Width": 130,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2SpeedAge",
+      "Text": "轴2反馈年龄：0 ms",
+      "Width": 130,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1FaultValid",
+      "Text": "轴1故障反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2FaultValid",
+      "Text": "轴2故障反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1Zero",
+      "Text": "轴1零速确认：否",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2Zero",
+      "Text": "轴2零速确认：否",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagModeVerified",
+      "Text": "参数核验位图：0",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagSafetyLocked",
+      "Text": "安全门禁位图：512",
+      "Width": 125,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1CommFail",
+      "Text": "轴1通信失败：0",
+      "Width": 102,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2CommFail",
+      "Text": "轴2通信失败：0",
+      "Width": 102,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "reqCount",
+      "Text": "轴1转矩/负载：13.9 / 12.9 %",
+      "Width": 201,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "respCount",
+      "Text": "轴2转矩/负载：11.7 / 11.7 %",
+      "Width": 201,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "retryCount",
+      "Text": "轴1I/V：6.4 A / 49.0 V",
+      "Width": 165,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "timeoutCount",
+      "Text": "轴2I/V：5.8 A / 48.5 V",
+      "Width": 165,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "crcCount",
+      "Text": "CRC错误数：0",
+      "Width": 95,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "frameCount",
+      "Text": "诊断值年龄：0 / 0 ms",
+      "Width": 150,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagPosition",
+      "Text": "位置里程",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagSync",
+      "Text": "双轴同步",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "leftHeading",
+      "Text": "左轴 / AXIS 01",
+      "Width": 135,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "rightHeading",
+      "Text": "右轴 / AXIS 02",
+      "Width": 135,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 4s",
+      "Width": 163,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "axis1Position",
+      "Text": "轴1原始位置：12345 count",
+      "Width": 235,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionTitle",
+      "Text": "位置与里程",
+      "Width": 110,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "axis2Position",
+      "Text": "轴2原始位置：23456 count",
+      "Width": 235,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "startupDisplacement",
+      "Text": "启动净位移：4000 mm",
+      "Width": 195,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "startupTravel",
+      "Text": "启动累计行程：5000 mm",
+      "Width": 213,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "segmentTravel",
+      "Text": "分段轮转行程：6000 mm",
+      "Width": 213,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "axisPositionDiff",
+      "Text": "双轴位置差：10 mm",
+      "Width": 137,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionValid",
+      "Text": "位置有效：是",
+      "Width": 84,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "mileageValid",
+      "Text": "里程有效：是",
+      "Width": 84,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionIncomplete",
+      "Text": "里程质量：完整",
+      "Width": 98,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionBaseline",
+      "Text": "基准代次：10",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionSample",
+      "Text": "样本序号：10",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionAge",
+      "Text": "位置样本年龄：20 ms",
+      "Width": 144,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "lostInterval",
+      "Text": "丢失区间数：0",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "mileageNote",
+      "Text": "当前里程为轮转估算值，不等同于",
+      "Width": 210,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 24,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "mileageNoteTail",
+      "Text": "定位器提供的真实轨道里程",
+      "Width": 168,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 24,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionSync",
+      "Text": "同步诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 5s",
+      "Width": 163,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "infoTitle",
+      "Text": "系统信息",
+      "Width": 88,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "ctrlVersion",
+      "Text": "采集时间：0:1410 ms",
+      "Width": 185,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "screenVersion",
+      "Text": "屏幕工程：33",
+      "Width": 112,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "protocolVersion",
+      "Text": "协议版本码：0",
+      "Width": 119,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "resetCode",
+      "Text": "复位原因码：0",
+      "Width": 119,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "diagLow",
+      "Text": "诊断故障低字：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "diagHigh",
+      "Text": "诊断故障高字：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "heartbeat",
+      "Text": "统一快照：0:14 年龄 100 ms",
+      "Width": 250,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "minStack",
+      "Text": "最小栈余量：0 words",
+      "Width": 183,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "infoBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "mechanicalNote",
+      "Text": "速度换算：轮径 0.185 m | 总传动比 8/3 | 方向 +1 / +1\n线速度由轮速换算，非独立地面测速",
+      "Width": 384,
+      "Available": 960,
+      "Height": 40,
+      "AvailableHeight": 64,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 6s",
+      "Width": 163,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmLevel",
+      "Text": "告警等级：无",
+      "Width": 132,
+      "Available": 456,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmTitle",
+      "Text": "告警与维护",
+      "Width": 110,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmCode",
+      "Text": "告警代码：0",
+      "Width": 101,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmSource",
+      "Text": "告警来源：无",
+      "Width": 108,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmActive",
+      "Text": "告警状态：不活跃",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmEmergency",
+      "Text": "急停状态：未触发",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmStopResult",
+      "Text": "停车结果：无请求",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmSequence",
+      "Text": "告警事件序号：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmEventTime",
+      "Text": "启动后：0 s 0 ms",
+      "Width": 156,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmExtra",
+      "Text": "附加参数：0",
+      "Width": 101,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmFaultSummary",
+      "Text": "故障摘要位图：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmHistory",
+      "Text": "告警记录：历史未接入",
+      "Width": 140,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmSync",
+      "Text": "同步诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 6s",
+      "Width": 163,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncTitle",
+      "Text": "双轴同步诊断",
+      "Width": 132,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncMacro",
+      "Text": "同步控制位：3",
+      "Width": 119,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncState",
+      "Text": "同步状态：关闭",
+      "Width": 126,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncActualDiff",
+      "Text": "实际速度差：2 rpm",
+      "Width": 201,
+      "Available": 960,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncEffectiveError",
+      "Text": "有效误差：1 rpm",
+      "Width": 146,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncCompensation",
+      "Text": "当前整数补偿：1 rpm",
+      "Width": 182,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncPairValid",
+      "Text": "样本配对：有效",
+      "Width": 126,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncRejectReason",
+      "Text": "配对拒绝原因：无",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncSkew",
+      "Text": "最近样本错时：0 ms",
+      "Width": 172,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncAxis1Age",
+      "Text": "轴1样本年龄：20 ms",
+      "Width": 176,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncAxis2Age",
+      "Text": "轴2样本年龄：20 ms",
+      "Width": 176,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncReadonly",
+      "Text": "同步数据仅用于显示，屏端不参与补偿控制",
+      "Width": 266,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 7s",
+      "Width": 163,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "batteryState",
+      "Text": "电池状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionTitle",
+      "Text": "整机扩展状态",
+      "Width": 132,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "batteryPercent",
+      "Text": "电池电量：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningState",
+      "Text": "定位状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningAccuracy",
+      "Text": "定位精度：未知",
+      "Width": 126,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningX",
+      "Text": "定位X：未知",
+      "Width": 102,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningY",
+      "Text": "定位Y：未知",
+      "Width": 101,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "armState",
+      "Text": "机械臂状态：未接入",
+      "Width": 162,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "lightingState",
+      "Text": "照明状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "cameraState",
+      "Text": "摄像状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "acquisitionState",
+      "Text": "数据采集：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "storageState",
+      "Text": "存储状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionComm",
+      "Text": "扩展通信：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionFault",
+      "Text": "扩展故障位图：0",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 40,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionReadonly",
+      "Text": "未接入模块：未配置",
+      "Width": 126,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 40,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionPosition",
+      "Text": "位置里程",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 8s",
+      "Width": 163,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "controlTitle",
+      "Text": "伺服控制 / 33",
+      "Width": 146,
+      "Available": 976,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "linkStatus",
+      "Text": "通信：超时",
+      "Width": 70,
+      "Available": 976,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "ownerStatus",
+      "Text": "控制源：HMI",
+      "Width": 86,
+      "Available": 460,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "axisMode",
+      "Text": "执行轴：双轴",
+      "Width": 84,
+      "Available": 464,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftActual",
+      "Text": "左轴实际：419rpm|1.522m/s|5.479km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightActual",
+      "Text": "右轴实际：420rpm|1.526m/s|5.492km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftTarget",
+      "Text": "最终目标：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightTarget",
+      "Text": "最终目标：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftOutput",
+      "Text": "执行输出：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightOutput",
+      "Text": "执行输出：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftEnable",
+      "Text": "使能反馈：开",
+      "Width": 108,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightEnable",
+      "Text": "使能反馈：开",
+      "Width": 108,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "commonTarget",
+      "Text": "设定：421rpm|1.529m/s|5.505km/h",
+      "Width": 312,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "authorityStatus",
+      "Text": "已授权：新滑动调整共同目标",
+      "Width": 234,
+      "Available": 976,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "stopStatus",
+      "Text": "停车阶段：无",
+      "Width": 108,
+      "Available": 476,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "errorStatus",
+      "Text": "状态 S3 错误 0 停车原因 0",
+      "Width": 233,
+      "Available": 976,
+      "Height": 24,
+      "AvailableHeight": 48,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "safetyNote",
+      "Text": "软件受控停车，非硬件急停/STO",
+      "Width": 203,
+      "Available": 976,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "authorize",
+      "Text": "授权 / 取消",
+      "Width": 98,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "estop",
+      "Text": "安全急停",
+      "Width": 72,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "backHome",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "recoveryStatus",
+      "Text": "无需恢复",
+      "Width": 72,
+      "Available": 464,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "recoveryDetail",
+      "Text": "原因 0 首错轴/项 0/0 健康 0ms",
+      "Width": 275,
+      "Available": 976,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "recoveryButton",
+      "Text": "故障恢复",
+      "Width": 72,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "acceptedTarget",
+      "Text": "主控接受：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderScale",
+      "Text": "负向 -1600 rpm",
+      "Width": 114,
+      "Available": 280,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderZero",
+      "Text": "0",
+      "Width": 9,
+      "Available": 32,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderPositive",
+      "Text": "正向 +1600 rpm",
+      "Width": 118,
+      "Available": 188,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderSpeedHint",
+      "Text": "设定：5.505km/h",
+      "Width": 150,
+      "Available": 192,
+      "Height": 24,
+      "AvailableHeight": 24,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "text0",
+      "Text": "1435 轨道巡检车",
+      "Width": 207,
+      "Available": 660,
+      "Height": 36,
+      "AvailableHeight": 48,
+      "FontHeight": 36
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "text1",
+      "Text": "底盘控制系统",
+      "Width": 108,
+      "Available": 600,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "swVer",
+      "Text": "软件码 0",
+      "Width": 74,
+      "Available": 250,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "mainState",
+      "Text": "RUNNING",
+      "Width": 110,
+      "Available": 928,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "stageText",
+      "Text": "初始化完成",
+      "Width": 90,
+      "Available": 928,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "progressText",
+      "Text": "初始化进度：100%",
+      "Width": 124,
+      "Available": 928,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "ctrlStatus",
+      "Text": "控制器通信：正常",
+      "Width": 144,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "leftStatus",
+      "Text": "轴1通信：正常",
+      "Width": 119,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "rightStatus",
+      "Text": "轴2通信：正常",
+      "Width": 119,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "safeStatus",
+      "Text": "安全状态：主控允许",
+      "Width": 162,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "resetReason",
+      "Text": "复位原因码：0",
+      "Width": 119,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "protoVer",
+      "Text": "协议码：0",
+      "Width": 83,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "faultText",
+      "Text": "主故障：无",
+      "Width": 90,
+      "Available": 928,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "P1_Title",
+      "Text": "车辆运行总览",
+      "Width": 132,
+      "Available": 344,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "ctrlComm",
+      "Text": "控制器通信：超时",
+      "Width": 112,
+      "Available": 652,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "state",
+      "Text": "RUNNING",
+      "Width": 91,
+      "Available": 224,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftOnline",
+      "Text": "轴1通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightOnline",
+      "Text": "轴2通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftSpeed",
+      "Text": "轴1速度：1.525 m/s",
+      "Width": 175,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightSpeed",
+      "Text": "轴2速度：1.529 m/s",
+      "Width": 175,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "safe",
+      "Text": "门禁：主控允许",
+      "Width": 98,
+      "Available": 304,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftFault",
+      "Text": "轴1故障：无",
+      "Width": 79,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightFault",
+      "Text": "轴2故障：无",
+      "Width": 79,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "vehicleSpeed",
+      "Text": "整车实际：1.527 m/s",
+      "Width": 221,
+      "Available": 456,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "targetSpeed",
+      "Text": "整车目标：1.529 m/s",
+      "Width": 221,
+      "Available": 456,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "currentMode",
+      "Text": "轴模式码：0/0",
+      "Width": 94,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "controlSource",
+      "Text": "控制源：车载屏",
+      "Width": 98,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "controlAuthority",
+      "Text": "屏幕控制：已授权",
+      "Width": 112,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "stopState",
+      "Text": "屏幕运动锁定：未锁定",
+      "Width": 140,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "axisEnableSummary",
+      "Text": "使能反馈：1/1",
+      "Width": 94,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "alarmSummary",
+      "Text": "最高告警：无",
+      "Width": 84,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openDiag",
+      "Text": "伺服诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openPosition",
+      "Text": "位置里程",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openInfo",
+      "Text": "系统信息",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openSync",
+      "Text": "同步诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 176,
+      "Height": 24,
+      "AvailableHeight": 44,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "vehicleSpeedUnits",
+      "Text": "5.497 km/h | 等效转速 420.4 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "targetSpeedUnits",
+      "Text": "5.504 km/h | 等效转速 420.9 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftSpeedUnits",
+      "Text": "5.490 km/h | 等效转速 419.8 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightSpeedUnits",
+      "Text": "5.504 km/h | 等效转速 420.9 rpm",
+      "Width": 241,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 30,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "themeToggle",
+      "Text": "日间 / 切夜间",
+      "Width": 116,
+      "Available": 176,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagTitle",
+      "Text": "伺服与通信诊断",
+      "Width": 154,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "leftState",
+      "Text": "轴1状态字：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "rightState",
+      "Text": "轴2状态字：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagLeftFault",
+      "Text": "轴1故障码：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagRightFault",
+      "Text": "轴2故障码：0",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1Online",
+      "Text": "轴1通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2Online",
+      "Text": "轴2通信：正常",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1Enable",
+      "Text": "轴1使能：使能",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2Enable",
+      "Text": "轴2使能：使能",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1SpeedValid",
+      "Text": "轴1速度反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2SpeedValid",
+      "Text": "轴2速度反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1SpeedAge",
+      "Text": "轴1反馈年龄：0 ms",
+      "Width": 130,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2SpeedAge",
+      "Text": "轴2反馈年龄：0 ms",
+      "Width": 130,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1FaultValid",
+      "Text": "轴1故障反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2FaultValid",
+      "Text": "轴2故障反馈：未知",
+      "Width": 121,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1Zero",
+      "Text": "轴1零速确认：否",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2Zero",
+      "Text": "轴2零速确认：否",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagModeVerified",
+      "Text": "参数核验位图：0",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagSafetyLocked",
+      "Text": "安全门禁位图：512",
+      "Width": 125,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1CommFail",
+      "Text": "轴1通信失败：0",
+      "Width": 102,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2CommFail",
+      "Text": "轴2通信失败：0",
+      "Width": 102,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "reqCount",
+      "Text": "轴1转矩/负载：13.9 / 12.9 %",
+      "Width": 201,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "respCount",
+      "Text": "轴2转矩/负载：11.7 / 11.7 %",
+      "Width": 201,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "retryCount",
+      "Text": "轴1I/V：6.4 A / 49.0 V",
+      "Width": 165,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "timeoutCount",
+      "Text": "轴2I/V：5.8 A / 48.5 V",
+      "Width": 165,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "crcCount",
+      "Text": "CRC错误数：0",
+      "Width": 95,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "frameCount",
+      "Text": "诊断值年龄：0 / 0 ms",
+      "Width": 150,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagPosition",
+      "Text": "位置里程",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagSync",
+      "Text": "双轴同步",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "leftHeading",
+      "Text": "左轴 / AXIS 01",
+      "Width": 135,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "rightHeading",
+      "Text": "右轴 / AXIS 02",
+      "Width": 135,
+      "Available": 440,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 10s",
+      "Width": 172,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "axis1Position",
+      "Text": "轴1原始位置：12345 count",
+      "Width": 235,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionTitle",
+      "Text": "位置与里程",
+      "Width": 110,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "axis2Position",
+      "Text": "轴2原始位置：23456 count",
+      "Width": 235,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "startupDisplacement",
+      "Text": "启动净位移：4000 mm",
+      "Width": 195,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "startupTravel",
+      "Text": "启动累计行程：5000 mm",
+      "Width": 213,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "segmentTravel",
+      "Text": "分段轮转行程：6000 mm",
+      "Width": 213,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "axisPositionDiff",
+      "Text": "双轴位置差：10 mm",
+      "Width": 137,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionValid",
+      "Text": "位置有效：是",
+      "Width": 84,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "mileageValid",
+      "Text": "里程有效：是",
+      "Width": 84,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionIncomplete",
+      "Text": "里程质量：完整",
+      "Width": 98,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionBaseline",
+      "Text": "基准代次：10",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionSample",
+      "Text": "样本序号：10",
+      "Width": 88,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionAge",
+      "Text": "位置样本年龄：20 ms",
+      "Width": 144,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "lostInterval",
+      "Text": "丢失区间数：0",
+      "Width": 93,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "mileageNote",
+      "Text": "当前里程为轮转估算值，不等同于",
+      "Width": 210,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 24,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "mileageNoteTail",
+      "Text": "定位器提供的真实轨道里程",
+      "Width": 168,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 24,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionSync",
+      "Text": "同步诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 11s",
+      "Width": 172,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "infoTitle",
+      "Text": "系统信息",
+      "Width": 88,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "ctrlVersion",
+      "Text": "采集时间：0:1410 ms",
+      "Width": 185,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "screenVersion",
+      "Text": "屏幕工程：33",
+      "Width": 112,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "protocolVersion",
+      "Text": "协议版本码：0",
+      "Width": 119,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "resetCode",
+      "Text": "复位原因码：0",
+      "Width": 119,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "diagLow",
+      "Text": "诊断故障低字：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "diagHigh",
+      "Text": "诊断故障高字：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "heartbeat",
+      "Text": "统一快照：0:14 年龄 100 ms",
+      "Width": 250,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "minStack",
+      "Text": "最小栈余量：0 words",
+      "Width": 183,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 36,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "infoBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "mechanicalNote",
+      "Text": "速度换算：轮径 0.185 m | 总传动比 8/3 | 方向 +1 / +1\n线速度由轮速换算，非独立地面测速",
+      "Width": 384,
+      "Available": 960,
+      "Height": 40,
+      "AvailableHeight": 64,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 11s",
+      "Width": 172,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmLevel",
+      "Text": "告警等级：无",
+      "Width": 132,
+      "Available": 456,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmTitle",
+      "Text": "告警与维护",
+      "Width": 110,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmCode",
+      "Text": "告警代码：0",
+      "Width": 101,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmSource",
+      "Text": "告警来源：无",
+      "Width": 108,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmActive",
+      "Text": "告警状态：不活跃",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmEmergency",
+      "Text": "急停状态：未触发",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmStopResult",
+      "Text": "停车结果：无请求",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmSequence",
+      "Text": "告警事件序号：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmEventTime",
+      "Text": "启动后：0 s 0 ms",
+      "Width": 156,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmExtra",
+      "Text": "附加参数：0",
+      "Width": 101,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmFaultSummary",
+      "Text": "故障摘要位图：0",
+      "Width": 137,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmHistory",
+      "Text": "告警记录：历史未接入",
+      "Width": 140,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmSync",
+      "Text": "同步诊断",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 12s",
+      "Width": 172,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncTitle",
+      "Text": "双轴同步诊断",
+      "Width": 132,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncMacro",
+      "Text": "同步控制位：3",
+      "Width": 119,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncState",
+      "Text": "同步状态：关闭",
+      "Width": 126,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncActualDiff",
+      "Text": "实际速度差：2 rpm",
+      "Width": 201,
+      "Available": 960,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncEffectiveError",
+      "Text": "有效误差：1 rpm",
+      "Width": 146,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncCompensation",
+      "Text": "当前整数补偿：1 rpm",
+      "Width": 182,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncPairValid",
+      "Text": "样本配对：有效",
+      "Width": 126,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncRejectReason",
+      "Text": "配对拒绝原因：无",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncSkew",
+      "Text": "最近样本错时：0 ms",
+      "Width": 172,
+      "Available": 960,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncAxis1Age",
+      "Text": "轴1样本年龄：20 ms",
+      "Width": 176,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncAxis2Age",
+      "Text": "轴2样本年龄：20 ms",
+      "Width": 176,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 34,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncReadonly",
+      "Text": "同步数据仅用于显示，屏端不参与补偿控制",
+      "Width": 266,
+      "Available": 960,
+      "Height": 20,
+      "AvailableHeight": 34,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncExtension",
+      "Text": "整机扩展",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 12s",
+      "Width": 172,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "batteryState",
+      "Text": "电池状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionTitle",
+      "Text": "整机扩展状态",
+      "Width": 132,
+      "Available": 680,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "batteryPercent",
+      "Text": "电池电量：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningState",
+      "Text": "定位状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningAccuracy",
+      "Text": "定位精度：未知",
+      "Width": 126,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningX",
+      "Text": "定位X：未知",
+      "Width": 102,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningY",
+      "Text": "定位Y：未知",
+      "Width": 101,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "armState",
+      "Text": "机械臂状态：未接入",
+      "Width": 162,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "lightingState",
+      "Text": "照明状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "cameraState",
+      "Text": "摄像状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "acquisitionState",
+      "Text": "数据采集：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "storageState",
+      "Text": "存储状态：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionComm",
+      "Text": "扩展通信：未接入",
+      "Width": 144,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 40,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionFault",
+      "Text": "扩展故障位图：0",
+      "Width": 107,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 40,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionReadonly",
+      "Text": "未接入模块：未配置",
+      "Width": 126,
+      "Available": 456,
+      "Height": 20,
+      "AvailableHeight": 40,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionBack",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionAlarm",
+      "Text": "告警维护",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionPosition",
+      "Text": "位置里程",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "servoEntry",
+      "Text": "伺服控制",
+      "Width": 72,
+      "Available": 152,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "dataQuality",
+      "Text": "通信超时，保留最近值 13s",
+      "Width": 172,
+      "Available": 296,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "controlTitle",
+      "Text": "伺服控制 / 33",
+      "Width": 146,
+      "Available": 976,
+      "Height": 32,
+      "AvailableHeight": 40,
+      "FontHeight": 32
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "linkStatus",
+      "Text": "通信：超时",
+      "Width": 70,
+      "Available": 976,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "ownerStatus",
+      "Text": "控制源：HMI",
+      "Width": 86,
+      "Available": 460,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "axisMode",
+      "Text": "执行轴：双轴",
+      "Width": 84,
+      "Available": 464,
+      "Height": 20,
+      "AvailableHeight": 28,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftActual",
+      "Text": "左轴实际：419rpm|1.522m/s|5.479km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightActual",
+      "Text": "右轴实际：420rpm|1.526m/s|5.492km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftTarget",
+      "Text": "最终目标：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightTarget",
+      "Text": "最终目标：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftOutput",
+      "Text": "执行输出：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightOutput",
+      "Text": "执行输出：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftEnable",
+      "Text": "使能反馈：开",
+      "Width": 108,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightEnable",
+      "Text": "使能反馈：开",
+      "Width": 108,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 28,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "commonTarget",
+      "Text": "设定：421rpm|1.529m/s|5.505km/h",
+      "Width": 312,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "authorityStatus",
+      "Text": "已授权：新滑动调整共同目标",
+      "Width": 234,
+      "Available": 976,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "stopStatus",
+      "Text": "停车阶段：无",
+      "Width": 108,
+      "Available": 476,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "errorStatus",
+      "Text": "状态 S3 错误 0 停车原因 0",
+      "Width": 233,
+      "Available": 976,
+      "Height": 24,
+      "AvailableHeight": 48,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "safetyNote",
+      "Text": "软件受控停车，非硬件急停/STO",
+      "Width": 203,
+      "Available": 976,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "authorize",
+      "Text": "授权 / 取消",
+      "Width": 98,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "estop",
+      "Text": "安全急停",
+      "Width": 72,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "backHome",
+      "Text": "返回主页",
+      "Width": 72,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "recoveryStatus",
+      "Text": "无需恢复",
+      "Width": 72,
+      "Available": 464,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "recoveryDetail",
+      "Text": "原因 0 首错轴/项 0/0 健康 0ms",
+      "Width": 275,
+      "Available": 976,
+      "Height": 24,
+      "AvailableHeight": 30,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "recoveryButton",
+      "Text": "故障恢复",
+      "Width": 72,
+      "Available": 236,
+      "Height": 24,
+      "AvailableHeight": 52,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "acceptedTarget",
+      "Text": "主控接受：421rpm|1.529m/s|5.505km/h",
+      "Width": 348,
+      "Available": 456,
+      "Height": 24,
+      "AvailableHeight": 32,
+      "FontHeight": 24
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderScale",
+      "Text": "负向 -1600 rpm",
+      "Width": 114,
+      "Available": 280,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderZero",
+      "Text": "0",
+      "Width": 9,
+      "Available": 32,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderPositive",
+      "Text": "正向 +1600 rpm",
+      "Width": 118,
+      "Available": 188,
+      "Height": 20,
+      "AvailableHeight": 22,
+      "FontHeight": 20
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderSpeedHint",
+      "Text": "设定：5.505km/h",
+      "Width": 150,
+      "Available": 192,
+      "Height": 24,
+      "AvailableHeight": 24,
+      "FontHeight": 24
+    }
+  ],
+  "Contrasts": [
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "text0",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "text1",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "swVer",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "mainState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "stageText",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "progressText",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "ctrlStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "leftStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "rightStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "safeStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "resetReason",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "protoVer",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P0_Boot/normal",
+      "Control": "faultText",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "P1_Title",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "ctrlComm",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "state",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftOnline",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightOnline",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftSpeed",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightSpeed",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "safe",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftFault",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightFault",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "vehicleSpeed",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "targetSpeed",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "currentMode",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "controlSource",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "controlAuthority",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "stopState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "axisEnableSummary",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "alarmSummary",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openDiag",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openPosition",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openInfo",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openAlarm",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openSync",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "openExtension",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "vehicleSpeedUnits",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "targetSpeedUnits",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "leftSpeedUnits",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "rightSpeedUnits",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P1_Main/normal",
+      "Control": "themeToggle",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "leftState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "rightState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagLeftFault",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagRightFault",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1Online",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2Online",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1Enable",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2Enable",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1SpeedValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2SpeedValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1SpeedAge",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2SpeedAge",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1FaultValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2FaultValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1Zero",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2Zero",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagModeVerified",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagSafetyLocked",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis1CommFail",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAxis2CommFail",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "reqCount",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "respCount",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "retryCount",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "timeoutCount",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "crcCount",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "frameCount",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagBack",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagPosition",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagSync",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagAlarm",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "diagExtension",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "leftHeading",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "rightHeading",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P2_Diag/normal",
+      "Control": "dataQuality",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "axis1Position",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "axis2Position",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "startupDisplacement",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "startupTravel",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "segmentTravel",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "axisPositionDiff",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "mileageValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionIncomplete",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionBaseline",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionSample",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionAge",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "lostInterval",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "mileageNote",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "mileageNoteTail",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionBack",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionSync",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "positionAlarm",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P3_Position/normal",
+      "Control": "dataQuality",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "infoTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "ctrlVersion",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "screenVersion",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "protocolVersion",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "resetCode",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "diagLow",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "diagHigh",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "heartbeat",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "minStack",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "infoBack",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "mechanicalNote",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P4_Info/normal",
+      "Control": "dataQuality",
+      "Ratio": 6.8025326493810985
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmLevel",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmCode",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmSource",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmActive",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmEmergency",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmStopResult",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmSequence",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmEventTime",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmExtra",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmFaultSummary",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmHistory",
+      "Ratio": 7.544212036972083
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmBack",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmSync",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "alarmExtension",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P5_Alarm/normal",
+      "Control": "dataQuality",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncMacro",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncActualDiff",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncEffectiveError",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncCompensation",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncPairValid",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncRejectReason",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncSkew",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncAxis1Age",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncAxis2Age",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncReadonly",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncBack",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncAlarm",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "syncExtension",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P6_Sync/normal",
+      "Control": "dataQuality",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "batteryState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "batteryPercent",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningAccuracy",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningX",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "positioningY",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "armState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "lightingState",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "cameraState",
+      "Ratio": 7.544212036972083
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "acquisitionState",
+      "Ratio": 7.544212036972083
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "storageState",
+      "Ratio": 7.544212036972083
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionComm",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionFault",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionReadonly",
+      "Ratio": 7.544212036972083
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionBack",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionAlarm",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "extensionPosition",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "servoEntry",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P7_System_Ext/normal",
+      "Control": "dataQuality",
+      "Ratio": 6.8025326493810985
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "controlTitle",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "linkStatus",
+      "Ratio": 6.57428861557707
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "ownerStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "axisMode",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftActual",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightActual",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftTarget",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightTarget",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftOutput",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightOutput",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "leftEnable",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "rightEnable",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "commonTarget",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "authorityStatus",
+      "Ratio": 6.4499902854139695
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "stopStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "errorStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "safetyNote",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "authorize",
+      "Ratio": 5.947726987623851
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "estop",
+      "Ratio": 6.57428861557707
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "backHome",
+      "Ratio": 12.742391161715437
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "recoveryStatus",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "recoveryDetail",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "recoveryButton",
+      "Ratio": 11.011260647452044
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "acceptedTarget",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderScale",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderZero",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderPositive",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "0/P8_ServoControl/normal",
+      "Control": "sliderSpeedHint",
+      "Ratio": 15.724683225138385
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "text0",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "text1",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "swVer",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "mainState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "stageText",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "progressText",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "ctrlStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "leftStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "rightStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "safeStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "resetReason",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "protoVer",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P0_Boot/normal",
+      "Control": "faultText",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "P1_Title",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "ctrlComm",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "state",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftOnline",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightOnline",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftSpeed",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightSpeed",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "safe",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftFault",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightFault",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "vehicleSpeed",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "targetSpeed",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "currentMode",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "controlSource",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "controlAuthority",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "stopState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "axisEnableSummary",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "alarmSummary",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openDiag",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openPosition",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openInfo",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openAlarm",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openSync",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "openExtension",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "vehicleSpeedUnits",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "targetSpeedUnits",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "leftSpeedUnits",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "rightSpeedUnits",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P1_Main/normal",
+      "Control": "themeToggle",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "leftState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "rightState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagLeftFault",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagRightFault",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1Online",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2Online",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1Enable",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2Enable",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1SpeedValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2SpeedValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1SpeedAge",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2SpeedAge",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1FaultValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2FaultValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1Zero",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2Zero",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagModeVerified",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagSafetyLocked",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis1CommFail",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAxis2CommFail",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "reqCount",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "respCount",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "retryCount",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "timeoutCount",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "crcCount",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "frameCount",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagBack",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagPosition",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagSync",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagAlarm",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "diagExtension",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "leftHeading",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "rightHeading",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P2_Diag/normal",
+      "Control": "dataQuality",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "axis1Position",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "axis2Position",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "startupDisplacement",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "startupTravel",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "segmentTravel",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "axisPositionDiff",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "mileageValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionIncomplete",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionBaseline",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionSample",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionAge",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "lostInterval",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "mileageNote",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "mileageNoteTail",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionBack",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionSync",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "positionAlarm",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P3_Position/normal",
+      "Control": "dataQuality",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "infoTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "ctrlVersion",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "screenVersion",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "protocolVersion",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "resetCode",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "diagLow",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "diagHigh",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "heartbeat",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "minStack",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "infoBack",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "mechanicalNote",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P4_Info/normal",
+      "Control": "dataQuality",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmLevel",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmCode",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmSource",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmActive",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmEmergency",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmStopResult",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmSequence",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmEventTime",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmExtra",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmFaultSummary",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmHistory",
+      "Ratio": 9.372436362089662
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmBack",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmSync",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "alarmExtension",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P5_Alarm/normal",
+      "Control": "dataQuality",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncMacro",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncActualDiff",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncEffectiveError",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncCompensation",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncPairValid",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncRejectReason",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncSkew",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncAxis1Age",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncAxis2Age",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncReadonly",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncBack",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncAlarm",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "syncExtension",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P6_Sync/normal",
+      "Control": "dataQuality",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "batteryState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "batteryPercent",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningAccuracy",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningX",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "positioningY",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "armState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "lightingState",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "cameraState",
+      "Ratio": 9.372436362089662
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "acquisitionState",
+      "Ratio": 9.372436362089662
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "storageState",
+      "Ratio": 9.372436362089662
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionComm",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionFault",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionReadonly",
+      "Ratio": 9.372436362089662
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionBack",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionAlarm",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "extensionPosition",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "servoEntry",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P7_System_Ext/normal",
+      "Control": "dataQuality",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "controlTitle",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "linkStatus",
+      "Ratio": 6.473457169313843
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "ownerStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "axisMode",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftActual",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightActual",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftTarget",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightTarget",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftOutput",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightOutput",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "leftEnable",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "rightEnable",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "commonTarget",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "authorityStatus",
+      "Ratio": 11.152162445621867
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "stopStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "errorStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "safetyNote",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "authorize",
+      "Ratio": 6.473653666513656
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "estop",
+      "Ratio": 6.533913439417432
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "backHome",
+      "Ratio": 11.369456406007265
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "recoveryStatus",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "recoveryDetail",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "recoveryButton",
+      "Ratio": 9.881280792940798
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "acceptedTarget",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderScale",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderZero",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderPositive",
+      "Ratio": 16.726082036508224
+    },
+    {
+      "State": "1/P8_ServoControl/normal",
+      "Control": "sliderSpeedHint",
+      "Ratio": 16.726082036508224
+    }
+  ]
+}

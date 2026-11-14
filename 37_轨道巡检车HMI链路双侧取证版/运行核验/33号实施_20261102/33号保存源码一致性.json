@@ -1,0 +1,142 @@
+﻿{
+    "SavedPIXMatchesText":  true,
+    "CustomFunctions":  149,
+    "Arrays":  [
+                   {
+                       "Name":  "P0_Boot.rawRegs",
+                       "Length":  208,
+                       "RealLength":  208
+                   },
+                   {
+                       "Name":  "P0_Boot.regionSeen",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.regionAge",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.regionFails",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.regionValid",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.regionGoodRun",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.regionBadRun",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.bootState",
+                       "Length":  5,
+                       "RealLength":  5
+                   },
+                   {
+                       "Name":  "P0_Boot.metaRegs",
+                       "Length":  24,
+                       "RealLength":  24
+                   },
+                   {
+                       "Name":  "P0_Boot.arr25",
+                       "Length":  10,
+                       "RealLength":  10
+                   },
+                   {
+                       "Name":  "P0_Boot.arr26",
+                       "Length":  10,
+                       "RealLength":  10
+                   },
+                   {
+                       "Name":  "P0_Boot.arr27",
+                       "Length":  10,
+                       "RealLength":  10
+                   },
+                   {
+                       "Name":  "P0_Boot.metaSeen",
+                       "Length":  1,
+                       "RealLength":  1
+                   },
+                   {
+                       "Name":  "P0_Boot.metaAge",
+                       "Length":  1,
+                       "RealLength":  1
+                   },
+                   {
+                       "Name":  "P0_Boot.metaValid",
+                       "Length":  1,
+                       "RealLength":  1
+                   },
+                   {
+                       "Name":  "P0_Boot.metaBadRun",
+                       "Length":  1,
+                       "RealLength":  1
+                   },
+                   {
+                       "Name":  "P0_Boot.s33",
+                       "Length":  64,
+                       "RealLength":  64
+                   },
+                   {
+                       "Name":  "P0_Boot.dRaw",
+                       "Length":  208,
+                       "RealLength":  208
+                   },
+                   {
+                       "Name":  "P0_Boot.dStatus",
+                       "Length":  96,
+                       "RealLength":  96
+                   },
+                   {
+                       "Name":  "P0_Boot.dField",
+                       "Length":  140,
+                       "RealLength":  140
+                   },
+                   {
+                       "Name":  "P0_Boot.dRev",
+                       "Length":  9,
+                       "RealLength":  9
+                   },
+                   {
+                       "Name":  "P0_Boot.dStamp",
+                       "Length":  1260,
+                       "RealLength":  1260
+                   },
+                   {
+                       "Name":  "P0_Boot.dLocal",
+                       "Length":  8,
+                       "RealLength":  8
+                   },
+                   {
+                       "Name":  "P8_ServoControl.h13",
+                       "Length":  180,
+                       "RealLength":  180
+                   },
+                   {
+                       "Name":  "P8_ServoControl.h13Status",
+                       "Length":  96,
+                       "RealLength":  96
+                   },
+                   {
+                       "Name":  "P8_ServoControl.h13Result",
+                       "Length":  20,
+                       "RealLength":  20
+                   },
+                   {
+                       "Name":  "P8_ServoControl.h13Tx",
+                       "Length":  48,
+                       "RealLength":  48
+                   }
+               ],
+    "HardwareVerified":  false
+}

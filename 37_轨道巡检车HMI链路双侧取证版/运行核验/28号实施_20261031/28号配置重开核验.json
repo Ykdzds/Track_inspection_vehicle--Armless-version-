@@ -1,0 +1,18 @@
+{
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\28_轨道巡检车CAN链路与三端授权修复版",
+  "Reopened": true,
+  "StateWords": 180,
+  "StatusWords": 96,
+  "RecoveryStartEnabled": false,
+  "Mode": "Default",
+  "ReceiveBytes": "255",
+  "ReadAddress": "0x0460",
+  "ReadCount": 96,
+  "WriteAddress": "0x0100",
+  "WriteCount": 24,
+  "ResultAddress": "0x0120",
+  "ResultCount": 20,
+  "EventCount": 14,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

@@ -1,0 +1,12 @@
+PASS stack motion_task : allocated=3072 depth=1904 margin=1168 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2392 margin=680 bytes
+PASS stack health_task : allocated=1536 depth=736 margin=800 bytes
+PASS stack key_task : allocated=768 depth=472 margin=296 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3072 depth=2488 margin=584 bytes
+PASS stack lcd_task : allocated=3328 depth=2872 margin=456 bytes
+PASS stack iwdg_task : allocated=768 depth=128 margin=640 bytes
+PASS stack nrf_task : allocated=3072 depth=1256 margin=1816 bytes
+PASS stack hmi_task : allocated=3072 depth=880 margin=2192 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=1160 margin=1912 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。

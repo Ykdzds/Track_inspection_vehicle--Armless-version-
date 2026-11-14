@@ -1,0 +1,2 @@
+﻿// HMI34 navigation changes presentation only; global control continues.
+P0_Boot.u34.vals[38]=0;

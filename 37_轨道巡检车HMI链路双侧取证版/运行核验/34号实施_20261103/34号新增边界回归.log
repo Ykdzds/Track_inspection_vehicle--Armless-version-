@@ -1,0 +1,25 @@
+✔ missing slider callback is compensated by sampled control value (47.8458ms)
+✔ candidate captured during initial zero confirmation is retained (30.9611ms)
+✔ preview follows every thumb position at a fixed 12px gap (22.5388ms)
+✔ transport loss retries exactly the same emergency request without another touch (30.1614ms)
+✔ release-only emergency is a fallback and down/up is one intent (48.3152ms)
+✔ page lifecycle and reload preserve target, session and restored thumb (669.9831ms)
+✔ emergency inserted after a status reply prevents the next nonzero write (31.8375ms)
+✔ a lost callback while unauthorized never becomes a target after new authorization (36.9473ms)
+✔ offline and 600ms blocking still stop and cannot replay old target (78.4301ms)
+✔ rapid changes coalesce to the last target and preserve serial ownership (28.7927ms)
+✔ an old target confirmation cannot label a newer candidate as set (31.3703ms)
+✔ new input arriving during target transport survives the older write reply (30.5368ms)
+✔ authorization is blocked for the entire pending emergency operation (29.4674ms)
+✔ a newer emergency while the previous transport is running stays latched (40.7238ms)
+✔ controller reboot during emergency retry never restores the old session (89.0014ms)
+✔ 200 independent track clicks including missed callbacks reach the final values (535.399ms)
+✔ 100 independent emergency touches settle and allow fresh zero authorization (4492.3939ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6380.9034

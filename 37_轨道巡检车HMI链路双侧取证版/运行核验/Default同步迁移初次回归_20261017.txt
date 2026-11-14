@@ -1,0 +1,343 @@
+✔ 固定读帧与CRC向量 (2.2959ms)
+✔ 完整24字申请帧及特殊字序 (0.8863ms)
+✔ RPM边界及保留参数 (0.8123ms)
+✔ 重复目标不续期且旧序号拒绝 (0.4381ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (173.3273ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (72.8135ms)
+✔ 释放后回中并返回，不继续发送旧目标 (156.659ms)
+✔ 主控重启清会话与旧目标，不自动授权 (126.5948ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (132.4554ms)
+✔ 只读固件不能授权 (67.5706ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4224ms)
+✔ 元数据持续丢失也轮询全部旧区，失败重试不超过每500ms一次 (187.7228ms)
+✔ 50ms应答和全局显示联合负载下目标与状态均不超过200ms (1081.4103ms)
+✔ R2已确认但基础区未读不再误报主控没有回复 (14.8479ms)
+✔ 独立急停不会被随后返回意图覆盖 (31.8919ms)
+✔ 只读诊断模式只读B5或B5加B7，不授权 (47.143ms)
+✔ 回调拒因记录含实际站号与在途上下文，失败不覆盖缓存 (13.8509ms)
+✔ 授权交叉确认后的第一条目标必须为零 (16.0523ms)
+✖ 50ms原生应答超时和无回调看门狗分别统计 (8.7012ms)
+✔ 离页与急停同拍仍优先急停，不被自动释放降级 (34.3489ms)
+✔ 运行中进入只读诊断先撤权，不能保留后台运动 (25.3834ms)
+✔ 全局P8显示段与独立显示源保持一致 (2.4054ms)
+✔ 正常授权全局显示负载下辅助区不超过原2秒失效门槛 (876.3086ms)
+✔ 固定读帧与CRC向量 (1.2044ms)
+✔ 完整24字申请帧及特殊字序 (0.3711ms)
+✔ RPM边界及保留参数 (0.654ms)
+✔ 重复目标不续期且旧序号拒绝 (0.7087ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (167.6063ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (57.214ms)
+✔ 释放后回中并返回，不继续发送旧目标 (188.3563ms)
+✔ 主控重启清会话与旧目标，不自动授权 (140.5678ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (121.8179ms)
+✔ 只读固件不能授权 (79.2757ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.451ms)
+✔ 真实抓包97帧CRC、53/133长度、身份与快照推进 (2.1813ms)
+✔ 参考收集器分片、循环边界等价切片及粘连不损坏真实帧 (17.9353ms)
+✔ 参考收集器错CRC和短帧作废，排空后不更新残帧 (0.8251ms)
+✔ 真实载荷经严格回调脚本进入元数据及64字状态缓存 (66.0804ms)
+✔ 诊断页交替显示明确HMI本地与主控统计，不混淆CRC来源 (72.6357ms)
+✔ 固定读帧与CRC向量 (2.2221ms)
+✔ 完整24字申请帧及特殊字序 (1.1362ms)
+✔ RPM边界及保留参数 (0.8188ms)
+✔ 重复目标不续期且旧序号拒绝 (0.4219ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (167.1153ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (64.4152ms)
+✔ 释放后回中并返回，不继续发送旧目标 (172.4723ms)
+✔ 主控重启清会话与旧目标，不自动授权 (129.8089ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (125.5333ms)
+✔ 只读固件不能授权 (90.4042ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.6123ms)
+✔ 授权ACK丢失先查询业务，不并发新申请 (52.8445ms)
+✔ 申请已提交但未决返回，用session0急停消除授权 (44.3903ms)
+✔ 停车中急停升级，停止缓存滑动 (170.29ms)
+✔ 失联撤销本地授权，重连不恢复旧目标 (89.4256ms)
+✔ 他源占用拒绝授权，但全局急停不获取运动权 (45.3642ms)
+✔ 屏重启先读取高位序号，申请不回退 (33.3644ms)
+✔ 同boot跨会话继续递增 (61.9942ms)
+✔ 离开页面不后台续租旧运动 (48.0187ms)
+✔ 心跳不能替代新目标 (0.3879ms)
+✔ 序号末端先释放且不回绕 (50.2847ms)
+✔ 错误中断不刷新任何状态年龄 (21.7737ms)
+✔ 缓存快照冻结触发撤权而不是永远在线 (39.4281ms)
+✔ 持久停车成功可确认释放，不要求观察ownerNONE (44.341ms)
+✔ 全局急停在空闲状态不借旧停车事件假成功 (34.5034ms)
+✔ 固定读帧与CRC向量 (1.1513ms)
+✔ 完整24字申请帧及特殊字序 (0.5443ms)
+✔ RPM边界及保留参数 (0.7209ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5729ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (176.2156ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (68.4653ms)
+✔ 释放后回中并返回，不继续发送旧目标 (142.3549ms)
+✔ 主控重启清会话与旧目标，不自动授权 (134.1322ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (150.3998ms)
+✔ 只读固件不能授权 (90.8988ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3794ms)
+✔ 本次现场210请求和68完整回复CRC正确，但元数据和辅助区完全缺失 (1.2022ms)
+✔ 真实B0回复经匹配回调提交全部64字及区域有效标志 (3.6574ms)
+✔ B0与B7等长迟到回复不能污染对方缓存或刷新有效年龄 (7.9262ms)
+✔ 错误站号地址数量仍拒收，不以修复通信为由放松关联检查 (18.2525ms)
+✔ 调度采用非负空闲哨兵和固定区域时间戳，空闲时所有只读区有界推进 (254.7259ms)
+✔ 固定读帧与CRC向量 (1.6347ms)
+✔ 完整24字申请帧及特殊字序 (0.5633ms)
+✔ RPM边界及保留参数 (0.6777ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5254ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (184.1277ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (58.2245ms)
+✔ 释放后回中并返回，不继续发送旧目标 (148.0235ms)
+✔ 主控重启清会话与旧目标，不自动授权 (123.8419ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (121.8368ms)
+✔ 只读固件不能授权 (74.2114ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.6929ms)
+✔ 控制期间状态读取最大150ms，目标刷新最大200ms (206.0789ms)
+✔ 元数据丢失恢复含100ms排空且0460仍有界轮询，不能开放控制 (63.5315ms)
+✔ 元数据丢失恢复后重新确认身份，不自动申请授权 (69.7261ms)
+✖ 回调bcaddr失配不释放事务、不刷新状态缓存 (23.8895ms)
+✖ 回调bdindex失配不释放事务、不刷新状态缓存 (18.334ms)
+✖ 回调bdaddr失配不释放事务、不刷新状态缓存 (19.7556ms)
+✖ 回调bdcount失配不释放事务、不刷新状态缓存 (19.1502ms)
+✔ 控制状态读取超时后清目标，恢复响应不自动重新授权 (86.6851ms)
+✔ 只读主页与控制页往返不停止全局状态查询 (98.2583ms)
+✔ 固定读帧与CRC向量 (1.6196ms)
+✔ 完整24字申请帧及特殊字序 (0.6801ms)
+✔ RPM边界及保留参数 (1.1019ms)
+✔ 重复目标不续期且旧序号拒绝 (1.1101ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (170.0996ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (65.7977ms)
+✔ 释放后回中并返回，不继续发送旧目标 (153.4757ms)
+✔ 主控重启清会话与旧目标，不自动授权 (111.564ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (113.7024ms)
+✔ 只读固件不能授权 (72.0042ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.491ms)
+✔ 1ms间隔下8条目派发加50ms响应不会提前撤销在途 (250.4305ms)
+✖ 超时撤销尚未派发的原生读取，不遗留后台读取次数 (4.8749ms)
+✔ 1ms原生间隔最坏8条目扫描模型仍保持目标和状态预算 (588.6472ms)
+✔ 每次读之前撤销其他条目，只有一个单次读取被置为1 (31.7823ms)
+✔ 滑块未授权也可见，但拖动不能写入运动目标 (47.3091ms)
+✖ 实际Buffer配置工具同步约束1ms循环间隔和50ms响应期限 (3.7207ms)
+✔ 固定读帧与CRC向量 (3.9998ms)
+✔ 完整24字申请帧及特殊字序 (0.5028ms)
+✔ RPM边界及保留参数 (0.7751ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5376ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (167.4313ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (61.5144ms)
+✔ 释放后回中并返回，不继续发送旧目标 (143.6113ms)
+✔ 主控重启清会话与旧目标，不自动授权 (123.9328ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (142.3473ms)
+✔ 只读固件不能授权 (80.8666ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.5565ms)
+ℹ tests 128
+ℹ suites 0
+ℹ pass 121
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3204.4247
+
+✖ failing tests:
+
+test at hmi13-audit-repair.test.cjs:59:1
+✖ 50ms原生应答超时和无回调看门狗分别统计 (8.7012ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(run.context.h13.vals[nativeTimeout?index.nativeTimeouts:index.watchdogTimeouts]>0)
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-audit-repair.test.cjs:61:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at hmi13-link-recovery.test.cjs:54:5
+✖ 回调bcaddr失配不释放事务、不刷新状态缓存 (23.8895ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-link-recovery.test.cjs:61:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13-link-recovery.test.cjs:54:5
+✖ 回调bdindex失配不释放事务、不刷新状态缓存 (18.334ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-link-recovery.test.cjs:61:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13-link-recovery.test.cjs:54:5
+✖ 回调bdaddr失配不释放事务、不刷新状态缓存 (19.7556ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-link-recovery.test.cjs:61:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13-link-recovery.test.cjs:54:5
+✖ 回调bdcount失配不释放事务、不刷新状态缓存 (19.1502ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-link-recovery.test.cjs:61:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13-native-dispatch.test.cjs:18:1
+✖ 超时撤销尚未派发的原生读取，不遗留后台读取次数 (4.8749ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-native-dispatch.test.cjs:21:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13-native-dispatch.test.cjs:67:1
+✖ 实际Buffer配置工具同步约束1ms循环间隔和50ms响应期限 (3.7207ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /'循环读取间隔时间（ms）'=1;/. Input:
+  
+  'param([switch]$AuditOnly)\n' +
+    "$ErrorActionPreference='Stop'\n" +
+    'Add-Type -AssemblyName UIAutomationClient\n' +
+    '$automation=[System.Windows.Automation.AutomationElement]\n' +
+    '$condition=[System.Windows.Automation.Condition]::TrueCondition\n' +
+    "$windows=$automation::RootElement.FindAll('Children',$condition)\n" +
+    "$main=@($windows | Where-Object {$_.Current.Name -match '\\[.*13_轨道巡检车UART5共同目标转速控制版\\\\13_轨道巡检车\\.pix\\]'})\n" +
+    "if($main.Count -ne 1){throw '必须仅打开一个13号目标工程'}\n" +
+    "$dialog=$windows | Where-Object {$_.Current.ProcessId -eq $main[0].Current.ProcessId -and $_.Current.Name -eq '集合编辑器'} | Select-Object -First 1\n" +
+    "if(!$dialog){throw '请先打开13号工程的Buffer集合编辑器'}\n" +
+    "$grid=$dialog.FindFirst('Descendants',[System.Windows.Automation.PropertyCondition]::new($automation::ControlTypeProperty,[System.Windows.Automation.ControlType]::DataGrid))\n" +
+    '$gridPattern=$grid.GetCurrentPattern([System.Windows.Automation.GridPattern]::Pattern)\n' +
+    '$headers=$grid.GetCurrentPattern([System.Windows.Automation.TablePattern]::Pattern).Current.GetColumnHeaders()\n' +
+    '$columns=@{}\n' +
+    'for($column=0;$column -lt $headers.Count;$column++){\n' +
+    '    $title=$headers[$column].Current.Name\n' +
+    '    if($title){$columns[$title]=$column}\n' +
+    '}\n' +
+    "foreach($title in @('序号','从机地址','数据类型','起始地址','数量','读取次数','循环读取间隔时间（ms）','读取超时时间（ms）','备注')){\n" +
+    '    if(!$columns.ContainsKey($title) -or $headers[$columns[$title]].Current.BoundingRectangle.IsEmpty){throw "缺少主站列：$title；先确认项目设置勾选主机，禁止按旧列号写入"}\n' +
+    '}\n' +
+    "if($gridPattern.Current.RowCount -ne 8){throw '必须有且仅有8个Buffer，禁止隐式添加或删除'}\n" +
+    "$areas=@(@(0,64,'系统与双轴'),@(80,32,'通信统计'),@(112,32,'位置与同步'),@(144,32,'告警与外围'),@(176,32,'能力与诊断'),@(512,24,'R2元数据'),@(288,20,'R2命令结果'),@(1120,64,'R2控制状态'))\n" +
+    'function GetCell($row,$title){$gridPattern.GetItem($row,$columns[$title])}\n' +
+    'function ReadCell($row,$title){(GetCell $row $title).GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern).Current.Value}\n' +
+    'function WriteCell($row,$title,$value){\n' +
+    '    $cell=GetCell $row $title\n' +
+    '    if((ReadCell $row $title) -eq [string]$value){return}\n' +
+    '    $cell.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke()\n' +
+    "    $edit=$cell.FindFirst('Descendants',[System.Windows.Automation.PropertyCondition]::new($automation::ControlTypeProperty,[System.Windows.Automation.ControlType]::Edit))\n" +
+    '    if(!$edit){throw "Buffer$row $title 没有真实编辑器"}\n' +
+    '    $edit.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern).SetValue([string]$value)\n' +
+    '    $edit.SetFocus()\n' +
+    "    [System.Windows.Forms.SendKeys]::SendWait('{TAB}')\n" +
+    '    if((ReadCell $row $title) -ne [string]$value){throw "Buffer$row $title 编辑提交失败"}\n' +
+    '}\n' +
+    'for($region=0;$region -lt 8;$region++){\n' +
+    "    $typeNames=@((GetCell $region '数据类型').FindAll('Descendants',$condition) | ForEach-Object {$_.Current.Name})\n" +
+    `    if($typeNames -notcontains '保持寄存器'){throw "Buffer$region 不是03H保持寄存器，停止提交"}\n` +
+    '}\n' +
+    '$readback=@()\n' +
+    'for($region=0;$region -lt 8;$region++){\n' +
+    "    $expected=[ordered]@{'序号'=$region;'从机地址'=1;'起始地址'=$areas[$region][0];'数量'=$areas[$region][1];'读取次数'=0;'循环读取间隔时间（ms）'=100;'读取超时时间（ms）'=50;'备注'=$areas[$region][2]}\n" +
+    "    if(!$AuditOnly){foreach($title in $expected.Keys){if($title -ne '序号'){WriteCell $region $title $expected[$title]}}}\n" +
+    "    $record=[ordered]@{Buffer=$region;Type='保持寄存器'}\n" +
+    '    foreach($title in $expected.Keys){\n' +
+    '        $actual=ReadCell $region $title\n' +
+    '        if($actual -ne [string]$expected[$title]){throw "Buffer$region $title 不匹配：实际=$actual 预期=$($expected[$title])；不得点击确定"}\n' +
+    '        $record[$title]=$actual\n' +
+    '    }\n' +
+    '    $readback+=$record\n' +
+    '}\n' +
+    "$evidence=[ordered]@{CapturedAt=(Get-Date).ToString('o');Source=$main[0].Current.Name;AuditOnly=[bool]$AuditOnly;GridColumns=$gridPattern.Current.ColumnCount;Headers=@($headers | ForEach-Object {$_.Current.Name});Rows=$readback}\n" +
+    "$fileName=if($AuditOnly){'运行核验/Buffer重开核验_20261016.json'}else{'Buffer配置读回.json'}\n" +
+    '$evidence | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $PSScriptRoot $fileName) -Encoding utf8\n' +
+    "$buttonName=if($AuditOnly){'取消'}else{'确定'}\n" +
+    "$button=$dialog.FindFirst('Descendants',[System.Windows.Automation.PropertyCondition]::new($automation::NameProperty,$buttonName))\n" +
+    '$button.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke()\n' +
+    "Write-Output '八区主站列、03H类型、地址、长度及默认停止读取已核验。'\n"
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-native-dispatch.test.cjs:69:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: `param([switch]$AuditOnly)\n$ErrorActionPreference='Stop'\nAdd-Type -AssemblyName UIAutomationClient\n$automation=[System.Windows.Automation.AutomationElement]\n$condition=[System.Windows.Automation.Condition]::TrueCondition\n$windows=$automation::RootElement.FindAll('Children',$condition)\n$main=@($windows | Where-Object {$_.Current.Name -match '\\[.*13_轨道巡检车UART5共同目标转速控制版\\\\13_轨道巡检车\\.pix\\]'})\nif($main.Count -ne 1){throw '必须仅打开一个13号目标工程'}\n$dialog=$windows | Where-Object {$_.Current.ProcessId -eq $main[0].Current.ProcessId -and $_.Current.Name -eq '集合编辑器'} | Select-Object -First 1\nif(!$dialog){throw '请先打开13号工程的Buffer集合编辑器'}\n$grid=$dialog.FindFirst('Descendants',[System.Windows.Automation.PropertyCondition]::new($automation::ControlTypeProperty,[System.Windows.Automation.ControlType]::DataGrid))\n$gridPattern=$grid.GetCurrentPattern([System.Windows.Automation.GridPattern]::Pattern)\n$headers=$grid.GetCurrentPattern([System.Windows.Automation.TablePattern]::Pattern).Current.GetColumnHeaders()\n$columns=@{}\nfor($column=0;$column -lt $headers.Count;$column++){\n    $title=$headers[$column].Current.Name\n    if($title){$columns[$title]=$column}\n}\nforeach($title in @('序号','从机地址','数据类型','起始地址','数量','读取次数','循环读取间隔时间（ms）','读取超时时间（ms）','备注')){\n    if(!$columns.ContainsKey($title) -or $headers[$columns[$title]].Current.BoundingRectangle.IsEmpty){throw "缺少主站列：$title；先确认项目设置勾选主机，禁止按旧列号写入"}\n}\nif($gridPattern.Current.RowCount -ne 8){throw '必须有且仅有8个Buffer，禁止隐式添加或删除'}\n$areas=@(@(0,64,'系统与双轴'),@(80,32,'通信统计'),@(112,32,'位置与同步'),@(144,32,'告警与外围'),@(176,32,'能力与诊断'),@(512,24,'R2元数据'),@(288,20,'R2命令结果'),@(1120,64,'R2控制状态'))\nfunction GetCell($row,$title){$gridPattern.GetItem($row,$columns[$title])}\nfunction ReadCell($row,$title){(GetCell $row $title).GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern).Current.Value}\nfunction WriteCell($row,$title,$value){\n    $cell=GetCell $row $title\n    if((ReadCell $row $title) -eq [string]$value){return}\n    $cell.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke()\n    $edit=$cell.FindFirst('Descendants',[System.Windows.Automation.PropertyCondition]::new($automation::ControlTypeProperty,[System.Windows.Automation.ControlType]::Edit))\n    if(!$edit){throw "Buffer$row $title 没有真实编辑器"}\n    $edit.GetCurrentPattern([System.Windows.Automation.ValuePattern]::Pattern).SetValue([string]$value)\n    $edit.SetFocus()\n    [System.Windows.Forms.SendKeys]::SendWait('{TAB}')\n    if((ReadCell $row $title) -ne [string]$value){throw "Buffer$row $title 编辑提交失败"}\n}\nfor($region=0;$region -lt 8;$region++){\n    $typeNames=@((GetCell $region '数据类型').FindAll('Descendants',$condition) | ForEach-Object {$_.Current.Name})\n    if($typeNames -notcontains '保持寄存器'){throw "Buffer$region 不是03H保持寄存器，停止提交"}\n}\n$readback=@()\nfor($region=0;$region -lt 8;$region++){\n    $expected=[ordered]@{'序号'=$region;'从机地址'=1;'起始地址'=$areas[$region][0];'数量'=$areas[$region][1];'读取次数'=0;'循环读取间隔时间（ms）'=100;'读取超时时间（ms）'=50;'备注'=$areas[$region][2]}\n    if(!$AuditOnly){foreach($title in $expected.Keys){if($title -ne '序号'){WriteCell $region $title $expected[$title]}}}\n    $record=[ordered]@{Buffer=$region;Type='保持寄存器'}\n    foreach($title in $expected.Keys){\n        $actual=ReadCell $region $title\n        if($actual -ne [string]$expected[$title]){throw "Buffer$region $title 不匹配：实际=$actual 预期=$($expected[$title])；不得点击确定"}\n        $record[$title]=$actual\n    }\n    $readback+=$record\n}\n$evidence=[ordered]@{CapturedAt=(Get-Date).ToString('o');Source=$main[0].Current.Name;AuditOnly=[bool]$AuditOnly;GridColumns=$gridPattern.Current.ColumnCount;Headers=@($headers | ForEach-Object {$_.Current.Name});Rows=$readback}\n$fileName=if($AuditOnly){'运行核验/Buffer重开核验_20261016.json'}else{'Buffer配置读回.json'}\n$evidence | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $PSScriptRoot $fileName) -Encoding utf8\n$buttonName=if($AuditOnly){'取消'}else{'确定'}\n$button=$dialog.FindFirst('Descendants',[System.Windows.Automation.PropertyCondition]::new($automation::NameProperty,$buttonName))\n$button.GetCurrentPattern([System.Windows.Automation.InvokePattern]::Pattern).Invoke()\nWrite-Output '八区主站列、03H类型、地址、长度及默认停止读取已核验。'\n`,
+    expected: /'循环读取间隔时间（ms）'=1;/,
+    operator: 'match',
+    diff: 'simple'
+  }

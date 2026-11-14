@@ -1,0 +1,55 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 ldarg.0 
+0001 ldfld System.Collections.Generic.List`1[System.String] BBLYIVcgmApjnlSElGZdacQwrRhf
+0006 callvirt Int32 get_Count()
+000B ldc.i4.3 
+000C blt 144
+0011 ldc.i4 -408649842
+0016 ldc.i4 -1411640137
+001B xor 
+001C dup 
+001D stloc.0 
+001E ldc.i4.6 
+001F rem.un 
+0020 switch 6
+003D br.s 122
+003F ldarg.0 
+0040 ldfld System.Collections.Generic.List`1[System.String] BBLYIVcgmApjnlSElGZdacQwrRhf
+0045 ldc.i4.0 
+0046 callvirt Void RemoveAt(Int32)
+004B ldloc.0 
+004C ldc.i4 -1280469254
+0051 mul 
+0052 ldc.i4 1599773847
+0057 xor 
+0058 br.s -68
+005A ldarg.0 
+005B call Void ogYolGhPwvQoPVAgjjVedDvLJwPw()
+0060 ldloc.0 
+0061 ldc.i4 1977905487
+0066 mul 
+0067 ldc.i4 -1626044804
+006C xor 
+006D br.s -89
+006F ldarg.0 
+0070 ldfld System.Collections.Generic.List`1[System.String] BBLYIVcgmApjnlSElGZdacQwrRhf
+0075 ldc.i4 1728840839
+007A br.s 0
+007C call System.String ‭⁯‬⁪‭⁯‮⁮⁮⁫‮⁯‏⁪‌​⁫‫‍⁬‮⁪‎⁯‮⁮⁮⁪‬⁯⁬⁬‫‌‏​⁭⁯‏‏‮[String](Int32)
+0081 ldarg.0 
+0082 ldfld Int32 SMggkYgJGbLMcxhSIGWOqEmOLypcb
+0087 box System.Int32
+008C ldarg.1 
+008D call System.String ‮‎⁬‪‫‍‍⁬‫‌⁬‍‮⁮⁪⁫⁫‮⁭‎‍⁭⁬⁪‬‏‍⁮⁭‍‌​‮⁭‏‎⁭⁫‮‬‮(System.String, System.Object, System.Object)
+0092 callvirt Void Add(System.String)
+0097 ldc.i4 -245537996
+009C br -139
+00A1 ldarg.0 
+00A2 ldarg.0 
+00A3 ldfld Int32 SMggkYgJGbLMcxhSIGWOqEmOLypcb
+00A8 ldc.i4.1 
+00A9 add 
+00AA stfld Int32 SMggkYgJGbLMcxhSIGWOqEmOLypcb
+00AF ldc.i4 -177034239
+00B4 br -163
+00B9 ret 

@@ -1,0 +1,17 @@
+PASS CAN diagnostic: exact reject, receive/consume, frozen first evidence, read-only projection
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS ARM diagnostic: invalid input branch, immutable evidence, release captured before owner reset
+PASS ARM3 revision2 manifest, motion, replay, owner, bounded HMI, stop and transport evidence
+PASS CAN HMI collection and active 50ms / idle stop-history scheduling
+PASS CAN raw diagnostics: 20 events/s, shared writer ownership, packed payload and throttle count
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection

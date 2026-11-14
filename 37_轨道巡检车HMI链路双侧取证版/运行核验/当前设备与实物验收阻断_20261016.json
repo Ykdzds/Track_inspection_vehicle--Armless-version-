@@ -1,0 +1,24 @@
+{
+  "CheckedAt": "2026-10-16T17:09:18.2942450+08:00",
+  "Ports": [
+    {
+      "DeviceID": "COM16",
+      "Name": "STMicroelectronics Virtual COM Port (COM16)",
+      "PNPDeviceID": "USB\\VID_0483&PID_5740\\5&19F74E4B&0&3"
+    }
+  ],
+  "CurrentDeviceRoleConfirmed": false,
+  "HistoricalEvidence": "08工程运行核验/实屏USB下载_20261009.md：COM16为屏USB-C下载和供电口",
+  "HistoricalMappingNotCurrentProof": true,
+  "BusinessUARTAccessible": false,
+  "CurrentBINMatchesManifest": true,
+  "Baseline08Files": 1333,
+  "Baseline08Unchanged": true,
+  "Outstanding": [
+    "确认当前COM16对应实物及是否允许下载",
+    "确认车辆静止、电机隔离和新屏BIN实际下载",
+    "业务UART5双向抓帧及屏合法缓存计数",
+    "真实运动授权、架空低速控制与异常停车验收"
+  ],
+  "NoControlOrDownloadIssued": true
+}

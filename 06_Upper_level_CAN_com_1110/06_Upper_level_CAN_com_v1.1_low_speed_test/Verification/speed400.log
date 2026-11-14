@@ -1,0 +1,4 @@
+PASS SPEED400 conversion: +/-100/200/300/400, +/-401 rejected, axis modes, asymmetric mechanics and lower limits
+PASS SPEED400 keys: immediate short-apply, long normal-stop, global K3 quick-stop, blocked states, direct reversal, reset
+PASS SPEED400 session limit: fresh current record required, lower session cap preserved, rejected targets never applied
+PASS SPEED400 126 assertions; software only, physical 400rpm acceptance pending

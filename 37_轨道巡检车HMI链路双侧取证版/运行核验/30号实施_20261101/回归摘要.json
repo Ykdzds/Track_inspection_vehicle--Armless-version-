@@ -1,0 +1,12 @@
+{
+  "Tests": 477,
+  "Pass": 477,
+  "Fail": 0,
+  "DisplayTests": 39,
+  "CrossPageTimingScenarios": 21,
+  "DurationPerScenarioMs": 120000,
+  "TargetMaxGapMs": 150,
+  "StatusMaxGapMs": 150,
+  "MaximumInflight": 1,
+  "PhysicalValidated": false
+}

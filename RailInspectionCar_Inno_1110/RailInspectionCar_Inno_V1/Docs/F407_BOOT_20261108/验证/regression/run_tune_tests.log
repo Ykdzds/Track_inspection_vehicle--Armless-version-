@@ -1,0 +1,1 @@
+PASS tune CRC, binary wire sizes, atomic commit, idempotency, conflicts, boot/version validation, finite values, lease and restart defaults

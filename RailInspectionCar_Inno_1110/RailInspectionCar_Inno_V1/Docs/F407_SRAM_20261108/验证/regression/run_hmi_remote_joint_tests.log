@@ -1,0 +1,12 @@
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=1 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=1 sync=1
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=2 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=2 sync=1
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=3 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=3 sync=1

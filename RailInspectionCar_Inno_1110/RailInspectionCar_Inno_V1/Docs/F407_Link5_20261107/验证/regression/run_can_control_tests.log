@@ -1,0 +1,70 @@
+PASS CAN macro0: no motion writes
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN macro0: no motion writes
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN macro0: no motion writes
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN explicit regrant from disabled: existing prepare, fresh enable and first zero
+PASS all six FIFO source orders, non-owner CAN loss isolation and emergency before first zero
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS CAN degraded: four failures retain session, bound output, no recovery jump or reversal
+PASS quick stop: configured normal/quick rates, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS ARM3 atomic arm/parameter exclusion, idle binding and non-reusable stop sequence
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN illegal configurations rejected

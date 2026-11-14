@@ -1,0 +1,13 @@
+﻿{
+  "InputVideos": [
+    {
+      "Purpose": "32号故障输入视频；不是33号验收",
+      "Path": "D:\\15056\\微信\\xwechat_files\\wxid_6j6lt9vq6gut22_5eaf\\temp\\RWTemp\\2026-11\\9e20f478899dc29eb19741386f9343c8\\77b66153b6ede8a23241ec10a75796ba.mp4",
+      "Exists": true,
+      "SHA256": "BA3F4B996977A76E19A64207C7E763513456D8F325F44A1514FE7501E6037A21"
+    }
+  ],
+  "HMI33Videos": [],
+  "HMI33UARTCaptures": [],
+  "HMI33PhysicalAcceptance": "待验收"
+}

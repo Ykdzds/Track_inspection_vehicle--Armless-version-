@@ -1,0 +1,45 @@
+'use strict';
+const fs=require('node:fs');const path=require('node:path');const vm=require('node:vm');const assert=require('node:assert/strict');const {test}=require('node:test');
+const protocol=require('./r2-protocol.cjs');const {Simulator}=require('./r2-simulator.cjs');const index=require('./HMI13状态索引.json');
+function array(length){return {vals:Array(length).fill(0),valbs:Array(length).fill(0)};}
+function fixture(options={}) {
+    const sim=new Simulator(options);const pending=[];const calls=[];let actualNow=0;let displayTicks=0;let inflight=0;let maximumInflight=0;let offline=false;let dropWriteAck=false;
+    const page=new Proxy({id:8,rpmSlider:{val:1600},authorize:{val:0}},{get(object,key){return object[key]||(object[key]={});}});
+    const context={h13:array(160),h13Status:array(64),h13Result:array(20),h13Tx:array(48),metaRegs:array(24),rawRegs:array(208),P8_ServoControl:page,P1_Main:new Proxy({id:1},{get(object,key){return object[key]||(object[key]={});}}),sys_pid:8,intToString:String,bytesToShort:(bytes,offset)=>bytes[offset]*256+bytes[offset+1],showPage:page=>{context.sys_pid=page;}};
+    for(const name of ['regionSeen','regionAge','regionValid','regionGoodRun','regionBadRun','regionFails','metaSeen','metaAge','metaValid','metaBadRun'])context[name]=array(8);
+    function enqueue(request,kind,region){inflight++;maximumInflight=Math.max(maximumInflight,inflight);assert.equal(inflight,1,'单事务不能并发');calls.push({at:actualNow,kind,request:Buffer.from(request)});pending.push({at:actualNow+(options.responseDelayMs || 10),request,kind,region});}
+    context.mod={modbusBufferCheckStatus(){},modbusBufferSetReadCount(region,count){if(count===1)enqueue(protocol.readFrame(...protocol.REGIONS[region]),1,region);else assert.equal(count,0);},modbusBufferSends(station,code,start,count,bytes,offset,timeout){assert.deepEqual([station,code,start,count,offset,timeout],[1,16,256,24,0,50]);enqueue(protocol.writeFrame(protocol.bytesToWords(Buffer.from(bytes))),2,-1);}};
+    Object.assign(page,{h13:context.h13,h13Status:context.h13Status,h13Result:context.h13Result,h13Tx:context.h13Tx});
+    context.P0_Boot={id:0,mod:context.mod,metaRegs:context.metaRegs};
+        for(const [number,name] of ['P0_Boot','P1_Main','P2_Diag','P3_Position','P4_Info','P5_Alarm','P6_Sync','P7_System_Ext'].entries()){
+        if(!context[name])context[name]=new Proxy({id:number},{get(object,key){return object[key]||(object[key]={});}});
+    }
+    for(const name of ['mainState','ctrlStatus','stageText','progressText','bootProgress','leftStatus','rightStatus','safeStatus','resetReason','swVer','protoVer','faultText'])context[name]={};
+    context.bootState=array(5);context.floatToString=(value,digits)=>value.toFixed(digits);
+    vm.createContext(context);
+    const compile=file=>new vm.Script(fs.readFileSync(path.join(__dirname,file),'utf8').replace(/^int (\w+);$/gm,'var $1;').replace(/\(byte\)/g,''));
+    const service=compile('HMI13事务服务.txt'),irq=compile('Modbus中断只读解析.txt'),display=compile('HMI13界面刷新.txt'),globalDisplay=compile('全局计龄刷新.txt');
+    function tick(count=1){for(let step=0;step<count;step++){
+        actualNow+=50;sim.tick(50);
+        while(pending.length && pending[0].at<=actualNow){const item=pending.shift();inflight--;if(offline)continue;const response=sim.handle(item.request);if(!response || (dropWriteAck&&item.kind===2)){
+    if(options.nativeTimeout){Object.assign(context.mod,{bcaddr:1,bdaddr:item.kind===1?protocol.REGIONS[item.region][0]:256,bdcount:item.kind===1?protocol.REGIONS[item.region][1]:24,bdindex:item.region,interruptCode:item.kind===1?2:4,bdbuf:[]});irq.runInContext(context);}
+    continue;
+}Object.assign(context.mod,{bcaddr:1,bdaddr:item.kind===1?protocol.REGIONS[item.region][0]:256,bdcount:item.kind===1?protocol.REGIONS[item.region][1]:24,bdindex:item.region,interruptCode:item.kind===1?1:3,bdbuf:[...response.subarray(3,-2)]});irq.runInContext(context);}
+        service.runInContext(context);display.runInContext(context);if(options.globalDisplay && ++displayTicks%4===0)globalDisplay.runInContext(context);
+    }}
+    function intent(value){context.h13.vals[index.intent]=value;tick();}
+    function authorize(){tick(40);assert.equal(context.h13.vals[index.ready],1);intent(1);tick(30);assert.equal(context.h13.vals[index.state],3);}
+    return {context,sim,calls,tick,intent,authorize,index,deliver:()=>irq.runInContext(context),setOffline:value=>offline=value,setDropWriteAck:value=>dropWriteAck=value,maximumInflight:()=>maximumInflight,renderGlobal:()=>globalDisplay.runInContext(context),event:file=>compile(file).runInContext(context)};
+}
+module.exports={fixture};
+test('固定读帧与CRC向量',()=>{assert.equal(protocol.readFrame(512,24).toString('hex'),'0103020000184478');assert.equal(protocol.readFrame(1120,64).toString('hex'),'0103046000404514');assert.equal(protocol.readFrame(288,20).toString('hex'),'01030120001445f3');});
+test('完整24字申请帧及特殊字序',()=>{const words=protocol.mailbox({boot:0x12345678,sequence:1,command:1});const frame=protocol.writeFrame(words);assert.equal(frame.length,57);assert.equal(frame.subarray(-2).toString('hex'),'308d');const result=[0x5678,0x1234,9,0,2,0];assert.equal(protocol.get32(result,0,true),0x12345678);assert.equal(protocol.get32(result,4,true),2);});
+test('RPM边界及保留参数',()=>{for(const rpm of [-1600,0,1600]){const sim=new Simulator();sim.submit(protocol.mailbox({boot:sim.boot,sequence:1,command:1}));const words=protocol.mailbox({boot:sim.boot,session:9,sequence:2,command:33,rpm});assert.equal(words[9],0);assert.equal(words[17],500);sim.submit(words);assert.equal(sim.target,rpm);assert.equal(sim.result[7],1);}for(const rpm of [-1601,1601]){const sim=new Simulator();sim.submit(protocol.mailbox({boot:sim.boot,sequence:1,command:1}));sim.submit(protocol.mailbox({boot:sim.boot,session:9,sequence:2,command:33,rpm}));assert.equal(sim.result[8],8);assert.equal(sim.target,0);}});
+test('重复目标不续期且旧序号拒绝',()=>{const sim=new Simulator();sim.submit(protocol.mailbox({boot:sim.boot,sequence:1,command:1}));const words=protocol.mailbox({boot:sim.boot,session:9,sequence:2,command:33,rpm:100});sim.submit(words);sim.tick(300);sim.submit(words);sim.tick(201);assert.ok(sim.stop);sim.submit(protocol.mailbox({boot:sim.boot,session:9,sequence:2,command:33,rpm:101}));assert.equal(sim.result[8],10);});
+test('授权后周期发零，滑块不动仍刷新，唯一在途',()=>{const run=fixture();run.authorize();run.tick(150);const writes=run.calls.filter(call=>call.kind===2).map(call=>({at:call.at,words:protocol.bytesToWords(call.request.subarray(7,-2))}));const targets=writes.filter(call=>call.words[8]===33);assert.ok(targets.length>8);assert.ok(targets.every(call=>protocol.get32(call.words,10)===0));for(let offset=1;offset<targets.length;offset++)assert.ok(targets[offset].at-targets[offset-1].at<=200);assert.equal(run.maximumInflight(),1);});
+test('授权前滑动无效，新滑动只保存最新目标',()=>{const run=fixture();const source=fs.readFileSync(path.join(__dirname,'事件','滑块_滑动.txt'),'utf8');run.context.P8_ServoControl.rpmSlider.val=3000;vm.runInContext(source,run.context);assert.equal(run.context.h13.vals[index.target],0);run.authorize();for(const value of [1700,1800,1900]){run.context.P8_ServoControl.rpmSlider.val=value;vm.runInContext(source,run.context);}run.tick(20);assert.equal(run.sim.target,300);});
+test('释放后回中并返回，不继续发送旧目标',()=>{const run=fixture();run.authorize();run.context.h13.vals[index.target]=100;run.tick(40);run.intent(4);run.tick(150);assert.equal(run.sim.owner,0);assert.equal(run.context.sys_pid,1);assert.equal(run.context.P8_ServoControl.rpmSlider.val,1600);assert.equal(run.context.h13.vals[index.target],0);assert.equal(run.context.h13.vals[index.state],5);});
+test('主控重启清会话与旧目标，不自动授权',()=>{const run=fixture();run.authorize();run.context.h13.vals[index.target]=100;run.sim.boot=0x80000001;run.sim.session=0;run.sim.owner=0;run.sim.lastSequence=0;run.tick(150);assert.equal(run.context.h13.vals[index.sessionL],0);assert.notEqual(run.context.h13.vals[index.state],3);assert.equal(run.context.h13.vals[index.target],0);});
+test('左右双轴不用改屏协议，未参与不显示零',()=>{for(const axis of [1,2,3]){const run=fixture({axis});run.authorize();assert.match(run.context.P8_ServoControl.axisMode.txt,axis===1?/左轴/:axis===2?/右轴/:/双轴/);if(axis===1)assert.match(run.context.P8_ServoControl.rightActual.txt,/未参与/);if(axis===2)assert.match(run.context.P8_ServoControl.leftActual.txt,/未参与/);const requests=run.calls.filter(call=>call.kind===2);assert.ok(requests.every(call=>protocol.bytesToWords(call.request.subarray(7,-2))[9]===0));}});
+test('只读固件不能授权',()=>{const run=fixture({control:false});run.tick(100);run.intent(1);run.tick(30);assert.equal(run.context.h13.vals[index.ready],0);assert.equal(run.calls.filter(call=>call.kind===2).length,0);});
+test('错CRC、错站和短邮箱不更新模拟器',()=>{const sim=new Simulator();const request=protocol.writeFrame(protocol.mailbox({boot:sim.boot,sequence:1,command:1}));request[8]^=1;assert.equal(sim.handle(request),null);assert.equal(sim.owner,0);assert.equal(sim.handle(protocol.frame([2,3,2,0,0,24])),null);assert.equal(sim.handle(protocol.frame([1,16,1,0,0,1,2,0,0]))[2],3);});

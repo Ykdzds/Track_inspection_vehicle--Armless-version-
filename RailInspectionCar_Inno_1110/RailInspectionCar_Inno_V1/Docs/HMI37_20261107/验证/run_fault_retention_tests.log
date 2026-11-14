@@ -1,0 +1,5 @@
+PASS retained diagnostics: warm/cold reset, first fault + exception, CRC/torn record, invalid stack, safety BKP isolation
+PASS reset: capture once, IWDG flag, RAM diagnostics, checked backup safety latch
+PASS reset: capture once, IWDG flag, RAM diagnostics, checked backup safety latch
+PASS reset: capture once, IWDG flag, RAM diagnostics, checked backup safety latch
+PASS reset: capture once, IWDG flag, RAM diagnostics, checked backup safety latch

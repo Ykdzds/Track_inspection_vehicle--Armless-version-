@@ -1,0 +1,1352 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 ldarg.0 
+0001 ldarg.1 
+0002 call Visual_PIX.Model.PixProject nckuIVNRSQgIRxRkvvdVthvzOTIu[PixProject](Visual_PIX.Model.PixProject)
+0007 stfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+000C ldc.i4 -277303169
+0011 ldc.i4 -1518544724
+0016 xor 
+0017 dup 
+0018 stloc.s 23
+001A ldc.i4.s 15
+001C rem.un 
+001D switch 15
+005E br 591
+0063 ldarg.0 
+0064 ldarg.0 
+0065 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+006A call Visual_PIX.Model.PixProject nckuIVNRSQgIRxRkvvdVthvzOTIu[PixProject](Visual_PIX.Model.PixProject)
+006F stfld Visual_PIX.Model.PixProject WMyjeJwGLkXDvVoFwhNgLDbbBMpjA
+0074 ldarg.0 
+0075 ldarg.1 
+0076 callvirt Int32 get_UserFlashSize()
+007B newarr System.Byte
+0080 stfld Byte[] eWuCTEVKShiYlcRBLCYCDWOqYZoB
+0085 ldloc.s 23
+0087 ldc.i4 756985208
+008C mul 
+008D ldc.i4 552080212
+0092 xor 
+0093 br -135
+0098 ldarg.0 
+0099 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+009E ldarg.1 
+009F callvirt WgsHpMfTlFFpaufXgwhdxAjqGiFJA get_GeneratedData()
+00A4 callvirt Void set_GeneratedData(WgsHpMfTlFFpaufXgwhdxAjqGiFJA)
+00A9 ldloc.s 23
+00AB ldc.i4 -1521424079
+00B0 mul 
+00B1 ldc.i4 1605435524
+00B6 xor 
+00B7 br -171
+00BC ldarg.0 
+00BD ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+00C2 call Void tFNvAGptaLAuZbdwzCoplXHmwwbO(Visual_PIX.Model.PixProject)
+00C7 ldarg.0 
+00C8 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+00CD call Void oazxMRVUUBKlmbwIlsSPsRGpthCc(Visual_PIX.Model.PixProject)
+00D2 ldarg.0 
+00D3 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+00D8 call Void OpBAoMsXgkEuYHScBqPNhOHapilh(Visual_PIX.Model.PixProject)
+00DD ldloc.s 23
+00DF ldc.i4 -1745828249
+00E4 mul 
+00E5 ldc.i4 -776244591
+00EA xor 
+00EB br -223
+00F0 ldarg.0 
+00F1 ldarg.1 
+00F2 callvirt Int32 GetActualScreenHeight()
+00F7 call Void set_Height(Int32)
+00FC ldarg.0 
+00FD ldarg.1 
+00FE callvirt Byte get_Lightness()
+0103 call Void set_Bright(Int32)
+0108 ldarg.0 
+0109 ldarg.0 
+010A ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+010F callvirt MbhOdFxefZyukIQUUJCPRGWCenaX CreateBitConverter()
+0114 stfld IUVAhbaRdMDxkDOrjNITqNIPxVcmb BOsbGTBVddQfTVJmHplzsiIDavrJ
+0119 ldloc.s 23
+011B ldc.i4 538006117
+0120 mul 
+0121 ldc.i4 583000865
+0126 xor 
+0127 br -283
+012C ldarg.0 
+012D call bghOfvrVYYkkWWKrnFQRkvHmBgIj RlFILUQupFcaQRxgEcmUWluKdyAf()
+0132 ldloc.0 
+0133 callvirt Void ZakhOqptwkakaUoYksayeHuahEvj(UkIXhMDuqtdALrNcmdoijjJbipBe)
+0138 ldarg.0 
+0139 call qPKDtUfTXoEQyAiGJXwstFKkVrlBB NITGmdxWmGCxTvBZTCVrCRTRRFIuA()
+013E ldloc.0 
+013F callvirt Void zlfZkFZPzncYtmtkxuOXVLNjbLOe(UkIXhMDuqtdALrNcmdoijjJbipBe)
+0144 ldarg.0 
+0145 call qPKDtUfTXoEQyAiGJXwstFKkVrlBB BtvQhyNsDCRYoWxbcRuJubVZTxzc()
+014A ldloc.0 
+014B callvirt Void zlfZkFZPzncYtmtkxuOXVLNjbLOe(UkIXhMDuqtdALrNcmdoijjJbipBe)
+0150 ldarg.0 
+0151 ldfld zzSYjNKTxGeYtZqEwYDhybeKKwbV lVtLshYAmkLKWmPXgEJZTfJaJauw
+0156 ldloc.0 
+0157 callvirt Void mcEeoGkeMeYUHIDxdvPWBGdeDThG(UkIXhMDuqtdALrNcmdoijjJbipBe)
+015C ldloc.s 23
+015E ldc.i4 630190708
+0163 mul 
+0164 ldc.i4 1848581067
+0169 xor 
+016A br -350
+016F ldarg.0 
+0170 ldfld mrBaqDIFdokgxjGabopuxnxbnwEU sJNipoWkAGPsGZQuQRuTTKSvEYyt
+0175 ldarg.0 
+0176 ldftn Void HjwdUmdfwKkqbOuQtlKjClFpAuYJ(Byte[])
+017C newobj Void .ctor(System.Object, IntPtr)
+0181 callvirt Void TqFfZrqKDscyVbEPwbpjnMClEEIfb(System.Action`1[System.Byte[]])
+0186 ldarg.0 
+0187 ldfld wxsaZIMFqZBvGcmWjFYRfsvBDvxNb uKQcKgkVJhPNaSWiFCdMkEABBhvEb
+018C ldarg.0 
+018D ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0192 callvirt Void LvOOWSfUswFeNxrcpsAmeckLhozQ(Visual_PIX.Model.PixProject)
+0197 ldarg.0 
+0198 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+019D callvirt mTnGeGdRDgCRwSDUfsZockhcRwXz get_Encode()
+01A2 newobj Void .ctor(mTnGeGdRDgCRwSDUfsZockhcRwXz)
+01A7 stloc.0 
+01A8 ldloc.s 23
+01AA ldc.i4 230960926
+01AF mul 
+01B0 ldc.i4 818684546
+01B5 xor 
+01B6 br -426
+01BB ldarg.0 
+01BC ldarg.1 
+01BD newobj Void .ctor(Visual_PIX.Model.PixProject)
+01C2 stfld mrBaqDIFdokgxjGabopuxnxbnwEU sJNipoWkAGPsGZQuQRuTTKSvEYyt
+01C7 ldloc.s 23
+01C9 ldc.i4 -1721492523
+01CE mul 
+01CF ldc.i4 1565413538
+01D4 xor 
+01D5 br -457
+01DA ldarg.0 
+01DB ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+01E0 ldarg.1 
+01E1 callvirt RpgRniqBlWjCFiSagdbuqoKvDXsaA get_Screen()
+01E6 callvirt Void set_Screen(RpgRniqBlWjCFiSagdbuqoKvDXsaA)
+01EB ldloc.s 23
+01ED ldc.i4 1243996149
+01F2 mul 
+01F3 ldc.i4 1578832707
+01F8 xor 
+01F9 br -493
+01FE ldarg.0 
+01FF ldarg.0 
+0200 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0205 callvirt qUMLTsdWACDtaCzcSzvrNtwCPVkD CreateEncodeConverter()
+020A stfld qUMLTsdWACDtaCzcSzvrNtwCPVkD EjPFstEXQdLrxcCtvtxbNwZcbdmO
+020F ldloc.s 23
+0211 ldc.i4 350905704
+0216 mul 
+0217 ldc.i4 1068427164
+021C xor 
+021D br -529
+0222 ldarg.0 
+0223 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0228 callvirt Void EnterDebugMode()
+022D ldloc.s 23
+022F ldc.i4 -631363099
+0234 mul 
+0235 ldc.i4 -94733746
+023A xor 
+023B br -559
+0240 ldarg.0 
+0241 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0246 callvirt Void HandleGeneratedData()
+024B ldloc.s 23
+024D ldc.i4 -63353667
+0252 mul 
+0253 ldc.i4 1771833898
+0258 xor 
+0259 br -589
+025E ldarg.0 
+025F ldarg.1 
+0260 callvirt Int32 GetActualScreenWidth()
+0265 call Void set_Width(Int32)
+026A ldloc.s 23
+026C ldc.i4 -1675280657
+0271 mul 
+0272 ldc.i4 1726960260
+0277 xor 
+0278 br -620
+027D ldarg.0 
+027E ldfld ukpGhcJVUSpWnMyyWZhEpTtGvjTSA oYRCJaEcVEwvxkiziKthMprOZnURA
+0283 ldarg.0 
+0284 ldfld XYsUOGGTaHQGvCnrZgdqDgrJKgkK WndpFyVAgsMQMRpOZdLuJUazUiwrA
+0289 callvirt Void lZXtGAwjZedIyKwiROwshhmbdXeU(BxJgPPWhgfDOSbyMsbFQzJklLFgeb)
+028E ldarg.0 
+028F ldfld XYsUOGGTaHQGvCnrZgdqDgrJKgkK WndpFyVAgsMQMRpOZdLuJUazUiwrA
+0294 ldarg.0 
+0295 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+029A callvirt Void tGYVjlfdOGCoJMSpYxtPUgpfLGYT(Visual_PIX.Model.PixProject)
+029F ldloc.s 23
+02A1 ldc.i4 1968708193
+02A6 mul 
+02A7 ldc.i4 283430229
+02AC xor 
+02AD br -673
+02B2 ldarg.0 
+02B3 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+02B8 callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixLayer] get_Layers()
+02BD callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Model.PixLayer] GetEnumerator()
+02C2 stloc.s 4
+02C4 br 224
+02C9 ldloc.s 4
+02CB callvirt Visual_PIX.Model.PixLayer get_Current()
+02D0 callvirt System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] get_AllElements()
+02D5 callvirt Enumerator GetEnumerator()
+02DA stloc.s 5
+02DC br.s 120
+02DE ldc.i4 -531494463
+02E3 ldc.i4 -1518544724
+02E8 xor 
+02E9 dup 
+02EA stloc.s 23
+02EC ldc.i4.6 
+02ED rem.un 
+02EE switch 6
+030B br 137
+0310 ldloca.s 5
+0312 call Visual_PIX.Model.PixControl get_Current()
+0317 isinst Visual_PIX.Model.Controls.ImageCtrl
+031C stloc.s 6
+031E ldloc.s 6
+0320 brfalse.s 8
+0322 ldc.i4 -368021771
+0327 dup 
+0328 br.s 6
+032A ldc.i4 -1660065942
+032F dup 
+0330 pop 
+0331 br.s -80
+0333 ldloc.s 6
+0335 ldarg.0 
+0336 ldftn Int32 VLYVmGAJyDKNDfpolekfYSxhOsfX(System.String)
+033C newobj Void .ctor(System.Object, IntPtr)
+0341 stfld System.Func`2[System.String,System.Int32] GetImageIndexById
+0346 ldloc.s 23
+0348 ldc.i4 -279332631
+034D mul 
+034E ldc.i4 -958740642
+0353 xor 
+0354 br.s -115
+0356 ldloca.s 5
+0358 call Boolean MoveNext()
+035D brfalse.s 8
+035F ldc.i4 -531494463
+0364 dup 
+0365 br.s 6
+0367 ldc.i4 -747848997
+036C dup 
+036D pop 
+036E br -144
+0373 ldloc.s 6
+0375 ldarg.0 
+0376 ldftn System.String RnVSVtlDYzdWCDIgbviiGKJQgxuaA(Int32)
+037C newobj Void .ctor(System.Object, IntPtr)
+0381 stfld System.Func`2[System.Int32,System.String] GetImageIdByIndex
+0386 ldloc.s 23
+0388 ldc.i4 1823336661
+038D mul 
+038E ldc.i4 -401914187
+0393 xor 
+0394 br -182
+0399 leave.s 14
+039B ldloca.s 5
+039D constrained. System.Collections.Generic.List`1+Enumerator[Visual_PIX.Model.PixControl]
+03A3 callvirt Void Dispose()
+03A8 endfinally 
+03A9 ldloc.s 4
+03AB call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+03B0 brtrue -236
+03B5 leave.s 63
+03B7 ldloc.s 4
+03B9 brfalse.s 58
+03BB ldc.i4 -2141884428
+03C0 ldc.i4 -1518544724
+03C5 xor 
+03C6 dup 
+03C7 stloc.s 23
+03C9 ldc.i4.3 
+03CA rem.un 
+03CB switch 3
+03DC br.s 23
+03DE ldloc.s 4
+03E0 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+03E5 ldloc.s 23
+03E7 ldc.i4 1954660574
+03EC mul 
+03ED ldc.i4 120418497
+03F2 xor 
+03F3 br.s -53
+03F5 endfinally 
+03F6 ldarg.0 
+03F7 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+03FC callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixLayer] get_Layers()
+0401 callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Model.PixLayer] GetEnumerator()
+0406 stloc.s 4
+0408 br 165
+040D ldloc.s 4
+040F callvirt Visual_PIX.Model.PixLayer get_Current()
+0414 callvirt System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] get_AllElements()
+0419 callvirt Enumerator GetEnumerator()
+041E stloc.s 5
+0420 br.s 43
+0422 ldc.i4 -964280664
+0427 ldc.i4 -1518544724
+042C xor 
+042D dup 
+042E stloc.s 23
+0430 ldc.i4.5 
+0431 rem.un 
+0432 switch 5
+044B br.s 85
+044D ldloca.s 5
+044F call Boolean MoveNext()
+0454 brfalse.s 8
+0456 ldc.i4 -964280664
+045B dup 
+045C br.s 6
+045E ldc.i4 -1970119707
+0463 dup 
+0464 pop 
+0465 br.s -64
+0467 ldloc.s 7
+0469 ldloc.0 
+046A callvirt Void SetEncodeConverter(UkIXhMDuqtdALrNcmdoijjJbipBe)
+046F ldloc.s 23
+0471 ldc.i4 863402613
+0476 mul 
+0477 ldc.i4 -1761219094
+047C xor 
+047D br.s -88
+047F ldloca.s 5
+0481 call Visual_PIX.Model.PixControl get_Current()
+0486 isinst Visual_PIX.Model.Controls.LogCtrl
+048B stloc.s 7
+048D ldloc.s 7
+048F brfalse.s 8
+0491 ldc.i4 -98977376
+0496 dup 
+0497 br.s 6
+0499 ldc.i4 -1642528874
+049E dup 
+049F pop 
+04A0 br.s -123
+04A2 leave.s 14
+04A4 ldloca.s 5
+04A6 constrained. System.Collections.Generic.List`1+Enumerator[Visual_PIX.Model.PixControl]
+04AC callvirt Void Dispose()
+04B1 endfinally 
+04B2 ldloc.s 4
+04B4 call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+04B9 brtrue -177
+04BE leave.s 63
+04C0 ldloc.s 4
+04C2 brfalse.s 58
+04C4 ldc.i4 -18782515
+04C9 ldc.i4 -1518544724
+04CE xor 
+04CF dup 
+04D0 stloc.s 23
+04D2 ldc.i4.3 
+04D3 rem.un 
+04D4 switch 3
+04E5 br.s 23
+04E7 ldloc.s 4
+04E9 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+04EE ldloc.s 23
+04F0 ldc.i4 598617066
+04F5 mul 
+04F6 ldc.i4 1147851832
+04FB xor 
+04FC br.s -53
+04FE endfinally 
+04FF ldarg.0 
+0500 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0505 callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixLayer] get_Layers()
+050A callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Model.PixLayer] GetEnumerator()
+050F stloc.s 4
+0511 br 1173
+0516 ldloc.s 4
+0518 callvirt Visual_PIX.Model.PixLayer get_Current()
+051D stloc.s 8
+051F ldloc.s 8
+0521 callvirt System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] get_AllElements()
+0526 callvirt Enumerator GetEnumerator()
+052B stloc.s 5
+052D br 809
+0532 ldc.i4 -1410595559
+0537 ldc.i4 -1518544724
+053C xor 
+053D dup 
+053E stloc.s 23
+0540 ldc.i4.4 
+0541 rem.un 
+0542 switch 4
+0557 br.s 49
+0559 ldloca.s 5
+055B call Visual_PIX.Model.PixControl get_Current()
+0560 stloc.s 9
+0562 ldc.i4 -309168234
+0567 br.s -50
+0569 ldloc.s 9
+056B callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.Controls.CtrlEvent] get_Events()
+0570 call Boolean Any[CtrlEvent](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.Controls.CtrlEvent])
+0575 brfalse 737
+057A ldloc.s 23
+057C ldc.i4 -2010386309
+0581 mul 
+0582 ldc.i4 -1024957154
+0587 xor 
+0588 br.s -83
+058A ldloc.s 9
+058C callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.Controls.CtrlEvent] get_Events()
+0591 callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Model.Controls.CtrlEvent] GetEnumerator()
+0596 stloc.s 10
+0598 br 465
+059D ldc.i4 -1300320896
+05A2 ldc.i4 -1518544724
+05A7 xor 
+05A8 dup 
+05A9 stloc.s 23
+05AB ldc.i4.s 16
+05AD rem.un 
+05AE switch 16
+05F3 br 546
+05F8 ldloc.s 23
+05FA ldc.i4 -1269548259
+05FF mul 
+0600 ldc.i4 646502696
+0605 xor 
+0606 br.s -102
+0608 ldarg.0 
+0609 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.Controls.SerialPortCtrl]] bUVVizBGIhwLWrvoGaiwKlpyrbau
+060E ldloc.s 13
+0610 ldloc.s 11
+0612 ldloc.s 12
+0614 callvirt Byte[] CMhSNtesOOhRRIffHFzxigKwhJvPA()
+0619 ldloc.s 12
+061B callvirt System.Object mXCFJFFoXeLrgfapdpZmxJUdYCUDA()
+0620 ldarg.0 
+0621 ldarg.0 
+0622 ldfld IUVAhbaRdMDxkDOrjNITqNIPxVcmb BOsbGTBVddQfTVJmHplzsiIDavrJ
+0627 ldarg.0 
+0628 ldftn Void TBtIGjOXZYvgPSwrwNYFMvkEfgOV(GGiFOibEIBtEwjjDZFJIEPbGFJeR, System.Exception)
+062E newobj Void .ctor(System.Object, IntPtr)
+0633 newobj Void .ctor(Visual_PIX.Model.Controls.SerialPortCtrl, Visual_PIX.Model.Controls.CtrlEvent, Byte[], System.Object, WIMgQMEskzjMlPuwNsLDeiPkApXF, IUVAhbaRdMDxkDOrjNITqNIPxVcmb, System.Action`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+GGiFOibEIBtEwjjDZFJIEPbGFJeR,System.Exception])
+0638 callvirt Void Add(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+063D ldloc.s 23
+063F ldc.i4 -1308366348
+0644 mul 
+0645 ldc.i4 -1008796474
+064A xor 
+064B br -174
+0650 ldloc.s 14
+0652 brtrue.s 8
+0654 ldc.i4 -1835250351
+0659 dup 
+065A br.s 6
+065C ldc.i4 -911134667
+0661 dup 
+0662 pop 
+0663 ldloc.s 23
+0665 ldc.i4 565769507
+066A mul 
+066B xor 
+066C br -207
+0671 ldarg.0 
+0672 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+WMMTteqeyYCkqnhBoFERwxSZZaZu] rwjNaJQpoUjcsdiYgWBdFWXxIrlB
+0677 ldloc.s 15
+0679 callvirt Void Add(WMMTteqeyYCkqnhBoFERwxSZZaZu)
+067E ldloc.s 23
+0680 ldc.i4 170971665
+0685 mul 
+0686 ldc.i4 241219847
+068B xor 
+068C br -239
+0691 ldloc.s 13
+0693 brtrue.s 8
+0695 ldc.i4 778717101
+069A dup 
+069B br.s 6
+069D ldc.i4 1897302670
+06A2 dup 
+06A3 pop 
+06A4 ldloc.s 23
+06A6 ldc.i4 -67915617
+06AB mul 
+06AC xor 
+06AD br -272
+06B2 ldarg.0 
+06B3 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+06B8 ldloc.s 8
+06BA ldloc.s 9
+06BC ldloc.s 11
+06BE ldloc.s 11
+06C0 callvirt System.String get_Code()
+06C5 newobj Void .ctor(Visual_PIX.Model.PixProject, Visual_PIX.Model.PixLayer, Visual_PIX.Model.PixControl, Visual_PIX.Model.Controls.CtrlEvent, System.String)
+06CA stloc.s 12
+06CC ldloc.s 9
+06CE isinst Visual_PIX.Model.Controls.SerialPortCtrl
+06D3 stloc.s 13
+06D5 ldloc.s 23
+06D7 ldc.i4 2076455913
+06DC mul 
+06DD ldc.i4 -2125686113
+06E2 xor 
+06E3 br -326
+06E8 ldloc.s 14
+06EA callvirt Boolean get_IsGlobal()
+06EF brtrue.s 8
+06F1 ldc.i4 129126987
+06F6 dup 
+06F7 br.s 6
+06F9 ldc.i4 1078312444
+06FE dup 
+06FF pop 
+0700 ldloc.s 23
+0702 ldc.i4 51017638
+0707 mul 
+0708 xor 
+0709 br -364
+070E ldloc.s 9
+0710 isinst Visual_PIX.Model.Controls.TimerCtrl
+0715 stloc.s 14
+0717 ldc.i4 -588075535
+071C br -383
+0721 ldloc.s 14
+0723 ldloc.s 11
+0725 ldloc.s 12
+0727 callvirt Byte[] CMhSNtesOOhRRIffHFzxigKwhJvPA()
+072C ldloc.s 12
+072E callvirt System.Object mXCFJFFoXeLrgfapdpZmxJUdYCUDA()
+0733 ldarg.0 
+0734 ldarg.0 
+0735 ldfld IUVAhbaRdMDxkDOrjNITqNIPxVcmb BOsbGTBVddQfTVJmHplzsiIDavrJ
+073A ldarg.0 
+073B ldftn Void TBtIGjOXZYvgPSwrwNYFMvkEfgOV(GGiFOibEIBtEwjjDZFJIEPbGFJeR, System.Exception)
+0741 newobj Void .ctor(System.Object, IntPtr)
+0746 newobj Void .ctor(Visual_PIX.Model.Controls.TimerCtrl, Visual_PIX.Model.Controls.CtrlEvent, Byte[], System.Object, WIMgQMEskzjMlPuwNsLDeiPkApXF, IUVAhbaRdMDxkDOrjNITqNIPxVcmb, System.Action`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+GGiFOibEIBtEwjjDZFJIEPbGFJeR,System.Exception])
+074B stloc.s 15
+074D ldloc.s 15
+074F ldloc.s 8
+0751 callvirt Int32 get_Id()
+0756 callvirt Void JNGKZewJpuDildrUbvNLiKqHwEsG(Int32)
+075B ldloc.s 23
+075D ldc.i4 1129514946
+0762 mul 
+0763 ldc.i4 -299841981
+0768 xor 
+0769 br -460
+076E ldloc.s 10
+0770 call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+0775 brfalse.s 8
+0777 ldc.i4 -1300320896
+077C dup 
+077D br.s 6
+077F ldc.i4 -31208852
+0784 dup 
+0785 pop 
+0786 br -489
+078B ldloc.s 23
+078D ldc.i4 111895020
+0792 mul 
+0793 ldc.i4 -1139364563
+0798 xor 
+0799 br -508
+079E ldloc.s 10
+07A0 callvirt Visual_PIX.Model.Controls.CtrlEvent get_Current()
+07A5 stloc.s 11
+07A7 ldloc.s 11
+07A9 callvirt Boolean IsNotEmpty()
+07AE brfalse.s 8
+07B0 ldc.i4 -1464746152
+07B5 dup 
+07B6 br.s 6
+07B8 ldc.i4 -64027035
+07BD dup 
+07BE pop 
+07BF br -546
+07C4 ldarg.0 
+07C5 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+07CA ldloc.s 9
+07CC ldloc.s 11
+07CE ldloc.s 12
+07D0 callvirt Byte[] CMhSNtesOOhRRIffHFzxigKwhJvPA()
+07D5 ldloc.s 12
+07D7 callvirt System.Object mXCFJFFoXeLrgfapdpZmxJUdYCUDA()
+07DC ldarg.0 
+07DD ldarg.0 
+07DE ldfld IUVAhbaRdMDxkDOrjNITqNIPxVcmb BOsbGTBVddQfTVJmHplzsiIDavrJ
+07E3 ldarg.0 
+07E4 ldftn Void TBtIGjOXZYvgPSwrwNYFMvkEfgOV(GGiFOibEIBtEwjjDZFJIEPbGFJeR, System.Exception)
+07EA newobj Void .ctor(System.Object, IntPtr)
+07EF newobj Void .ctor(Visual_PIX.Model.PixControl, Visual_PIX.Model.Controls.CtrlEvent, Byte[], System.Object, WIMgQMEskzjMlPuwNsLDeiPkApXF, IUVAhbaRdMDxkDOrjNITqNIPxVcmb, System.Action`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+GGiFOibEIBtEwjjDZFJIEPbGFJeR,System.Exception])
+07F4 callvirt Void Add(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+07F9 ldc.i4 -64027035
+07FE br -609
+0803 ldarg.0 
+0804 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+WMMTteqeyYCkqnhBoFERwxSZZaZu] ucxAFPcQCaISpGyFBbKbHfxCFRQZb
+0809 ldloc.s 15
+080B callvirt Void Add(WMMTteqeyYCkqnhBoFERwxSZZaZu)
+0810 ldc.i4 -1975380643
+0815 br -632
+081A leave.s 63
+081C ldloc.s 10
+081E brfalse.s 58
+0820 ldc.i4 -677858872
+0825 ldc.i4 -1518544724
+082A xor 
+082B dup 
+082C stloc.s 23
+082E ldc.i4.3 
+082F rem.un 
+0830 switch 3
+0841 br.s 23
+0843 ldloc.s 10
+0845 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+084A ldloc.s 23
+084C ldc.i4 1544181207
+0851 mul 
+0852 ldc.i4 -1655200164
+0857 xor 
+0858 br.s -53
+085A endfinally 
+085B ldloca.s 5
+085D call Boolean MoveNext()
+0862 brtrue -782
+0867 leave.s 14
+0869 ldloca.s 5
+086B constrained. System.Collections.Generic.List`1+Enumerator[Visual_PIX.Model.PixControl]
+0871 callvirt Void Dispose()
+0876 endfinally 
+0877 ldloc.s 8
+0879 callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.Controls.CtrlEvent] get_Events()
+087E callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Model.Controls.CtrlEvent] GetEnumerator()
+0883 stloc.s 10
+0885 br.s 50
+0887 ldc.i4 -173206687
+088C ldc.i4 -1518544724
+0891 xor 
+0892 dup 
+0893 stloc.s 23
+0895 ldc.i4.6 
+0896 rem.un 
+0897 switch 6
+08B4 br 177
+08B9 ldloc.s 10
+08BB call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+08C0 brfalse.s 8
+08C2 ldc.i4 -173206687
+08C7 dup 
+08C8 br.s 6
+08CA ldc.i4 -268230274
+08CF dup 
+08D0 pop 
+08D1 br.s -71
+08D3 ldarg.0 
+08D4 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+08D9 ldloc.s 8
+08DB ldnull 
+08DC ldloc.s 16
+08DE ldloc.s 16
+08E0 callvirt System.String get_Code()
+08E5 newobj Void .ctor(Visual_PIX.Model.PixProject, Visual_PIX.Model.PixLayer, Visual_PIX.Model.PixControl, Visual_PIX.Model.Controls.CtrlEvent, System.String)
+08EA stloc.s 17
+08EC ldloc.s 23
+08EE ldc.i4 -1140354921
+08F3 mul 
+08F4 ldc.i4 -625205961
+08F9 xor 
+08FA br.s -112
+08FC ldloc.s 10
+08FE callvirt Visual_PIX.Model.Controls.CtrlEvent get_Current()
+0903 stloc.s 16
+0905 ldloc.s 16
+0907 callvirt Boolean IsNotEmpty()
+090C brtrue.s 8
+090E ldc.i4 -848410682
+0913 dup 
+0914 br.s 6
+0916 ldc.i4 -19758792
+091B dup 
+091C pop 
+091D br -150
+0922 ldarg.0 
+0923 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixLayer]] FYPgzghjrjdfafFbeoXyZnjdoDpXb
+0928 ldloc.s 8
+092A ldloc.s 16
+092C ldloc.s 17
+092E callvirt Byte[] CMhSNtesOOhRRIffHFzxigKwhJvPA()
+0933 ldloc.s 17
+0935 callvirt System.Object mXCFJFFoXeLrgfapdpZmxJUdYCUDA()
+093A ldarg.0 
+093B ldarg.0 
+093C ldfld IUVAhbaRdMDxkDOrjNITqNIPxVcmb BOsbGTBVddQfTVJmHplzsiIDavrJ
+0941 ldarg.0 
+0942 ldftn Void TBtIGjOXZYvgPSwrwNYFMvkEfgOV(GGiFOibEIBtEwjjDZFJIEPbGFJeR, System.Exception)
+0948 newobj Void .ctor(System.Object, IntPtr)
+094D newobj Void .ctor(Visual_PIX.Model.PixLayer, Visual_PIX.Model.Controls.CtrlEvent, Byte[], System.Object, WIMgQMEskzjMlPuwNsLDeiPkApXF, IUVAhbaRdMDxkDOrjNITqNIPxVcmb, System.Action`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+GGiFOibEIBtEwjjDZFJIEPbGFJeR,System.Exception])
+0952 callvirt Void Add(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+0957 ldloc.s 23
+0959 ldc.i4 -1688334128
+095E mul 
+095F ldc.i4 2111162742
+0964 xor 
+0965 br -222
+096A leave.s 63
+096C ldloc.s 10
+096E brfalse.s 58
+0970 ldc.i4 -1791912899
+0975 ldc.i4 -1518544724
+097A xor 
+097B dup 
+097C stloc.s 23
+097E ldc.i4.3 
+097F rem.un 
+0980 switch 3
+0991 br.s 23
+0993 ldloc.s 10
+0995 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+099A ldloc.s 23
+099C ldc.i4 -1883869160
+09A1 mul 
+09A2 ldc.i4 299228456
+09A7 xor 
+09A8 br.s -53
+09AA endfinally 
+09AB ldloc.s 4
+09AD call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+09B2 brtrue -1185
+09B7 leave.s 63
+09B9 ldloc.s 4
+09BB brfalse.s 58
+09BD ldc.i4 -148295155
+09C2 ldc.i4 -1518544724
+09C7 xor 
+09C8 dup 
+09C9 stloc.s 23
+09CB ldc.i4.3 
+09CC rem.un 
+09CD switch 3
+09DE br.s 23
+09E0 ldloc.s 4
+09E2 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+09E7 ldloc.s 23
+09E9 ldc.i4 1662450759
+09EE mul 
+09EF ldc.i4 1297518885
+09F4 xor 
+09F5 br.s -53
+09F7 endfinally 
+09F8 ldarg.0 
+09F9 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+09FE callvirt Enumerator GetEnumerator()
+0A03 stloc.s 18
+0A05 br 352
+0A0A ldc.i4 -1576393387
+0A0F ldc.i4 -1518544724
+0A14 xor 
+0A15 dup 
+0A16 stloc.s 23
+0A18 ldc.i4.s 25
+0A1A rem.un 
+0A1B switch 25
+0A84 br 867
+0A89 ldloc.s 19
+0A8B callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0A90 isinst Visual_PIX.Model.Controls.SliderCtrl
+0A95 brfalse.s 8
+0A97 ldc.i4 -1015172665
+0A9C dup 
+0A9D br.s 6
+0A9F ldc.i4 -821955442
+0AA4 dup 
+0AA5 pop 
+0AA6 br -156
+0AAB ldarg.0 
+0AAC ldloc.s 19
+0AAE ldc.i4.1 
+0AAF ldc.i4 -575526200
+0AB4 br.s 0
+0AB6 call System.String ‭‏‍​‍‌‏‭‪‫⁭⁪‬⁪⁯‮⁮⁯‮‭⁯⁭⁪‎⁬⁬‭‭‎‮‪‬‌‎‭‭‌‍‎⁯‮[String](Int32)
+0ABB ldsfld System.Func`2[System.Object,System.Boolean] <>9__102_0
+0AC0 dup 
+0AC1 brtrue.s 23
+0AC3 pop 
+0AC4 ldsfld QPJQtuwkwExyWkgkZyuVDplKKDfj <>9
+0AC9 ldftn Boolean pqiSEdHZwvNYFpOyTJunZMVNCfjT(System.Object)
+0ACF newobj Void .ctor(System.Object, IntPtr)
+0AD4 dup 
+0AD5 stsfld System.Func`2[System.Object,System.Boolean] <>9__102_0
+0ADA call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0ADF ldarg.0 
+0AE0 ldloc.s 19
+0AE2 ldc.i4.2 
+0AE3 ldc.i4 -575526200
+0AE8 br.s 0
+0AEA call System.String ‭‏‍​‍‌‏‭‪‫⁭⁪‬⁪⁯‮⁮⁯‮‭⁯⁭⁪‎⁬⁬‭‭‎‮‪‬‌‎‭‭‌‍‎⁯‮[String](Int32)
+0AEF ldsfld System.Func`2[System.Object,System.Boolean] <>9__102_1
+0AF4 dup 
+0AF5 brtrue.s 23
+0AF7 pop 
+0AF8 ldsfld QPJQtuwkwExyWkgkZyuVDplKKDfj <>9
+0AFD ldftn Boolean MSNYSqtgrRObzcoslHKiJQYicUlB(System.Object)
+0B03 newobj Void .ctor(System.Object, IntPtr)
+0B08 dup 
+0B09 stsfld System.Func`2[System.Object,System.Boolean] <>9__102_1
+0B0E call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0B13 ldc.i4 -1802568727
+0B18 br -270
+0B1D ldarg.0 
+0B1E ldloc.s 19
+0B20 ldc.i4.5 
+0B21 ldc.i4 1956991638
+0B26 br.s 0
+0B28 call System.String ‭‏‍​‍‌‏‭‪‫⁭⁪‬⁪⁯‮⁮⁯‮‭⁯⁭⁪‎⁬⁬‭‭‎‮‪‬‌‎‭‭‌‍‎⁯‮[String](Int32)
+0B2D ldarg.0 
+0B2E ldftn Boolean LUUVQMlaylIQCQrwIuTQxSnDeLlK(System.Object)
+0B34 newobj Void .ctor(System.Object, IntPtr)
+0B39 call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0B3E ldc.i4 -1802568727
+0B43 br -313
+0B48 ldloc.s 19
+0B4A callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0B4F isinst Visual_PIX.Model.Controls.RadioButtonGroupCtrl
+0B54 brfalse.s 8
+0B56 ldc.i4 -1565567353
+0B5B dup 
+0B5C br.s 6
+0B5E ldc.i4 -62544409
+0B63 dup 
+0B64 pop 
+0B65 br -347
+0B6A ldloca.s 18
+0B6C call Boolean MoveNext()
+0B71 brfalse.s 8
+0B73 ldc.i4 -1576393387
+0B78 dup 
+0B79 br.s 6
+0B7B ldc.i4 -337153633
+0B80 dup 
+0B81 pop 
+0B82 br -376
+0B87 ldloc.s 19
+0B89 callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0B8E isinst Visual_PIX.Model.Controls.PwmCtrl
+0B93 brfalse.s 8
+0B95 ldc.i4 -1038231626
+0B9A dup 
+0B9B br.s 6
+0B9D ldc.i4 -706438574
+0BA2 dup 
+0BA3 pop 
+0BA4 br -410
+0BA9 ldloca.s 18
+0BAB call rGSQMnBljBHaLbQwBFqqGvKDmbYY get_Current()
+0BB0 stloc.s 19
+0BB2 ldloc.s 19
+0BB4 callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0BB9 isinst Visual_PIX.Model.Controls.ToggleButtonCtrl
+0BBE brfalse.s 8
+0BC0 ldc.i4 -1230807159
+0BC5 dup 
+0BC6 br.s 6
+0BC8 ldc.i4 -1511973529
+0BCD dup 
+0BCE pop 
+0BCF br -453
+0BD4 ldloc.s 19
+0BD6 callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0BDB isinst Visual_PIX.Model.Controls.CheckBoxCtrl
+0BE0 brfalse.s 8
+0BE2 ldc.i4 -198608573
+0BE7 dup 
+0BE8 br.s 6
+0BEA ldc.i4 -771135351
+0BEF dup 
+0BF0 pop 
+0BF1 br -487
+0BF6 ldloc.s 23
+0BF8 ldc.i4 -2022661527
+0BFD mul 
+0BFE ldc.i4 -885461206
+0C03 xor 
+0C04 br -506
+0C09 ldarg.0 
+0C0A ldloc.s 19
+0C0C ldc.i4.5 
+0C0D ldc.i4 -1163854593
+0C12 br.s 0
+0C14 call System.String ⁮‍‍⁬‏‏‮‪⁫‫‍​⁪‌​⁪⁬‎‍⁮⁯⁭⁬⁮‎‭‏⁯‍‪‮‫​‫‎⁭⁯‭⁭⁯‮[String](Int32)
+0C19 ldarg.0 
+0C1A ldftn Boolean eczVatwfwNaWMKXdusckEIQRnJzO(System.Object)
+0C20 newobj Void .ctor(System.Object, IntPtr)
+0C25 call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0C2A ldc.i4 -1189189593
+0C2F br -549
+0C34 ldloc.s 19
+0C36 callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0C3B isinst Visual_PIX.Model.Controls.ListCtrl
+0C40 brtrue.s 8
+0C42 ldc.i4 -1676209745
+0C47 dup 
+0C48 br.s 6
+0C4A ldc.i4 -427585183
+0C4F dup 
+0C50 pop 
+0C51 br -583
+0C56 ldloc.s 19
+0C58 callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0C5D isinst Visual_PIX.Model.Controls.DataGridCtrl
+0C62 brfalse.s 8
+0C64 ldc.i4 -843102968
+0C69 dup 
+0C6A br.s 6
+0C6C ldc.i4 -1802568727
+0C71 dup 
+0C72 pop 
+0C73 br -617
+0C78 ldloc.s 23
+0C7A ldc.i4 -1622443773
+0C7F mul 
+0C80 ldc.i4 902136439
+0C85 xor 
+0C86 br -636
+0C8B ldarg.0 
+0C8C ldloc.s 19
+0C8E ldc.i4.s 21
+0C90 ldc.i4 -1653310342
+0C95 br.s 0
+0C97 call System.String ⁮‍‍⁬‏‏‮‪⁫‫‍​⁪‌​⁪⁬‎‍⁮⁯⁭⁬⁮‎‭‏⁯‍‪‮‫​‫‎⁭⁯‭⁭⁯‮[String](Int32)
+0C9C ldsfld System.Func`2[System.Object,System.Boolean] <>9__102_6
+0CA1 dup 
+0CA2 brtrue.s 23
+0CA4 pop 
+0CA5 ldsfld QPJQtuwkwExyWkgkZyuVDplKKDfj <>9
+0CAA ldftn Boolean knZCxzZJlVSuZRfXFiGSKaMcqLYg(System.Object)
+0CB0 newobj Void .ctor(System.Object, IntPtr)
+0CB5 dup 
+0CB6 stsfld System.Func`2[System.Object,System.Boolean] <>9__102_6
+0CBB call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0CC0 ldc.i4 -850503449
+0CC5 br -699
+0CCA ldloc.s 19
+0CCC callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0CD1 isinst Visual_PIX.Model.Controls.GifImageCtrl
+0CD6 brfalse.s 8
+0CD8 ldc.i4 -370767477
+0CDD dup 
+0CDE br.s 6
+0CE0 ldc.i4 -469358197
+0CE5 dup 
+0CE6 pop 
+0CE7 br -733
+0CEC ldloc.s 23
+0CEE ldc.i4 -484516597
+0CF3 mul 
+0CF4 ldc.i4 -815698160
+0CF9 xor 
+0CFA br -752
+0CFF ldloc.s 19
+0D01 callvirt Visual_PIX.Model.PixControl TNUFAMhprWkVMKRQzJArkCVEjflw()
+0D06 isinst Visual_PIX.Model.Controls.WheelListCtrl
+0D0B brtrue.s 8
+0D0D ldc.i4 -1127557904
+0D12 dup 
+0D13 br.s 6
+0D15 ldc.i4 -564297421
+0D1A dup 
+0D1B pop 
+0D1C br -786
+0D21 ldarg.0 
+0D22 ldloc.s 19
+0D24 ldc.i4.s 21
+0D26 ldc.i4 -2137479410
+0D2B br.s 0
+0D2D call System.String ⁮‍‍⁬‏‏‮‪⁫‫‍​⁪‌​⁪⁬‎‍⁮⁯⁭⁬⁮‎‭‏⁯‍‪‮‫​‫‎⁭⁯‭⁭⁯‮[String](Int32)
+0D32 ldnull 
+0D33 call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0D38 ldc.i4 -1067994586
+0D3D br -819
+0D42 ldarg.0 
+0D43 ldloc.s 19
+0D45 ldc.i4.5 
+0D46 ldc.i4 -1959998579
+0D4B br.s 0
+0D4D call System.String ⁬​⁭⁯⁯⁯‬‏‎‏‭⁯⁪‮‭‎‍‏‬‫‫‏‍‮⁬‬‌⁮⁮‮⁮⁬⁫‏​‪​‫‎‪‮[String](Int32)
+0D52 ldarg.0 
+0D53 ldftn Boolean pxBeFBCgEBDStfbeKtDlDrGZvILs(System.Object)
+0D59 newobj Void .ctor(System.Object, IntPtr)
+0D5E call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0D63 ldc.i4 -1802568727
+0D68 br -862
+0D6D ldarg.0 
+0D6E ldloc.s 19
+0D70 ldc.i4.5 
+0D71 ldc.i4 1042816299
+0D76 br.s 0
+0D78 call System.String ‭‏‍​‍‌‏‭‪‫⁭⁪‬⁪⁯‮⁮⁯‮‭⁯⁭⁪‎⁬⁬‭‭‎‮‪‬‌‎‭‭‌‍‎⁯‮[String](Int32)
+0D7D ldarg.0 
+0D7E ldftn Boolean CSugrlMyHhLpQAsLCCLTugbcjNoS(System.Object)
+0D84 newobj Void .ctor(System.Object, IntPtr)
+0D89 call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0D8E ldc.i4 -1802568727
+0D93 br -905
+0D98 ldarg.0 
+0D99 ldloc.s 19
+0D9B ldc.i4.s 21
+0D9D ldc.i4 825018574
+0DA2 br.s 0
+0DA4 call System.String ‭⁯‬⁪‭⁯‮⁮⁮⁫‮⁯‏⁪‌​⁫‫‍⁬‮⁪‎⁯‮⁮⁮⁪‬⁯⁬⁬‫‌‏​⁭⁯‏‏‮[String](Int32)
+0DA9 ldnull 
+0DAA call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0DAF ldc.i4 -1802568727
+0DB4 br -938
+0DB9 ldloc.s 23
+0DBB ldc.i4 1023703116
+0DC0 mul 
+0DC1 ldc.i4 909296325
+0DC6 xor 
+0DC7 br -957
+0DCC ldarg.0 
+0DCD ldloc.s 19
+0DCF ldc.i4.5 
+0DD0 ldc.i4 -1581717256
+0DD5 br.s 0
+0DD7 call System.String ‭⁯‬⁪‭⁯‮⁮⁮⁫‮⁯‏⁪‌​⁫‫‍⁬‮⁪‎⁯‮⁮⁮⁪‬⁯⁬⁬‫‌‏​⁭⁯‏‏‮[String](Int32)
+0DDC ldnull 
+0DDD call Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+0DE2 ldc.i4 -1772573371
+0DE7 br -989
+0DEC leave.s 14
+0DEE ldloca.s 18
+0DF0 constrained. System.Collections.Generic.List`1+Enumerator[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]]
+0DF6 callvirt Void Dispose()
+0DFB endfinally 
+0DFC ldarg.0 
+0DFD ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0E02 ldc.i4.s 33
+0E04 callvirt System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] GetControls(Gemini.Modules.Toolbox.ControlType)
+0E09 stloc.1 
+0E0A ldc.i4 -1241193405
+0E0F ldc.i4 -1518544724
+0E14 xor 
+0E15 dup 
+0E16 stloc.s 23
+0E18 ldc.i4.s 26
+0E1A rem.un 
+0E1B switch 26
+0E88 br 1000
+0E8D ldarg.0 
+0E8E ldloc.s 20
+0E90 ldfld Visual_PIX.Model.Controls.ProtocolCtrl AjdrRejgBFOZdQcwRdAXDvXPVUOO
+0E95 ldloc.s 20
+0E97 ldftn Void HycluOCkuWbkseJXqIHnJnaFGfjCb()
+0E9D newobj Void .ctor(System.Object, IntPtr)
+0EA2 ldarg.0 
+0EA3 ldftn Void lIBEApkyphFvXBkwQFFAzPbicOep(Byte[])
+0EA9 newobj Void .ctor(System.Object, IntPtr)
+0EAE newobj Void .ctor(Visual_PIX.Model.Controls.ProtocolCtrl, System.Action, System.Action`1[System.Byte[]])
+0EB3 stfld DQJoPATkXjjOxmaIucwJFIuurzNnA bqnqsxIZKrwEWsiLYdCIBAeSAwmZA
+0EB8 ldloc.s 23
+0EBA ldc.i4 -1579344286
+0EBF mul 
+0EC0 ldc.i4 2122544662
+0EC5 xor 
+0EC6 br -188
+0ECB ldarg.0 
+0ECC ldloc.s 21
+0ECE ldfld Visual_PIX.Model.Controls.ModbusProtocolCtrl YFRfTLJPSPFAXejJagIrXwsCwogz
+0ED3 ldarg.0 
+0ED4 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0ED9 callvirt TEwaOoCxnlOvpFrQfGsuldDLSylnA get_ModbusDeviceType()
+0EDE ldloc.s 21
+0EE0 ldftn Void EhRXMtKOVTRImcdMzFBGpBueWsbi()
+0EE6 newobj Void .ctor(System.Object, IntPtr)
+0EEB newobj Void .ctor(Visual_PIX.Model.Controls.ModbusProtocolCtrl, TEwaOoCxnlOvpFrQfGsuldDLSylnA, System.Action)
+0EF0 stfld FZumREwkyOvZBucdZGKnCjeuFzMsA AnfCcbJaXxIgngETHyHBZwPCOtZyb
+0EF5 ldarg.0 
+0EF6 ldfld FZumREwkyOvZBucdZGKnCjeuFzMsA AnfCcbJaXxIgngETHyHBZwPCOtZyb
+0EFB ldarg.0 
+0EFC ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0F01 callvirt Byte get_ModbusClientAddress()
+0F06 callvirt Void wsMtoysczJEJteIDMadhIBNAuOgIb(Byte)
+0F0B ldloc.s 23
+0F0D ldc.i4 -263126054
+0F12 mul 
+0F13 ldc.i4 -123818411
+0F18 xor 
+0F19 br -271
+0F1E ldloc.s 22
+0F20 ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+0F25 ldarg.0 
+0F26 ldftn Void svAFeFKxKNjiqnirkKDlQHvgAVnqA(System.String)
+0F2C newobj Void .ctor(System.Object, IntPtr)
+0F31 stfld System.Action`1[System.String] UartSendDel
+0F36 ldloc.s 23
+0F38 ldc.i4 -1230490014
+0F3D mul 
+0F3E ldc.i4 -269345949
+0F43 xor 
+0F44 br -314
+0F49 ldarg.0 
+0F4A ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0F4F ldc.i4.s 39
+0F51 callvirt System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] GetControls(Gemini.Modules.Toolbox.ControlType)
+0F56 stloc.2 
+0F57 ldc.i4 -1572393968
+0F5C br -338
+0F61 ldarg.0 
+0F62 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0F67 ldc.i4.s 48
+0F69 callvirt System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] GetControls(Gemini.Modules.Toolbox.ControlType)
+0F6E stloc.3 
+0F6F ldc.i4 -956284558
+0F74 br -362
+0F79 ldloc.s 22
+0F7B ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+0F80 ldarg.0 
+0F81 ldftn Void yjZTpXgiAHLHwKxiMCPIVKvcMfQo(TKirIwKYPGGkyTrfpHOYywJgFRuG, Int32, Int32)
+0F87 newobj Void .ctor(System.Object, IntPtr)
+0F8C stfld System.Action`3[TKirIwKYPGGkyTrfpHOYywJgFRuG,System.Int32,System.Int32] UartSendBytesDel
+0F91 ldloc.s 23
+0F93 ldc.i4 414940128
+0F98 mul 
+0F99 ldc.i4 -134702453
+0F9E xor 
+0F9F br -405
+0FA4 ldloc.s 22
+0FA6 ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+0FAB ldarg.0 
+0FAC ldftn Int32 QxznxYdTmCaDEbDkkjbbscRFFIRb(Byte, Byte, UInt16, UInt16, TKirIwKYPGGkyTrfpHOYywJgFRuG, Byte, Int32)
+0FB2 newobj Void .ctor(System.Object, IntPtr)
+0FB7 stfld System.Func`8[System.Byte,System.Byte,System.UInt16,System.UInt16,TKirIwKYPGGkyTrfpHOYywJgFRuG,System.Byte,System.Int32,System.Int32] ModbusWritesDel
+0FBC ldloc.s 23
+0FBE ldc.i4 407677061
+0FC3 mul 
+0FC4 ldc.i4 2013461334
+0FC9 xor 
+0FCA br -448
+0FCF ldloc.3 
+0FD0 callvirt Int32 get_Count()
+0FD5 ldc.i4.1 
+0FD6 beq.s 8
+0FD8 ldc.i4 390104154
+0FDD dup 
+0FDE br.s 6
+0FE0 ldc.i4 1097490916
+0FE5 dup 
+0FE6 pop 
+0FE7 ldloc.s 23
+0FE9 ldc.i4 -1221597910
+0FEE mul 
+0FEF xor 
+0FF0 br -486
+0FF5 newobj Void .ctor()
+0FFA stloc.s 21
+0FFC ldloc.s 23
+0FFE ldc.i4 1531932303
+1003 mul 
+1004 ldc.i4 40524372
+1009 xor 
+100A br -512
+100F ldloc.s 21
+1011 ldarg.0 
+1012 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+1017 ldloc.s 21
+1019 ldftn Boolean RrILhrIiKACiZVaCibgditaPdrnG(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+101F newobj Void .ctor(System.Object, IntPtr)
+1024 call rGSQMnBljBHaLbQwBFqqGvKDmbYY FirstOrDefault[rGSQMnBljBHaLbQwBFqqGvKDmbYY](System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]], System.Func`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl],System.Boolean])
+1029 stfld rGSQMnBljBHaLbQwBFqqGvKDmbYY UjcfSonlpHYsCNFLjZNIPoPPAznB
+102E ldloc.s 23
+1030 ldc.i4 -953737929
+1035 mul 
+1036 ldc.i4 -1691832776
+103B xor 
+103C br -562
+1041 ldloc.2 
+1042 callvirt Int32 get_Count()
+1047 ldc.i4.1 
+1048 beq.s 8
+104A ldc.i4 130637489
+104F dup 
+1050 br.s 6
+1052 ldc.i4 520717311
+1057 dup 
+1058 pop 
+1059 ldloc.s 23
+105B ldc.i4 -1766913009
+1060 mul 
+1061 xor 
+1062 br -600
+1067 newobj Void .ctor()
+106C stloc.s 20
+106E ldloc.s 23
+1070 ldc.i4 -912306797
+1075 mul 
+1076 ldc.i4 1022811374
+107B xor 
+107C br -626
+1081 newobj Void .ctor()
+1086 stloc.s 22
+1088 ldloc.s 22
+108A ldarg.0 
+108B stfld Visual_PIX.Modules.Home.ViewModels.DebugViewModel AbCtLqhqoaMqrqLYFVkAtlrtvOBp
+1090 ldloc.s 23
+1092 ldc.i4 1442307291
+1097 mul 
+1098 ldc.i4 1734301249
+109D xor 
+109E br -660
+10A3 ldloc.s 22
+10A5 ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+10AA ldarg.0 
+10AB ldftn Int32 aUCWsSPNDUctZMbffKeSPTrBKism(Byte, Byte, TKirIwKYPGGkyTrfpHOYywJgFRuG, Byte, Int32)
+10B1 newobj Void .ctor(System.Object, IntPtr)
+10B6 stfld System.Func`6[System.Byte,System.Byte,TKirIwKYPGGkyTrfpHOYywJgFRuG,System.Byte,System.Int32,System.Int32] ModbusSendBytesDel
+10BB ldloc.s 23
+10BD ldc.i4 1906458647
+10C2 mul 
+10C3 ldc.i4 1224250383
+10C8 xor 
+10C9 br -703
+10CE ldloc.s 22
+10D0 ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+10D5 ldarg.0 
+10D6 ldftn Int32 uZZtaxNlUMPVDWyRPuDtuXqwbmIH(Byte, Byte, UInt16, UInt16, Int32)
+10DC newobj Void .ctor(System.Object, IntPtr)
+10E1 stfld System.Func`6[System.Byte,System.Byte,System.UInt16,System.UInt16,System.Int32,System.Int32] ModbusWriteDel
+10E6 ldloc.s 23
+10E8 ldc.i4 -53988000
+10ED mul 
+10EE ldc.i4 -697718676
+10F3 xor 
+10F4 br -746
+10F9 ldloc.s 21
+10FB ldarg.0 
+10FC stfld Visual_PIX.Modules.Home.ViewModels.DebugViewModel FKxgQVHPEfxJTjGibglKsMJCLBOvA
+1101 ldloc.s 21
+1103 ldloc.2 
+1104 ldc.i4.0 
+1105 callvirt Visual_PIX.Model.PixControl get_Item(Int32)
+110A castclass Visual_PIX.Model.Controls.ModbusProtocolCtrl
+110F stfld Visual_PIX.Model.Controls.ModbusProtocolCtrl YFRfTLJPSPFAXejJagIrXwsCwogz
+1114 ldloc.s 23
+1116 ldc.i4 -1086242874
+111B mul 
+111C ldc.i4 -1647303338
+1121 xor 
+1122 br -792
+1127 ldloc.s 22
+1129 ldloc.3 
+112A ldc.i4.0 
+112B callvirt Visual_PIX.Model.PixControl get_Item(Int32)
+1130 castclass Visual_PIX.Model.Controls.ExProtocolCtrl
+1135 stfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+113A ldloc.s 23
+113C ldc.i4 465694846
+1141 mul 
+1142 ldc.i4 -568949892
+1147 xor 
+1148 br -830
+114D ldloc.s 20
+114F ldarg.0 
+1150 ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+1155 ldloc.s 20
+1157 ldftn Boolean WyORVnXpShJuxuKRnEIwfFbaKjzcb(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+115D newobj Void .ctor(System.Object, IntPtr)
+1162 call rGSQMnBljBHaLbQwBFqqGvKDmbYY FirstOrDefault[rGSQMnBljBHaLbQwBFqqGvKDmbYY](System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]], System.Func`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl],System.Boolean])
+1167 stfld rGSQMnBljBHaLbQwBFqqGvKDmbYY FxcoajhLNdsSeBpHUjNVACQjVIes
+116C ldloc.s 23
+116E ldc.i4 -1097161567
+1173 mul 
+1174 ldc.i4 2074858710
+1179 xor 
+117A br -880
+117F ldarg.0 
+1180 ldloc.s 22
+1182 ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+1187 ldloc.s 22
+1189 ldftn Void eJSsAgKevyBOvWqvbZSeAYzSCVrL()
+118F newobj Void .ctor(System.Object, IntPtr)
+1194 newobj Void .ctor(Visual_PIX.Model.Controls.ExProtocolCtrl, System.Action)
+1199 stfld WhZyfBhTnsDGhOWcTddebFPqrFnR nrHkUPOFujIUbIkjNCKFIolEPNhIb
+119E ldloc.s 23
+11A0 ldc.i4 -65361110
+11A5 mul 
+11A6 ldc.i4 -775070622
+11AB xor 
+11AC br -930
+11B1 ldloc.1 
+11B2 callvirt Int32 get_Count()
+11B7 ldc.i4.1 
+11B8 beq.s 8
+11BA ldc.i4 1478564728
+11BF dup 
+11C0 br.s 6
+11C2 ldc.i4 1635069492
+11C7 dup 
+11C8 pop 
+11C9 ldloc.s 23
+11CB ldc.i4 -1580392744
+11D0 mul 
+11D1 xor 
+11D2 br -968
+11D7 ldloc.s 20
+11D9 ldloc.1 
+11DA ldc.i4.0 
+11DB callvirt Visual_PIX.Model.PixControl get_Item(Int32)
+11E0 castclass Visual_PIX.Model.Controls.ProtocolCtrl
+11E5 stfld Visual_PIX.Model.Controls.ProtocolCtrl AjdrRejgBFOZdQcwRdAXDvXPVUOO
+11EA ldloc.s 23
+11EC ldc.i4 -2110020483
+11F1 mul 
+11F2 ldc.i4 1173379630
+11F7 xor 
+11F8 br -1006
+11FD ldloc.s 22
+11FF ldfld Visual_PIX.Model.Controls.ExProtocolCtrl VkHKrkwvOKcDusuaBfYIHRbadnSW
+1204 ldarg.0 
+1205 ldftn Int32 rLjDEERzFziiWyAhUAxYeQGWmAorA(Byte, Byte, UInt16, UInt16, Int32)
+120B newobj Void .ctor(System.Object, IntPtr)
+1210 stfld System.Func`6[System.Byte,System.Byte,System.UInt16,System.UInt16,System.Int32,System.Int32] ModbusReadDel
+1215 ldloc.s 23
+1217 ldc.i4 -1291688317
+121C mul 
+121D ldc.i4 1608093473
+1222 xor 
+1223 br -1049
+1228 ldloc.s 22
+122A ldarg.0 
+122B ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+1230 ldloc.s 22
+1232 ldftn Boolean gQhGfzzwmREPzbpGOjDHioGhJZZAB(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+1238 newobj Void .ctor(System.Object, IntPtr)
+123D call rGSQMnBljBHaLbQwBFqqGvKDmbYY FirstOrDefault[rGSQMnBljBHaLbQwBFqqGvKDmbYY](System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]], System.Func`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl],System.Boolean])
+1242 stfld rGSQMnBljBHaLbQwBFqqGvKDmbYY LbrViQmWLWqtSlEWOgHOcnPIVvwpA
+1247 ldloc.s 23
+1249 ldc.i4 1123068412
+124E mul 
+124F ldc.i4 202574955
+1254 xor 
+1255 br -1099
+125A ldloc.s 20
+125C ldarg.0 
+125D stfld Visual_PIX.Modules.Home.ViewModels.DebugViewModel lkVlMpeGQXBwHcWCuvrfDEOrPexM
+1262 ldloc.s 23
+1264 ldc.i4 975606421
+1269 mul 
+126A ldc.i4 862388785
+126F xor 
+1270 br -1126
+1275 ret 

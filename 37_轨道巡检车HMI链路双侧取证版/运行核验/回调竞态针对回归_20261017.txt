@@ -1,0 +1,89 @@
+✔ 固定读帧与CRC向量 (1.6845ms)
+✔ 完整24字申请帧及特殊字序 (0.3057ms)
+✔ RPM边界及保留参数 (0.4034ms)
+✔ 重复目标不续期且旧序号拒绝 (0.3304ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (84.0015ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (30.9309ms)
+✔ 释放后回中并返回，不继续发送旧目标 (87.4517ms)
+✔ 主控重启清会话与旧目标，不自动授权 (71.3678ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (67.3208ms)
+✔ 只读固件不能授权 (44.478ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.2357ms)
+✔ 控制期间状态读取最大150ms，目标刷新最大200ms (96.9809ms)
+✖ 元数据丢失恢复含100ms排空且0460仍有界轮询，不能开放控制 (39.0151ms)
+✖ 元数据丢失恢复后重新确认身份，不自动申请授权 (37.2001ms)
+✔ 回调bcaddr失配不释放事务、不刷新状态缓存 (2.9356ms)
+✔ 回调bdindex失配不释放事务、不刷新状态缓存 (2.9534ms)
+✔ 回调bdaddr失配不释放事务、不刷新状态缓存 (2.4013ms)
+✔ 回调bdcount失配不释放事务、不刷新状态缓存 (2.5932ms)
+✔ 控制状态读取超时后清目标，恢复响应不自动重新授权 (59.8427ms)
+✔ 只读主页与控制页往返不停止全局状态查询 (69.8569ms)
+✔ 固定读帧与CRC向量 (1.0334ms)
+✔ 完整24字申请帧及特殊字序 (0.3216ms)
+✔ RPM边界及保留参数 (0.441ms)
+✔ 重复目标不续期且旧序号拒绝 (0.3374ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (85.312ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (30.1941ms)
+✔ 释放后回中并返回，不继续发送旧目标 (93.7775ms)
+✔ 主控重启清会话与旧目标，不自动授权 (66.9749ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (70.9928ms)
+✔ 只读固件不能授权 (43.9515ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.2645ms)
+✔ 原生派发延迟100ms不会提前撤销在途或产生R1/R3竞争 (75.5752ms)
+✔ 超时撤销尚未派发的原生读取，不遗留后台读取次数 (5.0065ms)
+✔ 1ms原生间隔最坏8条目扫描模型仍保持目标和状态预算 (410.3567ms)
+✔ 每次读之前撤销其他条目，只有一个单次读取被置为1 (29.2559ms)
+✔ 滑块未授权也可见，但拖动不能写入运动目标 (35.6349ms)
+✔ 实际Buffer配置工具同步约束1ms循环间隔和50ms响应期限 (0.3992ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 35
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1058.423
+
+✖ failing tests:
+
+test at hmi13-link-recovery.test.cjs:24:1
+✖ 元数据丢失恢复含100ms排空且0460仍有界轮询，不能开放控制 (39.0151ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(largestGap(statusReads) <= 300)
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-link-recovery.test.cjs:31:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at hmi13-link-recovery.test.cjs:38:1
+✖ 元数据丢失恢复后重新确认身份，不自动申请授权 (37.2001ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(largestGap(readsAt(run, 1120)) <= 300)
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\13_轨道巡检车UART5共同目标转速控制版\hmi13-link-recovery.test.cjs:50:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

@@ -1,0 +1,28 @@
+# Keil MDK 编译输出与中间文件
+MDK-ARM/Remote_control/
+MDK-ARM/*.lst
+MDK-ARM/*.map
+MDK-ARM/*.htm
+MDK-ARM/*.lnp
+MDK-ARM/*.dep
+MDK-ARM/*.txt
+MDK-ARM/*.axf
+MDK-ARM/*.hex
+MDK-ARM/*.bin
+MDK-ARM/*.o
+MDK-ARM/*.d
+MDK-ARM/*.crf
+
+# Keil 用户本地工程选项与界面布局
+MDK-ARM/*.uvoptx
+MDK-ARM/*.uvguix.*
+
+# 常见编辑器和操作系统临时文件
+.vs/
+.vscode/
+*.user
+*.suo
+*.tmp
+*.bak
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,11 @@
+Assertion failed!
+
+Program: C:\Users\15056\AppData\Local\Temp\rail_production_guards_e0d8436839c24b7f9a5c8969045191af.exe
+File: Tests/test_production_guards.c, Line 25
+
+Expression: aimtor_set_control_mode(SERVO_AXIS_LEFT, SERVO_CONTROL_PULSE_POSITION) == SERVO_NOT_CONFIGURED
+Exception: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_production_guard_tests.ps1:14
+Line |
+  14 |      if ($LASTEXITCODE -ne 0) { throw '生产模式保护门禁测试失败' }
+     |                                 ~~~~~~~~~~~~~~~~~~~~
+     | 生产模式保护门禁测试失败

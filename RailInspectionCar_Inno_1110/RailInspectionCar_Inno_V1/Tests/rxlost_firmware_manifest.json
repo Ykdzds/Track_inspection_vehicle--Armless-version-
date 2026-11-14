@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-23",
+  "hardware_verified": false,
+  "flashed_by_agent": false,
+  "diagnostics_enabled": true,
+  "protocol_bytes": 32,
+  "control_timeout_ms": 150,
+  "return_timeout_ms": 300,
+  "firmware": [
+    {
+      "project": "RailInspectionCar_V1",
+      "path_from_manifest": "../MDK-ARM/RailInspectionCar_V1/RailInspectionCar_V1.hex",
+      "build_id": "rxlost-v1-Oct 23 2026-16:24:34",
+      "build_machine_utc_offset": "+08:00",
+      "bytes": 709548,
+      "sha256": "D1ECE3189F0D1298497F45A17617755A4D1473DC199475E8605E41BFA174AEE8"
+    },
+    {
+      "project": "Remote_control",
+      "path_from_manifest": "../../Remote_control/MDK-ARM/Remote_control/Remote_control.hex",
+      "build_id": "rxlost-v1-Oct 23 2026-16:25:37",
+      "build_machine_utc_offset": "+08:00",
+      "bytes": 109303,
+      "sha256": "C5B1F568E0849BC15E17C0C2C6562E96AD60276D810B219CB954139DCA20E052"
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+diff --git a/APP/HMI/app_hmi.c b/APP/HMI/app_hmi.c
+index b3cc113..c5b8383 100644
+--- a/APP/HMI/app_hmi.c
++++ b/APP/HMI/app_hmi.c
+@@ -138,6 +138,22 @@ uint8_t app_hmi_cli_command(const char *line)
+     hmi_uart_stats_t stats;
+     uint8_t i;
+     uint32_t now, age;
++    if (strcmp(line, "hmi trace") == 0)
++    {
++        app_hmi_trace_stats_t trace;
++        app_hmi_trace_event_t event;
++        app_hmi_control_trace_stats(&trace);
++        printf("hmi trace total=%lu count=%u max_target_gap_ms=%lu first_anomaly_ms=%lu gap_ms=%lu\r\n",
++            (unsigned long)trace.total, trace.count, (unsigned long)trace.max_target_gap_ms,
++            (unsigned long)trace.first_anomaly_ms, (unsigned long)trace.first_anomaly_gap_ms);
++        for (i = 0U; i < trace.count; ++i)
++            if (app_hmi_control_trace_read(i, &event))
++                printf("hmi event at=%lu kind=%u session=%lu seq=%lu age=%lu lease=%u stop=%lu reason=%u error=%u\r\n",
++                    (unsigned long)event.at_ms, event.kind, (unsigned long)event.session,
++                    (unsigned long)event.sequence, (unsigned long)event.target_age_ms,
++                    event.remaining_ms, (unsigned long)event.stop_event, event.reason, event.error);
++        return 1U;
++    }
+     if (strcmp(line, "hmi status") != 0) return 0U;
+     app_hmi_control_get_status(&control);
+     printf("hmi control owner=%u generation=%lu session=%lu state=%u flags=%04X age=%lu seq=%lu target=%d output=%d,%d sync=%u correction=%d error=%u\r\n",
+diff --git a/APP/HMI/app_hmi_control.c b/APP/HMI/app_hmi_control.c
+index 447c917..3e7b2ab 100644
+--- a/APP/HMI/app_hmi_control.c
++++ b/APP/HMI/app_hmi_control.c
+@@ -58,11 +58,46 @@ static uint16_t s_stop_result_command;
+ static uint16_t s_accepted_state, s_accepted_error;
+ static uint32_t s_accepted_session, s_accepted_completed;
+ static uint16_t s_result_command, s_result_state, s_result_error;
++static app_hmi_trace_event_t s_trace[APP_HMI_TRACE_CAPACITY];
++static app_hmi_trace_stats_t s_trace_stats;
++static uint16_t s_trace_next;
++static uint32_t s_trace_session, s_trace_target_at, s_trace_stop, s_trace_stop_result;
++static uint8_t s_trace_target_seen, s_trace_anomaly_seen;
+ 
+ static uint32_t elapsed(TickType_t now, TickType_t before)
+ { return (uint32_t)((uint64_t)(now - before) * 1000U / configTICK_RATE_HZ); }
+ static uint32_t word32(const uint16_t *words, uint8_t offset)
+ { return ((uint32_t)words[offset] << 16U) | words[offset + 1U]; }
++static void trace_event(uint16_t kind, uint16_t reason, uint16_t error)
++{
++    app_hmi_trace_event_t entry;
++    app_control_stop_t stop;
++    app_control_arbiter_get_stop(&stop);
++    entry.at_ms = HAL_GetTick(); entry.session = s_session;
++    entry.sequence = (kind == APP_HMI_TRACE_REJECT || kind == APP_HMI_TRACE_TARGET) ?
++        s_result_sequence : s_last_sequence;
++    entry.target_age_ms = s_session ? elapsed(xTaskGetTickCount(), s_target_tick) : UINT32_MAX;
++    entry.remaining_ms = app_hmi_control_remaining_ms(); entry.stop_event = stop.event;
++    entry.kind = kind; entry.reason = reason; entry.error = error;
++    taskENTER_CRITICAL();
++    s_trace[s_trace_next] = entry;
++    s_trace_next = (uint16_t)((s_trace_next + 1U) % APP_HMI_TRACE_CAPACITY);
++    if (s_trace_stats.count < APP_HMI_TRACE_CAPACITY) ++s_trace_stats.count;
++    ++s_trace_stats.total;
++    taskEXIT_CRITICAL();
++}
++void app_hmi_control_trace_stats(app_hmi_trace_stats_t *out)
++{ if (out) { taskENTER_CRITICAL(); *out = s_trace_stats; taskEXIT_CRITICAL(); } }
++uint8_t app_hmi_control_trace_read(uint16_t index, app_hmi_trace_event_t *out)
++{
++    uint16_t start;
++    if (!out) return 0U;
++    taskENTER_CRITICAL();
++    if (index >= s_trace_stats.count) { taskEXIT_CRITICAL(); return 0U; }
++    start = (uint16_t)((s_trace_next + APP_HMI_TRACE_CAPACITY - s_trace_stats.count) % APP_HMI_TRACE_CAPACITY);
++    *out = s_trace[(start + index) % APP_HMI_TRACE_CAPACITY];
++    taskEXIT_CRITICAL(); return 1U;
++}
+ static int32_t magnitude(int16_t value) { return value < 0 ? -(int32_t)value : value; }
+ static uint8_t selected(uint8_t axis)
+ { return (app_config_servo_control_axis_mask() & (1U << axis)) != 0U; }
+@@ -142,6 +177,7 @@ static void result(uint16_t state, uint16_t error, uint32_t completed)
+ {
+     s_result_state = state; s_result_error = error; s_result_completed = completed;
+     s_error = error;
++    if (state == RESULT_REJECTED) trace_event(APP_HMI_TRACE_REJECT, 0U, error);
+     publish_result(s_result_session, s_result_sequence, s_result_command,
+         state, error, s_result_received, completed);
+     if (s_result_sequence == s_last_sequence && state != RESULT_REJECTED)
+@@ -184,6 +220,15 @@ static void update_status(void)
+     s_status.zero_mask = (s_zero[0] >= 2U ? 1U : 0U) | (s_zero[1] >= 2U ? 2U : 0U);
+     s_status.error = s_error; s_status.sync = s_sync;
+     app_control_arbiter_get_stop(&s_status.stop);
++    if (s_session && s_session != s_trace_session && !s_stopping)
++    { s_trace_session = s_session; s_trace_target_seen = 0U; trace_event(APP_HMI_TRACE_ACQUIRE, 0U, 0U); }
++    if (!s_session) s_trace_session = 0U;
++    if (s_status.stop.event != s_trace_stop || s_status.stop.result != s_trace_stop_result)
++    {
++        s_trace_stop = s_status.stop.event; s_trace_stop_result = s_status.stop.result;
++        if (s_status.stop.event) trace_event(s_status.stop.result == RESULT_RUNNING ?
++            APP_HMI_TRACE_STOP : APP_HMI_TRACE_COMPLETE, s_status.stop.reason, s_status.stop.error);
++    }
+     if (s_observed_event && s_status.stop.event == s_observed_event)
+     {
+         s_status.stop.request_sequence = s_observed_sequence;
+@@ -195,18 +240,22 @@ static void update_status(void)
+     if (s_status.stop.owner != APP_CONTROL_OWNER_HMI && s_status.stop.event)
+         s_status.elapsed_ms = s_status.stop.result == RESULT_RUNNING ?
+             HAL_GetTick() - s_status.stop.started_ms : s_status.stop.completed_ms - s_status.stop.started_ms;
++    /* Current motion wins over retained stop history.  The event remains
++     * available for diagnostics/K5 correlation after a new authorization. */
+     s_status.phase = s_stopping ? (s_zero_confirming ? 3U :
+         (s_zero_written == app_config_servo_control_axis_mask() ? 2U : 1U)) :
+-        (s_status.stop.result == RESULT_SUCCEEDED ? 4U : (s_status.state == 6U ? 5U : 0U));
++        (s_session || s_preparing ? 0U :
++        (s_status.stop.result == RESULT_SUCCEEDED ? 4U : (s_status.state == 6U ? 5U : 0U)));
+     if (s_status.stop.result == RESULT_RUNNING && s_status.stop.owner != APP_CONTROL_OWNER_HMI)
+         s_status.phase = 1U;
+-    if (s_status.stop.result == RESULT_FAILED) s_status.phase = 5U;
++    if (s_status.stop.result == RESULT_FAILED && !s_session && !s_preparing) s_status.phase = 5U;
+     if (s_status.state != 6U)
+         s_status.state = s_preparing ? 1U : s_stopping ? (s_status.phase >= 2U ? 5U : 4U) :
+             (s_session ? (s_target || s_output[0] || s_output[1] ? 3U : 2U) : 0U);
+     s_status.flags = (APP_HMI_CONTROL_ENABLED ? 1U : 0U) | 128U |
+         (s_session && !s_stopping ? 2U : 0U) | (s_status.stop.result == RESULT_RUNNING ? 4U : 0U) |
+-        (s_status.stop.result == RESULT_SUCCEEDED && !s_status.stop.error &&
++        (!s_session && !s_preparing && app_control_arbiter_owner() == APP_CONTROL_OWNER_NONE &&
++            s_status.stop.result == RESULT_SUCCEEDED && !s_status.stop.error &&
+             s_status.stop.zero_mask && s_status.stop.zero_mask == s_status.stop.enabled_mask ? 8U : 0U) |
+         (s_reverse ? 16U : 0U) | (s_status.state == 6U ? 96U : 0U);
+     taskENTER_CRITICAL(); s_published = s_status; taskEXIT_CRITICAL();
+@@ -215,6 +264,9 @@ void app_hmi_control_get_status(app_hmi_control_status_t *status)
+ { if (status) { taskENTER_CRITICAL(); *status = s_published; taskEXIT_CRITICAL(); } }
+ void app_hmi_control_init(void)
+ {
++    memset(&s_trace_stats, 0, sizeof(s_trace_stats)); s_trace_next = 0U;
++    s_trace_session = s_trace_target_at = s_trace_stop = s_trace_stop_result = 0U;
++    s_trace_target_seen = s_trace_anomaly_seen = 0U;
+     app_dual_cancel(&s_dual);
+     app_normal_ramp_begin(&s_normal_clock, HAL_GetTick());
+     s_normal_batch_active = 0U;
+@@ -480,11 +532,23 @@ static void process_request(void)
+             if (elapsed(xTaskGetTickCount(), s_request.received) >= words[17]) error = ERR_TIMEOUT;
+             else
+             {
++                uint32_t at = s_result_received;
++                if (s_trace_target_seen)
++                {
++                    uint32_t gap = at - s_trace_target_at;
++                    taskENTER_CRITICAL();
++                    if (gap > s_trace_stats.max_target_gap_ms) s_trace_stats.max_target_gap_ms = gap;
++                    if (gap > 200U && !s_trace_anomaly_seen)
++                    { s_trace_anomaly_seen = 1U; s_trace_stats.first_anomaly_ms = at; s_trace_stats.first_anomaly_gap_ms = gap; }
++                    taskEXIT_CRITICAL();
++                }
++                s_trace_target_seen = 1U; s_trace_target_at = at;
+                 app_dual_target(&s_dual,
+                     app_dual_nominal_rpm_to_wheel((float)(int16_t)(int32_t)word32(words, 10U)),
+                     sequence, s_result_received, s_result_received + words[17], HAL_GetTick());
+                 s_target = (int16_t)(int32_t)word32(words, 10U);
+                 s_target_tick = s_lease_tick = s_request.received; s_target_ttl = words[17];
++                trace_event(APP_HMI_TRACE_TARGET, 0U, 0U);
+                 app_sync_target(APP_CONTROL_OWNER_HMI,(float)s_target,s_result_received,sequence,s_generation);
+             }
+         }
+diff --git a/APP/HMI/app_hmi_control.h b/APP/HMI/app_hmi_control.h
+index 3c4f64e..a70cfea 100644
+--- a/APP/HMI/app_hmi_control.h
++++ b/APP/HMI/app_hmi_control.h
+@@ -14,6 +14,21 @@ typedef struct
+     app_control_stop_t stop;
+ } app_hmi_control_status_t;
+ 
++/* Fixed-memory diagnostic history. No printing or allocation in control paths. */
++#define APP_HMI_TRACE_CAPACITY 64U
++enum { APP_HMI_TRACE_ACQUIRE = 1U, APP_HMI_TRACE_TARGET, APP_HMI_TRACE_STOP,
++       APP_HMI_TRACE_COMPLETE, APP_HMI_TRACE_REJECT };
++typedef struct {
++    uint32_t at_ms, session, sequence, target_age_ms, stop_event;
++    uint16_t kind, remaining_ms, reason, error;
++} app_hmi_trace_event_t;
++typedef struct {
++    uint32_t total, max_target_gap_ms, first_anomaly_ms, first_anomaly_gap_ms;
++    uint16_t count;
++} app_hmi_trace_stats_t;
++void app_hmi_control_trace_stats(app_hmi_trace_stats_t *out);
++uint8_t app_hmi_control_trace_read(uint16_t index, app_hmi_trace_event_t *out);
++
+ void app_hmi_control_get_status(app_hmi_control_status_t *status);
+ void app_hmi_control_init(void);
+ void app_hmi_control_service(void);
+diff --git a/APP/HMI/app_hmi_state.c b/APP/HMI/app_hmi_state.c
+index e44cae6..5415872 100644
+--- a/APP/HMI/app_hmi_state.c
++++ b/APP/HMI/app_hmi_state.c
+@@ -746,7 +746,9 @@ void app_hmi_state_build(const hmi_state_input_t *in, hmi_alarm_state_t *alarm,
+         }
+         r[0x48EU + i] = speed_valid(in, i) ? age16(axis->speed_age_ms) : 0xFFFFU;
+     }
+-    r[0x47CU] = in->hmi_control.stop.result == 3U ? in->hmi_control.stop.zero_mask : in->hmi_control.zero_mask;
++    /* Historical stop zero proof does not describe an active new session. */
++    r[0x47CU] = !in->hmi_control.session && in->hmi_control.stop.result == 3U ?
++        in->hmi_control.stop.zero_mask : in->hmi_control.zero_mask;
+     r[0x47DU] = in->hmi_control.stop.reason;
+     r[0x47EU] = in->hmi_control.phase;
+     r[0x47FU] = in->hmi_control.stop.deceleration_mm_s2;
+diff --git a/APP/app_config.h b/APP/app_config.h
+index 819d5dc..f62d50b 100644
+--- a/APP/app_config.h
++++ b/APP/app_config.h
+@@ -137,7 +137,7 @@
+ #define APP_HMI_DETAIL_START           (0x0300U)
+ #define APP_HMI_DETAIL_REGISTERS       (352U)
+ #define APP_HMI_FW_VERSION             (0x0100U)
+-#define APP_HMI_FW_PATCH               (1U)
++#define APP_HMI_FW_PATCH               (2U)
+ 
+ /*
+  * 机械参数配置。
+diff --git a/Tests/test_hmi_control.c b/Tests/test_hmi_control.c
+index 40597d2..1e83048 100644
+--- a/Tests/test_hmi_control.c
++++ b/Tests/test_hmi_control.c
+@@ -1077,6 +1077,67 @@ static void test_degraded_output_and_resume(void)
+     puts("PASS HMI degraded: session retained, no increase, resume jump or reversal");
+ }
+ 
++static void test_trace_ring_wrap_and_target_intervals(void)
++{
++    uint16_t mailbox[24];
++    uint32_t session, sequence;
++    app_hmi_trace_stats_t stats;
++    app_hmi_trace_event_t entry, prior;
++    unsigned i;
++    reset_fixture();
++    make_mailbox(mailbox, TEST_CMD_ACQUIRE, 0U, 1U, 0, 0U); submit_service(mailbox);
++    session = app_hmi_control_session(); assert(session);
++    for (sequence = 2U; sequence < 74U; ++sequence)
++    {
++        advance_ms(sequence == 3U ? 250U : 10U);
++        make_mailbox(mailbox, TEST_CMD_SPEED, session, sequence, 0, 500U); submit_service(mailbox);
++        assert(g_result.state == TEST_RESULT_ACCEPTED);
++    }
++    app_hmi_control_trace_stats(&stats);
++    assert(stats.count == APP_HMI_TRACE_CAPACITY && stats.total > stats.count);
++    assert(stats.max_target_gap_ms == 250U && stats.first_anomaly_gap_ms == 250U);
++    assert(stats.first_anomaly_ms > 0U);
++    memset(&prior, 0, sizeof(prior));
++    for (i = 0; i < stats.count; ++i)
++    {
++        assert(app_hmi_control_trace_read((uint16_t)i, &entry));
++        assert(entry.kind == APP_HMI_TRACE_TARGET && entry.session == session);
++        assert(entry.sequence == 10U + i && entry.at_ms >= prior.at_ms);
++        prior = entry;
++    }
++    assert(!app_hmi_control_trace_read(APP_HMI_TRACE_CAPACITY, &entry));
++    assert(!app_hmi_control_trace_read(0U, NULL));
++    app_hmi_control_trace_stats(NULL);
++    reset_fixture(); app_hmi_control_trace_stats(&stats); assert(!stats.total && !stats.count);
++    puts("PASS HMI trace: fixed ring wrap, current sequence, timing maximum, first anomaly and reset");
++}
++
++static void test_reauthorize_does_not_publish_historical_stop_as_current(void)
++{
++    uint16_t mailbox[24];
++    uint32_t session, event;
++    unsigned n;
++    app_hmi_control_status_t status;
++    reset_fixture();
++    g_feedback_progress = 1U;
++    make_mailbox(mailbox, TEST_CMD_ACQUIRE, 0U, 1U, 0, 0U);
++    submit_service(mailbox);
++    session = app_hmi_control_session(); assert(session);
++    make_mailbox(mailbox, TEST_CMD_STOP, session, 2U, 0, 0U);
++    submit_service(mailbox);
++    for (n = 0U; n < 2000U && app_hmi_control_session(); ++n)
++    { advance_ms(10U); app_hmi_control_service(); }
++    app_hmi_control_get_status(&status);
++    assert(!status.session && status.phase == 4U && (status.flags & 8U));
++    event = status.stop.event;
++    make_mailbox(mailbox, TEST_CMD_ACQUIRE, 0U, 3U, 0, 0U);
++    submit_service(mailbox);
++    app_hmi_control_get_status(&status);
++    assert(status.session && status.phase == 0U && !(status.flags & 12U));
++    assert(status.stop.event == event && status.stop.result == TEST_RESULT_SUCCEEDED);
++    puts("PASS new authorization publishes current phase, retains historical stop");
++}
++
+ int main(void)
+ {
+     setbuf(stdout, NULL);
+@@ -1090,7 +1151,9 @@ int main(void)
+         assert(!g_velocity_calls && !g_stop_calls && !app_hmi_control_session());
+         puts("PASS HMI disabled/readonly rejects authorization"); return 0;
+     }
++    test_trace_ring_wrap_and_target_intervals();
+     test_authorization_preparation();
++    test_reauthorize_does_not_publish_historical_stop_as_current();
+     test_r2_boundaries_and_lifetime();
+     test_stop_priority_and_write_completion();
+     test_repeated_hmi_estop_after_confirmed_stop();
+diff --git a/Tests/test_hmi_integration.c b/Tests/test_hmi_integration.c
+index dba48b1..9c1b3ec 100644
+--- a/Tests/test_hmi_integration.c
++++ b/Tests/test_hmi_integration.c
+@@ -150,6 +150,9 @@ void app_hmi_control_get_status(app_hmi_control_status_t *status) { memset(statu
+ bool app_can_control_get_status(app_can_control_status_t *out)
+ { memset(out, 0, sizeof(*out)); out->stop_result = 255U; return true; }
+ uint16_t app_hmi_control_remaining_ms(void) { return 0U; }
++void app_hmi_control_trace_stats(app_hmi_trace_stats_t *out) { memset(out, 0, sizeof(*out)); }
++uint8_t app_hmi_control_trace_read(uint16_t index, app_hmi_trace_event_t *out)
++{ (void)index; (void)out; return 0U; }
+ uint32_t app_hmi_control_session(void) { return 0U; }
+ uint32_t app_control_arbiter_generation(void) { return snapshot_generation; }
+ app_control_owner_t app_control_arbiter_owner(void) { return snapshot_owner; }
+diff --git a/Tests/test_hmi_state.c b/Tests/test_hmi_state.c
+index 6a43aea..83ef526 100644
+--- a/Tests/test_hmi_state.c
++++ b/Tests/test_hmi_state.c
+@@ -31,6 +31,10 @@ static void build(void) { app_hmi_state_build(&in, &alarm, r); }
+ int main(void)
+ {
+     uint32_t event;
++    ready(); in.hmi_control.stop.result = 3U; in.hmi_control.stop.zero_mask = 3U;
++    in.hmi_control.session = 42U; in.hmi_control.zero_mask = 0U;
++    build(); assert(r[0x47C] == 0U);
++    in.hmi_control.session = 0U; build(); assert(r[0x47C] == 3U);
+     ready(); build();
+     assert(r[0x48A] == 500 && r[0x48B] == 600);
+     assert(r[0x18] == 0x1234 && r[0x19] == 0x5678 && r[0x204] == r[0x18]);

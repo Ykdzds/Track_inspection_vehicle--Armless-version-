@@ -1,0 +1,338 @@
+{
+  "CapturedAt": "2026-10-17T14:29:24.0509043+08:00",
+  "Baseline08Unchanged": true,
+  "Baseline13Unchanged": true,
+  "ReferenceF103Unchanged": true,
+  "ProtectedFiles": 2166,
+  "Baseline13ProtectedFiles": 248,
+  "UserReportedBaselineCommunicationWorking": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "Files": [
+    {
+      "Name": "08基线文件哈希.json",
+      "Length": 9180,
+      "SHA256": "32CDAA35481AC06688A244ED069586425E1B7623AABA1CB2D17F565145023042"
+    },
+    {
+      "Name": "13_轨道巡检车.pix",
+      "Length": 89594,
+      "SHA256": "35739960FB37153911A88ADB27C56BCFC288C6081BB14287FD615B1F77853550"
+    },
+    {
+      "Name": "13_轨道巡检车.pix.bin",
+      "Length": 222281,
+      "SHA256": "759DB4BE928C7B06FD834AA65C822AF03B43CF163DE0BFDCDAC78FA03F7B8FCE"
+    },
+    {
+      "Name": "13号字库字符集.txt",
+      "Length": 2240,
+      "SHA256": "C5ACBB050D58AD3420FE77C77865B024B4901AFBC0787A0BBEDDFC0C12815A1F"
+    },
+    {
+      "Name": "17_轨道巡检车.pix",
+      "Length": 89703,
+      "SHA256": "FFFC1C84F0C2AB03BB5487EFCEE385E5E1D57435DDF783843FEB55C0AE332F5D"
+    },
+    {
+      "Name": "17_轨道巡检车.pix.bin",
+      "Length": 223339,
+      "SHA256": "3A9DA2DB143B81E13F45635A4F1036BC9DBC51366E124BA5DB304E173CA00D9D"
+    },
+    {
+      "Name": "17号授权联调与验收说明.md",
+      "Length": 8396,
+      "SHA256": "7985BFE91667B63CEC96C191B36D463025E4DD000DFC6CF5EAA3C42C9CE13AF1"
+    },
+    {
+      "Name": "安装13号事件.ps1",
+      "Length": 1525,
+      "SHA256": "3EF6904197F2086BD07C371B91C3C8818855A0D803EFFA4EAD4F4C862B520442"
+    },
+    {
+      "Name": "车载屏中文32_补字候选.pixelFont",
+      "Length": 55188,
+      "SHA256": "3DC5DD860F86329820850C41EE66BB735EAD08C40330BB92C98378B4AE9F173C"
+    },
+    {
+      "Name": "车载屏中文32_完整补字.pixelFont",
+      "Length": 55823,
+      "SHA256": "9AF0215104083E88B77416350250DD1D303A9D400B55693CEBEB218C2C8408B4"
+    },
+    {
+      "Name": "车载屏中文32_R2完整.pixelFont",
+      "Length": 56540,
+      "SHA256": "BA76CF339ECB25DB91D4B7F1EC5BEC5759D82A6F459543FD1F65CE22A3BF8677"
+    },
+    {
+      "Name": "车载屏中文32.pixelFont",
+      "Length": 54535,
+      "SHA256": "03CBEE58FF6E71EBA25E74A2B9620FAF2CEB87E67C4A3A06EE94714DD0CA9358"
+    },
+    {
+      "Name": "创建13号页面.ps1",
+      "Length": 1419,
+      "SHA256": "573E3B48EC9B7A5061EC05CE2B7CFF6EDCECC6D57E20411C218C057A306B73AB"
+    },
+    {
+      "Name": "调度压力记录.cjs",
+      "Length": 1177,
+      "SHA256": "4C71CC315BF9E4E809F4D813404C37F611EA2716F56E06658A345B21712292F1"
+    },
+    {
+      "Name": "核验13号交付.ps1",
+      "Length": 3226,
+      "SHA256": "04DAAA5455EC25D7F83FA5F1C8B1BB139776D62B2B89DCA057B40C6321BB3876"
+    },
+    {
+      "Name": "回调失配与滑块修复_Default同步版.md",
+      "Length": 9136,
+      "SHA256": "C5ED4C68E8CEEF2C66813BE13B8006D037717DE0BF507EDF9DA47BDA6041F592"
+    },
+    {
+      "Name": "记录最终交付.ps1",
+      "Length": 3102,
+      "SHA256": "E365864617BFB13112B1286E09339FAC27AB65C452624CBB058AE658D7FE2B3F"
+    },
+    {
+      "Name": "联调操作说明.md",
+      "Length": 3975,
+      "SHA256": "BFA3696C1BF6B31BE7BBD1EAC0387303C3894A8A4878532C440B0A204C8B8B77"
+    },
+    {
+      "Name": "联合验收矩阵.md",
+      "Length": 6796,
+      "SHA256": "F6FF3D04BB6E024D81A1C5F88FA1CD03690ACD45EE4A24FF034A9543650DED07"
+    },
+    {
+      "Name": "零接收根因与主站配置修复_20261016.md",
+      "Length": 7521,
+      "SHA256": "08271D11C975721441C549B4ABB558034AA15606AE8401F4D1E3C847B35CC06C"
+    },
+    {
+      "Name": "配置13号Buffer.ps1",
+      "Length": 4756,
+      "SHA256": "C56B2D61A4CFCAF2D3E8493BC3970FC4E3D7207FF0E41583A8D28EC020F8B8BE"
+    },
+    {
+      "Name": "全局计龄刷新.txt",
+      "Length": 62628,
+      "SHA256": "FC94D2B11E36FCA6A0F5EA0EA2EEA4318873FF304E9BFB4C131C33B853C91E79"
+    },
+    {
+      "Name": "全量修复说明_20261016.md",
+      "Length": 5236,
+      "SHA256": "F20347C3C798FF9715B2C453FDE47D8FB12AB9BD083F804DC1855E99614CA463"
+    },
+    {
+      "Name": "全模式只读显示回归测试.cjs",
+      "Length": 8452,
+      "SHA256": "2021C8FA0EFABB15AF1BBF191B0932F9F1ECFF120AA78659CA492D3A424BA2D0"
+    },
+    {
+      "Name": "生成全量审查表.cjs",
+      "Length": 2507,
+      "SHA256": "2A74958E2F1FC54EF7A4EA6E8DFED00D1627060FA03E80529DF1F7F791E11C16"
+    },
+    {
+      "Name": "生成同步事务服务.cjs",
+      "Length": 1043,
+      "SHA256": "E2DAF8459A10AEEEB767E9B95C9DB0F6FE4433AAFF3CC5C648035E9A2D482FD4"
+    },
+    {
+      "Name": "实施记录.md",
+      "Length": 4398,
+      "SHA256": "9392CCAE5EA90564957CDFE9906E09EC93A9F0E51F0FAA44D5C2B3556C96B509"
+    },
+    {
+      "Name": "现场基础区未更新分析与复测_20261016.md",
+      "Length": 6987,
+      "SHA256": "68CF23ABB4F65D333355514456AEA98FD7B7531C90B378314C1A583A02999C3D"
+    },
+    {
+      "Name": "现场抓帧核验.cjs",
+      "Length": 7714,
+      "SHA256": "76225E566628218B19EFA08226E2862D1FD2788C0280364BC84475DF495CB457"
+    },
+    {
+      "Name": "现场抓帧核验说明.md",
+      "Length": 3404,
+      "SHA256": "00E5E2EBA1292D9B5A8A9155F0752766BC19362A2059FCA29BD3153AD335B951"
+    },
+    {
+      "Name": "字体.pixelFont",
+      "Length": 3219,
+      "SHA256": "E1225FDF0F3FF7FDF0AD67EC8A402B756A007E80CE7947D788AF37C24F80593A"
+    },
+    {
+      "Name": "Buffer配置读回.json",
+      "Length": 3294,
+      "SHA256": "5B9042CF4D3A94DE6E6735C6E86D045926C25B0FD3D6942F2CE1E826E32CFA10"
+    },
+    {
+      "Name": "capture-audit.test.cjs",
+      "Length": 4083,
+      "SHA256": "E3294EB9960EBA4EC80F9F3EB0D72696C88BABE6640FA8BA27008F54C00200C3"
+    },
+    {
+      "Name": "config-artifact.test.cjs",
+      "Length": 5975,
+      "SHA256": "76E5AFFCD46951E94E7F4F4D4E798F527A1C99ECD9A6E85B0EEB04A24F4750CA"
+    },
+    {
+      "Name": "Default模式中断.txt",
+      "Length": 63,
+      "SHA256": "7957B9BBF6BC2C8B064D33B7C14D2D78BFDE8CC05412E7CA10510ED789D4B2A3"
+    },
+    {
+      "Name": "hmi13-audit-repair.test.cjs",
+      "Length": 5629,
+      "SHA256": "8AA2513E55D0750131A3CA147710EDD4804651C357DBE406EED0E07035CF3EC2"
+    },
+    {
+      "Name": "hmi13-capture.test.cjs",
+      "Length": 3766,
+      "SHA256": "36E54E3367CDAC7D6699E40BBBFB8290073AF09A7A6C9BE4458F0A338C0071F8"
+    },
+    {
+      "Name": "hmi13-failures.test.cjs",
+      "Length": 5129,
+      "SHA256": "2466314B004CABC7F69656562C1FEADAF0CC25283C62CB1663BA08125F245EEB"
+    },
+    {
+      "Name": "hmi13-field-capture.test.cjs",
+      "Length": 4082,
+      "SHA256": "E2B85DFD04DD348F9C182ACEFEFA18EFBECF931D01CB27F70FC7CA53141791C9"
+    },
+    {
+      "Name": "hmi13-link-recovery.test.cjs",
+      "Length": 5106,
+      "SHA256": "2380E1BBAE6A7CB75026D4C314A3B19101394AFAB1463FE93AAC5C67D7A36783"
+    },
+    {
+      "Name": "hmi13-native-dispatch.test.cjs",
+      "Length": 7565,
+      "SHA256": "CC3455B09FBB096195880C0A048F327133297012D3705C4C2EA8291206A75DC3"
+    },
+    {
+      "Name": "hmi13.test.cjs",
+      "Length": 11515,
+      "SHA256": "AE9890EB9EEA90B2681A5F356824D490B8D940F84F4066F404CBF54178E95521"
+    },
+    {
+      "Name": "HMI13界面刷新.txt",
+      "Length": 9427,
+      "SHA256": "ED5847AA8D723402F1734F52C4A5D2E7DEE865E910C4B951EC4459F3B755E8EB"
+    },
+    {
+      "Name": "HMI13启动初始化.txt",
+      "Length": 191,
+      "SHA256": "2DD4A43D88E2F7647AC332B96989FA31748ED6B9632B2B8B9ED3D9CD063321C5"
+    },
+    {
+      "Name": "HMI13事务服务.txt",
+      "Length": 31759,
+      "SHA256": "2DD223619BEF3912D0B9C7FC1595C653F8F9E411DB785EBD8C5A26D1CD8EAFDE"
+    },
+    {
+      "Name": "HMI13事务服务模板.txt",
+      "Length": 23683,
+      "SHA256": "5AA743A18716C12E45B6ABA33C60A1E1FF434247DD7767D577F6608A663D72BA"
+    },
+    {
+      "Name": "HMI13状态索引.json",
+      "Length": 2669,
+      "SHA256": "E6CC4CA6F03361DB327473F45DBE8A563E4A734E78BC1CE941B2790D928DDE29"
+    },
+    {
+      "Name": "hmi17-authority.test.cjs",
+      "Length": 6305,
+      "SHA256": "90A95389AB18B7E05891D567BE5E02FFF1488655ACE594D05AFA94756CE9C864"
+    },
+    {
+      "Name": "mod.txt",
+      "Length": 7797,
+      "SHA256": "C25088B3C8CEB05D12C19C64ECEF21276B9CC0963B020DBB3EC349CA1D6227F4"
+    },
+    {
+      "Name": "Modbus中断只读解析.txt",
+      "Length": 7797,
+      "SHA256": "C25088B3C8CEB05D12C19C64ECEF21276B9CC0963B020DBB3EC349CA1D6227F4"
+    },
+    {
+      "Name": "pix-ui.ps1",
+      "Length": 9423,
+      "SHA256": "9FA45C19757C69FC18290A5CCDE186E1C413B8197EEE9E724E345513B1965D57"
+    },
+    {
+      "Name": "r2-protocol.cjs",
+      "Length": 1889,
+      "SHA256": "4ACF9977F76BA6CCA7870D65310BAF58E0848BDB640B010E17245582BA889D0C"
+    },
+    {
+      "Name": "r2-simulator.cjs",
+      "Length": 7688,
+      "SHA256": "C093E41FF3B1949954ADEC3D427FE0E1DB866AB2DEA85F6CD5E4C89D7922FE6C"
+    },
+    {
+      "Name": "README.md",
+      "Length": 4379,
+      "SHA256": "CAC260B8671A7122767CFDE380097B49996EFA3786D4C2EA1295D388639F0B60"
+    },
+    {
+      "Name": "requirements.txt",
+      "Length": 14,
+      "SHA256": "0B81718D1CBE8A7696E45A9388C9205272B5E345CD79D0CF1CCFB7A9FD1925E9"
+    },
+    {
+      "Name": "serial-rtu-bridge.py",
+      "Length": 2965,
+      "SHA256": "EE4D09B401AA1463AF51B088FD9C5EC34A5EC0F9ED41C1451252F760993A6841"
+    },
+    {
+      "Name": "事件\\返回_弹起.txt",
+      "Length": 32,
+      "SHA256": "7129A6CC586C42495736659F44A94889E56A90761FC6BB2F8A49280A928353F4"
+    },
+    {
+      "Name": "事件\\滑块_滑动.txt",
+      "Length": 242,
+      "SHA256": "98C5AE4642590FE47A31C3DE522413FE0E791A524423DAAE12365DD6159D7EB3"
+    },
+    {
+      "Name": "事件\\急停_按下.txt",
+      "Length": 96,
+      "SHA256": "70E48552095F8336B16389D83EACA7295C19F358F3C614DDA3505ACAF317E3D2"
+    },
+    {
+      "Name": "事件\\授权_按下.txt",
+      "Length": 140,
+      "SHA256": "A25762B9955AC1D61217F9B16570ACBAD8F84DCC6407BDD936542BCEA29EF8CB"
+    },
+    {
+      "Name": "事件\\授权_弹起.txt",
+      "Length": 217,
+      "SHA256": "E15EB0881B898FAFD7EA4CC35F2F10CEDFB2D3B64735F53A0E5FF390FB88B3E2"
+    },
+    {
+      "Name": "事件\\主页入口_按下.txt",
+      "Length": 1,
+      "SHA256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+    },
+    {
+      "Name": "事件\\主页入口_弹起.txt",
+      "Length": 30,
+      "SHA256": "9F64EA98AFA33402C63CF12084A24717AB0A54F3CD3883CFD907FDE129FC9B07"
+    },
+    {
+      "Name": "事件\\P8_加载.txt",
+      "Length": 165,
+      "SHA256": "8B46DDF89E7E8B60383050F18B2A7E3E5911AF0F00BCA61F4C7CC8E527A99F20"
+    },
+    {
+      "Name": "事件\\P8_离开.txt",
+      "Length": 167,
+      "SHA256": "6E4D9FD8A2481BE78ECD2702B04F9E6FCD226379D5FFE45650D230662CA90D38"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+PASS ARM3 real port: immediate unknown transport lock; 500ms and atomic producer recheck; unconfigured safety rejects
+PASS ARM3 real port: immutable 16-entry ISR-free input queue, eight inputs per service, overflow/stale/stop fanout
+PASS ARM3 real port: consistent published double buffer, boundary checks, reads and ACK never call manager/adapters
+PASS ARM3 coherent read-only diagnostic cache, unknown startup, stale age and tick wrap
+PASS ARM3 real port: immediate unknown transport lock; 500ms and atomic producer recheck; unconfigured safety rejects
+PASS ARM3 real port: immutable 16-entry ISR-free input queue, eight inputs per service, overflow/stale/stop fanout
+PASS ARM3 real port: consistent published double buffer, boundary checks, reads and ACK never call manager/adapters
+PASS ARM3 coherent read-only diagnostic cache, unknown startup, stale age and tick wrap

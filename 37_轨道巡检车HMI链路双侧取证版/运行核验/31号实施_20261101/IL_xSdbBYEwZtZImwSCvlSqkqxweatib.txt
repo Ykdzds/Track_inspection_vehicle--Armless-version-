@@ -1,0 +1,214 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 newobj Void .ctor()
+0005 stloc.0 
+0006 ldloc.0 
+0007 ldarg.0 
+0008 stfld Visual_PIX.Modules.Home.ViewModels.DebugViewModel NMQKGMhFkJCqSAYDSxZzfosfTvCG
+000D ldloc.0 
+000E ldarg.3 
+000F stfld System.Collections.Generic.List`1[Visual_PIX.Model.Controls.CtrlEvent] vDzKzXcBiHXiKvXtdDGngZbZVyAb
+0014 ldarg.0 
+0015 ldarg.1 
+0016 ldarg.2 
+0017 call System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] tZLQyBPOWDpxXBBbzumxudRwnpLe(Double, Double)
+001C stloc.1 
+001D ldc.i4 -817996142
+0022 ldc.i4 -310670338
+0027 xor 
+0028 dup 
+0029 stloc.s 10
+002B ldc.i4.7 
+002C rem.un 
+002D switch 7
+004E br 196
+0053 ldloc.1 
+0054 callvirt Void Reverse()
+0059 ldloc.s 10
+005B ldc.i4 598373548
+0060 mul 
+0061 ldc.i4 -446142875
+0066 xor 
+0067 br.s -71
+0069 ldloc.1 
+006A call Boolean Any[PixControl](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl])
+006F brtrue.s 8
+0071 ldc.i4 -993291783
+0076 dup 
+0077 br.s 6
+0079 ldc.i4 -824727377
+007E dup 
+007F pop 
+0080 ldloc.s 10
+0082 ldc.i4 1399132690
+0087 mul 
+0088 xor 
+0089 br.s -105
+008B ldloc.1 
+008C ldc.i4.1 
+008D call System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl] Take[PixControl](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl], Int32)
+0092 call System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] ToList[PixControl](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl])
+0097 stloc.1 
+0098 ldloc.s 10
+009A ldc.i4 -93671685
+009F mul 
+00A0 ldc.i4 -253049294
+00A5 xor 
+00A6 br -137
+00AB ldloc.1 
+00AC ldloc.2 
+00AD callvirt Int32 IndexOf(Visual_PIX.Model.PixControl)
+00B2 stloc.3 
+00B3 ldloc.1 
+00B4 ldloc.3 
+00B5 ldc.i4.1 
+00B6 add 
+00B7 call System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl] Take[PixControl](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl], Int32)
+00BC call System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] ToList[PixControl](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl])
+00C1 stloc.1 
+00C2 ldloc.s 10
+00C4 ldc.i4 2020492737
+00C9 mul 
+00CA ldc.i4 19702266
+00CF xor 
+00D0 br -179
+00D5 ldloc.1 
+00D6 call System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.Controls.KeyboardCtrl] OfType[KeyboardCtrl](System.Collections.IEnumerable)
+00DB ldsfld System.Func`2[Visual_PIX.Model.Controls.KeyboardCtrl,System.Boolean] <>9__179_0
+00E0 dup 
+00E1 brtrue.s 23
+00E3 pop 
+00E4 ldsfld QPJQtuwkwExyWkgkZyuVDplKKDfj <>9
+00E9 ldftn Boolean qzNhOZaAkQUjLixjqSGKhMhMapzK(Visual_PIX.Model.Controls.KeyboardCtrl)
+00EF newobj Void .ctor(System.Object, IntPtr)
+00F4 dup 
+00F5 stsfld System.Func`2[Visual_PIX.Model.Controls.KeyboardCtrl,System.Boolean] <>9__179_0
+00FA call Visual_PIX.Model.Controls.KeyboardCtrl FirstOrDefault[KeyboardCtrl](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.Controls.KeyboardCtrl], System.Func`2[Visual_PIX.Model.Controls.KeyboardCtrl,System.Boolean])
+00FF stloc.2 
+0100 ldloc.2 
+0101 brfalse.s 8
+0103 ldc.i4 -1587062545
+0108 dup 
+0109 br.s 6
+010B ldc.i4 -826272469
+0110 dup 
+0111 pop 
+0112 br -245
+0117 ldloc.1 
+0118 callvirt Enumerator GetEnumerator()
+011D stloc.s 4
+011F br 353
+0124 ldc.i4 -840677044
+0129 ldc.i4 -310670338
+012E xor 
+012F dup 
+0130 stloc.s 10
+0132 ldc.i4.7 
+0133 rem.un 
+0134 switch 7
+0155 br 146
+015A ldloc.s 5
+015C ldloca.s 4
+015E call Visual_PIX.Model.PixControl get_Current()
+0163 stfld Visual_PIX.Model.PixControl sBkFaKnDWEAypRbcIdftEaySIMUfb
+0168 ldloc.s 10
+016A ldc.i4 2035802300
+016F mul 
+0170 ldc.i4 -893912045
+0175 xor 
+0176 br.s -79
+0178 ldloc.s 5
+017A ldloc.0 
+017B stfld SyiTOQfPgmDgWZFXYAqBxxsvkfcC GSmxTmyvijvJMiCYkuUPzOGqNqwK
+0180 ldloc.s 10
+0182 ldc.i4 -1810435073
+0187 mul 
+0188 ldc.i4 1186817673
+018D xor 
+018E br.s -103
+0190 newobj Void .ctor()
+0195 stloc.s 5
+0197 ldc.i4 -91179671
+019C br.s -117
+019E ldloc.s 5
+01A0 ldfld Visual_PIX.Model.PixControl sBkFaKnDWEAypRbcIdftEaySIMUfb
+01A5 isinst Visual_PIX.Model.PixElement
+01AA stloc.s 6
+01AC ldloc.s 6
+01AE brfalse.s 8
+01B0 ldc.i4 1650012333
+01B5 dup 
+01B6 br.s 6
+01B8 ldc.i4 1108977903
+01BD dup 
+01BE pop 
+01BF ldloc.s 10
+01C1 ldc.i4 -823603039
+01C6 mul 
+01C7 xor 
+01C8 br -164
+01CD ldloc.s 6
+01CF callvirt Boolean get_Enable()
+01D4 brfalse 172
+01D9 ldloc.s 10
+01DB ldc.i4 -1341568511
+01E0 mul 
+01E1 ldc.i4 689471420
+01E6 xor 
+01E7 br -195
+01EC ldarg.0 
+01ED ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+01F2 ldloc.s 5
+01F4 ldftn Boolean GGrdkOZXXHonkpNVSgizSFyMkxus(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+01FA newobj Void .ctor(System.Object, IntPtr)
+01FF call System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] Where[rGSQMnBljBHaLbQwBFqqGvKDmbYY](System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]], System.Func`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl],System.Boolean])
+0204 callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] GetEnumerator()
+0209 stloc.s 7
+020B br.s 46
+020D ldloc.s 7
+020F callvirt rGSQMnBljBHaLbQwBFqqGvKDmbYY get_Current()
+0214 stloc.s 8
+0216 ldloc.s 8
+0218 callvirt Void hZdosMBvwFVGKyUJvqqtdcFwUVQd()
+021D leave.s 28
+021F stloc.s 9
+0221 ldarg.0 
+0222 ldfld nIOHBNJSBEvEGZhnUgCweVEuyhxP ItcMBGubhOpYrCscHlAgmlqbfROcA
+0227 ldloc.s 9
+0229 call System.String ​‮⁪⁮⁫⁪⁮‮⁪⁪‭​⁭‎‌‌⁭‍‫‮⁭⁫‎​⁬‌‍‎⁮‏‭‎⁯⁮⁭‬⁯‫‌‍‮(System.Exception)
+022E call System.String get_Script_execution_error()
+0233 callvirt System.Threading.Tasks.Task yeLAVTfsrCQrGxIoIwtLXJMrzwwH(System.String, System.String)
+0238 pop 
+0239 leave.s 0
+023B ldloc.s 7
+023D call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+0242 brtrue.s -55
+0244 leave.s 63
+0246 ldloc.s 7
+0248 brfalse.s 58
+024A ldc.i4 -693485067
+024F ldc.i4 -310670338
+0254 xor 
+0255 dup 
+0256 stloc.s 10
+0258 ldc.i4.3 
+0259 rem.un 
+025A switch 3
+026B br.s 23
+026D ldloc.s 7
+026F call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+0274 ldloc.s 10
+0276 ldc.i4 -728595853
+027B mul 
+027C ldc.i4 1191793984
+0281 xor 
+0282 br.s -53
+0284 endfinally 
+0285 ldloca.s 4
+0287 call Boolean MoveNext()
+028C brtrue -257
+0291 leave.s 14
+0293 ldloca.s 4
+0295 constrained. System.Collections.Generic.List`1+Enumerator[Visual_PIX.Model.PixControl]
+029B callvirt Void Dispose()
+02A0 endfinally 
+02A1 ret 

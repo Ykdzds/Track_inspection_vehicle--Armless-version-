@@ -1,0 +1,2158 @@
+diff --git a/APP/HMI/app_hmi_control.c b/APP/HMI/app_hmi_control.c
+index a8f1714..5e8a298 100644
+--- a/APP/HMI/app_hmi_control.c
++++ b/APP/HMI/app_hmi_control.c
+@@ -5,6 +5,7 @@
+ #include "app_config.h"
+ #include "app_motion_ramp.h"
+ #include "app_normal_ramp.h"
++#include "app_dual_axis_motion.h"
+ #include "app_health.h"
+ #include "app_remote_servo.h"
+ #include "app_hmi_snapshot.h"
+@@ -42,6 +43,8 @@ static uint8_t s_reverse, s_zero_confirming;
+ static int8_t s_direction;
+ static app_motion_ramp_t s_ramp;
+ static app_normal_ramp_clock_t s_normal_clock;
++static app_dual_axis_motion_t s_dual;
++static uint32_t s_dual_batch[2];
+ static uint32_t s_normal_batch_tick;
+ static uint8_t s_normal_batch_active;
+ static remote_sync_status_t s_sync;
+@@ -148,6 +151,7 @@ static void result(uint16_t state, uint16_t error, uint32_t completed)
+ }
+ static void fail_stop(uint16_t error)
+ {
++    app_dual_cancel(&s_dual);
+     app_control_stop_t current;
+     app_control_arbiter_get_stop(&current);
+     if (current.owner != APP_CONTROL_OWNER_HMI || current.result != RESULT_RUNNING)
+@@ -210,6 +214,7 @@ void app_hmi_control_get_status(app_hmi_control_status_t *status)
+ { if (status) { taskENTER_CRITICAL(); *status = s_published; taskEXIT_CRITICAL(); } }
+ void app_hmi_control_init(void)
+ {
++    app_dual_cancel(&s_dual);
+     app_normal_ramp_begin(&s_normal_clock, HAL_GetTick());
+     s_normal_batch_active = 0U;
+     memset(&s_inbox, 0, sizeof(s_inbox)); memset(&s_status, 0, sizeof(s_status));
+@@ -380,6 +385,9 @@ static void prepare_service(void)
+     app_normal_ramp_begin(&s_normal_clock, HAL_GetTick());
+     s_normal_batch_active = 0U;
+     s_session = s_generation; s_target = 0;
++    app_dual_begin(&s_dual, APP_CONTROL_OWNER_HMI, s_generation,
++        app_config_servo_control_axis_mask(), HAL_GetTick(),
++        APP_DESIGN_ACCELERATION_MPS2, APP_DESIGN_DECELERATION_MPS2);
+     memset(s_output, 0, sizeof(s_output)); memset(s_write, 0, sizeof(s_write));
+     memset(s_zero, 0, sizeof(s_zero)); s_zero_written = s_batch_mask = 0U;
+     s_output_mask = app_config_servo_control_axis_mask();
+@@ -471,8 +479,9 @@ static void process_request(void)
+             if (elapsed(xTaskGetTickCount(), s_request.received) >= words[17]) error = ERR_TIMEOUT;
+             else
+             {
+-                if (s_target != (int16_t)(int32_t)word32(words, 10U))
+-                    app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
++                app_dual_target(&s_dual,
++                    app_dual_nominal_rpm_to_wheel((float)(int16_t)(int32_t)word32(words, 10U)),
++                    sequence, s_result_received, s_result_received + words[17], HAL_GetTick());
+                 s_target = (int16_t)(int32_t)word32(words, 10U);
+                 s_target_tick = s_lease_tick = s_request.received; s_target_ttl = words[17];
+             }
+@@ -506,6 +515,7 @@ static void begin_stop(const app_control_stop_t *request)
+     { if (request->deceleration_mm_s2 > s_deceleration) s_deceleration = request->deceleration_mm_s2; return; }
+     app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
+     s_normal_batch_active = 0U;
++    app_dual_cancel(&s_dual);
+     s_stopping = 1U; s_target = 0; s_batch_mask = 0U;
+     s_stop_tick = xTaskGetTickCount(); s_ramp_tick = s_stop_tick;
+     s_deceleration = request->deceleration_mm_s2;
+@@ -537,6 +547,9 @@ static uint8_t complete_writes(servo_snapshot_t *axes)
+             waiting = 1U; continue;
+         }
+         if (axes[axis].speed_write_result != SERVO_OK) { fail_stop(ERR_STOP); return 0U; }
++        app_dual_execution(&s_dual, s_generation, s_dual_batch[axis], axis,
++            axes[axis].speed_write_rpm_valid ? axes[axis].speed_write_rpm : s_output[axis],
++            HAL_GetTick(), 1U, 1U);
+         s_write[axis] = 0U;
+         if (axes[axis].speed_write_rpm_valid && s_output[axis] != axes[axis].speed_write_rpm)
+         {
+@@ -563,7 +576,7 @@ static void execute(void)
+     int16_t base, target = s_target;
+     servo_result_t submitted;
+     TickType_t now = xTaskGetTickCount();
+-    if (!s_session) { app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick()); return; }
++    if (!s_session) { app_dual_cancel(&s_dual); app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick()); return; }
+     if (!aimtor_get_snapshot_pair(&axes[0], &axes[1])) { fail_stop(ERR_FEEDBACK); return; }
+     for (axis = 0U; axis < 2U; ++axis)
+         if (selected(axis) && (!feedback_safe(&axes[axis]) || !enabled(&axes[axis])))
+@@ -580,7 +593,7 @@ static void execute(void)
+      * running.  Integrate before looking at the outstanding batch and keep the
+      * latched batch immutable until its acknowledgement arrives.
+      */
+-    if (s_stopping || s_reverse)
++    if (s_stopping)
+     {
+         uint32_t stop_dt = elapsed(now, s_ramp_tick);
+         if (stop_dt != 0U)
+@@ -592,26 +605,19 @@ static void execute(void)
+                              APP_DESIGN_DECELERATION_MPS2);
+         }
+     }
+-    /* Integrate healthy normal motion even while a previously latched batch waits. */
+-    if (!s_stopping && !s_reverse &&
+-        !(s_direction && target && (target > 0 ? 1 : -1) != s_direction))
+-    {
+-        uint32_t dt = app_normal_ramp_elapsed(&s_normal_clock, HAL_GetTick());
+-        int16_t normal = app_motion_ramp_step(&s_ramp, target, dt,
+-            APP_DESIGN_ACCELERATION_MPS2, APP_DESIGN_DECELERATION_MPS2);
+-        if (aimtor_feedback_pair_degraded(&axes[0], &axes[1], mask)) {
+-            for (axis = 0U; axis < 2U; ++axis)
+-                if (selected(axis)) normal = aimtor_feedback_limit_rpm(1U, normal, s_output[axis]);
+-            app_motion_ramp_reset(&s_ramp, normal);
+-        }
++    if (!s_stopping) {
++        (void)app_normal_ramp_elapsed(&s_normal_clock, HAL_GetTick());
++        app_dual_advance(&s_dual, HAL_GetTick());
++        s_ramp.current_rpm = s_dual.trajectory.velocity / app_dual_nominal_rpm_to_wheel(1.0f);
++        s_ramp.initialized = 1U;
+     }
+     else app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
++    app_remote_sync_collect(&s_sync, &axes[0], &axes[1], now);
+     if (!complete_writes(axes)) return;
+     if (s_normal_batch_active && !s_batch_mask) {
+         app_normal_ramp_batch_done(&s_normal_clock, HAL_GetTick() - s_normal_batch_tick);
+         s_normal_batch_active = 0U;
+     }
+-    app_remote_sync_collect(&s_sync, &axes[0], &axes[1], now);
+     if (s_reverse || s_stopping)
+     {
+         for (axis = 0U; axis < 2U; ++axis)
+@@ -641,6 +647,9 @@ static void execute(void)
+                 s_session = 0U; s_stopping = s_reverse = 0U; s_output_mask = 0U; return;
+             }
+             s_reverse = 0U; s_direction = 0; app_motion_ramp_clear(&s_ramp); s_ramp_tick = now;
++            app_dual_anchor(&s_dual, s_output, HAL_GetTick()); s_dual.zeroing = 0U;
++            app_dual_target(&s_dual, app_dual_nominal_rpm_to_wheel((float)s_target),
++                s_last_sequence, HAL_GetTick(), 0U, HAL_GetTick());
+             app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
+         }
+     }
+@@ -657,6 +666,7 @@ static void execute(void)
+         /* Discard unsent normal progress before entering the original reversal ramp. */
+         app_motion_ramp_reset(&s_ramp, s_direction * (int16_t)maximum);
+         app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
++        app_dual_zero(&s_dual, s_output, HAL_GetTick());
+         s_reverse = 1U; target = 0; s_reverse_tick = now; s_ramp_tick = now;
+         s_reverse_timeout = (uint32_t)((float)maximum * APP_WHEEL_CIRCUMFERENCE_M /
+             (60.0f * APP_GEAR_REDUCTION_RATIO * APP_DESIGN_DECELERATION_MPS2) * 1000.0f) + 2000U;
+@@ -675,14 +685,16 @@ static void execute(void)
+             app_motion_ramp_reset(&s_ramp, base);
+         }
+         s_ramp_tick = now;
+-        app_servo_sync_policy_default(&policy);
+-        app_servo_sync_update(&s_sync, &axes[0], &axes[1], base,
+-            mask == 3U && APP_REMOTE_SERVO_SYNC_ENABLED,
+-            mask == 3U && APP_REMOTE_SERVO_SYNC_ENABLED && !s_stopping && !s_reverse, now, &policy);
++        if (!s_stopping) {
++            (void)app_dual_output(&s_dual, &s_sync, &axes[0], &axes[1], now,
++                HAL_GetTick(), 1U, s_batch);
++        } else {
++            app_servo_sync_policy_default(&policy);
++            app_servo_sync_update(&s_sync, &axes[0], &axes[1], base,
++                mask == 3U && APP_REMOTE_SERVO_SYNC_ENABLED, 0U, now, &policy);
++            s_batch[0] = s_batch[1] = base;
++        }
+         if (s_sync.trip) { fail_stop(ERR_SAFETY); return; }
+-        if (s_stopping || s_reverse || !base) s_sync.integer_correction = 0;
+-        s_batch[0] = base - s_sync.integer_correction;
+-        s_batch[1] = base + s_sync.integer_correction;
+         for (axis = 0U; axis < 2U; ++axis)
+         {
+             if (!selected(axis)) continue;
+@@ -720,8 +732,10 @@ static void execute(void)
+             if (!aimtor_get_snapshot((servo_axis_t)axis, &after)) { fail_stop(ERR_STOP); return; }
+             s_write[axis] = after.speed_write_sequence; s_write_tick[axis] = now;
+             if (!s_write[axis]) { fail_stop(ERR_STOP); return; }
++            s_dual_batch[axis] = s_dual.batch;
++            app_dual_execution(&s_dual, s_generation, s_dual_batch[axis], axis, s_batch[axis], HAL_GetTick(), 0U, 1U);
+             s_output[axis] = s_batch[axis]; s_batch_mask &= (uint8_t)~(1U << axis);
+-            if (s_output[axis]) { s_direction = s_output[axis] > 0 ? 1 : -1; s_zero_written &= (uint8_t)~(1U << axis); s_zero[axis] = 0U; }
++            if (s_output[axis]) { s_direction = app_dual_motor_to_wheel(s_output[axis], axis) > 0 ? 1 : -1; s_zero_written &= (uint8_t)~(1U << axis); s_zero[axis] = 0U; }
+         }
+         else if (submitted != SERVO_BUSY) fail_stop(ERR_STOP);
+         return;
+@@ -733,6 +747,7 @@ void app_hmi_control_service(void)
+     uint8_t have_request = 0U;
+     if (aimtor_safety_stop_active() || aimtor_recovery_blocks_motion())
+     {
++        app_dual_cancel(&s_dual);
+         /* Recovery has its own mailbox path and must be consumed before the
+          * normal motion-blocking early return.  Ordinary requests remain
+          * discarded while recovery is active. */
+@@ -826,6 +841,7 @@ void app_hmi_control_ramp_status(app_normal_ramp_status_t *out)
+     if (!out) return;
+     taskENTER_CRITICAL();
+     memset(out, 0, sizeof(*out)); out->clock = s_normal_clock;
++    out->dual = s_dual;
+     out->target[0] = out->target[1] = s_target;
+     out->internal[0] = out->internal[1] = app_motion_ramp_round_rpm(s_ramp.current_rpm);
+     memcpy(out->batch, s_batch, sizeof(s_batch));
+diff --git a/APP/app_can_control.c b/APP/app_can_control.c
+index 1ef9b28..be3dcc0 100644
+--- a/APP/app_can_control.c
++++ b/APP/app_can_control.c
+@@ -2,6 +2,7 @@
+ #include "app_config.h"
+ #include "app_motion_ramp.h"
+ #include "app_normal_ramp.h"
++#include "app_dual_axis_motion.h"
+ #include "app_control_arbiter.h"
+ #include "app_health.h"
+ #include "app_cli_servo_session.h"
+@@ -19,9 +20,7 @@ static app_normal_ramp_clock_t s_normal_clock;
+ 
+ double app_can_control_rpm_mm_s(int16_t rpm, uint8_t axis)
+ {
+-    int sign = axis == 0U ? APP_POSITION_LEFT_SIGN : APP_POSITION_RIGHT_SIGN;
+-    return (double)app_motion_ramp_motor_rpm_to_vehicle_mm_s_f(
+-        (int32_t)rpm * sign);
++    return (double)(app_dual_motor_to_wheel((float)rpm, axis) * APP_WHEEL_DIAMETER_M * 500.0f);
+ }
+ 
+ bool app_can_control_config_valid(void)
+@@ -87,6 +86,8 @@ static double s_stop_rpm[2];
+ static bool s_stop_ramp_initialized;
+ static int16_t s_target_rpm[2];
+ static app_motion_ramp_t s_motion_ramp[2];
++static app_dual_axis_motion_t s_dual;
++static uint32_t s_dual_batch[2];
+ static servo_snapshot_t s_feedback[2], s_normalized[2];
+ static remote_servo_status_t s_other_remote;
+ static cli_servo_session_status_t s_other_cli;
+@@ -163,6 +164,7 @@ static void fail(uint8_t code, uint8_t reason)
+     s.stop_phase = 5U; s.stop_result = code; s.stop_reason = reason;
+     s.state = CAN_CONTROL_FAULT; s.actual_valid = false;
+     s_stop_started = s_batch_active = false; s.pending_mask = 0U;
++    app_dual_cancel(&s_dual);
+     aimtor_can_revoke(++s.generation); aimtor_set_can_control(false, 0U);
+     app_control_arbiter_safety_takeover(APP_CONTROL_LOCK_SAFETY);
+     if (!aimtor_safety_stop_active()) aimtor_emergency_stop();
+@@ -195,6 +197,7 @@ static void begin_stop_rate(uint8_t reason, double deceleration)
+     s.motion_token = 0U; s.authorized = false; s.target_mm_s = 0;
+     s.stop_reason = reason; s.stop_phase = 1U; s.stop_result = 0U;
+     s.actual_valid = false; s.sync.active = 0U; s.sync.integer_correction = 0;
++    app_dual_cancel(&s_dual);
+     s.stop_generation = event.event; ++s.generation; s_stop_tick = event.started_ms;
+     s_stop_clock_tick = HAL_GetTick();
+     if (reason == 1U) app_remote_servo_can_k5_stop_begin(s.stop_generation, s.axis_mask);
+@@ -263,6 +266,8 @@ static bool consume_batch(void)
+         s.commanded_rpm[axis] = a->speed_write_rpm_valid ? a->speed_write_rpm : s.pending_rpm[axis];
+         if (s.commanded_rpm[axis] != s.pending_rpm[axis])
+             app_motion_ramp_reset(&s_motion_ramp[axis], s.commanded_rpm[axis]);
++        app_dual_execution(&s_dual, s.generation, s_dual_batch[axis], (uint8_t)axis,
++            s.commanded_rpm[axis], HAL_GetTick(), 1U, 1U);
+         s.pending_rpm[axis] = s.commanded_rpm[axis]; s_batch_done |= bit;
+         if (s_batch_stop && s.pending_rpm[axis] == 0)
+         { s_zero_floor[axis] = a->speed_sequence; s_zero_sequence[axis] = a->speed_sequence; }
+@@ -294,6 +299,8 @@ static void submit_batch(void)
+         if (r != SERVO_OK) { s.failed_mask |= bit; fail(9U, 7U); return; }
+         if (!aimtor_get_snapshot((servo_axis_t)axis, &a)) { fail(12U, 7U); return; }
+         s.write_sequence[axis] = a.speed_write_sequence;
++        s_dual_batch[axis] = s_dual.batch;
++        app_dual_execution(&s_dual, s.generation, s_dual_batch[axis], axis, s.pending_rpm[axis], HAL_GetTick(), 0U, 1U);
+         s.pending_mask |= bit; s_batch_submitted |= bit;
+         s_axis_turn = (uint8_t)(1U - axis);
+         if (s_batch_stop && s.first_command_ms == UINT32_MAX)
+@@ -513,6 +520,8 @@ static void control_request(void)
+         s.limit_mm_s = app_can_control_limit();
+         s.authorized = true; s.first_zero_done = s.speed_seen = false;
+         app_normal_ramp_begin(&s_normal_clock, now);
++        app_dual_begin(&s_dual, APP_CONTROL_OWNER_CAN, s.generation, s.axis_mask,
++            now, APP_CAN_ACCELERATION_MPS2, APP_CAN_DECELERATION_MPS2);
+         memset(s_motion_ramp, 0, sizeof(s_motion_ramp)); s_ramp_tick = now;
+         s.stop_phase = 0U; s.stop_result = 255U; s.work_mode = 2U;
+         s.stop_external = false;
+@@ -561,6 +570,7 @@ static void control_request(void)
+ 
+ void app_can_control_init(const can_identity_t *identity)
+ {
++    app_dual_cancel(&s_dual);
+     memset(&s, 0, sizeof(s)); memset(&s_link, 0, sizeof(s_link));
+     memset(&s_incoming_link, 0, sizeof(s_incoming_link));
+     s_rx_rejected = s_rx_duplicates = s_rx_conflicts = s_rx_full = s_rx_detail = 0U;
+@@ -907,7 +917,7 @@ void app_can_control_service(void)
+     uint32_t now = HAL_GetTick(), dt, speed_generation, received; unsigned axis; bool speed, moving = false;
+     uint8_t speed_data[8];
+     app_can_control_pre_service();
+-    if (aimtor_safety_stop_active() || aimtor_recovery_blocks_motion()) { publish(); return; }
++    if (aimtor_safety_stop_active() || aimtor_recovery_blocks_motion()) { app_dual_cancel(&s_dual); publish(); return; }
+     other_stop_service(HAL_GetTick());
+     taskENTER_CRITICAL(); speed = s_speed_pending; s_speed_pending = false;
+     memcpy(speed_data, s_speed, sizeof(speed_data)); received = s_accepted_speed_ms;
+@@ -927,8 +937,9 @@ void app_can_control_service(void)
+         { begin_stop(5U); publish(); return; }
+         s.speed_sequence = can_protocol_read_u16(speed_data); s.speed_seen = true;
+         s_speed_received = received; s_lease = can_protocol_read_u16(speed_data + 6U);
+-        if (s.target_mm_s != (int16_t)can_protocol_read_u16(speed_data + 2U))
+-            app_normal_ramp_boundary(&s_normal_clock, now);
++        app_dual_target(&s_dual, app_dual_vehicle_mm_s_to_wheel(
++            (float)(int16_t)can_protocol_read_u16(speed_data + 2U)),
++            s.speed_sequence, received, received + s_lease, now);
+         s.target_mm_s = (int16_t)can_protocol_read_u16(speed_data + 2U);
+         for (axis = 0U; axis < 2U; ++axis)
+         {
+@@ -955,7 +966,7 @@ void app_can_control_service(void)
+         s.actual_mm_s = (int16_t)app_can_control_rpm_mm_s(s_feedback[axis].actual_speed_rpm, (uint8_t)axis);
+     }
+     if (s.state == CAN_CONTROL_FAULT) return;
+-    if (s.first_zero_done && s.axis_mask == 3U && (s_stop_started || s_reverse)) synchronize();
++    if (s.first_zero_done && s.axis_mask == 3U && s_stop_started) synchronize();
+     if (s.state == CAN_CONTROL_FAULT) return;
+     /* Advance only healthy normal motion; keep pending batch words immutable. */
+     {
+@@ -964,21 +975,21 @@ void app_can_control_service(void)
+             if ((s.axis_mask & (1U << axis)) &&
+                 ((s.commanded_rpm[axis] * (int32_t)s_target_rpm[axis] < 0) ||
+                  (s_feedback[axis].actual_speed_rpm * (int32_t)s_target_rpm[axis] < 0))) normal = false;
+-        if (normal) {
+-            uint32_t normal_dt = app_normal_ramp_elapsed(&s_normal_clock, now);
++        if (normal || (s_reverse && !s_stop_started)) {
++            (void)app_normal_ramp_elapsed(&s_normal_clock, now);
++            app_dual_advance(&s_dual, now);
+             for (axis = 0U; axis < 2U; ++axis) {
+-                int16_t value = app_motion_ramp_step_rate(&s_motion_ramp[axis], s_target_rpm[axis], normal_dt,
+-                    APP_CAN_ACCELERATION_MPS2, APP_CAN_DECELERATION_MPS2,
+-                    (float)(1000.0 / fabs(app_can_control_rpm_mm_s(1, (uint8_t)axis))));
+-                if (aimtor_feedback_pair_degraded(&s_feedback[0], &s_feedback[1], s.axis_mask)) {
+-                    value = aimtor_feedback_limit_rpm(1U, value, s.commanded_rpm[axis]);
+-                    app_motion_ramp_reset(&s_motion_ramp[axis], value);
+-                }
++                s_motion_ramp[axis].current_rpm = app_dual_wheel_to_motor(s_dual.trajectory.velocity, (uint8_t)axis);
++                s_motion_ramp[axis].initialized = 1U;
+             }
+-        } else app_normal_ramp_boundary(&s_normal_clock, now);
++        } else {
++            app_normal_ramp_boundary(&s_normal_clock, now);
++            if (!s.first_zero_done) app_dual_anchor(&s_dual, s.commanded_rpm, now);
++        }
++        app_remote_sync_collect(&s.sync, &s_feedback[0], &s_feedback[1], xTaskGetTickCount());
+     }
+     /* Advance stop/reversal ramp before consuming an outstanding write. */
+-    if ((s_stop_started || s_reverse) && s_stop_ramp_initialized &&
++    if (s_stop_started && s_stop_ramp_initialized &&
+         (now - s_stop_clock_tick) >= APP_REMOTE_SERVO_STOP_UPDATE_PERIOD_MS)
+     {
+         uint32_t clock_dt = now - s_stop_clock_tick;
+@@ -1003,7 +1014,7 @@ void app_can_control_service(void)
+         if (s_force_zero && !s_stop_started && !s_reverse)
+         { s.first_zero_done = true; s_force_zero = false; s.state = CAN_CONTROL_READY; }
+     }
+-    if (s.first_zero_done && s.axis_mask == 3U && !s_stop_started && !s_reverse) synchronize();
++
+     if (s.state == CAN_CONTROL_FAULT) return;
+     if (s.state == CAN_CONTROL_DRAIN)
+     {
+@@ -1020,6 +1031,9 @@ void app_can_control_service(void)
+         if (s_reverse)
+         {
+             s_reverse = s_reverse_zero = false;
++            app_dual_anchor(&s_dual, s.commanded_rpm, now); s_dual.zeroing = 0U;
++            app_dual_target(&s_dual, app_dual_vehicle_mm_s_to_wheel((float)s.target_mm_s),
++                s.speed_sequence, now, 0U, now);
+             app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
+             memset(s_motion_ramp, 0, sizeof(s_motion_ramp));
+             s.state = CAN_CONTROL_READY; s_ramp_tick = now;
+@@ -1067,6 +1081,13 @@ void app_can_control_service(void)
+             s.pending_rpm[axis] = (int16_t)(value > 0.0 ? ceil(value) : floor(value));
+             if ((s.axis_mask & (1U << axis)) && s.pending_rpm[axis] != 0) zero = false;
+         }
++        if (s_reverse && !s_stop_started) {
++            (void)app_dual_output(&s_dual, &s.sync, &s_feedback[0], &s_feedback[1],
++                xTaskGetTickCount(), now, 1U, s.pending_rpm);
++            zero = true;
++            for (axis = 0U; axis < 2U; ++axis)
++                if ((s.axis_mask & (1U << axis)) && s.pending_rpm[axis]) zero = false;
++        }
+         start_batch(true);
+         if (zero)
+         {
+@@ -1087,6 +1108,7 @@ void app_can_control_service(void)
+              (s_feedback[axis].actual_speed_rpm > 0 && s_target_rpm[axis] < 0) ||
+              (s_feedback[axis].actual_speed_rpm < 0 && s_target_rpm[axis] > 0)))
+         {
++            app_dual_zero(&s_dual, s.commanded_rpm, now);
+             s_reverse = true; s_reverse_zero = false; s.state = CAN_CONTROL_REVERSING;
+             memset(s_zero_count, 0, sizeof(s_zero_count));
+             s_stop_rpm[0] = s.commanded_rpm[0]; s_stop_rpm[1] = s.commanded_rpm[1];
+@@ -1103,28 +1125,14 @@ void app_can_control_service(void)
+     if (dt < APP_REMOTE_SERVO_UPDATE_PERIOD_MS) { publish(); return; }
+     if (dt > 50U) dt = 50U;
+     s_ramp_tick = now;
++    (void)app_dual_output(&s_dual, &s.sync, &s_feedback[0], &s_feedback[1],
++        xTaskGetTickCount(), now, 1U, s.pending_rpm);
++    if (s.sync.trip) { fail(9U, 6U); return; }
++    if (s.axis_mask == 3U) s.actual_valid = s.sync.feedback_valid != 0U;
++    if (s.axis_mask == 3U && s.actual_valid) s.actual_mm_s = (int16_t)((s_dual.actual[0] + s_dual.actual[1]) *
++        APP_WHEEL_DIAMETER_M * 250.0f);
+     for (axis = 0U; axis < 2U; ++axis)
+-    {
+-        int32_t target = app_motion_ramp_round_rpm(s_motion_ramp[axis].current_rpm);
+-        int16_t next;
+-        if (s.sync.active)
+-        {
+-            double correction = s.sync.integer_correction * fabs(app_can_control_rpm_mm_s(1, 0U)) /
+-                app_can_control_rpm_mm_s(1, (uint8_t)axis);
+-            target += (int32_t)(axis == 0U ? -correction : correction);
+-            if (target > APP_OPERATION_MAX_MOTOR_RPM) target = APP_OPERATION_MAX_MOTOR_RPM;
+-            if (target < -APP_OPERATION_MAX_MOTOR_RPM) target = -APP_OPERATION_MAX_MOTOR_RPM;
+-            if ((s_target_rpm[axis] >= 0 && target < 0) || (s_target_rpm[axis] <= 0 && target > 0)) target = 0;
+-        }
+-        next = (int16_t)target;
+-        if (aimtor_feedback_pair_degraded(&s_feedback[0], &s_feedback[1], s.axis_mask))
+-        {
+-            next = aimtor_feedback_limit_rpm(1U, next, s.commanded_rpm[axis]);
+-            app_motion_ramp_reset(&s_motion_ramp[axis], next);
+-        }
+-        s.pending_rpm[axis] = next;
+-        if ((s.axis_mask & (1U << axis)) && next != s.commanded_rpm[axis]) moving = true;
+-    }
++        if ((s.axis_mask & (1U << axis)) && s.pending_rpm[axis] != s.commanded_rpm[axis]) moving = true;
+     s.state = s.target_mm_s == 0 ? CAN_CONTROL_READY : CAN_CONTROL_RUNNING;
+     if (moving) start_batch(false);
+     publish();
+@@ -1163,6 +1171,7 @@ void app_can_control_ramp_status(app_normal_ramp_status_t *out)
+     memset(out, 0, sizeof(*out)); out->clock = s_normal_clock;
+ #if APP_CAN_CONTROL_ENABLED
+     memcpy(out->target, s_target_rpm, sizeof(s_target_rpm));
++    out->dual = s_dual;
+     out->internal[0] = app_motion_ramp_round_rpm(s_motion_ramp[0].current_rpm);
+     out->internal[1] = app_motion_ramp_round_rpm(s_motion_ramp[1].current_rpm);
+     memcpy(out->batch, s.pending_rpm, sizeof(s.pending_rpm));
+diff --git a/APP/app_config.h b/APP/app_config.h
+index e3b7c8c..819d5dc 100644
+--- a/APP/app_config.h
++++ b/APP/app_config.h
+@@ -433,6 +433,37 @@
+ #define APP_SERVO_DEBUG_POSITION_RAMP_MS (100U)
+ 
+ #define APP_MOTION_RAMP_MAX_DT_MS (50U)
++/* V1.3: optional modes require explicit calibrated parameters. Default linear/P. */
++#ifndef APP_DUAL_S_ENABLED
++#define APP_DUAL_S_ENABLED (0U)
++#endif
++#ifndef APP_DUAL_PI_ENABLED
++#define APP_DUAL_PI_ENABLED (0U)
++#endif
++#ifndef APP_DUAL_JERK_MPS3
++#define APP_DUAL_JERK_MPS3 (0.0f)
++#endif
++#ifndef APP_DUAL_KI
++#define APP_DUAL_KI (0.0f)
++#endif
++#ifndef APP_DUAL_KAW
++#define APP_DUAL_KAW (0.0f)
++#endif
++#ifndef APP_DUAL_FRONT_GEAR
++#define APP_DUAL_FRONT_GEAR ((float)APP_POSITION_LEFT_GEAR_NUM / APP_POSITION_LEFT_GEAR_DEN)
++#endif
++#ifndef APP_DUAL_REAR_GEAR
++#define APP_DUAL_REAR_GEAR ((float)APP_POSITION_RIGHT_GEAR_NUM / APP_POSITION_RIGHT_GEAR_DEN)
++#endif
++#ifndef APP_DUAL_FRONT_SIGN
++#define APP_DUAL_FRONT_SIGN APP_POSITION_LEFT_SIGN
++#endif
++#ifndef APP_DUAL_REAR_SIGN
++#define APP_DUAL_REAR_SIGN APP_POSITION_RIGHT_SIGN
++#endif
++#if APP_DUAL_S_ENABLED > 1U || APP_DUAL_PI_ENABLED > 1U
++#error "Dual-axis mode switches must be 0 or 1"
++#endif
+ #if APP_MOTION_RAMP_MAX_DT_MS == 0U
+ #error "斜坡积分时间上限必须为正"
+ #endif
+@@ -1162,6 +1193,13 @@ const char *app_config_servo_control_axis_name(void);
+ static inline uint8_t app_config_motion_ramp_valid(void)
+ {
+     return (uint8_t)(
++        APP_DUAL_FRONT_GEAR > 0.0f && APP_DUAL_FRONT_GEAR < 1000000.0f &&
++        APP_DUAL_REAR_GEAR > 0.0f && APP_DUAL_REAR_GEAR < 1000000.0f &&
++        (APP_DUAL_FRONT_SIGN == 1 || APP_DUAL_FRONT_SIGN == -1) &&
++        (APP_DUAL_REAR_SIGN == 1 || APP_DUAL_REAR_SIGN == -1) &&
++        (!APP_DUAL_S_ENABLED || (APP_DUAL_JERK_MPS3 > 0.0f && APP_DUAL_JERK_MPS3 < 1000000.0f)) &&
++        (!APP_DUAL_PI_ENABLED || (APP_DUAL_KI > 0.0f && APP_DUAL_KI < 1000000.0f &&
++            APP_DUAL_KAW > 0.0f && APP_DUAL_KAW < 1000000.0f)) &&
+         APP_WHEEL_DIAMETER_M > 0.0f && APP_WHEEL_DIAMETER_M < 1000.0f &&
+         APP_GEAR_REDUCTION_RATIO > 0.0f && APP_GEAR_REDUCTION_RATIO < 1000000.0f &&
+         (double)APP_DESIGN_ACCELERATION_MPS2 > 0.0 && (double)APP_DESIGN_ACCELERATION_MPS2 < 1000000.0 &&
+diff --git a/APP/app_debug_cli.c b/APP/app_debug_cli.c
+index e669a5c..6bb6dbd 100644
+--- a/APP/app_debug_cli.c
++++ b/APP/app_debug_cli.c
+@@ -217,6 +217,19 @@ static void app_cli_print_ramp(void)
+         (unsigned long)normal.clock.max_service_ms, (unsigned long)normal.clock.clipped,
+         (unsigned long)normal.clock.discarded_ms, (unsigned long)normal.clock.integrated_ms,
+         (unsigned long)normal.clock.batches, (unsigned long)normal.clock.max_batch_ms);
++    printf("dual owner=%u generation=%lu target_seq=%lu batch=%lu modes=S%u/PI%u valid=%u flags=%lu\r\n",
++        normal.dual.owner, (unsigned long)normal.dual.generation,
++        (unsigned long)normal.dual.target_sequence, (unsigned long)normal.dual.batch,
++        normal.dual.s_mode, normal.dual.pi_mode, normal.dual.initialized,
++        (unsigned long)normal.dual.constraints);
++    printf("wheel ref=%.6f alpha=%.6f target=%.6f actual=%.6f,%.6f common_error=%.6f rad/s\r\n",
++        normal.dual.trajectory.velocity, normal.dual.trajectory.acceleration,
++        normal.dual.trajectory.target, normal.dual.actual[0], normal.dual.actual[1], normal.dual.common_error);
++    printf("dual delta request/applied=%.6f/%.6f rad/s planned=%d,%d submitted=%d,%d ack=%d,%d masks=%u/%u/%u\r\n",
++        normal.dual.requested, normal.dual.applied, normal.dual.planned_rpm[0], normal.dual.planned_rpm[1],
++        normal.dual.submitted_rpm[0], normal.dual.submitted_rpm[1], normal.dual.acknowledged_rpm[0],
++        normal.dual.acknowledged_rpm[1], normal.dual.submitted_mask, normal.dual.acknowledged_mask,
++        normal.dual.failed_mask);
+     for (axis = 0U; axis < 2U; ++axis) {
+         const servo_snapshot_t *a = &axes[axis];
+         printf("%c ack=%d@%lu valid=%u actual=%d@%lu valid=%u age=%lu read=%u/%u masks=%u/%u\r\n",
+@@ -1206,6 +1219,9 @@ static void app_cli_print_remote_status(void)
+                (unsigned long)status.sync.skew_ms, status.sync.pair_valid,
+                app_remote_sync_reject_name(status.sync.reject_reason),
+                (unsigned long)status.sync.dt_ms);
++        printf("feedback_valid=%u correction_valid=%u new_pair=%u aligned=%u aligned_tick=%lu error_f=%.4f\r\n",
++            status.sync.feedback_valid, status.sync.correction_valid, status.sync.new_pair,
++            status.sync.aligned, (unsigned long)status.sync.aligned_tick, status.sync.error_f);
+         printf("pair_attempts=%lu pair_valid_count=%lu pair_reject_count=%lu "
+                "pair_valid_ratio=%.1f%% pair_reject_repeat_count=%lu "
+                "pair_reject_skew_count=%lu pair_reject_age_count=%lu "
+diff --git a/APP/app_normal_ramp.h b/APP/app_normal_ramp.h
+index 8b888db..416db18 100644
+--- a/APP/app_normal_ramp.h
++++ b/APP/app_normal_ramp.h
+@@ -3,6 +3,7 @@
+ 
+ #include <string.h>
+ #include "app_motion_ramp.h"
++#include "app_dual_axis_motion.h"
+ 
+ /* Service-time ramp clock. Safety-stop ramps retain their dedicated clocks. */
+ typedef struct {
+@@ -15,6 +16,7 @@ typedef struct {
+     app_normal_ramp_clock_t clock;
+     int16_t target[2], internal[2], batch[2];
+     uint8_t authorized, phase;
++    app_dual_axis_motion_t dual;
+ } app_normal_ramp_status_t;
+ 
+ static inline void app_normal_ramp_begin(app_normal_ramp_clock_t *clock, uint32_t now)
+diff --git a/APP/app_remote_servo.c b/APP/app_remote_servo.c
+index da6f6e8..89e744e 100644
+--- a/APP/app_remote_servo.c
++++ b/APP/app_remote_servo.c
+@@ -7,6 +7,7 @@
+ #include "app_config.h"
+ #include "app_motion_ramp.h"
+ #include "app_normal_ramp.h"
++#include "app_dual_axis_motion.h"
+ #include "app_health.h"
+ #include "motion_control.h"
+ #include "servo_debug_control.h"
+@@ -73,6 +74,8 @@ static servo_result_t s_last_result;
+ static TickType_t s_last_speed_update_tick;
+ static app_motion_ramp_t s_motion_ramp;
+ static app_normal_ramp_clock_t s_normal_clock;
++static app_dual_axis_motion_t s_dual;
++static uint32_t s_dual_batch[2];
+ static uint8_t s_normal_reversing;
+ static uint32_t s_recovery_ready_generation;
+ static uint8_t s_recovery_ready_seen;
+@@ -333,13 +336,13 @@ static uint8_t app_remote_servo_begin_controlled_stop(remote_stop_reason_t reaso
+ 
+ static uint8_t app_remote_servo_sync_enabled(void)
+ {
+-    return APP_REMOTE_SERVO_SYNC_ENABLED &&
+-        app_config_servo_control_axis_count() == 2U &&
++    return app_config_servo_control_axis_count() == 2U &&
+         !app_config_servo_readonly_test();
+ }
+ 
+ static void app_remote_servo_sync_cancel(void)
+ {
++    app_dual_cancel(&s_dual);
+     s_authorization_generation++;
+     memset(&s_sync, 0, sizeof(s_sync));
+     s_sync.enabled = APP_REMOTE_SERVO_SYNC_ENABLED;
+@@ -695,10 +698,14 @@ static void app_remote_servo_process_input(const nrf_remote_snapshot_t *remote)
+         return;
+     }
+ 
+-    if (s_target_rpm != (s_authorized ? app_remote_servo_map_lv(remote->left_vertical) : 0))
+-        app_normal_ramp_boundary(&s_normal_clock, app_remote_servo_tick_ms(xTaskGetTickCount()));
++    /* Target changes keep the service clock; coordinator settles the old target. */
+     s_target_rpm = s_authorized ?
+         app_remote_servo_map_lv(remote->left_vertical) : 0;
++    if (s_authorized && s_dual.initialized) {
++        uint32_t ms = app_remote_servo_tick_ms(xTaskGetTickCount());
++        app_dual_target(&s_dual, app_dual_nominal_rpm_to_wheel((float)s_target_rpm),
++            remote->frame_sequence, app_remote_servo_tick_ms(s_input_tick), 0U, ms);
++    }
+     if (s_controlled_stop_state == REMOTE_CONTROLLED_STOP_FAILED)
+     {
+         /* 真实异常或停车失败锁存不能被后续K5事件伪装成人工停机。 */
+@@ -1167,6 +1174,8 @@ void app_remote_servo_service(void)
+                 app_motion_ramp_reset(&s_motion_ramp, snapshot->speed_write_rpm);
+             }
+             s_axis_commanded_rpm[axis_index] = s_pending_speed_rpm[axis_index];
++            app_dual_execution(&s_dual, s_batch_generation, s_dual_batch[axis_index], (uint8_t)axis_index,
++                s_axis_commanded_rpm[axis_index], app_remote_servo_tick_ms(xTaskGetTickCount()), 1U, 1U);
+             if (s_hold_stopping && s_pending_speed_rpm[axis_index] == 0)
+             {
+                 s_hold_stop_sequence[axis_index] = snapshot->speed_sequence;
+@@ -1615,6 +1624,9 @@ void app_remote_servo_service(void)
+         }
+         app_normal_ramp_begin(&s_normal_clock, app_remote_servo_tick_ms(xTaskGetTickCount()));
+         s_authorized = 1U;
++        app_dual_begin(&s_dual, APP_CONTROL_OWNER_REMOTE, s_authorization_generation,
++            app_config_servo_control_axis_mask(), app_remote_servo_tick_ms(xTaskGetTickCount()),
++            APP_DESIGN_ACCELERATION_MPS2, APP_DESIGN_DECELERATION_MPS2);
+         aimtor_set_motion_authorized(true);
+         app_remote_sync_reset(&s_sync, &left, &right, xTaskGetTickCount());
+         s_state = REMOTE_SERVO_ARMED;
+@@ -1701,6 +1713,24 @@ void app_remote_servo_service(void)
+         app_remote_servo_enter_estop(REMOTE_STOP_SERVO_STATE);
+         return;
+     }
++    /* One common trajectory advances during a latched batch. Safety stops
++     * returned earlier and retain their original executor. */
++    if (app_remote_servo_sync_enabled()) {
++        uint32_t ms = app_remote_servo_tick_ms(xTaskGetTickCount());
++        uint8_t reversing = s_motion_direction && s_target_rpm &&
++            (s_target_rpm > 0 ? 1 : -1) != s_motion_direction;
++        (void)app_normal_ramp_elapsed(&s_normal_clock, ms);
++        if (reversing && !s_normal_reversing) {
++            app_dual_zero(&s_dual, s_axis_commanded_rpm, ms);
++            s_normal_reversing = 1U;
++        }
++        app_dual_target(&s_dual, app_dual_nominal_rpm_to_wheel((float)s_target_rpm),
++            s_input.frame_sequence, ms, 0U, ms);
++        if (s_reverse_wait) app_dual_anchor(&s_dual, s_axis_commanded_rpm, ms);
++        s_motion_ramp.current_rpm = s_dual.trajectory.velocity / app_dual_nominal_rpm_to_wheel(1.0f);
++        s_motion_ramp.initialized = 1U;
++    }
++    else {
+     /* Normal and reversing deceleration integrate at service cadence, before bus waits. */
+     if (!s_reverse_wait && !(s_motion_direction && s_target_rpm &&
+         (s_target_rpm > 0 ? 1 : -1) != s_motion_direction) &&
+@@ -1741,6 +1771,7 @@ void app_remote_servo_service(void)
+             app_normal_ramp_elapsed(&s_normal_clock, app_remote_servo_tick_ms(xTaskGetTickCount())),
+             APP_DESIGN_ACCELERATION_MPS2, APP_DESIGN_DECELERATION_MPS2);
+     }
++    }
+     /*
+      * 单轴模式必须等待当前速度事务完成；双轴模式允许一个轴的速度
+      * 事务在等待应答时，继续提交另一个尚未提交的轴。
+@@ -1783,25 +1814,21 @@ void app_remote_servo_service(void)
+         {
+             int16_t target = s_target_rpm;
+             int16_t correction;
+-            int16_t limit;
++
+             uint8_t mask = 0U;
+-            uint8_t reversing = target != 0 && s_motion_direction != 0 &&
+-                ((target > 0 ? 1 : -1) != s_motion_direction);
++            uint8_t reversing = s_normal_reversing || (target != 0 && s_motion_direction != 0 &&
++                ((target > 0 ? 1 : -1) != s_motion_direction));
+             if (reversing || s_reverse_wait)
+                 target = 0;
+-            app_remote_sync_update(&s_sync, &left, &right, next_rpm,
+-                s_authorized && aimtor_boot_zero_ready(), now);
++            (void)app_dual_output(&s_dual, &s_sync, &left, &right, now,
++                app_remote_servo_tick_ms(now), !s_reverse_wait, s_batch_command);
++            next_rpm = app_motion_ramp_round_rpm(s_dual.trajectory.velocity /
++                app_dual_nominal_rpm_to_wheel(1.0f));
+             if (s_sync.trip)
+             {
+                 app_remote_servo_enter_estop(REMOTE_STOP_SYNC_ERROR);
+                 return;
+             }
+-            if (s_target_rpm == 0 || reversing || s_reverse_wait)
+-            {
+-                s_sync.applied_correction = 0.0f;
+-                s_sync.integer_correction = 0;
+-                s_sync.active = 0U;
+-            }
+             if ((reversing || s_reverse_wait) && s_commanded_rpm == 0 &&
+                 s_axis_commanded_rpm[0] == 0 && s_axis_commanded_rpm[1] == 0 &&
+                 s_confirmed_mask == APP_SERVO_CONTROL_AXIS_BOTH)
+@@ -1818,6 +1845,7 @@ void app_remote_servo_service(void)
+                     s_reverse_wait = 0U;
+                     s_motion_direction = 0;
+                     s_normal_reversing = 0U;
++                    s_dual.zeroing = 0U;
+                     app_normal_ramp_boundary(&s_normal_clock, app_remote_servo_tick_ms(now));
+                     /* 本轮仍为零，下一轮才放行新的方向。 */
+                 }
+@@ -1829,12 +1857,6 @@ void app_remote_servo_service(void)
+                 }
+             }
+             correction = s_sync.integer_correction;
+-            limit = (int16_t)(APP_OPERATION_MAX_MOTOR_RPM -
+-                (next_rpm < 0 ? -next_rpm : next_rpm));
+-            if (correction > limit) correction = limit;
+-            if (correction < -limit) correction = (int16_t)-limit;
+-            s_batch_command[0] = (int16_t)(next_rpm - correction);
+-            s_batch_command[1] = (int16_t)(next_rpm + correction);
+             for (axis_index = 0U; axis_index < SERVO_AXIS_COUNT; axis_index++)
+             {
+                 if (!(s_confirmed_mask & (1U << axis_index)) ||
+@@ -1916,6 +1938,9 @@ void app_remote_servo_service(void)
+                     snapshot->speed_write_sequence + 1U;
+                 s_pending_speed_rpm[candidate] = app_remote_servo_sync_enabled() ?
+                     s_batch_command[candidate] : next_rpm;
++                s_dual_batch[candidate] = s_dual.batch;
++                app_dual_execution(&s_dual, s_batch_generation, s_dual_batch[candidate], candidate,
++                    s_pending_speed_rpm[candidate], app_remote_servo_tick_ms(now), 0U, 1U);
+                 s_batch_written_mask |= (uint8_t)(1U << candidate);
+                 if (app_config_servo_control_axis_count() == 1U) s_speed_batch_tick = now;
+                 if (app_config_servo_control_axis_count() > 1U)
+@@ -2212,6 +2237,7 @@ void app_remote_servo_ramp_status(app_normal_ramp_status_t *out)
+     if (!out) return;
+     taskENTER_CRITICAL();
+     memset(out, 0, sizeof(*out)); out->clock = s_normal_clock;
++    out->dual = s_dual;
+     out->target[0] = out->target[1] = s_target_rpm;
+     out->internal[0] = out->internal[1] = app_motion_ramp_round_rpm(s_motion_ramp.current_rpm);
+     out->batch[0] = app_remote_servo_sync_enabled() ? s_batch_command[0] : s_speed_batch_target_rpm;
+diff --git a/APP/app_remote_servo_sync.c b/APP/app_remote_servo_sync.c
+index 5f5b6e2..d5a0b87 100644
+--- a/APP/app_remote_servo_sync.c
++++ b/APP/app_remote_servo_sync.c
+@@ -13,6 +13,33 @@ static float sync_clamp(float value, float limit)
+     return value > limit ? limit : value < -limit ? -limit : value;
+ }
+ 
++/* Interpolation only, never extrapolation. Timestamps are local response times;
++ * alignment does not claim simultaneous encoder acquisition. */
++static uint8_t sync_interpolate(const servo_snapshot_t *snapshot, TickType_t at,
++    TickType_t now, float *rpm, uint32_t sequence[2], TickType_t ticks[2])
++{
++    unsigned i;
++    const servo_speed_sample_t *before = NULL, *after = NULL;
++    for (i = 0U; i < SERVO_SPEED_SAMPLE_CAPACITY; ++i) {
++        const servo_speed_sample_t *p = &snapshot->speed_samples[i];
++        if (!p->valid || sync_ms(now - p->sample_tick) >= APP_REMOTE_SERVO_SYNC_MAX_AGE_MS) continue;
++        if ((int32_t)(at - p->sample_tick) >= 0 &&
++            (!before || (int32_t)(p->sample_tick - before->sample_tick) > 0)) before = p;
++        if ((int32_t)(p->sample_tick - at) >= 0 &&
++            (!after || (int32_t)(after->sample_tick - p->sample_tick) > 0)) after = p;
++    }
++    if (!before || !after || sync_ms(after->sample_tick - before->sample_tick) >
++        APP_REMOTE_SERVO_SYNC_MAX_SKEW_MS) return 0U;
++    sequence[0] = before->speed_sequence; sequence[1] = after->speed_sequence;
++    ticks[0] = before->sample_tick; ticks[1] = after->sample_tick;
++    *rpm = (float)before->actual_speed_rpm;
++    if (after->sample_tick != before->sample_tick)
++        *rpm += ((float)after->actual_speed_rpm - before->actual_speed_rpm) *
++            (float)(TickType_t)(at - before->sample_tick) /
++            (float)(TickType_t)(after->sample_tick - before->sample_tick);
++    return 1U;
++}
++
+ static void sync_drop(remote_sync_status_t *s, unsigned axis, unsigned count)
+ {
+     unsigned remaining = s->pending_count[axis] - count;
+@@ -45,6 +72,10 @@ static void sync_collect_axis(remote_sync_status_t *s, unsigned axis,
+         s->received_sequence[axis] = sample.speed_sequence;
+         if (sync_ms(now - sample.sample_tick) >= APP_REMOTE_SERVO_SYNC_MAX_AGE_MS)
+             continue;
++        if (s->received_tick_valid[axis] &&
++            (int32_t)(sample.sample_tick - s->received_tick[axis]) < 0) continue;
++        s->received_tick[axis] = sample.sample_tick;
++        s->received_tick_valid[axis] = 1U;
+         if (s->pending_count[axis] == SERVO_SPEED_SAMPLE_CAPACITY)
+             sync_drop(s, axis, 1U);
+         s->pending[axis][s->pending_count[axis]++] = sample;
+@@ -134,6 +165,7 @@ void app_servo_sync_policy_default(servo_sync_policy_t *p)
+     p->deadband = APP_REMOTE_SERVO_SYNC_DEADBAND_RPM; p->minimum_rpm = APP_REMOTE_SERVO_SYNC_MIN_RPM;
+     p->error_rpm = APP_REMOTE_SERVO_SYNC_ERROR_RPM; p->error_ms = APP_REMOTE_SERVO_SYNC_ERROR_MS;
+     p->trip_enabled = APP_REMOTE_SERVO_SYNC_TRIP_ENABLED;
++    p->feedback_scale[0] = p->feedback_scale[1] = 1.0f;
+ }
+ 
+ void app_remote_sync_update(remote_sync_status_t *s,
+@@ -163,6 +195,9 @@ void app_servo_sync_update(remote_sync_status_t *s,
+ 
+     if (left->feedback_degraded || right->feedback_degraded)
+     {
++        s->new_pair = s->pair_valid = s->feedback_valid = s->correction_valid = 0U;
++        s->have_pair = s->zero_pairs = 0U;
++        s->pending_count[0] = s->pending_count[1] = 0U;
+         s->active = s->trip = 0U;
+         s->applied_correction = 0.0f; s->integer_correction = 0;
+         s->calculation_tick = now;
+@@ -175,7 +210,22 @@ void app_servo_sync_update(remote_sync_status_t *s,
+     s->age_ms[1] = right->speed_age_ms;
+     s->skew_ms = sync_ms(skew < reverse_skew ? skew : reverse_skew);
+     s->pair_valid = 0U;
+-    s->active = 0U;
++    s->feedback_valid = s->have_pair && gate && left->speed_valid && right->speed_valid &&
++        left->fault_valid && right->fault_valid && !left->fault && !right->fault &&
++        !left->fault_code && !right->fault_code &&
++        left->speed_age_ms < APP_REMOTE_SERVO_SYNC_MAX_AGE_MS &&
++        right->speed_age_ms < APP_REMOTE_SERVO_SYNC_MAX_AGE_MS &&
++        left->fault_age_ms < APP_REMOTE_SERVO_SYNC_MAX_AGE_MS &&
++        right->fault_age_ms < APP_REMOTE_SERVO_SYNC_MAX_AGE_MS &&
++        sync_ms(now - s->sample_tick[0]) < APP_REMOTE_SERVO_SYNC_MAX_AGE_MS &&
++        sync_ms(now - s->sample_tick[1]) < APP_REMOTE_SERVO_SYNC_MAX_AGE_MS;
++    s->correction_valid = s->feedback_valid && compensate && magnitude >= policy->minimum_rpm;
++    s->active = s->correction_valid;
++    if (s->have_pair) {
++        s->age_ms[0] = sync_ms(now - s->sample_tick[0]);
++        s->age_ms[1] = sync_ms(now - s->sample_tick[1]);
++    }
++    if (!s->correction_valid) s->applied_correction = 0.0f;
+     s->trip = 0U;
+     /* 量程及低速保护每次执行，不等待下一个补偿计算周期。 */
+     s->effective_limit = policy->correction_limit;
+@@ -191,7 +241,8 @@ void app_servo_sync_update(remote_sync_status_t *s,
+     if (!gate)
+         s->reject_reason = REMOTE_PAIR_GATE;
+     else if (!left->speed_valid || !right->speed_valid ||
+-             !left->fault_valid || !right->fault_valid ||
++             !left->fault_valid || !right->fault_valid || left->fault || right->fault ||
++             left->fault_code || right->fault_code ||
+              left->speed_age_ms >= APP_REMOTE_SERVO_SYNC_MAX_AGE_MS ||
+              right->speed_age_ms >= APP_REMOTE_SERVO_SYNC_MAX_AGE_MS ||
+              left->fault_age_ms >= APP_REMOTE_SERVO_SYNC_MAX_AGE_MS ||
+@@ -244,11 +295,42 @@ void app_servo_sync_update(remote_sync_status_t *s,
+         s->age_ms[1] = sync_ms(now - paired_right.sample_tick);
+         s->pair_tick = now;
+         s->have_pair = 1U;
+-        error = (int32_t)paired_left.actual_speed_rpm - paired_right.actual_speed_rpm;
++        s->sample_tick[0] = paired_left.sample_tick;
++        s->sample_tick[1] = paired_right.sample_tick;
++        s->aligned_tick = paired_left.sample_tick;
++        s->paired_rpm[0] = paired_left.actual_speed_rpm * policy->feedback_scale[0];
++        s->paired_rpm[1] = paired_right.actual_speed_rpm * policy->feedback_scale[1];
++        s->aligned = paired_left.sample_tick == paired_right.sample_tick;
++        {
++            unsigned axis;
++            for (axis = 0U; axis < 2U; ++axis) {
++                s->alignment_sequence[axis][0] = s->alignment_sequence[axis][1] = s->sequence[axis];
++                s->alignment_tick[axis][0] = s->alignment_tick[axis][1] = s->sample_tick[axis];
++            }
++            if (!s->aligned) {
++                /* Earlier raw time; the other axis must bracket this time. */
++                unsigned later = (int32_t)(paired_left.sample_tick - paired_right.sample_tick) > 0 ? 0U : 1U;
++                float interpolated;
++                TickType_t at = s->sample_tick[1U - later];
++                if (sync_interpolate(later ? right : left, at, now, &interpolated,
++                    s->alignment_sequence[later], s->alignment_tick[later])) {
++                    s->paired_rpm[later] = interpolated * policy->feedback_scale[later];
++                    s->sample_tick[later] = s->alignment_tick[later][0];
++                    s->aligned_tick = at; s->aligned = 1U;
++                }
++            }
++        }
++        s->error_f = s->paired_rpm[0] - s->paired_rpm[1];
++        s->age_ms[0] = sync_ms(now - s->sample_tick[0]);
++        s->age_ms[1] = sync_ms(now - s->sample_tick[1]);
++        error = (int32_t)(s->error_f >= 0.0f ? s->error_f + 0.5f : s->error_f - 0.5f);
+         s->raw_error = error;
+         s->effective_error = error > policy->deadband ?
+             error - policy->deadband : error < -policy->deadband ? error + policy->deadband : 0;
+-        requested = policy->kp * s->effective_error;
++        requested = policy->kp * (s->error_f > policy->deadband ? s->error_f - policy->deadband :
++            s->error_f < -policy->deadband ? s->error_f + policy->deadband : 0.0f);
++        s->feedback_valid = 1U;
++        s->correction_valid = compensate && magnitude >= policy->minimum_rpm;
+         if (sync_abs((float)error) > policy->error_rpm)
+         {
+             if (!s->over_limit) s->over_tick = now;
+@@ -268,7 +350,8 @@ void app_servo_sync_update(remote_sync_status_t *s,
+     }
+     else
+     {
+-        s->zero_pairs = 0U;
++        requested = s->correction_valid ? s->requested_correction : 0.0f;
++        if (!s->feedback_valid) s->zero_pairs = 0U;
+         s->over_limit = 0U;
+         s->over_limit_duration_ms = 0U;
+     }
+@@ -282,15 +365,15 @@ void app_servo_sync_update(remote_sync_status_t *s,
+     else
+     {
+         requested = sync_clamp(requested, s->effective_limit);
+-        step = policy->correction_rate * s->dt_ms / 1000.0f;
++        step = s->new_pair ? policy->correction_rate * s->dt_ms / 1000.0f : 0.0f;
+         s->applied_correction += sync_clamp(requested - s->applied_correction, step);
+         s->applied_correction = sync_clamp(s->applied_correction, s->effective_limit);
+-        s->active = s->pair_valid;
++        s->active = s->correction_valid;
+     }
+     s->integer_correction = (int16_t)(s->applied_correction >= 0.0f ?
+         s->applied_correction + 0.5f : s->applied_correction - 0.5f);
+     s->state = !gate ? REMOTE_SYNC_DISABLED :
+-        !s->pair_valid ? REMOTE_SYNC_STALE :
++        !s->feedback_valid ? REMOTE_SYNC_STALE :
+         sync_abs(s->requested_correction) > s->effective_limit ?
+         REMOTE_SYNC_LIMITED : REMOTE_SYNC_TRACKING;
+ }
+diff --git a/APP/app_remote_servo_sync.h b/APP/app_remote_servo_sync.h
+index 3903757..521d51d 100644
+--- a/APP/app_remote_servo_sync.h
++++ b/APP/app_remote_servo_sync.h
+@@ -46,11 +46,20 @@ typedef struct
+     uint8_t new_pair;
+     uint8_t zero_pairs;
+     uint8_t have_pair;
++    /* new_pair/pair_valid describe this calculation; validity below survives
++     * intervening service calls, never beyond original sample age. */
++    uint8_t feedback_valid, correction_valid, aligned;
++    float paired_rpm[2], error_f;
++    TickType_t sample_tick[2], aligned_tick;
++    uint32_t alignment_sequence[2][2];
++    TickType_t alignment_tick[2][2];
+     TickType_t pair_tick;
+     TickType_t calculation_tick;
+     TickType_t over_tick;
+     servo_speed_sample_t pending[2][SERVO_SPEED_SAMPLE_CAPACITY];
+     uint32_t received_sequence[2];
++    TickType_t received_tick[2];
++    uint8_t received_tick_valid[2];
+     uint8_t pending_count[2];
+     uint32_t pair_attempts;
+     uint32_t pair_valid_count;
+@@ -68,6 +77,7 @@ typedef struct
+     int32_t deadband, minimum_rpm, error_rpm;
+     uint32_t error_ms;
+     uint8_t trip_enabled;
++    float feedback_scale[2];
+ } servo_sync_policy_t;
+ void app_servo_sync_policy_default(servo_sync_policy_t *policy);
+ /* 配对诊断与运动补偿分离，允许停车时只计算可信实际车速。 */
+diff --git a/APP/app_rtos_create.c b/APP/app_rtos_create.c
+index 8435198..108131c 100644
+--- a/APP/app_rtos_create.c
++++ b/APP/app_rtos_create.c
+@@ -121,7 +121,7 @@ void freertos_taskstart(void)
+     /* Ramp readback diagnostics enlarge nested servo snapshots: keep >=256B margin. */
+     app_create_task_checked(cli_task, "cli", 832U, 2U,
+                             &cli_task_handle, 6U);
+-    app_create_task_checked(lcd_task, "lcd", 832U, 1U,
++    app_create_task_checked(lcd_task, "lcd", 896U, 1U,
+                             &lcd_task_handle, 7U);
+     app_create_task_checked(iwdg_task, "iwdg", 768U, 7U,
+                             &iwdg_task_handle, 8U);
+diff --git a/MDK-ARM/RailInspectionCar_V1.uvprojx b/MDK-ARM/RailInspectionCar_V1.uvprojx
+index b6d5a3b..849e465 100644
+--- a/MDK-ARM/RailInspectionCar_V1.uvprojx
++++ b/MDK-ARM/RailInspectionCar_V1.uvprojx
+@@ -1,4 +1,4 @@
+-<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
++<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+ <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_projx.xsd">
+ 
+   <SchemaVersion>2.1</SchemaVersion>
+@@ -1592,6 +1592,11 @@
+               <FileType>1</FileType>
+               <FilePath>..\APP\app_remote_servo.c</FilePath>
+             </File>
++            <File>
++              <FileName>app_dual_axis_motion.c</FileName>
++              <FileType>1</FileType>
++              <FilePath>..\APP\app_dual_axis_motion.c</FilePath>
++            </File>
+             <File>
+               <FileName>app_remote_servo_sync.c</FileName>
+               <FileType>1</FileType>
+@@ -1732,16 +1737,16 @@
+   </Targets>
+ 
+   <RTE>
+-    <apis/>
++    <apis />
+     <components>
+       <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.5.0" condition="ARMv6_7_8-M Device">
+-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
++        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0" />
+         <targetInfos>
+-          <targetInfo name="RailInspectionCar_V1"/>
++          <targetInfo name="RailInspectionCar_V1" />
+         </targetInfos>
+       </component>
+     </components>
+-    <files/>
++    <files />
+   </RTE>
+ 
+   <LayerInfo>
+diff --git a/Tests/run_can_control_tests.ps1 b/Tests/run_can_control_tests.ps1
+index aaf6b65..afca641 100644
+--- a/Tests/run_can_control_tests.ps1
++++ b/Tests/run_can_control_tests.ps1
+@@ -6,14 +6,14 @@ Push-Location $root
+ try {
+     foreach ($axis in @(1,2,3)) {
+         foreach ($control in @(0,1)) {
+-        & $Compiler -std=c99 -Wall -Wextra -Werror "-DAPP_CAN_CONTROL_ENABLED=$control" "-DAPP_CAN_STOP_PARAMETERS_APPROVED=$control" "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN Tests/test_can_control.c APP/app_can_control.c APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c Protocol/CAN/can_protocol.c -lm -o $binary
++        & $Compiler -std=c99 -Wall -Wextra -Werror "-DAPP_CAN_CONTROL_ENABLED=$control" "-DAPP_CAN_STOP_PARAMETERS_APPROVED=$control" "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN Tests/test_can_control.c APP/app_can_control.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/HMI/app_control_arbiter.c Protocol/CAN/can_protocol.c -lm -o $binary
+         if ($LASTEXITCODE -ne 0) { throw "CAN控制主机编译失败：$axis" }
+         & $binary
+         if ($LASTEXITCODE -ne 0) { throw "CAN控制主机测试失败：$axis" }
+         }
+     }
+     foreach ($axis in @(1,2,3)) {
+-        & $Compiler -std=c99 -Wall -Wextra -Werror -DAPP_CAN_CONTROL_ENABLED=1 -DAPP_CAN_STOP_PARAMETERS_APPROVED=1 -DTEST_CAN_MECHANICS_VARIANT=1 "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" -include Tests/mocks/can_mechanics_override.h -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN Tests/test_can_control.c APP/app_can_control.c APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c Protocol/CAN/can_protocol.c -lm -o $binary
++        & $Compiler -std=c99 -Wall -Wextra -Werror -DAPP_CAN_CONTROL_ENABLED=1 -DAPP_CAN_STOP_PARAMETERS_APPROVED=1 -DTEST_CAN_MECHANICS_VARIANT=1 "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" -include Tests/mocks/can_mechanics_override.h -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN Tests/test_can_control.c APP/app_can_control.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/HMI/app_control_arbiter.c Protocol/CAN/can_protocol.c -lm -o $binary
+         if ($LASTEXITCODE -ne 0) { throw "异机械参数CAN编译失败：$axis" }
+         & $binary
+         if ($LASTEXITCODE -ne 0) { throw "异机械参数CAN测试失败：$axis" }
+diff --git a/Tests/run_can_hmi_joint_tests.ps1 b/Tests/run_can_hmi_joint_tests.ps1
+index 986d472..7c7d1c5 100644
+--- a/Tests/run_can_hmi_joint_tests.ps1
++++ b/Tests/run_can_hmi_joint_tests.ps1
+@@ -11,7 +11,7 @@ try {
+             -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN `
+             -IBSP/SERVO_PULSE -IBSP/CAN -IBSP/DEBUG_UART `
+             Tests/test_can_hmi_joint.c APP/app_remote_servo.c APP/HMI/app_hmi_control.c `
+-            APP/HMI/app_control_arbiter.c APP/app_remote_servo_sync.c APP/app_can_control.c `
++            APP/HMI/app_control_arbiter.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_can_control.c `
+             APP/app_can_status.c APP/app_can_config.c Protocol/CAN/can_protocol.c -lm -o $binary
+         if($LASTEXITCODE){throw "CAN/HMI/遥控联合编译失败 axis=$axis"}
+         & $binary
+diff --git a/Tests/run_can_k5_recovery_tests.ps1 b/Tests/run_can_k5_recovery_tests.ps1
+index c87f781..fa356e9 100644
+--- a/Tests/run_can_k5_recovery_tests.ps1
++++ b/Tests/run_can_k5_recovery_tests.ps1
+@@ -11,7 +11,7 @@ try {
+             -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN `
+             -IBSP/SERVO_PULSE -IBSP/CAN -IBSP/DEBUG_UART `
+             Tests/test_can_k5_recovery.c APP/app_remote_servo.c APP/HMI/app_hmi_control.c `
+-            APP/HMI/app_control_arbiter.c APP/app_remote_servo_sync.c APP/app_can_control.c `
++            APP/HMI/app_control_arbiter.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_can_control.c `
+             APP/app_can_status.c APP/app_can_config.c Protocol/CAN/can_protocol.c -lm -o $binary
+         if($LASTEXITCODE){throw "K5恢复编译失败 axis=$axis"}
+         & $binary
+@@ -24,7 +24,7 @@ try {
+             -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN "-I$upper" `
+             -IBSP/SERVO_PULSE -IBSP/CAN -IBSP/DEBUG_UART `
+             Tests/test_can_k5_f103_joint.c APP/app_remote_servo.c APP/HMI/app_hmi_control.c `
+-            APP/HMI/app_control_arbiter.c APP/app_remote_servo_sync.c APP/app_can_control.c `
++            APP/HMI/app_control_arbiter.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_can_control.c `
+             APP/app_can_status.c APP/app_can_config.c Protocol/CAN/can_protocol.c `
+             "$upper\can_upper_protocol.c" "$upper\can_upper_control.c" "$upper\can_upper_ui.c" -lm -o $binary
+         if($LASTEXITCODE){throw "双端K5编译失败 axis=$axis"}
+diff --git a/Tests/run_can_protocol_tests.ps1 b/Tests/run_can_protocol_tests.ps1
+index 1735f7a..fd754ba 100644
+--- a/Tests/run_can_protocol_tests.ps1
++++ b/Tests/run_can_protocol_tests.ps1
+@@ -46,7 +46,7 @@ try {
+             -DAPP_CAN_CONTROL_ENABLED=0 -DAPP_CAN_STOP_PARAMETERS_APPROVED=0 `
+             -ITests/can_mocks -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN `
+             -IBSP/CAN -IBSP/DEBUG_UART -IBSP/NRF24L01 `
+-            Tests/test_can_app.c APP/app_can_status.c APP/app_can_config.c APP/app_can_control.c `
++            Tests/test_can_app.c APP/app_can_status.c APP/app_can_config.c APP/app_can_control.c APP/app_dual_axis_motion.c APP/app_remote_servo_sync.c `
+             Protocol/CAN/can_protocol.c Protocol/CAN/can_link.c Protocol/CAN/can_upper.c Protocol/CAN/can_arm.c `
+             "-Wl,--gc-sections" -lm -o $binary
+         if ($LASTEXITCODE -ne 0) { throw "CAN APP调度编译失败，开关=$enabled 调试=$debug" }
+@@ -58,8 +58,8 @@ try {
+         -DportTICK_PERIOD_MS=1U -DAPP_CAN_CONTROL_ENABLED=1 -DAPP_CAN_STOP_PARAMETERS_APPROVED=1 `
+         -ITests/can_mocks -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN `
+         -IBSP/CAN -IBSP/DEBUG_UART -IBSP/NRF24L01 `
+-        Tests/test_can_app.c APP/app_can_status.c APP/app_can_config.c APP/app_can_control.c `
+-        APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c `
++        Tests/test_can_app.c APP/app_can_status.c APP/app_can_config.c APP/app_can_control.c APP/app_dual_axis_motion.c APP/app_remote_servo_sync.c `
++        APP/HMI/app_control_arbiter.c `
+         Protocol/CAN/can_protocol.c Protocol/CAN/can_link.c Protocol/CAN/can_upper.c Protocol/CAN/can_arm.c `
+         "-Wl,--gc-sections" -lm -o $binary
+     if ($LASTEXITCODE -ne 0) { throw "CAN宏开启APP编译失败" }
+diff --git a/Tests/run_cli_session_tests.ps1 b/Tests/run_cli_session_tests.ps1
+index 5ed78cc..215e3a5 100644
+--- a/Tests/run_cli_session_tests.ps1
++++ b/Tests/run_cli_session_tests.ps1
+@@ -59,7 +59,7 @@ try {
+                 "-Wl,--gc-sections" $irqObject Tests/test_core.c Tests/aimtor_test_unit.c APP/app_config.c `
+                 APP/motion_control.c APP/servo_debug_control.c APP/app_cli_servo_session.c `
+                 BSP/SERVO_PULSE/servo_pulse.c Protocol/modbus_rtu.c APP/HMI/app_control_arbiter.c `
+-                APP/HMI/app_hmi_control.c APP/app_remote_servo_sync.c -lm -o $binary
++                APP/HMI/app_hmi_control.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c -lm -o $binary
+             if ($LASTEXITCODE -ne 0) { throw "HMI真实驱动联动编译失败：轴=$axis 待机=$hold" }
+             & $binary
+             if ($LASTEXITCODE -ne 0) { throw "HMI真实驱动联动测试失败：轴=$axis 待机=$hold" }
+diff --git a/Tests/run_communication_key_tests.ps1 b/Tests/run_communication_key_tests.ps1
+index db5a9db..8ff2b32 100644
+--- a/Tests/run_communication_key_tests.ps1
++++ b/Tests/run_communication_key_tests.ps1
+@@ -9,7 +9,7 @@ try {
+     $common = @("-std=c99", "-Wall", "-Wextra", "-Werror", "-DTEST_COMMUNICATION_KEY_ONLY=1",
+         "-DAPP_CAN_CONTROL_ENABLED=0", "-DAPP_CAN_STOP_PARAMETERS_APPROVED=0",
+         "-ITests/mocks", "-IAPP", "-IAPP/HMI", "-IDevice", "-IBSP/SERVO_PULSE", "-IProtocol",
+-        "Tests/test_remote_servo.c", "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c",
++        "Tests/test_remote_servo.c", "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c", "APP/app_dual_axis_motion.c",
+         "APP/app_config.c", "APP/HMI/app_control_arbiter.c", "-o", $binary)
+     function Invoke-RemoteCase([string[]]$Defines, [string]$Name) {
+         & $Compiler @common @Defines
+diff --git a/Tests/run_current_core_tests.ps1 b/Tests/run_current_core_tests.ps1
+index 3738ec9..73a319d 100644
+--- a/Tests/run_current_core_tests.ps1
++++ b/Tests/run_current_core_tests.ps1
+@@ -53,7 +53,7 @@ try {
+     if($LASTEXITCODE){throw 'RS485 DMA regression failed'}
+     foreach($trip in @(0,1)) {
+         & $Compiler -DAPP_UNPROTECTED_MOTION_TEST_ENABLED=1 -std=c99 -Wall -Wextra -Werror -DAPP_REMOTE_SERVO_SYNC_ENABLED=1 "-DAPP_REMOTE_SERVO_SYNC_TRIP_ENABLED=$trip" `
+-            -ITests/mocks -IAPP -IDevice Tests/test_remote_sync.c APP/app_remote_servo_sync.c -o $binary
++            -ITests/mocks -IAPP -IDevice Tests/test_remote_sync.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c -o $binary
+         if($LASTEXITCODE){throw 'Synchronization compile failed'}
+         & $binary
+         if($LASTEXITCODE){throw 'Synchronization regression failed'}
+diff --git a/Tests/run_current_watchdog_tests.ps1 b/Tests/run_current_watchdog_tests.ps1
+index adecefd..1400943 100644
+--- a/Tests/run_current_watchdog_tests.ps1
++++ b/Tests/run_current_watchdog_tests.ps1
+@@ -32,7 +32,7 @@ try {
+                         "-DAPP_SERVO_READONLY_TEST=$readonly" `
+                         -ITests/mocks -IAPP -IAPP/HMI -IDevice -IBSP/SERVO_PULSE -IProtocol `
+                         Tests/test_remote_servo.c APP/app_remote_servo.c `
+-                        APP/app_remote_servo_sync.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
++                        APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
+                     if ($LASTEXITCODE -ne 0) { throw "K6事件编译失败：$enabled/$axis/$readonly" }
+                     & $binary
+                     if ($LASTEXITCODE -ne 0) { throw "K6事件测试失败：$enabled/$axis/$readonly" }
+@@ -45,7 +45,7 @@ try {
+                 "-DAPP_SERVO_READONLY_TEST=$readonly" `
+                 -ITests/mocks -IAPP -IAPP/HMI -IDevice -IBSP/SERVO_PULSE -IProtocol `
+                 Tests/test_remote_servo.c APP/app_remote_servo.c `
+-                APP/app_remote_servo_sync.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
++                APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
+             if ($LASTEXITCODE -ne 0) { throw "K6配置遥控回归编译失败" }
+             & $binary
+             if ($LASTEXITCODE -ne 0) { throw "K6配置遥控回归失败" }
+diff --git a/Tests/run_field_regressions.ps1 b/Tests/run_field_regressions.ps1
+index 55f6e30..cb4e9a1 100644
+--- a/Tests/run_field_regressions.ps1
++++ b/Tests/run_field_regressions.ps1
+@@ -9,7 +9,7 @@ try {
+   $upper=(Resolve-Path -LiteralPath '../F103_TEST/06_Upper_level_CAN_com_v1.1_low_speed_test').Path
+   $exe=Join-Path $env:TEMP 'rail_lcd_warning_release.exe'
+   $sources=@("$upper/Tests/test_lcd_warning_release.c","$upper/APP/can_upper_protocol.c","$upper/APP/can_upper_control.c","$upper/APP/can_upper_ui.c",
+-  'APP/app_can_status.c','APP/app_can_config.c','APP/app_can_control.c','APP/app_remote_servo_sync.c','APP/HMI/app_control_arbiter.c',
++  'APP/app_can_status.c','APP/app_can_config.c','APP/app_can_control.c','APP/app_remote_servo_sync.c', 'APP/app_dual_axis_motion.c','APP/HMI/app_control_arbiter.c',
+   'Protocol/CAN/can_protocol.c','Protocol/CAN/can_link.c','Protocol/CAN/can_upper.c')
+   & $Compiler @common '-DAPP_CAN_CONTROL_ENABLED=1' '-DAPP_CAN_STOP_PARAMETERS_APPROVED=1' ('-I'+$upper+'/APP') @sources -lm -o $exe
+   if($LASTEXITCODE){throw 'LCD warning release compile failed'}
+@@ -21,7 +21,7 @@ try {
+   foreach($axis in $axes){foreach($sync in $syncs){
+    $exe=Join-Path $env:TEMP "rail_reverse_${axis}_${sync}.exe"
+    & $Compiler @common '-DAPP_CAN_CONTROL_ENABLED=0' '-DAPP_CAN_STOP_PARAMETERS_APPROVED=0' "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" "-DAPP_REMOTE_SERVO_SYNC_ENABLED=$sync" `
+-    Tests/test_remote_reversal_timing.c APP/app_remote_servo.c APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c APP/app_config.c -lm -o $exe
++    Tests/test_remote_reversal_timing.c APP/app_remote_servo.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/HMI/app_control_arbiter.c APP/app_config.c -lm -o $exe
+    if($LASTEXITCODE){throw 'Reversal timing compile failed'}
+    if($MeasureOnly){& $exe measure}else{& $exe}
+    if($LASTEXITCODE){throw "Reversal timing regression failed axis=$axis sync=$sync"}
+diff --git a/Tests/run_hmi_control_tests.ps1 b/Tests/run_hmi_control_tests.ps1
+index 84dde06..4c9d8cd 100644
+--- a/Tests/run_hmi_control_tests.ps1
++++ b/Tests/run_hmi_control_tests.ps1
+@@ -18,7 +18,7 @@ try {
+             "Tests/test_hmi_control.c",
+             "APP/HMI/app_hmi_control.c",
+             "APP/HMI/app_control_arbiter.c",
+-            "APP/app_remote_servo_sync.c",
++            "APP/app_remote_servo_sync.c", "APP/app_dual_axis_motion.c",
+             "-o", $binary
+         )
+         & $Compiler @args
+diff --git a/Tests/run_hmi_remote_joint_tests.ps1 b/Tests/run_hmi_remote_joint_tests.ps1
+index a7fba9e..1373607 100644
+--- a/Tests/run_hmi_remote_joint_tests.ps1
++++ b/Tests/run_hmi_remote_joint_tests.ps1
+@@ -6,7 +6,7 @@ Push-Location $root
+ try {
+     foreach($axis in @(1,2,3)) {
+         foreach($sync in @(0,1)) {
+-            $arguments=@('-std=c99','-Wall','-Wextra','-Werror',"-DAPP_SERVO_QUERY_MODE=$axis","-DAPP_SERVO_CONTROL_AXIS=$axis","-DAPP_REMOTE_SERVO_SYNC_ENABLED=$sync",'-ITests/mocks','-IAPP','-IAPP/HMI','-IDevice','-IProtocol','-IBSP/SERVO_PULSE','Tests/test_hmi_remote_joint.c','APP/app_remote_servo.c','APP/HMI/app_hmi_control.c','APP/HMI/app_control_arbiter.c','APP/app_remote_servo_sync.c','-o',$binary)
++            $arguments=@('-std=c99','-Wall','-Wextra','-Werror',"-DAPP_SERVO_QUERY_MODE=$axis","-DAPP_SERVO_CONTROL_AXIS=$axis","-DAPP_REMOTE_SERVO_SYNC_ENABLED=$sync",'-ITests/mocks','-IAPP','-IAPP/HMI','-IDevice','-IProtocol','-IBSP/SERVO_PULSE','Tests/test_hmi_remote_joint.c','APP/app_remote_servo.c','APP/HMI/app_hmi_control.c','APP/HMI/app_control_arbiter.c','APP/app_remote_servo_sync.c', 'APP/app_dual_axis_motion.c','-o',$binary)
+             & $Compiler @arguments
+             if($LASTEXITCODE){throw "联合测试编译失败 axis=$axis sync=$sync"}
+             & $binary
+diff --git a/Tests/run_k5_repeat_tests.ps1 b/Tests/run_k5_repeat_tests.ps1
+index 16dff09..a9a008b 100644
+--- a/Tests/run_k5_repeat_tests.ps1
++++ b/Tests/run_k5_repeat_tests.ps1
+@@ -9,7 +9,7 @@ try {
+     $common = @("-std=c99", "-Wall", "-Wextra", "-Werror",
+         "-DAPP_CAN_CONTROL_ENABLED=0", "-DAPP_CAN_STOP_PARAMETERS_APPROVED=0",
+         "-ITests/mocks", "-IAPP", "-IAPP/HMI", "-IDevice", "-IBSP/SERVO_PULSE", "-IProtocol",
+-        "Tests/test_remote_servo.c", "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c",
++        "Tests/test_remote_servo.c", "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c", "APP/app_dual_axis_motion.c",
+         "APP/app_config.c", "APP/HMI/app_control_arbiter.c", "-o", $binary)
+     function Invoke-RemoteCase([string[]]$Defines, [string]$Name) {
+         & $Compiler @common @Defines
+diff --git a/Tests/run_normal_timing_tests.ps1 b/Tests/run_normal_timing_tests.ps1
+index dfdab52..1999a4f 100644
+--- a/Tests/run_normal_timing_tests.ps1
++++ b/Tests/run_normal_timing_tests.ps1
+@@ -10,7 +10,7 @@ try {
+             "-DAPP_SERVO_QUERY_MODE=$axis","-DAPP_SERVO_CONTROL_AXIS=$axis", "-DAPP_REMOTE_SERVO_SYNC_ENABLED=$sync",
+             '-DAPP_SERVO_READONLY_TEST=0','-DAPP_HMI_CONTROL_ENABLED=1',
+             '-ITests/mocks','-IAPP','-IAPP/HMI','-IDevice','-IProtocol','-IProtocol/CAN','-IBSP/SERVO_PULSE',
+-            'Tests/test_normal_timing.c','APP/HMI/app_control_arbiter.c','APP/app_remote_servo_sync.c')
++            'Tests/test_normal_timing.c','APP/HMI/app_control_arbiter.c','APP/app_remote_servo_sync.c', 'APP/app_dual_axis_motion.c')
+         if ($source -eq 1) { $options += @('-DAPP_CAN_CONTROL_ENABLED=0','-DAPP_CAN_STOP_PARAMETERS_APPROVED=0','APP/HMI/app_hmi_control.c') }
+         elseif ($source -eq 2) { $options += @('-DAPP_CAN_CONTROL_ENABLED=0','-DAPP_CAN_STOP_PARAMETERS_APPROVED=0','APP/app_remote_servo.c','APP/app_config.c') }
+         else { $options += @('-DAPP_CAN_CONTROL_ENABLED=1','-DAPP_CAN_STOP_PARAMETERS_APPROVED=1','APP/app_can_control.c','Protocol/CAN/can_protocol.c') }
+diff --git a/Tests/run_ramp_driver_tests.ps1 b/Tests/run_ramp_driver_tests.ps1
+index cfd4281..a5551c3 100644
+--- a/Tests/run_ramp_driver_tests.ps1
++++ b/Tests/run_ramp_driver_tests.ps1
+@@ -40,7 +40,7 @@ try {
+                 "-Wl,--gc-sections" $irqObject Tests/test_ramp_driver.c Tests/aimtor_test_unit.c APP/app_config.c `
+                 APP/motion_control.c APP/servo_debug_control.c APP/app_cli_servo_session.c `
+                 BSP/SERVO_PULSE/servo_pulse.c Protocol/modbus_rtu.c APP/HMI/app_control_arbiter.c `
+-                APP/HMI/app_hmi_control.c APP/app_remote_servo_sync.c -lm -o $binary
++                APP/HMI/app_hmi_control.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c -lm -o $binary
+             if ($LASTEXITCODE -ne 0) { throw "HMI真实驱动联动编译失败：轴=$axis 待机=$hold" }
+             & $binary
+             if ($LASTEXITCODE -ne 0) { throw "HMI真实驱动联动测试失败：轴=$axis 待机=$hold" }
+diff --git a/Tests/run_ramp_source_tests.ps1 b/Tests/run_ramp_source_tests.ps1
+index e69074c..573d1ec 100644
+--- a/Tests/run_ramp_source_tests.ps1
++++ b/Tests/run_ramp_source_tests.ps1
+@@ -8,7 +8,7 @@ try {
+             & $Compiler -std=c99 -Wall -Wextra -Werror "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" `
+                 "-DAPP_REMOTE_SERVO_SYNC_ENABLED=$sync" -DAPP_SERVO_READONLY_TEST=0 -DAPP_CAN_CONTROL_ENABLED=0 -DAPP_CAN_STOP_PARAMETERS_APPROVED=0 `
+                 -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IBSP/SERVO_PULSE `
+-                Tests/test_ramp_remote.c APP/app_remote_servo.c APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c APP/app_config.c -lm -o $binary
++                Tests/test_ramp_remote.c APP/app_remote_servo.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/HMI/app_control_arbiter.c APP/app_config.c -lm -o $binary
+             if ($LASTEXITCODE) {throw 'Remote timing compile failed'}
+             & $binary
+             if ($LASTEXITCODE) {throw 'Remote timing failed'}
+@@ -17,7 +17,7 @@ try {
+         & $Compiler -std=c99 -Wall -Wextra -Werror -DAPP_CAN_CONTROL_ENABLED=1 -DAPP_CAN_STOP_PARAMETERS_APPROVED=1 `
+             "-DAPP_SERVO_QUERY_MODE=$axis" "-DAPP_SERVO_CONTROL_AXIS=$axis" -DAPP_SERVO_READONLY_TEST=0 `
+             -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN `
+-            Tests/test_ramp_can.c APP/app_can_control.c APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c Protocol/CAN/can_protocol.c -lm -o $binary
++            Tests/test_ramp_can.c APP/app_can_control.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/HMI/app_control_arbiter.c Protocol/CAN/can_protocol.c -lm -o $binary
+         if ($LASTEXITCODE) {throw 'CAN timing compile failed'}
+         & $binary
+         if ($LASTEXITCODE) {throw 'CAN timing failed'}
+diff --git a/Tests/run_snapshot_transport_tests.ps1 b/Tests/run_snapshot_transport_tests.ps1
+index 2f1804d..116e23e 100644
+--- a/Tests/run_snapshot_transport_tests.ps1
++++ b/Tests/run_snapshot_transport_tests.ps1
+@@ -9,7 +9,7 @@ try {
+         -IBSP/CAN -IBSP/DEBUG_UART -IBSP/NRF24L01 Tests/test_snapshot_transport.c `
+         -I../F103_TEST/06_Upper_level_CAN_com_v1.1_low_speed_test/APP `
+         ../F103_TEST/06_Upper_level_CAN_com_v1.1_low_speed_test/APP/can_upper_protocol.c `
+-        APP/app_can_status.c APP/app_can_config.c APP/app_can_control.c `
++        APP/app_can_status.c APP/app_can_config.c APP/app_can_control.c APP/app_dual_axis_motion.c APP/app_remote_servo_sync.c `
+         Protocol/CAN/can_protocol.c Protocol/CAN/can_link.c Protocol/CAN/can_upper.c Protocol/CAN/can_arm.c `
+         '-Wl,--gc-sections' -lm -o $binary
+     if ($LASTEXITCODE -ne 0) { throw 'CAN快照传输预算测试编译失败' }
+diff --git a/Tests/run_tests.ps1 b/Tests/run_tests.ps1
+index 9b8b41a..17147eb 100644
+--- a/Tests/run_tests.ps1
++++ b/Tests/run_tests.ps1
+@@ -118,7 +118,7 @@ try {
+         $syncBinary = Join-Path $env:TEMP "rail_remote_sync_tests.exe"
+         & $Compiler -DAPP_UNPROTECTED_MOTION_TEST_ENABLED=1 -std=c99 -Wall -Wextra -Werror `
+             "-DAPP_REMOTE_SERVO_SYNC_ENABLED=1" "-DAPP_REMOTE_SERVO_SYNC_TRIP_ENABLED=$trip" `
+-            -ITests/mocks -IAPP -IDevice Tests/test_remote_sync.c APP/app_remote_servo_sync.c `
++            -ITests/mocks -IAPP -IDevice Tests/test_remote_sync.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c `
+             -o $syncBinary
+         if ($LASTEXITCODE -ne 0) { throw "同步算法编译失败" }
+         & $syncBinary
+@@ -189,7 +189,7 @@ try {
+             ("-DAPP_SERVO_CONTROL_AXIS=" + $mode),
+             "-ITests/mocks", "-IAPP", "-IAPP/HMI", "-IDevice", "-IBSP/SERVO_PULSE",
+             "-IProtocol", "Tests/test_remote_servo.c",
+-            "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c", "APP/app_config.c", "APP/HMI/app_control_arbiter.c", "-o", $remoteBinary
++            "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c", "APP/app_dual_axis_motion.c", "APP/app_config.c", "APP/HMI/app_control_arbiter.c", "-o", $remoteBinary
+         )
+         foreach ($sync in @(0, 1)) {
+         foreach ($hold in @(0, 1)) {
+@@ -207,7 +207,7 @@ try {
+             "-DAPP_CAN_ENABLED=0", "-DAPP_CAN_CONTROL_ENABLED=0", "-DAPP_CAN_STOP_PARAMETERS_APPROVED=0",
+             "-ITests/mocks", "-IAPP", "-IAPP/HMI", "-IDevice", "-IBSP/SERVO_PULSE",
+             "-IProtocol", "Tests/test_remote_servo.c",
+-            "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c", "APP/app_config.c", "APP/HMI/app_control_arbiter.c", "-o", $remoteBinary
++            "APP/app_remote_servo.c", "APP/app_remote_servo_sync.c", "APP/app_dual_axis_motion.c", "APP/app_config.c", "APP/HMI/app_control_arbiter.c", "-o", $remoteBinary
+         )
+         & $Compiler @readonlyRemoteArgs "-DAPP_REMOTE_SERVO_SYNC_ENABLED=$sync"
+         if ($LASTEXITCODE -ne 0) { throw "只读遥控测试编译失败" }
+@@ -231,7 +231,7 @@ try {
+             "-DAPP_REMOTE_SERVO_LINK_STOP_DECEL_MPS2=$($pair[0])" `
+             "-DAPP_REMOTE_SERVO_K5_STOP_DECEL_MPS2=$($pair[1])" `
+             -ITests/mocks -IAPP -IAPP/HMI -IDevice -IBSP/SERVO_PULSE -IProtocol `
+-            Tests/test_remote_servo.c APP/app_remote_servo.c APP/app_remote_servo_sync.c APP/HMI/app_control_arbiter.c `
++            Tests/test_remote_servo.c APP/app_remote_servo.c APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/HMI/app_control_arbiter.c `
+             APP/app_config.c -o $stopBinary
+         if ($LASTEXITCODE -ne 0) { throw "独立停车参数测试编译失败" }
+         & $stopBinary
+@@ -311,6 +311,8 @@ try {
+     & (Join-Path $PSScriptRoot "run_ramp_source_tests.ps1") -Compiler $Compiler
+     & (Join-Path $PSScriptRoot "run_normal_timing_tests.ps1") -Compiler $Compiler
+     & (Join-Path $PSScriptRoot "run_ramp_diagnostic_tests.ps1") -Compiler $Compiler
++    & (Join-Path $PSScriptRoot "run_dual_axis_tests.ps1") -Compiler $Compiler
++    & (Join-Path $PSScriptRoot "run_dual_source_random_tests.ps1") -Compiler $Compiler
+ }
+ finally {
+     Pop-Location
+diff --git a/Tests/run_watchdog_test.ps1 b/Tests/run_watchdog_test.ps1
+index cdb7395..31d17df 100644
+--- a/Tests/run_watchdog_test.ps1
++++ b/Tests/run_watchdog_test.ps1
+@@ -33,7 +33,7 @@ try {
+                         "-DAPP_SERVO_READONLY_TEST=$readonly" `
+                         -ITests/mocks -IAPP -IAPP/HMI -IDevice -IBSP/SERVO_PULSE -IProtocol `
+                         Tests/test_remote_servo.c APP/app_remote_servo.c `
+-                        APP/app_remote_servo_sync.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
++                        APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
+                     if ($LASTEXITCODE -ne 0) { throw "K6事件编译失败：$enabled/$axis/$readonly" }
+                     & $binary
+                     if ($LASTEXITCODE -ne 0) { throw "K6事件测试失败：$enabled/$axis/$readonly" }
+@@ -47,7 +47,7 @@ try {
+                 "-DAPP_SERVO_READONLY_TEST=$readonly" `
+                 -ITests/mocks -IAPP -IAPP/HMI -IDevice -IBSP/SERVO_PULSE -IProtocol `
+                 Tests/test_remote_servo.c APP/app_remote_servo.c `
+-                APP/app_remote_servo_sync.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
++                APP/app_remote_servo_sync.c APP/app_dual_axis_motion.c APP/app_config.c APP/HMI/app_control_arbiter.c -o $binary
+             if ($LASTEXITCODE -ne 0) { throw "K6配置遥控回归编译失败" }
+             & $binary
+             if ($LASTEXITCODE -ne 0) { throw "K6配置遥控回归失败" }
+diff --git a/Tests/test_can_control.c b/Tests/test_can_control.c
+index c5bc019..bfea976 100644
+--- a/Tests/test_can_control.c
++++ b/Tests/test_can_control.c
+@@ -364,7 +364,7 @@ static void test_mechanical_and_partial_failure(void)
+             assert(fabs(physical) > 0 && fabs(fabs(physical) - 1000.0) < 30.0);
+             assert(abs((int)state.commanded_rpm[axis]) <= APP_DEBUG_MAX_RPM);
+         }
+-    drive(-1000, 3500U);
++    drive(-1000, 5000U); /* Includes zero confirmation and sync-priority allocation. */
+     for (axis = 0U; axis < 2U; ++axis)
+         if (APP_SERVO_CONTROL_AXIS & (1U << axis))
+             assert(app_can_control_rpm_mm_s(state.commanded_rpm[axis], (uint8_t)axis) < 0);
+diff --git a/Tests/test_normal_timing.c b/Tests/test_normal_timing.c
+index ceb6f5e..fa34c05 100644
+--- a/Tests/test_normal_timing.c
++++ b/Tests/test_normal_timing.c
+@@ -57,7 +57,8 @@ int main(int argc, char **argv)
+         timing_delay = 0; reset(); acquire();
+         axis = APP_SERVO_CONTROL_AXIS == 2 ? 1 : 0;
+         mm = (int16_t)(target * app_can_control_rpm_mm_s(1, (uint8_t)axis));
+-        target = (int16_t)(mm / app_can_control_rpm_mm_s(1, (uint8_t)axis));
++        /* Production quantizes once, at the final axis command. */
++        target = app_motion_ramp_round_rpm((float)(mm / app_can_control_rpm_mm_s(1, (uint8_t)axis)));
+         began = tick;
+ #endif
+         timing_delay = delays[d];
+@@ -159,7 +160,13 @@ int main(int argc, char **argv)
+             printf("source=%d axes=%d sync=%d per_axis_delay=%u jitter=%u phase=%u from_abs=%d target=%d last_ack_ms=%lu theory_ms=%.1f\n",
+                 TIMING_SOURCE, APP_SERVO_CONTROL_AXIS, APP_REMOTE_SERVO_SYNC_ENABLED,
+                 delays[d], d == 3, phase, abs(initial), target, (unsigned long)duration, expected);
+-            if (step == 250000 || fabs(duration - expected) > 500.0) ++failures;
++            /* Differential-first allocation can slow common arrival while
++             * maintaining both final axis acceleration limits. No-sync runs
++             * retain the original 500 ms timing budget; clock counters below
++             * independently prove integration is not ACK driven. */
++            if (step == 250000 || duration < expected - 500.0 ||
++                duration > expected * (APP_REMOTE_SERVO_SYNC_ENABLED &&
++                    APP_SERVO_CONTROL_AXIS == 3 ? 1.15 : 1.0) + 500.0) ++failures;
+         }
+         }
+         /* Inject a failure into a real outstanding asynchronous speed batch. */
+diff --git a/Tests/test_remote_reversal_timing.c b/Tests/test_remote_reversal_timing.c
+index 01dab43..15637ca 100644
+--- a/Tests/test_remote_reversal_timing.c
++++ b/Tests/test_remote_reversal_timing.c
+@@ -54,7 +54,7 @@ static void reversal_interruptions(void)
+                 if(seq[axis]!=axes[axis].speed_write_sequence && timing_rpm[axis]*sign<0)assert(saw_zero);
+             }
+         }
+-        if(scenario<3U) {assert(status().authorized);assert(abs(axes[TEST_AXIS].actual_speed_rpm-target)<=2);}
++        if(scenario<3U) {printf("interruption scenario=%u sign=%d target=%d actual=%d base=%d\n",scenario,sign,target,axes[TEST_AXIS].actual_speed_rpm,status().commanded_rpm);assert(status().authorized);assert(abs(axes[TEST_AXIS].actual_speed_rpm-target)<=2);}
+         else {
+             assert(!status().authorized);
+             if(scenario==5U) {for(axis=0U;axis<2U;++axis) if(APP_SERVO_CONTROL_AXIS&(1U<<axis))assert(!axes[axis].enabled);}
+diff --git a/APP/app_dual_axis_motion.c b/APP/app_dual_axis_motion.c
+new file mode 100644
+index 0000000..32d9aac
+--- /dev/null
++++ b/APP/app_dual_axis_motion.c
+@@ -0,0 +1,321 @@
++#include "app_dual_axis_motion.h"
++#include "app_config.h"
++#include "app_motion_ramp.h"
++#include <float.h>
++#include <math.h>
++#include <string.h>
++
++#define DUAL_PI (3.14159265358979323846f)
++#define DUAL_RADIUS (APP_WHEEL_DIAMETER_M * 0.5f)
++#define DUAL_EPS (0.000001f)
++static float da(float x) { return x < 0.0f ? -x : x; }
++static float dn(float a, float b) { return a < b ? a : b; }
++static float dx(float a, float b) { return a > b ? a : b; }
++static float dc(float x, float lo, float hi) { return x < lo ? lo : x > hi ? hi : x; }
++static uint8_t finite_value(float x) { return x >= -FLT_MAX && x <= FLT_MAX; }
++static float gear(uint8_t axis) { return axis ? APP_DUAL_REAR_GEAR : APP_DUAL_FRONT_GEAR; }
++static float direction(uint8_t axis) { return (float)(axis ? APP_DUAL_REAR_SIGN : APP_DUAL_FRONT_SIGN); }
++float app_dual_motor_to_wheel(float rpm, uint8_t axis)
++{ return direction(axis) * rpm * (2.0f * DUAL_PI / 60.0f) / gear(axis); }
++float app_dual_wheel_to_motor(float omega, uint8_t axis)
++{ return direction(axis) * omega * gear(axis) * (60.0f / (2.0f * DUAL_PI)); }
++float app_dual_nominal_rpm_to_wheel(float rpm)
++{ return rpm * (2.0f * DUAL_PI / 60.0f) / APP_GEAR_REDUCTION_RATIO; }
++float app_dual_vehicle_mm_s_to_wheel(float mm_s) { return mm_s / (1000.0f * DUAL_RADIUS); }
++bool app_dual_config_valid(void)
++{
++    return finite_value(APP_DUAL_FRONT_GEAR) && APP_DUAL_FRONT_GEAR > 0.0f &&
++        finite_value(APP_DUAL_REAR_GEAR) && APP_DUAL_REAR_GEAR > 0.0f &&
++        (APP_DUAL_FRONT_SIGN == 1 || APP_DUAL_FRONT_SIGN == -1) &&
++        (APP_DUAL_REAR_SIGN == 1 || APP_DUAL_REAR_SIGN == -1) &&
++        (!APP_DUAL_S_ENABLED || (finite_value(APP_DUAL_JERK_MPS3) && APP_DUAL_JERK_MPS3 > 0.0f)) &&
++        (!APP_DUAL_PI_ENABLED || (finite_value(APP_DUAL_KI) && APP_DUAL_KI > 0.0f &&
++            finite_value(APP_DUAL_KAW) && APP_DUAL_KAW > 0.0f));
++}
++
++bool app_dual_trajectory_plan(app_dual_trajectory_t *s, float target,
++    float positive_acceleration, float negative_acceleration, float jerk)
++{
++    float displacement, brake, sign, initial, limit, peak, first, middle, last;
++    if (!s || !finite_value(target) || !finite_value(s->velocity) ||
++        !finite_value(s->acceleration) || !finite_value(jerk) || jerk <= 0.0f ||
++        !finite_value(positive_acceleration) || positive_acceleration <= 0.0f ||
++        !finite_value(negative_acceleration) || negative_acceleration <= 0.0f) return false;
++    s->target = target; s->count = s->index = 0U;
++    displacement = target - s->velocity;
++    if (da(displacement) < DUAL_EPS && da(s->acceleration) < DUAL_EPS)
++    { s->velocity = target; s->acceleration = 0.0f; return true; }
++    /* Direction is chosen AFTER accounting for acceleration removal. This
++     * also handles a new target inside the unavoidable overshoot interval. */
++    brake = s->acceleration * da(s->acceleration) / (2.0f * jerk);
++    sign = displacement >= brake ? 1.0f : -1.0f;
++    initial = sign * s->acceleration;
++    limit = sign > 0.0f ? positive_acceleration : negative_acceleration;
++    peak = sqrtf(dx(0.0f, jerk * sign * displacement + initial * initial * 0.5f));
++    peak = dn(peak, limit);
++    first = (peak - initial) / jerk;
++    if (first < -DUAL_EPS) return false; /* initial state outside this feasible branch */
++    first = dx(0.0f, first); last = peak / jerk;
++    middle = peak > DUAL_EPS ?
++        (sign * displacement - (2.0f * peak * peak - initial * initial) / (2.0f * jerk)) / peak : 0.0f;
++    if (middle < -0.0001f) return false;
++    s->segment[0].duration = first; s->segment[0].jerk = sign * jerk;
++    s->segment[1].duration = dx(0.0f, middle); s->segment[1].jerk = 0.0f;
++    s->segment[2].duration = last; s->segment[2].jerk = -sign * jerk;
++    s->count = 3U;
++    return true;
++}
++
++void app_dual_trajectory_step(app_dual_trajectory_t *s, float seconds)
++{
++    unsigned iterations;
++    if (!s || !finite_value(seconds) || seconds <= 0.0f) return;
++    /* At most three phase boundaries; independent of dt and target magnitude. */
++    for (iterations = 0U; iterations < 3U && s->index < s->count; ++iterations)
++    {
++        app_dual_segment_t *phase = &s->segment[s->index];
++        float dt = dn(seconds, phase->duration), j = phase->jerk;
++        s->velocity += s->acceleration * dt + 0.5f * j * dt * dt;
++        s->acceleration += j * dt;
++        phase->duration -= dt; seconds -= dt;
++        if (phase->duration <= DUAL_EPS) ++s->index;
++        else break;
++    }
++    if (s->index == s->count) { s->velocity = s->target; s->acceleration = 0.0f; }
++}
++
++void app_dual_cancel(app_dual_axis_motion_t *s) { memset(s, 0, sizeof(*s)); }
++void app_dual_begin(app_dual_axis_motion_t *s, uint8_t owner, uint32_t generation,
++    uint8_t mask, uint32_t now_ms, float acceleration_mps2, float deceleration_mps2)
++{
++    app_dual_cancel(s);
++    s->owner = owner; s->generation = generation; s->mask = mask;
++    s->service_ms = s->allocation_ms = now_ms;
++    s->acceleration_limit = acceleration_mps2 / DUAL_RADIUS;
++    s->deceleration_limit = deceleration_mps2 / DUAL_RADIUS;
++    s->jerk_limit = APP_DUAL_JERK_MPS3 / DUAL_RADIUS;
++    s->s_mode = APP_DUAL_S_ENABLED; s->pi_mode = APP_DUAL_PI_ENABLED;
++    s->initialized = app_dual_config_valid() && owner && mask && !(mask & ~3U) &&
++        finite_value(s->acceleration_limit) && s->acceleration_limit > 0.0f &&
++        finite_value(s->deceleration_limit) && s->deceleration_limit > 0.0f;
++}
++
++static void replan(app_dual_axis_motion_t *s)
++{
++    float positive = s->trajectory.velocity < 0.0f ? s->deceleration_limit : s->acceleration_limit;
++    float negative = s->trajectory.velocity < 0.0f ? s->acceleration_limit : s->deceleration_limit;
++    if (!app_dual_trajectory_plan(&s->trajectory, s->trajectory.target,
++        positive, negative, s->jerk_limit))
++    { s->constraints |= DUAL_HARD_FALLBACK; s->trajectory.acceleration = 0.0f; s->trajectory.count = 0U; }
++}
++
++void app_dual_advance(app_dual_axis_motion_t *s, uint32_t now_ms)
++{
++    uint32_t elapsed;
++    float target, dt, rate, next;
++    if (!s->initialized) return;
++    elapsed = now_ms - s->service_ms; s->service_ms = now_ms;
++    if (elapsed > APP_MOTION_RAMP_MAX_DT_MS) {
++        ++s->clipped; s->discarded_ms += elapsed - APP_MOTION_RAMP_MAX_DT_MS;
++        elapsed = APP_MOTION_RAMP_MAX_DT_MS;
++    }
++    s->integrated_ms += elapsed;
++    /* Bounded budget: a stalled batch cannot accumulate an unbounded catch-up. */
++    s->allocation_budget_ms += elapsed;
++    if (s->allocation_budget_ms > APP_CAN_WRITE_CONFIRM_TIMEOUT_MS)
++        s->allocation_budget_ms = APP_CAN_WRITE_CONFIRM_TIMEOUT_MS;
++    dt = elapsed / 1000.0f;
++    target = s->zeroing ? 0.0f : s->trajectory.target;
++    if (s->trajectory.velocity * target < 0.0f) target = 0.0f;
++    if (s->s_mode && target != 0.0f && !(s->constraints & DUAL_HARD_FALLBACK))
++    {
++        app_dual_trajectory_step(&s->trajectory, dt);
++        return;
++    }
++    rate = da(target) > da(s->trajectory.velocity) ? s->acceleration_limit : s->deceleration_limit;
++    next = s->trajectory.velocity + dc(target - s->trajectory.velocity, -rate * dt, rate * dt);
++    s->trajectory.acceleration = dt > 0.0f ? (next - s->trajectory.velocity) / dt : s->trajectory.acceleration;
++    s->trajectory.velocity = next;
++}
++
++void app_dual_target(app_dual_axis_motion_t *s, float omega, uint32_t sequence,
++    uint32_t received_ms, uint32_t deadline_ms, uint32_t now_ms)
++{
++    uint32_t boundary = received_ms;
++    float old = s->trajectory.target;
++    if (!s->initialized || !finite_value(omega)) return;
++    if ((int32_t)(boundary - s->service_ms) < 0 || (int32_t)(now_ms - boundary) < 0) boundary = now_ms;
++    app_dual_advance(s, boundary);
++    s->target_sequence = sequence; s->target_received_ms = received_ms; s->deadline_ms = deadline_ms;
++    s->trajectory.target = omega;
++    if ((old != omega || (!s->trajectory.count && s->trajectory.velocity != omega)) &&
++        s->s_mode && !s->zeroing && omega != 0.0f) {
++        s->constraints &= ~DUAL_HARD_FALLBACK;
++        replan(s);
++        s->overshoot_bound = da(s->trajectory.acceleration) > DUAL_EPS ?
++            s->trajectory.acceleration * s->trajectory.acceleration / (2.0f * s->jerk_limit) : 0.0f;
++        s->overshoot_retract_seconds = da(s->trajectory.acceleration) / s->jerk_limit;
++    }
++    if (omega == 0.0f && s->s_mode) s->constraints |= DUAL_HARD_FALLBACK;
++    if (deadline_ms && (int32_t)(now_ms - deadline_ms) >= 0) {
++        s->zeroing = 1U; s->integral = 0.0f; s->constraints |= DUAL_HARD_FALLBACK;
++    }
++    app_dual_advance(s, now_ms);
++}
++
++void app_dual_anchor(app_dual_axis_motion_t *s, const int16_t rpm[2], uint32_t now_ms)
++{
++    unsigned axis, count = 0U;
++    float common = 0.0f;
++    for (axis = 0U; axis < 2U; ++axis) if (s->mask & (1U << axis)) {
++        s->command[axis] = app_dual_motor_to_wheel((float)rpm[axis], (uint8_t)axis);
++        s->command_acceleration[axis] = 0.0f;
++        common += s->command[axis]; ++count;
++    }
++    s->trajectory.velocity = count ? common / count : 0.0f;
++    s->trajectory.acceleration = 0.0f;
++    s->service_ms = s->allocation_ms = now_ms; s->allocation_budget_ms = 0U;
++    s->integral = 0.0f;
++    if (s->s_mode && !s->zeroing && s->trajectory.target != 0.0f) replan(s);
++}
++
++void app_dual_zero(app_dual_axis_motion_t *s, const int16_t rpm[2], uint32_t now_ms)
++{
++    app_dual_anchor(s, rpm, now_ms); s->zeroing = 1U;
++    s->trajectory.target = 0.0f; s->trajectory.count = 0U;
++    s->constraints |= DUAL_HARD_FALLBACK;
++}
++
++bool app_dual_output(app_dual_axis_motion_t *s, remote_sync_status_t *sync,
++    const servo_snapshot_t *front, const servo_snapshot_t *rear, TickType_t tick,
++    uint32_t now_ms, uint8_t compensate, int16_t rpm[2])
++{
++    servo_sync_policy_t policy;
++    const servo_snapshot_t *feedback[2];
++    float lo[2], hi[2], dt, base, delta, common, dlo, dhi, clo, chi;
++    float unit = app_dual_nominal_rpm_to_wheel(1.0f), previous[2];
++    uint8_t axis, stopping;
++    if (!s->initialized) { rpm[0] = rpm[1] = 0; return false; }
++    if (s->deadline_ms && (int32_t)(now_ms - s->deadline_ms) >= 0) {
++        s->zeroing = 1U; s->integral = 0.0f; s->constraints |= DUAL_HARD_FALLBACK;
++    }
++    app_dual_advance(s, now_ms);
++    base = s->trajectory.velocity; dt = s->allocation_budget_ms / 1000.0f;
++    feedback[0] = front; feedback[1] = rear;
++    stopping = s->zeroing || s->trajectory.target == 0.0f;
++    app_servo_sync_policy_default(&policy);
++    for (axis = 0U; axis < 2U; ++axis)
++        policy.feedback_scale[axis] = direction(axis) * APP_GEAR_REDUCTION_RATIO / gear(axis);
++    /* Sync compatibility fields remain nominal motor rpm, not raw axis rpm. */
++    /* The joint allocator reserves correction room by reducing the common
++     * component at full speed. Do not erase the differential request here. */
++    policy.maximum_rpm = (float)APP_OPERATION_MAX_MOTOR_RPM + policy.correction_limit;
++    app_servo_sync_update(sync, front, rear, app_motion_ramp_round_rpm(base / unit),
++        s->mask == 3U,
++        s->mask == 3U && APP_REMOTE_SERVO_SYNC_ENABLED && compensate, tick, &policy);
++    s->actual[0] = sync->paired_rpm[0] * unit;
++    s->actual[1] = sync->paired_rpm[1] * unit;
++    s->common_error = (s->actual[0] + s->actual[1]) * 0.5f - base;
++    if (!sync->correction_valid || !compensate) s->integral = 0.0f;
++    if (s->pi_mode && sync->new_pair && sync->aligned && sync->correction_valid && !stopping)
++        s->integral += APP_DUAL_KI * (sync->error_f > policy.deadband ? sync->error_f - policy.deadband :
++            sync->error_f < -policy.deadband ? sync->error_f + policy.deadband : 0.0f) * unit * sync->dt_ms / 1000.0f;
++    s->requested = sync->correction_valid && compensate ? sync->requested_correction * unit + s->integral : 0.0f;
++    delta = sync->correction_valid && compensate ? sync->applied_correction * unit + s->integral : 0.0f;
++    delta = dc(delta, -APP_REMOTE_SERVO_SYNC_LIMIT_RPM * unit, APP_REMOTE_SERVO_SYNC_LIMIT_RPM * unit);
++    if (da(base) < APP_REMOTE_SERVO_SYNC_MIN_RPM * unit || !compensate) delta = s->integral = 0.0f;
++    delta = dc(delta, s->correction - APP_REMOTE_SERVO_SYNC_RATE_RPM_S * unit * dt,
++        s->correction + APP_REMOTE_SERVO_SYNC_RATE_RPM_S * unit * dt);
++    if (base == 0.0f) delta = 0.0f;
++    s->constraints &= DUAL_HARD_FALLBACK;
++    for (axis = 0U; axis < 2U; ++axis) {
++        float speed_limit = da(app_dual_motor_to_wheel((float)APP_OPERATION_MAX_MOTOR_RPM, axis));
++        float pos = s->command[axis] < 0.0f ? s->deceleration_limit : s->acceleration_limit;
++        float neg = s->command[axis] > 0.0f ? s->deceleration_limit : s->acceleration_limit;
++        previous[axis] = s->command[axis];
++        if (da(base) + da(delta) > speed_limit) s->constraints |= DUAL_LIMIT_SPEED;
++        lo[axis] = dx(-speed_limit, previous[axis] - neg * dt);
++        hi[axis] = dn(speed_limit, previous[axis] + pos * dt);
++        if (base > 0.0f || (base == 0.0f && previous[axis] > 0.0f)) lo[axis] = dx(lo[axis], 0.0f);
++        if (base < 0.0f || (base == 0.0f && previous[axis] < 0.0f)) hi[axis] = dn(hi[axis], 0.0f);
++        if (s->s_mode && !stopping && dt > 0.0f && !(s->constraints & DUAL_HARD_FALLBACK)) {
++            float jlo = previous[axis] + (s->command_acceleration[axis] - s->jerk_limit * dt) * dt;
++            float jhi = previous[axis] + (s->command_acceleration[axis] + s->jerk_limit * dt) * dt;
++            if (dx(lo[axis], jlo) <= dn(hi[axis], jhi)) {
++                lo[axis] = dx(lo[axis], jlo); hi[axis] = dn(hi[axis], jhi);
++                s->constraints |= DUAL_LIMIT_JERK;
++            } else s->constraints |= DUAL_HARD_FALLBACK;
++        }
++        if (stopping || feedback[axis]->feedback_degraded) {
++            if (previous[axis] >= 0.0f) hi[axis] = dn(hi[axis], previous[axis]);
++            if (previous[axis] <= 0.0f) lo[axis] = dx(lo[axis], previous[axis]);
++        }
++        if (feedback[axis]->feedback_degraded) s->constraints |= DUAL_LIMIT_FEEDBACK;
++        if (!(s->mask & (1U << axis))) lo[axis] = hi[axis] = 0.0f;
++        if (lo[axis] > hi[axis]) { /* hard zero/direction wins over comfort constraints */
++            lo[axis] = hi[axis] = 0.0f; s->constraints |= DUAL_LIMIT_ZERO | DUAL_HARD_FALLBACK;
++        }
++    }
++    if (s->mask == 3U) {
++        /* Lexicographic solution: nearest feasible differential first, then
++         * nearest feasible common component. No solver or unbounded iteration. */
++        dlo = (lo[1] - hi[0]) * 0.5f; dhi = (hi[1] - lo[0]) * 0.5f;
++        s->applied = dc(delta, dlo, dhi);
++        clo = dx(lo[0] + s->applied, lo[1] - s->applied);
++        chi = dn(hi[0] + s->applied, hi[1] - s->applied);
++        common = dc(base, clo, chi);
++        s->command[0] = common - s->applied; s->command[1] = common + s->applied;
++    } else {
++        axis = s->mask == 2U ? 1U : 0U;
++        common = dc(base, lo[axis], hi[axis]);
++        s->command[0] = s->command[1] = 0.0f; s->command[axis] = common; s->applied = 0.0f;
++    }
++    if (da(common - base) > DUAL_EPS || da(s->applied - delta) > DUAL_EPS) {
++        s->constraints |= DUAL_LIMIT_RATE;
++        s->trajectory.velocity = common;
++        /* Keep acceleration continuous for feasible S replanning. */
++        if (s->s_mode && !stopping && !(s->constraints & DUAL_HARD_FALLBACK)) replan(s);
++    }
++    s->correction = s->applied;
++    for (axis = 0U; axis < 2U; ++axis) {
++        if (dt > 0.0f) s->command_acceleration[axis] = (s->command[axis] - previous[axis]) / dt;
++        rpm[axis] = app_motion_ramp_round_rpm(app_dual_wheel_to_motor(s->command[axis], axis));
++        if (rpm[axis] > APP_OPERATION_MAX_MOTOR_RPM) rpm[axis] = APP_OPERATION_MAX_MOTOR_RPM;
++        if (rpm[axis] < -APP_OPERATION_MAX_MOTOR_RPM) rpm[axis] = -APP_OPERATION_MAX_MOTOR_RPM;
++        if (!(s->mask & (1U << axis))) rpm[axis] = 0;
++        s->planned_rpm[axis] = rpm[axis];
++    }
++    /* PI anti-windup uses the final quantized differential. */
++    s->applied = s->mask == 3U ? (app_dual_motor_to_wheel(rpm[1], 1U) -
++        app_dual_motor_to_wheel(rpm[0], 0U)) * 0.5f : 0.0f;
++    if (s->pi_mode && sync->new_pair && sync->aligned && sync->correction_valid && !stopping) {
++        s->integral += APP_DUAL_KAW * (s->applied - s->requested) * sync->dt_ms / 1000.0f;
++        s->integral = dc(s->integral, -APP_REMOTE_SERVO_SYNC_LIMIT_RPM * unit, APP_REMOTE_SERVO_SYNC_LIMIT_RPM * unit);
++    }
++    sync->integer_correction = app_motion_ramp_round_rpm(s->applied / unit);
++    s->allocation_ms = now_ms; s->allocation_budget_ms = 0U; ++s->batch;
++    s->submitted_mask = s->acknowledged_mask = s->failed_mask = 0U;
++    return true;
++}
++
++void app_dual_execution(app_dual_axis_motion_t *s, uint32_t generation, uint32_t batch,
++    uint8_t axis, int16_t actual_rpm, uint32_t now_ms, uint8_t completed, uint8_t success)
++{
++    uint8_t bit;
++    if (!s->initialized || generation != s->generation || batch != s->batch || axis > 1U) return;
++    bit = (uint8_t)(1U << axis);
++    if (!completed) { s->submitted_mask |= bit; s->submitted_ms[axis] = now_ms; s->submitted_rpm[axis] = actual_rpm; }
++    else {
++        s->acknowledged_ms[axis] = now_ms; s->acknowledged_rpm[axis] = actual_rpm;
++        if (success) s->acknowledged_mask |= bit; else s->failed_mask |= bit;
++        if (success && actual_rpm != s->planned_rpm[axis]) {
++            s->constraints |= DUAL_WRITE_CHANGED;
++            s->command[axis] = app_dual_motor_to_wheel((float)actual_rpm, axis);
++            s->command_acceleration[axis] = 0.0f; s->integral = 0.0f;
++            s->trajectory.velocity = s->mask == 3U ? (s->command[0] + s->command[1]) * 0.5f : s->command[axis];
++            s->applied = s->correction = s->mask == 3U ? (s->command[1] - s->command[0]) * 0.5f : 0.0f;
++            s->trajectory.acceleration = 0.0f;
++            if (s->s_mode && !s->zeroing && s->trajectory.target != 0.0f) replan(s);
++        }
++    }
++}
+diff --git a/APP/app_dual_axis_motion.h b/APP/app_dual_axis_motion.h
+new file mode 100644
+index 0000000..c74a197
+--- /dev/null
++++ b/APP/app_dual_axis_motion.h
+@@ -0,0 +1,63 @@
++#ifndef APP_DUAL_AXIS_MOTION_H
++#define APP_DUAL_AXIS_MOTION_H
++
++#include "app_remote_servo_sync.h"
++
++/* All continuous state is wheel rad/s, rad/s^2 and rad/s^3. Public protocols
++ * and legacy sync diagnostics keep their existing motor-rpm units. */
++enum {
++    DUAL_LIMIT_RATE = 1U, DUAL_LIMIT_SPEED = 2U, DUAL_LIMIT_ZERO = 4U,
++    DUAL_LIMIT_FEEDBACK = 8U, DUAL_LIMIT_JERK = 16U,
++    DUAL_HARD_FALLBACK = 32U, DUAL_WRITE_CHANGED = 64U
++};
++typedef struct {
++    float duration, jerk;
++} app_dual_segment_t;
++typedef struct {
++    float velocity, acceleration, target;
++    app_dual_segment_t segment[3];
++    uint8_t count, index;
++} app_dual_trajectory_t;
++typedef struct {
++    uint8_t owner, mask, initialized, zeroing, s_mode, pi_mode;
++    uint32_t generation, target_sequence, target_received_ms, deadline_ms;
++    uint32_t service_ms, allocation_ms, batch, submitted_ms[2], acknowledged_ms[2];
++    uint32_t clipped, discarded_ms, integrated_ms, allocation_budget_ms, constraints;
++    float acceleration_limit, deceleration_limit, jerk_limit;
++    app_dual_trajectory_t trajectory;
++    float command[2], command_acceleration[2];
++    float correction, integral, requested, applied, common_error;
++    float overshoot_bound, overshoot_retract_seconds, actual[2];
++    int16_t planned_rpm[2], submitted_rpm[2], acknowledged_rpm[2];
++    uint8_t submitted_mask, acknowledged_mask, failed_mask;
++} app_dual_axis_motion_t;
++
++float app_dual_motor_to_wheel(float rpm, uint8_t axis);
++float app_dual_wheel_to_motor(float omega, uint8_t axis);
++float app_dual_nominal_rpm_to_wheel(float rpm);
++float app_dual_vehicle_mm_s_to_wheel(float mm_s);
++bool app_dual_config_valid(void);
++void app_dual_begin(app_dual_axis_motion_t *s, uint8_t owner, uint32_t generation,
++    uint8_t mask, uint32_t now_ms, float acceleration_mps2, float deceleration_mps2);
++void app_dual_cancel(app_dual_axis_motion_t *s);
++/* Retarget settles the old trajectory first. Repeated keepalive never resets dt. */
++void app_dual_target(app_dual_axis_motion_t *s, float omega, uint32_t sequence,
++    uint32_t received_ms, uint32_t deadline_ms, uint32_t now_ms);
++void app_dual_advance(app_dual_axis_motion_t *s, uint32_t now_ms);
++void app_dual_anchor(app_dual_axis_motion_t *s, const int16_t rpm[2], uint32_t now_ms);
++/* Explicit reversal-zero phase, owned by the original source state machine. */
++void app_dual_zero(app_dual_axis_motion_t *s, const int16_t rpm[2], uint32_t now_ms);
++/* Call only when a new batch may be latched. Does not write the bus. */
++bool app_dual_output(app_dual_axis_motion_t *s, remote_sync_status_t *sync,
++    const servo_snapshot_t *front, const servo_snapshot_t *rear, TickType_t tick,
++    uint32_t now_ms, uint8_t compensate, int16_t rpm[2]);
++void app_dual_execution(app_dual_axis_motion_t *s, uint32_t generation, uint32_t batch,
++    uint8_t axis, int16_t actual_rpm, uint32_t now_ms, uint8_t completed,
++    uint8_t success);
++
++/* Analytic velocity OTG. Exposed for deterministic host verification. */
++bool app_dual_trajectory_plan(app_dual_trajectory_t *s, float target,
++    float positive_acceleration, float negative_acceleration, float jerk);
++void app_dual_trajectory_step(app_dual_trajectory_t *s, float seconds);
++
++#endif
+diff --git a/Tests/test_dual_axis_motion.c b/Tests/test_dual_axis_motion.c
+new file mode 100644
+index 0000000..1b3ae29
+--- /dev/null
++++ b/Tests/test_dual_axis_motion.c
+@@ -0,0 +1,198 @@
++#include <assert.h>
++#include <math.h>
++#include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
++#include "app_dual_axis_motion.h"
++#include "app_motion_ramp.h"
++
++static servo_snapshot_t axes[2];
++static remote_sync_status_t feedback;
++static app_dual_axis_motion_t motion;
++static uint32_t rng = 127U;
++static float random_f(void) { rng = rng * 1664525U + 1013904223U; return (rng >> 8) / 16777216.0f; }
++static void sample(unsigned axis, int16_t rpm, uint32_t tick)
++{
++    unsigned i;
++    servo_snapshot_t *a = &axes[axis];
++    for (i = 1; i < SERVO_SPEED_SAMPLE_CAPACITY; ++i) a->speed_samples[i-1] = a->speed_samples[i];
++    a->speed_valid = a->fault_valid = 1;
++    a->actual_speed_rpm = rpm; a->speed_sample_tick = tick; ++a->speed_sequence;
++    a->speed_samples[SERVO_SPEED_SAMPLE_CAPACITY-1].valid = 1;
++    a->speed_samples[SERVO_SPEED_SAMPLE_CAPACITY-1].sample_tick = tick;
++    a->speed_samples[SERVO_SPEED_SAMPLE_CAPACITY-1].speed_sequence = a->speed_sequence;
++    a->speed_samples[SERVO_SPEED_SAMPLE_CAPACITY-1].actual_speed_rpm = rpm;
++}
++static void begin(void)
++{
++    memset(axes,0,sizeof(axes));
++    axes[0].speed_valid = axes[1].speed_valid = axes[0].fault_valid = axes[1].fault_valid = 1;
++    app_remote_sync_reset(&feedback,&axes[0],&axes[1],0);
++    app_dual_begin(&motion,1,42,3,0,0.15f,0.30f);
++    assert(motion.initialized);
++}
++static void test_trajectory(void)
++{
++    unsigned n, step;
++    for (n=0;n<10000;++n) {
++        app_dual_trajectory_t t;
++        float target, previous_a;
++        memset(&t,0,sizeof(t));
++        t.velocity = random_f()*100.0f-50.0f;
++        t.acceleration = random_f()*3.0f-1.5f;
++        target=random_f()*100.0f-50.0f;
++        assert(app_dual_trajectory_plan(&t,target,2.0f,3.0f,4.0f));
++        for(step=0;step<20000 && t.index<t.count;++step) {
++            float dt=0.001f+random_f()*0.03f;
++            previous_a=t.acceleration;
++            app_dual_trajectory_step(&t,dt);
++            assert(isfinite(t.velocity) && fabsf(t.acceleration)<=3.0001f);
++            assert(fabsf(t.acceleration-previous_a)<=4.0f*dt+0.0001f);
++            if(step%13==0 && step<100) {
++                float v=t.velocity,a=t.acceleration;
++                target=random_f()*100.0f-50.0f;
++                assert(app_dual_trajectory_plan(&t,target,2.0f,3.0f,4.0f));
++                assert(t.velocity==v && t.acceleration==a);
++            }
++        }
++        assert(t.index==t.count && t.velocity==target && t.acceleration==0.0f);
++    }
++    puts("PASS analytic OTG: 10000 randomized moving-state replans, exact terminal and bounded jerk");
++}
++static void test_clock_and_alignment(void)
++{
++    unsigned t;
++    float before;
++    begin(); motion.s_mode=0;
++    for(t=1;t<=1000;++t) {
++        if(t%10==0) app_dual_target(&motion,40.0f+(t%30),t,t,0,t);
++        else app_dual_advance(&motion,t);
++    }
++    assert(motion.integrated_ms==1000 && motion.discarded_ms==0);
++    assert(fabsf(motion.trajectory.velocity-0.15f/0.0925f*0.991f)<0.002f);
++    before=motion.trajectory.velocity;
++    app_dual_advance(&motion,1120);
++    assert(motion.clipped==1 && motion.discarded_ms==70);
++    app_dual_advance(&motion,1121);
++    assert(motion.integrated_ms==1051 && motion.trajectory.velocity>before);
++    begin();
++    sample(0,100,20); sample(0,140,60); sample(1,120,40);
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,60);
++    assert(feedback.new_pair && feedback.aligned && fabsf(feedback.error_f)<0.001f);
++    assert(feedback.alignment_sequence[0][0]==1 && feedback.alignment_sequence[0][1]==2);
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,61);
++    assert(!feedback.new_pair && feedback.feedback_valid && feedback.correction_valid && feedback.active);
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,120);
++    assert(!feedback.feedback_valid && !feedback.correction_valid && !feedback.active);
++    puts("PASS clock continuity, bounded stall, bracketed interpolation, validity hold and original-age expiry");
++}
++static void test_allocator(void)
++{
++    unsigned t, axis;
++    int16_t output[2]={0,0};
++    float previous[2]={0,0}, previous_a[2]={0,0};
++    begin();
++    app_dual_target(&motion, app_dual_nominal_rpm_to_wheel(1600),1,0,0,0);
++    for(t=1;t<50000;++t) {
++        if(t%10==0 && t<12000) app_dual_target(&motion,
++            app_dual_nominal_rpm_to_wheel(200.0f+random_f()*1400.0f),t,t,0,t);
++        if(t==12000) app_dual_target(&motion,app_dual_nominal_rpm_to_wheel(1600),t,t,0,t);
++        if(t==40000) app_dual_target(&motion,0,t,t,0,t);
++        app_dual_advance(&motion,t);
++        if(t%50) continue;
++        sample(0, t<40000?105:20,t); sample(1,t<40000?100:10,t);
++        assert(app_dual_output(&motion,&feedback,&axes[0],&axes[1],t,t,1,output));
++        for(axis=0;axis<2;++axis) {
++            float change=motion.command[axis]-previous[axis];
++            assert(change<=motion.acceleration_limit*0.05f+0.00002f);
++            assert(change>=-motion.deceleration_limit*0.05f-0.00002f);
++            assert(output[axis]>=0 && output[axis]<=1600);
++            if(t>=40000) assert(motion.command[axis]<=previous[axis]+0.00001f);
++            if(motion.s_mode && t>50 && t<40000 && !(motion.constraints & DUAL_HARD_FALLBACK))
++                assert(fabsf(motion.command_acceleration[axis]-previous_a[axis])<=motion.jerk_limit*0.05f+0.0003f);
++            previous[axis]=motion.command[axis]; previous_a[axis]=motion.command_acceleration[axis];
++        }
++    }
++    app_dual_execution(&motion,41,motion.batch,0,100,50000,1,1);
++    assert(motion.acknowledged_mask==0);
++    app_dual_execution(&motion,42,motion.batch-1,0,100,50000,1,1);
++    assert(motion.acknowledged_mask==0);
++    app_dual_execution(&motion,42,motion.batch,0,100,50000,0,1);
++    app_dual_execution(&motion,42,motion.batch,0,90,50000,1,1);
++    assert(motion.acknowledged_mask==1 && (motion.constraints & DUAL_WRITE_CHANGED));
++    assert(fabsf(motion.command[0]-app_dual_motor_to_wheel(90,0))<0.00001f);
++    app_dual_cancel(&motion);
++    app_dual_execution(&motion,42,motion.batch,0,100,50001,1,1);
++    assert(!motion.initialized && motion.acknowledged_mask==0);
++    puts("PASS joint final-axis acceleration/jerk, saturation, random targets, zero monotonicity and stale generation");
++}
++static void test_wrap_expiry_and_reorder(void)
++{
++    uint32_t start=UINT32_MAX-20U;
++    begin(); motion.s_mode=0;
++    motion.service_ms=start;
++    app_dual_target(&motion,10,1,start,start+100U,start);
++    app_dual_advance(&motion,start+50U);
++    assert(motion.integrated_ms==50 && motion.discarded_ms==0);
++    sample(0,0,start+50U); sample(1,0,start+50U);
++    app_dual_advance(&motion,start+100U);
++    { int16_t output[2];
++      assert(app_dual_output(&motion,&feedback,&axes[0],&axes[1],start+100U,start+100U,1,output));
++      assert(motion.zeroing); }
++    begin();
++    sample(0,10,60); sample(1,10,60);
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,60);
++    sample(0,999,59); /* increasing sequence with regressed timestamp */
++    app_remote_sync_collect(&feedback,&axes[0],&axes[1],61);
++    assert(feedback.pending_count[0]==0);
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,61);
++    assert(!feedback.new_pair && feedback.feedback_valid);
++    axes[1].fault=1;
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,62);
++    assert(!feedback.feedback_valid && !feedback.correction_valid && !feedback.active);
++    axes[1].fault=0; axes[0].feedback_degraded=1; feedback.zero_pairs=2;
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,63);
++    assert(!feedback.have_pair && !feedback.zero_pairs);
++    axes[0].feedback_degraded=0;
++    app_remote_sync_update(&feedback,&axes[0],&axes[1],100,1,64);
++    assert(!feedback.feedback_valid && !feedback.correction_valid);
++    puts("PASS monotonic wrap, deadline, late batch, lower-layer changed write, timestamp disorder and fault invalidation");
++}
++static void test_dynamic_model(void)
++{
++    unsigned t,axis;
++    int16_t output[2]={0,0};
++    float actual[2]={0,0};
++    double sum=0; unsigned count=0;
++    const char *path=getenv("DUAL_CURVE_FILE");
++    FILE *csv=path?fopen(path,"w"):NULL;
++    begin();
++    if(csv) fprintf(csv,"time_ms,target_wheel_rad_s,reference_wheel_rad_s,front_motor_rpm,rear_motor_rpm,front_actual_wheel_rad_s,rear_actual_wheel_rad_s,error_wheel_rad_s,constraints\n");
++    for(t=1;t<=30000;++t) {
++        if(t==1 || t%1700==0) app_dual_target(&motion,app_dual_nominal_rpm_to_wheel(100+random_f()*500),t,t,0,t);
++        app_dual_advance(&motion,t);
++        /* First-order plants with unequal time constants and rear load droop;
++         * actual velocity never assigned directly from command. */
++        for(axis=0;axis<2;++axis) {
++            float desired=app_dual_motor_to_wheel(output[axis],(uint8_t)axis)*(axis?0.992f:1.0f);
++            actual[axis]+=(desired-actual[axis])*(0.001f/(axis?0.32f:0.10f));
++        }
++        if(t%20==0) { sample(0,app_motion_ramp_round_rpm(app_dual_wheel_to_motor(actual[0],0)),t); }
++        if(t%20==10) { sample(1,app_motion_ramp_round_rpm(app_dual_wheel_to_motor(actual[1],1)),t); }
++        app_remote_sync_collect(&feedback,&axes[0],&axes[1],t);
++        if(t%50==0) {
++            assert(app_dual_output(&motion,&feedback,&axes[0],&axes[1],t,t,1,output));
++            sum+=(actual[0]-actual[1])*(actual[0]-actual[1]); ++count;
++            if(csv) fprintf(csv,"%u,%.7f,%.7f,%d,%d,%.7f,%.7f,%.7f,%lu\n",t,motion.trajectory.target,motion.trajectory.velocity,output[0],output[1],actual[0],actual[1],actual[0]-actual[1],(unsigned long)motion.constraints);
++        }
++    }
++    if(csv) fclose(csv);
++    assert(isfinite(sum) && count==600);
++    printf("MODEL ONLY sync=%u S=%u PI=%u wheel_error_RMS=%.7f rad/s samples=%u\n",APP_REMOTE_SERVO_SYNC_ENABLED,APP_DUAL_S_ENABLED,APP_DUAL_PI_ENABLED,sqrt(sum/count),count);
++}
++int main(void)
++{
++    assert(app_dual_config_valid());
++    test_trajectory();test_clock_and_alignment();test_allocator();test_wrap_expiry_and_reorder();test_dynamic_model();
++    return 0;
++}
+diff --git a/Tests/test_dual_config.c b/Tests/test_dual_config.c
+new file mode 100644
+index 0000000..c37c1ef
+--- /dev/null
++++ b/Tests/test_dual_config.c
+@@ -0,0 +1,9 @@
++#include <assert.h>
++#include <stdio.h>
++#include "app_config.h"
++int main(void)
++{
++    assert((int)app_config_motion_ramp_valid()==TEST_DUAL_CONFIG_VALID);
++    puts("PASS dual-axis optional-mode and mechanical configuration gate");
++    return 0;
++}
+diff --git a/Tests/test_dual_source_random.c b/Tests/test_dual_source_random.c
+new file mode 100644
+index 0000000..435c084
+--- /dev/null
++++ b/Tests/test_dual_source_random.c
+@@ -0,0 +1,67 @@
++/* Real source adapters, frequent updates and keepalive under serial writes. */
++#include <stdint.h>
++#define NORMAL_TIMING_TEST 1
++#define main fixture_regression_main
++#if TIMING_SOURCE == 1
++#include "test_hmi_control.c"
++#elif TIMING_SOURCE == 2
++static uint32_t timing_delay,timing_due[2];
++static int16_t timing_rpm[2];
++#include "test_remote_servo.c"
++#else
++#include "test_can_control.c"
++#endif
++#undef main
++#include "app_normal_ramp.h"
++int main(void)
++{
++    unsigned step,axis;
++    app_normal_ramp_status_t before,after;
++#if TIMING_SOURCE == 1
++    uint16_t mailbox[24]; uint32_t session,sequence=1;
++    reset_fixture();g_feedback_progress=1;timing_delay=0;
++    make_mailbox(mailbox,TEST_CMD_ACQUIRE,0,sequence++,0,0);
++    submit_service(mailbox);session=app_hmi_control_session();assert(session);
++    for(step=0;step<20;++step){++g_tick;app_hmi_control_service();}
++    app_hmi_control_ramp_status(&before);
++#elif TIMING_SOURCE == 2
++    nrf_remote_snapshot_t input;
++    memset(axes,0,sizeof(axes));memset(&input,0,sizeof(input));memset(&debug,0,sizeof(debug));
++    hold_response=prepare_fail_mask=enable_fail_mask=startup_hold=0;hold_ready=boot_ready=1;timing_delay=0;
++    for(axis=0;axis<2;++axis){axes[axis].online=axes[axis].enabled=axes[axis].parameter_verified=1;axes[axis].control_mode=SERVO_CONTROL_RS485_VELOCITY;}
++    input.link_up=1;reset_remote();arm(&input);assert(status().authorized);
++    app_remote_servo_ramp_status(&before);
++#else
++    reset();acquire();timing_delay=0;
++    app_can_control_ramp_status(&before);
++#endif
++    timing_delay=60;
++    for(step=1;step<=5000;++step){
++        /* Nonlinear target sequence every 10ms; targets remain above ramp. */
++        int target=700+(int)((step/10*67U)%800U);
++#if TIMING_SOURCE == 1
++        ++g_tick;
++        if(step%10==0){make_mailbox(mailbox,TEST_CMD_SPEED,session,sequence++,target,500);submit_service(mailbox);}
++        else app_hmi_control_service();
++        assert(app_hmi_control_session()==session);
++#elif TIMING_SOURCE == 2
++        ++ticks;if(step%10==0)input.left_vertical=joystick_for_rpm(target);feed(&input);
++        assert(status().authorized);
++#else
++        if(step%10==0)assert(speed((int16_t)(target*app_can_control_rpm_mm_s(1,0)),300));
++        advance(1,true);assert(state.authorized);
++#endif
++    }
++#if TIMING_SOURCE == 1
++    app_hmi_control_ramp_status(&after);
++#elif TIMING_SOURCE == 2
++    app_remote_servo_ramp_status(&after);
++#else
++    app_can_control_ramp_status(&after);
++#endif
++    assert(after.dual.integrated_ms-before.dual.integrated_ms==5000);
++    assert(after.dual.discarded_ms==before.dual.discarded_ms);
++    for(axis=0;axis<2;++axis)assert(after.dual.planned_rpm[axis]>150 && after.dual.planned_rpm[axis]<240);
++    printf("PASS source=%u frequent nonlinear targets: 5000/5000ms integrated during 60ms serial writes\n",TIMING_SOURCE);
++    return 0;
++}
+diff --git a/Tests/run_dual_axis_tests.ps1 b/Tests/run_dual_axis_tests.ps1
+new file mode 100644
+index 0000000..0f2da3d
+--- /dev/null
++++ b/Tests/run_dual_axis_tests.ps1
+@@ -0,0 +1,34 @@
++param([string]$Compiler='D:/Dev-C++软件--蓝桥杯比赛环境/Dev-Cpp/MinGW64/bin/gcc.exe', [string]$Output='')
++$ErrorActionPreference='Stop'
++Push-Location (Split-Path $PSScriptRoot -Parent)
++try {
++    $configs=@(
++        @('-DTEST_DUAL_CONFIG_VALID=1'),
++        @('-DTEST_DUAL_CONFIG_VALID=0','-DAPP_DUAL_S_ENABLED=1'),
++        @('-DTEST_DUAL_CONFIG_VALID=0','-DAPP_DUAL_PI_ENABLED=1'),
++        @('-DTEST_DUAL_CONFIG_VALID=0','-DAPP_DUAL_FRONT_GEAR=0.0f'),
++        @('-DTEST_DUAL_CONFIG_VALID=0','-DAPP_DUAL_REAR_SIGN=0'),
++        @('-DTEST_DUAL_CONFIG_VALID=0','-DAPP_DUAL_S_ENABLED=1','-DAPP_DUAL_JERK_MPS3=-0.4f'),
++        @('-DTEST_DUAL_CONFIG_VALID=1','-DAPP_DUAL_S_ENABLED=1','-DAPP_DUAL_JERK_MPS3=0.4f'),
++        @('-DTEST_DUAL_CONFIG_VALID=1','-DAPP_DUAL_PI_ENABLED=1','-DAPP_DUAL_KI=0.02f','-DAPP_DUAL_KAW=1.0f'))
++    foreach($config in $configs){
++        $configExe=Join-Path $env:TEMP 'dual_config.exe'
++        & $Compiler -std=c99 -Wall -Wextra -Werror -IAPP @config Tests/test_dual_config.c -o $configExe
++        if($LASTEXITCODE){throw 'Dual configuration compile failed'}
++        & $configExe
++        if($LASTEXITCODE){throw 'Dual configuration gate failed'}
++    }
++    foreach($variant in @(0,1,2,3)) {
++        $exe=Join-Path $env:TEMP "dual_axis_$variant.exe"
++        $argsList=@('-std=c99','-Wall','-Wextra','-Werror','-ITests/mocks','-IAPP','-IDevice',
++            'Tests/test_dual_axis_motion.c','APP/app_dual_axis_motion.c','APP/app_remote_servo_sync.c')
++        if($variant -eq 0){$argsList+='-DAPP_REMOTE_SERVO_SYNC_ENABLED=0'}
++        if($variant -ge 2){$argsList+=@('-DAPP_DUAL_S_ENABLED=1','-DAPP_DUAL_JERK_MPS3=0.4f')}
++        if($variant -eq 3){$argsList+=@('-DAPP_DUAL_PI_ENABLED=1','-DAPP_DUAL_KI=0.02f','-DAPP_DUAL_KAW=1.0f')}
++        & $Compiler @argsList -lm -o $exe
++        if($LASTEXITCODE){throw 'Dual-axis compile failed'}
++        if($Output){$env:DUAL_CURVE_FILE=Join-Path $Output "dynamic_model_$variant.csv"}
++        & $exe
++        if($LASTEXITCODE){throw "Dual-axis tests failed variant=$variant"}
++    }
++} finally { Remove-Item Env:DUAL_CURVE_FILE -ErrorAction SilentlyContinue; Pop-Location }
+diff --git a/Tests/run_dual_source_random_tests.ps1 b/Tests/run_dual_source_random_tests.ps1
+new file mode 100644
+index 0000000..af36372
+--- /dev/null
++++ b/Tests/run_dual_source_random_tests.ps1
+@@ -0,0 +1,18 @@
++param([string]$Compiler='D:/Dev-C++软件--蓝桥杯比赛环境/Dev-Cpp/MinGW64/bin/gcc.exe')
++$ErrorActionPreference='Stop'
++Push-Location (Split-Path $PSScriptRoot -Parent)
++try {
++ foreach($source in @(1,2,3)){
++    $exe=Join-Path $env:TEMP "dual_source_random_$source.exe"
++    $options=@('-std=c99','-Wall','-Wextra','-Werror',"-DTIMING_SOURCE=$source",'-DAPP_SERVO_QUERY_MODE=3','-DAPP_SERVO_CONTROL_AXIS=3',
++        '-DAPP_SERVO_READONLY_TEST=0','-DAPP_HMI_CONTROL_ENABLED=1','-ITests/mocks','-IAPP','-IAPP/HMI','-IDevice','-IProtocol','-IProtocol/CAN','-IBSP/SERVO_PULSE',
++        'Tests/test_dual_source_random.c','APP/HMI/app_control_arbiter.c','APP/app_remote_servo_sync.c','APP/app_dual_axis_motion.c')
++    if($source -eq 1){$options+=@('-DAPP_CAN_CONTROL_ENABLED=0','-DAPP_CAN_STOP_PARAMETERS_APPROVED=0','APP/HMI/app_hmi_control.c')}
++    elseif($source -eq 2){$options+=@('-DAPP_CAN_CONTROL_ENABLED=0','-DAPP_CAN_STOP_PARAMETERS_APPROVED=0','APP/app_remote_servo.c','APP/app_config.c')}
++    else{$options+=@('-DAPP_CAN_CONTROL_ENABLED=1','-DAPP_CAN_STOP_PARAMETERS_APPROVED=1','APP/app_can_control.c','Protocol/CAN/can_protocol.c')}
++    & $Compiler @options -lm -o $exe
++    if($LASTEXITCODE){throw 'Random source compile failed'}
++    & $exe
++    if($LASTEXITCODE){throw "Random source failed source=$source"}
++ }
++} finally {Pop-Location}
+diff --git a/Tests/build_dual_axis_modes.ps1 b/Tests/build_dual_axis_modes.ps1
+new file mode 100644
+index 0000000..45fd1f3
+--- /dev/null
++++ b/Tests/build_dual_axis_modes.ps1
+@@ -0,0 +1,30 @@
++param([string]$Keil='D:/NewMDK5.36/UV4/UV4.exe', [string]$LogDirectory=$env:TEMP)
++$ErrorActionPreference='Stop'
++$root=Split-Path $PSScriptRoot -Parent
++$mdk=Join-Path $root 'MDK-ARM'
++$project=Join-Path $mdk 'RailInspectionCar_V1.uvprojx'
++$original=[IO.File]::ReadAllBytes($project)
++try {
++    foreach($mode in @('s_p','s_pi','current')) {
++        [IO.File]::WriteAllBytes($project,$original)
++        if($mode -ne 'current') {
++            $xml=New-Object System.Xml.XmlDocument
++            $xml.PreserveWhitespace=$true
++            $xml.Load($project)
++            $node=$xml.SelectSingleNode('//TargetArmAds/Cads/VariousControls/Define')
++            # Algorithm verification parameters only; never a field calibration.
++            $node.InnerText+=',APP_DUAL_S_ENABLED=1,APP_DUAL_JERK_MPS3=0.4f'
++            if($mode -eq 's_pi'){$node.InnerText+=',APP_DUAL_PI_ENABLED=1,APP_DUAL_KI=0.02f,APP_DUAL_KAW=1.0f'}
++            $settings=New-Object System.Xml.XmlWriterSettings
++            $settings.Encoding=New-Object System.Text.UTF8Encoding($false)
++            $writer=[System.Xml.XmlWriter]::Create($project,$settings)
++            try {$xml.Save($writer)} finally {$writer.Dispose()}
++        }
++        $log=Join-Path $LogDirectory "keil_dual_$mode.log"
++        $p=Start-Process -FilePath $Keil -ArgumentList "-r RailInspectionCar_V1.uvprojx -t RailInspectionCar_V1 -o $log" -WorkingDirectory $mdk -WindowStyle Hidden -PassThru -Wait
++        $content=Get-Content -LiteralPath $log -Raw
++        if($p.ExitCode -ne 0 -or $content -notmatch '0 Error\(s\), 0 Warning\(s\)'){throw "Keil mode=$mode failed; see $log"}
++        & "$PSScriptRoot/check_task_stack.ps1" -Report (Join-Path $mdk 'RailInspectionCar_V1/RailInspectionCar_V1.htm')
++        Write-Output "PASS Keil mode=$mode 0 errors 0 warnings"
++    }
++} finally { [IO.File]::WriteAllBytes($project,$original) }

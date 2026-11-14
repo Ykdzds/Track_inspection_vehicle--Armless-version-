@@ -1,0 +1,10 @@
+[
+  "APP/HMI/app_hmi.c",
+  "APP/HMI/app_hmi_control.c",
+  "APP/HMI/app_hmi_control.h",
+  "APP/HMI/app_hmi_state.c",
+  "APP/app_config.h",
+  "Tests/test_hmi_control.c",
+  "Tests/test_hmi_integration.c",
+  "Tests/test_hmi_state.c"
+]

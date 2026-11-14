@@ -1,0 +1,379 @@
+LOADED resource/buttontheme.xaml
+LOADED resource/textboxtheme.xaml
+LOADED resource/checkboxtheme.xaml
+LOADED resource/appdictionary.xaml
+LOADED resource/pixcontroldatatemplate.xaml
+LOADED resource/pixcontroldatatemplatedebug.xaml
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at uONaREqlEJkpBYzNfWntcgIktcjS.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VzGMMMBvqBywojLRPOqHKDtqJpPK.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HkpqZUpuTOcMbCyfvVTHignUHpZr.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VzGMMMBvqBywojLRPOqHKDtqJpPK.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HkpqZUpuTOcMbCyfvVTHignUHpZr.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VzGMMMBvqBywojLRPOqHKDtqJpPK.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HkpqZUpuTOcMbCyfvVTHignUHpZr.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at VzGMMMBvqBywojLRPOqHKDtqJpPK.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at HkpqZUpuTOcMbCyfvVTHignUHpZr.Convert(Object value, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.ArgumentNullException: Value cannot be null.
+Parameter name: path1
+   at System.IO.Path.Combine(String path1, String path2)
+   at pdHYlklpILxOZETqYfENYjzPIbYG.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+Visual_PIX.Modules.Home.Views.DebugView  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+ System.Windows.Controls.Grid  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+  System.Windows.Documents.AdornerDecorator  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+   System.Windows.Controls.Grid  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+    System.Windows.Shapes.Rectangle PART_WindowTitleBackground 1721.33333333333x30 DATA= HIT=True ENABLE=True
+    MahApps.Metro.Controls.MetroThumb PART_WindowTitleThumb 1721.33333333333x30 DATA= HIT=True ENABLE=True
+     System.Windows.Controls.Grid  1721.33333333333x30 DATA= HIT=True ENABLE=True
+    MahApps.Metro.Controls.MetroThumbContentControl PART_TitleBar 1680.32433350881x30 DATA= HIT=True ENABLE=True
+     System.Windows.Controls.Grid  1680.32433350881x30 DATA= HIT=True ENABLE=True
+      System.Windows.Controls.ContentPresenter PART_ContentPresenter 1680.32433350881x30 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.TextBlock  1671.32433350881x15.24 DATA= HIT=True ENABLE=True
+    MahApps.Metro.Controls.MetroContentControl PART_Content 1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+     System.Windows.Controls.Grid root 1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+      System.Windows.Documents.AdornerDecorator  1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.ContentPresenter  1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+        System.Windows.Controls.ContentPresenter  1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+         System.Windows.Controls.Grid  1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+          System.Windows.Controls.ScrollViewer  1721.33333333333x667.555555555556 DATA= HIT=True ENABLE=True
+           System.Windows.Controls.Grid  1721.33333333333x667.555555555556 DATA= HIT=True ENABLE=True
+            System.Windows.Shapes.Rectangle  0x0 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.ScrollContentPresenter  1721.33333333333x667.555555555556 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Border debugPanel 1024x600 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Grid  1024x600 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ItemsControl lvItems 1024x600 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Border  1024x600 DATA= HIT=True ENABLE=True
+             System.Windows.Documents.AdornerLayer  1721.33333333333x667.555555555556 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+            System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+          System.Windows.Controls.TextBlock  0x15.24 DATA= HIT=True ENABLE=True
+          System.Windows.Controls.GridSplitter  1721.33333333333x2 DATA= HIT=True ENABLE=True
+           System.Windows.Controls.Border  1721.33333333333x2 DATA= HIT=True ENABLE=True
+          System.Windows.Controls.Grid  1721.33333333333x333.777777777778 DATA= HIT=True ENABLE=True
+           System.Windows.Controls.StackPanel  0x0 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.StackPanel  520.806666666667x29.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.StackPanel  384.953333333333x29.97 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBlock  24x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.ComboBox  100x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Grid templateRoot 100x25.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Primitives.Popup PART_Popup 0x0 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Primitives.ToggleButton toggleButton 100x25.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ContentPresenter contentPresenter 0x15.24 DATA= HIT=False ENABLE=True
+              System.Windows.Controls.TextBlock  24x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.CheckBox  27.0366666666667x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Primitives.BulletDecorator  27.0366666666667x16 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ContentPresenter  7.03666666666667x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.CheckBox  0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Primitives.BulletDecorator  27.0366666666667x16 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ContentPresenter  7.03666666666667x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.CheckBox  0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Primitives.BulletDecorator  27.0366666666667x16 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ContentPresenter  7.03666666666667x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBlock  24x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBox  30x19.24 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Bd 30x19.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ScrollViewer PART_ContentHost 28x17.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBlock  8.9x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBox  31.11x19.24 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Bd 31.11x19.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ScrollViewer PART_ContentHost 29.11x17.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBlock  24x15.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBox  31.11x19.24 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Bd 31.11x19.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ScrollViewer PART_ContentHost 29.11x17.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.TextBlock  16.7966666666667x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  34x25.97 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 34x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 22x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  22x13.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  0x0 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 34x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 22x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  22x13.97 DATA= HIT=True ENABLE=True
+           System.Windows.Controls.StackPanel  1709.33333333333x29.97 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.StackPanel  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBox  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBox  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBox  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.ComboBox  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBox  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  0x0 DATA= HIT=True ENABLE=False
+            System.Windows.Controls.Grid  1699.33333333333x29.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  128x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  128x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  108x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  108x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  89x25.97 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 89x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 77x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  77x13.97 DATA= HIT=True ENABLE=True
+           System.Windows.Controls.Grid  1721.33333333333x293.777777777778 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.Grid  570.444444444445x35.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  54x25.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  410.794444444445x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  410.794444444445x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  55x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  55x13.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  41.65x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  41.65x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  21.65x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  21.65x13.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  34x25.97 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 34x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 22x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  22x13.97 DATA= HIT=True ENABLE=True
+            TdjXMicNfWWDgKgVEDystuxQeaBS textEditor 565.444444444445x205.567777777778 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Border  565.444444444445x205.567777777778 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.ScrollViewer PART_ScrollViewer 565.444444444445x205.567777777778 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Grid  565.444444444445x205.567777777778 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Rectangle  0x0 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ScrollContentPresenter  565.444444444445x205.567777777778 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+                System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+            System.Windows.Controls.StackPanel  565.444444444445x27.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Label  46x27.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border  46x27.24 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  36x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  36x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  56x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  56x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 13.36x10.469 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  36x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  36x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  44x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  44x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  24x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  24x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  60x27.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 60x27.24 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 24x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  24x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Shapes.Rectangle  40x27.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  60x27.24 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 60x27.24 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 48x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  48x15.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  0x0 DATA= HIT=True ENABLE=False
+              System.Windows.Controls.Border bg 60x27.24 DATA= HIT=True ENABLE=False
+               System.Windows.Controls.ContentPresenter contentPresenter 48x15.24 DATA= HIT=True ENABLE=False
+                System.Windows.Controls.TextBlock  48x15.24 DATA= HIT=True ENABLE=False
+            System.Windows.Controls.Grid  570.444444444444x35.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  114x25.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  41.65x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  41.65x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  21.65x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  21.65x13.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  34x25.97 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 34x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 22x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  22x13.97 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.TextBox  570.444444444444x205.567777777778 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Border Bd 570.444444444444x205.567777777778 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.ScrollViewer PART_ContentHost 568.444444444444x203.567777777778 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Grid  568.444444444444x203.567777777778 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Rectangle  0x0 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ScrollContentPresenter  564.444444444444x201.567777777778 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+                System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+            System.Windows.Controls.StackPanel  565.444444444444x27.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.ComboBox  0x0 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  80x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  80x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  60x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  60x15.24 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.Grid  570.444444444444x35.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.TextBlock  102x25.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  41.65x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  41.65x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  21.65x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  21.65x13.97 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Button  34x25.97 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Border bg 34x25.97 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter contentPresenter 22x13.97 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  22x13.97 DATA= HIT=True ENABLE=True
+            System.Windows.Controls.TextBox  565.444444444444x205.567777777778 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.Border Bd 565.444444444444x205.567777777778 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.ScrollViewer PART_ContentHost 563.444444444444x203.567777777778 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Grid  563.444444444444x203.567777777778 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Rectangle  0x0 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.ScrollContentPresenter  559.444444444444x201.567777777778 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+                System.Windows.Controls.Primitives.ScrollBar  0x0 DATA= HIT=True ENABLE=False
+            System.Windows.Controls.StackPanel  565.444444444444x27.24 DATA= HIT=True ENABLE=True
+             System.Windows.Controls.CheckBox  92x16 DATA= HIT=True ENABLE=True
+              System.Windows.Controls.Primitives.BulletDecorator  92x16 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.Border Border 16x16 DATA= HIT=True ENABLE=True
+                System.Windows.Shapes.Path path 0x0 DATA= HIT=True ENABLE=True
+               System.Windows.Controls.ContentPresenter  72x15.24 DATA= HIT=True ENABLE=True
+                System.Windows.Controls.TextBlock  72x15.24 DATA= HIT=True ENABLE=True
+       System.Windows.Documents.AdornerLayer  1721.33333333333x1003.33333333333 DATA= HIT=True ENABLE=True
+    System.Windows.Shapes.Rectangle PART_FlyoutModal 1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+    MahApps.Metro.Controls.MetroThumb PART_FlyoutModalDragMoveThumb 1721.33333333333x30 DATA= HIT=True ENABLE=True
+     System.Windows.Controls.Grid  1721.33333333333x30 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.ContentControl PART_Icon 0x30 DATA= HIT=True ENABLE=True
+     System.Windows.Controls.ContentPresenter  0x30 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.ContentPresenter PART_LeftWindowCommands 0x30 DATA= HIT=True ENABLE=True
+     MahApps.Metro.Controls.WindowCommands  0x30 DATA= HIT=True ENABLE=True
+      System.Windows.Controls.ItemsPresenter  0x30 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.StackPanel  0x30 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.ContentPresenter PART_RightWindowCommands 0x30 DATA= HIT=True ENABLE=True
+     MahApps.Metro.Controls.WindowCommands  0x30 DATA= HIT=True ENABLE=True
+      System.Windows.Controls.ItemsPresenter  0x30 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.StackPanel  0x30 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.ContentPresenter PART_WindowButtonCommands 41.0089998245239x30 DATA= HIT=True ENABLE=True
+     MahApps.Metro.Controls.WindowButtonCommands  41.0089998245239x30 DATA= HIT=True ENABLE=True
+      System.Windows.Controls.StackPanel  41.0089998245239x30 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.Button PART_Min 13x30 DATA= HIT=True ENABLE=True
+        System.Windows.Controls.Border border 13x30 DATA= HIT=True ENABLE=True
+         System.Windows.Controls.ContentPresenter contentPresenter 9x9 DATA= HIT=True ENABLE=True
+          System.Windows.Shapes.Path  9x9 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.Button PART_Max 14x30 DATA= HIT=True ENABLE=True
+        System.Windows.Controls.Border border 14x30 DATA= HIT=True ENABLE=True
+         System.Windows.Controls.ContentPresenter contentPresenter 10x10 DATA= HIT=True ENABLE=True
+          System.Windows.Shapes.Path PART_MaxPath 10x10 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.Button PART_Close 14.0089998245239x30 DATA= HIT=True ENABLE=True
+        System.Windows.Controls.Border border 14.0089998245239x30 DATA= HIT=True ENABLE=True
+         System.Windows.Controls.ContentPresenter contentPresenter 10.0089998245239x10.0089998245239 DATA= HIT=True ENABLE=True
+          System.Windows.Shapes.Path  10.0089998245239x10.0089998245239 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.ContentControl  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+     System.Windows.Controls.ContentPresenter  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+      MahApps.Metro.Controls.FlyoutsControl  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+       System.Windows.Controls.ItemsPresenter  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+        System.Windows.Controls.Grid  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.Grid PART_MetroInactiveDialogsContainer 1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.Grid PART_OverlayBox 1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+    System.Windows.Controls.Grid PART_MetroActiveDialogContainer 1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+   System.Windows.Documents.AdornerLayer  1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+  System.Windows.Controls.Border PART_Border 1721.33333333333x1033.33333333333 DATA= HIT=True ENABLE=True
+  System.Windows.Controls.Primitives.ResizeGrip WindowResizeGrip 0x0 DATA= HIT=True ENABLE=True

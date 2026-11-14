@@ -1,0 +1,12 @@
+[
+  {
+    "Page": "P0_Boot",
+    "Script": "",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Page": "P0_Boot",
+    "Script": "",
+    "Event": "LAYER.离开页面.22"
+  }
+]

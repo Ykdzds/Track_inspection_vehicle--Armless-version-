@@ -1,0 +1,15 @@
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdlib.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+digitalelectronicsecode_lcd_diagnostic\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

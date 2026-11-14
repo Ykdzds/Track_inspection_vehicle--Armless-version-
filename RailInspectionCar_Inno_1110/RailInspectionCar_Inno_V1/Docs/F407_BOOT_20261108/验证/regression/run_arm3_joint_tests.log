@@ -1,0 +1,13 @@
+test_f407_terminal_cache_cannot_be_replaced_by_late_progress (__main__.JointTests.test_f407_terminal_cache_cannot_be_replaced_by_late_progress) ... ok
+test_manifest_configuration_dual_transport_proof_and_owner (__main__.JointTests.test_manifest_configuration_dual_transport_proof_and_owner) ... ok
+test_old_wire_stop_replay_does_not_interrupt_new_jog (__main__.JointTests.test_old_wire_stop_replay_does_not_interrupt_new_jog) ... ok
+test_one_failed_side_of_dual_motion_stops_both (__main__.JointTests.test_one_failed_side_of_dual_motion_stops_both) ... ok
+test_owner_release_requires_fresh_dual_transport_proofs (__main__.JointTests.test_owner_release_requires_fresh_dual_transport_proofs) ... ok
+test_pc_owner_query_uses_same_f407_arbiter (__main__.JointTests.test_pc_owner_query_uses_same_f407_arbiter) ... ok
+test_preset_six_axis_light_and_stop_real_results (__main__.JointTests.test_preset_six_axis_light_and_stop_real_results) ... ok
+test_remote_jog_pulses_and_input_loss_stop (__main__.JointTests.test_remote_jog_pulses_and_input_loss_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.456s
+
+OK

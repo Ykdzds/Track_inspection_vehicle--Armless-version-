@@ -1,0 +1,108 @@
+RUN run_motion_ramp_tests.ps1
+PASS motion ramp: physical acceleration, accumulation, symmetry, reverse and dt limit
+RUN run_remote_key_config_tests.ps1
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS 按键迁移配置矩阵：新旧宏兼容、冲突拒绝和非法值拒绝。
+RUN run_nrf_tests.ps1
+Exception: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\check_irq_dma_integration.ps1:48
+Line |
+  48 |              throw "UART5 DMA CubeMX配置不匹配：$entry"
+     |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | UART5 DMA CubeMX配置不匹配：Mode=DMA_NORMAL
+RUN run_watchdog_test.ps1
+PASS watchdog health: real service, macro gate, no refresh, heartbeat and reboot
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS watchdog health: real service, macro gate, no refresh, heartbeat and reboot
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed

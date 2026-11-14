@@ -1,0 +1,1269 @@
+{
+  "count": 123,
+  "fields": [
+    {
+      "index": 0,
+      "key": "P1_Main.alarmSummary",
+      "page": 1,
+      "source": 4,
+      "default": "最高告警：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 1,
+      "key": "P1_Main.axisEnableSummary",
+      "page": 1,
+      "source": 0,
+      "default": "使能反馈：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 2,
+      "key": "P1_Main.controlAuthority",
+      "page": 1,
+      "source": 0,
+      "default": "屏幕控制：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 3,
+      "key": "P1_Main.controlSource",
+      "page": 1,
+      "source": 4,
+      "default": "控制源：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 4,
+      "key": "P1_Main.ctrlComm",
+      "page": 1,
+      "source": 0,
+      "default": "控制器通信：等待主控回复",
+      "font": 8,
+      "width": 652,
+      "height": 30
+    },
+    {
+      "index": 5,
+      "key": "P1_Main.currentMode",
+      "page": 1,
+      "source": 0,
+      "default": "轴模式：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 6,
+      "key": "P1_Main.leftFault",
+      "page": 1,
+      "source": 0,
+      "default": "轴1故障：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 7,
+      "key": "P1_Main.leftOnline",
+      "page": 1,
+      "source": 0,
+      "default": "轴1通信：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 8,
+      "key": "P1_Main.leftSpeed",
+      "page": 1,
+      "source": 0,
+      "default": "轴1速度：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 9,
+      "key": "P1_Main.leftSpeedUnits",
+      "page": 1,
+      "source": 0,
+      "default": "-- km/h | 等效转速 -- rpm",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 10,
+      "key": "P1_Main.rightFault",
+      "page": 1,
+      "source": 0,
+      "default": "轴2故障：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 11,
+      "key": "P1_Main.rightOnline",
+      "page": 1,
+      "source": 0,
+      "default": "轴2通信：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 12,
+      "key": "P1_Main.rightSpeed",
+      "page": 1,
+      "source": 0,
+      "default": "轴2速度：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 13,
+      "key": "P1_Main.rightSpeedUnits",
+      "page": 1,
+      "source": 0,
+      "default": "-- km/h | 等效转速 -- rpm",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 14,
+      "key": "P1_Main.safe",
+      "page": 1,
+      "source": 0,
+      "default": "门禁：未知",
+      "font": 8,
+      "width": 304,
+      "height": 30
+    },
+    {
+      "index": 15,
+      "key": "P1_Main.state",
+      "page": 1,
+      "source": 0,
+      "default": "OFFLINE",
+      "font": 9,
+      "width": 224,
+      "height": 36
+    },
+    {
+      "index": 16,
+      "key": "P1_Main.stopState",
+      "page": 1,
+      "source": 0,
+      "default": "屏幕运动锁定：未知",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 17,
+      "key": "P1_Main.targetSpeed",
+      "page": 1,
+      "source": 4,
+      "default": "整车目标速度：未知",
+      "font": 10,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 18,
+      "key": "P1_Main.targetSpeedUnits",
+      "page": 1,
+      "source": 4,
+      "default": "-- km/h | 等效转速 -- rpm",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 19,
+      "key": "P1_Main.vehicleSpeed",
+      "page": 1,
+      "source": 0,
+      "default": "整车实际速度：未知",
+      "font": 10,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 20,
+      "key": "P1_Main.vehicleSpeedUnits",
+      "page": 1,
+      "source": 0,
+      "default": "-- km/h | 等效转速 -- rpm",
+      "font": 8,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 21,
+      "key": "P2_Diag.crcCount",
+      "page": 2,
+      "source": 1,
+      "default": "CRC错误数：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 22,
+      "key": "P2_Diag.diagAxis1CommFail",
+      "page": 2,
+      "source": 4,
+      "default": "轴1通信失败：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 23,
+      "key": "P2_Diag.diagAxis1Enable",
+      "page": 2,
+      "source": 0,
+      "default": "轴1使能：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 24,
+      "key": "P2_Diag.diagAxis1FaultValid",
+      "page": 2,
+      "source": 4,
+      "default": "轴1故障有效：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 25,
+      "key": "P2_Diag.diagAxis1Online",
+      "page": 2,
+      "source": 0,
+      "default": "轴1通信：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 26,
+      "key": "P2_Diag.diagAxis1SpeedAge",
+      "page": 2,
+      "source": 0,
+      "default": "轴1状态年龄：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 27,
+      "key": "P2_Diag.diagAxis1SpeedValid",
+      "page": 2,
+      "source": 4,
+      "default": "轴1速度有效：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 28,
+      "key": "P2_Diag.diagAxis1Zero",
+      "page": 2,
+      "source": 4,
+      "default": "轴1零速确认：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 29,
+      "key": "P2_Diag.diagAxis2CommFail",
+      "page": 2,
+      "source": 4,
+      "default": "轴2通信失败：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 30,
+      "key": "P2_Diag.diagAxis2Enable",
+      "page": 2,
+      "source": 0,
+      "default": "轴2使能：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 31,
+      "key": "P2_Diag.diagAxis2FaultValid",
+      "page": 2,
+      "source": 4,
+      "default": "轴2故障有效：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 32,
+      "key": "P2_Diag.diagAxis2Online",
+      "page": 2,
+      "source": 0,
+      "default": "轴2通信：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 33,
+      "key": "P2_Diag.diagAxis2SpeedAge",
+      "page": 2,
+      "source": 0,
+      "default": "轴2状态年龄：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 34,
+      "key": "P2_Diag.diagAxis2SpeedValid",
+      "page": 2,
+      "source": 4,
+      "default": "轴2速度有效：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 35,
+      "key": "P2_Diag.diagAxis2Zero",
+      "page": 2,
+      "source": 4,
+      "default": "轴2零速确认：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 36,
+      "key": "P2_Diag.diagLeftFault",
+      "page": 2,
+      "source": 0,
+      "default": "轴1故障码：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 37,
+      "key": "P2_Diag.diagModeVerified",
+      "page": 2,
+      "source": 0,
+      "default": "参数核验：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 38,
+      "key": "P2_Diag.diagRightFault",
+      "page": 2,
+      "source": 0,
+      "default": "轴2故障码：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 39,
+      "key": "P2_Diag.diagSafetyLocked",
+      "page": 2,
+      "source": 0,
+      "default": "安全门禁：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 40,
+      "key": "P2_Diag.frameCount",
+      "page": 2,
+      "source": 7,
+      "default": "诊断值年龄：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 41,
+      "key": "P2_Diag.leftState",
+      "page": 2,
+      "source": 0,
+      "default": "轴1状态字：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 42,
+      "key": "P2_Diag.reqCount",
+      "page": 2,
+      "source": 7,
+      "default": "轴1转矩/负载：--",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 43,
+      "key": "P2_Diag.respCount",
+      "page": 2,
+      "source": 7,
+      "default": "轴2转矩/负载：--",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 44,
+      "key": "P2_Diag.retryCount",
+      "page": 2,
+      "source": 7,
+      "default": "轴1I/V：--",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 45,
+      "key": "P2_Diag.rightState",
+      "page": 2,
+      "source": 0,
+      "default": "轴2状态字：未知",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 46,
+      "key": "P2_Diag.timeoutCount",
+      "page": 2,
+      "source": 7,
+      "default": "轴2I/V：--",
+      "font": 8,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 47,
+      "key": "P3_Position.axis1Position",
+      "page": 3,
+      "source": 2,
+      "default": "轴1原始位置：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 48,
+      "key": "P3_Position.axis2Position",
+      "page": 3,
+      "source": 2,
+      "default": "轴2原始位置：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 49,
+      "key": "P3_Position.axisPositionDiff",
+      "page": 3,
+      "source": 2,
+      "default": "双轴位置差：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 50,
+      "key": "P3_Position.lostInterval",
+      "page": 3,
+      "source": 4,
+      "default": "丢失区间数：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 51,
+      "key": "P3_Position.mileageValid",
+      "page": 3,
+      "source": 2,
+      "default": "里程有效：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 52,
+      "key": "P3_Position.positionAge",
+      "page": 3,
+      "source": 2,
+      "default": "位置样本年龄：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 53,
+      "key": "P3_Position.positionBaseline",
+      "page": 3,
+      "source": 2,
+      "default": "基准代次：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 54,
+      "key": "P3_Position.positionIncomplete",
+      "page": 3,
+      "source": 2,
+      "default": "数据不完整：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 55,
+      "key": "P3_Position.positionSample",
+      "page": 3,
+      "source": 2,
+      "default": "样本序号：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 56,
+      "key": "P3_Position.positionValid",
+      "page": 3,
+      "source": 2,
+      "default": "位置有效：未知",
+      "font": 8,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 57,
+      "key": "P3_Position.segmentTravel",
+      "page": 3,
+      "source": 2,
+      "default": "分段轮转行程：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 58,
+      "key": "P3_Position.startupDisplacement",
+      "page": 3,
+      "source": 2,
+      "default": "启动净位移：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 59,
+      "key": "P3_Position.startupTravel",
+      "page": 3,
+      "source": 2,
+      "default": "启动累计行程：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 60,
+      "key": "P4_Info.ctrlVersion",
+      "page": 4,
+      "source": 0,
+      "default": "控制器软件码：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 61,
+      "key": "P4_Info.diagHigh",
+      "page": 4,
+      "source": 0,
+      "default": "诊断故障高字：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 62,
+      "key": "P4_Info.diagLow",
+      "page": 4,
+      "source": 0,
+      "default": "诊断故障低字：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 63,
+      "key": "P4_Info.heartbeat",
+      "page": 4,
+      "source": 0,
+      "default": "控制器心跳：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 64,
+      "key": "P4_Info.minStack",
+      "page": 4,
+      "source": 1,
+      "default": "最小栈余量：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 65,
+      "key": "P4_Info.protocolVersion",
+      "page": 4,
+      "source": 0,
+      "default": "协议版本码：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 66,
+      "key": "P4_Info.resetCode",
+      "page": 4,
+      "source": 0,
+      "default": "复位原因码：未知",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 67,
+      "key": "P4_Info.screenVersion",
+      "page": 4,
+      "source": 8,
+      "default": "屏幕工程：32",
+      "font": 9,
+      "width": 960,
+      "height": 36
+    },
+    {
+      "index": 68,
+      "key": "P5_Alarm.alarmActive",
+      "page": 5,
+      "source": 3,
+      "default": "告警状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 69,
+      "key": "P5_Alarm.alarmCode",
+      "page": 5,
+      "source": 3,
+      "default": "告警代码：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 70,
+      "key": "P5_Alarm.alarmEmergency",
+      "page": 5,
+      "source": 3,
+      "default": "急停状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 71,
+      "key": "P5_Alarm.alarmEventTime",
+      "page": 5,
+      "source": 3,
+      "default": "事件时间：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 72,
+      "key": "P5_Alarm.alarmExtra",
+      "page": 5,
+      "source": 3,
+      "default": "附加参数：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 73,
+      "key": "P5_Alarm.alarmFaultSummary",
+      "page": 5,
+      "source": 3,
+      "default": "故障摘要：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 74,
+      "key": "P5_Alarm.alarmHistory",
+      "page": 5,
+      "source": 8,
+      "default": "告警记录：历史未接入",
+      "font": 8,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 75,
+      "key": "P5_Alarm.alarmLevel",
+      "page": 5,
+      "source": 3,
+      "default": "告警等级：未知",
+      "font": 10,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 76,
+      "key": "P5_Alarm.alarmSequence",
+      "page": 5,
+      "source": 3,
+      "default": "告警事件序号：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 77,
+      "key": "P5_Alarm.alarmSource",
+      "page": 5,
+      "source": 3,
+      "default": "告警来源：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 78,
+      "key": "P5_Alarm.alarmStopResult",
+      "page": 5,
+      "source": 3,
+      "default": "停车结果：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 79,
+      "key": "P6_Sync.syncActualDiff",
+      "page": 6,
+      "source": 2,
+      "default": "实际速度差：未知",
+      "font": 10,
+      "width": 960,
+      "height": 40
+    },
+    {
+      "index": 80,
+      "key": "P6_Sync.syncAxis1Age",
+      "page": 6,
+      "source": 2,
+      "default": "轴1样本年龄：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 81,
+      "key": "P6_Sync.syncAxis2Age",
+      "page": 6,
+      "source": 2,
+      "default": "轴2样本年龄：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 82,
+      "key": "P6_Sync.syncCompensation",
+      "page": 6,
+      "source": 2,
+      "default": "当前整数补偿：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 83,
+      "key": "P6_Sync.syncEffectiveError",
+      "page": 6,
+      "source": 2,
+      "default": "有效误差：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 84,
+      "key": "P6_Sync.syncMacro",
+      "page": 6,
+      "source": 2,
+      "default": "同步宏：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 85,
+      "key": "P6_Sync.syncPairValid",
+      "page": 6,
+      "source": 2,
+      "default": "样本配对：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 86,
+      "key": "P6_Sync.syncRejectReason",
+      "page": 6,
+      "source": 2,
+      "default": "配对拒绝原因：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 87,
+      "key": "P6_Sync.syncSkew",
+      "page": 6,
+      "source": 2,
+      "default": "最近样本错时：未知",
+      "font": 9,
+      "width": 960,
+      "height": 34
+    },
+    {
+      "index": 88,
+      "key": "P6_Sync.syncState",
+      "page": 6,
+      "source": 2,
+      "default": "同步状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 34
+    },
+    {
+      "index": 89,
+      "key": "P7_System_Ext.acquisitionState",
+      "page": 7,
+      "source": 3,
+      "default": "数据采集：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 90,
+      "key": "P7_System_Ext.armState",
+      "page": 7,
+      "source": 3,
+      "default": "机械臂状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 91,
+      "key": "P7_System_Ext.batteryPercent",
+      "page": 7,
+      "source": 3,
+      "default": "电池电量：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 92,
+      "key": "P7_System_Ext.batteryState",
+      "page": 7,
+      "source": 3,
+      "default": "电池状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 93,
+      "key": "P7_System_Ext.cameraState",
+      "page": 7,
+      "source": 4,
+      "default": "摄像状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 94,
+      "key": "P7_System_Ext.extensionComm",
+      "page": 7,
+      "source": 4,
+      "default": "扩展通信：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 95,
+      "key": "P7_System_Ext.extensionFault",
+      "page": 7,
+      "source": 3,
+      "default": "扩展故障：未知",
+      "font": 8,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 96,
+      "key": "P7_System_Ext.extensionReadonly",
+      "page": 7,
+      "source": 4,
+      "default": "未接入模块：未知",
+      "font": 8,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 97,
+      "key": "P7_System_Ext.lightingState",
+      "page": 7,
+      "source": 3,
+      "default": "照明状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 98,
+      "key": "P7_System_Ext.positioningAccuracy",
+      "page": 7,
+      "source": 3,
+      "default": "定位精度：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 99,
+      "key": "P7_System_Ext.positioningState",
+      "page": 7,
+      "source": 3,
+      "default": "定位状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 100,
+      "key": "P7_System_Ext.positioningX",
+      "page": 7,
+      "source": 3,
+      "default": "定位X：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 101,
+      "key": "P7_System_Ext.positioningY",
+      "page": 7,
+      "source": 3,
+      "default": "定位Y：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 102,
+      "key": "P7_System_Ext.storageState",
+      "page": 7,
+      "source": 4,
+      "default": "存储状态：未知",
+      "font": 9,
+      "width": 456,
+      "height": 40
+    },
+    {
+      "index": 103,
+      "key": "P8_ServoControl.acceptedTarget",
+      "page": 8,
+      "source": 7,
+      "default": "主控接受：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 32
+    },
+    {
+      "index": 104,
+      "key": "P8_ServoControl.authorityStatus",
+      "page": 8,
+      "source": 8,
+      "default": "未授权",
+      "font": 9,
+      "width": 976,
+      "height": 30
+    },
+    {
+      "index": 105,
+      "key": "P8_ServoControl.axisMode",
+      "page": 8,
+      "source": 7,
+      "default": "执行轴：未知（主控决定）",
+      "font": 8,
+      "width": 464,
+      "height": 28
+    },
+    {
+      "index": 106,
+      "key": "P8_ServoControl.commonTarget",
+      "page": 8,
+      "source": 8,
+      "default": "通信：等待主控 / HMI13-R2",
+      "font": 9,
+      "width": 456,
+      "height": 32
+    },
+    {
+      "index": 107,
+      "key": "P8_ServoControl.errorStatus",
+      "page": 8,
+      "source": 8,
+      "default": "错误：无",
+      "font": 9,
+      "width": 976,
+      "height": 48
+    },
+    {
+      "index": 108,
+      "key": "P8_ServoControl.leftActual",
+      "page": 8,
+      "source": 7,
+      "default": "左轴实际：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 32
+    },
+    {
+      "index": 109,
+      "key": "P8_ServoControl.leftEnable",
+      "page": 8,
+      "source": 7,
+      "default": "左轴使能：未知",
+      "font": 9,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 110,
+      "key": "P8_ServoControl.leftOutput",
+      "page": 8,
+      "source": 7,
+      "default": "执行输出：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 111,
+      "key": "P8_ServoControl.leftTarget",
+      "page": 8,
+      "source": 7,
+      "default": "最终目标：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 112,
+      "key": "P8_ServoControl.linkStatus",
+      "page": 8,
+      "source": 7,
+      "default": "通信：等待主控 / HMI13-R2",
+      "font": 8,
+      "width": 976,
+      "height": 28
+    },
+    {
+      "index": 113,
+      "key": "P8_ServoControl.ownerStatus",
+      "page": 8,
+      "source": 7,
+      "default": "控制源：未知",
+      "font": 8,
+      "width": 460,
+      "height": 28
+    },
+    {
+      "index": 114,
+      "key": "P8_ServoControl.recoveryButton",
+      "page": 8,
+      "source": 8,
+      "default": "故障恢复",
+      "font": 9,
+      "width": 236,
+      "height": 52
+    },
+    {
+      "index": 115,
+      "key": "P8_ServoControl.recoveryDetail",
+      "page": 8,
+      "source": 7,
+      "default": "恢复详情：--",
+      "font": 9,
+      "width": 976,
+      "height": 30
+    },
+    {
+      "index": 116,
+      "key": "P8_ServoControl.recoveryStatus",
+      "page": 8,
+      "source": 7,
+      "default": "等待有效数据",
+      "font": 9,
+      "width": 464,
+      "height": 30
+    },
+    {
+      "index": 117,
+      "key": "P8_ServoControl.rightActual",
+      "page": 8,
+      "source": 7,
+      "default": "右轴实际：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 32
+    },
+    {
+      "index": 118,
+      "key": "P8_ServoControl.rightEnable",
+      "page": 8,
+      "source": 7,
+      "default": "右轴使能：未知",
+      "font": 9,
+      "width": 456,
+      "height": 28
+    },
+    {
+      "index": 119,
+      "key": "P8_ServoControl.rightOutput",
+      "page": 8,
+      "source": 7,
+      "default": "执行输出：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 120,
+      "key": "P8_ServoControl.rightTarget",
+      "page": 8,
+      "source": 7,
+      "default": "最终目标：--rpm|--m/s|--km/h",
+      "font": 9,
+      "width": 456,
+      "height": 30
+    },
+    {
+      "index": 121,
+      "key": "P8_ServoControl.sliderSpeedHint",
+      "page": 8,
+      "source": 8,
+      "default": "预览：",
+      "font": 9,
+      "width": 192,
+      "height": 24
+    },
+    {
+      "index": 122,
+      "key": "P8_ServoControl.stopStatus",
+      "page": 8,
+      "source": 7,
+      "default": "停车阶段：未知",
+      "font": 9,
+      "width": 476,
+      "height": 30
+    }
+  ],
+  "positionReset": [
+    49,
+    51,
+    53,
+    54,
+    55,
+    57,
+    58,
+    59
+  ],
+  "sessionReset": [
+    2,
+    3,
+    17,
+    18,
+    103,
+    105,
+    110,
+    111,
+    113,
+    119,
+    120
+  ],
+  "debounce": [
+    24,
+    27,
+    31,
+    34,
+    51,
+    54,
+    56,
+    85,
+    86
+  ]
+}

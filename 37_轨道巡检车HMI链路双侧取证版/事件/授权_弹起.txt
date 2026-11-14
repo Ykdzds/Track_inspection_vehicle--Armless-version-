@@ -1,0 +1,1 @@
+﻿// HMI34 ordinary button: release has no control action.

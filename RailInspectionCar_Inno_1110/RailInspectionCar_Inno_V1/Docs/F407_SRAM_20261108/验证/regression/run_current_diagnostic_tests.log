@@ -1,0 +1,19 @@
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS servo diagnostic scheduler: selected axes, one second cycles, safety polling retained
+PASS servo diagnostic timeout: cached values retained, safety reads unaffected, retry recovery
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS servo diagnostic scheduler: selected axes, one second cycles, safety polling retained
+PASS servo diagnostic timeout: cached values retained, safety reads unaffected, retry recovery
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS servo diagnostic scheduler: selected axes, one second cycles, safety polling retained
+PASS servo diagnostic timeout: cached values retained, safety reads unaffected, retry recovery
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS servo diagnostic scheduler: selected axes, one second cycles, safety polling retained
+PASS servo diagnostic timeout: cached values retained, safety reads unaffected, retry recovery
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS servo diagnostic scheduler: selected axes, one second cycles, safety polling retained
+PASS servo diagnostic timeout: cached values retained, safety reads unaffected, retry recovery
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS servo diagnostic scheduler: selected axes, one second cycles, safety polling retained
+PASS servo diagnostic timeout: cached values retained, safety reads unaffected, retry recovery
+PASS 伺服诊断矩阵：LEFT/RIGHT/BOTH，正常/只读，生产Modbus读请求与响应。

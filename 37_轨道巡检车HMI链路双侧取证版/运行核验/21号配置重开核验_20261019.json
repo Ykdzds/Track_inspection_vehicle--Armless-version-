@@ -1,0 +1,15 @@
+{
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\21_轨道巡检车UART5重复K5跨源停车恢复修复版",
+  "Reopened": true,
+  "PIX": "9050F301B25A0F4294D9AB7F531ACA3089F757BB1D0AA9122EC0304942522F4D",
+  "StateArrayLength": 161,
+  "StateArrayMaxIndex": 160,
+  "AuthorizeControlType": "TOGGLE_BUTTON",
+  "Mode": "Default",
+  "RxBuffer": "255",
+  "Master": "On",
+  "BufferPollEnabled": false,
+  "ReadbackOnly": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

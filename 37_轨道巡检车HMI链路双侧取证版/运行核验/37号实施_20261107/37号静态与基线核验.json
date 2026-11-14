@@ -1,0 +1,14 @@
+﻿{
+  "ControlServiceOriginalLinesPreserved": true,
+  "OriginalLineCount": 852,
+  "CaptureSitesBeforeTargetSessionCommandClear": 59,
+  "ConstantArrayReferencesChecked": 14205,
+  "AddedArrays": {
+    "P0_Boot.d37": 48,
+    "P0_Boot.d37c": 32,
+    "P0_Boot.d37raw": 18,
+    "P0_Boot.d37Tx": 48
+  },
+  "Baseline34FilesUnchanged": 1489,
+  "HardwareVerified": false
+}

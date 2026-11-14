@@ -1,0 +1,639 @@
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:33 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:35 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:37 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:39 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:40 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:42 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:44 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:46 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:48 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:50 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:52 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=672; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Nov  2 2026_20:10:54 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol

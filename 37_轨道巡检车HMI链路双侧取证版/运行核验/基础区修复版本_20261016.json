@@ -1,0 +1,13 @@
+{
+  "CapturedAt": "2026-10-16T23:30:38.7268863+08:00",
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\13_轨道巡检车UART5共同目标转速控制版",
+  "Firmware": "13_轨道巡检车.pix.bin",
+  "Length": 221210,
+  "SHA256": "818BB190BAE2AFC5787A815E28EFAF1C760FF95EDF65D3F143DFDDFFBD74758F",
+  "PIX_SHA256": "A415289F0F2AB20C9C73E4C54E02A5041F18909072A891C614FCC144927504E6",
+  "Replaces_SHA256": "9C5FF99BA671F1722ED8980AFD56E26BF868884451081B3B84B9B8D83F03D509",
+  "BusinessTestExecutions": 100,
+  "LegacyDisplayTests": 33,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

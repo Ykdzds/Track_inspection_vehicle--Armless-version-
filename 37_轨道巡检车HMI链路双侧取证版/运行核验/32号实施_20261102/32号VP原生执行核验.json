@@ -1,0 +1,12 @@
+﻿{
+    "Engine":  "Visual-PIX native compiled event engine, final saved PIX",
+    "Assertions":  2616,
+    "GapMs":  10000,
+    "Pages":  9,
+    "Themes":  2,
+    "Native200RendersMs":  5905,
+    "MaxGBKTextBytes":  85,
+    "ArrayStringBytes":  192,
+    "PhysicalCommunicationVerified":  false,
+    "MotionVerified":  false
+}

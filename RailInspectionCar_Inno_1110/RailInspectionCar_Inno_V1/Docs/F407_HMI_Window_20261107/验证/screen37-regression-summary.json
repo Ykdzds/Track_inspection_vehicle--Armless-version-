@@ -1,0 +1,112 @@
+{
+  "started_at": "2026-11-07T20:24:16.122943+08:00",
+  "finished_at": "2026-11-07T20:24:26.416769+08:00",
+  "cwd": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1",
+  "screen_project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\17_轨道巡检车.pix",
+  "runner": "Node built-in test runner",
+  "command": [
+    "D:\\codex_\\node.exe",
+    "--test",
+    "--test-reporter=tap",
+    "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37.test.cjs",
+    "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-inherited.test.cjs",
+    "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-diag.test.cjs",
+    "C:\\Users\\15056\\AppData\\Local\\Temp\\rail_screen37_single_failure_20261107.test.cjs"
+  ],
+  "environment": {
+    "HMI34_BASELINE": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版"
+  },
+  "exit_code": 0,
+  "counts": {
+    "tests": 55,
+    "pass": 55,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "existing_cases": 53,
+  "temp_cases": 2,
+  "temp_probe": {
+    "path": "C:\\Users\\15056\\AppData\\Local\\Temp\\rail_screen37_single_failure_20261107.test.cjs",
+    "sha256": "A0BEBE951C42C3BFE95D4964FCF1BC0E59CF7DD271CD727C6A1DFC7A109A7EAA",
+    "source": "'use strict';\nconst {test}=require('node:test'), assert=require('node:assert/strict');\nconst {fixture}=require(\"D:\\\\wtzn_sx_\\\\同济大学-轨道巡检车\\\\同济大学轨道巡检车协作资料\\\\2.硬件资料\\\\7.三易串口触摸屏10.1寸\\\\用户代码\\\\37_轨道巡检车HMI链路双侧取证版\\\\hmi37-fixture.cjs\");\nconst {frame}=require(\"D:\\\\wtzn_sx_\\\\同济大学-轨道巡检车\\\\同济大学轨道巡检车协作资料\\\\2.硬件资料\\\\7.三易串口触摸屏10.1寸\\\\用户代码\\\\37_轨道巡检车HMI链路双侧取证版\\\\r2-protocol.cjs\");\nfunction singleFailure(mode) {\n    const r=fixture();\n    r.authorize(); r.slide(2351); r.tick(20);\n    assert.equal(r.sim.target,751); assert.equal(r.h[2],3);\n    const original=r.sim.handle.bind(r.sim);\n    let injected=0, captureAt=null;\n    r.sim.handle=request=>{\n        if(!injected && request[1]===3 && request.readUInt16BE(2)===1120) {\n            injected++; captureAt=r.now();\n            return mode==='FC83/02' ? frame([1,0x83,2]) : null;\n        }\n        return original(request);\n    };\n    const from=r.calls.length;\n    for(let i=0;i<8 && r.c.P0_Boot.d37c.vals[0]!==1;i++) r.tick();\n    const d=r.c.P0_Boot.d37.vals;\n    assert.equal(injected,1); assert.equal(r.h[2],6); assert.equal(r.h[10],0);\n    assert.equal(d[4],2); assert.equal(d[11],1120); assert.equal(d[12],64);\n    assert.ok(d[6]&16); assert.equal(d[6]&2,0);\n    if(mode==='FC83/02') {\n        assert.equal(d[7],0); assert.equal(d[8],1); assert.equal(d[9],0x83); assert.equal(d[10],1);\n    } else {\n        assert.equal(d[7],65535); assert.equal(d[8],0); assert.equal(d[9],0); assert.equal(d[10],0);\n    }\n    const frozen=Array.from(d);\n    r.tick(80);\n    assert.equal(r.h[2],5); assert.equal(r.sim.owner,0); assert.equal(r.sim.session,0);\n    const afterwards=r.calls.slice(from), stops=afterwards.filter(x=>x.kind==='write'&&x.request[24]===16);\n    assert.ok(stops.length>0);\n    assert.ok(!afterwards.some(x=>x.kind==='write'&&x.request[24]===33&&x.request.readInt32BE(27)!==0));\n    assert.deepEqual(Array.from(d),frozen);\n    console.log('SINGLE_FAILURE '+JSON.stringify({mode,injected,captureAt,stopAt:stops[0].at,stopDelay:stops[0].at-captureAt,firstPage:frozen.slice(0,24),finalState:r.h[2],stopCount:stops.length}));\n}\ntest('one valid FC83/02 critical reply triggers frozen first cause then protective STOP without target replay',()=>singleFailure('FC83/02'));\ntest('one missing critical reply triggers frozen raw FFFF then protective STOP without target replay',()=>singleFailure('timeout'));\n"
+  },
+  "scope": "Model regression only; no PIX save, VP compile, download or hardware action. Reviewed test scripts and imported dependencies: file reads plus VM/simulator memory only; simulator network entrypoint not invoked on import.",
+  "hashes_unchanged": true,
+  "files": [
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\17_轨道巡检车.pix",
+      "before_sha256": "209428A7356104A69D0B23F7652E692876559207327C6DD398057271E170901C",
+      "after_sha256": "209428A7356104A69D0B23F7652E692876559207327C6DD398057271E170901C",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\HMI37事务服务.txt",
+      "before_sha256": "B0F6905981E25D3FA4CCFAC2F5977845BC23AB9E0922D422137D4350E11FD805",
+      "after_sha256": "B0F6905981E25D3FA4CCFAC2F5977845BC23AB9E0922D422137D4350E11FD805",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\HMI37自定义函数.txt",
+      "before_sha256": "EFD1A8C5F4FBB2C76FEAB075F4201F1DC290C550D85130CF20363339A58E2170",
+      "after_sha256": "EFD1A8C5F4FBB2C76FEAB075F4201F1DC290C550D85130CF20363339A58E2170",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\HMI37显示刷新.txt",
+      "before_sha256": "01227C1C832184D48D728FE350B0837D11A366571754B471C9CB8FE2E6CB3BB3",
+      "after_sha256": "01227C1C832184D48D728FE350B0837D11A366571754B471C9CB8FE2E6CB3BB3",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37.test.cjs",
+      "before_sha256": "C031038FF976C6FDA4C0B003A2A1071DD0DCE3DFA0B2997C6D2605AC9B8E85F5",
+      "after_sha256": "C031038FF976C6FDA4C0B003A2A1071DD0DCE3DFA0B2997C6D2605AC9B8E85F5",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-inherited.test.cjs",
+      "before_sha256": "F5680F609A9984DED2B2CF23934875E40BAE529DDBCD3DCFAD4CC06A964A1B7F",
+      "after_sha256": "F5680F609A9984DED2B2CF23934875E40BAE529DDBCD3DCFAD4CC06A964A1B7F",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-diag.test.cjs",
+      "before_sha256": "464EB7D0440B82B0E45FD1B247213BD88C8F6AB5E2A3EB07CCBFEB426AA2671C",
+      "after_sha256": "464EB7D0440B82B0E45FD1B247213BD88C8F6AB5E2A3EB07CCBFEB426AA2671C",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\hmi37-fixture.cjs",
+      "before_sha256": "728D6005DDE241BB1E8ED3627EA7932741A449B30BE1E707C74DF6B19360D3D1",
+      "after_sha256": "728D6005DDE241BB1E8ED3627EA7932741A449B30BE1E707C74DF6B19360D3D1",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\r2-protocol.cjs",
+      "before_sha256": "EA5711963187AD8E6326D14B3F5A0AF57199C7567C43CDAE39ADA9AF66492F77",
+      "after_sha256": "EA5711963187AD8E6326D14B3F5A0AF57199C7567C43CDAE39ADA9AF66492F77",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\r2-simulator.cjs",
+      "before_sha256": "3B6656131B97809131E30BB78B5269438977C2A443D773828DED7D2C7160FA01",
+      "after_sha256": "3B6656131B97809131E30BB78B5269438977C2A443D773828DED7D2C7160FA01",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\ui31-vm.cjs",
+      "before_sha256": "376E4977580043755771F6A6908B4A7593CECE8584818B6B0EAC224F42DFF012",
+      "after_sha256": "376E4977580043755771F6A6908B4A7593CECE8584818B6B0EAC224F42DFF012",
+      "unchanged": true
+    },
+    {
+      "path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\37_轨道巡检车HMI链路双侧取证版\\运行核验\\37号实施_20261107\\37号实际工程读回.json",
+      "before_sha256": "464E96ECD9670B8621A7400270C701E3AB57B8CA46288092BA19D8C0AE40798D",
+      "after_sha256": "464E96ECD9670B8621A7400270C701E3AB57B8CA46288092BA19D8C0AE40798D",
+      "unchanged": true
+    }
+  ],
+  "log": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\screen37-regression.log"
+}

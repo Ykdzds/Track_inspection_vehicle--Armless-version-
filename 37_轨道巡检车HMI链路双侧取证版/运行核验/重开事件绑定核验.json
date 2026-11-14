@@ -1,0 +1,82 @@
+[
+  {
+    "Page": "P8_ServoControl",
+    "Control": "h13Service",
+    "Event": "定时事件",
+    "Source": "HMI13事务服务.txt",
+    "Matches": true,
+    "SHA256": "F6216E1875F62032896F5C4D03CEA4AD8C9966A803516DD4CE39641872BF80B2"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "authorize",
+    "Event": "弹起事件",
+    "Source": "事件/授权_弹起.txt",
+    "Matches": true,
+    "SHA256": "C4203EFCDC9F66F3DB07852936F9097496E2D8BFE0CCD5ECDBCB7F64D00CC3C5"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "estop",
+    "Event": "按下事件",
+    "Source": "事件/急停_按下.txt",
+    "Matches": true,
+    "SHA256": "DB640BA15005329F00141B165ADF3378C442F2AF3EB0DD40D80FB332C0BB9E40"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "backHome",
+    "Event": "弹起事件",
+    "Source": "事件/返回_弹起.txt",
+    "Matches": true,
+    "SHA256": "7129A6CC586C42495736659F44A94889E56A90761FC6BB2F8A49280A928353F4"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "rpmSlider",
+    "Event": "值改变事件",
+    "Source": "事件/滑块_滑动.txt",
+    "Matches": true,
+    "SHA256": "B88FDD4FFAF4B0970EDF2AB1553334BDF880BC3629CF26462A6EBDA67140FFBE"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "",
+    "Event": "加载页面",
+    "Source": "事件/P8_加载.txt",
+    "Matches": true,
+    "SHA256": "8B46DDF89E7E8B60383050F18B2A7E3E5911AF0F00BCA61F4C7CC8E527A99F20"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "",
+    "Event": "离开页面",
+    "Source": "事件/P8_离开.txt",
+    "Matches": true,
+    "SHA256": "6E4D9FD8A2481BE78ECD2702B04F9E6FCD226379D5FFE45650D230662CA90D38"
+  },
+  {
+    "Page": "P1_Main",
+    "Control": "servoEntry",
+    "Event": "弹起事件",
+    "Source": "事件/主页入口_弹起.txt",
+    "Matches": true,
+    "SHA256": "9F64EA98AFA33402C63CF12084A24717AB0A54F3CD3883CFD907FDE129FC9B07"
+  },
+  {
+    "Page": "P0_Boot",
+    "Control": "mod",
+    "Event": "中断",
+    "Source": "Modbus中断只读解析.txt",
+    "Matches": true,
+    "SHA256": "B8B4CCB48D790B0B7EDB2D1B2185F85D934BDF068D3C80871FB107B1861C4039"
+  },
+  {
+    "Page": "P0_Boot",
+    "Control": "refreshTick",
+    "Event": "定时事件",
+    "Source": "全局计龄刷新.txt",
+    "Matches": true,
+    "SHA256": "D3D6F2B6A82F7C961E087D6C5368B2560D60EEB15811C29D2DE632E9B666C5AD"
+  }
+]

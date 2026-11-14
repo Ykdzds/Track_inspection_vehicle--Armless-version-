@@ -1,0 +1,229 @@
+﻿{
+    "Engine":  "Visual-PIX 1.7.2.179 native compiled event engine + WPF controls, loaded from final PIX; physical port unopened",
+    "Themes":  [
+                   {
+                       "ImageId":  "a2bdfd98-537a-4b8c-9dcc-e2d647accac1",
+                       "Page":  "P0_Boot",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "0a78fb48-c582-4745-8e41-aed65af6d10f",
+                       "Page":  "P1_Main",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "d4a49b76-e17e-47c9-ba53-8487ea3f3a00",
+                       "Page":  "P2_Diag",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "fe4e19d1-9f0f-4472-96ba-a1c431484dbf",
+                       "Page":  "P3_Position",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "c472c1b0-2d37-4034-9c87-604e7f213602",
+                       "Page":  "P4_Info",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "f8442bd7-e179-444c-af46-73ae34271a54",
+                       "Page":  "P5_Alarm",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "ded26f61-8d7c-4488-a029-46e52687c2e7",
+                       "Page":  "P6_Sync",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "16dc9b7e-1a4b-4b11-b145-b8238dc906fc",
+                       "Page":  "P7_System_Ext",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "36c83307-ce89-4006-81c9-9e213f3e6d7e",
+                       "Page":  "P8_ServoControl",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "6a4fcc68-a86b-4b46-ac53-2e90cf94a015",
+                       "Page":  "P0_Boot",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "3cb8979d-8fae-4b3d-9b7e-c68be3500cf7",
+                       "Page":  "P1_Main",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "066f59a1-d096-4b4e-a4f2-42ef8d7936a2",
+                       "Page":  "P2_Diag",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "847d75c8-e306-4298-9590-8f9d79a1a774",
+                       "Page":  "P3_Position",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "4f1abdf8-111c-4ee0-9df4-6338a73bcc64",
+                       "Page":  "P4_Info",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "45ae47b2-095b-4a2a-8abb-c577e86a0709",
+                       "Page":  "P5_Alarm",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "a4e55072-b6b3-4b56-96ad-2d21eb1129fa",
+                       "Page":  "P6_Sync",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "1e470d81-8864-4415-9a94-e88fc21f2766",
+                       "Page":  "P7_System_Ext",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "78fbea01-6dd8-4676-9054-1056edbd504f",
+                       "Page":  "P8_ServoControl",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "a2bdfd98-537a-4b8c-9dcc-e2d647accac1",
+                       "Page":  "P0_Boot",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "0a78fb48-c582-4745-8e41-aed65af6d10f",
+                       "Page":  "P1_Main",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "d4a49b76-e17e-47c9-ba53-8487ea3f3a00",
+                       "Page":  "P2_Diag",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "fe4e19d1-9f0f-4472-96ba-a1c431484dbf",
+                       "Page":  "P3_Position",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "c472c1b0-2d37-4034-9c87-604e7f213602",
+                       "Page":  "P4_Info",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "f8442bd7-e179-444c-af46-73ae34271a54",
+                       "Page":  "P5_Alarm",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "ded26f61-8d7c-4488-a029-46e52687c2e7",
+                       "Page":  "P6_Sync",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "16dc9b7e-1a4b-4b11-b145-b8238dc906fc",
+                       "Page":  "P7_System_Ext",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "36c83307-ce89-4006-81c9-9e213f3e6d7e",
+                       "Page":  "P8_ServoControl",
+                       "Theme":  0
+                   },
+                   {
+                       "ImageId":  "6a4fcc68-a86b-4b46-ac53-2e90cf94a015",
+                       "Page":  "P0_Boot",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "3cb8979d-8fae-4b3d-9b7e-c68be3500cf7",
+                       "Page":  "P1_Main",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "066f59a1-d096-4b4e-a4f2-42ef8d7936a2",
+                       "Page":  "P2_Diag",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "847d75c8-e306-4298-9590-8f9d79a1a774",
+                       "Page":  "P3_Position",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "4f1abdf8-111c-4ee0-9df4-6338a73bcc64",
+                       "Page":  "P4_Info",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "45ae47b2-095b-4a2a-8abb-c577e86a0709",
+                       "Page":  "P5_Alarm",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "a4e55072-b6b3-4b56-96ad-2d21eb1129fa",
+                       "Page":  "P6_Sync",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "1e470d81-8864-4415-9a94-e88fc21f2766",
+                       "Page":  "P7_System_Ext",
+                       "Theme":  1
+                   },
+                   {
+                       "ImageId":  "78fbea01-6dd8-4676-9054-1056edbd504f",
+                       "Page":  "P8_ServoControl",
+                       "Theme":  1
+                   }
+               ],
+    "SliderValues":  6402,
+    "SliderFailures":  [
+
+                       ],
+    "ThumbPositions":  [
+                           {
+                               "Width":  32,
+                               "Value":  0,
+                               "AbsoluteLeft":  24
+                           },
+                           {
+                               "Width":  32,
+                               "Value":  800,
+                               "AbsoluteLeft":  260
+                           },
+                           {
+                               "Width":  32,
+                               "Value":  1600,
+                               "AbsoluteLeft":  496
+                           },
+                           {
+                               "Width":  32,
+                               "Value":  2400,
+                               "AbsoluteLeft":  732
+                           },
+                           {
+                               "Width":  32,
+                               "Value":  3200,
+                               "AbsoluteLeft":  968
+                           }
+                       ],
+    "TouchLayer":  {
+                       "OriginalSliderId":  36,
+                       "TopHit":  "rpmSlider",
+                       "TransparentBackgroundId":  "85c92d3b-ac72-43c7-b651-8263ec1b4a75",
+                       "HintId":  35,
+                       "AllRangeHitChecks":  16005,
+                       "OrderedHits":  [
+                                           "sliderSpeedHint",
+                                           "rpmSlider"
+                                       ]
+                   },
+    "PhysicalVerified":  false,
+    "DynamicFont20":  true
+}

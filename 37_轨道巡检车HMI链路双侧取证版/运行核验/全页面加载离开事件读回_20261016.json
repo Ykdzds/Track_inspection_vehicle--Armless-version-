@@ -1,0 +1,92 @@
+[
+  {
+    "Script": "",
+    "Page": "P0_Boot",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P0_Boot",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P1_Main",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P1_Main",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P2_Diag",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P2_Diag",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P3_Position",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P3_Position",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P4_Info",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P4_Info",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P5_Alarm",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P5_Alarm",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P6_Sync",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P6_Sync",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "",
+    "Page": "P7_System_Ext",
+    "Event": "LAYER.加载页面.21"
+  },
+  {
+    "Script": "",
+    "Page": "P7_System_Ext",
+    "Event": "LAYER.离开页面.22"
+  },
+  {
+    "Script": "if(P8_ServoControl.h13.vals[2]!=3){P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P8_ServoControl.h13.vals[32]=0;}\n",
+    "Page": "P8_ServoControl",
+    "Event": "LAYER.加载页面 +.21"
+  },
+  {
+    "Script": "if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[11]=3;}if(P8_ServoControl.h13.vals[2]==2){P8_ServoControl.h13.vals[11]=16;}P8_ServoControl.h13.vals[10]=0;\n",
+    "Page": "P8_ServoControl",
+    "Event": "LAYER.离开页面 +.22"
+  }
+]

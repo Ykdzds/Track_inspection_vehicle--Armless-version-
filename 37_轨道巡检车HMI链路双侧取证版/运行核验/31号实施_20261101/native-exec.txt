@@ -1,0 +1,212 @@
+Visual_PIX.Model.PixProject
+0000 ldarg.0 
+0001 call Boolean IsHorizontal()
+0006 brtrue.s 61
+0008 ldc.i4 -423841801
+000D ldc.i4 -588975304
+0012 xor 
+0013 dup 
+0014 stloc.0 
+0015 ldc.i4.3 
+0016 rem.un 
+0017 switch 3
+0028 br.s 27
+002A ldarg.0 
+002B call RpgRniqBlWjCFiSagdbuqoKvDXsaA get_Screen()
+0030 callvirt Int32 MJxBTjHpPsYMRTJqMtrxKZoQmIpMA()
+0035 ret 
+0036 ldloc.0 
+0037 ldc.i4 491506302
+003C mul 
+003D ldc.i4 -442191772
+0042 xor 
+0043 br.s -56
+0045 ldarg.0 
+0046 call RpgRniqBlWjCFiSagdbuqoKvDXsaA get_Screen()
+004B callvirt Int32 UweDLMFkqEQaXVEHYQvlQicUFKAAA()
+0050 ret 
+EgErvQLbNxVTVEjeyfsODMZZZGgcA
+06_轨道巡检车
+WMyjeJwGLkXDvVoFwhNgLDbbBMpjA
+06_轨道巡检车
+sptlnwNEeWINytssvYStiACLjpKx
+FYPgzghjrjdfafFbeoXyZnjdoDpXb
+10
+KVOEVCArHOepntEjOEPRrEQWZAWW
+5
+JjMtCatuWOGHBeqNnduuFpZOWEVeA
+5
+themeToggle event 0
+P1_Main event 0
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[[Visual_PIX.Model.PixControl, Visual-PIX, Version=1.7.2.179, Culture=neutral, PublicKeyToken=null]]
+0000 ldloca.s 0
+0002 call System.Runtime.CompilerServices.AsyncVoidMethodBuilder Create()
+0007 stfld token 167774887
+000C ldloca.s 0
+000E ldarg.0 
+000F stfld token 167774888
+0014 ldc.i4 -1181131315
+0019 ldc.i4 -116578271
+001E xor 
+001F dup 
+0020 stloc.1 
+0021 ldc.i4.3 
+0022 rem.un 
+0023 switch 3
+0034 br.s 37
+0036 ldloca.s 0
+0038 ldc.i4.m1 
+0039 stfld token 167774889
+003E ldloca.s 0
+0040 ldflda token 167774887
+0045 ldloca.s 0
+0047 call token 721420636
+004C ldloc.1 
+004D ldc.i4 -1637595631
+0052 mul 
+0053 ldc.i4 2086570066
+0058 xor 
+0059 br.s -66
+005B ret 
+STATE hZdosMBvwFVGKyUJvqqtdcFwUVQd 0 日间 / 切夜间
+System.Management.Automation.MethodInvocationException: Exception calling "Invoke" with "2" argument(s): "Object reference not set to an instance of an object." ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.wxsaZIMFqZBvGcmWjFYRfsvBDvxNb.zsYbiFKJcOrsCbdWGMcqQVtqMraO()
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.fHLpkUtoewbPEwAdtFPwclgTyVhgA.bdWKKGcijrFbiEGzlbmBzxzKtNTBA(Action )
+   at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.rGSQMnBljBHaLbQwBFqqGvKDmbYY.VQHJIGmODxYDIDwmGPtbcmCSENze()
+   --- End of inner exception stack trace ---
+   at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext funcContext, Exception exception)
+   at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+   at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedFrame frame)
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[[Visual_PIX.Model.PixControl, Visual-PIX, Version=1.7.2.179, Culture=neutral, PublicKeyToken=null]]
+0000 ldarg.0 
+0001 ldfld token 167774896
+0006 brfalse.s 50
+0008 ldc.i4 -1912501175
+000D ldc.i4 -1750626583
+0012 xor 
+0013 dup 
+0014 stloc.0 
+0015 ldc.i4.3 
+0016 rem.un 
+0017 switch 3
+0028 br.s 16
+002A ret 
+002B ldloc.0 
+002C ldc.i4 -1583903766
+0031 mul 
+0032 ldc.i4 2004763512
+0037 xor 
+0038 br.s -45
+003A nop 
+003B ldarg.0 
+003C call Void XNmGGnJzUBfqjHZyxccKmnpgzuuU(GGiFOibEIBtEwjjDZFJIEPbGFJeR)
+0041 ldarg.0 
+0042 call Void grkZOvQgcWwmvVaZzpFYCbTBfNaZ(GGiFOibEIBtEwjjDZFJIEPbGFJeR)
+0047 ldc.i4 -1404663131
+004C ldc.i4 -1750626583
+0051 xor 
+0052 dup 
+0053 stloc.0 
+0054 ldc.i4.3 
+0055 rem.un 
+0056 switch 3
+0067 br.s 26
+0069 ldarg.0 
+006A ldfld token 167774885
+006F callvirt Void VfHoTUEcirftkErOyyQKQTyHJNbH()
+0074 ldloc.0 
+0075 ldc.i4 -1692290522
+007A mul 
+007B ldc.i4 126941218
+0080 xor 
+0081 br.s -55
+0083 leave.s 13
+0085 ldarg.0 
+0086 call Void dpnweuSJctvUqtJTVlFmNxpQsnHE(GGiFOibEIBtEwjjDZFJIEPbGFJeR)
+008B ldarg.0 
+008C call Void OAezDqakntVIzUxHlXJWGGcwdTxW(GGiFOibEIBtEwjjDZFJIEPbGFJeR)
+0091 endfinally 
+0092 ret 
+STATE VQHJIGmODxYDIDwmGPtbcmCSENze 0 日间 / 切夜间
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[[Visual_PIX.Model.PixControl, Visual-PIX, Version=1.7.2.179, Culture=neutral, PublicKeyToken=null]]
+0000 ldarg.0 
+0001 ldc.i4.1 
+0002 stfld token 167774896
+0007 ldc.i4 1546675812
+000C ldc.i4 1938751546
+0011 xor 
+0012 dup 
+0013 stloc.0 
+0014 ldc.i4.4 
+0015 rem.un 
+0016 switch 4
+002B br.s 59
+002D ldarg.0 
+002E ldfld token 167774885
+0033 brtrue.s 8
+0035 ldc.i4 -1635282031
+003A dup 
+003B br.s 6
+003D ldc.i4 -1952481801
+0042 dup 
+0043 pop 
+0044 ldloc.0 
+0045 ldc.i4 1033014311
+004A mul 
+004B xor 
+004C br.s -66
+004E ldarg.0 
+004F ldfld token 167774885
+0054 callvirt Void PAPScZtTKhcNOYMlrYiGpdyhmWnc()
+0059 ldloc.0 
+005A ldc.i4 -1865343852
+005F mul 
+0060 ldc.i4 -28143569
+0065 xor 
+0066 br.s -92
+0068 ret 
+STATE lBmfEUojrNEZCnkDcbigmxYMguSG 0 日间 / 切夜间
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[[Visual_PIX.Model.PixControl, Visual-PIX, Version=1.7.2.179, Culture=neutral, PublicKeyToken=null]]
+0000 ldloca.s 0
+0002 call System.Runtime.CompilerServices.AsyncVoidMethodBuilder Create()
+0007 stfld token 167774891
+000C ldc.i4 1881643920
+0011 ldc.i4 689711574
+0016 xor 
+0017 dup 
+0018 stloc.1 
+0019 ldc.i4.5 
+001A rem.un 
+001B switch 5
+0034 br.s 75
+0036 ldloca.s 0
+0038 ldarg.0 
+0039 stfld token 167774892
+003E ldloc.1 
+003F ldc.i4 -1299021305
+0044 mul 
+0045 ldc.i4 833487340
+004A xor 
+004B br.s -60
+004D ldloca.s 0
+004F ldc.i4.m1 
+0050 stfld token 167774893
+0055 ldloc.1 
+0056 ldc.i4 1604301724
+005B mul 
+005C ldc.i4 114479090
+0061 xor 
+0062 br.s -83
+0064 ldloca.s 0
+0066 ldflda token 167774891
+006B ldloca.s 0
+006D call token 721420637
+0072 ldloc.1 
+0073 ldc.i4 -51529046
+0078 mul 
+0079 ldc.i4 -1172066730
+007E xor 
+007F br.s -112
+0081 ret 
+STATE VqIFPUapprxHsUMBqCUKgHIJSobEB 0 日间 / 切夜间

@@ -1,0 +1,12 @@
+PASS HMI link diagnostics disabled: no runtime dependencies/output
+Assertion failed!
+
+Program: C:\Users\15056\AppData\Local\Temp\rail_hmi_link_diag_1.exe
+File: Tests/test_hmi_link_diag.c, Line 140
+
+Expression: strstr(output, "fifo_lost=10")
+Exception: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_link_diag_tests.ps1:15
+Line |
+  15 |  … STEXITCODE){throw "HMI link diagnostics tests failed: enabled=$enable …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | HMI link diagnostics tests failed: enabled=1

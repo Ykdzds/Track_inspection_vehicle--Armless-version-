@@ -1,0 +1,852 @@
+int i;
+int speedValue;
+int positionValue;
+int eventSeconds;
+int eventRemainder;
+int eventQuotient;
+int formalProtocol;
+int uiAxis;
+int uiBit;
+int uiValue;
+int uiOffset;
+// 先维护年龄，再刷新各页，过期判定在同一拍生效。
+if(metaSeen.vals[0]==1){
+    if(metaAge.vals[0]<65535){metaAge.vals[0]=metaAge.vals[0]+1;}
+    if(metaAge.vals[0]>=10){metaValid.vals[0]=0;}
+}
+
+if(metaSeen.vals[0]==0){metaValid.vals[0]=0;}
+for(i=0;i<5;i++){
+    if(regionAge.vals[i]<65535){
+        regionAge.vals[i]=regionAge.vals[i]+1;
+    }
+    if(regionSeen.vals[i]==0 || regionAge.vals[i]>=10){
+        regionValid.vals[i]=0;
+        regionGoodRun.vals[i]=0;
+    }
+}
+// 已确认的协议身份可用于基础监控，当前明确不兼容响应具有否决权。
+formalProtocol=0;
+if(P8_ServoControl.h13.vals[0]==1 && P8_ServoControl.h13.vals[47]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[22]>=1500){metaValid.vals[0]=0;}
+if(regionSeen.vals[4]==1 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1){formalProtocol=1;}
+if(metaSeen.vals[0]==1 && metaRegs.vals[0]==21065 && metaRegs.vals[1]==1){formalProtocol=1;}
+if(regionValid.vals[4]==1 && (rawRegs.vals[192]!=21065 || rawRegs.vals[193]!=1)){formalProtocol=0;}
+if(metaSeen.vals[0]==1 && metaAge.vals[0]<10 && (metaRegs.vals[0]!=21065 || metaRegs.vals[1]!=1)){formalProtocol=0;}
+// 各模块由自身能力位和所属快照控制，不把未接入解释为正常。
+if(sys_pid==P7_System_Ext.id){
+    P7_System_Ext.batteryState.txt="电池状态：未知";
+    P7_System_Ext.batteryPercent.txt="电池电量：未知";
+    P7_System_Ext.positioningState.txt="定位状态：未知";
+    P7_System_Ext.positioningAccuracy.txt="定位精度：未知";
+    P7_System_Ext.positioningX.txt="定位X：未知";
+    P7_System_Ext.positioningY.txt="定位Y：未知";
+    P7_System_Ext.armState.txt="机械臂状态：未知";
+    P7_System_Ext.lightingState.txt="照明状态：未知";
+    P7_System_Ext.cameraState.txt="摄像状态：未知";
+    P7_System_Ext.acquisitionState.txt="数据采集：未知";
+    P7_System_Ext.storageState.txt="存储状态：未知";
+    P7_System_Ext.extensionComm.txt="扩展通信：未知";
+    P7_System_Ext.extensionFault.txt="扩展故障：未知";
+    P7_System_Ext.extensionReadonly.txt="未接入模块：未知";
+if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){
+        if((rawRegs.vals[194] & 8)==0){
+            P7_System_Ext.batteryState.txt="电池状态：未配置";
+            P7_System_Ext.batteryPercent.txt="电池电量：未配置";
+        }
+        if((rawRegs.vals[194] & 16)==0){
+            P7_System_Ext.positioningState.txt="定位状态：未配置";
+            P7_System_Ext.positioningAccuracy.txt="定位精度：未配置";
+            P7_System_Ext.positioningX.txt="定位X：未配置";
+            P7_System_Ext.positioningY.txt="定位Y：未配置";
+        }
+        if((rawRegs.vals[194] & 32)==0){P7_System_Ext.armState.txt="机械臂状态：未配置";}
+        if((rawRegs.vals[194] & 64)==0){P7_System_Ext.lightingState.txt="照明状态：未配置";}
+        if((rawRegs.vals[194] & 128)==0){P7_System_Ext.acquisitionState.txt="数据采集：未配置";}
+        if((rawRegs.vals[194] & 256)==0){P7_System_Ext.cameraState.txt="摄像状态：未配置";}
+        if((rawRegs.vals[194] & 512)==0){P7_System_Ext.storageState.txt="存储状态：未配置";}
+        if((rawRegs.vals[194] & 1024)==0){P7_System_Ext.extensionComm.txt="扩展通信：未配置";}
+        P7_System_Ext.extensionReadonly.txt="未接入模块：未配置";
+        if((rawRegs.vals[194] & 2040)==0){P7_System_Ext.extensionFault.txt="扩展故障：未配置";}
+        if(regionValid.vals[3]==1 && regionBadRun.vals[3]<10 && rawRegs.vals[172]==1){
+            if((rawRegs.vals[194] & 8)!=0){
+                if(rawRegs.vals[160]==0){
+                    P7_System_Ext.batteryState.txt="电池状态：未接入";
+                    P7_System_Ext.batteryPercent.txt="电池电量：未接入";
+                }
+                if(rawRegs.vals[160]==1){P7_System_Ext.batteryState.txt="电池状态：正常";}
+                if(rawRegs.vals[160]==2){P7_System_Ext.batteryState.txt="电池状态：低电";}
+                if(rawRegs.vals[160]==3){P7_System_Ext.batteryState.txt="电池状态：故障";}
+                if(rawRegs.vals[160]>=1 && rawRegs.vals[160]<=3 && rawRegs.vals[161]<=100){
+                    P7_System_Ext.batteryPercent.txt="电池电量："+intToString(rawRegs.vals[161])+"%";
+                }
+            }
+            if((rawRegs.vals[194] & 16)!=0){
+                P7_System_Ext.positioningX.txt="定位X：无效";
+                P7_System_Ext.positioningY.txt="定位Y：无效";
+                if(rawRegs.vals[162]==0){P7_System_Ext.positioningState.txt="定位状态：未接入";}
+                if(rawRegs.vals[162]==1){P7_System_Ext.positioningState.txt="定位状态：无效";}
+                if(rawRegs.vals[162]==3){P7_System_Ext.positioningState.txt="定位状态：故障";}
+                if(rawRegs.vals[162]==2){
+                    P7_System_Ext.positioningState.txt="定位状态：有效";
+                    if(rawRegs.vals[163]!=65535){P7_System_Ext.positioningAccuracy.txt="定位精度："+intToString(rawRegs.vals[163])+" mm";}
+                    // 正式协议是本地坐标，不能冒称经纬度。
+                    positionValue=rawRegs.vals[164];
+                    if(positionValue>=32768){positionValue=positionValue-65536;}
+                    positionValue=positionValue*65536+rawRegs.vals[165];
+                    P7_System_Ext.positioningX.txt="定位X："+intToString(positionValue)+" mm";
+                    positionValue=rawRegs.vals[166];
+                    if(positionValue>=32768){positionValue=positionValue-65536;}
+                    positionValue=positionValue*65536+rawRegs.vals[167];
+                    P7_System_Ext.positioningY.txt="定位Y："+intToString(positionValue)+" mm";
+                }
+            }
+            if((rawRegs.vals[194] & 32)!=0){
+                if(rawRegs.vals[168]==0){P7_System_Ext.armState.txt="机械臂状态：未接入";}
+                if(rawRegs.vals[168]==1){P7_System_Ext.armState.txt="机械臂状态：待机";}
+                if(rawRegs.vals[168]==2){P7_System_Ext.armState.txt="机械臂状态：工作";}
+                if(rawRegs.vals[168]==3){P7_System_Ext.armState.txt="机械臂状态：故障";}
+            }
+            if((rawRegs.vals[194] & 64)!=0){
+                if(rawRegs.vals[169]==0){P7_System_Ext.lightingState.txt="照明状态：未接入";}
+                if(rawRegs.vals[169]==1){P7_System_Ext.lightingState.txt="照明状态：关闭";}
+                if(rawRegs.vals[169]==2){P7_System_Ext.lightingState.txt="照明状态：开启";}
+                if(rawRegs.vals[169]==3){P7_System_Ext.lightingState.txt="照明状态：故障";}
+            }
+            if((rawRegs.vals[194] & 128)!=0){
+                if(rawRegs.vals[170]==0){P7_System_Ext.acquisitionState.txt="数据采集：未接入";}
+                if(rawRegs.vals[170]==1){P7_System_Ext.acquisitionState.txt="数据采集：待机";}
+                if(rawRegs.vals[170]==2){P7_System_Ext.acquisitionState.txt="数据采集：采集";}
+                if(rawRegs.vals[170]==3){P7_System_Ext.acquisitionState.txt="数据采集：故障";}
+            }
+            if((rawRegs.vals[194] & 248)!=0){P7_System_Ext.extensionFault.txt="扩展故障位图："+intToString(rawRegs.vals[171]);}
+        }
+        // 摄像与通信位于索引4，不借用外围区的新鲜度。
+        if(rawRegs.vals[179]==1){
+            if((rawRegs.vals[194] & 256)!=0){
+                if(rawRegs.vals[176]==0){P7_System_Ext.cameraState.txt="摄像状态：未接入";}
+                if(rawRegs.vals[176]==1){P7_System_Ext.cameraState.txt="摄像状态：待机";}
+                if(rawRegs.vals[176]==2){P7_System_Ext.cameraState.txt="摄像状态：摄像";}
+                if(rawRegs.vals[176]==3){P7_System_Ext.cameraState.txt="摄像状态：故障";}
+            }
+            if((rawRegs.vals[194] & 512)!=0){
+                if(rawRegs.vals[177]==0){P7_System_Ext.storageState.txt="存储状态：未接入";}
+                if(rawRegs.vals[177]==1){P7_System_Ext.storageState.txt="存储状态：正常";}
+                if(rawRegs.vals[177]==2){P7_System_Ext.storageState.txt="存储状态：空间不足";}
+                if(rawRegs.vals[177]==3){P7_System_Ext.storageState.txt="存储状态：故障";}
+            }
+            if((rawRegs.vals[194] & 1024)!=0){
+                if(rawRegs.vals[178]==0){P7_System_Ext.extensionComm.txt="扩展通信：未接入";}
+                if(rawRegs.vals[178]==1){P7_System_Ext.extensionComm.txt="扩展通信：在线";}
+                if(rawRegs.vals[178]==2){P7_System_Ext.extensionComm.txt="扩展通信：离线";}
+                if(rawRegs.vals[178]==3){P7_System_Ext.extensionComm.txt="扩展通信：异常";}
+            }
+        }
+    }
+}
+// 告警区和能力区独立有效，无效快照不能显示为无告警。
+if(sys_pid==P5_Alarm.id){
+    P5_Alarm.alarmLevel.txt="告警等级：未知";
+    P5_Alarm.alarmCode.txt="告警代码：未知";
+    P5_Alarm.alarmSource.txt="告警来源：未知";
+    P5_Alarm.alarmActive.txt="告警状态：未知";
+    P5_Alarm.alarmEmergency.txt="急停状态：未知";
+    P5_Alarm.alarmStopResult.txt="停车结果：未知";
+    P5_Alarm.alarmSequence.txt="告警事件序号：未知";
+    P5_Alarm.alarmEventTime.txt="事件时间：未知";
+    P5_Alarm.alarmExtra.txt="附加参数：未知";
+    P5_Alarm.alarmFaultSummary.txt="故障摘要：未知";
+    P5_Alarm.alarmHistory.txt="告警记录：历史未接入";
+if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){
+        if((rawRegs.vals[194] & 4)==0){
+            P5_Alarm.alarmLevel.txt="告警等级：未配置";
+            P5_Alarm.alarmCode.txt="告警代码：未配置";
+            P5_Alarm.alarmSource.txt="告警来源：未配置";
+            P5_Alarm.alarmActive.txt="告警状态：未配置";
+            P5_Alarm.alarmEmergency.txt="急停状态：未配置";
+            P5_Alarm.alarmStopResult.txt="停车结果：未配置";
+            P5_Alarm.alarmSequence.txt="告警事件序号：未配置";
+            P5_Alarm.alarmEventTime.txt="事件时间：未配置";
+            P5_Alarm.alarmExtra.txt="附加参数：未配置";
+            P5_Alarm.alarmFaultSummary.txt="故障摘要：未配置";
+            P5_Alarm.alarmHistory.txt="告警记录：历史未接入";
+        }else{
+            if(regionSeen.vals[3]==1 && (regionValid.vals[3]==0 || regionBadRun.vals[3]>=10)){P5_Alarm.alarmLevel.txt="告警快照：已过期";}
+            if(regionValid.vals[3]==1 && regionBadRun.vals[3]<10 && rawRegs.vals[157]!=1){
+                P5_Alarm.alarmLevel.txt="告警快照无效";
+                P5_Alarm.alarmCode.txt="告警代码：无效";
+                P5_Alarm.alarmSource.txt="告警来源：无效";
+                P5_Alarm.alarmActive.txt="告警状态：无效";
+                P5_Alarm.alarmEmergency.txt="急停状态：无效";
+                P5_Alarm.alarmStopResult.txt="停车结果：无效";
+                P5_Alarm.alarmSequence.txt="告警事件序号：无效";
+                P5_Alarm.alarmEventTime.txt="事件时间：无效";
+                P5_Alarm.alarmExtra.txt="附加参数：无效";
+                P5_Alarm.alarmFaultSummary.txt="故障摘要：无效";
+            }
+            if(regionValid.vals[3]==1 && regionBadRun.vals[3]<10 && rawRegs.vals[157]==1){
+                if(rawRegs.vals[145]==0){P5_Alarm.alarmLevel.txt="告警等级：无";}
+                if(rawRegs.vals[145]==1){P5_Alarm.alarmLevel.txt="告警等级：提示";}
+                if(rawRegs.vals[145]==2){P5_Alarm.alarmLevel.txt="告警等级：警告";}
+                if(rawRegs.vals[145]==3){P5_Alarm.alarmLevel.txt="告警等级：故障";}
+                if(rawRegs.vals[145]==4){P5_Alarm.alarmLevel.txt="告警等级：紧急";}
+                if(rawRegs.vals[146]!=65535){P5_Alarm.alarmCode.txt="告警代码："+intToString(rawRegs.vals[146]);}
+                if(rawRegs.vals[147]!=65535){P5_Alarm.alarmSource.txt="告警来源码："+intToString(rawRegs.vals[147]);}
+                if(rawRegs.vals[147]==0){P5_Alarm.alarmSource.txt="告警来源：无";}
+                if(rawRegs.vals[147]==1){P5_Alarm.alarmSource.txt="告警来源：主控";}
+                if(rawRegs.vals[147]==2){P5_Alarm.alarmSource.txt="告警来源：左伺服";}
+                if(rawRegs.vals[147]==3){P5_Alarm.alarmSource.txt="告警来源：右伺服";}
+                if(rawRegs.vals[147]==4){P5_Alarm.alarmSource.txt="告警来源：遥控链路";}
+                if(rawRegs.vals[147]==5){P5_Alarm.alarmSource.txt="告警来源：软件急停";}
+                if(rawRegs.vals[147]==6){P5_Alarm.alarmSource.txt="告警来源：健康监控";}
+                if(rawRegs.vals[148]==0){P5_Alarm.alarmActive.txt="告警状态：不活跃";}
+                if(rawRegs.vals[148]==1){P5_Alarm.alarmActive.txt="告警状态：活跃";}
+                if(rawRegs.vals[154]==0){P5_Alarm.alarmEmergency.txt="急停状态：未触发";}
+                if(rawRegs.vals[154]==1){P5_Alarm.alarmEmergency.txt="急停状态：触发";}
+                if(rawRegs.vals[155]==0){P5_Alarm.alarmStopResult.txt="停车结果：无请求";}
+                if(rawRegs.vals[155]==1){P5_Alarm.alarmStopResult.txt="停车结果：停车中";}
+                if(rawRegs.vals[155]==2){P5_Alarm.alarmStopResult.txt="停车结果：确认停止";}
+                if(rawRegs.vals[155]==3){P5_Alarm.alarmStopResult.txt="停车结果：失败";}
+                P5_Alarm.alarmSequence.txt="告警事件序号："+intToString(rawRegs.vals[144]);
+                // 将U32毫秒拆成秒与余毫秒，全部中间值保持在S32范围。
+                eventRemainder=rawRegs.vals[150]*536+rawRegs.vals[151];
+                eventQuotient=eventRemainder/1000;
+                eventSeconds=rawRegs.vals[150]*65+eventQuotient;
+                eventRemainder=eventRemainder-eventQuotient*1000;
+                P5_Alarm.alarmEventTime.txt="启动后："+intToString(eventSeconds)+" s "+intToString(eventRemainder)+" ms";
+                positionValue=rawRegs.vals[152];
+                if(positionValue>=32768){positionValue=positionValue-65536;}
+                positionValue=positionValue*65536+rawRegs.vals[153];
+                P5_Alarm.alarmExtra.txt="附加参数："+intToString(positionValue);
+                P5_Alarm.alarmFaultSummary.txt="故障摘要位图："+intToString(rawRegs.vals[156]);
+            }
+        }
+    }
+}
+// 同步诊断在所有模式下显示，是否执行补偿仅影响补偿字段。
+if(sys_pid==P6_Sync.id){
+    P6_Sync.syncMacro.txt="同步宏：未知";
+    P6_Sync.syncState.txt="同步状态：未知";
+    P6_Sync.syncActualDiff.txt="实际速度差：未知";
+    P6_Sync.syncEffectiveError.txt="有效误差：未知";
+    P6_Sync.syncCompensation.txt="当前整数补偿：未知";
+    P6_Sync.syncPairValid.txt="样本配对：未知";
+    P6_Sync.syncRejectReason.txt="配对拒绝原因：未知";
+    P6_Sync.syncSkew.txt="最近样本错时：未知";
+    P6_Sync.syncAxis1Age.txt="轴1样本年龄：未知";
+    P6_Sync.syncAxis2Age.txt="轴2样本年龄：未知";
+if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){
+        if((rawRegs.vals[194] & 2)==0){
+            P6_Sync.syncMacro.txt="同步宏：未配置";
+            P6_Sync.syncState.txt="同步状态：未配置";
+            P6_Sync.syncActualDiff.txt="实际速度差：未配置";
+            P6_Sync.syncEffectiveError.txt="有效误差：未配置";
+            P6_Sync.syncCompensation.txt="当前整数补偿：未配置";
+            P6_Sync.syncPairValid.txt="样本配对：未配置";
+            P6_Sync.syncRejectReason.txt="配对拒绝原因：未配置";
+            P6_Sync.syncSkew.txt="最近样本错时：未配置";
+            P6_Sync.syncAxis1Age.txt="轴1样本年龄：未配置";
+            P6_Sync.syncAxis2Age.txt="轴2样本年龄：未配置";
+        }else{
+            if(regionValid.vals[2]==1 && regionBadRun.vals[2]<10){
+                if(rawRegs.vals[142]!=1){P6_Sync.syncState.txt="同步快照：无效";}
+                if(rawRegs.vals[142]==1){
+                    P6_Sync.syncActualDiff.txt="实际速度差：无效";
+                    P6_Sync.syncEffectiveError.txt="有效误差：无效";
+                    P6_Sync.syncCompensation.txt="当前整数补偿：无效";
+                    if(rawRegs.vals[128]!=65535){P6_Sync.syncMacro.txt="同步控制位："+intToString(rawRegs.vals[128]);}
+                    if(rawRegs.vals[129]==0){P6_Sync.syncState.txt="同步状态：关闭";}
+                    if(rawRegs.vals[129]==1){P6_Sync.syncState.txt="同步状态：待配对";}
+                    if(rawRegs.vals[129]==2){P6_Sync.syncState.txt="同步状态：激活";}
+                    if(rawRegs.vals[129]==3){P6_Sync.syncState.txt="同步状态：受限";}
+                    if(rawRegs.vals[129]==4){P6_Sync.syncState.txt="同步状态：故障";}
+                    if(rawRegs.vals[130]==0){P6_Sync.syncPairValid.txt="样本配对：无效";}
+                    if(rawRegs.vals[130]==1){
+                        P6_Sync.syncPairValid.txt="样本配对：有效";
+                        if(rawRegs.vals[132]!=32767){
+                            speedValue=rawRegs.vals[132];
+                            if(speedValue>=32768){speedValue=speedValue-65536;}
+                            P6_Sync.syncActualDiff.txt="实际速度差："+intToString(speedValue)+" rpm";
+                        }
+                        if(rawRegs.vals[133]!=32767){
+                            speedValue=rawRegs.vals[133];
+                            if(speedValue>=32768){speedValue=speedValue-65536;}
+                            P6_Sync.syncEffectiveError.txt="有效误差："+intToString(speedValue)+" rpm";
+                        }
+                        // 只使用主控已经执行的补偿结果，运行补充也必须有效。
+                        if(rawRegs.vals[128]!=65535 && (rawRegs.vals[128] & 2)!=0 && (rawRegs.vals[194] & 4096)!=0 && rawRegs.vals[207]==1 && rawRegs.vals[203]==2 && rawRegs.vals[134]!=32767){
+                            speedValue=rawRegs.vals[134];
+                            if(speedValue>=32768){speedValue=speedValue-65536;}
+                            P6_Sync.syncCompensation.txt="当前整数补偿："+intToString(speedValue)+" rpm";
+                        }
+                    }
+                    // 即使尚未配对，也能知道本拍没有执行补偿。
+                    if(rawRegs.vals[128]!=65535 && (rawRegs.vals[128] & 2)==0){
+                        P6_Sync.syncCompensation.txt="当前整数补偿：未执行";
+                        P6_Sync.syncEffectiveError.txt="有效误差：未执行";
+                    }
+                    if((rawRegs.vals[194] & 4096)!=0 && rawRegs.vals[207]==1 && rawRegs.vals[203]<=4 && rawRegs.vals[203]!=2){
+                        P6_Sync.syncCompensation.txt="当前整数补偿：未执行";
+                        P6_Sync.syncEffectiveError.txt="有效误差：未执行";
+                    }
+                    if(rawRegs.vals[131]!=65535){P6_Sync.syncRejectReason.txt="配对拒绝码："+intToString(rawRegs.vals[131]);}
+                    if(rawRegs.vals[131]==0){P6_Sync.syncRejectReason.txt="配对拒绝原因：无";}
+                    if(rawRegs.vals[131]==1){P6_Sync.syncRejectReason.txt="配对拒绝原因：重复";}
+                    if(rawRegs.vals[131]==2){P6_Sync.syncRejectReason.txt="配对拒绝原因：过期";}
+                    if(rawRegs.vals[131]==3){P6_Sync.syncRejectReason.txt="配对拒绝原因：错时";}
+                    if(rawRegs.vals[131]==4){P6_Sync.syncRejectReason.txt="配对拒绝原因：门禁";}
+                    if(rawRegs.vals[131]==5){P6_Sync.syncRejectReason.txt="配对拒绝原因：待配对";}
+                    if(rawRegs.vals[135]!=65535){P6_Sync.syncSkew.txt="最近样本错时："+intToString(rawRegs.vals[135])+" ms";}
+                    if(rawRegs.vals[136]!=65535){P6_Sync.syncAxis1Age.txt="轴1样本年龄："+intToString(rawRegs.vals[136])+" ms";}
+                    if(rawRegs.vals[137]!=65535){P6_Sync.syncAxis2Age.txt="轴2样本年龄："+intToString(rawRegs.vals[137])+" ms";}
+                }
+            }
+        }
+    }
+}
+// 原始位置独立判断；基准和里程门禁只约束相对量，不能屏蔽单轴原始位置。
+if(sys_pid==P3_Position.id){
+    P3_Position.axis1Position.txt="轴1原始位置：未知";
+    P3_Position.axis2Position.txt="轴2原始位置：未知";
+    P3_Position.startupDisplacement.txt="启动净位移：未知";
+    P3_Position.startupTravel.txt="启动累计行程：未知";
+    P3_Position.segmentTravel.txt="分段轮转行程：未知";
+    P3_Position.axisPositionDiff.txt="双轴位置差：未知";
+    P3_Position.positionValid.txt="位置有效：未知";
+    P3_Position.mileageValid.txt="里程有效：未知";
+    P3_Position.positionIncomplete.txt="数据不完整：未知";
+    P3_Position.positionBaseline.txt="基准代次：未知";
+    P3_Position.positionSample.txt="样本序号：未知";
+    P3_Position.positionAge.txt="位置样本年龄：未知";
+    P3_Position.lostInterval.txt="丢失区间数：未知";
+if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){
+        if((rawRegs.vals[194] & 1)==0){
+            P3_Position.axis1Position.txt="轴1原始位置：未配置";
+            P3_Position.axis2Position.txt="轴2原始位置：未配置";
+            P3_Position.startupDisplacement.txt="启动净位移：未配置";
+            P3_Position.startupTravel.txt="启动累计行程：未配置";
+            P3_Position.segmentTravel.txt="分段轮转行程：未配置";
+            P3_Position.axisPositionDiff.txt="双轴位置差：未配置";
+            P3_Position.positionValid.txt="位置有效：未配置";
+            P3_Position.mileageValid.txt="里程有效：未配置";
+            P3_Position.positionIncomplete.txt="数据不完整：未配置";
+            P3_Position.positionBaseline.txt="基准代次：未配置";
+            P3_Position.positionSample.txt="样本序号：未配置";
+            P3_Position.positionAge.txt="位置样本年龄：未配置";
+            P3_Position.lostInterval.txt="丢失区间数：未配置";
+        }else{
+            P3_Position.lostInterval.txt="丢失区间数："+intToString(rawRegs.vals[195]);
+            if(regionValid.vals[2]==1 && regionBadRun.vals[2]<10){
+                if(rawRegs.vals[140]==0){P3_Position.axis1Position.txt="轴1原始位置：无效/过期";}
+                if(rawRegs.vals[141]==0){P3_Position.axis2Position.txt="轴2原始位置：无效/过期";}
+                if(rawRegs.vals[140]==1){
+                    positionValue=rawRegs.vals[112];
+                    if(positionValue>=32768){positionValue=positionValue-65536;}
+                    positionValue=positionValue*65536+rawRegs.vals[113];
+                    P3_Position.axis1Position.txt="轴1原始位置："+intToString(positionValue)+" count";
+                }
+                if(rawRegs.vals[141]==1){
+                    positionValue=rawRegs.vals[114];
+                    if(positionValue>=32768){positionValue=positionValue-65536;}
+                    positionValue=positionValue*65536+rawRegs.vals[115];
+                    P3_Position.axis2Position.txt="轴2原始位置："+intToString(positionValue)+" count";
+                }
+                if(rawRegs.vals[124]!=65535){
+                    P3_Position.positionValid.txt="位置有效：否";
+                    if((rawRegs.vals[124] & 1)!=0){P3_Position.positionValid.txt="位置有效：是";}
+                    P3_Position.mileageValid.txt="里程有效：否";
+                    P3_Position.positionIncomplete.txt="数据不完整：否";
+                    P3_Position.positionBaseline.txt="基准代次："+intToString(rawRegs.vals[127]);
+                    P3_Position.positionSample.txt="样本序号："+intToString(rawRegs.vals[126]);
+                    if(rawRegs.vals[125]!=65535){P3_Position.positionAge.txt="位置样本年龄："+intToString(rawRegs.vals[125])+" ms";}
+                    P3_Position.startupDisplacement.txt="启动净位移：无效/过期";
+                    P3_Position.startupTravel.txt="启动累计行程：无效/过期";
+                    P3_Position.segmentTravel.txt="分段轮转行程：无效/过期";
+                    P3_Position.axisPositionDiff.txt="双轴位置差：无效/过期";
+                    // 007F低16位允许回绕；仅在里程同时无效时将零代次当成未建立提示。
+                    if(rawRegs.vals[127]==0 && (rawRegs.vals[124] & 2)==0){
+                        P3_Position.positionBaseline.txt="位置基准：未建立";
+                        P3_Position.startupDisplacement.txt="启动净位移：未建立";
+                        P3_Position.startupTravel.txt="启动累计行程：未建立";
+                        P3_Position.segmentTravel.txt="分段轮转行程：未建立";
+                        P3_Position.axisPositionDiff.txt="双轴位置差：未建立";
+                    }
+                    if((rawRegs.vals[124] & 4)!=0){
+                        P3_Position.positionIncomplete.txt="数据不完整：是";
+                        P3_Position.mileageValid.txt="里程有效：不完整";
+                        P3_Position.startupDisplacement.txt="启动净位移：不完整";
+                        P3_Position.startupTravel.txt="启动累计行程：不完整";
+                        P3_Position.segmentTravel.txt="分段轮转行程：不完整";
+                    }
+                    // 位置差需要真实配对相对基准，不仅是两轴各自在线。
+                    if((rawRegs.vals[124] & 1)!=0 && (rawRegs.vals[124] & 2)!=0 && (rawRegs.vals[124] & 4)==0 && rawRegs.vals[140]==1 && rawRegs.vals[141]==1){
+                        positionValue=rawRegs.vals[122];
+                        if(positionValue>=32768){positionValue=positionValue-65536;}
+                        positionValue=positionValue*65536+rawRegs.vals[123];
+                        P3_Position.axisPositionDiff.txt="双轴位置差："+intToString(positionValue)+" mm";
+                    }
+                    if((rawRegs.vals[124] & 2)!=0 && (rawRegs.vals[124] & 4)==0){
+                        P3_Position.mileageValid.txt="里程有效：是";
+                        positionValue=rawRegs.vals[116];
+                        if(positionValue>=32768){positionValue=positionValue-65536;}
+                        positionValue=positionValue*65536+rawRegs.vals[117];
+                        P3_Position.startupDisplacement.txt="启动净位移："+intToString(positionValue)+" mm";
+                        P3_Position.startupTravel.txt="启动累计行程：越界";
+                        if(rawRegs.vals[118]<32768){
+                            positionValue=rawRegs.vals[118]*65536+rawRegs.vals[119];
+                            P3_Position.startupTravel.txt="启动累计行程："+intToString(positionValue)+" mm";
+                        }
+                        P3_Position.segmentTravel.txt="分段轮转行程：越界";
+                        if(rawRegs.vals[120]<32768){
+                            positionValue=rawRegs.vals[120]*65536+rawRegs.vals[121];
+                            P3_Position.segmentTravel.txt="分段轮转行程："+intToString(positionValue)+" mm";
+                        }
+                        if(rawRegs.vals[118]>=32768 || rawRegs.vals[120]>=32768){P3_Position.mileageValid.txt="里程有效：越界";}
+                    }
+                }
+            }
+        }
+    }
+}
+// 系统区与统计区独立有效，不能因另一区成功而继续显示旧值。
+if(sys_pid==P2_Diag.id){
+    P2_Diag.leftState.txt="轴1状态字：未知";
+    P2_Diag.rightState.txt="轴2状态字：未知";
+    P2_Diag.diagLeftFault.txt="轴1故障码：未知";
+    P2_Diag.diagRightFault.txt="轴2故障码：未知";
+    P2_Diag.diagAxis1Online.txt="轴1通信：未知";
+    P2_Diag.diagAxis2Online.txt="轴2通信：未知";
+    P2_Diag.diagAxis1Enable.txt="轴1使能：未知";
+    P2_Diag.diagAxis2Enable.txt="轴2使能：未知";
+    P2_Diag.diagAxis1SpeedValid.txt="轴1速度有效：未知";
+    P2_Diag.diagAxis2SpeedValid.txt="轴2速度有效：未知";
+    P2_Diag.diagAxis1FaultValid.txt="轴1故障有效：未知";
+    P2_Diag.diagAxis2FaultValid.txt="轴2故障有效：未知";
+    P2_Diag.diagAxis1Zero.txt="轴1零速确认：未知";
+    P2_Diag.diagAxis2Zero.txt="轴2零速确认：未知";
+    P2_Diag.diagAxis1CommFail.txt="轴1通信失败：未知";
+    P2_Diag.diagAxis2CommFail.txt="轴2通信失败：未知";
+    P2_Diag.diagModeVerified.txt="参数核验：未知";
+    P2_Diag.diagSafetyLocked.txt="安全门禁：未知";
+    P2_Diag.diagAxis1SpeedAge.txt="轴1状态年龄：未知";
+    P2_Diag.diagAxis2SpeedAge.txt="轴2状态年龄：未知";
+    P2_Diag.reqCount.txt="请求数：未知";
+    P2_Diag.respCount.txt="响应数：未知";
+    P2_Diag.retryCount.txt="重试数：未知";
+    P2_Diag.timeoutCount.txt="超时数：未知";
+    P2_Diag.crcCount.txt="CRC错误数：未知";
+    P2_Diag.frameCount.txt="帧错误数：未知";
+    if(regionValid.vals[0]==1 && regionBadRun.vals[0]<10 && formalProtocol==1 && rawRegs.vals[28]==1){
+        if(rawRegs.vals[8]==0){P2_Diag.diagAxis1Online.txt="轴1通信：断开";}
+        if(rawRegs.vals[8]==1){
+            P2_Diag.diagAxis1Online.txt="轴1通信：正常";
+            if(rawRegs.vals[32]!=65535){P2_Diag.leftState.txt="轴1状态字："+intToString(rawRegs.vals[32]);}
+            if(rawRegs.vals[40]!=65535){P2_Diag.diagLeftFault.txt="轴1故障码："+intToString(rawRegs.vals[40]);}
+            if(rawRegs.vals[41]==0){P2_Diag.diagAxis1Enable.txt="轴1使能：失能";}
+            if(rawRegs.vals[41]==1){P2_Diag.diagAxis1Enable.txt="轴1使能：使能";}
+        }
+        if(rawRegs.vals[9]==0){P2_Diag.diagAxis2Online.txt="轴2通信：断开";}
+        if(rawRegs.vals[9]==1){
+            P2_Diag.diagAxis2Online.txt="轴2通信：正常";
+            if(rawRegs.vals[42]!=65535){P2_Diag.rightState.txt="轴2状态字："+intToString(rawRegs.vals[42]);}
+            if(rawRegs.vals[50]!=65535){P2_Diag.diagRightFault.txt="轴2故障码："+intToString(rawRegs.vals[50]);}
+            if(rawRegs.vals[51]==0){P2_Diag.diagAxis2Enable.txt="轴2使能：失能";}
+            if(rawRegs.vals[51]==1){P2_Diag.diagAxis2Enable.txt="轴2使能：使能";}
+        }
+        if(rawRegs.vals[12]!=65535){P2_Diag.diagModeVerified.txt="参数核验位图："+intToString(rawRegs.vals[12]);}
+        if(rawRegs.vals[3]!=65535){P2_Diag.diagSafetyLocked.txt="安全门禁位图："+intToString(rawRegs.vals[3]);}
+    }
+    if(regionValid.vals[1]==1 && regionBadRun.vals[1]<10 && formalProtocol==1){
+        P2_Diag.reqCount.txt="请求数："+intToString(rawRegs.vals[80]);
+        P2_Diag.respCount.txt="响应数："+intToString(rawRegs.vals[81]);
+        if(rawRegs.vals[82]!=65535){P2_Diag.retryCount.txt="重试数："+intToString(rawRegs.vals[82]);}
+        P2_Diag.timeoutCount.txt="UART5收帧超时："+intToString(rawRegs.vals[83]);
+        P2_Diag.crcCount.txt="CRC错误数："+intToString(rawRegs.vals[84]);
+        P2_Diag.frameCount.txt="帧错误数："+intToString(rawRegs.vals[85]);
+        if(rawRegs.vals[88]!=65535){P2_Diag.diagAxis1SpeedAge.txt="轴1状态年龄："+intToString(rawRegs.vals[88])+" ms";}
+        if(rawRegs.vals[89]!=65535){P2_Diag.diagAxis2SpeedAge.txt="轴2状态年龄："+intToString(rawRegs.vals[89])+" ms";}
+    }
+    if(P8_ServoControl.h13.vals[96]>0){
+        P2_Diag.reqCount.txt="屏端服务次数："+intToString(P8_ServoControl.h13.vals[96]);
+        P2_Diag.retryCount.txt="最近发送：B"+intToString(P8_ServoControl.h13.vals[97])+" A"+intToString(P8_ServoControl.h13.vals[98])+" N"+intToString(P8_ServoControl.h13.vals[99]);
+        P2_Diag.timeoutCount.txt="最近中断：C"+intToString(P8_ServoControl.h13.vals[100])+" A"+intToString(P8_ServoControl.h13.vals[101])+" N"+intToString(P8_ServoControl.h13.vals[102]);
+        P2_Diag.crcCount.txt="中断索引："+intToString(P8_ServoControl.h13.vals[103])+" 失配："+intToString(P8_ServoControl.h13.vals[105]);
+        P2_Diag.frameCount.txt="最近成功：B"+intToString(P8_ServoControl.h13.vals[106])+" T"+intToString(P8_ServoControl.h13.vals[107])+" E"+intToString(P8_ServoControl.h13.vals[108]);
+        if(P8_ServoControl.h13.vals[104]>0){P2_Diag.respCount.txt="屏端合法响应："+intToString(P8_ServoControl.h13.vals[104]);}
+    }
+    // 正式诊断补充，不以屏端通信失败数冒充主控轴级计数。
+if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){
+        if((rawRegs.vals[194] & 2048)!=0 && rawRegs.vals[206]==1){
+            if(rawRegs.vals[196]!=65535){
+                P2_Diag.diagAxis1SpeedValid.txt="轴1速度有效：无效";
+                if((rawRegs.vals[196] & 1)!=0){P2_Diag.diagAxis1SpeedValid.txt="轴1速度有效：有效";}
+                P2_Diag.diagAxis1FaultValid.txt="轴1故障有效：无效";
+                if((rawRegs.vals[196] & 2)!=0){P2_Diag.diagAxis1FaultValid.txt="轴1故障有效：有效";}
+                P2_Diag.diagAxis1Zero.txt="轴1零速确认：否";
+                if((rawRegs.vals[196] & 4)!=0){P2_Diag.diagAxis1Zero.txt="轴1零速确认：是";}
+            }
+            if(rawRegs.vals[197]!=65535){
+                P2_Diag.diagAxis2SpeedValid.txt="轴2速度有效：无效";
+                if((rawRegs.vals[197] & 1)!=0){P2_Diag.diagAxis2SpeedValid.txt="轴2速度有效：有效";}
+                P2_Diag.diagAxis2FaultValid.txt="轴2故障有效：无效";
+                if((rawRegs.vals[197] & 2)!=0){P2_Diag.diagAxis2FaultValid.txt="轴2故障有效：有效";}
+                P2_Diag.diagAxis2Zero.txt="轴2零速确认：否";
+                if((rawRegs.vals[197] & 4)!=0){P2_Diag.diagAxis2Zero.txt="轴2零速确认：是";}
+            }
+            // 累计失败数允许65535，不使用诊断位的未知哨兵规则。
+            P2_Diag.diagAxis1CommFail.txt="轴1通信失败："+intToString(rawRegs.vals[200]);
+            P2_Diag.diagAxis2CommFail.txt="轴2通信失败："+intToString(rawRegs.vals[201]);
+        }
+    }
+}
+if(sys_pid==P4_Info.id){
+    P4_Info.screenVersion.txt="屏幕工程：SCREEN-PH1-V1.0 开发中";
+    P4_Info.ctrlVersion.txt="控制器软件码：未知";
+    P4_Info.protocolVersion.txt="协议版本码：未知";
+    P4_Info.resetCode.txt="复位原因码：未知";
+    P4_Info.diagLow.txt="诊断故障低字：未知";
+    P4_Info.diagHigh.txt="诊断故障高字：未知";
+    P4_Info.heartbeat.txt="控制器心跳：未知";
+    P4_Info.minStack.txt="最小栈余量：未知";
+    if(regionValid.vals[0]==1 && regionBadRun.vals[0]<10 && formalProtocol==1 && rawRegs.vals[28]==1){
+        if(rawRegs.vals[13]!=65535){P4_Info.ctrlVersion.txt="控制器软件码："+intToString(rawRegs.vals[13]);}
+        if(rawRegs.vals[14]!=65535){P4_Info.protocolVersion.txt="协议版本码："+intToString(rawRegs.vals[14]);}
+        if(rawRegs.vals[7]!=65535){P4_Info.resetCode.txt="复位原因码："+intToString(rawRegs.vals[7]);}
+        // 位图和心跳允许所有16位位模式，不套用故障码哨兵。
+        P4_Info.diagLow.txt="诊断故障低字："+intToString(rawRegs.vals[5]);
+        P4_Info.diagHigh.txt="诊断故障高字："+intToString(rawRegs.vals[6]);
+        P4_Info.heartbeat.txt="控制器心跳："+intToString(rawRegs.vals[16]);
+    }
+    if(regionValid.vals[1]==1 && regionBadRun.vals[1]<10 && formalProtocol==1){
+        if(rawRegs.vals[95]!=65535){P4_Info.minStack.txt="最小栈余量："+intToString(rawRegs.vals[95])+" words";}
+    }
+}
+if(sys_pid==P1_Main.id){
+    P1_Main.state.txt="OFFLINE";
+    P1_Main.ctrlComm.txt="控制器通信：等待主控回复";
+    P1_Main.safe.txt="门禁：未知";
+    P1_Main.leftOnline.txt="轴1通信：未知";
+    P1_Main.rightOnline.txt="轴2通信：未知";
+    P1_Main.leftSpeed.txt="轴1速度：未知";
+    P1_Main.rightSpeed.txt="轴2速度：未知";
+    P1_Main.leftFault.txt="轴1故障：未知";
+    P1_Main.rightFault.txt="轴2故障：未知";
+    P1_Main.vehicleSpeed.txt="整车实际速度：未知";
+    // 运行补充只读；屏幕锁定和遥控运动是独立状态。
+    P1_Main.targetSpeed.txt="整车目标速度：未知";
+    P1_Main.currentMode.txt="轴模式：未知";
+    P1_Main.controlSource.txt="控制源：未知";
+    P1_Main.controlAuthority.txt="屏幕控制：未知";
+    P1_Main.stopState.txt="屏幕运动锁定：未知";
+    P1_Main.axisEnableSummary.txt="使能反馈：未知";
+    P1_Main.alarmSummary.txt="最高告警：未知";
+    if(regionSeen.vals[0]==1){
+        P1_Main.ctrlComm.txt="控制器通信：通信超时";
+    }
+    if(regionSeen.vals[0]==0 && P8_ServoControl.h13.vals[96]>0){
+        P1_Main.ctrlComm.txt="控制器通信：屏端已发请求，等待主控回复";
+    }
+    if(metaSeen.vals[0]==1 && metaAge.vals[0]<10 && (metaRegs.vals[0]!=21065 || metaRegs.vals[1]!=1 || metaRegs.vals[3]!=2)){
+        P1_Main.ctrlComm.txt="控制器通信：协议不匹配";
+    }
+    if(regionValid.vals[0]==1 && regionBadRun.vals[0]<10 && formalProtocol==1 && rawRegs.vals[28]!=1){
+        P1_Main.ctrlComm.txt="控制器通信：主控已回复，伺服状态未就绪";
+    }
+    if(regionValid.vals[0]==1 && regionBadRun.vals[0]<10 && formalProtocol==1 && rawRegs.vals[28]==1){
+        P1_Main.ctrlComm.txt="控制器通信：正常";
+        if(rawRegs.vals[0]==6){P1_Main.ctrlComm.txt="控制器通信：控制器离线";}
+        if(regionBadRun.vals[0]>=3){P1_Main.ctrlComm.txt="控制器通信：通信超时";}
+        P1_Main.state.txt="UNKNOWN";
+        if(rawRegs.vals[0]==0){P1_Main.state.txt="BOOT";}
+        if(rawRegs.vals[0]==1){P1_Main.state.txt="SAFE";}
+        if(rawRegs.vals[0]==2){P1_Main.state.txt="READY";}
+        if(rawRegs.vals[0]==3){P1_Main.state.txt="RUNNING";}
+        if(rawRegs.vals[0]==4){P1_Main.state.txt="STOPPING";}
+        if(rawRegs.vals[0]==5){P1_Main.state.txt="FAULT";}
+        if(rawRegs.vals[0]==6){P1_Main.state.txt="OFFLINE";}
+        if(rawRegs.vals[3]!=65535){
+            P1_Main.safe.txt="门禁：主控未允许";
+            if((rawRegs.vals[3] & 512)!=0){P1_Main.safe.txt="门禁：主控允许";}
+        }
+        if(rawRegs.vals[8]==0){P1_Main.leftOnline.txt="轴1通信：断开";}
+        if(rawRegs.vals[8]==1){P1_Main.leftOnline.txt="轴1通信：正常";}
+        if(rawRegs.vals[9]==0){P1_Main.rightOnline.txt="轴2通信：断开";}
+        if(rawRegs.vals[9]==1){P1_Main.rightOnline.txt="轴2通信：正常";}
+        // 原始速度是有符号16位，32767为无效哨兵；离线轴不显示旧速度。
+        if(rawRegs.vals[8]==1 && rawRegs.vals[34]!=32767){
+            speedValue=rawRegs.vals[34];
+            if(speedValue>=32768){speedValue=speedValue-65536;}
+            P1_Main.leftSpeed.txt="轴1速度："+floatToString(speedValue*0.001,3)+" m/s";
+        }
+        if(rawRegs.vals[9]==1 && rawRegs.vals[44]!=32767){
+            speedValue=rawRegs.vals[44];
+            if(speedValue>=32768){speedValue=speedValue-65536;}
+            P1_Main.rightSpeed.txt="轴2速度："+floatToString(speedValue*0.001,3)+" m/s";
+        }
+        if(rawRegs.vals[52]!=32767){
+            speedValue=rawRegs.vals[52];
+            if(speedValue>=32768){speedValue=speedValue-65536;}
+            P1_Main.vehicleSpeed.txt="整车实际："+floatToString(speedValue*0.001,3)+" m/s";
+        }
+        if(rawRegs.vals[8]==1 && rawRegs.vals[40]!=65535){
+            P1_Main.leftFault.txt="轴1故障码："+intToString(rawRegs.vals[40]);
+            if(rawRegs.vals[40]==0){P1_Main.leftFault.txt="轴1故障：无";}
+        }
+        if(rawRegs.vals[9]==1 && rawRegs.vals[50]!=65535){
+            P1_Main.rightFault.txt="轴2故障码："+intToString(rawRegs.vals[50]);
+            if(rawRegs.vals[50]==0){P1_Main.rightFault.txt="轴2故障：无";}
+        }
+        // 未确认枚举和状态字位定义，明确显示原始码，不推导可操作性。
+        if(rawRegs.vals[33]!=65535 && rawRegs.vals[43]!=65535){
+            P1_Main.currentMode.txt="轴模式码："+intToString(rawRegs.vals[33])+"/"+intToString(rawRegs.vals[43]);
+        }
+        if(rawRegs.vals[21]==0){P1_Main.controlAuthority.txt="屏幕控制：只读";}
+        if(rawRegs.vals[21]==1){P1_Main.controlAuthority.txt="屏幕控制：允许申请";}
+        if(rawRegs.vals[23]==0){P1_Main.stopState.txt="屏幕运动锁定：未锁定";}
+        if(rawRegs.vals[23]==1){P1_Main.stopState.txt="屏幕运动锁定：已锁定";}
+        if(rawRegs.vals[8]==1 && rawRegs.vals[9]==1 && rawRegs.vals[41]<=1 && rawRegs.vals[51]<=1){
+            P1_Main.axisEnableSummary.txt="使能反馈："+intToString(rawRegs.vals[41])+"/"+intToString(rawRegs.vals[51]);
+        }
+    }
+    // 独立使用能力区新鲜度，不让基础区成功掩盖补充区过期。
+if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){
+        if((rawRegs.vals[194] & 4096)!=0 && rawRegs.vals[207]==1){
+            if(rawRegs.vals[202]!=32767){
+                speedValue=rawRegs.vals[202];
+                if(speedValue>=32768){speedValue=speedValue-65536;}
+                P1_Main.targetSpeed.txt="整车目标："+floatToString(speedValue*0.001,3)+" m/s";
+            }
+            if(rawRegs.vals[203]==0){P1_Main.controlSource.txt="控制源：无";}
+            if(rawRegs.vals[203]==1){P1_Main.controlSource.txt="控制源：车载屏";}
+            if(rawRegs.vals[203]==2){P1_Main.controlSource.txt="控制源：遥控";}
+            if(rawRegs.vals[203]==3){P1_Main.controlSource.txt="控制源：自动";}
+            if(rawRegs.vals[203]==4){P1_Main.controlSource.txt="控制源：CLI维护";}
+            if(rawRegs.vals[205]==0){P1_Main.alarmSummary.txt="最高告警：无";}
+            if(rawRegs.vals[205]==1){P1_Main.alarmSummary.txt="最高告警：提示";}
+            if(rawRegs.vals[205]==2){P1_Main.alarmSummary.txt="最高告警：警告";}
+            if(rawRegs.vals[205]==3){P1_Main.alarmSummary.txt="最高告警：故障";}
+            if(rawRegs.vals[205]==4){P1_Main.alarmSummary.txt="最高告警：紧急";}
+        }
+    }
+}
+// 已收到但过期的区域不继续显示上次有效数值。
+if(sys_pid==P3_Position.id && regionSeen.vals[2]==1 && (regionValid.vals[2]==0 || regionBadRun.vals[2]>=10) && formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[194]!=65535 && (rawRegs.vals[194] & 1)!=0){
+    P3_Position.axis1Position.txt="轴1原始位置：已过期";
+    P3_Position.axis2Position.txt="轴2原始位置：已过期";
+    P3_Position.startupDisplacement.txt="启动净位移：已过期";
+    P3_Position.startupTravel.txt="启动累计行程：已过期";
+    P3_Position.segmentTravel.txt="分段轮转行程：已过期";
+    P3_Position.axisPositionDiff.txt="双轴位置差：已过期";
+    P3_Position.positionValid.txt="位置有效：已过期";
+    P3_Position.mileageValid.txt="里程有效：已过期";
+    P3_Position.positionIncomplete.txt="数据不完整：已过期";
+    P3_Position.positionBaseline.txt="基准代次：已过期";
+    P3_Position.positionSample.txt="样本序号：已过期";
+    P3_Position.positionAge.txt="位置样本年龄：已过期";
+    P3_Position.lostInterval.txt="丢失区间数：已过期";
+}
+if(sys_pid==P6_Sync.id && regionSeen.vals[2]==1 && (regionValid.vals[2]==0 || regionBadRun.vals[2]>=10) && formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[194]!=65535 && (rawRegs.vals[194] & 2)!=0){
+    P6_Sync.syncMacro.txt="同步宏：已过期";
+    P6_Sync.syncState.txt="同步状态：已过期";
+    P6_Sync.syncActualDiff.txt="实际速度差：已过期";
+    P6_Sync.syncEffectiveError.txt="有效误差：已过期";
+    P6_Sync.syncCompensation.txt="当前整数补偿：已过期";
+    P6_Sync.syncPairValid.txt="样本配对：已过期";
+    P6_Sync.syncRejectReason.txt="配对拒绝原因：已过期";
+    P6_Sync.syncSkew.txt="最近样本错时：已过期";
+    P6_Sync.syncAxis1Age.txt="轴1样本年龄：已过期";
+    P6_Sync.syncAxis2Age.txt="轴2样本年龄：已过期";
+}
+if(sys_pid==P5_Alarm.id && regionSeen.vals[3]==1 && (regionValid.vals[3]==0 || regionBadRun.vals[3]>=10) && formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[194]!=65535 && (rawRegs.vals[194] & 4)!=0){
+    P5_Alarm.alarmLevel.txt="告警等级：已过期";
+    P5_Alarm.alarmCode.txt="告警代码：已过期";
+    P5_Alarm.alarmSource.txt="告警来源：已过期";
+    P5_Alarm.alarmActive.txt="告警状态：已过期";
+    P5_Alarm.alarmEmergency.txt="急停状态：已过期";
+    P5_Alarm.alarmStopResult.txt="停车结果：已过期";
+    P5_Alarm.alarmSequence.txt="告警事件序号：已过期";
+    P5_Alarm.alarmEventTime.txt="事件时间：已过期";
+    P5_Alarm.alarmExtra.txt="附加参数：已过期";
+    P5_Alarm.alarmFaultSummary.txt="故障摘要：已过期";
+    P5_Alarm.alarmHistory.txt="告警记录：历史未接入";
+}
+if(sys_pid==P3_Position.id && regionSeen.vals[4]==1 && (regionValid.vals[4]==0 || regionBadRun.vals[4]>=10) && formalProtocol==1 && rawRegs.vals[194]!=65535 && (rawRegs.vals[194] & 1)!=0){
+    P3_Position.lostInterval.txt="丢失区间数：已过期";
+}
+if(sys_pid==P7_System_Ext.id && regionSeen.vals[4]==1 && (regionValid.vals[4]==0 || regionBadRun.vals[4]>=10) && formalProtocol==1){
+    P7_System_Ext.batteryState.txt="电池状态：已过期";
+    P7_System_Ext.batteryPercent.txt="电池电量：已过期";
+    P7_System_Ext.positioningState.txt="定位状态：已过期";
+    P7_System_Ext.positioningAccuracy.txt="定位精度：已过期";
+    P7_System_Ext.positioningX.txt="定位X：已过期";
+    P7_System_Ext.positioningY.txt="定位Y：已过期";
+    P7_System_Ext.armState.txt="机械臂状态：已过期";
+    P7_System_Ext.lightingState.txt="照明状态：已过期";
+    P7_System_Ext.cameraState.txt="摄像状态：已过期";
+    P7_System_Ext.acquisitionState.txt="数据采集：已过期";
+    P7_System_Ext.storageState.txt="存储状态：已过期";
+    P7_System_Ext.extensionComm.txt="扩展通信：已过期";
+    P7_System_Ext.extensionFault.txt="扩展故障：已过期";
+    P7_System_Ext.extensionReadonly.txt="未接入模块：已过期";
+}
+// 启动状态索引0为经过拍数，索引1为已经完成跳转。
+if(bootState.vals[0]<65535){bootState.vals[0]=bootState.vals[0]+1;}
+if(sys_pid==P0_Boot.id){
+if(regionValid.vals[0]==0 || regionBadRun.vals[0]>=10 || formalProtocol==0 || rawRegs.vals[28]!=1){
+        mainState.txt="OFFLINE";
+        ctrlStatus.txt="控制器通信：断开";
+        stageText.txt="等待有效数据";
+        progressText.txt="初始化进度：未知";
+        bootProgress.val=0;
+        leftStatus.txt="轴1通信：未知";
+        rightStatus.txt="轴2通信：未知";
+        safeStatus.txt="安全状态：未知";
+        resetReason.txt="最近复位：未知";
+        swVer.txt="软件 V--";
+        protoVer.txt="协议版本：V--";
+        faultText.txt="主故障：未知";
+        if(regionValid.vals[0]==1 && regionBadRun.vals[0]<10){
+            ctrlStatus.txt="控制器通信：已收到";
+            mainState.txt="UNKNOWN";
+            if(formalProtocol==1 && rawRegs.vals[28]!=1){ctrlStatus.txt="控制器通信：主控已回复，伺服状态未就绪";}
+            stageText.txt="等待正式协议";
+            if(formalProtocol==1 && rawRegs.vals[28]!=1){stageText.txt="系统快照无效";}
+            if(metaSeen.vals[0]==1 && metaAge.vals[0]<10 && (metaRegs.vals[0]!=21065 || metaRegs.vals[1]!=1)){stageText.txt="协议不兼容";}
+        }
+    }else{
+        ctrlStatus.txt="控制器通信：正常";
+        if(regionBadRun.vals[0]>=3){ctrlStatus.txt="控制器通信：异常";}
+        mainState.txt="UNKNOWN";
+        if(rawRegs.vals[0]==0){mainState.txt="BOOT";}
+        if(rawRegs.vals[0]==1){mainState.txt="SAFE";}
+        if(rawRegs.vals[0]==2){mainState.txt="READY";}
+        if(rawRegs.vals[0]==3){mainState.txt="RUNNING";}
+        if(rawRegs.vals[0]==4){mainState.txt="STOPPING";}
+        if(rawRegs.vals[0]==5){mainState.txt="FAULT";}
+        if(rawRegs.vals[0]==6){mainState.txt="OFFLINE";}
+        stageText.txt="未知阶段";
+        if(rawRegs.vals[1]!=65535 && rawRegs.vals[1]>7){stageText.txt="初始化阶段无效";}
+        if(rawRegs.vals[1]==0){stageText.txt="BOOT";}
+        if(rawRegs.vals[1]==1){stageText.txt="硬件初始化";}
+        if(rawRegs.vals[1]==2){stageText.txt="RTOS初始化";}
+        if(rawRegs.vals[1]==3){stageText.txt="通信初始化";}
+        if(rawRegs.vals[1]==4){stageText.txt="伺服状态检测";}
+        if(rawRegs.vals[1]==5){stageText.txt="安全门禁检查";}
+        if(rawRegs.vals[1]==6){stageText.txt="初始化完成";}
+        if(rawRegs.vals[1]==7){stageText.txt="初始化故障";}
+        progressText.txt="初始化进度：无效";
+        bootProgress.val=0;
+        if(rawRegs.vals[2]<=100){
+            progressText.txt="初始化进度："+intToString(rawRegs.vals[2])+"%";
+            bootProgress.val=rawRegs.vals[2];
+        }
+        leftStatus.txt="轴1通信：未知";
+        rightStatus.txt="轴2通信：未知";
+        if(rawRegs.vals[8]==0){leftStatus.txt="轴1通信：断开";}
+        if(rawRegs.vals[8]==1){leftStatus.txt="轴1通信：正常";}
+        if(rawRegs.vals[9]==0){rightStatus.txt="轴2通信：断开";}
+        if(rawRegs.vals[9]==1){rightStatus.txt="轴2通信：正常";}
+        safeStatus.txt="安全状态：未确认";
+        if(rawRegs.vals[3]!=65535 && (rawRegs.vals[3] & 512)!=0){safeStatus.txt="安全状态：主控允许";}
+        resetReason.txt="复位原因码：未知";
+        swVer.txt="软件码：未知";
+        protoVer.txt="协议码：未知";
+        if(rawRegs.vals[7]!=65535){resetReason.txt="复位原因码："+intToString(rawRegs.vals[7]);}
+        if(rawRegs.vals[13]!=65535){swVer.txt="软件码 "+intToString(rawRegs.vals[13]);}
+        if(rawRegs.vals[14]!=65535){protoVer.txt="协议码："+intToString(rawRegs.vals[14]);}
+        faultText.txt="主故障："+intToString(rawRegs.vals[4]);
+        if(rawRegs.vals[4]==0){faultText.txt="主故障：无";}
+        if(rawRegs.vals[4]==65535){faultText.txt="主故障：无效";}
+    }
+    // 本阶段只读；页面跳转不改变主控状态或解除任何锁定。
+if(bootState.vals[1]==0 && bootState.vals[0]>=10 && regionValid.vals[0]==1 && regionBadRun.vals[0]<10 && formalProtocol==1 && rawRegs.vals[28]==1 && regionGoodRun.vals[0]>=2 && rawRegs.vals[1]==6 && rawRegs.vals[2]==100 && rawRegs.vals[15]==1){
+        bootState.vals[1]=1;
+        showPage(P1_Main.id);
+    }
+    if(bootState.vals[1]==0 && bootState.vals[0]>=50){
+        bootState.vals[1]=1;
+        showPage(P1_Main.id);
+    }
+}
+// 13号控制页刷新仅显示主控事实，不发送串口请求。
+P8_ServoControl.linkStatus.txt="通信：等待主控 / HMI13-R2";
+if(P8_ServoControl.h13.vals[3]==1){P8_ServoControl.linkStatus.txt="通信：正常 / R2接口匹配";}
+if(P8_ServoControl.h13.vals[47]==1 && (metaRegs.vals[3]!=2 || (metaRegs.vals[2]&240)!=240)){P8_ServoControl.linkStatus.txt="只读：当前固件未提供13号控制接口";}
+P8_ServoControl.ownerStatus.txt="控制源：未知";
+if(P8_ServoControl.h13.vals[86]==1){
+    if(P8_ServoControl.h13Status.vals[8]==0){P8_ServoControl.ownerStatus.txt="控制源：无";}
+    if(P8_ServoControl.h13Status.vals[8]==1){P8_ServoControl.ownerStatus.txt="控制源：HMI";}
+    if(P8_ServoControl.h13Status.vals[8]==2){P8_ServoControl.ownerStatus.txt="控制源：遥控";}
+    if(P8_ServoControl.h13Status.vals[8]==3){P8_ServoControl.ownerStatus.txt="控制源：CAN";}
+    if(P8_ServoControl.h13Status.vals[8]==4){P8_ServoControl.ownerStatus.txt="控制源：CLI";}
+}
+P8_ServoControl.axisMode.txt="执行轴：未知（主控决定）";
+if(P8_ServoControl.h13.vals[86]==1){
+    if(P8_ServoControl.h13Status.vals[9]==1){P8_ServoControl.axisMode.txt="执行轴：左轴（只读）";}
+    if(P8_ServoControl.h13Status.vals[9]==2){P8_ServoControl.axisMode.txt="执行轴：右轴（只读）";}
+    if(P8_ServoControl.h13Status.vals[9]==3){P8_ServoControl.axisMode.txt="执行轴：双轴（只读）";}
+}
+P8_ServoControl.leftActual.txt="左轴实际：--";P8_ServoControl.rightActual.txt="右轴实际：--";
+P8_ServoControl.leftTarget.txt="左轴目标：--";P8_ServoControl.rightTarget.txt="右轴目标：--";
+P8_ServoControl.leftOutput.txt="左轴输出：--";P8_ServoControl.rightOutput.txt="右轴输出：--";
+P8_ServoControl.leftEnable.txt="左轴使能：未知";P8_ServoControl.rightEnable.txt="右轴使能：未知";
+for(uiAxis=0;uiAxis<2;uiAxis++){
+    uiBit=1;if(uiAxis==1){uiBit=2;}
+    if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300){
+        if((P8_ServoControl.h13Status.vals[9]&uiBit)==0){
+            if(uiAxis==0){P8_ServoControl.leftActual.txt="左轴：未参与";P8_ServoControl.leftTarget.txt="目标：未参与";P8_ServoControl.leftOutput.txt="输出：未参与";P8_ServoControl.leftEnable.txt="使能：未参与";}
+            else{P8_ServoControl.rightActual.txt="右轴：未参与";P8_ServoControl.rightTarget.txt="目标：未参与";P8_ServoControl.rightOutput.txt="输出：未参与";P8_ServoControl.rightEnable.txt="使能：未参与";}
+        }else{
+            if((P8_ServoControl.h13Status.vals[25]&uiBit)!=0 && P8_ServoControl.h13Status.vals[46+uiAxis]<500 && P8_ServoControl.h13Status.vals[23+uiAxis]!=32767){
+                uiValue=P8_ServoControl.h13Status.vals[23+uiAxis];if(uiValue>=32768){uiValue=uiValue-65536;}
+                if(uiAxis==0){P8_ServoControl.leftActual.txt="左轴实际："+intToString(uiValue)+" rpm";}else{P8_ServoControl.rightActual.txt="右轴实际："+intToString(uiValue)+" rpm";}
+            }
+            if(P8_ServoControl.h13Status.vals[19+uiAxis]!=32767){
+                uiValue=P8_ServoControl.h13Status.vals[19+uiAxis];if(uiValue>=32768){uiValue=uiValue-65536;}
+                if(uiAxis==0){P8_ServoControl.leftTarget.txt="最终目标："+intToString(uiValue)+" rpm";}else{P8_ServoControl.rightTarget.txt="最终目标："+intToString(uiValue)+" rpm";}
+            }
+            if((P8_ServoControl.h13Status.vals[57]&uiBit)!=0 && P8_ServoControl.h13Status.vals[21+uiAxis]!=32767){
+                uiValue=P8_ServoControl.h13Status.vals[21+uiAxis];if(uiValue>=32768){uiValue=uiValue-65536;}
+                if(uiAxis==0){P8_ServoControl.leftOutput.txt="执行输出："+intToString(uiValue)+" rpm";}else{P8_ServoControl.rightOutput.txt="执行输出："+intToString(uiValue)+" rpm";}
+            }
+            if((P8_ServoControl.h13Status.vals[26]&uiBit)!=0){
+                if(uiAxis==0){P8_ServoControl.leftEnable.txt="使能反馈：关";if((P8_ServoControl.h13Status.vals[27]&uiBit)!=0){P8_ServoControl.leftEnable.txt="使能反馈：开";}}
+                else{P8_ServoControl.rightEnable.txt="使能反馈：关";if((P8_ServoControl.h13Status.vals[27]&uiBit)!=0){P8_ServoControl.rightEnable.txt="使能反馈：开";}}
+            }
+        }
+    }
+}
+P8_ServoControl.commonTarget.txt="设定："+intToString(P8_ServoControl.h13.vals[10])+" rpm / 主控接受：--";
+if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13Status.vals[18]!=32767){uiValue=P8_ServoControl.h13Status.vals[18];if(uiValue>=32768){uiValue=uiValue-65536;}P8_ServoControl.commonTarget.txt="设定："+intToString(P8_ServoControl.h13.vals[10])+" / 接受："+intToString(uiValue)+" rpm";}
+P8_ServoControl.authorityStatus.txt="未授权";P8_ServoControl.authorize.press=0;
+if(P8_ServoControl.h13.vals[2]==2){P8_ServoControl.authorityStatus.txt="申请中，等待主控确认";}
+if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.authorityStatus.txt="已授权：新滑动调整共同目标";P8_ServoControl.authorize.press=1;}
+if(P8_ServoControl.h13.vals[2]==4){P8_ServoControl.authorityStatus.txt="停车中：滑动无效";}
+if(P8_ServoControl.h13.vals[2]==5){P8_ServoControl.authorityStatus.txt="停车成功，控制权已释放";}
+if(P8_ServoControl.h13.vals[2]==6 || P8_ServoControl.h13.vals[83]==1){P8_ServoControl.authorityStatus.txt="停车未确认 / 禁止恢复旧目标";}
+if(P8_ServoControl.h13.vals[2]==7){P8_ServoControl.authorityStatus.txt="停车失败，检查主控和驱动";}
+P8_ServoControl.stopStatus.txt="停车阶段：无";
+if(P8_ServoControl.h13.vals[86]==1){
+    if(P8_ServoControl.h13Status.vals[30]==1){P8_ServoControl.stopStatus.txt="停车：减速中";}
+    if(P8_ServoControl.h13Status.vals[30]==2){P8_ServoControl.stopStatus.txt="停车：等待新鲜零速反馈";}
+    if(P8_ServoControl.h13Status.vals[30]==3){P8_ServoControl.stopStatus.txt="停车：确认零速及使能";}
+    if(P8_ServoControl.h13Status.vals[30]==4){P8_ServoControl.stopStatus.txt="停车：完成";}
+    if(P8_ServoControl.h13Status.vals[30]==5){P8_ServoControl.stopStatus.txt="停车：失败";}
+}
+P8_ServoControl.errorStatus.txt="错误：无";
+if(P8_ServoControl.h13.vals[30]==1){P8_ServoControl.errorStatus.txt="拒绝：固件只读";}
+if(P8_ServoControl.h13.vals[30]==2){P8_ServoControl.errorStatus.txt="拒绝：主控身份变化";}
+if(P8_ServoControl.h13.vals[30]==3){P8_ServoControl.errorStatus.txt="拒绝：无有效会话";}
+if(P8_ServoControl.h13.vals[30]==4){P8_ServoControl.errorStatus.txt="拒绝：会话过期";}
+if(P8_ServoControl.h13.vals[30]==5){P8_ServoControl.errorStatus.txt="拒绝：其他控制源占用";}
+if(P8_ServoControl.h13.vals[30]==6){P8_ServoControl.errorStatus.txt="拒绝：安全条件未满足";}
+if(P8_ServoControl.h13.vals[30]==7){P8_ServoControl.errorStatus.txt="拒绝：驱动反馈过期";}
+if(P8_ServoControl.h13.vals[30]==8){P8_ServoControl.errorStatus.txt="拒绝：目标越界";}
+if(P8_ServoControl.h13.vals[30]==9){P8_ServoControl.errorStatus.txt="拒绝：模式不支持";}
+if(P8_ServoControl.h13.vals[30]==10){P8_ServoControl.errorStatus.txt="拒绝：序号冲突";}
+if(P8_ServoControl.h13.vals[30]==11){P8_ServoControl.errorStatus.txt="拒绝：旧序号";}
+if(P8_ServoControl.h13.vals[30]==12){P8_ServoControl.errorStatus.txt="拒绝：队列满/序号耗尽";}
+if(P8_ServoControl.h13.vals[30]==13){P8_ServoControl.errorStatus.txt="失败：执行超时";}
+if(P8_ServoControl.h13.vals[30]==14){P8_ServoControl.errorStatus.txt="停车失败";}
+if(P8_ServoControl.h13.vals[30]==15){P8_ServoControl.errorStatus.txt="拒绝：不支持命令";}
+P8_ServoControl.rpmSlider.visible=0;
+if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==1){P8_ServoControl.rpmSlider.visible=1;}

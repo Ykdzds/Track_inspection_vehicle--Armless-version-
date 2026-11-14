@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-10-15T19:53:58.6474052+08:00",
+  "note": "本清单不包含自身；哈希算法为SHA-256。",
+  "files": [
+    {
+      "path": "13_轨道巡检车.pix",
+      "sizeBytes": 88047,
+      "sha256": "E4BD6A1DF2CBAC00254AD5A0121A898AADD9B01FF6B9C096384F0EAC2E7D0700"
+    },
+    {
+      "path": "13_轨道巡检车.pix.bin",
+      "sizeBytes": 212852,
+      "sha256": "4A5B2BB969F60D53623CAD80BC0A455748CED8378E0960C85F5BA2F836128727"
+    },
+    {
+      "path": "车载屏中文32_R2完整.pixelFont",
+      "sizeBytes": 56540,
+      "sha256": "BA76CF339ECB25DB91D4B7F1EC5BEC5759D82A6F459543FD1F65CE22A3BF8677"
+    },
+    {
+      "path": "HMI13事务服务.txt",
+      "sizeBytes": 20338,
+      "sha256": "F6216E1875F62032896F5C4D03CEA4AD8C9966A803516DD4CE39641872BF80B2"
+    },
+    {
+      "path": "Modbus中断只读解析.txt",
+      "sizeBytes": 4862,
+      "sha256": "B8B4CCB48D790B0B7EDB2D1B2185F85D934BDF068D3C80871FB107B1861C4039"
+    },
+    {
+      "path": "HMI13界面刷新.txt",
+      "sizeBytes": 7912,
+      "sha256": "3CEA81520E83ABB680BD49300B3BC1E54E69CBD162EF201EEDA51069FAB74A49"
+    },
+    {
+      "path": "全局计龄刷新.txt",
+      "sizeBytes": 60019,
+      "sha256": "26B1307557F1034CA732EE6F1BA7D1EEADEA5E5F7506C529F93FE961E1A586F0"
+    },
+    {
+      "path": "HMI13状态索引.json",
+      "sizeBytes": 1823,
+      "sha256": "CA2CDCDDC7B3C512977E11AD3E39292BED19EE15404A7232649C10B34DA32A55"
+    },
+    {
+      "path": "r2-protocol.cjs",
+      "sizeBytes": 1889,
+      "sha256": "4ACF9977F76BA6CCA7870D65310BAF58E0848BDB640B010E17245582BA889D0C"
+    },
+    {
+      "path": "r2-simulator.cjs",
+      "sizeBytes": 7642,
+      "sha256": "396816417D9E1D7E14CB4111FE5B82728021F62F0D908930D8128137F85854E0"
+    },
+    {
+      "path": "serial-rtu-bridge.py",
+      "sizeBytes": 2965,
+      "sha256": "EE4D09B401AA1463AF51B088FD9C5EC34A5EC0F9ED41C1451252F760993A6841"
+    },
+    {
+      "path": "hmi13.test.cjs",
+      "sizeBytes": 8263,
+      "sha256": "9AF18779DA5EDA3362FFF1BF41FA61EAC39CBF6680A32BE1EB01BEDB827F0B5B"
+    },
+    {
+      "path": "hmi13-failures.test.cjs",
+      "sizeBytes": 5070,
+      "sha256": "0A238A06057CCD1884F7B6CC88B7054054C4F805D853D6E4E67FBC5BE14305F2"
+    },
+    {
+      "path": "全模式只读显示回归测试.cjs",
+      "sizeBytes": 8455,
+      "sha256": "4D2CC3B8E9E5DFFB6EDF9B99ADFFA13B32CBDE231570C99BC499606C69F7D0AA"
+    },
+    {
+      "path": "调度压力记录.cjs",
+      "sizeBytes": 1177,
+      "sha256": "E39B01939BFD1751D6885491A2F35E256F4BB91C5476AAED4629718EFCA62686"
+    },
+    {
+      "path": "README.md",
+      "sizeBytes": 1443,
+      "sha256": "676FD034171365C7D3C66854F947C95C26ED0680924778A3F130A44BAC39C4F1"
+    },
+    {
+      "path": "实施记录.md",
+      "sizeBytes": 3803,
+      "sha256": "E503B026A61DA834C2D1F7F550D53949227F5780F54EC52B70D8F48837FB4612"
+    },
+    {
+      "path": "联调操作说明.md",
+      "sizeBytes": 2686,
+      "sha256": "D3044972595F68159F9CFA7F15070241B3FFE10E44FDD026F1DE52543AE019A9"
+    },
+    {
+      "path": "联合验收矩阵.md",
+      "sizeBytes": 5736,
+      "sha256": "E898ADCA285F19C39D06B48FD21B90D7024D72962A646D349A475744262AA82E"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+PASS all diagnostics off
+PASS configuration mask=0
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=1
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=2
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=3
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=4
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=5
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=6
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=7
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=8
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=9
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=10
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=11
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=12
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=13
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=14
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=15
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=16
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=17
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=18
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=19
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=20
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=21
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=22
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=23
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=24
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=25
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=26
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=27
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=28
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=29
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=30
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=31
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS configuration mask=32

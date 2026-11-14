@@ -1,0 +1,13 @@
+PASS old service sample 100/new frame 101 and normal 32-bit wrap
+PASS delayed completion IRQ does not create a false TX failure
+PASS wrong mailbox rejected; transient transmission error retried before original deadline
+PASS repeated target failures exhaust bounded retries and report final failure
+PASS no ACK: original 100ms deadline, wait abort terminal before mailbox reuse
+PASS completion wins abort race only on actual hardware success
+PASS queue age included in deadline; entering mailbox never renews frame lease
+PASS cancellation/session barrier: no old terminal consumed by new pending transaction
+PASS stop/revoke precedes capability fragments and aborts in-flight target
+PASS global quick stop purges queued authorization before it can grant late
+PASS final arbitration failure and Bus-off never reported as success
+PASS abort cleanup 20ms timeout stops link; mailbox never forcibly reused
+PASS result overflow sticky diagnostic and fail-closed recovery

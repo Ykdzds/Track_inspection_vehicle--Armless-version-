@@ -1,0 +1,210 @@
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=1 sync=0 hold=0
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=1 sync=0 hold=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS K5 matrix: axis=1 sync=0 readonly=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=1 sync=1 hold=0
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=1 sync=1 hold=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS K5 matrix: axis=1 sync=1 readonly=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=2 sync=0 hold=0
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=2 sync=0 hold=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS K5 matrix: axis=2 sync=0 readonly=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=2 sync=1 hold=0
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=2 sync=1 hold=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS K5 matrix: axis=2 sync=1 readonly=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=3 sync=0 hold=0
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=3 sync=0 hold=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS K5 matrix: axis=3 sync=0 readonly=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=3 sync=1 hold=0
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: axis=3 sync=1 hold=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Readonly remote authorization tests passed
+PASS K5 matrix: axis=3 sync=1 readonly=1
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: link=0.5f K5=1.0f
+PASS communication K5: READY edge, all sticks centered, live link, consume old/reconnect events, reset only
+Remote synchronization integration tests passed
+Remote startup hold tests passed
+Remote radio recovery generation tests passed
+PASS controlled stop: +/-600, independent ramp, recovery/K5 priority, fresh zero, timeout/fault and wrap
+PASS CLI events: long press excluded, link loss ignored, new K5 abort, history consumed
+PASS K5 runtime: fresh confirmation, old/new long, disturbance, radio recovery, direct zero takeover, no disable/enable/config, safety failures
+PASS K5 repeated stop: forward/reverse/zero, 20 presses per stage, unchanged transaction/deadline, wrap/jump, disturbance, fresh centered reauthorization
+PASS CAN owner mapping: K1-K4 idle, K5 lock, simultaneous long consumed
+PASS remote K6 watchdog: macro, duplicate/wrap/stale/recovery, CLI and reauthorization gate
+Remote servo tests passed, including HMI ownership isolation
+PASS remote preparation cancellation: no authorization, cleanup, zero enable, preserve request
+PASS remote degraded: four failures retain session, no increase, resume jump or reversal
+PASS K5 matrix: link=1.0f K5=0.5f

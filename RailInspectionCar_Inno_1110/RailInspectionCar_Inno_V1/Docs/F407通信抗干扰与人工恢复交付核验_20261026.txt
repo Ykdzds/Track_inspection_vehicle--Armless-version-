@@ -1,0 +1,56 @@
+﻿F407 通信抗干扰与人工恢复交付核验
+记录时间：2026-10-26T01:22:05+08:00
+结论：本次软件实施及列明的主机回归、14组Keil构建通过；保留旧脚本阻塞项，未完成实物验收，尚未现场放行。
+
+构建目录：D:\CodexBuild\RailInspectionCar\controlled_stop_20261026_005947
+续作基线/证据：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236
+冻结自定义生产源码文件：131 个，逐一SHA256复核一致。
+14组全量构建均0错误、0警告；Flash边界全部通过（上限0x080E0000）。
+正式配置Flash结束地址：0x08042AE0
+全部配置最大Flash结束地址：0x08042AE8
+14组×11任务静态预算检查通过；最小余量：280 字节。
+静态调用图不替代现场RTOS栈高水位。
+
+正式工程参数、.uvprojx、.uvoptx及RTE与续作基线一致。
+APP/app_config.h SHA256：BF10A2E0CF2AF19FDEB53F7918703A436DDAD46B2EF2C929C1F58727B076417E
+正式工程SHA256：FC306CCD63ECC7A0B7DAB8ABABA6D75E52EADFD863A55885AD2876D8280D94D8
+BSP、Core、Protocol与续作基线无变化；未修改F103或车载屏工程。
+源码/配置/测试/文档最终副本：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\final_workspace
+最终源码清单：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\final_source_sha256.csv
+范围对比：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\final_baseline_comparison.csv
+构建产物清单：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\final_build_sha256.csv
+主机日志清单：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\final_test_logs_sha256.csv
+
+正式产物单独标识（未烧录）：D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\FINAL_F407_20261026_NOT_FLASHED
+HEX SHA256：C5FD8D8AF97B3EDC951E0430D4D829B357BA5CAF139E898D4610C1BFA3D53F9B
+AXF SHA256：C34D85108D16EE4F66ABE7D77A4A4189DF7C6DA8766FBCE3675E9E06B624089C
+不混用20261024或中间矩阵HEX。
+
+通过的主机日志：
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_safety_stop_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_communication_key_tests_frozen_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_current_core_tests_frozen_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_k5_repeat_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_cli_session_tests_frozen_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_can_control_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_can_hmi_joint_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_can_k5_recovery_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_hmi_control_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_hmi_remote_joint_tests_coverage_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_current_watchdog_tests_frozen_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_current_diagnostic_tests_frozen_final.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_rxlost_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_system_snapshot_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_snapshot_transport_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_can_protocol_tests_verified.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_radio_diagnostic_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_motion_ramp_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_remote_key_config_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_status_led_tests_frozen.log
+- D:\CodexBuild\RailInspectionCar\comm_resilience_resume_20261026_000236\run_nrf_host_tests_final.log
+
+保留的原脚本阻塞：run_tests.ps1、run_watchdog_test.ps1、run_servo_diagnostic_tests.ps1存在旧配置/替身问题；check_irq_dma_integration.ps1要求UART5 DMA_NORMAL，与接续前circular配置不符，导致run_nrf_tests.ps1预检退出。
+这些原门禁未宣称通过。新的合法配置入口保留原C断言；NRF主机运行矩阵通过，配置预检仍失败。
+设备层真实事务注入恢复和APP三端mock恢复再授权是分层验证，尚未覆盖完整RTOS实车时序。
+现场待办：固定车辆/抬轮，逐级0/200/600/<1200/>1200/1600 rpm，分别注入短暂干扰/连续失败/反馈过期/断线；记录曲线、降级时长、停车时间距离、双轴误差、母线电压、USART2错误、Modbus队列和任务栈高水位；验证人工复位与三端重新授权。
+无现场数据，未自动烧录，不保证MCU失效、总线彻底中断或驱动器失能时软件减速仍有效。

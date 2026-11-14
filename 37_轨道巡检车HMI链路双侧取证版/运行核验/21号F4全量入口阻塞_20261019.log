@@ -1,0 +1,16 @@
+PASS task stack structure: lightweight status; compile-time budgets require Keil report
+PASS CAN configuration: 42MHz / (6 * 14) = 500000 bit/s; PA11/12; IRQ priority 6; eleven Keil sources
+Core/Src/stm32f4xx_it.c: In function 'HAL_UART_RxHalfCpltCallback':
+Core/Src/stm32f4xx_it.c:536:57: error: 'HAL_UART_RXEVENT_HT' undeclared (first use in this function)
+     bsp_hmi_uart_rx_event_isr(APP_HMI_DMA_RX_SIZE / 2U, HAL_UART_RXEVENT_HT);
+                                                         ^
+Core/Src/stm32f4xx_it.c:536:57: note: each undeclared identifier is reported only once for each function it appears in
+Core/Src/stm32f4xx_it.c: In function 'HAL_UART_RxCpltCallback':
+Core/Src/stm32f4xx_it.c:548:35: error: 'HAL_UART_RXEVENT_TC' undeclared (first use in this function)
+     bsp_hmi_uart_rx_event_isr(0U, HAL_UART_RXEVENT_TC);
+                                   ^
+Exception: D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_servo_diagnostic_tests.ps1:9
+Line |
+   9 |      if ($LASTEXITCODE -ne 0) { throw "诊断矩阵中断入口编译失败" }
+     |                                 ~~~~~~~~~~~~~~~~~~~~
+     | 诊断矩阵中断入口编译失败

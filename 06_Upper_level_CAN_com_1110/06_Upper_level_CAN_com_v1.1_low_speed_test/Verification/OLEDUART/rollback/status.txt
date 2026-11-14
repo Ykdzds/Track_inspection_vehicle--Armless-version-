@@ -1,0 +1,7 @@
+ M APP/can_bus.c
+ M APP/can_upper_task.c
+ M Core/Inc/FreeRTOSConfig.h
+ M MDK-ARM/DigitalElectronicseCode/DigitalElectronicseCode.hex
+ M Tests/build.ps1
+ M Tests/check_k5_build.ps1
+ M Verification/keil_build.log

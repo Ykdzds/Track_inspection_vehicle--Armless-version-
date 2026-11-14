@@ -1,0 +1,1 @@
+﻿if(P8_ServoControl.h13.vals[32]==0){HMI34Input();HMI34Hint();}

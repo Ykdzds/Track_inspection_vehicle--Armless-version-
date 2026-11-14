@@ -1,0 +1,2 @@
+PASS startup first-cause disabled: response failure behaviour preserved without capture
+PASS startup first cause: real status/id, mismatch expected/actual, retry exhaustion before cleanup, no stale response id

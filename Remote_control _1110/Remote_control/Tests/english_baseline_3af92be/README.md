@@ -1,0 +1,1 @@
+Exact remote_display.c/h bytes from commit 3af92be for host differential tests only. Never linked into target firmware. The adapter renames public symbols inside a separate translation unit; historical types stay private to that translation unit.

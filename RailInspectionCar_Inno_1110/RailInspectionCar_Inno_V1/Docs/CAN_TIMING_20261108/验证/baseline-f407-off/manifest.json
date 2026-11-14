@@ -1,0 +1,53 @@
+{
+  "Variant": "baseline-f407-off",
+  "BaselineCommit": "819077b",
+  "Project": "C:\\Users\\15056\\AppData\\Local\\Temp\\rail_can_rebuild_f407_fa8ba3c6c7054646ba0c97edce96d5d1\\MDK-ARM\\RailInspectionCar_V1.uvprojx",
+  "SourceDefaults": false,
+  "Defines": [
+    "APP_HMI_LINK_DIAG_ENABLED=0",
+    "APP_NRF_DIAGNOSTIC_ENABLED=0",
+    "APP_CAN_SERVO_DIAG_ENABLED=0",
+    "APP_CAN_ARM_DIAG_ENABLED=0",
+    "APP_SERVO_RS485_DIAG_ENABLED=0"
+  ],
+  "Started": "2026-11-08T22:21:05.1713086+08:00",
+  "Completed": "2026-11-08T22:22:15.7501933+08:00",
+  "Exit": 0,
+  "Errors": 0,
+  "Warnings": 0,
+  "Ram": {
+    "PhysicalBytes": 164500,
+    "Regions": {
+      "RW_CCM": {
+        "Used": 62024,
+        "Capacity": 65536,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Used": 100392,
+        "Capacity": 114688,
+        "Free": 14296
+      },
+      "RW_IRAM2": {
+        "Used": 1572,
+        "Capacity": 15872,
+        "Free": 14300
+      },
+      "RETAINED_FAULT": {
+        "Used": 512,
+        "Capacity": 512,
+        "Free": 0
+      }
+    }
+  },
+  "Hashes": {
+    "keil-rebuild.log": "747C90B7EFE46D277462A0089B30AAE5682DED2DB6737862D27BB6EE5A7CA81D",
+    "project.snapshot": "7C5CC29E33CEF2A2D79FA6C6575ABBCBF4CD5C6F59291868EEB9EA62A8054E4F",
+    "RailInspectionCar_V1.axf": "0BFFD0C471795A6D74C4156789FDCCAA49BA2AABDA7C1E6EA5D2771739822E44",
+    "RailInspectionCar_V1.bin": "7099744DB8275799039CF7EFB474B99D5FAF086598A2A6C7EA7E04343948E317",
+    "RailInspectionCar_V1.hex": "D70C8431DB0A3E9C2A5CE1A23F0E1387ADB0AB8D11EE37E06C1C670E85BC2CF2",
+    "RailInspectionCar_V1.htm": "D42397690CD154F8D9746569612DDDC63083FF4101BB235F2F5964806A7B1BC0",
+    "RailInspectionCar_V1.map": "70E2BB5765CB3CFCD7D21F7F52616149CFA78810D7C02EB38B1C926DECC45AD2"
+  },
+  "HardwareAcceptance": "pending"
+}

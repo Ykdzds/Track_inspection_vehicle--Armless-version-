@@ -1,0 +1,2 @@
+PASS disabled local features: no pulse requests, hard GPIO off, safety/fault retention, CLI rejection and LCD neutral status
+PASS disabled objects: no writable LCD/debug/pulse state or peripheral handles; CLI enabled P0/P1 both compile

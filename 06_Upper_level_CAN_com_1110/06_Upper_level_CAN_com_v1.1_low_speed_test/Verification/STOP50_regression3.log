@@ -1,0 +1,374 @@
+PASS motion guard: ACK not grant, current token, zero-first, stale response, boot, repeat stop, invalid config
+PASS protocol/UI: config conversion, 0x53 CRC, timeout, capability gate, debounce, pages, select does not move
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS pair missing config recovered via existing 0x110/0x08 query
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+STOP local=8 detail=0 event=1 phase=4 F4=4 owner=0
+AUTH state=4 detail=0 token=101 F4=3 seq=24 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+CANCEL local=0 detail=0 F4owner=0 auth=0
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+EXTERNAL_STOP local=8 detail=0 event=1 phase=4
+AUTH state=4 detail=0 token=101 F4=3 seq=21 zeroobs=2
+PASS real F4/F103 pair: grant, first zero, +/- low speed, stop, repeat stop, regrant, lease, heartbeat, stale feedback, owner mutex
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=200 mm/s=726 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=-200 mm/s=-726 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=300 mm/s=1090 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=-300 mm/s=-1090 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=400 mm/s=1453 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=-400 mm/s=-1453 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=0 decel=0.40
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=1 decel=0.40
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=2 decel=0.40
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=3 decel=0.50
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+QUICK local=8 ack=1 phase=4 detail=0 F4phase=4 decel=0.50 seq=1
+AUTH state=4 detail=0 token=101 F4=3 seq=309 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS STOP50 random seed=20261021: latest arbitrary +/- target, direct reversal, quick stop ACK/release/regrant, long K2 normal stop, idle global stop
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+AUTH state=4 detail=0 token=101 F4=3 seq=20 zeroobs=2
+AUTH state=4 detail=0 token=102 F4=3 seq=32 zeroobs=2
+AUTH state=4 detail=0 token=103 F4=3 seq=45 zeroobs=2
+AUTH state=4 detail=0 token=104 F4=3 seq=58 zeroobs=2
+AUTH state=4 detail=0 token=105 F4=3 seq=71 zeroobs=2
+AUTH state=4 detail=0 token=106 F4=3 seq=84 zeroobs=2
+AUTH state=4 detail=0 token=107 F4=3 seq=96 zeroobs=2
+AUTH state=4 detail=0 token=108 F4=3 seq=109 zeroobs=2
+AUTH state=4 detail=0 token=109 F4=3 seq=122 zeroobs=2
+AUTH state=4 detail=0 token=110 F4=3 seq=134 zeroobs=2
+AUTH state=4 detail=0 token=111 F4=3 seq=147 zeroobs=2
+AUTH state=4 detail=0 token=112 F4=3 seq=159 zeroobs=2
+AUTH state=4 detail=0 token=113 F4=3 seq=172 zeroobs=2
+AUTH state=4 detail=0 token=114 F4=3 seq=185 zeroobs=2
+AUTH state=4 detail=0 token=115 F4=3 seq=197 zeroobs=2
+AUTH state=4 detail=0 token=116 F4=3 seq=210 zeroobs=2
+AUTH state=4 detail=0 token=117 F4=3 seq=223 zeroobs=2
+AUTH state=4 detail=0 token=118 F4=3 seq=236 zeroobs=2
+AUTH state=4 detail=0 token=119 F4=3 seq=249 zeroobs=2
+AUTH state=4 detail=0 token=120 F4=3 seq=261 zeroobs=2
+AUTH state=4 detail=0 token=121 F4=3 seq=274 zeroobs=2
+AUTH state=4 detail=0 token=122 F4=3 seq=287 zeroobs=2
+AUTH state=4 detail=0 token=123 F4=3 seq=300 zeroobs=2
+AUTH state=4 detail=0 token=124 F4=3 seq=313 zeroobs=2
+AUTH state=4 detail=0 token=125 F4=3 seq=325 zeroobs=2
+AUTH state=4 detail=0 token=126 F4=3 seq=338 zeroobs=2
+AUTH state=4 detail=0 token=127 F4=3 seq=351 zeroobs=2
+AUTH state=4 detail=0 token=128 F4=3 seq=364 zeroobs=2
+AUTH state=4 detail=0 token=129 F4=3 seq=377 zeroobs=2
+AUTH state=4 detail=0 token=130 F4=3 seq=389 zeroobs=2
+AUTH state=4 detail=0 token=131 F4=3 seq=402 zeroobs=2
+AUTH state=4 detail=0 token=132 F4=3 seq=415 zeroobs=2
+AUTH state=4 detail=0 token=133 F4=3 seq=427 zeroobs=2
+AUTH state=4 detail=0 token=134 F4=3 seq=440 zeroobs=2
+AUTH state=4 detail=0 token=135 F4=3 seq=453 zeroobs=2
+AUTH state=4 detail=0 token=136 F4=3 seq=466 zeroobs=2
+AUTH state=4 detail=0 token=137 F4=3 seq=479 zeroobs=2
+AUTH state=4 detail=0 token=138 F4=3 seq=491 zeroobs=2
+AUTH state=4 detail=0 token=139 F4=3 seq=504 zeroobs=2
+AUTH state=4 detail=0 token=140 F4=3 seq=517 zeroobs=2
+AUTH state=4 detail=0 token=141 F4=3 seq=530 zeroobs=2
+AUTH state=4 detail=0 token=142 F4=3 seq=543 zeroobs=2
+AUTH state=4 detail=0 token=143 F4=3 seq=555 zeroobs=2
+AUTH state=4 detail=0 token=144 F4=3 seq=568 zeroobs=2
+AUTH state=4 detail=0 token=145 F4=3 seq=581 zeroobs=2
+AUTH state=4 detail=0 token=146 F4=3 seq=594 zeroobs=2
+AUTH state=4 detail=0 token=147 F4=3 seq=607 zeroobs=2
+AUTH state=4 detail=0 token=148 F4=3 seq=619 zeroobs=2
+AUTH state=4 detail=0 token=149 F4=3 seq=632 zeroobs=2
+AUTH state=4 detail=0 token=150 F4=3 seq=645 zeroobs=2
+AUTH state=4 detail=0 token=151 F4=3 seq=657 zeroobs=2
+AUTH state=4 detail=0 token=152 F4=3 seq=670 zeroobs=2
+AUTH state=4 detail=0 token=153 F4=3 seq=683 zeroobs=2
+AUTH state=4 detail=0 token=154 F4=3 seq=696 zeroobs=2
+AUTH state=4 detail=0 token=155 F4=3 seq=709 zeroobs=2
+AUTH state=4 detail=0 token=156 F4=3 seq=721 zeroobs=2
+AUTH state=4 detail=0 token=157 F4=3 seq=734 zeroobs=2
+AUTH state=4 detail=0 token=158 F4=3 seq=747 zeroobs=2
+AUTH state=4 detail=0 token=159 F4=3 seq=760 zeroobs=2
+AUTH state=4 detail=0 token=160 F4=3 seq=773 zeroobs=2
+AUTH state=4 detail=0 token=161 F4=3 seq=785 zeroobs=2
+AUTH state=4 detail=0 token=162 F4=3 seq=798 zeroobs=2
+AUTH state=4 detail=0 token=163 F4=3 seq=811 zeroobs=2
+AUTH state=4 detail=0 token=164 F4=3 seq=824 zeroobs=2
+AUTH state=4 detail=0 token=165 F4=3 seq=837 zeroobs=2
+AUTH state=4 detail=0 token=166 F4=3 seq=849 zeroobs=2
+AUTH state=4 detail=0 token=167 F4=3 seq=862 zeroobs=2
+AUTH state=4 detail=0 token=168 F4=3 seq=875 zeroobs=2
+AUTH state=4 detail=0 token=169 F4=3 seq=887 zeroobs=2
+AUTH state=4 detail=0 token=170 F4=3 seq=900 zeroobs=2
+AUTH state=4 detail=0 token=171 F4=3 seq=912 zeroobs=2
+AUTH state=4 detail=0 token=172 F4=3 seq=925 zeroobs=2
+AUTH state=4 detail=0 token=173 F4=3 seq=938 zeroobs=2
+AUTH state=4 detail=0 token=174 F4=3 seq=950 zeroobs=2
+AUTH state=4 detail=0 token=175 F4=3 seq=963 zeroobs=2
+AUTH state=4 detail=0 token=176 F4=3 seq=976 zeroobs=2
+AUTH state=4 detail=0 token=177 F4=3 seq=989 zeroobs=2
+AUTH state=4 detail=0 token=178 F4=3 seq=1002 zeroobs=2
+AUTH state=4 detail=0 token=179 F4=3 seq=1014 zeroobs=2
+AUTH state=4 detail=0 token=180 F4=3 seq=1027 zeroobs=2
+AUTH state=4 detail=0 token=181 F4=3 seq=1040 zeroobs=2
+AUTH state=4 detail=0 token=182 F4=3 seq=1053 zeroobs=2
+AUTH state=4 detail=0 token=183 F4=3 seq=1066 zeroobs=2
+AUTH state=4 detail=0 token=184 F4=3 seq=1078 zeroobs=2
+AUTH state=4 detail=0 token=185 F4=3 seq=1091 zeroobs=2
+AUTH state=4 detail=0 token=186 F4=3 seq=1104 zeroobs=2
+AUTH state=4 detail=0 token=187 F4=3 seq=1116 zeroobs=2
+AUTH state=4 detail=0 token=188 F4=3 seq=1129 zeroobs=2
+AUTH state=4 detail=0 token=189 F4=3 seq=1141 zeroobs=2
+AUTH state=4 detail=0 token=190 F4=3 seq=1154 zeroobs=2
+AUTH state=4 detail=0 token=191 F4=3 seq=1167 zeroobs=2
+AUTH state=4 detail=0 token=192 F4=3 seq=1179 zeroobs=2
+AUTH state=4 detail=0 token=193 F4=3 seq=1192 zeroobs=2
+AUTH state=4 detail=0 token=194 F4=3 seq=1205 zeroobs=2
+AUTH state=4 detail=0 token=195 F4=3 seq=1218 zeroobs=2
+AUTH state=4 detail=0 token=196 F4=3 seq=1231 zeroobs=2
+AUTH state=4 detail=0 token=197 F4=3 seq=1243 zeroobs=2
+AUTH state=4 detail=0 token=198 F4=3 seq=1256 zeroobs=2
+AUTH state=4 detail=0 token=199 F4=3 seq=1269 zeroobs=2
+PASS 100 consecutive grant/zero/speed/stop/regrant cycles without resetting pair
+PASS logs: basic/fragment suppression, READY/token events, Bus-off/overflow first event and repeat gate
+PASS logs: 0x53 summary, no default payload expansion, first-at-zero and 5000ms record gate
+PASS logs: bounded static queue, priority eviction/order, FIFO peers and event-drop accounting
+PASS logs: 100ms target traffic limited to 1000ms summaries; control transitions and UART byte/error counts
+PASS logs: unchanged heartbeat/boot counts and 100ms/300ms target configuration across log levels
+PASS synthetic steady log volume=358 bytes/s (not hardware throughput)
+PASS AUTHFIX logs: first diagnostic, complete axis snapshot, same-cause 1s gate and final timeout retained
+PASS TXFIX logs: final transaction evidence and operation rejection 1s rate limit
+PASS F103 actual log task mode=0 motion=1; software only
+PASS logs: basic/fragment suppression, READY/token events, Bus-off/overflow first event and repeat gate
+PASS logs: 0x53 summary, no default payload expansion, first-at-zero and 5000ms record gate
+PASS logs: bounded static queue, priority eviction/order, FIFO peers and event-drop accounting
+PASS logs: 100ms target traffic limited to 1000ms summaries; control transitions and UART byte/error counts
+PASS logs: unchanged heartbeat/boot counts and 100ms/300ms target configuration across log levels
+PASS synthetic steady log volume=844 bytes/s (not hardware throughput)
+PASS AUTHFIX logs: first diagnostic, complete axis snapshot, same-cause 1s gate and final timeout retained
+PASS TXFIX logs: final transaction evidence and operation rejection 1s rate limit
+PASS F103 actual log task mode=1 motion=1; software only
+PASS logs: basic/fragment suppression, READY/token events, Bus-off/overflow first event and repeat gate
+PASS logs: 0x53 summary, no default payload expansion, first-at-zero and 5000ms record gate
+PASS logs: bounded static queue, priority eviction/order, FIFO peers and event-drop accounting
+PASS logs: 100ms target traffic limited to 1000ms summaries; control transitions and UART byte/error counts
+PASS logs: unchanged heartbeat/boot counts and 100ms/300ms target configuration across log levels
+PASS synthetic steady log volume=844 bytes/s (not hardware throughput)
+PASS AUTHFIX logs: first diagnostic, complete axis snapshot, same-cause 1s gate and final timeout retained
+PASS TXFIX logs: final transaction evidence and operation rejection 1s rate limit
+PASS F103 actual log task mode=2 motion=1; software only
+PASS F103软件回归；不代表真实CAN和机械验收
+PASS delayed completion IRQ does not create a false TX failure
+PASS wrong mailbox rejected; transient transmission error retried before original deadline
+PASS repeated target failures exhaust bounded retries and report final failure
+PASS no ACK: original 100ms deadline, wait abort terminal before mailbox reuse
+PASS completion wins abort race only on actual hardware success
+PASS queue age included in deadline; entering mailbox never renews frame lease
+PASS cancellation/session barrier: no old terminal consumed by new pending transaction
+PASS stop/revoke precedes capability fragments and aborts in-flight target
+PASS global quick stop purges queued authorization before it can grant late
+PASS final arbitration failure and Bus-off never reported as success
+PASS abort cleanup 20ms timeout stops link; mailbox never forcibly reused
+PASS result overflow sticky diagnostic and fail-closed recovery
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS pair missing config recovered via existing 0x110/0x08 query
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+STOP local=8 detail=0 event=1 phase=4 F4=4 owner=0
+AUTH state=4 detail=0 token=101 F4=3 seq=24 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+CANCEL local=0 detail=0 F4owner=0 auth=0
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+EXTERNAL_STOP local=8 detail=0 event=1 phase=4
+AUTH state=4 detail=0 token=101 F4=3 seq=21 zeroobs=2
+PASS real F4/F103 pair: grant, first zero, +/- low speed, stop, repeat stop, regrant, lease, heartbeat, stale feedback, owner mutex
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=200 mm/s=726 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=-200 mm/s=-726 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=300 mm/s=1090 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=-300 mm/s=-1090 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=400 mm/s=1453 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair target=-400 mm/s=-1453 full-ramp, normal-zero and stop-release
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=0 decel=0.40
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=1 decel=0.40
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=2 decel=0.40
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS SPEED400 pair 400rpm stop case=3 decel=0.50
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+QUICK local=8 ack=1 phase=4 detail=0 F4phase=4 decel=0.50 seq=1
+AUTH state=4 detail=0 token=101 F4=3 seq=309 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+PASS STOP50 random seed=20261021: latest arbitrary +/- target, direct reversal, quick stop ACK/release/regrant, long K2 normal stop, idle global stop
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+AUTH state=4 detail=0 token=101 F4=3 seq=21 zeroobs=2
+PASS real bus transient retry and persistent failure -> bounded retry then ERR110
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=7 zeroobs=2
+AUTH state=4 detail=0 token=101 F4=3 seq=20 zeroobs=2
+AUTH state=4 detail=0 token=102 F4=3 seq=32 zeroobs=2
+AUTH state=4 detail=0 token=103 F4=3 seq=45 zeroobs=2
+AUTH state=4 detail=0 token=104 F4=3 seq=58 zeroobs=2
+AUTH state=4 detail=0 token=105 F4=3 seq=71 zeroobs=2
+AUTH state=4 detail=0 token=106 F4=3 seq=84 zeroobs=2
+AUTH state=4 detail=0 token=107 F4=3 seq=96 zeroobs=2
+AUTH state=4 detail=0 token=108 F4=3 seq=109 zeroobs=2
+AUTH state=4 detail=0 token=109 F4=3 seq=122 zeroobs=2
+AUTH state=4 detail=0 token=110 F4=3 seq=134 zeroobs=2
+AUTH state=4 detail=0 token=111 F4=3 seq=147 zeroobs=2
+AUTH state=4 detail=0 token=112 F4=3 seq=159 zeroobs=2
+AUTH state=4 detail=0 token=113 F4=3 seq=172 zeroobs=2
+AUTH state=4 detail=0 token=114 F4=3 seq=185 zeroobs=2
+AUTH state=4 detail=0 token=115 F4=3 seq=197 zeroobs=2
+AUTH state=4 detail=0 token=116 F4=3 seq=210 zeroobs=2
+AUTH state=4 detail=0 token=117 F4=3 seq=223 zeroobs=2
+AUTH state=4 detail=0 token=118 F4=3 seq=236 zeroobs=2
+AUTH state=4 detail=0 token=119 F4=3 seq=249 zeroobs=2
+AUTH state=4 detail=0 token=120 F4=3 seq=261 zeroobs=2
+AUTH state=4 detail=0 token=121 F4=3 seq=274 zeroobs=2
+AUTH state=4 detail=0 token=122 F4=3 seq=287 zeroobs=2
+AUTH state=4 detail=0 token=123 F4=3 seq=300 zeroobs=2
+AUTH state=4 detail=0 token=124 F4=3 seq=313 zeroobs=2
+AUTH state=4 detail=0 token=125 F4=3 seq=325 zeroobs=2
+AUTH state=4 detail=0 token=126 F4=3 seq=338 zeroobs=2
+AUTH state=4 detail=0 token=127 F4=3 seq=351 zeroobs=2
+AUTH state=4 detail=0 token=128 F4=3 seq=364 zeroobs=2
+AUTH state=4 detail=0 token=129 F4=3 seq=377 zeroobs=2
+AUTH state=4 detail=0 token=130 F4=3 seq=389 zeroobs=2
+AUTH state=4 detail=0 token=131 F4=3 seq=402 zeroobs=2
+AUTH state=4 detail=0 token=132 F4=3 seq=415 zeroobs=2
+AUTH state=4 detail=0 token=133 F4=3 seq=427 zeroobs=2
+AUTH state=4 detail=0 token=134 F4=3 seq=440 zeroobs=2
+AUTH state=4 detail=0 token=135 F4=3 seq=453 zeroobs=2
+AUTH state=4 detail=0 token=136 F4=3 seq=466 zeroobs=2
+AUTH state=4 detail=0 token=137 F4=3 seq=479 zeroobs=2
+AUTH state=4 detail=0 token=138 F4=3 seq=491 zeroobs=2
+AUTH state=4 detail=0 token=139 F4=3 seq=504 zeroobs=2
+AUTH state=4 detail=0 token=140 F4=3 seq=517 zeroobs=2
+AUTH state=4 detail=0 token=141 F4=3 seq=530 zeroobs=2
+AUTH state=4 detail=0 token=142 F4=3 seq=543 zeroobs=2
+AUTH state=4 detail=0 token=143 F4=3 seq=555 zeroobs=2
+AUTH state=4 detail=0 token=144 F4=3 seq=568 zeroobs=2
+AUTH state=4 detail=0 token=145 F4=3 seq=581 zeroobs=2
+AUTH state=4 detail=0 token=146 F4=3 seq=594 zeroobs=2
+AUTH state=4 detail=0 token=147 F4=3 seq=607 zeroobs=2
+AUTH state=4 detail=0 token=148 F4=3 seq=619 zeroobs=2
+AUTH state=4 detail=0 token=149 F4=3 seq=632 zeroobs=2
+AUTH state=4 detail=0 token=150 F4=3 seq=645 zeroobs=2
+AUTH state=4 detail=0 token=151 F4=3 seq=657 zeroobs=2
+AUTH state=4 detail=0 token=152 F4=3 seq=670 zeroobs=2
+AUTH state=4 detail=0 token=153 F4=3 seq=683 zeroobs=2
+AUTH state=4 detail=0 token=154 F4=3 seq=696 zeroobs=2
+AUTH state=4 detail=0 token=155 F4=3 seq=709 zeroobs=2
+AUTH state=4 detail=0 token=156 F4=3 seq=721 zeroobs=2
+AUTH state=4 detail=0 token=157 F4=3 seq=734 zeroobs=2
+AUTH state=4 detail=0 token=158 F4=3 seq=747 zeroobs=2
+AUTH state=4 detail=0 token=159 F4=3 seq=760 zeroobs=2
+AUTH state=4 detail=0 token=160 F4=3 seq=773 zeroobs=2
+AUTH state=4 detail=0 token=161 F4=3 seq=785 zeroobs=2
+AUTH state=4 detail=0 token=162 F4=3 seq=798 zeroobs=2
+AUTH state=4 detail=0 token=163 F4=3 seq=811 zeroobs=2
+AUTH state=4 detail=0 token=164 F4=3 seq=824 zeroobs=2
+AUTH state=4 detail=0 token=165 F4=3 seq=837 zeroobs=2
+AUTH state=4 detail=0 token=166 F4=3 seq=849 zeroobs=2
+AUTH state=4 detail=0 token=167 F4=3 seq=862 zeroobs=2
+AUTH state=4 detail=0 token=168 F4=3 seq=875 zeroobs=2
+AUTH state=4 detail=0 token=169 F4=3 seq=887 zeroobs=2
+AUTH state=4 detail=0 token=170 F4=3 seq=900 zeroobs=2
+AUTH state=4 detail=0 token=171 F4=3 seq=912 zeroobs=2
+AUTH state=4 detail=0 token=172 F4=3 seq=925 zeroobs=2
+AUTH state=4 detail=0 token=173 F4=3 seq=938 zeroobs=2
+AUTH state=4 detail=0 token=174 F4=3 seq=950 zeroobs=2
+AUTH state=4 detail=0 token=175 F4=3 seq=963 zeroobs=2
+AUTH state=4 detail=0 token=176 F4=3 seq=976 zeroobs=2
+AUTH state=4 detail=0 token=177 F4=3 seq=989 zeroobs=2
+AUTH state=4 detail=0 token=178 F4=3 seq=1002 zeroobs=2
+AUTH state=4 detail=0 token=179 F4=3 seq=1014 zeroobs=2
+AUTH state=4 detail=0 token=180 F4=3 seq=1027 zeroobs=2
+AUTH state=4 detail=0 token=181 F4=3 seq=1040 zeroobs=2
+AUTH state=4 detail=0 token=182 F4=3 seq=1053 zeroobs=2
+AUTH state=4 detail=0 token=183 F4=3 seq=1066 zeroobs=2
+AUTH state=4 detail=0 token=184 F4=3 seq=1078 zeroobs=2
+AUTH state=4 detail=0 token=185 F4=3 seq=1091 zeroobs=2
+AUTH state=4 detail=0 token=186 F4=3 seq=1104 zeroobs=2
+AUTH state=4 detail=0 token=187 F4=3 seq=1116 zeroobs=2
+AUTH state=4 detail=0 token=188 F4=3 seq=1129 zeroobs=2
+AUTH state=4 detail=0 token=189 F4=3 seq=1141 zeroobs=2
+AUTH state=4 detail=0 token=190 F4=3 seq=1154 zeroobs=2
+AUTH state=4 detail=0 token=191 F4=3 seq=1167 zeroobs=2
+AUTH state=4 detail=0 token=192 F4=3 seq=1179 zeroobs=2
+AUTH state=4 detail=0 token=193 F4=3 seq=1192 zeroobs=2
+AUTH state=4 detail=0 token=194 F4=3 seq=1205 zeroobs=2
+AUTH state=4 detail=0 token=195 F4=3 seq=1218 zeroobs=2
+AUTH state=4 detail=0 token=196 F4=3 seq=1231 zeroobs=2
+AUTH state=4 detail=0 token=197 F4=3 seq=1243 zeroobs=2
+AUTH state=4 detail=0 token=198 F4=3 seq=1256 zeroobs=2
+AUTH state=4 detail=0 token=199 F4=3 seq=1269 zeroobs=2
+PASS 100 consecutive grant/zero/speed/stop/regrant cycles without resetting pair
+REPRO first capability complete: published=1 expected=1
+PASS first successful capability transport is retained
+PASS AUTHFIX 57 assertions: diagnostics, freshness, prepare, query, cancellation and capabilities
+PASS SPEED400 conversion: +/-100/200/300/400, +/-401 rejected, axis modes, asymmetric mechanics and lower limits
+PASS SPEED400 keys: immediate short-apply, long normal-stop, global K3 quick-stop, blocked states, direct reversal, reset
+PASS SPEED400 session limit: fresh current record required, lower session cap preserved, rejected targets never applied
+PASS SPEED400 126 assertions; software only, physical 400rpm acceptance pending
+PASS TXFIX 72 assertions: bottom-controlled reversal, invalid feedback, real failures, old token, K1 locked and K3 recovery

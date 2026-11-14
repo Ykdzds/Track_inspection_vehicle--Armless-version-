@@ -1,0 +1,17 @@
+*.o
+*.d
+*.crf
+*.axf
+*.dep
+*.lnp
+*.lst
+*.uvguix.*
+*.uvgui.*
+*.bak
+*.tmp
+*.orig
+*.swp
+.DS_Store
+Thumbs.db
+/MDK-ARM/DigitalElectronicseCode/*
+!/MDK-ARM/DigitalElectronicseCode/DigitalElectronicseCode.hex

@@ -1,0 +1,30 @@
+{
+  evidence: '50ms理想事件等价执行；每事务50ms内模拟应答；不是Visual-PIX实屏或UART抓帧',
+  durationMs: 120000,
+  targetFrames: 800,
+  targetMaxGapMs: 150,
+  statusReads: 800,
+  statusMaxGapMs: 150,
+  maximumInflight: 1,
+  state: 3,
+  physicalValidated: false
+}
+✔ 固定读帧与CRC向量 (1.2447ms)
+✔ 完整24字申请帧及特殊字序 (0.2234ms)
+✔ RPM边界及保留参数 (0.2311ms)
+✔ 重复目标不续期且旧序号拒绝 (0.2461ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (56.1545ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (24.4805ms)
+✔ 释放后回中并返回，不继续发送旧目标 (65.878ms)
+✔ 主控重启清会话与旧目标，不自动授权 (58.9988ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (64.0152ms)
+✔ 只读固件不能授权 (44.869ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.2912ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1001.836

@@ -1,0 +1,25 @@
+{
+  "RequiredReports": [
+    "can-protocol.log",
+    "can-async-joint.log",
+    "can-transport-timing.log",
+    "can-diag.log",
+    "link-diag-matrix.log",
+    "can-hmi-joint.log",
+    "rs485-diag.log",
+    "cold-startup.log",
+    "lcd-recovery.log",
+    "hmi-windows.log",
+    "arm3.log",
+    "arm3-port.log",
+    "arm3-input.log",
+    "snapshot-transport.log",
+    "f103-host-off.log",
+    "f103-host-debug.log",
+    "link5-parser.log",
+    "f103-parser.log"
+  ],
+  "Passed": true,
+  "SoftwareOnly": true,
+  "HardwarePending": true
+}

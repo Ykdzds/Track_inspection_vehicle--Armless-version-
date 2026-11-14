@@ -1,0 +1,3 @@
+PASS HMI link diagnostics disabled: no runtime dependencies/output
+PASS normal 70 events/s for 10 s at uptime 2 h: 700/700 events, max 5690 B/s, no FIFO/UART loss
+PASS HMI link diagnostics: first cause, FIFO/UART congestion, rate budget, screen pages, memory and boot

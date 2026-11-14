@@ -1,0 +1,2 @@
+PASS board PC13: short=normal stop, long=emergency stop, double=LCD page; PD10 has no stop consumer
+PASS board PC13: short=normal stop, long=emergency stop, double=LCD page; PD10 has no stop consumer

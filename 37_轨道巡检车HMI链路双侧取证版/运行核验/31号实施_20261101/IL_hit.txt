@@ -1,0 +1,221 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 newobj Void .ctor()
+0005 stloc.0 
+0006 ldarg.1 
+0007 callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Model.PixControl] GetEnumerator()
+000C stloc.1 
+000D br 222
+0012 ldc.i4 614658555
+0017 ldc.i4 114857318
+001C xor 
+001D dup 
+001E stloc.s 4
+0020 ldc.i4.s 14
+0022 rem.un 
+0023 switch 14
+0060 br 450
+0065 ldloc.2 
+0066 isinst Visual_PIX.Model.Controls.PanelCtrl
+006B stloc.3 
+006C ldc.i4 1661806436
+0071 br.s -92
+0073 ldarg.s 5
+0075 ldloc.2 
+0076 callvirt Int32 get_Y()
+007B conv.r8 
+007C ldarg.3 
+007D add 
+007E ldloc.2 
+007F callvirt Int32 get_Height()
+0084 conv.r8 
+0085 add 
+0086 ble.un.s 8
+0088 ldc.i4 1507374508
+008D dup 
+008E br.s 6
+0090 ldc.i4 1160887751
+0095 dup 
+0096 pop 
+0097 ldloc.s 4
+0099 ldc.i4 1539555871
+009E mul 
+009F xor 
+00A0 br -142
+00A5 ldloc.0 
+00A6 ldarg.0 
+00A7 ldloc.3 
+00A8 callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixControl] get_Elements()
+00AD ldloc.2 
+00AE callvirt Int32 get_X()
+00B3 conv.r8 
+00B4 ldarg.2 
+00B5 add 
+00B6 ldloc.3 
+00B7 callvirt Int32 get_HorViewOffset()
+00BC conv.r8 
+00BD sub 
+00BE ldloc.2 
+00BF callvirt Int32 get_Y()
+00C4 conv.r8 
+00C5 ldarg.3 
+00C6 add 
+00C7 ldloc.3 
+00C8 callvirt Int32 get_VerViewOffset()
+00CD conv.r8 
+00CE sub 
+00CF ldarg.s 4
+00D1 ldarg.s 5
+00D3 call System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] fevGAyJoPVrvDGgIeqFkMsHwoPhoA(System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl], Double, Double, Double, Double)
+00D8 callvirt Void AddRange(System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl])
+00DD ldloc.s 4
+00DF ldc.i4 -2052658130
+00E4 mul 
+00E5 ldc.i4 -12205100
+00EA xor 
+00EB br -217
+00F0 ldloc.1 
+00F1 call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+00F6 brtrue.s 8
+00F8 ldc.i4 1325256495
+00FD dup 
+00FE br.s 6
+0100 ldc.i4 614658555
+0105 dup 
+0106 pop 
+0107 br -245
+010C ldarg.s 4
+010E ldloc.2 
+010F callvirt Int32 get_X()
+0114 conv.r8 
+0115 ldarg.2 
+0116 add 
+0117 ldloc.2 
+0118 callvirt Int32 get_Width()
+011D conv.r8 
+011E add 
+011F ble.un.s 8
+0121 ldc.i4 310781778
+0126 dup 
+0127 br.s 6
+0129 ldc.i4 1312474098
+012E dup 
+012F pop 
+0130 ldloc.s 4
+0132 ldc.i4 1435436995
+0137 mul 
+0138 xor 
+0139 br -295
+013E ldloc.0 
+013F ldloc.2 
+0140 callvirt Void Add(Visual_PIX.Model.PixControl)
+0145 ldloc.s 4
+0147 ldc.i4 -755903010
+014C mul 
+014D ldc.i4 2052938518
+0152 xor 
+0153 br -321
+0158 ldloc.2 
+0159 brtrue.s 8
+015B ldc.i4 -1726458615
+0160 dup 
+0161 br.s 6
+0163 ldc.i4 -1527870474
+0168 dup 
+0169 pop 
+016A ldloc.s 4
+016C ldc.i4 1557667971
+0171 mul 
+0172 xor 
+0173 br -353
+0178 ldloc.2 
+0179 callvirt Int32 get_Y()
+017E conv.r8 
+017F ldarg.3 
+0180 add 
+0181 ldarg.s 5
+0183 ble.un.s 8
+0185 ldc.i4 -1267374598
+018A dup 
+018B br.s 6
+018D ldc.i4 -639072696
+0192 dup 
+0193 pop 
+0194 ldloc.s 4
+0196 ldc.i4 -1862804257
+019B mul 
+019C xor 
+019D br -395
+01A2 ldloc.3 
+01A3 brtrue.s 8
+01A5 ldc.i4 1463570304
+01AA dup 
+01AB br.s 6
+01AD ldc.i4 1056641127
+01B2 dup 
+01B3 pop 
+01B4 ldloc.s 4
+01B6 ldc.i4 -1090428325
+01BB mul 
+01BC xor 
+01BD br -427
+01C2 ldloc.2 
+01C3 callvirt Boolean get_Visbile()
+01C8 brfalse.s 8
+01CA ldc.i4 2119088011
+01CF dup 
+01D0 br.s 6
+01D2 ldc.i4 1203286360
+01D7 dup 
+01D8 pop 
+01D9 ldloc.s 4
+01DB ldc.i4 1704975858
+01E0 mul 
+01E1 xor 
+01E2 br -464
+01E7 ldloc.2 
+01E8 callvirt Int32 get_X()
+01ED conv.r8 
+01EE ldarg.2 
+01EF add 
+01F0 ldarg.s 4
+01F2 ble.un.s 8
+01F4 ldc.i4 -1021830652
+01F9 dup 
+01FA br.s 6
+01FC ldc.i4 -1921735900
+0201 dup 
+0202 pop 
+0203 ldloc.s 4
+0205 ldc.i4 -516486788
+020A mul 
+020B xor 
+020C br -506
+0211 ldloc.1 
+0212 callvirt Visual_PIX.Model.PixControl get_Current()
+0217 isinst Visual_PIX.Model.PixElement
+021C stloc.2 
+021D ldc.i4 1092655603
+0222 br -528
+0227 leave.s 61
+0229 ldloc.1 
+022A brfalse.s 57
+022C ldc.i4 607974128
+0231 ldc.i4 114857318
+0236 xor 
+0237 dup 
+0238 stloc.s 4
+023A ldc.i4.3 
+023B rem.un 
+023C switch 3
+024D br.s 22
+024F ldloc.1 
+0250 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+0255 ldloc.s 4
+0257 ldc.i4 221455912
+025C mul 
+025D ldc.i4 -1143114270
+0262 xor 
+0263 br.s -52
+0265 endfinally 
+0266 ldloc.0 
+0267 ret 

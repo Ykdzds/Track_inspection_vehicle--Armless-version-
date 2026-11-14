@@ -1,0 +1,25 @@
+test_actual_tc_maximum_and_dwt_wrap (__main__.Link5LogTests.test_actual_tc_maximum_and_dwt_wrap) ... ok
+test_can_record_failure_exact_pages_and_independent_timing_parts (__main__.Link5LogTests.test_can_record_failure_exact_pages_and_independent_timing_parts) ... ok
+test_can_stop_identity_uses_exact_wire_scene_and_never_guesses (__main__.Link5LogTests.test_can_stop_identity_uses_exact_wire_scene_and_never_guesses) ... ok
+test_cli_json_and_utf16_and_missing_frequency (__main__.Link5LogTests.test_cli_json_and_utf16_and_missing_frequency) ... ok
+test_common_stop_namespace_does_not_collide_with_rs485_drop_cancel (__main__.Link5LogTests.test_common_stop_namespace_does_not_collide_with_rs485_drop_cancel) ... ok
+test_f103_first_stop_preserves_decimal_hex_and_missing_page_limits (__main__.Link5LogTests.test_f103_first_stop_preserves_decimal_hex_and_missing_page_limits) ... ok
+test_first_pages_are_boot_scoped_and_conflicts_are_not_hidden (__main__.Link5LogTests.test_first_pages_are_boot_scoped_and_conflicts_are_not_hidden) ... ok
+test_health_transition_flags_failures_identity_and_invalid_age (__main__.Link5LogTests.test_health_transition_flags_failures_identity_and_invalid_age) ... ok
+test_legacy_first_fields_are_decimal_despite_hex_headers (__main__.Link5LogTests.test_legacy_first_fields_are_decimal_despite_hex_headers) ... ok
+test_noise_and_same_physical_line_and_kind_above_ff (__main__.Link5LogTests.test_noise_and_same_physical_line_and_kind_above_ff) ... ok
+test_periodic_parts_and_sync_phases_are_not_joined (__main__.Link5LogTests.test_periodic_parts_and_sync_phases_are_not_joined) ... ok
+test_request_and_final_health_limits_decode_signed_values_and_can_validity (__main__.Link5LogTests.test_request_and_final_health_limits_decode_signed_values_and_can_validity) ... ok
+test_rs485_stage_timing_validity_and_tick_wrap (__main__.Link5LogTests.test_rs485_stage_timing_validity_and_tick_wrap) ... ok
+test_safety_transition_full_failure_and_known_six_word_layouts (__main__.Link5LogTests.test_safety_transition_full_failure_and_known_six_word_layouts) ... ok
+test_short_or_missing_or_extra_submit_rejection_page_is_not_decoded (__main__.Link5LogTests.test_short_or_missing_or_extra_submit_rejection_page_is_not_decoded) ... ok
+test_startup_bad_layout_and_consumer_sidecar_are_not_business_faults (__main__.Link5LogTests.test_startup_bad_layout_and_consumer_sidecar_are_not_business_faults) ... ok
+test_startup_first_reassembles_only_exact_complete_pages (__main__.Link5LogTests.test_startup_first_reassembles_only_exact_complete_pages) ... ok
+test_submit_rejection_is_complete_with_exactly_one_six_word_page (__main__.Link5LogTests.test_submit_rejection_is_complete_with_exactly_one_six_word_page) ... ok
+test_unknown_layout_and_malformed_fields_remain_unknown (__main__.Link5LogTests.test_unknown_layout_and_malformed_fields_remain_unknown) ... ok
+test_zero_requires_complete_crc_bearing_reply_and_validity (__main__.Link5LogTests.test_zero_requires_complete_crc_bearing_reply_and_validity) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.128s
+
+OK

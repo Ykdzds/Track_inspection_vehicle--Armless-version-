@@ -1,0 +1,18 @@
+PASS all state windows: one source copy, 100/101ms normal/wrap, pure alarms, no full cache, latest successful sequence
+PASS invalid requests bypass copy/encoder; sticky first rejection and explicit ACK; result area independent
+PASS atomic failed-copy evidence survives immediate Health publication; no retry/substitution
+PASS all windows: postcopy and postencode expiry, copied metadata retained, response withheld, no retry/new-source substitution
+PASS idle maintenance: one alarm observation per50ms, no catch-up/full builder or transaction metadata reuse
+PASS queued/partial request priority; request arriving during bounded maintenance survives for immediate next service
+PASS 200us budget preserves queued request FIFO across service calls without extra sleep
+PASS last-byte to UART TC timing, DWT wrap and recovery generation isolation
+PASS snapshot diag sizeof=136, alarm sizeof=32; no new task/buffer/allocation
+PASS all state windows: one source copy, 100/101ms normal/wrap, pure alarms, no full cache, latest successful sequence
+PASS invalid requests bypass copy/encoder; sticky first rejection and explicit ACK; result area independent
+PASS atomic failed-copy evidence survives immediate Health publication; no retry/substitution
+PASS all windows: postcopy and postencode expiry, copied metadata retained, response withheld, no retry/new-source substitution
+PASS idle maintenance: one alarm observation per50ms, no catch-up/full builder or transaction metadata reuse
+PASS queued/partial request priority; request arriving during bounded maintenance survives for immediate next service
+PASS 200us budget preserves queued request FIFO across service calls without extra sleep
+PASS last-byte to UART TC timing, DWT wrap and recovery generation isolation
+PASS snapshot diag sizeof=136, alarm sizeof=32; no new task/buffer/allocation

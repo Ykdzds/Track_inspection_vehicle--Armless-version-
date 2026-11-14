@@ -1,0 +1,1 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:s="clr-namespace:System;assembly=System" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"><s:Uri x:Key="Source">pack://application:,,,/Visual-PIX;component/themes/generic.xaml</s:Uri></ResourceDictionary>

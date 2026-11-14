@@ -1,0 +1,35 @@
+{
+  "Variant": "f103-off",
+  "BaselineCommit": "2c60782",
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\F103_TEST\\06_Upper_level_CAN_com_v1.1_low_speed_test\\MDK-ARM\\DigitalElectronicseCode.uvprojx",
+  "SourceDefaults": false,
+  "Defines": [
+    "UPPER_USART1_DEBUG_ENABLE=0"
+  ],
+  "Started": "2026-11-08T22:48:41.8071795+08:00",
+  "Completed": "2026-11-08T22:48:58.9675358+08:00",
+  "Exit": 0,
+  "Errors": 0,
+  "Warnings": 0,
+  "Ram": {
+    "PhysicalBytes": 14896,
+    "Regions": {
+      "RW_IRAM1": {
+        "Used": 14896,
+        "Capacity": 20480,
+        "Free": 5584
+      }
+    }
+  },
+  "Hashes": {
+    "DigitalElectronicseCode.axf": "45684E19A9DF101DF441755B10C9C11A717DD7D9BA13F3D4A6A8749A3C9B03D8",
+    "DigitalElectronicseCode.bin": "5493187A5DF22874042E2CA2D6A24090C112956170D62B9A8E9C6A4647A937CF",
+    "DigitalElectronicseCode.hex": "BAB30E772121A50F45CA6E2C77F2C5EA1487035063BDBEEC54EB9CBF34075E07",
+    "DigitalElectronicseCode.htm": "87E99033B673336BFEF8284714D70FB901758D48589507DB33BAE448B25D4B92",
+    "DigitalElectronicseCode.map": "CCCB4459590AE65875ED55BFED0BE2202FF48713246A7E533DC1FE7E75116101",
+    "keil-rebuild.log": "E221E0474A00E24D83615B92DB7B314C98796D51E3C732ED5AD866E88B5CA58C",
+    "memory-stack.log": "4AFCBE93454A2F700EC03AA706D676087ADEF9E33DE4DF86B067BD2355525C49",
+    "project.snapshot": "8EF35B4AC41F3F7A42CC41320D05BE04A2628FF07C2F7CBE5B0EAE9CED35A7DE"
+  },
+  "HardwareAcceptance": "pending"
+}

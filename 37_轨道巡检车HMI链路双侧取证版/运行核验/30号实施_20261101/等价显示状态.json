@@ -1,0 +1,5890 @@
+[
+  {
+    "scenario": "normal",
+    "page": 0,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 1,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {
+        "state": {
+          "fontColor": -10624850,
+          "txt": "RUNNING"
+        },
+        "ctrlComm": {
+          "fontColor": -10624850,
+          "txt": "控制器通信：正常"
+        },
+        "safe": {
+          "fontColor": -1182209,
+          "txt": "门禁：主控未允许"
+        },
+        "leftOnline": {
+          "fontColor": -10624850,
+          "txt": "轴1通信：正常"
+        },
+        "rightOnline": {
+          "fontColor": -10624850,
+          "txt": "轴2通信：正常"
+        },
+        "leftSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "1.307 km/h | 等效转速 99.9 rpm"
+        },
+        "leftSpeed": {
+          "fontColor": -1182209,
+          "txt": "轴1速度：0.363 m/s"
+        },
+        "rightSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "0.000 km/h | 等效转速 0.0 rpm"
+        },
+        "rightSpeed": {
+          "fontColor": -1182209,
+          "txt": "轴2速度：0.000 m/s"
+        },
+        "leftFault": {
+          "fontColor": -1182209,
+          "txt": "轴1故障：无"
+        },
+        "rightFault": {
+          "fontColor": -1182209,
+          "txt": "轴2故障：无"
+        },
+        "vehicleSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "0.000 km/h | 等效转速 0.0 rpm"
+        },
+        "vehicleSpeed": {
+          "fontColor": -1182209,
+          "txt": "整车实际：0.000 m/s"
+        },
+        "targetSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "0.000 km/h | 等效转速 0.0 rpm"
+        },
+        "targetSpeed": {
+          "fontColor": -1182209,
+          "txt": "整车目标：0.000 m/s"
+        },
+        "currentMode": {
+          "fontColor": -1182209,
+          "txt": "轴模式码：0/0"
+        },
+        "controlSource": {
+          "fontColor": -1182209,
+          "txt": "控制源：车载屏"
+        },
+        "controlAuthority": {
+          "fontColor": -1182209,
+          "txt": "屏幕控制：只读"
+        },
+        "stopState": {
+          "fontColor": -1182209,
+          "txt": "屏幕运动锁定：已锁定"
+        },
+        "axisEnableSummary": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：0/0"
+        },
+        "alarmSummary": {
+          "fontColor": -1182209,
+          "txt": "最高告警：无"
+        }
+      },
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 2,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {
+        "leftState": {
+          "fontColor": -1182209,
+          "txt": "轴1状态字：0"
+        },
+        "rightState": {
+          "fontColor": -1182209,
+          "txt": "轴2状态字：0"
+        },
+        "diagLeftFault": {
+          "fontColor": -1182209,
+          "txt": "轴1故障码：0"
+        },
+        "diagRightFault": {
+          "fontColor": -1182209,
+          "txt": "轴2故障码：0"
+        },
+        "diagAxis1Online": {
+          "fontColor": -10624850,
+          "txt": "轴1通信：正常"
+        },
+        "diagAxis2Online": {
+          "fontColor": -10624850,
+          "txt": "轴2通信：正常"
+        },
+        "diagAxis1Enable": {
+          "fontColor": -1182209,
+          "txt": "轴1使能：失能"
+        },
+        "diagAxis2Enable": {
+          "fontColor": -1182209,
+          "txt": "轴2使能：失能"
+        },
+        "diagAxis1SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴1速度有效：未知"
+        },
+        "diagAxis2SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴2速度有效：未知"
+        },
+        "diagAxis1FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴1故障有效：未知"
+        },
+        "diagAxis2FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴2故障有效：未知"
+        },
+        "diagAxis1Zero": {
+          "fontColor": -5653552,
+          "txt": "轴1零速确认：未知"
+        },
+        "diagAxis2Zero": {
+          "fontColor": -5653552,
+          "txt": "轴2零速确认：未知"
+        },
+        "diagAxis1CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴1通信失败：未知"
+        },
+        "diagAxis2CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴2通信失败：未知"
+        },
+        "diagModeVerified": {
+          "fontColor": -1182209,
+          "txt": "参数核验位图：0"
+        },
+        "diagSafetyLocked": {
+          "fontColor": -1182209,
+          "txt": "安全门禁位图：0"
+        },
+        "diagAxis1SpeedAge": {
+          "fontColor": -1182209,
+          "txt": "轴1状态年龄：0 ms"
+        },
+        "diagAxis2SpeedAge": {
+          "fontColor": -1182209,
+          "txt": "轴2状态年龄：0 ms"
+        },
+        "reqCount": {
+          "fontColor": -1182209,
+          "txt": "请求数：0"
+        },
+        "respCount": {
+          "fontColor": -1182209,
+          "txt": "响应数：0"
+        },
+        "retryCount": {
+          "fontColor": -1182209,
+          "txt": "重试数：0"
+        },
+        "timeoutCount": {
+          "fontColor": -1182209,
+          "txt": "UART5收帧超时：0"
+        },
+        "crcCount": {
+          "fontColor": -1182209,
+          "txt": "CRC错误数：0"
+        },
+        "frameCount": {
+          "fontColor": -1182209,
+          "txt": "帧错误数：0"
+        }
+      },
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 3,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {
+        "axis1Position": {
+          "fontColor": -1182209,
+          "txt": "轴1原始位置：0 count"
+        },
+        "axis2Position": {
+          "fontColor": -1182209,
+          "txt": "轴2原始位置：0 count"
+        },
+        "startupDisplacement": {
+          "fontColor": -1182209,
+          "txt": "启动净位移：不完整"
+        },
+        "startupTravel": {
+          "fontColor": -1182209,
+          "txt": "启动累计行程：不完整"
+        },
+        "segmentTravel": {
+          "fontColor": -1182209,
+          "txt": "分段轮转行程：不完整"
+        },
+        "axisPositionDiff": {
+          "fontColor": -5653552,
+          "txt": "双轴位置差：无效/过期"
+        },
+        "positionValid": {
+          "fontColor": -1182209,
+          "txt": "位置有效：是"
+        },
+        "mileageValid": {
+          "fontColor": -1182209,
+          "txt": "里程有效：不完整"
+        },
+        "positionIncomplete": {
+          "fontColor": -1182209,
+          "txt": "数据不完整：是"
+        },
+        "positionBaseline": {
+          "fontColor": -1182209,
+          "txt": "基准代次：0"
+        },
+        "positionSample": {
+          "fontColor": -1182209,
+          "txt": "样本序号：0"
+        },
+        "positionAge": {
+          "fontColor": -1182209,
+          "txt": "位置样本年龄：0 ms"
+        },
+        "lostInterval": {
+          "fontColor": -1182209,
+          "txt": "丢失区间数：0"
+        }
+      },
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 4,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {
+        "screenVersion": {
+          "fontColor": -1182209,
+          "txt": "屏幕工程：30"
+        },
+        "ctrlVersion": {
+          "fontColor": -1182209,
+          "txt": "采集时间：0:0 ms"
+        },
+        "protocolVersion": {
+          "fontColor": -1182209,
+          "txt": "协议版本码：0"
+        },
+        "resetCode": {
+          "fontColor": -1182209,
+          "txt": "复位原因码：0"
+        },
+        "diagLow": {
+          "fontColor": -1182209,
+          "txt": "诊断故障低字：0"
+        },
+        "diagHigh": {
+          "fontColor": -1182209,
+          "txt": "诊断故障高字：0"
+        },
+        "heartbeat": {
+          "fontColor": -1182209,
+          "txt": "统一快照：0:0 年龄 0 ms"
+        },
+        "minStack": {
+          "fontColor": -1182209,
+          "txt": "最小栈余量：0 words"
+        }
+      },
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 5,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {
+        "alarmLevel": {
+          "fontColor": -10624850,
+          "txt": "告警等级：无"
+        },
+        "alarmCode": {
+          "fontColor": -1182209,
+          "txt": "告警代码：0"
+        },
+        "alarmSource": {
+          "fontColor": -1182209,
+          "txt": "告警来源：无"
+        },
+        "alarmActive": {
+          "fontColor": -10624850,
+          "txt": "告警状态：不活跃"
+        },
+        "alarmEmergency": {
+          "fontColor": -10624850,
+          "txt": "急停状态：未触发"
+        },
+        "alarmStopResult": {
+          "fontColor": -1182209,
+          "txt": "停车结果：无请求"
+        },
+        "alarmSequence": {
+          "fontColor": -1182209,
+          "txt": "告警事件序号：0"
+        },
+        "alarmEventTime": {
+          "fontColor": -1182209,
+          "txt": "启动后：0 s 0 ms"
+        },
+        "alarmExtra": {
+          "fontColor": -1182209,
+          "txt": "附加参数：0"
+        },
+        "alarmFaultSummary": {
+          "fontColor": -1182209,
+          "txt": "故障摘要位图：0"
+        },
+        "alarmHistory": {
+          "fontColor": -5653552,
+          "txt": "告警记录：历史未接入"
+        }
+      },
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 6,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {
+        "syncMacro": {
+          "fontColor": -1182209,
+          "txt": "同步控制位：3"
+        },
+        "syncState": {
+          "fontColor": -1182209,
+          "txt": "同步状态：关闭"
+        },
+        "syncActualDiff": {
+          "fontColor": -1182209,
+          "txt": "实际速度差：2 rpm"
+        },
+        "syncEffectiveError": {
+          "fontColor": -1182209,
+          "txt": "有效误差：0 rpm"
+        },
+        "syncCompensation": {
+          "fontColor": -1182209,
+          "txt": "当前整数补偿：1 rpm"
+        },
+        "syncPairValid": {
+          "fontColor": -1182209,
+          "txt": "样本配对：有效"
+        },
+        "syncRejectReason": {
+          "fontColor": -1182209,
+          "txt": "配对拒绝原因：无"
+        },
+        "syncSkew": {
+          "fontColor": -1182209,
+          "txt": "最近样本错时：0 ms"
+        },
+        "syncAxis1Age": {
+          "fontColor": -1182209,
+          "txt": "轴1样本年龄：25 ms"
+        },
+        "syncAxis2Age": {
+          "fontColor": -1182209,
+          "txt": "轴2样本年龄：25 ms"
+        }
+      },
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 7,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {
+        "batteryState": {
+          "fontColor": -5653552,
+          "txt": "电池状态：未知"
+        },
+        "batteryPercent": {
+          "fontColor": -5653552,
+          "txt": "电池电量：未知"
+        },
+        "positioningState": {
+          "fontColor": -5653552,
+          "txt": "定位状态：未知"
+        },
+        "positioningAccuracy": {
+          "fontColor": -5653552,
+          "txt": "定位精度：未知"
+        },
+        "positioningX": {
+          "fontColor": -5653552,
+          "txt": "定位X：未知"
+        },
+        "positioningY": {
+          "fontColor": -5653552,
+          "txt": "定位Y：未知"
+        },
+        "armState": {
+          "fontColor": -5653552,
+          "txt": "机械臂状态：未知"
+        },
+        "lightingState": {
+          "fontColor": -5653552,
+          "txt": "照明状态：未知"
+        },
+        "cameraState": {
+          "fontColor": -5653552,
+          "txt": "摄像状态：未知"
+        },
+        "acquisitionState": {
+          "fontColor": -5653552,
+          "txt": "数据采集：未知"
+        },
+        "storageState": {
+          "fontColor": -5653552,
+          "txt": "存储状态：未知"
+        },
+        "extensionComm": {
+          "fontColor": -5653552,
+          "txt": "扩展通信：未知"
+        },
+        "extensionFault": {
+          "fontColor": -5653552,
+          "txt": "扩展故障：未知"
+        },
+        "extensionReadonly": {
+          "fontColor": -5653552,
+          "txt": "未接入模块：未配置"
+        }
+      },
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "normal",
+    "page": 8,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -10624850,
+          "txt": "已授权：新滑动调整共同目标"
+        },
+        "authorize": {
+          "press": 1
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S3 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 0,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 1,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {
+        "state": {
+          "fontColor": -5653552,
+          "txt": "OFFLINE"
+        },
+        "ctrlComm": {
+          "fontColor": -5653552,
+          "txt": "控制器通信：等待主控回复"
+        },
+        "safe": {
+          "fontColor": -5653552,
+          "txt": "门禁：未知"
+        },
+        "leftOnline": {
+          "fontColor": -5653552,
+          "txt": "轴1通信：未知"
+        },
+        "rightOnline": {
+          "fontColor": -5653552,
+          "txt": "轴2通信：未知"
+        },
+        "leftSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-- km/h | 等效转速 -- rpm"
+        },
+        "leftSpeed": {
+          "fontColor": -5653552,
+          "txt": "轴1速度：未知"
+        },
+        "rightSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-- km/h | 等效转速 -- rpm"
+        },
+        "rightSpeed": {
+          "fontColor": -5653552,
+          "txt": "轴2速度：未知"
+        },
+        "leftFault": {
+          "fontColor": -5653552,
+          "txt": "轴1故障：未知"
+        },
+        "rightFault": {
+          "fontColor": -5653552,
+          "txt": "轴2故障：未知"
+        },
+        "vehicleSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-- km/h | 等效转速 -- rpm"
+        },
+        "vehicleSpeed": {
+          "fontColor": -5653552,
+          "txt": "整车实际速度：未知"
+        },
+        "targetSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-- km/h | 等效转速 -- rpm"
+        },
+        "targetSpeed": {
+          "fontColor": -5653552,
+          "txt": "整车目标速度：未知"
+        },
+        "currentMode": {
+          "fontColor": -5653552,
+          "txt": "轴模式：未知"
+        },
+        "controlSource": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "controlAuthority": {
+          "fontColor": -5653552,
+          "txt": "屏幕控制：未知"
+        },
+        "stopState": {
+          "fontColor": -5653552,
+          "txt": "屏幕运动锁定：未知"
+        },
+        "axisEnableSummary": {
+          "fontColor": -5653552,
+          "txt": "使能反馈：未知"
+        },
+        "alarmSummary": {
+          "fontColor": -5653552,
+          "txt": "最高告警：未知"
+        }
+      },
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 2,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {
+        "leftState": {
+          "fontColor": -5653552,
+          "txt": "轴1状态字：未知"
+        },
+        "rightState": {
+          "fontColor": -5653552,
+          "txt": "轴2状态字：未知"
+        },
+        "diagLeftFault": {
+          "fontColor": -5653552,
+          "txt": "轴1故障码：未知"
+        },
+        "diagRightFault": {
+          "fontColor": -5653552,
+          "txt": "轴2故障码：未知"
+        },
+        "diagAxis1Online": {
+          "fontColor": -5653552,
+          "txt": "轴1通信：未知"
+        },
+        "diagAxis2Online": {
+          "fontColor": -5653552,
+          "txt": "轴2通信：未知"
+        },
+        "diagAxis1Enable": {
+          "fontColor": -5653552,
+          "txt": "轴1使能：未知"
+        },
+        "diagAxis2Enable": {
+          "fontColor": -5653552,
+          "txt": "轴2使能：未知"
+        },
+        "diagAxis1SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴1速度有效：未知"
+        },
+        "diagAxis2SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴2速度有效：未知"
+        },
+        "diagAxis1FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴1故障有效：未知"
+        },
+        "diagAxis2FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴2故障有效：未知"
+        },
+        "diagAxis1Zero": {
+          "fontColor": -5653552,
+          "txt": "轴1零速确认：未知"
+        },
+        "diagAxis2Zero": {
+          "fontColor": -5653552,
+          "txt": "轴2零速确认：未知"
+        },
+        "diagAxis1CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴1通信失败：未知"
+        },
+        "diagAxis2CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴2通信失败：未知"
+        },
+        "diagModeVerified": {
+          "fontColor": -5653552,
+          "txt": "参数核验：未知"
+        },
+        "diagSafetyLocked": {
+          "fontColor": -5653552,
+          "txt": "安全门禁：未知"
+        },
+        "diagAxis1SpeedAge": {
+          "fontColor": -5653552,
+          "txt": "轴1状态年龄：未知"
+        },
+        "diagAxis2SpeedAge": {
+          "fontColor": -5653552,
+          "txt": "轴2状态年龄：未知"
+        },
+        "reqCount": {
+          "fontColor": -5653552,
+          "txt": "请求数：未知"
+        },
+        "respCount": {
+          "fontColor": -5653552,
+          "txt": "响应数：未知"
+        },
+        "retryCount": {
+          "fontColor": -5653552,
+          "txt": "重试数：未知"
+        },
+        "timeoutCount": {
+          "fontColor": -5653552,
+          "txt": "超时数：未知"
+        },
+        "crcCount": {
+          "fontColor": -5653552,
+          "txt": "CRC错误数：未知"
+        },
+        "frameCount": {
+          "fontColor": -5653552,
+          "txt": "帧错误数：未知"
+        }
+      },
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 3,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {
+        "axis1Position": {
+          "fontColor": -5653552,
+          "txt": "轴1原始位置：未知"
+        },
+        "axis2Position": {
+          "fontColor": -5653552,
+          "txt": "轴2原始位置：未知"
+        },
+        "startupDisplacement": {
+          "fontColor": -5653552,
+          "txt": "启动净位移：未知"
+        },
+        "startupTravel": {
+          "fontColor": -5653552,
+          "txt": "启动累计行程：未知"
+        },
+        "segmentTravel": {
+          "fontColor": -5653552,
+          "txt": "分段轮转行程：未知"
+        },
+        "axisPositionDiff": {
+          "fontColor": -5653552,
+          "txt": "双轴位置差：未知"
+        },
+        "positionValid": {
+          "fontColor": -5653552,
+          "txt": "位置有效：未知"
+        },
+        "mileageValid": {
+          "fontColor": -5653552,
+          "txt": "里程有效：未知"
+        },
+        "positionIncomplete": {
+          "fontColor": -5653552,
+          "txt": "数据不完整：未知"
+        },
+        "positionBaseline": {
+          "fontColor": -5653552,
+          "txt": "基准代次：未知"
+        },
+        "positionSample": {
+          "fontColor": -5653552,
+          "txt": "样本序号：未知"
+        },
+        "positionAge": {
+          "fontColor": -5653552,
+          "txt": "位置样本年龄：未知"
+        },
+        "lostInterval": {
+          "fontColor": -5653552,
+          "txt": "丢失区间数：未知"
+        }
+      },
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 4,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {
+        "screenVersion": {
+          "fontColor": -1182209,
+          "txt": "屏幕工程：30"
+        },
+        "ctrlVersion": {
+          "fontColor": -5653552,
+          "txt": "控制器软件码：未知"
+        },
+        "protocolVersion": {
+          "fontColor": -5653552,
+          "txt": "协议版本码：未知"
+        },
+        "resetCode": {
+          "fontColor": -5653552,
+          "txt": "复位原因码：未知"
+        },
+        "diagLow": {
+          "fontColor": -5653552,
+          "txt": "诊断故障低字：未知"
+        },
+        "diagHigh": {
+          "fontColor": -5653552,
+          "txt": "诊断故障高字：未知"
+        },
+        "heartbeat": {
+          "fontColor": -5653552,
+          "txt": "控制器心跳：未知"
+        },
+        "minStack": {
+          "fontColor": -5653552,
+          "txt": "最小栈余量：未知"
+        }
+      },
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 5,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {
+        "alarmLevel": {
+          "fontColor": -5653552,
+          "txt": "告警等级：未知"
+        },
+        "alarmCode": {
+          "fontColor": -5653552,
+          "txt": "告警代码：未知"
+        },
+        "alarmSource": {
+          "fontColor": -5653552,
+          "txt": "告警来源：未知"
+        },
+        "alarmActive": {
+          "fontColor": -5653552,
+          "txt": "告警状态：未知"
+        },
+        "alarmEmergency": {
+          "fontColor": -5653552,
+          "txt": "急停状态：未知"
+        },
+        "alarmStopResult": {
+          "fontColor": -5653552,
+          "txt": "停车结果：未知"
+        },
+        "alarmSequence": {
+          "fontColor": -5653552,
+          "txt": "告警事件序号：未知"
+        },
+        "alarmEventTime": {
+          "fontColor": -5653552,
+          "txt": "事件时间：未知"
+        },
+        "alarmExtra": {
+          "fontColor": -5653552,
+          "txt": "附加参数：未知"
+        },
+        "alarmFaultSummary": {
+          "fontColor": -5653552,
+          "txt": "故障摘要：未知"
+        },
+        "alarmHistory": {
+          "fontColor": -5653552,
+          "txt": "告警记录：历史未接入"
+        }
+      },
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 6,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {
+        "syncMacro": {
+          "fontColor": -5653552,
+          "txt": "同步宏：未知"
+        },
+        "syncState": {
+          "fontColor": -5653552,
+          "txt": "同步状态：未知"
+        },
+        "syncActualDiff": {
+          "fontColor": -5653552,
+          "txt": "实际速度差：未知"
+        },
+        "syncEffectiveError": {
+          "fontColor": -5653552,
+          "txt": "有效误差：未知"
+        },
+        "syncCompensation": {
+          "fontColor": -5653552,
+          "txt": "当前整数补偿：未知"
+        },
+        "syncPairValid": {
+          "fontColor": -5653552,
+          "txt": "样本配对：未知"
+        },
+        "syncRejectReason": {
+          "fontColor": -5653552,
+          "txt": "配对拒绝原因：未知"
+        },
+        "syncSkew": {
+          "fontColor": -5653552,
+          "txt": "最近样本错时：未知"
+        },
+        "syncAxis1Age": {
+          "fontColor": -5653552,
+          "txt": "轴1样本年龄：未知"
+        },
+        "syncAxis2Age": {
+          "fontColor": -5653552,
+          "txt": "轴2样本年龄：未知"
+        }
+      },
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 7,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {
+        "batteryState": {
+          "fontColor": -5653552,
+          "txt": "电池状态：未知"
+        },
+        "batteryPercent": {
+          "fontColor": -5653552,
+          "txt": "电池电量：未知"
+        },
+        "positioningState": {
+          "fontColor": -5653552,
+          "txt": "定位状态：未知"
+        },
+        "positioningAccuracy": {
+          "fontColor": -5653552,
+          "txt": "定位精度：未知"
+        },
+        "positioningX": {
+          "fontColor": -5653552,
+          "txt": "定位X：未知"
+        },
+        "positioningY": {
+          "fontColor": -5653552,
+          "txt": "定位Y：未知"
+        },
+        "armState": {
+          "fontColor": -5653552,
+          "txt": "机械臂状态：未知"
+        },
+        "lightingState": {
+          "fontColor": -5653552,
+          "txt": "照明状态：未知"
+        },
+        "cameraState": {
+          "fontColor": -5653552,
+          "txt": "摄像状态：未知"
+        },
+        "acquisitionState": {
+          "fontColor": -5653552,
+          "txt": "数据采集：未知"
+        },
+        "storageState": {
+          "fontColor": -5653552,
+          "txt": "存储状态：未知"
+        },
+        "extensionComm": {
+          "fontColor": -5653552,
+          "txt": "扩展通信：未知"
+        },
+        "extensionFault": {
+          "fontColor": -5653552,
+          "txt": "扩展故障：未知"
+        },
+        "extensionReadonly": {
+          "fontColor": -5653552,
+          "txt": "未接入模块：未知"
+        }
+      },
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "unknown",
+    "page": 8,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -5653552,
+          "txt": "通信：等待主控 / HMI13-R2"
+        },
+        "ownerStatus": {
+          "fontColor": -5653552,
+          "txt": "控制源：未知"
+        },
+        "axisMode": {
+          "fontColor": -5653552,
+          "txt": "执行轴：未知（主控决定）"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-- rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-- rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "左轴目标：--"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "右轴目标：--"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "左轴输出：--"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "右轴输出：--"
+        },
+        "leftEnable": {
+          "fontColor": -5653552,
+          "txt": "左轴使能：未知"
+        },
+        "rightEnable": {
+          "fontColor": -5653552,
+          "txt": "右轴使能：未知"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：0 rpm\n0.000 m/s | 0.000 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -1182209,
+          "txt": "未授权"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -1182209,
+          "txt": "停车阶段：无"
+        },
+        "errorStatus": {
+          "fontColor": -10624850,
+          "txt": "错误：无 S0 C0 R0 E0 G0"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-- m/s | -- km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-- rpm\n-- m/s | -- km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 0,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 1,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {
+        "state": {
+          "fontColor": -1182209,
+          "txt": "UNKNOWN"
+        },
+        "ctrlComm": {
+          "fontColor": -10624850,
+          "txt": "控制器通信：正常"
+        },
+        "safe": {
+          "fontColor": -1182209,
+          "txt": "门禁：主控未允许"
+        },
+        "leftOnline": {
+          "fontColor": -10624850,
+          "txt": "轴1通信：正常"
+        },
+        "rightOnline": {
+          "fontColor": -10624850,
+          "txt": "轴2通信：正常"
+        },
+        "leftSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "1.307 km/h | 等效转速 99.9 rpm"
+        },
+        "leftSpeed": {
+          "fontColor": -1182209,
+          "txt": "轴1速度：0.363 m/s"
+        },
+        "rightSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "0.000 km/h | 等效转速 0.0 rpm"
+        },
+        "rightSpeed": {
+          "fontColor": -1182209,
+          "txt": "轴2速度：0.000 m/s"
+        },
+        "leftFault": {
+          "fontColor": -1182209,
+          "txt": "轴1故障：无"
+        },
+        "rightFault": {
+          "fontColor": -1182209,
+          "txt": "轴2故障：无"
+        },
+        "vehicleSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "0.000 km/h | 等效转速 0.0 rpm"
+        },
+        "vehicleSpeed": {
+          "fontColor": -1182209,
+          "txt": "整车实际：0.000 m/s"
+        },
+        "targetSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "0.000 km/h | 等效转速 0.0 rpm"
+        },
+        "targetSpeed": {
+          "fontColor": -1182209,
+          "txt": "整车目标：0.000 m/s"
+        },
+        "currentMode": {
+          "fontColor": -1182209,
+          "txt": "轴模式码：0/0"
+        },
+        "controlSource": {
+          "fontColor": -1182209,
+          "txt": "控制源：车载屏"
+        },
+        "controlAuthority": {
+          "fontColor": -1182209,
+          "txt": "屏幕控制：只读"
+        },
+        "stopState": {
+          "fontColor": -1182209,
+          "txt": "屏幕运动锁定：已锁定"
+        },
+        "axisEnableSummary": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：0/0"
+        },
+        "alarmSummary": {
+          "fontColor": -1182209,
+          "txt": "最高告警：无"
+        }
+      },
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 2,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {
+        "leftState": {
+          "fontColor": -1182209,
+          "txt": "轴1状态字：0"
+        },
+        "rightState": {
+          "fontColor": -1182209,
+          "txt": "轴2状态字：0"
+        },
+        "diagLeftFault": {
+          "fontColor": -1182209,
+          "txt": "轴1故障码：0"
+        },
+        "diagRightFault": {
+          "fontColor": -1182209,
+          "txt": "轴2故障码：0"
+        },
+        "diagAxis1Online": {
+          "fontColor": -10624850,
+          "txt": "轴1通信：正常"
+        },
+        "diagAxis2Online": {
+          "fontColor": -10624850,
+          "txt": "轴2通信：正常"
+        },
+        "diagAxis1Enable": {
+          "fontColor": -1182209,
+          "txt": "轴1使能：失能"
+        },
+        "diagAxis2Enable": {
+          "fontColor": -1182209,
+          "txt": "轴2使能：失能"
+        },
+        "diagAxis1SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴1速度有效：未知"
+        },
+        "diagAxis2SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴2速度有效：未知"
+        },
+        "diagAxis1FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴1故障有效：未知"
+        },
+        "diagAxis2FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴2故障有效：未知"
+        },
+        "diagAxis1Zero": {
+          "fontColor": -5653552,
+          "txt": "轴1零速确认：未知"
+        },
+        "diagAxis2Zero": {
+          "fontColor": -5653552,
+          "txt": "轴2零速确认：未知"
+        },
+        "diagAxis1CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴1通信失败：未知"
+        },
+        "diagAxis2CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴2通信失败：未知"
+        },
+        "diagModeVerified": {
+          "fontColor": -1182209,
+          "txt": "参数核验位图：0"
+        },
+        "diagSafetyLocked": {
+          "fontColor": -1182209,
+          "txt": "安全门禁位图：0"
+        },
+        "diagAxis1SpeedAge": {
+          "fontColor": -1182209,
+          "txt": "轴1状态年龄：0 ms"
+        },
+        "diagAxis2SpeedAge": {
+          "fontColor": -1182209,
+          "txt": "轴2状态年龄：0 ms"
+        },
+        "reqCount": {
+          "fontColor": -1182209,
+          "txt": "请求数：0"
+        },
+        "respCount": {
+          "fontColor": -1182209,
+          "txt": "响应数：0"
+        },
+        "retryCount": {
+          "fontColor": -1182209,
+          "txt": "重试数：0"
+        },
+        "timeoutCount": {
+          "fontColor": -1182209,
+          "txt": "UART5收帧超时：0"
+        },
+        "crcCount": {
+          "fontColor": -1182209,
+          "txt": "CRC错误数：0"
+        },
+        "frameCount": {
+          "fontColor": -1182209,
+          "txt": "帧错误数：0"
+        }
+      },
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 3,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {
+        "axis1Position": {
+          "fontColor": -1182209,
+          "txt": "轴1原始位置：0 count"
+        },
+        "axis2Position": {
+          "fontColor": -1182209,
+          "txt": "轴2原始位置：0 count"
+        },
+        "startupDisplacement": {
+          "fontColor": -1182209,
+          "txt": "启动净位移：不完整"
+        },
+        "startupTravel": {
+          "fontColor": -1182209,
+          "txt": "启动累计行程：不完整"
+        },
+        "segmentTravel": {
+          "fontColor": -1182209,
+          "txt": "分段轮转行程：不完整"
+        },
+        "axisPositionDiff": {
+          "fontColor": -5653552,
+          "txt": "双轴位置差：无效/过期"
+        },
+        "positionValid": {
+          "fontColor": -1182209,
+          "txt": "位置有效：是"
+        },
+        "mileageValid": {
+          "fontColor": -1182209,
+          "txt": "里程有效：不完整"
+        },
+        "positionIncomplete": {
+          "fontColor": -1182209,
+          "txt": "数据不完整：是"
+        },
+        "positionBaseline": {
+          "fontColor": -1182209,
+          "txt": "基准代次：0"
+        },
+        "positionSample": {
+          "fontColor": -1182209,
+          "txt": "样本序号：0"
+        },
+        "positionAge": {
+          "fontColor": -1182209,
+          "txt": "位置样本年龄：0 ms"
+        },
+        "lostInterval": {
+          "fontColor": -1182209,
+          "txt": "丢失区间数：0"
+        }
+      },
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 4,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {
+        "screenVersion": {
+          "fontColor": -1182209,
+          "txt": "屏幕工程：30"
+        },
+        "ctrlVersion": {
+          "fontColor": -1182209,
+          "txt": "采集时间：0:0 ms"
+        },
+        "protocolVersion": {
+          "fontColor": -1182209,
+          "txt": "协议版本码：0"
+        },
+        "resetCode": {
+          "fontColor": -1182209,
+          "txt": "复位原因码：0"
+        },
+        "diagLow": {
+          "fontColor": -1182209,
+          "txt": "诊断故障低字：0"
+        },
+        "diagHigh": {
+          "fontColor": -1182209,
+          "txt": "诊断故障高字：0"
+        },
+        "heartbeat": {
+          "fontColor": -1182209,
+          "txt": "统一快照：0:0 年龄 0 ms"
+        },
+        "minStack": {
+          "fontColor": -1182209,
+          "txt": "最小栈余量：0 words"
+        }
+      },
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 5,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {
+        "alarmLevel": {
+          "fontColor": -39558,
+          "txt": "告警等级：故障"
+        },
+        "alarmCode": {
+          "fontColor": -1182209,
+          "txt": "告警代码：15"
+        },
+        "alarmSource": {
+          "fontColor": -1182209,
+          "txt": "告警来源：左伺服"
+        },
+        "alarmActive": {
+          "fontColor": -1182209,
+          "txt": "告警状态：活跃"
+        },
+        "alarmEmergency": {
+          "fontColor": -10624850,
+          "txt": "急停状态：未触发"
+        },
+        "alarmStopResult": {
+          "fontColor": -1182209,
+          "txt": "停车结果：无请求"
+        },
+        "alarmSequence": {
+          "fontColor": -1182209,
+          "txt": "告警事件序号：0"
+        },
+        "alarmEventTime": {
+          "fontColor": -1182209,
+          "txt": "启动后：327.68 s 0 ms"
+        },
+        "alarmExtra": {
+          "fontColor": -1182209,
+          "txt": "附加参数：0"
+        },
+        "alarmFaultSummary": {
+          "fontColor": -1182209,
+          "txt": "故障摘要位图：0"
+        },
+        "alarmHistory": {
+          "fontColor": -5653552,
+          "txt": "告警记录：历史未接入"
+        }
+      },
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 6,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {
+        "syncMacro": {
+          "fontColor": -1182209,
+          "txt": "同步控制位：3"
+        },
+        "syncState": {
+          "fontColor": -1182209,
+          "txt": "同步状态：关闭"
+        },
+        "syncActualDiff": {
+          "fontColor": -1182209,
+          "txt": "实际速度差：2 rpm"
+        },
+        "syncEffectiveError": {
+          "fontColor": -1182209,
+          "txt": "有效误差：0 rpm"
+        },
+        "syncCompensation": {
+          "fontColor": -1182209,
+          "txt": "当前整数补偿：1 rpm"
+        },
+        "syncPairValid": {
+          "fontColor": -1182209,
+          "txt": "样本配对：有效"
+        },
+        "syncRejectReason": {
+          "fontColor": -1182209,
+          "txt": "配对拒绝原因：无"
+        },
+        "syncSkew": {
+          "fontColor": -1182209,
+          "txt": "最近样本错时：0 ms"
+        },
+        "syncAxis1Age": {
+          "fontColor": -1182209,
+          "txt": "轴1样本年龄：25 ms"
+        },
+        "syncAxis2Age": {
+          "fontColor": -1182209,
+          "txt": "轴2样本年龄：25 ms"
+        }
+      },
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 7,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {
+        "batteryState": {
+          "fontColor": -5653552,
+          "txt": "电池状态：未知"
+        },
+        "batteryPercent": {
+          "fontColor": -5653552,
+          "txt": "电池电量：未知"
+        },
+        "positioningState": {
+          "fontColor": -5653552,
+          "txt": "定位状态：未知"
+        },
+        "positioningAccuracy": {
+          "fontColor": -5653552,
+          "txt": "定位精度：未知"
+        },
+        "positioningX": {
+          "fontColor": -5653552,
+          "txt": "定位X：未知"
+        },
+        "positioningY": {
+          "fontColor": -5653552,
+          "txt": "定位Y：未知"
+        },
+        "armState": {
+          "fontColor": -5653552,
+          "txt": "机械臂状态：未知"
+        },
+        "lightingState": {
+          "fontColor": -5653552,
+          "txt": "照明状态：未知"
+        },
+        "cameraState": {
+          "fontColor": -5653552,
+          "txt": "摄像状态：未知"
+        },
+        "acquisitionState": {
+          "fontColor": -5653552,
+          "txt": "数据采集：未知"
+        },
+        "storageState": {
+          "fontColor": -5653552,
+          "txt": "存储状态：未知"
+        },
+        "extensionComm": {
+          "fontColor": -5653552,
+          "txt": "扩展通信：未知"
+        },
+        "extensionFault": {
+          "fontColor": -5653552,
+          "txt": "扩展故障：未知"
+        },
+        "extensionReadonly": {
+          "fontColor": -5653552,
+          "txt": "未接入模块：未配置"
+        }
+      },
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "fault",
+    "page": 8,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：100 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：100 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：100 rpm\n0.363 m/s | 1.308 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败，检查主控和驱动"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "停车失败 S7 C0 R0 E0 G0 L1 F96 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "0.363 m/s | 1.308 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：100 rpm\n0.363 m/s | 1.308 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 0,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 1,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {
+        "state": {
+          "fontColor": -10624850,
+          "txt": "RUNNING"
+        },
+        "ctrlComm": {
+          "fontColor": -10624850,
+          "txt": "控制器通信：正常"
+        },
+        "safe": {
+          "fontColor": -1182209,
+          "txt": "门禁：主控允许"
+        },
+        "leftOnline": {
+          "fontColor": -10624850,
+          "txt": "轴1通信：正常"
+        },
+        "rightOnline": {
+          "fontColor": -10624850,
+          "txt": "轴2通信：正常"
+        },
+        "leftSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "1.307 km/h | 等效转速 99.9 rpm"
+        },
+        "leftSpeed": {
+          "fontColor": -1182209,
+          "txt": "轴1速度：0.363 m/s"
+        },
+        "rightSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-0.007 km/h | 等效转速 -0.6 rpm"
+        },
+        "rightSpeed": {
+          "fontColor": -1182209,
+          "txt": "轴2速度：-0.002 m/s"
+        },
+        "leftFault": {
+          "fontColor": -1182209,
+          "txt": "轴1故障码：65534"
+        },
+        "rightFault": {
+          "fontColor": -1182209,
+          "txt": "轴2故障码：65534"
+        },
+        "vehicleSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-0.007 km/h | 等效转速 -0.6 rpm"
+        },
+        "vehicleSpeed": {
+          "fontColor": -1182209,
+          "txt": "整车实际：-0.002 m/s"
+        },
+        "targetSpeedUnits": {
+          "fontColor": -1182209,
+          "txt": "-0.007 km/h | 等效转速 -0.6 rpm"
+        },
+        "targetSpeed": {
+          "fontColor": -1182209,
+          "txt": "整车目标：-0.002 m/s"
+        },
+        "currentMode": {
+          "fontColor": -1182209,
+          "txt": "轴模式码：65534/65534"
+        },
+        "controlSource": {
+          "fontColor": -1182209,
+          "txt": "控制源：车载屏"
+        },
+        "controlAuthority": {
+          "fontColor": -1182209,
+          "txt": "屏幕控制：只读"
+        },
+        "stopState": {
+          "fontColor": -1182209,
+          "txt": "屏幕运动锁定：已锁定"
+        },
+        "axisEnableSummary": {
+          "fontColor": -5653552,
+          "txt": "使能反馈：未知"
+        },
+        "alarmSummary": {
+          "fontColor": -5653552,
+          "txt": "最高告警：未知"
+        }
+      },
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 2,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {
+        "leftState": {
+          "fontColor": -1182209,
+          "txt": "轴1状态字：65534"
+        },
+        "rightState": {
+          "fontColor": -1182209,
+          "txt": "轴2状态字：65534"
+        },
+        "diagLeftFault": {
+          "fontColor": -1182209,
+          "txt": "轴1故障码：65534"
+        },
+        "diagRightFault": {
+          "fontColor": -1182209,
+          "txt": "轴2故障码：65534"
+        },
+        "diagAxis1Online": {
+          "fontColor": -10624850,
+          "txt": "轴1通信：正常"
+        },
+        "diagAxis2Online": {
+          "fontColor": -10624850,
+          "txt": "轴2通信：正常"
+        },
+        "diagAxis1Enable": {
+          "fontColor": -5653552,
+          "txt": "轴1使能：未知"
+        },
+        "diagAxis2Enable": {
+          "fontColor": -5653552,
+          "txt": "轴2使能：未知"
+        },
+        "diagAxis1SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴1速度有效：未知"
+        },
+        "diagAxis2SpeedValid": {
+          "fontColor": -5653552,
+          "txt": "轴2速度有效：未知"
+        },
+        "diagAxis1FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴1故障有效：未知"
+        },
+        "diagAxis2FaultValid": {
+          "fontColor": -5653552,
+          "txt": "轴2故障有效：未知"
+        },
+        "diagAxis1Zero": {
+          "fontColor": -5653552,
+          "txt": "轴1零速确认：未知"
+        },
+        "diagAxis2Zero": {
+          "fontColor": -5653552,
+          "txt": "轴2零速确认：未知"
+        },
+        "diagAxis1CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴1通信失败：未知"
+        },
+        "diagAxis2CommFail": {
+          "fontColor": -5653552,
+          "txt": "轴2通信失败：未知"
+        },
+        "diagModeVerified": {
+          "fontColor": -1182209,
+          "txt": "参数核验位图：65534"
+        },
+        "diagSafetyLocked": {
+          "fontColor": -1182209,
+          "txt": "安全门禁位图：65534"
+        },
+        "diagAxis1SpeedAge": {
+          "fontColor": -1182209,
+          "txt": "轴1状态年龄：65534 ms"
+        },
+        "diagAxis2SpeedAge": {
+          "fontColor": -1182209,
+          "txt": "轴2状态年龄：65534 ms"
+        },
+        "reqCount": {
+          "fontColor": -1182209,
+          "txt": "请求数：65534"
+        },
+        "respCount": {
+          "fontColor": -1182209,
+          "txt": "响应数：65534"
+        },
+        "retryCount": {
+          "fontColor": -1182209,
+          "txt": "重试数：65534"
+        },
+        "timeoutCount": {
+          "fontColor": -1182209,
+          "txt": "UART5收帧超时：65534"
+        },
+        "crcCount": {
+          "fontColor": -1182209,
+          "txt": "CRC错误数：65534"
+        },
+        "frameCount": {
+          "fontColor": -1182209,
+          "txt": "帧错误数：65534"
+        }
+      },
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 3,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {
+        "axis1Position": {
+          "fontColor": -1182209,
+          "txt": "轴1原始位置：-2147483648 count"
+        },
+        "axis2Position": {
+          "fontColor": -1182209,
+          "txt": "轴2原始位置：2147483647 count"
+        },
+        "startupDisplacement": {
+          "fontColor": -1182209,
+          "txt": "启动净位移：不完整"
+        },
+        "startupTravel": {
+          "fontColor": -1182209,
+          "txt": "启动累计行程：不完整"
+        },
+        "segmentTravel": {
+          "fontColor": -1182209,
+          "txt": "分段轮转行程：不完整"
+        },
+        "axisPositionDiff": {
+          "fontColor": -5653552,
+          "txt": "双轴位置差：无效/过期"
+        },
+        "positionValid": {
+          "fontColor": -1182209,
+          "txt": "位置有效：是"
+        },
+        "mileageValid": {
+          "fontColor": -1182209,
+          "txt": "里程有效：不完整"
+        },
+        "positionIncomplete": {
+          "fontColor": -1182209,
+          "txt": "数据不完整：是"
+        },
+        "positionBaseline": {
+          "fontColor": -1182209,
+          "txt": "基准代次：0"
+        },
+        "positionSample": {
+          "fontColor": -1182209,
+          "txt": "样本序号：65534"
+        },
+        "positionAge": {
+          "fontColor": -1182209,
+          "txt": "位置样本年龄：65534 ms"
+        },
+        "lostInterval": {
+          "fontColor": -1182209,
+          "txt": "丢失区间数：65534"
+        }
+      },
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 4,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {
+        "screenVersion": {
+          "fontColor": -1182209,
+          "txt": "屏幕工程：30"
+        },
+        "ctrlVersion": {
+          "fontColor": -1182209,
+          "txt": "采集时间：0:0 ms"
+        },
+        "protocolVersion": {
+          "fontColor": -1182209,
+          "txt": "协议版本码：65534"
+        },
+        "resetCode": {
+          "fontColor": -1182209,
+          "txt": "复位原因码：65534"
+        },
+        "diagLow": {
+          "fontColor": -1182209,
+          "txt": "诊断故障低字：65534"
+        },
+        "diagHigh": {
+          "fontColor": -1182209,
+          "txt": "诊断故障高字：65534"
+        },
+        "heartbeat": {
+          "fontColor": -1182209,
+          "txt": "统一快照：0:0 年龄 0 ms"
+        },
+        "minStack": {
+          "fontColor": -1182209,
+          "txt": "最小栈余量：65534 words"
+        }
+      },
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 5,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {
+        "alarmLevel": {
+          "fontColor": -5653552,
+          "txt": "告警等级：未知"
+        },
+        "alarmCode": {
+          "fontColor": -1182209,
+          "txt": "告警代码：65534"
+        },
+        "alarmSource": {
+          "fontColor": -1182209,
+          "txt": "告警来源码：65534"
+        },
+        "alarmActive": {
+          "fontColor": -5653552,
+          "txt": "告警状态：未知"
+        },
+        "alarmEmergency": {
+          "fontColor": -5653552,
+          "txt": "急停状态：未知"
+        },
+        "alarmStopResult": {
+          "fontColor": -5653552,
+          "txt": "停车结果：未知"
+        },
+        "alarmSequence": {
+          "fontColor": -1182209,
+          "txt": "告警事件序号：65534"
+        },
+        "alarmEventTime": {
+          "fontColor": -1182209,
+          "txt": "启动后：4294901.758 s 0 ms"
+        },
+        "alarmExtra": {
+          "fontColor": -1182209,
+          "txt": "附加参数：-65538"
+        },
+        "alarmFaultSummary": {
+          "fontColor": -1182209,
+          "txt": "故障摘要位图：65534"
+        },
+        "alarmHistory": {
+          "fontColor": -5653552,
+          "txt": "告警记录：历史未接入"
+        }
+      },
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 6,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {
+        "syncMacro": {
+          "fontColor": -1182209,
+          "txt": "同步控制位：3"
+        },
+        "syncState": {
+          "fontColor": -5653552,
+          "txt": "同步状态：未知"
+        },
+        "syncActualDiff": {
+          "fontColor": -1182209,
+          "txt": "实际速度差：-2 rpm"
+        },
+        "syncEffectiveError": {
+          "fontColor": -1182209,
+          "txt": "有效误差：-2 rpm"
+        },
+        "syncCompensation": {
+          "fontColor": -1182209,
+          "txt": "当前整数补偿：-2 rpm"
+        },
+        "syncPairValid": {
+          "fontColor": -1182209,
+          "txt": "样本配对：有效"
+        },
+        "syncRejectReason": {
+          "fontColor": -1182209,
+          "txt": "配对拒绝码：65534"
+        },
+        "syncSkew": {
+          "fontColor": -1182209,
+          "txt": "最近样本错时：65534 ms"
+        },
+        "syncAxis1Age": {
+          "fontColor": -1182209,
+          "txt": "轴1样本年龄：65534 ms"
+        },
+        "syncAxis2Age": {
+          "fontColor": -1182209,
+          "txt": "轴2样本年龄：65534 ms"
+        }
+      },
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 7,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {
+        "batteryState": {
+          "fontColor": -5653552,
+          "txt": "电池状态：未知"
+        },
+        "batteryPercent": {
+          "fontColor": -5653552,
+          "txt": "电池电量：未知"
+        },
+        "positioningState": {
+          "fontColor": -5653552,
+          "txt": "定位状态：未知"
+        },
+        "positioningAccuracy": {
+          "fontColor": -5653552,
+          "txt": "定位精度：未知"
+        },
+        "positioningX": {
+          "fontColor": -5653552,
+          "txt": "定位X：未知"
+        },
+        "positioningY": {
+          "fontColor": -5653552,
+          "txt": "定位Y：未知"
+        },
+        "armState": {
+          "fontColor": -5653552,
+          "txt": "机械臂状态：未知"
+        },
+        "lightingState": {
+          "fontColor": -5653552,
+          "txt": "照明状态：未知"
+        },
+        "cameraState": {
+          "fontColor": -5653552,
+          "txt": "摄像状态：未知"
+        },
+        "acquisitionState": {
+          "fontColor": -5653552,
+          "txt": "数据采集：未知"
+        },
+        "storageState": {
+          "fontColor": -5653552,
+          "txt": "存储状态：未知"
+        },
+        "extensionComm": {
+          "fontColor": -5653552,
+          "txt": "扩展通信：未知"
+        },
+        "extensionFault": {
+          "fontColor": -5653552,
+          "txt": "扩展故障：未知"
+        },
+        "extensionReadonly": {
+          "fontColor": -5653552,
+          "txt": "未接入模块：未配置"
+        }
+      },
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  },
+  {
+    "scenario": "long",
+    "page": 8,
+    "pages": {
+      "P0_Boot": {
+        "mainState": {},
+        "ctrlStatus": {},
+        "stageText": {},
+        "progressText": {},
+        "bootProgress": {},
+        "leftStatus": {},
+        "rightStatus": {},
+        "safeStatus": {},
+        "resetReason": {},
+        "swVer": {},
+        "protoVer": {},
+        "faultText": {}
+      },
+      "P1_Main": {},
+      "P2_Diag": {},
+      "P3_Position": {},
+      "P4_Info": {},
+      "P5_Alarm": {},
+      "P6_Sync": {},
+      "P7_System_Ext": {},
+      "P8_ServoControl": {
+        "linkStatus": {
+          "fontColor": -1182209,
+          "txt": "统一快照 S0:0 A0 ms"
+        },
+        "ownerStatus": {
+          "fontColor": -1182209,
+          "txt": "控制源：HMI"
+        },
+        "axisMode": {
+          "fontColor": -1182209,
+          "txt": "执行轴：双轴"
+        },
+        "leftActual": {
+          "fontColor": -1182209,
+          "txt": "左轴实际：-32768 rpm"
+        },
+        "rightActual": {
+          "fontColor": -1182209,
+          "txt": "右轴实际：-32768 rpm"
+        },
+        "leftTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightTarget": {
+          "fontColor": -1182209,
+          "txt": "最终目标：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "rightOutput": {
+          "fontColor": -1182209,
+          "txt": "执行输出：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        },
+        "leftEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "rightEnable": {
+          "fontColor": -1182209,
+          "txt": "使能反馈：开"
+        },
+        "commonTarget": {
+          "fontColor": -1182209,
+          "txt": "设定：-1600 rpm\n-5.812 m/s | -20.923 km/h"
+        },
+        "authorityStatus": {
+          "fontColor": -39558,
+          "txt": "故障锁定 / 检查主控和驱动"
+        },
+        "authorize": {
+          "press": 0
+        },
+        "recoveryStatus": {
+          "fontColor": -5653552,
+          "txt": "等待有效数据"
+        },
+        "recoveryDetail": {
+          "fontColor": -1182209,
+          "txt": "恢复详情：--"
+        },
+        "recoveryButton": {
+          "fontColor": -1182209,
+          "txt": "故障恢复",
+          "enable": 0
+        },
+        "stopStatus": {
+          "fontColor": -14490,
+          "txt": "换向：减速过零"
+        },
+        "errorStatus": {
+          "fontColor": -39558,
+          "txt": "历史首错：D65535 A65535/65535 M65535 X65535:65535 L65535 F65535 P5"
+        },
+        "leftActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "rightActualUnits": {
+          "fontColor": -1182209,
+          "txt": "-119.029 m/s | -428.503 km/h"
+        },
+        "acceptedTarget": {
+          "fontColor": -1182209,
+          "txt": "主控接受：-32768 rpm\n-119.029 m/s | -428.503 km/h"
+        }
+      }
+    }
+  }
+]

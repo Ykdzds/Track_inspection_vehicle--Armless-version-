@@ -1,0 +1,64 @@
+PASS absent RAM debug_uart.o/s_rx_buffer
+PASS absent RAM debug_uart.o/s_rx_turns
+PASS absent RAM debug_uart.o/s_rx_epoch
+PASS absent RAM debug_uart.o/s_rx_consumed
+PASS absent RAM debug_uart.o/s_rx_last_poll
+PASS absent RAM debug_uart.o/s_rx_last_wraps
+PASS absent RAM debug_uart.o/s_rx_running
+PASS absent RAM debug_uart.o/s_rx_recovery
+PASS absent RAM debug_uart.o/s_rx_aborting
+PASS absent RAM debug_uart.o/s_rx_aborted
+PASS absent RAM debug_uart.o/s_rx_abort_at
+PASS absent RAM debug_uart.o/s_rx_next_retry
+PASS absent RAM debug_uart.o/s_rx_seen_sr
+PASS absent RAM debug_uart.o/s_rx_seen_hal
+PASS absent RAM debug_uart.o/s_rx_total_base
+PASS absent RAM app_debug_cli.o/s_build_line
+PASS absent RAM app_debug_cli.o/s_build_length
+PASS absent RAM app_debug_cli.o/s_line_overflow
+PASS absent RAM app_debug_cli.o/s_line_queue
+PASS absent RAM app_debug_cli.o/s_rx_epoch
+PASS absent code app_cli_rx_service
+PASS absent code app_cli_execute
+PASS absent RAM app_debug_cli.o/s_sync_debug_skipped
+PASS absent RAM app_debug_cli.o/s_position_summary_skipped
+PASS disabled module RAM absent app_tune_cli.o
+PASS disabled module RAM absent app_tune_diagnostics.o
+PASS disabled module RAM absent servo_debug_control.o
+PASS disabled module RAM absent app_cli_servo_session.o
+PASS absent RAM servo_pulse.o/s_axes
+PASS absent RAM tim.o/htim9
+PASS absent RAM tim.o/htim11
+PASS absent code MX_TIM9_Init
+PASS absent code MX_TIM11_Init
+PASS HMI relative request workspace=250 B (max125 registers)
+PASS region ER_IROM1 base=0x08000000 size=312208 capacity=655360 free=343152
+PASS region RW_CCM base=0x10000000 size=62024 capacity=65536 free=3512
+PASS region RW_IRAM1 base=0x20000000 size=101752 capacity=114688 free=12936
+PASS region RW_IRAM2 base=0x2001c000 size=2932 capacity=15872 free=12940
+PASS region RETAINED_FAULT base=0x2001fe00 size=512 capacity=512 free=0
+PASS DMA debug_uart.o/s_tx_buffer address=0x2000ddd0 size=8192
+PASS DMA bsp_hmi_uart.o/s_dma_rx address=0x200103d8 size=512
+PASS DMA bsp_hmi_uart.o/s_tx_buffer address=0x200105d8 size=256
+PASS DMA bsp_rs485.o/s_dma_rx_buffer address=0x2000fe58 size=256
+PASS DMA nrf24l01.o/s_tx address=0x200101d0 size=33
+PASS DMA nrf24l01.o/s_rx address=0x200101f1 size=33
+PASS DMA heap_4.o/ucHeap address=0x20001850 size=49152
+PASS DMA lcd_port.o/s_dma_buffer address=0x2000d8d0 size=640
+PASS HMI link diagnostic module fixed RAM=2718 bytes <=4096
+RAM physical=167220 baseline=a2c49d3/175136 delta=-7916 bytes; ordinary SRAM free=25876, CCM free=3512
+PASS independent fault stack: call depth=64, plus 104 B extended hardware frame <=512 B
+MSP=2048 B; callback/nested IRQ and actual high-water measurement still required on target.
+PASS stack motion_task : allocated=3072 depth=416 margin=2656 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2808 margin=264 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=896 depth=216 margin=680 bytes
+PASS stack status_task : allocated=768 depth=184 margin=584 bytes
+PASS stack cli_task : allocated=1024 depth=464 margin=560 bytes
+PASS stack lcd_task : allocated=3840 depth=2832 margin=1008 bytes
+PASS stack iwdg_task : allocated=3072 depth=696 margin=2376 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1256 margin=1816 bytes
+PASS stack hmi_task : allocated=3072 depth=696 margin=2376 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=1776 margin=1296 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。

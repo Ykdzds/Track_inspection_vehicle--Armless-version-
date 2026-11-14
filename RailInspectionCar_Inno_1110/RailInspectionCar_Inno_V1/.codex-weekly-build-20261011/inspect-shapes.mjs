@@ -1,0 +1,3 @@
+import { FileBlob, PresentationFile } from "@oai/artifact-tool";
+const p=await PresentationFile.importPptx(await FileBlob.load("D:/wtzn_sx_/同济大学-轨道巡检车/同济大学轨道巡检车协作资料/5.工程代码/RailInspectionCar_Inno_V1/.codex-weekly-output/周报_20260928-20261011_刘德志_v2.pptx"));
+for(const [i,s] of p.slides.items.entries()){console.log("SLIDE",i+1); for(const [j,sh] of s.shapes.items.entries()){let txt=""; try{txt=sh.text?.text||""}catch{}; console.log(j,sh.geometry,txt,sh.position)}}

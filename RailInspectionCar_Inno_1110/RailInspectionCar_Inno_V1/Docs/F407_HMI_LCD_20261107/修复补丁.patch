@@ -1,0 +1,1870 @@
+diff --git a/APP/HMI/app_hmi.c b/APP/HMI/app_hmi.c
+index 785c9882365e5187969a09a0f8555472e2213b08..99d5e0a002f836611d8ae259e2ed09b140bfdaad 100644
+--- a/APP/HMI/app_hmi.c
++++ b/APP/HMI/app_hmi.c
+@@ -312,13 +312,12 @@ void app_hmi_service(void)
+     uint32_t generation, last, start;
+     uint32_t hz = bsp_hmi_uart_clock_hz();
+     uint32_t budget = hz / 5000U;
+-    uint8_t frames = 0U;
++    uint8_t frames = 0U, empty;
+ 
+     bsp_hmi_uart_service();
+ #if APP_HMI_LINK_DIAG_ENABLED
+     observe_tx_completion();
+ #endif
+-    app_hmi_snapshot_service();
+     start = bsp_hmi_uart_cycles();
+ 
+     bsp_hmi_uart_rx_state(&generation, &last, &(uint8_t){0U});
+@@ -359,4 +358,8 @@ void app_hmi_service(void)
+         }
+     }
+     bsp_hmi_uart_record_parse(bsp_hmi_uart_cycles() - start);
++    /* Complete queued/partial requests before optional whole-dictionary work.
++     * RX ISR descriptors are authoritative; a partial frame also blocks it. */
++    bsp_hmi_uart_rx_state(&generation, &last, &empty);
++    if (empty && s_length == 0U && !s_discarding) app_hmi_snapshot_service();
+ }
+diff --git a/APP/HMI/app_hmi_link_diag.c b/APP/HMI/app_hmi_link_diag.c
+index b07aaebb9e31c58da95df53778599b07acc37614..120c017dc67bcebe30f414a4c71cc5264b23ce49 100644
+--- a/APP/HMI/app_hmi_link_diag.c
++++ b/APP/HMI/app_hmi_link_diag.c
+@@ -8,6 +8,9 @@
+ #include "main.h"
+ #include "app_boot_identity.h"
+ #include "app_hmi_control.h"
++#include "app_hmi_snapshot.h"
++#include "app_lcd_show.h"
++#include "lcd_port.h"
+ #include "app_tune_diagnostics.h"
+ #include "app_runtime_metrics.h"
+ #include "bsp_hmi_uart.h"
+@@ -31,6 +34,7 @@ static uint16_t read_at, write_at, count;
+ static uint32_t boot, serial, overflow, output_dropped, budget_at;
+ static uint16_t budget_used;
+ static uint32_t status_at, summary_at;
++static uint32_t snapshot_summary_at;
+ static uint8_t boot_phase, summary_phase;
+ static app_control_stop_t first_stop, first_copy;
+ static uint32_t first_revision, first_printed, first_copy_revision;
+@@ -46,6 +50,16 @@ static uint16_t screen_copy[APP_HMI_LINK_DIAG_WORDS];
+ static uint32_t screen_id;
+ static uint8_t screen_mask, screen_dirty;
+ static uint32_t screen_conflict, screen_replaced, screen_reused;
++typedef struct {
++    app_lcd_event_state_t ui;
++    lcd_port_stats_t port;
++} lcd_diag_t;
++/* CLI-owned pending group is immutable until its last line is accepted. */
++static lcd_diag_t lcd_pending, lcd_probe;
++static uint32_t lcd_seen_revision, lcd_seen_errors, lcd_delivered_revision, lcd_delivered_errors;
++static uint32_t lcd_merged, lcd_group_merged, lcd_line_at;
++static uint8_t lcd_phase, lcd_line_sent;
++static app_hmi_snapshot_diag_t snapshot_diag;
+ 
+ #define U(v) ((unsigned long)(v))
+ static uint8_t emit(int length)
+@@ -82,10 +96,77 @@ void app_hmi_link_diag_init(void)
+     screen_mask = screen_dirty = 0U;
+     boot = app_boot_identity_id();
+     budget_at = status_at = summary_at = HAL_GetTick();
++    snapshot_summary_at = summary_at;
+     budget_used = 0U; boot_phase = 1U; summary_phase = 0U;
++    memset(&lcd_pending, 0, sizeof(lcd_pending));
++    memset(&lcd_probe, 0, sizeof(lcd_probe));
++    lcd_seen_revision = lcd_seen_errors = lcd_delivered_revision = lcd_delivered_errors = 0U;
++    lcd_merged = lcd_group_merged = lcd_line_at = 0U;
++    lcd_phase = lcd_line_sent = 0U;
+     taskEXIT_CRITICAL();
+ }
+ 
++#if defined(APP_HMI_LINK_DIAG_TEST)
++void app_hmi_link_diag_test_seed_serial(uint32_t value) { serial = value; }
++#endif
++
++static void capture_lcd(void)
++{
++    app_lcd_get_event_state(&lcd_probe.ui);
++    lcd_port_get_stats(&lcd_probe.port);
++    if (lcd_probe.ui.revision != lcd_seen_revision || lcd_probe.port.errors != lcd_seen_errors) {
++        if (lcd_phase) ++lcd_merged;
++        lcd_seen_revision = lcd_probe.ui.revision;
++        lcd_seen_errors = lcd_probe.port.errors;
++    }
++    if (!lcd_phase && (lcd_probe.ui.revision != lcd_delivered_revision ||
++                       lcd_probe.port.errors != lcd_delivered_errors)) {
++        lcd_pending = lcd_probe;
++        lcd_group_merged = lcd_merged;
++        lcd_phase = 1U;
++    }
++}
++
++static void print_lcd(uint32_t now)
++{
++    const lcd_failure_t *failure;
++    int n;
++    if (!lcd_phase || (lcd_line_sent && (uint32_t)(now - lcd_line_at) < 1000U)) return;
++    if (lcd_phase == 1U) {
++        n = snprintf(line, sizeof(line),
++            "HLD %lX %lX %lX LCD ui at=%lu ready=%u stage=%u page=%u rebuilding=%u start=%lu end=%lu rebuild=%lu gen=%lu clear=%lu reason=%u clear_at=%lu retry=%lu merged=%lu\r\n",
++            U(now), U(boot), U(lcd_pending.ui.revision), U(lcd_pending.ui.at_ms),
++            lcd_pending.ui.ready, lcd_pending.ui.stage, lcd_pending.ui.page, lcd_pending.ui.rebuilding,
++            U(lcd_pending.ui.rebuild_started_ms), U(lcd_pending.ui.rebuild_finished_ms),
++            U(lcd_pending.ui.rebuilds), U(lcd_pending.ui.generation), U(lcd_pending.ui.clear_count),
++            lcd_pending.ui.clear_reason, U(lcd_pending.ui.clear_at_ms), U(lcd_pending.ui.retry_at_ms),
++            U(lcd_group_merged));
++    } else if (lcd_phase == 2U || lcd_phase == 3U) {
++        failure = lcd_phase == 2U ? &lcd_pending.port.first : &lcd_pending.port.last;
++        n = snprintf(line, sizeof(line),
++            "HLD %lX %lX %lX LCD %s at=%lu elapsed=%lu reason=%u hal=%u stage=%u len=%u left=%u sr=%lX cr1=%lX cr2=%lX dma=%lX flags=%lX err=%lX\r\n",
++            U(now), U(boot), U(lcd_pending.ui.revision), lcd_phase == 2U ? "first" : "last",
++            U(failure->timestamp_ms), U(failure->elapsed_ms), failure->reason, failure->hal_status,
++            failure->stage, failure->length, failure->remaining, U(failure->spi_sr),
++            U(failure->spi_cr1), U(failure->spi_cr2), U(failure->dma_cr), U(failure->dma_flags),
++            U(failure->dma_error));
++    } else {
++        n = snprintf(line, sizeof(line),
++            "HLD %lX %lX %lX LCD count errors=%lu dma=%lu/%lu poll=%lu max_ms=%lu init_clear=%lu merged=%lu\r\n",
++            U(now), U(boot), U(lcd_pending.ui.revision), U(lcd_pending.port.errors),
++            U(lcd_pending.port.dma_started), U(lcd_pending.port.dma_completed),
++            U(lcd_pending.port.polling), U(lcd_pending.port.max_transfer_ms),
++            U(lcd_pending.port.init_clears), U(lcd_group_merged));
++    }
++    if (!emit(n)) return;
++    lcd_line_at = now; lcd_line_sent = 1U;
++    if (lcd_phase == 4U) {
++        lcd_delivered_revision = lcd_pending.ui.revision;
++        lcd_delivered_errors = lcd_pending.port.errors;
++        lcd_phase = 0U;
++    } else ++lcd_phase;
++}
++
+ void app_hmi_link_diag_record(uint16_t kind, uint32_t a, uint32_t b,
+     uint32_t c, uint32_t d, uint32_t e, uint32_t f)
+ {
+@@ -223,6 +304,24 @@ static uint8_t print_screen(void)
+     return 1U;
+ }
+ 
++static uint8_t print_snapshot_reject(void)
++{
++    const app_hmi_snapshot_reject_t *r;
++    int n;
++    app_hmi_snapshot_diag_read(&snapshot_diag);
++    if (!snapshot_diag.reject_pending) return 0U;
++    r = &snapshot_diag.reject;
++    /* All diagnostic times/ages/cycles on this compact line are hexadecimal. */
++    n = snprintf(line, sizeof(line),
++        "HLD %lX %lX %lX SNAP_REJECT at=%lX req=%X/%X why=%u ex=%u cache=%lX source=%lX seq=%lX/%lX full=%lX critical=%lX age=%lX/%lX cycles=%lX/%lX\r\n",
++        U(HAL_GetTick()), U(boot), U(r->id), U(r->at_ms), r->start, r->quantity,
++        r->reason, r->exception, U(r->cache_age_ms), U(r->source_age_ms),
++        U(r->cache_sequence), U(r->source_sequence), U(r->full_sequence), U(r->critical_sequence), U(r->age_before_ms),
++        U(r->age_after_ms), U(r->copy_cycles), U(r->encode_cycles));
++    if (emit(n)) app_hmi_snapshot_diag_ack_reject(r->id);
++    return 1U;
++}
++
+ static void print_status(uint32_t now)
+ {
+     int n;
+@@ -285,9 +384,10 @@ static void print_summary(void)
+             U(uart_diag.boundaries), U(uart_diag.rx_last_ms), U(uart_diag.tx_last_ms));
+     } else if (summary_phase == 7U) {
+         n = snprintf(line, sizeof(line),
+-            "HLD %lX %lX 0 TIMING %lX,%lX,%lX,%lX,%lX\r\n",
++            "HLD %lX %lX 0 TIMING %lX,%lX,%lX,%lX,%lX tc=%lX/%lX\r\n",
+             U(now), U(boot), U(uart_diag.service_max_ms), U(uart_diag.response_delay_max_cycles),
+-            U(uart_diag.parse_max_cycles), U(uart_diag.capture_max_cycles), U(bsp_hmi_uart_clock_hz()));
++            U(uart_diag.parse_max_cycles), U(uart_diag.capture_max_cycles), U(bsp_hmi_uart_clock_hz()),
++            U(uart_diag.response_complete_last_cycles), U(uart_diag.response_complete_max_cycles));
+     } else if (summary_phase == 8U) {
+         n = snprintf(line, sizeof(line),
+             "HLD %lX %lX 0 GAPS us=%lu,%lu,%lu,%lu,%lu,%lu\r\n",
+@@ -303,18 +403,35 @@ static void print_summary(void)
+         n = snprintf(line, sizeof(line),
+             "HLD %lX %lX 0 LOGGER fifo_lost=%lu uart_drop=%lu screen_conflict=%lu screen_replaced=%lu screen_reused=%lu\r\n",
+             U(now), U(boot), U(overflow), U(output_dropped), U(screen_conflict), U(screen_replaced), U(screen_reused));
++    } else if (summary_phase == 11U) {
++        app_hmi_snapshot_diag_read(&snapshot_diag);
++        n = snprintf(line, sizeof(line),
++            "HLD %lX %lX 0 SNAP seq=%lX/%lX src=%lX/%lX copy=%lX/%lX critical=%lX/%lX full=%lX/%lX age=%lX/%lX rejected=%lX merged=%lX\r\n",
++            U(now), U(boot), U(snapshot_diag.full_sequence), U(snapshot_diag.critical_sequence),
++            U(snapshot_diag.full_source_ms), U(snapshot_diag.critical_source_ms),
++            U(snapshot_diag.last_copy_cycles), U(snapshot_diag.max_copy_cycles),
++            U(snapshot_diag.last_critical_cycles), U(snapshot_diag.max_critical_cycles),
++            U(snapshot_diag.last_full_cycles), U(snapshot_diag.max_full_cycles),
++            U(snapshot_diag.last_age_before_ms), U(snapshot_diag.last_age_after_ms),
++            U(snapshot_diag.rejections), U(snapshot_diag.merged));
+     }
+     (void)emit(n);
+-    summary_phase = summary_phase == 10U ? 0U : (uint8_t)(summary_phase + 1U);
++    if (summary_phase == 10U) {
++        if ((uint32_t)(now - snapshot_summary_at) >= 5000U) {
++            snapshot_summary_at = now; summary_phase = 11U;
++        } else summary_phase = 0U;
++    } else summary_phase = summary_phase == 11U ? 0U : (uint8_t)(summary_phase + 1U);
+ }
+ 
+ void app_hmi_link_diag_service(void)
+ {
+     uint32_t now = HAL_GetTick();
+     int n;
++    capture_lcd();
+     if (print_first()) return;
+     if (boot_phase) { (void)print_boot(); return; }
+     if (print_screen()) return;
++    if (print_snapshot_reject()) return;
+     if ((uint32_t)(now - status_at) >= 100U) {
+         status_at = now; print_status(now); return;
+     }
+@@ -323,7 +440,7 @@ void app_hmi_link_diag_service(void)
+     }
+     if (summary_phase) { print_summary(); return; }
+     taskENTER_CRITICAL();
+-    if (!count) { taskEXIT_CRITICAL(); return; }
++    if (!count) { taskEXIT_CRITICAL(); print_lcd(now); return; }
+     work = events[read_at];
+     taskEXIT_CRITICAL();
+     n = snprintf(line, sizeof(line),
+diff --git a/APP/HMI/app_hmi_link_diag.h b/APP/HMI/app_hmi_link_diag.h
+index 3dd77b14d7e0ce0971159994cc2d61ed6e86c7c9..23a662d6a89a82fc36812e8f1f71a59100018c53 100644
+--- a/APP/HMI/app_hmi_link_diag.h
++++ b/APP/HMI/app_hmi_link_diag.h
+@@ -12,7 +12,8 @@ enum {
+     APP_HMI_LINK_RX_REQUEST = 1U, APP_HMI_LINK_MAILBOX,
+     APP_HMI_LINK_CONSUME, APP_HMI_LINK_REJECT, APP_HMI_LINK_TX_SUBMIT,
+     APP_HMI_LINK_STOP_FIRST, APP_HMI_LINK_STOP_UPGRADE,
+-    APP_HMI_LINK_STOP_COMPLETE, APP_HMI_LINK_SCREEN, APP_HMI_LINK_TX_COMPLETE
++    APP_HMI_LINK_STOP_COMPLETE, APP_HMI_LINK_SCREEN, APP_HMI_LINK_TX_COMPLETE,
++    APP_HMI_LINK_READ_EXCEPTION
+ };
+ 
+ /* Host legacy suites intentionally omit the logger. Its dedicated suite opts in. */
+@@ -26,6 +27,10 @@ void app_hmi_link_diag_record(uint16_t kind, uint32_t a, uint32_t b,
+ void app_hmi_link_diag_stop(const app_control_stop_t *stop, uint16_t kind);
+ /* Diagnostic mailbox only; never touches control ownership, target or lease. */
+ uint8_t app_hmi_link_diag_screen(const uint16_t *words, uint16_t count);
++#if defined(APP_HMI_LINK_DIAG_TEST)
++/* Host pressure tests start with the event width of a continuously running unit. */
++void app_hmi_link_diag_test_seed_serial(uint32_t value);
++#endif
+ #else
+ static inline void app_hmi_link_diag_init(void) { }
+ static inline void app_hmi_link_diag_service(void) { }
+diff --git a/APP/HMI/app_hmi_snapshot.c b/APP/HMI/app_hmi_snapshot.c
+index ed9860fc0fd6d4d69cdde6356c3636b53856cd82..2ca4981246b3bcf2cd5efac55199ca961d062a98 100644
+--- a/APP/HMI/app_hmi_snapshot.c
++++ b/APP/HMI/app_hmi_snapshot.c
+@@ -10,19 +10,87 @@
+ #include "task.h"
+ #include "main.h"
+ #include "app_boot_identity.h"
++#include "bsp_hmi_uart.h"
++#include "app_hmi_link_diag.h"
+ 
+ static uint32_t s_boot_id;
+-static uint32_t s_sequence;
+-static uint32_t s_last_publish;
++static uint8_t s_full_valid, s_critical_valid;
++static app_hmi_snapshot_diag_t s_snapshot_diag;
+ static uint16_t s_registers[HMI_STATE_REGISTER_COUNT];
+ static uint16_t s_result[APP_HMI_RESULT_REGISTERS];
+ /* 大快照采用静态存储，仅HMI任务采集和编码，避免占用任务栈。 */
+ static hmi_state_input_t s_input;
+ static hmi_alarm_state_t s_alarm;
+ 
+-static uint8_t collect(void)
++static uint32_t source_age(uint32_t *sequence)
+ {
+-    return app_system_snapshot_read(&s_input);
++    uint32_t at;
++    if (!app_system_snapshot_source_meta(&at, sequence))
++    {
++        *sequence = 0U;
++        return UINT32_MAX;
++    }
++    return (uint32_t)(HAL_GetTick() - at);
++}
++
++static uint8_t collect(uint32_t *age, uint32_t *sequence, uint8_t *initialized)
++{
++    uint32_t started = bsp_hmi_uart_cycles(), elapsed;
++    uint8_t valid = app_system_snapshot_read_with_meta(&s_input, NULL, sequence, age, initialized);
++    elapsed = bsp_hmi_uart_cycles() - started;
++    taskENTER_CRITICAL();
++    s_snapshot_diag.last_copy_cycles = elapsed;
++    if (elapsed > s_snapshot_diag.max_copy_cycles)
++        s_snapshot_diag.max_copy_cycles = elapsed;
++    taskEXIT_CRITICAL();
++    return valid;
++}
++
++void app_hmi_snapshot_diag_read(app_hmi_snapshot_diag_t *diag)
++{
++    if (diag == NULL) return;
++    taskENTER_CRITICAL();
++    memcpy(diag, &s_snapshot_diag, sizeof(*diag));
++    taskEXIT_CRITICAL();
++}
++
++void app_hmi_snapshot_diag_ack_reject(uint32_t id)
++{
++    taskENTER_CRITICAL();
++    if (s_snapshot_diag.reject.id == id) s_snapshot_diag.reject_pending = 0U;
++    taskEXIT_CRITICAL();
++}
++
++static uint8_t reject_read(uint16_t start, uint16_t quantity, uint16_t reason,
++    uint32_t cache_age, uint32_t cache_sequence, uint32_t source_age_ms,
++    uint32_t source_sequence, uint32_t age_before, uint32_t age_after,
++    uint32_t encode_cycles)
++{
++    app_hmi_snapshot_reject_t *r = &s_snapshot_diag.reject;
++    taskENTER_CRITICAL();
++    s_snapshot_diag.rejections++;
++    if (s_snapshot_diag.reject_pending) s_snapshot_diag.merged++;
++    else
++    {
++        r->at_ms = HAL_GetTick();
++        r->id = s_snapshot_diag.rejections;
++        r->start = start; r->quantity = quantity; r->reason = reason;
++        r->exception = 2U; r->cache_age_ms = cache_age;
++        r->cache_sequence = cache_sequence;
++        r->source_age_ms = source_age_ms; r->source_sequence = source_sequence;
++        r->age_before_ms = age_before; r->age_after_ms = age_after;
++        r->copy_cycles = reason == APP_HMI_SNAPSHOT_NO_SOURCE ||
++            reason == APP_HMI_SNAPSHOT_SOURCE_EXPIRED || reason == APP_HMI_SNAPSHOT_ENCODE_EXPIRED ?
++            s_snapshot_diag.last_copy_cycles : 0U;
++        r->encode_cycles = encode_cycles;
++        r->full_sequence = s_snapshot_diag.full_sequence;
++        r->critical_sequence = s_snapshot_diag.critical_sequence;
++        s_snapshot_diag.reject_pending = 1U;
++    }
++    taskEXIT_CRITICAL();
++    app_hmi_link_diag_record(APP_HMI_LINK_READ_EXCEPTION, start, quantity,
++        reason, 2U, source_age_ms, cache_age);
++    return 0U;
+ }
+ 
+ void app_hmi_snapshot_set_result(uint32_t session, uint32_t sequence,
+@@ -56,19 +124,28 @@ void app_hmi_snapshot_set_result(uint32_t session, uint32_t sequence,
+ 
+ static void fill(void)
+ {
+-    if (!collect()) return;
++    uint32_t started, elapsed;
++    if (!collect(NULL, NULL, NULL)) return;
++    started = bsp_hmi_uart_cycles();
+     app_hmi_state_build(&s_input, &s_alarm, s_registers);
++    elapsed = bsp_hmi_uart_cycles() - started;
++    taskENTER_CRITICAL();
+     memcpy(&s_registers[APP_HMI_RESULT_START], s_result, sizeof(s_result));
+-    s_sequence = s_input.sequence;
+-    s_last_publish = HAL_GetTick();
+-    /* 保留0作为未发布状态；对外序号始终对应当前完整快照。 */
++    s_snapshot_diag.full_builds++;
++    s_snapshot_diag.last_full_cycles = elapsed;
++    if (elapsed > s_snapshot_diag.max_full_cycles)
++        s_snapshot_diag.max_full_cycles = elapsed;
++    s_snapshot_diag.full_sequence = s_snapshot_diag.critical_sequence = s_input.sequence;
++    s_snapshot_diag.full_source_ms = s_snapshot_diag.critical_source_ms = s_input.now_ms;
++    s_full_valid = s_critical_valid = 1U;
++    taskEXIT_CRITICAL();
+ }
+ 
+ void app_hmi_snapshot_init(uint32_t boot_id)
+ {
+     s_boot_id = boot_id;
+-    s_sequence = 0U;
+-    s_last_publish = 0U;
++    s_full_valid = s_critical_valid = 0U;
++    memset(&s_snapshot_diag, 0, sizeof(s_snapshot_diag));
+     memset(s_result, 0, sizeof(s_result));
+     memset(&s_alarm, 0, sizeof(s_alarm));
+     fill();
+@@ -76,10 +153,10 @@ void app_hmi_snapshot_init(uint32_t boot_id)
+ 
+ void app_hmi_snapshot_service(void)
+ {
+-    if ((uint32_t)(HAL_GetTick() - s_last_publish) >= APP_HMI_SNAPSHOT_PERIOD_MS)
+-    {
+-        fill();
+-    }
++    /* Both the schedule and read freshness refer to the actual source sample,
++     * never a later encoder completion timestamp. */
++    if (!s_full_valid || (uint32_t)(HAL_GetTick() - s_snapshot_diag.full_source_ms) >=
++        APP_HMI_SNAPSHOT_PERIOD_MS) fill();
+ }
+ 
+ static uint8_t in_range(uint16_t start, uint32_t end,
+@@ -92,8 +169,26 @@ uint8_t app_hmi_snapshot_read(uint16_t start, uint16_t quantity,
+                               uint16_t *values)
+ {
+     uint32_t end = (uint32_t)start + quantity;
+-    if (values == NULL || quantity == 0U || quantity > 125U) return 0U;
+-    if (end > HMI_STATE_REGISTER_COUNT) return 0U;
++    uint32_t cache_age = UINT32_MAX, cache_sequence = 0U;
++    uint32_t source_sequence, age_before, age_after, started, elapsed;
++    uint8_t initialized;
++    uint8_t critical = in_range(start, end, HMI_CONTROL_REGISTER_START,
++        HMI_CONTROL_REGISTER_START + HMI_CONTROL_REGISTER_COUNT);
++    age_before = source_age(&source_sequence);
++    if (critical && s_critical_valid)
++    {
++        cache_age = HAL_GetTick() - s_snapshot_diag.critical_source_ms;
++        cache_sequence = s_snapshot_diag.critical_sequence;
++    }
++    else if (!critical && s_full_valid)
++    {
++        cache_age = HAL_GetTick() - s_snapshot_diag.full_source_ms;
++        cache_sequence = s_snapshot_diag.full_sequence;
++    }
++    if (values == NULL || quantity == 0U || quantity > 125U)
++        return reject_read(start, quantity, APP_HMI_SNAPSHOT_BAD_PARAMETER,
++            cache_age, cache_sequence, age_before, source_sequence,
++            age_before, age_before, 0U);
+     if (in_range(start, end, APP_HMI_RESULT_START,
+                    APP_HMI_RESULT_START + APP_HMI_RESULT_REGISTERS))
+     {
+@@ -102,10 +197,7 @@ uint8_t app_hmi_snapshot_read(uint16_t start, uint16_t quantity,
+         taskEXIT_CRITICAL();
+         return 1U;
+     }
+-    /* 读取只复制已有快照，不触发伺服查询、发布或任何控制动作。 */
+-    if (s_sequence == 0U || (uint32_t)(HAL_GetTick() - s_input.now_ms) >
+-        APP_SYSTEM_SNAPSHOT_MAX_AGE_MS) return 0U;
+-    if (!(in_range(start, end, 0x0000U, 0x0040U) ||
++    if (end > HMI_STATE_REGISTER_COUNT || !(in_range(start, end, 0x0000U, 0x0040U) ||
+           in_range(start, end, 0x0050U, 0x0070U) ||
+           in_range(start, end, 0x0070U, 0x0090U) ||
+           in_range(start, end, 0x0090U, 0x00B0U) ||
+@@ -113,11 +205,59 @@ uint8_t app_hmi_snapshot_read(uint16_t start, uint16_t quantity,
+           in_range(start, end, APP_HMI_METADATA_START,
+               APP_HMI_METADATA_START + APP_HMI_METADATA_REGISTERS) ||
+           in_range(start, end, APP_HMI_DETAIL_START,
+-              APP_HMI_DETAIL_START + APP_HMI_DETAIL_REGISTERS) ||
+-          in_range(start, end, 0x0460U, 0x04C0U))) return 0U;
++              APP_HMI_DETAIL_START + APP_HMI_DETAIL_REGISTERS) || critical))
++        return reject_read(start, quantity, APP_HMI_SNAPSHOT_BAD_RANGE,
++            cache_age, cache_sequence, age_before, source_sequence,
++            age_before, age_before, 0U);
++    if (critical)
++    {
++        /* Copy one already published source and encode only the shared 96-word
++         * control window. No hardware queries, alarm mutation or motion calls. */
++        if (!collect(&age_after, &source_sequence, &initialized))
++        {
++            return reject_read(start, quantity,
++                initialized ? APP_HMI_SNAPSHOT_SOURCE_EXPIRED : APP_HMI_SNAPSHOT_NO_SOURCE,
++                cache_age, cache_sequence, age_after, source_sequence,
++                age_before, age_after, 0U);
++        }
++        age_before = HAL_GetTick() - s_input.now_ms;
++        started = bsp_hmi_uart_cycles();
++        app_hmi_state_build_control(&s_input, &s_registers[HMI_CONTROL_REGISTER_START]);
++        elapsed = bsp_hmi_uart_cycles() - started;
++        taskENTER_CRITICAL();
++        memcpy(values, &s_registers[start], quantity * sizeof(*values));
++        age_after = HAL_GetTick() - s_input.now_ms;
++        s_snapshot_diag.critical_builds++;
++        s_snapshot_diag.last_critical_cycles = elapsed;
++        if (elapsed > s_snapshot_diag.max_critical_cycles)
++            s_snapshot_diag.max_critical_cycles = elapsed;
++        s_snapshot_diag.last_age_before_ms = age_before;
++        s_snapshot_diag.last_age_after_ms = age_after;
++        s_snapshot_diag.critical_source_ms = s_input.now_ms;
++        s_snapshot_diag.critical_sequence = s_input.sequence;
++        s_critical_valid = 1U;
++        taskEXIT_CRITICAL();
++        if (age_after > APP_SYSTEM_SNAPSHOT_MAX_AGE_MS)
++            return reject_read(start, quantity, APP_HMI_SNAPSHOT_ENCODE_EXPIRED,
++                cache_age, cache_sequence, age_after, s_input.sequence,
++                age_before, age_after, elapsed);
++        return 1U;
++    }
++    else if (!s_full_valid || cache_age > APP_SYSTEM_SNAPSHOT_MAX_AGE_MS)
++        return reject_read(start, quantity, s_full_valid ?
++            APP_HMI_SNAPSHOT_FULL_CACHE_EXPIRED : APP_HMI_SNAPSHOT_NO_FULL_CACHE,
++            cache_age, cache_sequence, age_before, source_sequence,
++            age_before, age_before, 0U);
++    taskENTER_CRITICAL();
+     memcpy(values, &s_registers[start], quantity * sizeof(*values));
++    cache_age = HAL_GetTick() - s_snapshot_diag.full_source_ms;
++    taskEXIT_CRITICAL();
++    if (cache_age > APP_SYSTEM_SNAPSHOT_MAX_AGE_MS)
++        return reject_read(start, quantity, APP_HMI_SNAPSHOT_FULL_CACHE_EXPIRED,
++            cache_age, cache_sequence, age_before, source_sequence,
++            age_before, age_before, 0U);
+     return 1U;
+ }
+ 
+ uint32_t app_hmi_snapshot_boot_id(void) { return s_boot_id; }
+-uint32_t app_hmi_snapshot_publish_sequence(void) { return s_sequence; }
++uint32_t app_hmi_snapshot_publish_sequence(void) { return s_snapshot_diag.full_sequence; }
+diff --git a/APP/HMI/app_hmi_snapshot.h b/APP/HMI/app_hmi_snapshot.h
+index 974cd24ede1f21d82663be7d62df4435265421b7..f196bf8e9dc4d5c63db886070ac002b099e91601 100644
+--- a/APP/HMI/app_hmi_snapshot.h
++++ b/APP/HMI/app_hmi_snapshot.h
+@@ -3,6 +3,42 @@
+ 
+ #include <stdint.h>
+ 
++/* Reasons distinguish a rejected legal read from an invalid dictionary range. */
++enum {
++    APP_HMI_SNAPSHOT_BAD_RANGE = 1U,
++    APP_HMI_SNAPSHOT_NO_SOURCE,
++    APP_HMI_SNAPSHOT_SOURCE_EXPIRED,
++    APP_HMI_SNAPSHOT_ENCODE_EXPIRED,
++    APP_HMI_SNAPSHOT_NO_FULL_CACHE,
++    APP_HMI_SNAPSHOT_FULL_CACHE_EXPIRED,
++    APP_HMI_SNAPSHOT_BAD_PARAMETER
++};
++
++typedef struct {
++    uint32_t at_ms, id, cache_age_ms, source_age_ms;
++    uint32_t source_sequence, cache_sequence, age_before_ms, age_after_ms;
++    uint32_t copy_cycles, encode_cycles;
++    uint32_t full_sequence, critical_sequence;
++    uint16_t start, quantity, reason, exception;
++} app_hmi_snapshot_reject_t;
++
++typedef struct {
++    uint32_t full_builds, critical_builds, rejections, merged;
++    uint32_t last_copy_cycles, max_copy_cycles;
++    uint32_t last_critical_cycles, max_critical_cycles;
++    uint32_t last_full_cycles, max_full_cycles;
++    uint32_t last_age_before_ms, last_age_after_ms;
++    uint32_t full_source_ms, full_sequence;
++    uint32_t critical_source_ms, critical_sequence;
++    app_hmi_snapshot_reject_t reject;
++    uint8_t reject_pending;
++} app_hmi_snapshot_diag_t;
++
++/* Durations are DWT wall cycles, including task preemption. A pending first
++ * rejection survives later failures until the CLI successfully outputs it. */
++void app_hmi_snapshot_diag_read(app_hmi_snapshot_diag_t *diag);
++void app_hmi_snapshot_diag_ack_reject(uint32_t id);
++
+ void app_hmi_snapshot_init(uint32_t boot_id);
+ void app_hmi_snapshot_service(void);
+ uint8_t app_hmi_snapshot_read(uint16_t start, uint16_t quantity,
+diff --git a/APP/HMI/app_hmi_state.c b/APP/HMI/app_hmi_state.c
+index 54158729edc097f2d1c1ebb2c9eca7f8d1d99f1f..fca5005b557521fb993aba1342439db438c4bf1c 100644
+--- a/APP/HMI/app_hmi_state.c
++++ b/APP/HMI/app_hmi_state.c
+@@ -717,83 +717,94 @@ void app_hmi_state_build(const hmi_state_input_t *in, hmi_alarm_state_t *alarm,
+     r[0x215U] = APP_HMI_CONTROL_ENABLED ? (uint16_t)APP_OPERATION_MAX_VELOCITY_MM_S : 0U;
+     r[0x216U] = APP_HMI_CONTROL_ENABLED ? APP_HMI_SESSION_LEASE_MS : 0U;
+     build_details(in, r);
+-    r[0x460U] = 0x534DU; r[0x461U] = 2U;
+-    put32(r, 0x462U, in->boot_id); put32(r, 0x464U, in->sequence);
+-    put32(r, 0x466U, in->now_ms); r[0x468U] = owner_code(in->owner);
+-    r[0x469U] = in->selected; r[0x46AU] = in->hmi_control.state;
+-    r[0x46BU] = in->hmi_control.flags;
+-    put32(r, 0x46CU, in->hmi_control.session);
+-    r[0x46EU] = in->hmi_remaining;
+-    r[0x46FU] = age16(in->hmi_control.target_age_ms);
+-    put32(r, 0x470U, in->hmi_control.last_sequence);
+-    r[0x472U] = in->owner == APP_CONTROL_OWNER_NONE || in->owner == APP_CONTROL_OWNER_HMI ?
++    app_hmi_state_build_control(in, &r[HMI_CONTROL_REGISTER_START]);
++}
++
++/* Same encoder for full publications and the critical request path. All
++ * offsets are relative to 0x0460, and every call clears the OR-ed masks. */
++void app_hmi_state_build_control(const hmi_state_input_t *in,
++                                 uint16_t r[HMI_CONTROL_REGISTER_COUNT])
++{
++    uint8_t i;
++    if (in == NULL || r == NULL) return;
++    memset(r, 0, HMI_CONTROL_REGISTER_COUNT * sizeof(*r));
++    r[0x0U] = 0x534DU; r[0x1U] = 2U;
++    put32(r, 0x2U, in->boot_id); put32(r, 0x4U, in->sequence);
++    put32(r, 0x6U, in->now_ms); r[0x8U] = owner_code(in->owner);
++    r[0x9U] = in->selected; r[0xAU] = in->hmi_control.state;
++    r[0xBU] = in->hmi_control.flags;
++    put32(r, 0xCU, in->hmi_control.session);
++    r[0xEU] = in->hmi_remaining;
++    r[0xFU] = age16(in->hmi_control.target_age_ms);
++    put32(r, 0x10U, in->hmi_control.last_sequence);
++    r[0x12U] = in->owner == APP_CONTROL_OWNER_NONE || in->owner == APP_CONTROL_OWNER_HMI ?
+         (uint16_t)in->hmi_control.target : 0x7FFFU;
+     for (i = 0U; i < 2U; ++i)
+     {
+         const servo_snapshot_t *axis = &in->axis[i];
+         uint16_t bit = (uint16_t)(1U << i);
+-        r[0x473U + i] = (in->selected & bit) && in->owner == APP_CONTROL_OWNER_HMI ?
++        r[0x13U + i] = (in->selected & bit) && in->owner == APP_CONTROL_OWNER_HMI ?
+             (uint16_t)in->hmi_control.target : 0x7FFFU;
+-        r[0x475U + i] = in->hmi_control.output_mask & bit ?
++        r[0x15U + i] = in->hmi_control.output_mask & bit ?
+             (uint16_t)in->hmi_control.output[i] : 0x7FFFU;
+-        r[0x477U + i] = speed_valid(in, i) ? (uint16_t)axis->actual_speed_rpm : 0x7FFFU;
+-        if (speed_valid(in, i)) r[0x479U] |= bit;
++        r[0x17U + i] = speed_valid(in, i) ? (uint16_t)axis->actual_speed_rpm : 0x7FFFU;
++        if (speed_valid(in, i)) r[0x19U] |= bit;
+         if (in->axes_valid && (in->selected & bit) && axis->online &&
+             axis->enable_feedback_valid && axis->enable_feedback_age_ms < APP_SERVO_STATUS_MAX_AGE_MS)
+         {
+-            r[0x47AU] |= bit;
+-            if (axis->enable_feedback) r[0x47BU] |= bit;
++            r[0x1AU] |= bit;
++            if (axis->enable_feedback) r[0x1BU] |= bit;
+         }
+-        r[0x48EU + i] = speed_valid(in, i) ? age16(axis->speed_age_ms) : 0xFFFFU;
++        r[0x2EU + i] = speed_valid(in, i) ? age16(axis->speed_age_ms) : 0xFFFFU;
+     }
+     /* Historical stop zero proof does not describe an active new session. */
+-    r[0x47CU] = !in->hmi_control.session && in->hmi_control.stop.result == 3U ?
++    r[0x1CU] = !in->hmi_control.session && in->hmi_control.stop.result == 3U ?
+         in->hmi_control.stop.zero_mask : in->hmi_control.zero_mask;
+-    r[0x47DU] = in->hmi_control.stop.reason;
+-    r[0x47EU] = in->hmi_control.phase;
+-    r[0x47FU] = in->hmi_control.stop.deceleration_mm_s2;
+-    put32(r, 0x480U, in->hmi_control.elapsed_ms);
+-    put32(r, 0x482U, in->hmi_control.stop.timeout_ms);
+-    r[0x484U] = in->hmi_control.error; r[0x485U] = in->lock_reason;
+-    r[0x486U] = (uint16_t)-APP_OPERATION_MAX_MOTOR_RPM;
+-    r[0x487U] = APP_OPERATION_MAX_MOTOR_RPM;
+-    r[0x488U] = (uint16_t)((double)APP_DESIGN_ACCELERATION_MPS2 * 1000.0 + 0.5);
+-    r[0x489U] = (uint16_t)(APP_DESIGN_DECELERATION_MPS2 * 1000.0f + 0.5f);
+-    r[0x48AU] = APP_HMI_NORMAL_STOP_DECEL_MM_S2; r[0x48BU] = APP_HMI_EMERGENCY_STOP_DECEL_MM_S2;
+-    r[0x48CU] = APP_HMI_SPEED_HOLD_MAX_MS; r[0x48DU] = APP_HMI_SESSION_LEASE_MS;
+-    put32(r, 0x490U, in->hmi_control.stop.event);
+-    put32(r, 0x492U, in->hmi_control.stop.request_sequence);
+-    r[0x494U] = in->hmi_control.stop.command; r[0x495U] = in->hmi_control.stop.result;
+-    put32(r, 0x496U, in->hmi_control.stop.completed_ms);
++    r[0x1DU] = in->hmi_control.stop.reason;
++    r[0x1EU] = in->hmi_control.phase;
++    r[0x1FU] = in->hmi_control.stop.deceleration_mm_s2;
++    put32(r, 0x20U, in->hmi_control.elapsed_ms);
++    put32(r, 0x22U, in->hmi_control.stop.timeout_ms);
++    r[0x24U] = in->hmi_control.error; r[0x25U] = in->lock_reason;
++    r[0x26U] = (uint16_t)-APP_OPERATION_MAX_MOTOR_RPM;
++    r[0x27U] = APP_OPERATION_MAX_MOTOR_RPM;
++    r[0x28U] = (uint16_t)((double)APP_DESIGN_ACCELERATION_MPS2 * 1000.0 + 0.5);
++    r[0x29U] = (uint16_t)(APP_DESIGN_DECELERATION_MPS2 * 1000.0f + 0.5f);
++    r[0x2AU] = APP_HMI_NORMAL_STOP_DECEL_MM_S2; r[0x2BU] = APP_HMI_EMERGENCY_STOP_DECEL_MM_S2;
++    r[0x2CU] = APP_HMI_SPEED_HOLD_MAX_MS; r[0x2DU] = APP_HMI_SESSION_LEASE_MS;
++    put32(r, 0x30U, in->hmi_control.stop.event);
++    put32(r, 0x32U, in->hmi_control.stop.request_sequence);
++    r[0x34U] = in->hmi_control.stop.command; r[0x35U] = in->hmi_control.stop.result;
++    put32(r, 0x36U, in->hmi_control.stop.completed_ms);
+     /* 0x4B8-0x4BF is the reserved recovery mailbox/status window.  Keep the
+      * layout compact and monotonic so the 26号 screen can render it without
+      * polling hardware: version, state/eligibility, generation, failure,
+      * healthy duration and first-fault summary. */
+-    r[0x4B8U] = 1U;
+-    r[0x4B9U] = (uint16_t)in->recovery.state;
+-    r[0x4BAU] = in->recovery.eligible ? 1U : 0U;
+-    put32(r, 0x4BBU, in->recovery.generation);
+-    r[0x4BDU] = in->recovery.failure;
+-    r[0x4BEU] = in->recovery.first_axis | ((uint16_t)in->recovery.first_item << 8U);
+-    r[0x4BFU] = (uint16_t)(in->recovery.healthy_ms > 65534U ? 65534U : in->recovery.healthy_ms);
+-    r[0x498U] = owner_code(in->hmi_control.stop.owner);
+-    r[0x499U] = in->hmi_control.output_mask;
+-    r[0x49AU] = in->lock_reason != APP_CONTROL_LOCK_NONE ? 0U :
++    r[0x58U] = 1U;
++    r[0x59U] = (uint16_t)in->recovery.state;
++    r[0x5AU] = in->recovery.eligible ? 1U : 0U;
++    put32(r, 0x5BU, in->recovery.generation);
++    r[0x5DU] = in->recovery.failure;
++    r[0x5EU] = in->recovery.first_axis | ((uint16_t)in->recovery.first_item << 8U);
++    r[0x5FU] = (uint16_t)(in->recovery.healthy_ms > 65534U ? 65534U : in->recovery.healthy_ms);
++    r[0x38U] = owner_code(in->hmi_control.stop.owner);
++    r[0x39U] = in->hmi_control.output_mask;
++    r[0x3AU] = in->lock_reason != APP_CONTROL_LOCK_NONE ? 0U :
+         in->owner == APP_CONTROL_OWNER_CAN && in->can_control.authorized ?
+         (uint16_t)in->can_control.target_mm_s : in->owner == APP_CONTROL_OWNER_HMI &&
+         (in->hmi_control.flags & 2U) ? signed16(axis_mmps(in->selected == 2U ? 1U : 0U,
+         in->hmi_control.target)) :
+         in->owner == APP_CONTROL_OWNER_REMOTE && in->remote.authorized ?
+         signed16(axis_mmps(in->selected == 2U ? 1U : 0U, in->remote.target_rpm)) : 0U;
+-    r[0x49BU] = 1U;
+-    r[0x49CU] = axis_command(in, 0U);
+-    r[0x49DU] = axis_command(in, 1U);
+-    r[0x49EU] = in->axes_valid ? 1U : 0U;
+-    r[0x49FU] = APP_SYSTEM_SNAPSHOT_PERIOD_MS;
++    r[0x3BU] = 1U;
++    r[0x3CU] = axis_command(in, 0U);
++    r[0x3DU] = axis_command(in, 1U);
++    r[0x3EU] = in->axes_valid ? 1U : 0U;
++    r[0x3FU] = APP_SYSTEM_SNAPSHOT_PERIOD_MS;
+     for (i = 0U; i < 2U; ++i)
+     {
+         const servo_snapshot_t *axis = &in->axis[i];
+-        uint16_t offset = (uint16_t)(0x4A0U + i * 12U);
++        uint16_t offset = (uint16_t)(0x40U + i * 12U);
+         uint8_t field;
+         r[offset] = in->axes_valid && axis->online && (in->selected & (1U << i)) ?
+             axis->diagnostic_valid_mask : 0U;
+diff --git a/APP/HMI/app_hmi_state.h b/APP/HMI/app_hmi_state.h
+index b37c8994b504f5d4a38677ce29f1b1b45297f109..1ffa4adab88e8f100a3f00477ed9273b83248b52 100644
+--- a/APP/HMI/app_hmi_state.h
++++ b/APP/HMI/app_hmi_state.h
+@@ -4,6 +4,8 @@
+ #include "app_system_snapshot.h"
+ 
+ #define HMI_STATE_REGISTER_COUNT (0x04C0U)
++#define HMI_CONTROL_REGISTER_START (0x0460U)
++#define HMI_CONTROL_REGISTER_COUNT (96U)
+ #define HMI_UPPER_COUNT APP_SYSTEM_UPPER_COUNT
+ 
+ typedef app_system_snapshot_t hmi_state_input_t;
+@@ -21,4 +23,8 @@ void app_hmi_state_build(const hmi_state_input_t *input,
+                          hmi_alarm_state_t *alarm,
+                          uint16_t registers[HMI_STATE_REGISTER_COUNT]);
+ 
++/* Pure critical encoder: no alarm mutation or bus/control operations. */
++void app_hmi_state_build_control(const hmi_state_input_t *input,
++                                 uint16_t registers[HMI_CONTROL_REGISTER_COUNT]);
++
+ #endif
+diff --git a/APP/app_lcd_show.c b/APP/app_lcd_show.c
+index ab9ac16b46fb940a04be570af37e5ebdd41ba26c..704e3684d76da1204fe9a0cd8a06fd507fbc5350 100644
+--- a/APP/app_lcd_show.c
++++ b/APP/app_lcd_show.c
+@@ -33,6 +33,7 @@ static TickType_t s_last_refresh_ticks;
+ static TickType_t s_max_refresh_ticks;
+ static volatile lcd_page_t s_page = LCD_PAGE_SERVO;
+ static lcd_page_t s_rendered_page = LCD_PAGE_SERVO;
++static app_lcd_event_state_t s_lcd_event;
+ 
+ /* 固定为40列，截断超长行并补空格，防止换行覆盖及旧字符残留。 */
+ static void app_lcd_line(lcd *display, uint16_t x, uint16_t y,
+@@ -73,6 +74,45 @@ static void app_lcd_line(lcd *display, uint16_t x, uint16_t y,
+ 
+ #define lcd_print app_lcd_line
+ 
++/* Fixed-cost publication only: never put LCD I/O or waiting in this section.
++   Phase 1/2 brackets every rebuild attempt, including failed attempts. */
++static void app_lcd_publish_event(uint8_t phase)
++{
++    uint32_t now = HAL_GetTick();
++    uint8_t stage = (uint8_t)bsp_lcd_get_init_stage();
++    uint8_t running = xTaskGetSchedulerState() == taskSCHEDULER_RUNNING;
++    if (running) taskENTER_CRITICAL();
++    if (++s_lcd_event.revision == 0U) ++s_lcd_event.revision;
++    s_lcd_event.at_ms = now;
++    if (phase == 1U) {
++        s_lcd_event.rebuild_started_ms = now;
++        s_lcd_event.rebuild_finished_ms = 0U;
++        s_lcd_event.rebuilding = 1U;
++    } else if (phase == 2U) {
++        s_lcd_event.rebuild_finished_ms = now;
++        s_lcd_event.rebuilding = 0U;
++    }
++    s_lcd_event.rebuilds = s_lcd_rebuilds;
++    s_lcd_event.generation = s_display_generation;
++    s_lcd_event.clear_count = s_clear_count;
++    s_lcd_event.clear_at_ms = s_last_clear_ms;
++    s_lcd_event.retry_at_ms = s_lcd_retry_at;
++    s_lcd_event.ready = s_lcd_ready;
++    s_lcd_event.stage = stage;
++    s_lcd_event.page = (uint8_t)s_rendered_page;
++    s_lcd_event.clear_reason = s_clear_reason;
++    if (running) taskEXIT_CRITICAL();
++}
++
++void app_lcd_get_event_state(app_lcd_event_state_t *state)
++{
++    uint8_t running = xTaskGetSchedulerState() == taskSCHEDULER_RUNNING;
++    if (state == NULL) return;
++    if (running) taskENTER_CRITICAL();
++    *state = s_lcd_event;
++    if (running) taskEXIT_CRITICAL();
++}
++
+ static void app_lcd_retry(void)
+ {
+     static const uint32_t delays[] = {2000U,4000U,8000U,10000U};
+@@ -92,6 +132,7 @@ void lcd_init(void)
+ 
+     if (s_lcd_attempted && (int32_t)(HAL_GetTick() - s_lcd_retry_at) < 0) return;
+     s_lcd_attempted = 1U;
++    app_lcd_publish_event(1U);
+     lcd_port_get_stats(&before);
+     s_lcd = bsp_lcd_init();
+     lcd_port_get_stats(&after);
+@@ -107,6 +148,7 @@ void lcd_init(void)
+         s_rendered_page = app_lcd_get_page();
+         s_full_redraw_at = HAL_GetTick() + 2000U;
+     } else app_lcd_retry();
++    app_lcd_publish_event(2U);
+ }
+ 
+ bool app_lcd_is_ready(void)
+@@ -133,6 +175,7 @@ static void app_lcd_frame_begin(lcd_page_t page)
+         lcd_clear(s_lcd, BLACK);
+         memset(s_line_valid, 0, sizeof(s_line_valid));
+         s_rendered_page = page;
++        app_lcd_publish_event(0U);
+     }
+     if ((int32_t)(HAL_GetTick() - s_full_redraw_at) >= 0) {
+         memset(s_line_valid, 0, sizeof(s_line_valid));
+@@ -145,6 +188,7 @@ static void app_lcd_frame_end(void)
+     if (bsp_lcd_get_init_stage() == LCD_INIT_STAGE_SPI_ERROR) {
+         app_health_set_diagnostic_fault(APP_DIAG_LCD_SPI_ERROR);
+         app_lcd_retry(); s_lcd_ready = 0U; s_lcd = NULL;
++        app_lcd_publish_event(0U);
+     } else s_retry_failures = 0U;
+ }
+ 
+diff --git a/APP/app_lcd_show.h b/APP/app_lcd_show.h
+index c378ad1520e8b68e58506df33496cd080d4208a3..ec15c0f20748592d45e75d0bf371b2fd94a9fb26 100644
+--- a/APP/app_lcd_show.h
++++ b/APP/app_lcd_show.h
+@@ -13,6 +13,15 @@ typedef enum
+     LCD_PAGE_POSITION = 2
+ } lcd_page_t;
+ 
++/* LCD-owned state changes, including pre-scheduler init; no per-frame events. */
++typedef struct
++{
++    uint32_t revision, at_ms;
++    uint32_t rebuild_started_ms, rebuild_finished_ms;
++    uint32_t rebuilds, generation, clear_count, clear_at_ms, retry_at_ms;
++    uint8_t ready, stage, page, clear_reason, rebuilding;
++} app_lcd_event_state_t;
++
+ void lcd_init(void);
+ bool app_lcd_is_ready(void);
+ void app_lcd_refresh(void);
+@@ -23,6 +32,8 @@ TickType_t app_lcd_get_max_refresh_ticks(void);
+ uint8_t app_lcd_get_init_stage(void);
+ uint32_t app_lcd_get_spi_errors(void);
+ uint32_t app_lcd_get_rebuild_count(void);
++/* Task/pre-scheduler snapshot; page is the rendered page, revision 0 is empty. */
++void app_lcd_get_event_state(app_lcd_event_state_t *state);
+ void app_lcd_print_status(void);
+ 
+ #endif
+diff --git a/APP/app_rtos_create.c b/APP/app_rtos_create.c
+index 2de2f1ec3ab5f883067b200f6909abffe2484706..59b818ea28a04ecbe86f31900628cadfe4e031b8 100644
+--- a/APP/app_rtos_create.c
++++ b/APP/app_rtos_create.c
+@@ -124,7 +124,8 @@ void freertos_taskstart(void)
+     /* Ramp readback diagnostics enlarge nested servo snapshots: keep >=256B margin. */
+     app_create_task_checked(cli_task, "cli", 832U, 2U,
+                             &cli_task_handle, 6U);
+-    app_create_task_checked(lcd_task, "lcd", 896U, 1U,
++    /* Field LCD watermark reached 244 B: add 64 words without a new task. */
++    app_create_task_checked(lcd_task, "lcd", 960U, 1U,
+                             &lcd_task_handle, 7U);
+     app_create_task_checked(iwdg_task, "iwdg", 768U, 7U,
+                             &iwdg_task_handle, 8U);
+diff --git a/APP/app_system_snapshot.c b/APP/app_system_snapshot.c
+index 737417002dca62af269fcfc26c3292f1045481db..c548b72f5183a3a041aa8a5f00fb44f3c5af6451 100644
+--- a/APP/app_system_snapshot.c
++++ b/APP/app_system_snapshot.c
+@@ -210,20 +210,45 @@ void app_system_snapshot_service(void)
+     taskEXIT_CRITICAL();
+ }
+ 
+-uint8_t app_system_snapshot_read(app_system_snapshot_t *snapshot)
++uint8_t app_system_snapshot_read_with_meta(app_system_snapshot_t *snapshot,
++    uint32_t *source_ms, uint32_t *sequence, uint32_t *source_age_ms,
++    uint8_t *initialized)
+ {
+     uint8_t valid;
++    uint32_t age, started;
+     if (snapshot == NULL) return 0U;
+-    uint32_t started = app_runtime_clock();
++    started = app_runtime_clock();
+     taskENTER_CRITICAL();
+-    valid = sys_initialized && (uint32_t)(HAL_GetTick() -
+-        sys_buffer[sys_active].now_ms) <= APP_SYSTEM_SNAPSHOT_MAX_AGE_MS;
++    age = sys_initialized ? (uint32_t)(HAL_GetTick() -
++        sys_buffer[sys_active].now_ms) : UINT32_MAX;
++    valid = sys_initialized && age <= APP_SYSTEM_SNAPSHOT_MAX_AGE_MS;
++    if (source_ms != NULL) *source_ms = sys_buffer[sys_active].now_ms;
++    if (sequence != NULL) *sequence = sys_buffer[sys_active].sequence;
++    if (source_age_ms != NULL) *source_age_ms = age;
++    if (initialized != NULL) *initialized = sys_initialized;
+     if (valid) memcpy(snapshot, &sys_buffer[sys_active], sizeof(*snapshot));
+     taskEXIT_CRITICAL();
+     app_runtime_max(APP_RUNTIME_SNAPSHOT_CRITICAL,app_runtime_clock()-started);
+     return valid;
+ }
+ 
++uint8_t app_system_snapshot_read(app_system_snapshot_t *snapshot)
++{
++    return app_system_snapshot_read_with_meta(snapshot, NULL, NULL, NULL, NULL);
++}
++
++uint8_t app_system_snapshot_source_meta(uint32_t *source_ms, uint32_t *sequence)
++{
++    uint8_t valid;
++    if (source_ms == NULL || sequence == NULL) return 0U;
++    taskENTER_CRITICAL();
++    valid = sys_initialized;
++    *source_ms = sys_buffer[sys_active].now_ms;
++    *sequence = sys_buffer[sys_active].sequence;
++    taskEXIT_CRITICAL();
++    return valid;
++}
++
+ static uint8_t current(void)
+ {
+     return sys_initialized && (uint32_t)(HAL_GetTick() -
+diff --git a/APP/app_system_snapshot.h b/APP/app_system_snapshot.h
+index 09f8c5841f5cdd9a06fe8be2c5a6be77d2eb7fff..6324ce77dc5f4034f4f2aa134af29cf7f0052a1f 100644
+--- a/APP/app_system_snapshot.h
++++ b/APP/app_system_snapshot.h
+@@ -71,6 +71,13 @@ typedef struct
+ void app_system_snapshot_init(void);
+ void app_system_snapshot_service(void);
+ uint8_t app_system_snapshot_read(app_system_snapshot_t *snapshot);
++/* Metadata describes the same atomic read decision, even when that source is
++ * expired. Optional outputs never trigger a collection or a retry. */
++uint8_t app_system_snapshot_read_with_meta(app_system_snapshot_t *snapshot,
++    uint32_t *source_ms, uint32_t *sequence, uint32_t *source_age_ms,
++    uint8_t *initialized);
++/* Timestamp/sequence remain observable even when the source is stale. */
++uint8_t app_system_snapshot_source_meta(uint32_t *source_ms, uint32_t *sequence);
+ struct nrf_status_input;
+ struct nrf_snapshot_context;
+ struct app_can_status_input;
+diff --git a/BSP/HMI_UART/bsp_hmi_uart.c b/BSP/HMI_UART/bsp_hmi_uart.c
+index 4f4f6e9b216c5257caf3a978cbbd8fc727b8d636..02ca0e678a2b3210b113a407ca32b06c921842ea 100644
+--- a/BSP/HMI_UART/bsp_hmi_uart.c
++++ b/BSP/HMI_UART/bsp_hmi_uart.c
+@@ -36,6 +36,7 @@ static volatile hmi_uart_diag_t s_diag;
+ static volatile hmi_uart_recovery_t s_rx_recovery, s_tx_recovery;
+ static uint32_t s_last_rx_cycles, s_quiet_head, s_quiet_generation, s_quiet_at;
+ static uint32_t s_tx_started, s_tx_limit, s_service_tick;
++static uint32_t s_tx_request_cycles, s_tx_request_generation;
+ static uint8_t s_tx_exception, s_tx_region;
+ static uint16_t s_diag_tx_length;
+ static uint32_t s_diag_completed_info;
+@@ -348,6 +349,8 @@ uint8_t bsp_hmi_uart_send_response(const uint8_t *data, uint16_t length,
+     s_tx_exception = length >= 2U && (data[1] & 0x80U) != 0U;
+     s_tx_region = region < HMI_UART_REGION_COUNT ? region : HMI_UART_OTHER_REGION;
+     s_diag_tx_length = length;
++    s_tx_request_cycles = last_byte_cycles;
++    s_tx_request_generation = generation;
+     result = HAL_UART_Transmit_DMA(&huart5, s_tx_buffer, length);
+     if (result != HAL_OK)
+     {
+@@ -375,6 +378,13 @@ void bsp_hmi_uart_tx_complete_isr(void)
+         else { s_stats.responses++; s_diag.region_responses[s_tx_region]++; }
+         s_diag.tx_last_ms = HAL_GetTick(); s_tx_active = 0U;
+         s_diag.tx_complete_cycles = DWT->CYCCNT;
++        if (s_tx_request_generation == s_rx_generation)
++        {
++            uint32_t elapsed = s_diag.tx_complete_cycles - s_tx_request_cycles;
++            s_diag.response_complete_last_cycles = elapsed;
++            if (elapsed > s_diag.response_complete_max_cycles)
++                s_diag.response_complete_max_cycles = elapsed;
++        }
+         s_diag_completed_info = ((uint32_t)s_tx_region << 16U) | s_diag_tx_length;
+     }
+     notify_isr();
+diff --git a/BSP/HMI_UART/bsp_hmi_uart.h b/BSP/HMI_UART/bsp_hmi_uart.h
+index e8d6f9e23009c70dfec46444c8845840e0b34fa3..a8d90bba099482d5fb206a53646cbb09d56e1d8e 100644
+--- a/BSP/HMI_UART/bsp_hmi_uart.h
++++ b/BSP/HMI_UART/bsp_hmi_uart.h
+@@ -39,6 +39,8 @@ typedef struct
+     uint32_t rx_callbacks, rx_dequeued, address_ignored, arm_failures;
+     uint32_t tx_callbacks, tx_timeouts, tx_max_ms, service_max_ms;
+     uint32_t response_delay_max_cycles;
++    /* Request last-byte capture to UART TC, unsigned DWT delta. */
++    uint32_t response_complete_last_cycles, response_complete_max_cycles;
+     uint32_t rx_attempts, rx_success, rx_failures;
+     uint32_t tx_attempts, tx_success, tx_failures;
+     uint32_t rx_epoch, tx_epoch, rx_reason, tx_reason;
+diff --git a/BSP/SPI_LCD/lcd_port.c b/BSP/SPI_LCD/lcd_port.c
+index 2b09de702b6c015be178972136b91d373811dc9e..71bca2d3368836adf293aa7c7a88adcf9173799a 100644
+--- a/BSP/SPI_LCD/lcd_port.c
++++ b/BSP/SPI_LCD/lcd_port.c
+@@ -139,11 +139,11 @@ void lcd_port_get_stats(lcd_port_stats_t *stats)
+ static bool lcd_dma_transmit(SPI_HandleTypeDef *spi, uint8_t *data, uint16_t size)
+ {
+     HAL_StatusTypeDef status;
+-    uint32_t start = HAL_GetTick(), tail_start;
++    uint32_t start, tail_start, now, sr;
+     lcd_error_t error = LCD_ERROR_NONE;
+     if (spi != &hspi1 || spi->hdmatx == NULL || s_dma_active ||
+         spi->State != HAL_SPI_STATE_READY || (spi->hdmatx->Instance->CR & DMA_SxCR_EN)) {
+-        lcd_failure(spi, LCD_ERROR_BUSY, HAL_BUSY, size, start); return false;
++        lcd_failure(spi, LCD_ERROR_BUSY, HAL_BUSY, size, HAL_GetTick()); return false;
+     }
+     memcpy(s_dma_buffer, data, size);
+     (void)ulTaskNotifyTake(pdTRUE, 0U);
+@@ -157,27 +157,44 @@ static bool lcd_dma_transmit(SPI_HandleTypeDef *spi, uint8_t *data, uint16_t siz
+                               (uint32_t)(uintptr_t)&spi->Instance->DR, size);
+     if (status == HAL_OK) {
+         __HAL_DMA_DISABLE_IT(spi->hdmatx, DMA_IT_HT);
++        /* Only the actual transfer consumes the fixed 50 ms deadline. */
++        start = HAL_GetTick();
+         SET_BIT(spi->Instance->CR2, SPI_CR2_TXDMAEN);
+-    }
++    } else start = HAL_GetTick();
+     taskEXIT_CRITICAL();
+     if (status != HAL_OK) error = LCD_ERROR_DMA_START;
+     else {
+         ++s_stats.dma_started;
+         for (;;) {
+-            /* Completion wins over a late task wake at the deadline. */
+-            if (s_dma_done) { if (s_dma_error) error = LCD_ERROR_DMA; break; }
+-            if ((uint32_t)(HAL_GetTick() - start) >= LCD_DMA_TIMEOUT_MS) { error = LCD_ERROR_TIMEOUT; break; }
++            uint8_t done;
++            /* IRQ priority 6 is masked here. Re-sample completion after the
++               clock, so a completed transfer wins over a late task wake. */
++            taskENTER_CRITICAL();
++            now = HAL_GetTick();
++            done = s_dma_done;
++            if (s_dma_error) error = LCD_ERROR_DMA;
++            else if (!done && (uint32_t)(now - start) >= LCD_DMA_TIMEOUT_MS)
++                error = LCD_ERROR_TIMEOUT;
++            taskEXIT_CRITICAL();
++            if (done || error != LCD_ERROR_NONE) break;
+             (void)ulTaskNotifyTake(pdTRUE, 1U);
+         }
+     }
+     /* DMA TC means DR loaded, not the final bit on the wire. Keep DC/buffer stable. */
+     if (error == LCD_ERROR_NONE) {
+         tail_start = DWT->CYCCNT;
+-        while ((spi->Instance->SR & SPI_SR_BSY) || !(spi->Instance->SR & SPI_SR_TXE)) {
+-            if ((uint32_t)(HAL_GetTick() - start) >= LCD_DMA_TIMEOUT_MS) { error = LCD_ERROR_TIMEOUT; break; }
++        for (;;) {
++            taskENTER_CRITICAL();
++            now = HAL_GetTick();
++            sr = spi->Instance->SR;
++            if (s_dma_error || (sr & (SPI_SR_MODF | SPI_SR_FRE))) error = LCD_ERROR_DMA;
++            else if (((sr & SPI_SR_BSY) || !(sr & SPI_SR_TXE)) &&
++                     (uint32_t)(now - start) >= LCD_DMA_TIMEOUT_MS)
++                error = LCD_ERROR_TIMEOUT;
++            taskEXIT_CRITICAL();
++            if (error != LCD_ERROR_NONE || (!(sr & SPI_SR_BSY) && (sr & SPI_SR_TXE))) break;
+             if ((uint32_t)(DWT->CYCCNT - tail_start) >= SystemCoreClock / 100000U) vTaskDelay(1U);
+         }
+-        if (spi->Instance->SR & (SPI_SR_MODF | SPI_SR_FRE)) error = LCD_ERROR_DMA;
+     }
+     if (error != LCD_ERROR_NONE) lcd_failure(spi, error, status, size, start);
+     if (!lcd_dma_stop()) {
+diff --git a/Tests/check_task_stack.ps1 b/Tests/check_task_stack.ps1
+index ef0af7dfcd6d03152cf07a022bcfcde062e15691..8e26d23073c7e21e6905d3d0a97467d0c7cae864 100644
+--- a/Tests/check_task_stack.ps1
++++ b/Tests/check_task_stack.ps1
+@@ -21,6 +21,11 @@ if ($status.Value -notmatch 'aimtor_remote_control_active\(\)' -or
+ $definitions = [regex]::Matches($create,
+     'app_create_task_checked\((\w+),\s*"[^"]+",\s*(\d+)U')
+ if ($definitions.Count -ne 11) { throw "任务注册数变化，需更新栈预算检查" }
++$lcdDefinition = [regex]::Matches($create,
++    'app_create_task_checked\(lcd_task,\s*"lcd",\s*(\d+)U,\s*1U,')
++if ($lcdDefinition.Count -ne 1 -or [int]$lcdDefinition[0].Groups[1].Value -ne 960) {
++    throw "LCD任务栈必须为960 words，优先级保持1"
++}
+ $canDefinition = [regex]::Match($can,
+     'xTaskCreate\(can_task,\s*"can",\s*(\d+)U,\s*NULL,\s*3U,\s*&can_task_handle\)')
+ if (!$canDefinition.Success) { throw "可选CAN任务栈或优先级定义缺失" }
+diff --git a/Tests/check_tune_memory.ps1 b/Tests/check_tune_memory.ps1
+index d921f17e1f22b1d3ce6898c4751589b375dfd8b6..3836697946178cc1c5aabaaa56a89fb9dffa2c05 100644
+--- a/Tests/check_tune_memory.ps1
++++ b/Tests/check_tune_memory.ps1
+@@ -28,6 +28,7 @@ $dmaBuffers=@(
+     @('debug_uart.o','s_rx_buffer'),@('debug_uart.o','s_tx_buffer'),
+     @('bsp_hmi_uart.o','s_dma_rx'),@('bsp_hmi_uart.o','s_tx_buffer'),
+     @('bsp_rs485.o','s_dma_rx_buffer'),
++    @('lcd_port.o','s_dma_buffer'),
+     @('nrf24l01.o','s_tx'),@('nrf24l01.o','s_rx'),
+     @('heap_4.o','ucHeap')
+ )
+@@ -43,6 +44,8 @@ foreach($buffer in $dmaBuffers) {
+         if($address -ge $region.Address -and [uint64]$address+$size -le [uint64]$region.Address+$region.Size){$contained=$true}
+     }
+     if(!$contained -or $size -eq 0){throw "DMA buffer outside ordinary SRAM: $($buffer[0])/$($buffer[1])"}
++    if($buffer[0] -eq 'lcd_port.o' -and $size -ne 640){throw "LCD DMA buffer budget changed: $size, expected 640 B"}
++    if($buffer[0] -eq 'heap_4.o' -and $size -ne 49152){throw "FreeRTOS heap budget changed: $size, expected 49152 B"}
+     Write-Output "PASS DMA $($buffer[0])/$($buffer[1]) address=$($symbol.Groups[1].Value) size=$size"
+ }
+ $ordinaryBytes=[uint32]$regions.RW_IRAM1.Size+[uint32]$regions.RW_IRAM2.Size+[uint32]$regions.RETAINED_FAULT.Size
+@@ -57,7 +60,7 @@ if($diagnosticBytes.Success) {
+ } elseif($RequireHmiLinkDiag) { throw 'Missing HMI link diagnostic module in enabled build' }
+ else { Write-Output 'INFO HMI link diagnostic module absent (baseline or diagnostics disabled build)' }
+ $growth=[int64]$physicalBytes-$physicalBaseline
+-if($RequireHmiLinkDiag -and $growth -gt 4096){throw "HMI diagnostic total physical RAM growth exceeds 4096 B: $growth"}
++if($growth -gt 4096){throw "Total physical RAM growth relative to 82d6a0c exceeds 4096 B: $growth"}
+ Write-Output "RAM physical=$physicalBytes baseline=$physicalBaseline delta=$growth bytes; ordinary SRAM free=$([uint32]131072-$ordinaryBytes), CCM free=$([uint32]65536-[uint32]$regions.RW_CCM.Size)"
+ if($text -notmatch 'bsp_system_exception_stack\s+0x[0-9a-f]+\s+Data\s+512\s+bsp_system.o'){throw 'Missing independent 512 B fault stack'}
+ $startup=Get-Content -LiteralPath (Join-Path $root 'MDK-ARM/startup_stm32f407xx.s') -Raw
+diff --git a/Tests/lcd_mocks/task.h b/Tests/lcd_mocks/task.h
+index ea38d214c606a68a4747286346346a47fa2fbbbe..dd88d3cce8b418c80e46c1d9d4fee6437192609a 100644
+--- a/Tests/lcd_mocks/task.h
++++ b/Tests/lcd_mocks/task.h
+@@ -1,10 +1,11 @@
+ #include "FreeRTOS.h"
+ #define taskSCHEDULER_RUNNING 2
+-void lcd_test_critical(void);
++void lcd_test_enter_critical(void);
++void lcd_test_exit_critical(void);
+ #undef taskENTER_CRITICAL
+ #undef taskEXIT_CRITICAL
+-#define taskENTER_CRITICAL() lcd_test_critical()
+-#define taskEXIT_CRITICAL() lcd_test_critical()
++#define taskENTER_CRITICAL() lcd_test_enter_critical()
++#define taskEXIT_CRITICAL() lcd_test_exit_critical()
+ int xTaskGetSchedulerState(void);
+ TaskHandle_t xTaskGetCurrentTaskHandle(void);
+ TickType_t xTaskGetTickCount(void);
+diff --git a/Tests/run_hmi_link_diag_tests.ps1 b/Tests/run_hmi_link_diag_tests.ps1
+index 9fafcbd0947146f51ebcd1a859d284b20aec9dad..7ba897c7f1fcb15fea93d3a8e1420c2ff468efee 100644
+--- a/Tests/run_hmi_link_diag_tests.ps1
++++ b/Tests/run_hmi_link_diag_tests.ps1
+@@ -1,4 +1,4 @@
+-param([string]$Compiler='D:/Dev-C++软件--蓝桥杯比赛环境/Dev-Cpp/MinGW64/bin/gcc.exe')
++﻿param([string]$Compiler='D:/Dev-C++软件--蓝桥杯比赛环境/Dev-Cpp/MinGW64/bin/gcc.exe')
+ $ErrorActionPreference='Stop'
+ Push-Location (Split-Path $PSScriptRoot -Parent)
+ try {
+@@ -7,7 +7,7 @@ try {
+         $arguments=@('-std=c99','-Wall','-Wextra','-Werror',
+             '-DAPP_HMI_LINK_DIAG_TEST=1',"-DAPP_HMI_LINK_DIAG_ENABLED=$enabled",
+             '-ITests/can_mocks','-ITests/mocks','-IAPP','-IAPP/HMI','-IDevice','-IProtocol',
+-            '-IProtocol/CAN','-IBSP/SYSTEM','-IBSP/HMI_UART','-IBSP/DEBUG_UART',
++            '-IProtocol/CAN','-IBSP/SYSTEM','-IBSP/HMI_UART','-IBSP/DEBUG_UART','-IBSP/SPI_LCD',
+             'Tests/test_hmi_link_diag.c','APP/HMI/app_hmi_link_diag.c','-o',$binary)
+         & $Compiler @arguments
+         if($LASTEXITCODE){throw "HMI link diagnostics compile failed: enabled=$enabled"}
+diff --git a/Tests/run_hmi_link_wire_tests.ps1 b/Tests/run_hmi_link_wire_tests.ps1
+index 850aefc40e034b48d9241a17bbf1dfeee0f67d0b..eb1a8b5fe11147902bee4b3069df9d35820da4d3 100644
+--- a/Tests/run_hmi_link_wire_tests.ps1
++++ b/Tests/run_hmi_link_wire_tests.ps1
+@@ -1,9 +1,9 @@
+-param([string]$Compiler='D:/Dev-C++软件--蓝桥杯比赛环境/Dev-Cpp/MinGW64/bin/gcc.exe')
++﻿param([string]$Compiler='D:/Dev-C++软件--蓝桥杯比赛环境/Dev-Cpp/MinGW64/bin/gcc.exe')
+ $ErrorActionPreference='Stop'
+ Push-Location (Split-Path $PSScriptRoot -Parent)
+ try {
+     $binary=Join-Path $env:TEMP 'rail_hmi_link_wire_tests.exe'
+-    & $Compiler -std=c99 -Wall -Wextra -Werror -DportTICK_PERIOD_MS=1U -DAPP_HMI_LINK_DIAG_TEST=1 -DAPP_CAN_CONTROL_ENABLED=0 -DAPP_CAN_STOP_PARAMETERS_APPROVED=0 -ITests/hmi_mocks -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN -IProtocol/HMI -IBSP/CAN -IBSP/HMI_UART -IBSP/DEBUG_UART -IBSP/SYSTEM Tests/test_hmi_link_wire.c APP/HMI/app_hmi_state.c Protocol/HMI/hmi_modbus_slave.c APP/HMI/app_hmi_link_diag.c -o $binary
++    & $Compiler -std=c99 -Wall -Wextra -Werror -DportTICK_PERIOD_MS=1U -DAPP_HMI_LINK_DIAG_TEST=1 -DAPP_CAN_CONTROL_ENABLED=0 -DAPP_CAN_STOP_PARAMETERS_APPROVED=0 -ITests/hmi_mocks -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol -IProtocol/CAN -IProtocol/HMI -IBSP/CAN -IBSP/HMI_UART -IBSP/DEBUG_UART -IBSP/SPI_LCD -IBSP/SYSTEM Tests/test_hmi_link_wire.c APP/HMI/app_hmi_state.c Protocol/HMI/hmi_modbus_slave.c APP/HMI/app_hmi_link_diag.c -o $binary
+     if($LASTEXITCODE){throw 'HMI diagnostic wire integration compile failed'}
+     & $binary
+     if($LASTEXITCODE){throw 'HMI diagnostic wire integration tests failed'}
+diff --git a/Tests/run_lcd_recovery_tests.ps1 b/Tests/run_lcd_recovery_tests.ps1
+index 923731a721f308fff460304f25f9da560b6d11fb..e240f4b58c5749f9de0bdd5867407a70bde89cef 100644
+--- a/Tests/run_lcd_recovery_tests.ps1
++++ b/Tests/run_lcd_recovery_tests.ps1
+@@ -10,7 +10,7 @@ try {
+  & "$PSScriptRoot/run_lcd_batch_tests.ps1" -Compiler $Compiler
+  $source=Get-Content -LiteralPath 'APP/app_lcd_show.c' -Raw
+  $fields=[regex]::Match($source,'(?s)static lcd \*s_lcd;.*?(?=\r?\n/\*)').Value
+- $recovery=[regex]::Match($source,'(?s)static void app_lcd_retry\(.*?(?=\r?\nvoid app_lcd_refresh)').Value
++ $recovery=[regex]::Match($source,'(?s)static void app_lcd_publish_event\(.*?(?=\r?\nvoid app_lcd_refresh)').Value
+  if(!$fields -or !$recovery){throw 'Cannot extract production LCD recovery'}
+  Set-Content -LiteralPath (Join-Path $env:TEMP 'rail_lcd_recovery_under_test.inc') -Value ($fields+[Environment]::NewLine+$recovery) -Encoding UTF8
+  $exe=Join-Path $env:TEMP 'rail_lcd_recovery.exe'
+diff --git a/Tests/test_hmi_integration.c b/Tests/test_hmi_integration.c
+index 3da9cd2b3612f9c12a669685d32f4d30d07aab0f..f845132e358f0aa09af6a5f664e384939d3d26af 100644
+--- a/Tests/test_hmi_integration.c
++++ b/Tests/test_hmi_integration.c
+@@ -13,6 +13,14 @@ extern TaskHandle_t motion_task_handle, servo_comm_task_handle, health_task_hand
+ extern TaskHandle_t key_task_handle, status_task_handle, cli_task_handle;
+ extern TaskHandle_t lcd_task_handle, iwdg_task_handle, nrf_task_handle, can_task_handle, hmi_task_handle;
+ #include "../APP/app_system_snapshot.c"
++#ifdef TEST_HMI_READ_SOURCE_HOOK
++/* Dedicated fault-injection suite may publish a new Health snapshot directly
++ * after the production read returns, before the HMI observes its result. */
++static uint8_t test_hmi_source_read(app_system_snapshot_t *snapshot,
++    uint32_t *source_ms, uint32_t *sequence, uint32_t *source_age_ms,
++    uint8_t *initialized);
++#define app_system_snapshot_read_with_meta test_hmi_source_read
++#endif
+ /* 直接调用生产ISR与服务，不复制帧边界实现。 */
+ #define s_rx_generation bsp_rx_generation
+ #include "../BSP/HMI_UART/bsp_hmi_uart.c"
+@@ -467,7 +475,7 @@ static void recovery_tests(void)
+     puts("PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle");
+ }
+ 
+-/* Exercise independent producer/cache/read phases; never publish from a read. */
++/* Exercise independent source/full-cache/read phases; critical reads reuse the source. */
+ static uint32_t cadence_rejections(uint32_t producer_period, uint32_t producer_phase,
+                                     uint32_t cache_phase, uint32_t origin)
+ {
+@@ -496,10 +504,10 @@ static void cadence_tests(void)
+             assert(cadence_rejections(APP_HEALTH_TASK_PERIOD_MS, producer_phase, cache_phase, 1000U) == 0U);
+             assert(cadence_rejections(APP_HEALTH_TASK_PERIOD_MS, producer_phase, cache_phase, UINT32_MAX - 200U) == 0U);
+         }
+-    /* This regression must detect the original 100ms producer mismatch. */
++    /* A producer at the 100ms validity boundary remains readable while current. */
+     for (producer_phase = 0U; producer_phase < APP_HEALTH_PERIOD_MS; producer_phase += 10U)
+         legacy_rejected += cadence_rejections(APP_HEALTH_PERIOD_MS, producer_phase, 0U, 1000U);
+-    assert(legacy_rejected > 0U);
++    assert(legacy_rejected == 0U);
+     /* A real stopped producer still expires, including repeated cached reads. */
+     fresh(); tick += APP_SYSTEM_SNAPSHOT_MAX_AGE_MS + 1U;
+     assert(!app_hmi_snapshot_read(0x460U, 96U, values));
+@@ -523,7 +531,7 @@ int main(void)
+     for (index = 0U; index < 600U; index++)
+     {
+         request(frame, index % 2U ? 0x200 : 0x460, index % 2U ? 24 : 64);
+-        inject(frame, 8); flush(); complete(); advance(190000U); bsp_hmi_uart_service();
++        inject(frame, 8); flush(); complete(); advance(190000U); bsp_hmi_uart_service(); app_hmi_service();
+     }
+     assert(s_stats.requests == 600U && s_stats.responses == 600U && !s_stats.rx_overflow);
+     assert(!s_diag.rx_attempts && !s_diag.tx_attempts);
+diff --git a/Tests/test_hmi_link_diag.c b/Tests/test_hmi_link_diag.c
+index 7b47057bb4181562b7141917fb0d1d6bcbe78ed8..7cd7ebc6b0abb9fe9bf9a4440be829db9b727c02 100644
+--- a/Tests/test_hmi_link_diag.c
++++ b/Tests/test_hmi_link_diag.c
+@@ -7,12 +7,27 @@
+ #include "app_tune_diagnostics.h"
+ #include "bsp_hmi_uart.h"
+ #include "bsp_system.h"
++#include "app_hmi_snapshot.h"
++#include "app_lcd_show.h"
++#include "lcd_port.h"
+ 
+ static uint32_t now, boot_id = 77U;
+ static uint8_t blocked, normal_load;
+-static char output[200000];
++static char output[800000];
+ static unsigned output_count, output_bytes, second_bytes, max_second, first_writes;
+ static app_hmi_control_status_t status;
++static app_hmi_snapshot_diag_t snapshot_status;
++static app_lcd_event_state_t lcd_status;
++static lcd_port_stats_t lcd_stats;
++static unsigned reject_acks;
++void app_hmi_snapshot_diag_read(app_hmi_snapshot_diag_t *out) { *out = snapshot_status; }
++void app_hmi_snapshot_diag_ack_reject(uint32_t id)
++{
++    assert(snapshot_status.reject_pending && id == snapshot_status.reject.id);
++    snapshot_status.reject_pending = 0U; ++reject_acks;
++}
++void app_lcd_get_event_state(app_lcd_event_state_t *out) { *out = lcd_status; }
++void lcd_port_get_stats(lcd_port_stats_t *out) { *out = lcd_stats; }
+ uint32_t HAL_GetTick(void) { return now; }
+ uint32_t app_boot_identity_id(void) { return boot_id; }
+ uint32_t bsp_system_get_reset_reason(void) { return 0x20000000U; }
+@@ -54,7 +69,7 @@ void bsp_hmi_uart_get_diag(hmi_uart_diag_t *out)
+ uint32_t bsp_hmi_uart_clock_hz(void) { return 168000000U; }
+ uint8_t debug_uart_try_write_frame(const uint8_t *data, uint16_t length, uint16_t reserve)
+ {
+-    assert(length > 0U && length <= 256U && reserve == 512U);
++    assert(length > 0U && length < 256U && reserve == 512U);
+     assert(data[length - 2U] == '\r' && data[length - 1U] == '\n');
+     if (blocked) return 0U;
+     assert(output_bytes + length < sizeof(output));
+@@ -80,6 +95,9 @@ static void reset(void)
+     now = output_count = output_bytes = second_bytes = max_second = first_writes = 0U;
+     blocked = normal_load = 0U; boot_id = 77U; output[0] = 0; memset(&status, 0, sizeof(status));
+     status.session = 123U; status.target = -751; status.output[0] = -749; status.output[1] = -750;
++    memset(&snapshot_status, 0, sizeof(snapshot_status));
++    memset(&lcd_status, 0, sizeof(lcd_status)); memset(&lcd_stats, 0, sizeof(lcd_stats));
++    reject_acks = 0U;
+     app_hmi_link_diag_init();
+ }
+ static app_control_stop_t make_stop(uint32_t event, uint16_t reason)
+@@ -192,9 +210,16 @@ static void test_normal_70hz_at_two_hours_no_fifo_loss(void)
+     status.last_sequence = 36000U; status.target_age_ms = 80U;
+     status.stop.event = 123U; status.stop.reason = 2U; status.phase = 3U;
+     app_hmi_link_diag_init();
++    app_hmi_link_diag_test_seed_serial(504000U);
++    lcd_status.revision = 1U; lcd_status.ready = 1U;
++    snapshot_status.full_sequence = snapshot_status.critical_sequence = UINT32_MAX;
++    snapshot_status.full_source_ms = snapshot_status.critical_source_ms = 7200000U;
++    snapshot_status.last_copy_cycles = snapshot_status.max_copy_cycles = 10000U;
++    snapshot_status.last_critical_cycles = snapshot_status.max_critical_cycles = 50000U;
++    snapshot_status.last_full_cycles = snapshot_status.max_full_cycles = 7000000U;
+     /* 20 transactions/s: 10 critical reads, 5 SPEEDs, 5 ordinary reads.
+        RX + submit + local completion = 60, mailbox + consume = 10 events/s. */
+-    for (i = 0U; i < 10000U; ++i) {
++    for (i = 0U; i < 60000U; ++i) {
+         unsigned phase = i % 100U;
+         uint8_t speed = ((i / 100U) & 1U) == 0U;
+         uint32_t seq = 36000U + i / 200U;
+@@ -221,15 +246,19 @@ static void test_normal_70hz_at_two_hours_no_fifo_loss(void)
+                 now / 50U, now, cycles, 1U, 0U); ++generated;
+         }
+         status.last_sequence = seq; tick(1U);
++        if (i && i % 1000U == 0U) {
++            ++lcd_status.revision; lcd_status.at_ms = now;
++            ++lcd_stats.errors; lcd_stats.last.timestamp_ms = now;
++        }
+     }
+     tick(1100U); /* Also emit final logger counters after the load. */
+-    assert(generated == 700U);
++    assert(generated == 4200U);
+     p = output;
+     while (p && *p) {
+         unsigned long t, b, serial;
+         unsigned kind;
+         if (sscanf(p, "HLD %lx %lx %lx E%x", &t, &b, &serial, &kind) == 4) {
+-            ++emitted; assert(serial == emitted); assert(b == boot_id); assert(t >= 7200000U);
++            ++emitted; assert(serial == 504000U + emitted); assert(b == boot_id); assert(t >= 7200000U);
+             assert(kind == APP_HMI_LINK_RX_REQUEST || kind == APP_HMI_LINK_MAILBOX ||
+                 kind == APP_HMI_LINK_CONSUME || kind == APP_HMI_LINK_TX_SUBMIT ||
+                 kind == APP_HMI_LINK_TX_COMPLETE);
+@@ -240,10 +269,65 @@ static void test_normal_70hz_at_two_hours_no_fifo_loss(void)
+     assert(emitted == generated);
+     assert(!strstr(output, "fifo_lost=1"));
+     assert(strstr(output, "fifo_lost=0 uart_drop=0"));
++    assert(strstr(output, " SNAP seq="));
++    assert(strstr(output, " LCD ui "));
+     assert(max_second <= 6000U && second_bytes <= 6000U);
+-    printf("PASS normal 70 events/s for 10 s at uptime 2 h: %u/%u events, max %u B/s, no FIFO/UART loss\n",
++    printf("PASS normal 70 events/s for 60 s after 504000 prior events at uptime 2 h: %u/%u events, max %u B/s, no FIFO/UART loss\n",
+         emitted, generated, max_second);
+ }
++static void test_snapshot_and_lcd_pending_priority(void)
++{
++    app_control_stop_t stop = make_stop(19U, 2U);
++    uint16_t words[24] = {0x4844U, 0x0100U, 0U, 99U};
++    const char *first, *screen_line, *reject_line, *lcd_line;
++    reset(); tick(20U); output_bytes = 0U; output[0] = 0;
++    blocked = 1U;
++    lcd_status.revision = 10U; lcd_status.at_ms = 100U;
++    lcd_stats.errors = 1U; lcd_stats.first.reason = LCD_ERROR_TIMEOUT;
++    lcd_stats.last = lcd_stats.first;
++    snapshot_status.reject_pending = 1U;
++    snapshot_status.reject.id = 7U; snapshot_status.reject.at_ms = 0x123U;
++    snapshot_status.reject.start = 0x460U; snapshot_status.reject.quantity = 64U;
++    snapshot_status.reject.reason = 4U; snapshot_status.reject.exception = 2U;
++    snapshot_status.reject.cache_age_ms = UINT32_MAX;
++    snapshot_status.reject.full_sequence = 0x1234U;
++    snapshot_status.reject.critical_sequence = 0x5678U;
++    app_hmi_link_diag_stop(&stop, APP_HMI_LINK_STOP_FIRST);
++    assert(app_hmi_link_diag_screen(words, 24U));
++    tick(20U); assert(!reject_acks && !output_bytes);
++    lcd_status.revision = 11U; lcd_status.at_ms = 200U; lcd_stats.errors = 2U;
++    tick(20U); blocked = 0U; tick(5000U);
++    first = strstr(output, " FIRST "); screen_line = strstr(output, " SCREEN ");
++    reject_line = strstr(output, " SNAP_REJECT "); lcd_line = strstr(output, " LCD ui ");
++    assert(first && screen_line && reject_line && lcd_line);
++    assert(first < screen_line && screen_line < reject_line && reject_line < lcd_line);
++    assert(strstr(output, " A LCD ui at=100")); /* First frozen UI revision survives. */
++    assert(strstr(output, " B LCD ui at=200")); /* Most recent change follows. */
++    assert(reject_acks == 1U && !snapshot_status.reject_pending);
++    assert(strstr(output, "why=4 ex=2 cache=FFFFFFFF"));
++    assert(strstr(output, "full=1234 critical=5678"));
++    assert(strstr(output, "merged=1"));
++    /* Independent LCD line budget remains one accepted line per 1000 ms. */
++    {
++        const char *p = output;
++        unsigned long previous = 0U;
++        unsigned found = 0U;
++        while (p && *p) {
++            const char *end = strchr(p, '\n');
++            const char *tag = strstr(p, " LCD ");
++            if (tag && (!end || tag < end)) {
++                unsigned long at;
++                assert(sscanf(p, "HLD %lx", &at) == 1);
++                if (found) assert(at - previous >= 1000U);
++                previous = at; ++found;
++            }
++            p = end ? end + 1 : NULL;
++        }
++        assert(found >= 5U);
++    }
++    reset(); tick(4000U); assert(!strstr(output, " LCD "));
++    puts("PASS snapshot/LCD immutable pending, blocked emit retry, priority, merge and one line/s");
++}
+ int main(void)
+ {
+     test_boot_status_memory();
+@@ -251,6 +335,7 @@ int main(void)
+     test_screen_validation_duplicate_missing_and_backpressure();
+     test_screen_reboot_reuses_id_only_after_complete_print();
+     test_rate_limit();
++    test_snapshot_and_lcd_pending_priority();
+     test_normal_70hz_at_two_hours_no_fifo_loss();
+     puts("PASS HMI link diagnostics: first cause, FIFO/UART congestion, rate budget, screen pages, memory and boot");
+     return 0;
+diff --git a/Tests/test_hmi_link_wire.c b/Tests/test_hmi_link_wire.c
+index c4910613137727706ecab6e660417e29d488ba88..23ccc1e655e2bdfba395cf487a9bfbc6386e7c0c 100644
+--- a/Tests/test_hmi_link_wire.c
++++ b/Tests/test_hmi_link_wire.c
+@@ -3,6 +3,10 @@
+ #include "test_hmi_integration.c"
+ #undef main
+ #include "bsp_system.h"
++#include "app_lcd_show.h"
++#include "lcd_port.h"
++void app_lcd_get_event_state(app_lcd_event_state_t *out) { memset(out, 0, sizeof(*out)); }
++void lcd_port_get_stats(lcd_port_stats_t *out) { memset(out, 0, sizeof(*out)); }
+ 
+ static char captured[12000];
+ static size_t captured_length;
+diff --git a/Tests/test_hmi_state.c b/Tests/test_hmi_state.c
+index 83ef526fc978490798f58728254328c4888296c3..e4437122e4a07fa8747f47be008148eb6e25b8ab 100644
+--- a/Tests/test_hmi_state.c
++++ b/Tests/test_hmi_state.c
+@@ -164,6 +164,19 @@ int main(void)
+     assert(alarm.code == 0x0404U && alarm.source == 1U && alarm.level == 4U);
+     assert(alarm.parameter == ((MOTION_STOP_CLASS_CONTROLLED_SAFETY << 16U) |
+                               MOTION_FAULT_REASON_FEEDBACK_STALE));
++    /* The request encoder must clear validity masks even when its reused
++     * window previously contained valid values, and match the full dictionary. */
++    {
++        uint16_t control[HMI_CONTROL_REGISTER_COUNT];
++        ready(); build();
++        memset(control, 0xFF, sizeof(control));
++        app_hmi_state_build_control(&in, control);
++        assert(memcmp(control, &r[HMI_CONTROL_REGISTER_START], sizeof(control)) == 0);
++        in.axes_valid = 0U; in.selected = 0U; build();
++        app_hmi_state_build_control(&in, control);
++        assert(memcmp(control, &r[HMI_CONTROL_REGISTER_START], sizeof(control)) == 0);
++        assert(control[0x19U] == 0U && control[0x1AU] == 0U && control[0x1BU] == 0U);
++    }
+     puts("PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap");
+     return 0;
+ }
+diff --git a/Tests/test_lcd_recovery.c b/Tests/test_lcd_recovery.c
+index e3f54871c1a2e23b1d9653c1d76444d712a75206..6bf2363a73495622653781f02602293a3c60ed5c 100644
+--- a/Tests/test_lcd_recovery.c
++++ b/Tests/test_lcd_recovery.c
+@@ -6,12 +6,24 @@
+ #include "bsp_lcd.h"
+ static uint32_t now, attempts, clears, diagnostic;
+ static uint8_t fail_init;
++static uint8_t scheduler;
++static unsigned critical_calls, critical_depth;
+ static lcd display;
+ static lcd_init_stage_t stage;
+ static lcd_port_stats_t stats;
++#define taskSCHEDULER_RUNNING 2
++#undef taskENTER_CRITICAL
++#undef taskEXIT_CRITICAL
++#define taskENTER_CRITICAL() do {assert(scheduler==taskSCHEDULER_RUNNING);++critical_calls;++critical_depth;} while(0)
++#define taskEXIT_CRITICAL() do {assert(critical_depth);--critical_depth;} while(0)
++int xTaskGetSchedulerState(void) {return scheduler;}
+ uint32_t HAL_GetTick(void) {return now;}
+ void lcd_port_get_stats(lcd_port_stats_t *out) {*out=stats;}
+ lcd *bsp_lcd_init(void) {
++    app_lcd_event_state_t event;
++    app_lcd_get_event_state(&event);
++    assert(event.rebuilding && event.rebuild_started_ms==now && !event.rebuild_finished_ms);
++    assert(!critical_depth); /* No I/O or rebuild waiting in a critical section. */
+     ++attempts;
+     if(fail_init) {stage=LCD_INIT_STAGE_SPI_ERROR;return NULL;}
+     ++stats.init_clears; stage=LCD_INIT_STAGE_READY; return &display;
+@@ -24,27 +36,49 @@ void lcd_clear(lcd *d,uint16_t color) {assert(d==&display && color==BLACK);++cle
+ int main(void)
+ {
+     unsigned i;
++    uint32_t revision;
++    app_lcd_event_state_t event;
+     const uint32_t delay[]={2000U,4000U,8000U,10000U,10000U};
++    assert(sizeof(app_lcd_event_state_t)==44U);
++    app_lcd_get_event_state(&event); assert(!event.revision && !critical_calls);
++    now=100U;
+     fail_init=1U;
+     for(i=0U;i<5U;++i) {
+         lcd_init(); assert(attempts==i+1U && !app_lcd_is_ready());
+         assert(s_lcd_retry_at-now==delay[i] && !s_clear_count);
++        app_lcd_get_event_state(&event);
++        assert(event.revision==2U*(i+1U) && !event.rebuilding && !event.ready);
++        assert(event.rebuild_started_ms==now && event.rebuild_finished_ms==now);
++        assert(event.rebuilds==i+1U && event.retry_at_ms==s_lcd_retry_at);
++        if(!i) {assert(!critical_calls);scheduler=taskSCHEDULER_RUNNING;}
++        revision=event.revision;
+         now=s_lcd_retry_at-1U; lcd_init(); assert(attempts==i+1U);
++        app_lcd_get_event_state(&event);assert(event.revision==revision);
+         ++now;
+     }
+     fail_init=0U; lcd_init(); assert(app_lcd_is_ready() && s_display_generation==1U);
+     assert(s_clear_count==1U && s_clear_reason==2U);
++    app_lcd_get_event_state(&event);
++    assert(event.ready && event.generation==1U && event.clear_count==1U && event.clear_reason==2U);
++    revision=event.revision;
+     s_line_valid[0]=1U; now+=2000U; app_lcd_frame_begin(LCD_PAGE_SERVO);
+     assert(!s_line_valid[0] && s_full_redraws==1U && !clears);
+     app_lcd_frame_end(); assert(!s_retry_failures);
++    app_lcd_get_event_state(&event);assert(event.revision==revision); /* No periodic flood. */
+     s_line_valid[0]=1U; app_lcd_toggle_page(); app_lcd_frame_begin(app_lcd_get_page());
+     assert(clears==1U && !s_line_valid[0] && s_clear_reason==3U);
++    app_lcd_get_event_state(&event);
++    assert(event.revision==revision+1U && event.clear_reason==3U && event.page==LCD_PAGE_REMOTE);
++    assert(event.clear_at_ms==now && event.clear_count==2U);
+     stage=LCD_INIT_STAGE_SPI_ERROR; s_line_valid[0]=1U; app_lcd_frame_end();
+     assert(!app_lcd_is_ready() && !s_lcd && !s_line_valid[0]);
+     assert(diagnostic==APP_DIAG_LCD_SPI_ERROR && s_lcd_retry_at-now==2000U);
++    app_lcd_get_event_state(&event);
++    assert(!event.ready && event.stage==LCD_INIT_STAGE_SPI_ERROR && !event.rebuilding);
+     now=s_lcd_retry_at; lcd_init(); assert(app_lcd_is_ready() && s_display_generation==2U);
+     /* Recovery that succeeds at init but fails while drawing still backs off. */
+     stage=LCD_INIT_STAGE_SPI_ERROR; app_lcd_frame_end(); assert(s_lcd_retry_at-now==4000U);
+-    puts("PASS production LCD recovery: init failure/backoff 2/4/8/10s, success generation, periodic redraw without clear, page invalidation, failed frame/rebuild");
++    assert(critical_calls && !critical_depth);
++    puts("PASS production LCD recovery: pre-scheduler safety, coherent start/finish events, no periodic flood, backoff 2/4/8/10s, page clear, failed frame/rebuild");
+     return 0;
+ }
+diff --git a/Tests/test_lcd_transport.c b/Tests/test_lcd_transport.c
+index bff00ea1ca2507d140f4d89e02624070495058b1..8ebd29f56c5ffdc9018f16dc3c4848e9d4a991bd 100644
+--- a/Tests/test_lcd_transport.c
++++ b/Tests/test_lcd_transport.c
+@@ -9,69 +9,118 @@ static DMA_Stream_TypeDef stream;
+ static DMA_HandleTypeDef dma={.Instance=&stream};
+ SPI_HandleTypeDef hspi1={.Instance=&peripheral,.hdmatx=&dma};
+ static uint32_t tick, notifications, transfers, polls, resets, wait_ticks, complete_after=1U;
+-static uint8_t mode, scheduler, stuck_disable, fail_init;
+-enum {NORMAL,LATE_TASK,TIMEOUT,DMA_ERROR,START_BUSY,TAIL_BUSY,HT_THEN_TC,LOST_IRQ};
+-uint32_t HAL_GetTick(void){lcd_test_dwt.CYCCNT+=10U;return tick;}
++static uint8_t mode, scheduler, stuck_disable, fail_init, injected, critical_depth;
++enum {NORMAL,LATE_TASK,TIMEOUT,DMA_ERROR,START_BUSY,TAIL_BUSY,HT_THEN_TC,LOST_IRQ,
++      PRELAUNCH_DELAY,DEADLINE_RACE,TAIL_DEADLINE_RACE,TAIL_DEADLINE_BUDGET,
++      TC_AND_DMA_ERROR,DMA_DME_ERROR,DMA_FE_ERROR,SPI_MODF_ERROR,SPI_FRE_ERROR};
++static void complete(void);
++uint32_t HAL_GetTick(void)
++{
++    lcd_test_dwt.CYCCNT+=10U;
++    if(mode==DEADLINE_RACE && !injected && s_dma_active && !s_dma_done &&
++       (peripheral.CR2&SPI_CR2_TXDMAEN)) {
++        /* IRQ completion between the old done check and its deadline read. */
++        injected=1U;complete();tick+=60U;
++    }
++    if(mode==TAIL_DEADLINE_RACE && !injected && s_dma_done &&
++       (peripheral.SR&SPI_SR_BSY)) {
++        /* Hardware finishes between the old busy check and its deadline read. */
++        injected=1U;peripheral.SR=SPI_SR_TXE;tick+=60U;
++    }
++    return tick;
++}
+ int xTaskGetSchedulerState(void){return scheduler;}
+-void lcd_test_critical(void){assert(scheduler==taskSCHEDULER_RUNNING);}
++void lcd_test_enter_critical(void){assert(scheduler==taskSCHEDULER_RUNNING && !critical_depth);critical_depth=1U;}
++void lcd_test_exit_critical(void){assert(critical_depth);critical_depth=0U;}
+ TaskHandle_t xTaskGetCurrentTaskHandle(void){return (void *)1;}
+ void vTaskNotifyGiveFromISR(TaskHandle_t task,BaseType_t *higher){assert(task==(void *)1);*higher=0;++notifications;}
+ static void complete(void){stream.NDTR=0U;stream.CR&=~DMA_SxCR_EN;dma.Flags=1U;lcd_port_dma_tx_isr();}
+ uint32_t ulTaskNotifyTake(BaseType_t clear,TickType_t wait)
+ {
+     (void)clear;
++    assert(!critical_depth); /* No blocking notification, even the zero-time drain, in a critical section. */
++    if(!wait && mode==PRELAUNCH_DELAY && !injected){tick+=60U;injected=1U;}
+     if(wait){++wait_ticks;++tick;
+         if(mode==LATE_TASK){complete();tick+=100U;}
+         else if(mode==DMA_ERROR){dma.Flags=4U;lcd_port_dma_tx_isr();}
++        else if(mode==DMA_DME_ERROR){dma.Flags=8U;lcd_port_dma_tx_isr();}
++        else if(mode==DMA_FE_ERROR){dma.Flags=16U;lcd_port_dma_tx_isr();}
++        else if(mode==TC_AND_DMA_ERROR){stream.NDTR=0U;stream.CR&=~DMA_SxCR_EN;dma.Flags=5U;lcd_port_dma_tx_isr();}
+         else if(mode==HT_THEN_TC && wait_ticks==1U){dma.Flags=2U;lcd_port_dma_tx_isr();assert(!s_dma_done);}
+         else if(mode==LOST_IRQ){stream.NDTR=0U;stream.CR&=~DMA_SxCR_EN;dma.Flags=1U;}
+         else if(mode!=TIMEOUT && mode!=LOST_IRQ && wait_ticks>=complete_after)complete();
+     }
+     {uint32_t value=notifications;notifications=0U;return value;}
+ }
+-void vTaskDelay(TickType_t n){tick+=n;}
++void vTaskDelay(TickType_t n){assert(!critical_depth);tick+=n;}
+ void lcd_test_dma_disable(DMA_HandleTypeDef *h){lcd_test_dwt.CYCCNT+=1000U;if(!stuck_disable)h->Instance->CR&=~DMA_SxCR_EN;}
+ void lcd_test_spi_reset(void){++resets;memset(&peripheral,0,sizeof(peripheral));peripheral.SR=SPI_SR_TXE;}
+-HAL_StatusTypeDef HAL_SPI_Init(SPI_HandleTypeDef *h){if(fail_init==1U)return HAL_ERROR;h->hdmatx->State=HAL_DMA_STATE_READY;h->hdmatx->ErrorCode=fail_init==2U?1U:0U;h->State=HAL_SPI_STATE_READY;return HAL_OK;}
++HAL_StatusTypeDef HAL_SPI_Init(SPI_HandleTypeDef *h){assert(!critical_depth);if(fail_init==1U)return HAL_ERROR;h->hdmatx->State=HAL_DMA_STATE_READY;h->hdmatx->ErrorCode=fail_init==2U?1U:0U;h->State=HAL_SPI_STATE_READY;return HAL_OK;}
+ void HAL_GPIO_WritePin(void *p,uint32_t pin,GPIO_PinState state){(void)p;(void)pin;(void)state;assert(!s_dma_active);}
+ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *h,uint8_t *p,uint16_t n,uint32_t timeout)
+ {(void)h;(void)p;(void)n;assert(timeout==20U);++polls;return mode==TIMEOUT?HAL_TIMEOUT:HAL_OK;}
+ HAL_StatusTypeDef HAL_DMA_Start_IT(DMA_HandleTypeDef *h,uint32_t src,uint32_t dst,uint32_t n)
+ {
+-    (void)src;(void)dst;assert(n<=640U);assert(h==&dma);assert(!s_dma_done);
++    (void)src;(void)dst;assert(n<=640U);assert(h==&dma);assert(!s_dma_done && critical_depth);
+     if(mode==START_BUSY)return HAL_BUSY;
+     ++transfers;wait_ticks=0U;h->Instance->NDTR=n;h->Instance->CR=DMA_SxCR_EN|DMA_IT_TC|DMA_IT_TE;
+-    peripheral.SR=SPI_SR_TXE|(mode==TAIL_BUSY?SPI_SR_BSY:0U);return HAL_OK;
++    peripheral.SR=SPI_SR_TXE|
++        ((mode==TAIL_BUSY || mode==TAIL_DEADLINE_RACE || mode==TAIL_DEADLINE_BUDGET)?SPI_SR_BSY:0U)|
++        (mode==SPI_MODF_ERROR?SPI_SR_MODF:0U)|(mode==SPI_FRE_ERROR?SPI_SR_FRE:0U);
++    return HAL_OK;
+ }
+ static void reset_case(void)
+ {
+-    stuck_disable=fail_init=0U;mode=NORMAL;complete_after=1U;
++    stuck_disable=fail_init=injected=0U;mode=NORMAL;complete_after=1U;
+     assert(lcd_port_recover());lcd_port_reset_stats();notifications=wait_ticks=0U;
+ }
+ int main(void)
+ {
+-    uint8_t payload[1300];lcd_io io={.spi=&hspi1};lcd_port_stats_t stats;uint32_t before;
++    uint8_t payload[1300];lcd_io io={.spi=&hspi1};lcd_port_stats_t stats;uint32_t before,at;
++    lcd_failure_t first;
+     memset(payload,0xA5,sizeof(payload));reset_case();
+     scheduler=0U;lcd_write_bulk(&io,payload,sizeof(payload));assert(polls==3U && !transfers);
+     scheduler=taskSCHEDULER_RUNNING;
+     lcd_write_bulk(&io,payload,sizeof(payload));assert(transfers==3U && !memcmp(s_dma_buffer,payload,20));
+     before=transfers;mode=LATE_TASK;lcd_write_byte(&io,0x12U);assert(transfers==before+1U && s_init_stage!=LCD_INIT_STAGE_SPI_ERROR);
+     reset_case();mode=HT_THEN_TC;complete_after=2U;lcd_write_byte(&io,1U);assert(!s_spi_errors);
++    reset_case();mode=PRELAUNCH_DELAY;at=tick;before=s_stats.dma_completed;lcd_write_byte(&io,1U);
++    assert(injected && !s_spi_errors && tick-at==61U && s_stats.dma_completed==before+1U);
++    reset_case();mode=DEADLINE_RACE;at=tick;before=s_stats.dma_completed;lcd_write_byte(&io,1U);
++    assert(injected && !s_spi_errors && !wait_ticks && tick-at==60U && s_stats.dma_completed==before+1U);
++    reset_case();mode=TAIL_DEADLINE_RACE;at=tick;before=s_stats.dma_completed;lcd_write_byte(&io,1U);
++    assert(injected && !s_spi_errors && tick-at==61U && s_stats.dma_completed==before+1U);
++    reset_case();tick=UINT32_MAX-20U;complete_after=40U;lcd_write_byte(&io,1U);
++    assert(!s_spi_errors && tick==19U);
+     reset_case();mode=TIMEOUT;lcd_write_bulk(&io,payload,640U);
+     lcd_port_get_stats(&stats);assert(stats.errors==1U && stats.last.reason==LCD_ERROR_TIMEOUT && stats.last.remaining==640U);
++    first=stats.first;
+     before=transfers;lcd_write_byte(&io,1U);assert(transfers==before);
+     dma.Flags=1U;lcd_port_dma_tx_isr();assert(!s_dma_active); /* Late completion is drained. */
++    reset_case();mode=TAIL_DEADLINE_BUDGET;complete_after=49U;lcd_write_byte(&io,1U);
++    assert(s_stats.last.reason==LCD_ERROR_TIMEOUT && s_stats.last.elapsed_ms==50U && s_stats.last.remaining==0U);
+     reset_case();mode=DMA_ERROR;lcd_write_byte(&io,1U);assert(s_stats.last.reason==LCD_ERROR_DMA);
++    reset_case();mode=TC_AND_DMA_ERROR;lcd_write_byte(&io,1U);
++    assert(s_stats.last.reason==LCD_ERROR_DMA && s_stats.last.dma_error==HAL_DMA_ERROR_TE);
++    reset_case();mode=DMA_DME_ERROR;lcd_write_byte(&io,1U);
++    assert(s_stats.last.reason==LCD_ERROR_DMA && s_stats.last.dma_error==HAL_DMA_ERROR_DME);
++    reset_case();mode=DMA_FE_ERROR;lcd_write_byte(&io,1U);
++    assert(s_stats.last.reason==LCD_ERROR_DMA && s_stats.last.dma_error==HAL_DMA_ERROR_FE);
++    reset_case();mode=SPI_MODF_ERROR;lcd_write_byte(&io,1U);assert(s_stats.last.reason==LCD_ERROR_DMA);
++    reset_case();mode=SPI_FRE_ERROR;lcd_write_byte(&io,1U);assert(s_stats.last.reason==LCD_ERROR_DMA);
+     reset_case();mode=START_BUSY;lcd_write_byte(&io,1U);assert(s_stats.last.reason==LCD_ERROR_DMA_START);
+     reset_case();mode=TAIL_BUSY;lcd_write_byte(&io,1U);assert(s_stats.last.reason==LCD_ERROR_TIMEOUT);
+     reset_case();mode=LOST_IRQ;lcd_write_byte(&io,1U);assert(s_stats.last.reason==LCD_ERROR_TIMEOUT);
++    reset_case();tick=UINT32_MAX-20U;mode=TIMEOUT;lcd_write_byte(&io,1U);
++    assert(s_stats.last.reason==LCD_ERROR_TIMEOUT && s_stats.last.elapsed_ms==50U);
+     reset_case();stuck_disable=1U;mode=TIMEOUT;lcd_write_byte(&io,1U);assert(!lcd_port_recover());
+-    assert(stream.CR&DMA_SxCR_EN);stuck_disable=0U;reset_case();
++    assert(stream.CR&DMA_SxCR_EN);before=transfers;lcd_write_byte(&io,1U);assert(transfers==before);
++    stuck_disable=0U;reset_case();
+     fail_init=1U;assert(!lcd_port_recover());fail_init=0U;reset_case();
+     fail_init=2U;assert(!lcd_port_recover() && s_stats.last.reason==LCD_ERROR_REINIT);reset_case();
+     lcd_write_byte(&io,0x5AU);assert(s_init_stage!=LCD_INIT_STAGE_SPI_ERROR);
+     lcd_port_get_stats(&stats);assert(stats.first.reason==LCD_ERROR_TIMEOUT && stats.errors>=7U);
+-    assert(resets>0U);
+-    puts("PASS production LCD transport: boot polling, bounded DMA chunks, HT/TC, late task/IRQ, DMA/start/tail faults, timeout, recovery quarantine, lifetime evidence");
++    assert(!memcmp(&first,&stats.first,sizeof(first)) && !critical_depth && resets>0U);
++    puts("PASS production LCD transport: prelaunch/DMA/tail races, one deadline, tick wrap, HT/TC/error priority, lost IRQ, quarantine/recovery, lifetime evidence");
+     return 0;
+ }
+diff --git a/Tests/run_hmi_snapshot_freshness_tests.ps1 b/Tests/run_hmi_snapshot_freshness_tests.ps1
+new file mode 100644
+index 0000000000000000000000000000000000000000..fa6aed2741c258b21f5fe58501f550cef647053e
+--- /dev/null
++++ b/Tests/run_hmi_snapshot_freshness_tests.ps1
+@@ -0,0 +1,20 @@
++param([string]$Compiler = "D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe")
++$ErrorActionPreference = "Stop"
++$root = Split-Path $PSScriptRoot -Parent
++$binary = Join-Path $env:TEMP "rail_hmi_snapshot_freshness_tests.exe"
++Push-Location $root
++try {
++    foreach ($diag in @(0,1)) {
++        & $Compiler -std=c99 -Wall -Wextra -Werror -DportTICK_PERIOD_MS=1U `
++            -DAPP_CAN_CONTROL_ENABLED=0 -DAPP_CAN_STOP_PARAMETERS_APPROVED=0 `
++            "-DAPP_HMI_LINK_DIAG_ENABLED=$diag" `
++            -ITests -ITests/hmi_mocks -ITests/mocks -IAPP -IAPP/HMI -IDevice -IProtocol `
++            -IProtocol/CAN -IProtocol/HMI -IBSP/CAN -IBSP/HMI_UART -IBSP/DEBUG_UART -IBSP/SYSTEM `
++            Tests/test_hmi_snapshot_freshness.c APP/HMI/app_hmi_state.c `
++            Protocol/HMI/hmi_modbus_slave.c -o $binary
++        if ($LASTEXITCODE -ne 0) { throw "HMI快照期限测试编译失败" }
++        & $binary
++        if ($LASTEXITCODE -ne 0) { throw "HMI快照期限测试失败" }
++    }
++}
++finally { Pop-Location }
+diff --git a/Tests/test_hmi_snapshot_freshness.c b/Tests/test_hmi_snapshot_freshness.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..6b7edaca4598abbb856d695d4d52e03e9aa3d8bc
+--- /dev/null
++++ b/Tests/test_hmi_snapshot_freshness.c
+@@ -0,0 +1,208 @@
++/* Production snapshot/parser/UART with controllable encoder preemption. */
++#include "app_hmi_state.h"
++static void delayed_full_build(const hmi_state_input_t *in, hmi_alarm_state_t *alarm,
++                               uint16_t *registers);
++static void delayed_control_build(const hmi_state_input_t *in, uint16_t *registers);
++#define app_hmi_state_build delayed_full_build
++#define app_hmi_state_build_control delayed_control_build
++#define TEST_HMI_READ_SOURCE_HOOK
++#define main existing_hmi_integration_main
++#include "test_hmi_integration.c"
++#undef main
++#undef app_system_snapshot_read_with_meta
++#undef app_hmi_state_build
++#undef app_hmi_state_build_control
++
++static uint32_t full_delay_us, critical_delay_us, full_calls, critical_calls;
++static uint8_t require_response_before_full, saw_response_before_full;
++static uint8_t publish_after_failed_read;
++static uint8_t test_hmi_source_read(app_system_snapshot_t *snapshot,
++    uint32_t *source_ms, uint32_t *sequence, uint32_t *source_age_ms,
++    uint8_t *initialized)
++{
++    uint8_t valid = app_system_snapshot_read_with_meta(snapshot,
++        source_ms, sequence, source_age_ms, initialized);
++    if (!valid && publish_after_failed_read)
++    {
++        publish_after_failed_read = 0U;
++        app_system_snapshot_service();
++    }
++    return valid;
++}
++
++static void delayed_full_build(const hmi_state_input_t *in, hmi_alarm_state_t *alarm,
++                               uint16_t *registers)
++{
++    full_calls++;
++    if (require_response_before_full)
++    {
++        assert(response_size > 5U && response[1] == 3U);
++        saw_response_before_full = 1U;
++    }
++    app_hmi_state_build(in, alarm, registers);
++    if (full_delay_us) advance(full_delay_us);
++}
++static void delayed_control_build(const hmi_state_input_t *in, uint16_t *registers)
++{
++    critical_calls++;
++    app_hmi_state_build_control(in, registers);
++    if (critical_delay_us) advance(critical_delay_us);
++}
++static void clock_at(uint32_t ms)
++{
++    tick = ms; simulated_us = (uint64_t)ms * 1000U;
++}
++
++static void delayed_cache_test(void)
++{
++    uint16_t values[96];
++    app_hmi_snapshot_diag_t before, after;
++    hmi_alarm_state_t alarm_before;
++    fresh(); clock_at(1000U); app_system_snapshot_init();
++    clock_at(1010U); full_delay_us = 45000U; app_hmi_snapshot_init(identity_id);
++    assert(tick == 1055U);
++    app_hmi_snapshot_diag_read(&before);
++    assert(before.full_source_ms == 1000U && before.last_full_cycles == 45000U);
++    full_delay_us = 0U;
++    clock_at(1091U); app_system_snapshot_service(); clock_at(1101U);
++    memcpy(&alarm_before, &s_alarm, sizeof(s_alarm));
++    assert(app_hmi_snapshot_read(0x0460U, 96U, values));
++    assert(values[6] == 0U && values[7] == 1091U);
++    app_hmi_snapshot_diag_read(&after);
++    assert(after.critical_source_ms == 1091U && after.full_source_ms == 1000U);
++    assert(after.full_sequence == before.full_sequence);
++    assert(after.critical_sequence > after.full_sequence);
++    assert(memcmp(&alarm_before, &s_alarm, sizeof(s_alarm)) == 0);
++    /* s_input now contains fresh critical data, but that must not redate the full cache. */
++    assert(!app_hmi_snapshot_read(0x0200U, 24U, values));
++    app_hmi_snapshot_diag_read(&after);
++    assert(after.reject.reason == APP_HMI_SNAPSHOT_FULL_CACHE_EXPIRED);
++    assert(after.reject.cache_age_ms == 101U && after.reject.source_age_ms == 10U);
++    assert(after.reject.full_sequence == before.full_sequence);
++    assert(after.reject.critical_sequence > after.reject.full_sequence);
++    /* Source-based cadence refreshes now, though completion-based cadence would skip (46ms). */
++    app_hmi_snapshot_service();
++    app_hmi_snapshot_diag_read(&after);
++    assert(after.full_source_ms == 1091U && after.full_builds == before.full_builds + 1U);
++    assert(app_hmi_snapshot_read(0x0200U, 24U, values));
++    puts("PASS delayed full cache: fresh critical read, independent full expiry, source-based cadence, pure alarm");
++}
++
++static void rejection_test(void)
++{
++    uint16_t values[96];
++    app_hmi_snapshot_diag_t first, after;
++    uint32_t calls;
++    fresh(); clock_at(2000U); app_system_snapshot_init(); app_hmi_snapshot_init(identity_id);
++    clock_at(2100U); assert(app_hmi_snapshot_read(0x0460U, 64U, values));
++    clock_at(2101U); assert(!app_hmi_snapshot_read(0x0460U, 64U, values));
++    app_hmi_snapshot_diag_read(&first);
++    assert(first.reject_pending && first.reject.reason == APP_HMI_SNAPSHOT_SOURCE_EXPIRED);
++    assert(first.reject.source_age_ms == 101U && first.reject.encode_cycles == 0U);
++    calls = critical_calls;
++    assert(!app_hmi_snapshot_read(0x04BFU, 2U, values));
++    app_hmi_snapshot_diag_read(&after);
++    assert(after.merged == 1U && memcmp(&after.reject, &first.reject, sizeof(first.reject)) == 0);
++    app_hmi_snapshot_diag_ack_reject(first.reject.id + 1U);
++    app_hmi_snapshot_diag_read(&after); assert(after.reject_pending);
++    app_hmi_snapshot_diag_ack_reject(first.reject.id);
++    assert(!app_hmi_snapshot_read(0x0460U, 0U, values));
++    app_hmi_snapshot_diag_read(&after);
++    assert(after.reject.reason == APP_HMI_SNAPSHOT_BAD_PARAMETER && after.reject.id > first.reject.id);
++    app_hmi_snapshot_diag_ack_reject(after.reject.id);
++    assert(!app_hmi_snapshot_read(0x04BFU, 2U, values));
++    app_hmi_snapshot_diag_read(&after); assert(after.reject.reason == APP_HMI_SNAPSHOT_BAD_RANGE);
++    assert(critical_calls == calls);
++    assert(app_hmi_snapshot_read(APP_HMI_RESULT_START, APP_HMI_RESULT_REGISTERS, values));
++    assert(!unsafe_calls && !mailbox_calls);
++    puts("PASS source 100/101ms boundary, parameter/range validation, sticky first rejection and explicit ACK");
++}
++
++static void failed_read_publication_test(void)
++{
++    uint16_t values[96];
++    app_hmi_snapshot_diag_t diag;
++    uint32_t old_sequence;
++    fresh(); clock_at(4000U); app_system_snapshot_init(); app_hmi_snapshot_init(identity_id);
++    old_sequence = sys_buffer[sys_active].sequence;
++    clock_at(4101U); publish_after_failed_read = 1U;
++    assert(!app_hmi_snapshot_read(0x0460U, 64U, values));
++    app_hmi_snapshot_diag_read(&diag);
++    assert(sys_buffer[sys_active].now_ms == 4101U);
++    assert(diag.reject.reason == APP_HMI_SNAPSHOT_SOURCE_EXPIRED);
++    assert(diag.reject.source_age_ms == 101U && diag.reject.source_sequence == old_sequence);
++    app_hmi_snapshot_diag_ack_reject(diag.reject.id);
++    sys_initialized = 0U; publish_after_failed_read = 1U;
++    assert(!app_hmi_snapshot_read(0x0460U, 64U, values));
++    app_hmi_snapshot_diag_read(&diag);
++    assert(sys_initialized);
++    assert(diag.reject.reason == APP_HMI_SNAPSHOT_NO_SOURCE);
++    assert(diag.reject.source_age_ms == UINT32_MAX);
++    puts("PASS atomic failed-read metadata survives immediate Health publication, including no-source state");
++}
++
++static void preemption_test(void)
++{
++    uint16_t values[96];
++    app_hmi_snapshot_diag_t diag;
++    fresh(); clock_at(3000U); app_system_snapshot_init(); app_hmi_snapshot_init(identity_id);
++    clock_at(3099U); critical_delay_us = 2000U;
++    assert(!app_hmi_snapshot_read(0x0460U, 64U, values));
++    critical_delay_us = 0U; app_hmi_snapshot_diag_read(&diag);
++    assert(diag.reject.reason == APP_HMI_SNAPSHOT_ENCODE_EXPIRED);
++    assert(diag.reject.age_before_ms == 99U && diag.reject.age_after_ms == 101U);
++    assert(diag.reject.encode_cycles == 2000U);
++    /* Preemption published a new source, but the request never silently substitutes or retries. */
++    assert(diag.critical_source_ms == 3000U);
++    assert(app_hmi_snapshot_read(0x0460U, 64U, values));
++    assert(values[7] == 3101U);
++    puts("PASS encoding preemption: stale copied source rejected after encoding; no retry or fabricated timestamp");
++}
++
++static void request_priority_test(void)
++{
++    uint8_t frame[8];
++    uint32_t calls;
++    fresh(); advance(60000U); response_size = 0U;
++    request(frame, 0x0460U, 64U); inject(frame, 8U); boundary();
++    require_response_before_full = 1U; saw_response_before_full = 0U;
++    app_hmi_service(); require_response_before_full = 0U;
++    assert(saw_response_before_full && response_size == 133U); complete();
++    /* A partial parser frame suppresses background full work as well. */
++    advance(60000U); calls = full_calls;
++    request(frame, 0x0460U, 64U); inject(frame, 4U); idle(); app_hmi_service();
++    assert(s_length == 4U && full_calls == calls);
++    inject(frame + 4U, 4U); flush(); assert(response_size == 133U); complete();
++    puts("PASS queued and partial request priority over full background encoding");
++}
++
++static void tx_completion_test(void)
++{
++    uint8_t frame[8];
++    uint32_t captured, expected, saved;
++    fresh(); request(frame, 0x0460U, 64U); inject(frame, 8U); boundary();
++    app_hmi_service(); captured = s_tx_request_cycles;
++    advance(12000U); expected = test_dwt.CYCCNT - captured; complete();
++    assert(s_diag.response_complete_last_cycles == expected);
++    assert(s_diag.response_complete_max_cycles == expected);
++    /* Normal uint32 arithmetic must survive a DWT wrap. */
++    fresh(); test_dwt.CYCCNT = UINT32_MAX - 3000U;
++    request(frame, 0x0460U, 64U); inject(frame, 8U); boundary(); app_hmi_service();
++    captured = s_tx_request_cycles; advance(12000U);
++    expected = test_dwt.CYCCNT - captured; complete();
++    assert(s_diag.response_complete_last_cycles == expected && expected < 50000U);
++    saved = s_diag.response_complete_last_cycles;
++    request(frame, 0x0460U, 64U); inject(frame, 8U); flush();
++    bsp_rx_generation++; advance(12000U); complete();
++    assert(s_diag.response_complete_last_cycles == saved);
++    puts("PASS request last byte to UART TC timing, DWT wrap, recovery generation isolation");
++}
++
++int main(void)
++{
++    SystemCoreClock = 1000000U;
++    delayed_cache_test(); rejection_test(); failed_read_publication_test(); preemption_test();
++    request_priority_test(); tx_completion_test();
++    printf("PASS snapshot diag sizeof=%u, no new task/buffer/allocation\n", (unsigned)sizeof(app_hmi_snapshot_diag_t));
++    return 0;
++}

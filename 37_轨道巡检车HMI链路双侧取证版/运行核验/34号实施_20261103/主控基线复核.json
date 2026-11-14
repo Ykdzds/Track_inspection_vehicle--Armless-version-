@@ -1,0 +1,18 @@
+{
+  "head": "124d25ac87e968beb0324f89ebb3c66caa6c4b0d",
+  "status": "",
+  "last10": [
+    "124d25a (HEAD -> fix/hmi33-scheduling-session) fix: 修复HMI新会话停车状态并增加33号联动诊断",
+    "f33b011 (main) feat: 增加遥控双模式调速与双轴同步在线调参",
+    "e0c67d8 fix: 修复F407 PB10受控停车后的直接重新授权",
+    "523ac74 feat: 完成F407双轴同步运动控制与V1.3验证交付",
+    "d0de6ef fix: 修复F407 LCD告警阻塞释放及遥控换向减速异常",
+    "baa1e46 fix: 修复F407 CAN计时与三端停车闭环并优化LCD刷新",
+    "59d750d fix: 修复F407三端停车换向计时并接入故障恢复协议",
+    "7134718 fix: 完善F407后台采集与无线遥测刷新调度",
+    "99f6509 fix: 修复F407无线DMA中断竞争并补充失败快照与回归验收",
+    "13a899f fix: 修复F407三端正常加减速计时与串口状态输出"
+  ],
+  "sourceChangedFor34": false,
+  "pushed": false
+}

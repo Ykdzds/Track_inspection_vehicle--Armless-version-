@@ -1,0 +1,1 @@
+﻿// HMI34 navigation changes presentation only; global control continues.

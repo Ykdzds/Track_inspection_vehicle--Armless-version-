@@ -1,0 +1,534 @@
+﻿{
+  "GeneratedLocal": "2026-11-07T20:26:51.530541+08:00",
+  "Scope": "F407 per-window state encoding, RX scheduling and transaction timeout diagnostics",
+  "Status": "Software regressions and both formal rebuilds passed; physical acceptance pending",
+  "Implementation": "window-r1",
+  "DiagnosticRevision": 2,
+  "Git": {
+    "Branch": "fix/hmi33-scheduling-session",
+    "BaselineCommit": "3eaa1fa367a8e1b0b55da5732ef29589fbe12dd5",
+    "BaselineSubject": "fix: 修复HMI关键状态源采样与LCD DMA误超时并补齐诊断",
+    "BaselineCommittedBeforeRepair": true,
+    "RepairCommitted": false,
+    "Pushed": false,
+    "Latest10": [
+      "3eaa1fa fix: 修复HMI关键状态源采样与LCD DMA误超时并补齐诊断",
+      "ce2a698 feat: 增加HMI37双侧链路取证与首次停车原因诊断",
+      "82d6a0c fix: 修复Flash保存门禁诊断与NRF故障恢复状态",
+      "8883212 feat: 完善ARM3 R2 CAN控制链路与三端输入安全互锁",
+      "01b1751 feat: 增加双轴参数Flash追加保存与增强配对遥测",
+      "4cccd62 fix: 修复双轴动态补偿步长并补充同步时序诊断",
+      "da12838 chore: 同步Keil调试配置中的诊断与运行时模块",
+      "1c9b1f0 fix: 隔离USART1调试通信并保留复位故障诊断",
+      "15db06e chore: 关闭RF周期串口诊断并更新ST-LINK调试配置",
+      "124d25a fix: 修复HMI新会话停车状态并增加33号联动诊断"
+    ],
+    "TrackedRepairPatch": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\受跟踪文件修复差异.patch",
+      "Bytes": 89310,
+      "Sha256": "004193899E0BEC5A86341C7FD1A87915715F44CD697D6A46C1FC08398FD3849B"
+    }
+  },
+  "Configuration": {
+    "APP_HMI_LINK_DIAG_ENABLED": 1,
+    "SourceFreshnessMs": 100,
+    "AlarmObservePeriodMs": 50,
+    "AlarmMaxObserveAgeMs": 100,
+    "RtuQuietUs": 1750,
+    "ScreenWaitMs": 50,
+    "ScreenGateMs": 300,
+    "TargetTtlMs": 500,
+    "LeaseMs": 1000,
+    "HmiPriority": 3,
+    "HmiBatchFrames": 2,
+    "HmiBatchCheckUs": 200,
+    "HmiIdleWaitMs": 2,
+    "SlowWarningMs": 40,
+    "SlowDeadlineMs": 50,
+    "OutputBudgetBytesPerSecond": 6000,
+    "LineStorageBytes": 256,
+    "Uart": "USART1 PA9 TX PA10 RX 115200 8N1",
+    "NoNewTask": true,
+    "NoRuntimeDiagnosticAllocation": true,
+    "NoUartBufferOrDescriptorExpansion": true,
+    "PeriodicFullEncodingDisabled": true
+  },
+  "Build": {
+    "Report": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\Keil构建结果.json",
+      "Bytes": 96273,
+      "Sha256": "E14E8DEFFD0296A6FE68FED1144772B5705CBB9FC5A68F05802311B87EB0A650"
+    },
+    "FormalProject": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1.uvprojx",
+      "Bytes": 69852,
+      "Sha256": "E34114D077148D352D4D391691764F8BCE23ADDA9C537050BFEBC394EF81EDA3"
+    },
+    "FinalFormalOutputMacro": 1,
+    "BothVariantsUseFormalProject": true,
+    "BootBuildId": "Nov  7 2026_20:21:36",
+    "ProductionSourceCount": 286,
+    "ProductionSourceInventorySha256": "17B0D2202A59D7FF5A3BF17E1DE3D8578E305584F1EB3EBC1F829B625E60E6E0",
+    "AggregateFormat": "UTF-8 sorted relative path + NUL + uppercase SHA256 + LF per file; per-file list in build report",
+    "SourceHashesRechecked": true,
+    "ProjectAndRteRestorationVerified": true,
+    "Variants": [
+      {
+        "Macro": 0,
+        "ZeroErrorsZeroWarnings": true,
+        "Memory": {
+          "Regions": {
+            "RW_CCM": {
+              "Base": "0x10000000",
+              "Bytes": 62024,
+              "Capacity": 65536,
+              "FreeBytes": 3512
+            },
+            "RW_IRAM1": {
+              "Base": "0x20000000",
+              "Bytes": 105712,
+              "Capacity": 114688,
+              "FreeBytes": 8976
+            },
+            "RW_IRAM2": {
+              "Base": "0x2001c000",
+              "Bytes": 6888,
+              "Capacity": 15872,
+              "FreeBytes": 8984
+            },
+            "RETAINED_FAULT": {
+              "Base": "0x2001fe00",
+              "Bytes": 512,
+              "Capacity": 512,
+              "FreeBytes": 0
+            }
+          },
+          "ModuleRamBytes": 0,
+          "PhysicalRamBytes": 175136,
+          "PhysicalBaselineBytes": 174876,
+          "PhysicalGrowthBytes": 260,
+          "Stacks": [
+            {
+              "Task": "motion_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 2176,
+              "MarginBytes": 896
+            },
+            {
+              "Task": "servo_comm_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 2712,
+              "MarginBytes": 360
+            },
+            {
+              "Task": "health_task",
+              "AllocatedBytes": 2048,
+              "DepthBytes": 1528,
+              "MarginBytes": 520
+            },
+            {
+              "Task": "key_task",
+              "AllocatedBytes": 896,
+              "DepthBytes": 528,
+              "MarginBytes": 368
+            },
+            {
+              "Task": "status_task",
+              "AllocatedBytes": 768,
+              "DepthBytes": 184,
+              "MarginBytes": 584
+            },
+            {
+              "Task": "cli_task",
+              "AllocatedBytes": 3328,
+              "DepthBytes": 2504,
+              "MarginBytes": 824
+            },
+            {
+              "Task": "lcd_task",
+              "AllocatedBytes": 3840,
+              "DepthBytes": 3224,
+              "MarginBytes": 616
+            },
+            {
+              "Task": "iwdg_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 696,
+              "MarginBytes": 2376
+            },
+            {
+              "Task": "nrf_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 808,
+              "MarginBytes": 2264
+            },
+            {
+              "Task": "modbus_bus_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 1256,
+              "MarginBytes": 1816
+            },
+            {
+              "Task": "hmi_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 680,
+              "MarginBytes": 2392
+            },
+            {
+              "Task": "can_task with callbacks",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 1752,
+              "MarginBytes": 1320
+            }
+          ],
+          "MinimumStaticStackMarginBytes": 360.0
+        },
+        "Artifacts": [
+          {
+            "Kind": "axf",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.axf",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro0\\RailInspectionCar_V1.axf",
+            "Sha256": "3A48F610B6163428D5E5E7D2712E5C4E1F6191190482C58008A9AB3C8F99497C"
+          },
+          {
+            "Kind": "hex",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.hex",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro0\\RailInspectionCar_V1.hex",
+            "Sha256": "7152DB68298AB5C4DF1BCD8894A1F0E1CE117E6368C13CA4CBE143ABBC1EE05B"
+          },
+          {
+            "Kind": "map",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.map",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro0\\RailInspectionCar_V1.map",
+            "Sha256": "982CD402CA1377C54A400B3C3D32C9088EA065A3D460284F4907A9541195DA2C"
+          },
+          {
+            "Kind": "htm",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.htm",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro0\\RailInspectionCar_V1.htm",
+            "Sha256": "9F55075CC3830D97F04B862D0DFB62553C18F950673B8C754CF0A869E2972B15"
+          }
+        ]
+      },
+      {
+        "Macro": 1,
+        "ZeroErrorsZeroWarnings": true,
+        "Memory": {
+          "Regions": {
+            "RW_CCM": {
+              "Base": "0x10000000",
+              "Bytes": 62024,
+              "Capacity": 65536,
+              "FreeBytes": 3512
+            },
+            "RW_IRAM1": {
+              "Base": "0x20000000",
+              "Bytes": 107504,
+              "Capacity": 114688,
+              "FreeBytes": 7184
+            },
+            "RW_IRAM2": {
+              "Base": "0x2001c000",
+              "Bytes": 8676,
+              "Capacity": 15872,
+              "FreeBytes": 7196
+            },
+            "RETAINED_FAULT": {
+              "Base": "0x2001fe00",
+              "Bytes": 512,
+              "Capacity": 512,
+              "FreeBytes": 0
+            }
+          },
+          "ModuleRamBytes": 3426,
+          "PhysicalRamBytes": 178716,
+          "PhysicalBaselineBytes": 174876,
+          "PhysicalGrowthBytes": 3840,
+          "Stacks": [
+            {
+              "Task": "motion_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 2176,
+              "MarginBytes": 896
+            },
+            {
+              "Task": "servo_comm_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 2792,
+              "MarginBytes": 280
+            },
+            {
+              "Task": "health_task",
+              "AllocatedBytes": 2048,
+              "DepthBytes": 1528,
+              "MarginBytes": 520
+            },
+            {
+              "Task": "key_task",
+              "AllocatedBytes": 896,
+              "DepthBytes": 528,
+              "MarginBytes": 368
+            },
+            {
+              "Task": "status_task",
+              "AllocatedBytes": 768,
+              "DepthBytes": 184,
+              "MarginBytes": 584
+            },
+            {
+              "Task": "cli_task",
+              "AllocatedBytes": 3328,
+              "DepthBytes": 2504,
+              "MarginBytes": 824
+            },
+            {
+              "Task": "lcd_task",
+              "AllocatedBytes": 3840,
+              "DepthBytes": 3224,
+              "MarginBytes": 616
+            },
+            {
+              "Task": "iwdg_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 696,
+              "MarginBytes": 2376
+            },
+            {
+              "Task": "nrf_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 808,
+              "MarginBytes": 2264
+            },
+            {
+              "Task": "modbus_bus_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 1256,
+              "MarginBytes": 1816
+            },
+            {
+              "Task": "hmi_task",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 696,
+              "MarginBytes": 2376
+            },
+            {
+              "Task": "can_task with callbacks",
+              "AllocatedBytes": 3072,
+              "DepthBytes": 1752,
+              "MarginBytes": 1320
+            }
+          ],
+          "MinimumStaticStackMarginBytes": 280.0
+        },
+        "Artifacts": [
+          {
+            "Kind": "axf",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.axf",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro1\\RailInspectionCar_V1.axf",
+            "Sha256": "ED3341BB8433A946DC7E11ED4E6245B5E73BFC0963B8C45544CDCD20B8309539"
+          },
+          {
+            "Kind": "hex",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.hex",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro1\\RailInspectionCar_V1.hex",
+            "Sha256": "779401B15FE57B81A0873E4CA7F438E936D638871717BCB729DFEC408833F363"
+          },
+          {
+            "Kind": "map",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.map",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro1\\RailInspectionCar_V1.map",
+            "Sha256": "A878EC7FFE723ED42838183D76BBB3714DD6F715DA3C5E9A68CFB62512AECE05"
+          },
+          {
+            "Kind": "htm",
+            "ActualPath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\MDK-ARM\\RailInspectionCar_V1\\RailInspectionCar_V1.htm",
+            "EvidencePath": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\macro1\\RailInspectionCar_V1.htm",
+            "Sha256": "C07B3F4C4A51926956E707498E03664258D1BD9B8E0C06DE1AD0D1774340439C"
+          }
+        ]
+      }
+    ]
+  },
+  "RamBudget": {
+    "PhysicalBaselineCommit": "82d6a0c",
+    "PhysicalBaselineBytes": 174876,
+    "PreviousRepairBaselineCommit": "3eaa1fa",
+    "PreviousRepairPhysicalBytes": 178456,
+    "FinalPhysicalBytes": 178716,
+    "CumulativeGrowthBytes": 3840,
+    "CumulativeLimitBytes": 4096,
+    "CumulativeHeadroomBytes": 256,
+    "ThisRepairNetFixedGrowthBytes": 260,
+    "NewMetadataTargetBytes": 400,
+    "PhysicalIncludesRamExecutedCodeBytes": 136,
+    "FreeRtosHeapBytesAlreadyIncluded": 49152,
+    "OrdinarySramFreeBytes": 14380,
+    "CcmFreeBytes": 3512,
+    "RetainedFaultBytes": 512,
+    "RuntimeFreeHeapAndStackHighWater": "pending physical measurement"
+  },
+  "Verification": {
+    "HostRegressionSummary": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\regression-summary.json",
+      "Bytes": 23180,
+      "Sha256": "1ACDA5FB2C7D12056CB83983D114AB6246253E222130C5DD3BF5DB68DC48C930"
+    },
+    "HostRegressionLog": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\regression.log",
+      "Bytes": 191195,
+      "Sha256": "FF0D5600E378FD872826B6E7E218934239D1AB1A7AFF75A445CB3E11D97C1A74"
+    },
+    "HostSuitesPassed": 19,
+    "HostSuitesFailed": 0,
+    "FinalSourceRecheckSuitesPassed": 3,
+    "WindowRequestOracleComparisons": 134356,
+    "ScreenModelSummary": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\screen37-regression-summary.json",
+      "Bytes": 10607,
+      "Sha256": "1A2CCA8109E7CA15DAED5B5C21EF46D472E409C3B19767484387B219077E0AEA"
+    },
+    "ScreenModelLog": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\screen37-regression.log",
+      "Bytes": 14009,
+      "Sha256": "577E6CB94C4A6E741B679B7E3259D691A1CEC239AE5825BC94A513000E352E42"
+    },
+    "ScreenModelTestsPassed": 55,
+    "ScreenSupplementProbe": {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\screen37-single-failure.test.cjs",
+      "Bytes": 2581,
+      "Sha256": "A0BEBE951C42C3BFE95D4964FCF1BC0E59CF7DD271CD727C6A1DFC7A109A7EAA"
+    },
+    "ScreenPixAndScriptsHashesUnchanged": true,
+    "IndependentFinalMapArtifactReview": "passed; both archived maps/callgraphs, DMA, 12 task budgets, source/artifact/project/RTE hashes independently rechecked",
+    "ResolvedBuildAttempts": [
+      {
+        "Log": {
+          "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\failed-macro0-taskyield.log",
+          "Bytes": 3703,
+          "Sha256": "7F2CE08ADBCBF3213D744C3FC115FB98ADB75CDAB30B49D414747C48BB9179AC"
+        },
+        "Resolution": "braced taskYIELD and else branches before final double rebuild"
+      },
+      {
+        "Log": {
+          "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\验证\\failed-macro1-critical-header.log",
+          "Bytes": 4229,
+          "Sha256": "403A5B5FA9FC0BFE74880A677980EF5705C334F9E8D6236ABF9787ACD4F81741"
+        },
+        "Resolution": "explicit FreeRTOS.h and task.h in app_hmi.c before final double rebuild"
+      }
+    ]
+  },
+  "ChangedCodeAndTestFiles": [
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi.c",
+      "Bytes": 20260,
+      "Sha256": "3B7310FDEE8110FFCAC4E7674342FC169FFCDAEAB91015B0A677F4CBBAE1A577"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi.h",
+      "Bytes": 285,
+      "Sha256": "13CECFF802676A1D01694574328CBB44D38150B6F1BE6C6E829686600EC7713E"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi_link_diag.c",
+      "Bytes": 23747,
+      "Sha256": "B53EEFA919EDE22051195384C18E74812720BCA74D510078D9BAC0DF0C91A524"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi_link_diag.h",
+      "Bytes": 2866,
+      "Sha256": "80D822B8408038E6A99F4E6917D63D2D0BE326D9473A626F50D6E8D1E968A82D"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi_snapshot.c",
+      "Bytes": 10839,
+      "Sha256": "4D14C50913D8559A1BD1C49F65E4BACB99007166C3081C7A08670DE7A0D173EC"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi_snapshot.h",
+      "Bytes": 2794,
+      "Sha256": "6DA2AE5D8D8614EE955BFA2EB433695B3A8E32FB660C0B1F98D957371C5AACAD"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi_state.c",
+      "Bytes": 64093,
+      "Sha256": "E272D74CB999F1CA321EFEE55C077B6DE6C0E89F00EDBA6FDA2D9B9732FB41FD"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\HMI\\app_hmi_state.h",
+      "Bytes": 1901,
+      "Sha256": "315FEBF8C5B53400C75B0E3644213BC0832AB003094DC6C031C55DED0CF26C77"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\app_rtos_create.c",
+      "Bytes": 5259,
+      "Sha256": "8AB47A713CE6E58D2D6DAAE5FFBBE6C1B4CFDC1563D8C5B0FAFFCD55E7C06611"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP\\app_rtos_task.c",
+      "Bytes": 18957,
+      "Sha256": "8C2F2E7A131B8265A57A94D7BD0420923AE6C342D0C991DB54EB49E2A8B284F9"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\BSP\\HMI_UART\\bsp_hmi_uart.c",
+      "Bytes": 23581,
+      "Sha256": "01B965E15D44E9CE85065140638BD7225A00FB6E005B4DEB0B68084A7B9C71BF"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\BSP\\HMI_UART\\bsp_hmi_uart.h",
+      "Bytes": 4382,
+      "Sha256": "82836C2D8D826155FC3BA1A4BD793D7826911568FC1FD63EBFFDC6B1DB661AFE"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Tests\\run_hmi_state_window_tests.ps1",
+      "Bytes": 709,
+      "Sha256": "BAC1A8900C45C78A4226EB8252EC41A00E12FF45D944999A48823F24D0A2FF5E"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Tests\\test_hmi_integration.c",
+      "Bytes": 30352,
+      "Sha256": "3E263B513446F602F5BDA10E723A07E09BC44F021A4720588ACED69D291B6426"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Tests\\test_hmi_link_diag.c",
+      "Bytes": 18928,
+      "Sha256": "CF9BBC9BB9FFE749C3CBB5D055AD1507276012EFD8DBFFDF5EEC7BEAEBCC314D"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Tests\\test_hmi_link_wire.c",
+      "Bytes": 3831,
+      "Sha256": "AFC827B1FC50E47BF630CB4C897F26A494272F28841062E8A6D6BC2ACACA84DC"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Tests\\test_hmi_snapshot_freshness.c",
+      "Bytes": 16046,
+      "Sha256": "2B25A227F9728D0B491D33B7949D82975484C03C3D667A80E4968E2314B83D67"
+    },
+    {
+      "Path": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Tests\\test_hmi_state_windows.c",
+      "Bytes": 13420,
+      "Sha256": "5181CA21F36CAAAD3B1F7F6CF12597F8397507FCE915C60D60DD217A1834139E"
+    }
+  ],
+  "PhysicalAcceptance": {
+    "Status": "pending; no flash/download or hardware operation performed",
+    "ReplyCaptureToActualTcMustBeLessThanMs": 50,
+    "OptimizationTargetMs": 40,
+    "LogicalAnalyzerComparison": "when available: physical request last byte to response last byte",
+    "InitialRunMinutes": 30,
+    "ContinuousRunHours": 2,
+    "AllTaskRuntimeMinFreeStackBytes": 256,
+    "HeapBaseline": "re-establish after startup, no unexplained sustained decline",
+    "FailureRule": "Any 64/96-word complete response >=50ms or failing memory/stack criterion means failed acceptance",
+    "HostInjectedTimingIsNotPhysicalMeasurement": true,
+    "Checklist": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_HMI_Window_20261107\\现场验收表.md"
+  },
+  "UnchangedPorts": [
+    "Remote_control",
+    "F103 upper CAN simulator",
+    "HMI34",
+    "HMI37"
+  ],
+  "Rollback": "Use a separate checkout/copy of 3eaa1fa and its formal project; disabling diagnostics alone does not revert encoding/scheduling repair"
+}

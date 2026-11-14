@@ -1,0 +1,967 @@
+=== run_can_control_tests.ps1 ===
+PASS CAN macro0: no motion writes
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS quick stop: 0.40/0.50, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN macro0: no motion writes
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS quick stop: 0.40/0.50, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN macro0: no motion writes
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS quick stop: 0.40/0.50, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS quick stop: 0.40/0.50, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS quick stop: 0.40/0.50, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN extended: heartbeat/first zero/reboot/K1/stale/wrap/write failure/old reservation/120s/token exhaustion
+PASS global stop: dispatch original owner strategy; no CAN servo writes; no premature completion
+PASS safety lock excludes false stop success; old reservation cannot cancel new generation
+PASS per-axis mechanics: wheel/gear/direction/limit, reversal and one-axis failure
+PASS stalled CAN task/expired queued speed/repeated zero samples cannot retain or finish motion
+PASS quick stop: 0.40/0.50, upgrade without deadline reset, no downgrade, source dispatch, reservation barrier, stale replay
+PASS CAN control production: grant/first zero/async batches/stop hold/lease/reverse/arbitration/safety/wrap
+PASS CAN illegal configurations rejected
+=== run_hmi_control_tests.ps1 ===
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=0 readonly=1
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=1 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=1 readonly=1
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=0 readonly=1
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=2 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=1 readonly=1
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=0 readonly=1
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=3 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=1 readonly=1
+=== run_hmi_remote_joint_tests.ps1 ===
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=1 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=1 sync=1
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=2 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=2 sync=1
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=3 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=3 sync=1
+=== run_can_hmi_joint_tests.ps1 ===
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=4 stop=4 reason=1 emergency=0 elapsed=110 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/0.50 telemetry
+PASS CAN/HMI/remote joint axis=1
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=4 stop=4 reason=1 emergency=0 elapsed=110 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/0.50 telemetry
+PASS CAN/HMI/remote joint axis=2
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=4 stop=4 reason=1 emergency=0 elapsed=120 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/0.50 telemetry
+PASS CAN/HMI/remote joint axis=3
+=== run_can_k5_recovery_tests.ps1 ===
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+IDLE recovery=0 owner=5 phase=0 hmi_error=0 emergency=0
+IDLE recovery=1 owner=1 phase=4 hmi_error=0 emergency=0
+IDLE recovery=2 owner=2 phase=4 hmi_error=0 emergency=0
+IDLE-REJECT recovery=0 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=0 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=0 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=1 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=2 scenario=2 owner=0 lock=0
+PASS K5 recovery axis=1
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+IDLE recovery=0 owner=5 phase=0 hmi_error=0 emergency=0
+IDLE recovery=1 owner=1 phase=4 hmi_error=0 emergency=0
+IDLE recovery=2 owner=2 phase=4 hmi_error=0 emergency=0
+IDLE-REJECT recovery=0 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=0 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=0 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=1 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=2 scenario=2 owner=0 lock=0
+PASS K5 recovery axis=2
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=20 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=12 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=21 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+IDLE recovery=0 owner=5 phase=0 hmi_error=0 emergency=0
+IDLE recovery=1 owner=1 phase=4 hmi_error=0 emergency=0
+IDLE recovery=2 owner=2 phase=4 hmi_error=0 emergency=0
+IDLE-REJECT recovery=0 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=0 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=0 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=1 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=2 scenario=2 owner=0 lock=0
+PASS K5 recovery axis=3
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+=== run_remote_key_config_tests.ps1 ===
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS remote key configuration: fixed mapping, aliases and ramp validation
+PASS 按键迁移配置矩阵：新旧宏兼容、冲突拒绝和非法值拒绝。
+=== run_motion_ramp_tests.ps1 ===
+PASS motion ramp: physical acceleration, accumulation, symmetry, reverse and dt limit
+=== run_hmi_state_tests.ps1 ===
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:24:52 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:24:54 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:24:55 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:24:57 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:24:58 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:00 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:02 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:05 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:08 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:10 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:12 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+
+hmi transport=uart5-dma-r1 build=Oct 23 2026_16:25:14 rx=DMA_CIRCULAR tx=DMA_NORMAL
+
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 publish=600
+
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+
+hmi uptime_ms=118115 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+
+hmi region=0 requests=0 responses=0
+
+hmi region=1 requests=0 responses=0
+
+hmi region=2 requests=0 responses=0
+
+hmi region=3 requests=0 responses=0
+
+hmi region=4 requests=0 responses=0
+
+hmi region=5 requests=300 responses=300
+
+hmi region=6 requests=300 responses=300
+
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=117923 tx_last_ms=117925 parse_max_cycles=0 capture_max_cycles=0
+
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+=== run_can_protocol_tests.ps1 ===
+PASS CAN protocol encoding, CRC, reassembly and rollover
+PASS CAN control callback routing: async completion, duplicate, speed and unhealthy-session stop
+PASS query flood: stop bypasses rate limit; incomplete results cannot be evicted
+PASS CAN link handshake, query completion, flood, cancellation and rollover
+PASS CAN identity revision, partial programming, corruption and exhaustion
+PASS CAN upper cache reserved bits, atomic rejection, age, rollover and RK producer
+PASS CAN arm summary, joint cache, result, config invalidation and age
+PASS CAN control snapshots: own token/sync/target, historical stop cannot override remote
+PASS HMI ownership: explicit mapping, preparing/zero/running, no CAN token or stale authorization
+PASS HMI stop: K5 event association, active stop beats history, zero/enable/release checks and failure
+PASS HMI sync: owner selection, fresh sample pairing, reserved source bits and unknown outputs
+PASS CAN status validity, unknowns, configuration, sample matching and recovery history
+PASS CAN disabled: no Flash identity write and no CAN task creation
+PASS CAN disabled: no Flash identity write and no CAN task creation
+PASS CAN HMI collection and active 100ms / idle stop-history scheduling
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection
+PASS CAN HMI collection and active 100ms / idle stop-history scheduling
+PASS CAN logs: 20 lines/s, bounded queue, DMA reserve, whole-line drops and no blocking
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection
+PASS CAN HMI collection and active 100ms / idle stop-history scheduling
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection
+PASS CAN BSP delayed IRQ/empty mailbox not terminal, abort-success race uses actual TXOK, cancelled transaction consumed once
+PASS CAN BSP production: filters, RX64/priority, invalid frames, three mailboxes, buffer ownership, timeout, wrap and Bus-off
+PASS CAN handshake/query/rejection/upper vectors: C:\Users\15056\AppData\Local\Temp\rail_can_vectors_checked.md
+PASS compatibility regression group

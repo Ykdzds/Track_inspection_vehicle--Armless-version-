@@ -1,0 +1,50 @@
+﻿
+
+
+
+
+
+
+
+
+
+
+
+
+int formalProtocol;
+int baseDisplayFresh;
+
+
+
+
+
+int u33n;
+
+
+
+int u33start;
+int u33end;
+
+
+formalProtocol=0;if(P8_ServoControl.h13.vals[74]==1 && P0_Boot.s33.vals[44]==0){formalProtocol=1;}
+baseDisplayFresh=P0_Boot.regionSeen.vals[0];
+if(P0_Boot.s33.vals[13]!=sys_pid || P0_Boot.s33.vals[15]!=P0_Boot.themeMode.val){P0_Boot.dRev.vals[8]=P0_Boot.dRev.vals[8]+1;}
+if(P0_Boot.dLocal.vals[0]!=P8_ServoControl.h13.vals[2] || P0_Boot.dLocal.vals[1]!=P8_ServoControl.h13.vals[10] || P0_Boot.dLocal.vals[2]!=P8_ServoControl.h13.vals[30] || P0_Boot.dLocal.vals[3]!=P8_ServoControl.rpmSlider.val || P0_Boot.dLocal.vals[4]!=sys_run_time || P0_Boot.dLocal.vals[5]!=P0_Boot.s33.vals[59]){
+P0_Boot.dLocal.vals[0]=P8_ServoControl.h13.vals[2];P0_Boot.dLocal.vals[1]=P8_ServoControl.h13.vals[10];P0_Boot.dLocal.vals[2]=P8_ServoControl.h13.vals[30];P0_Boot.dLocal.vals[3]=P8_ServoControl.rpmSlider.val;P0_Boot.dLocal.vals[4]=sys_run_time;P0_Boot.dLocal.vals[5]=P0_Boot.s33.vals[59];P0_Boot.dRev.vals[7]=P0_Boot.dRev.vals[7]+1;}
+
+P0_Boot.s33.vals[40]=0;
+if(P0_Boot.s33.vals[13]!=sys_pid || P0_Boot.s33.vals[15]!=P0_Boot.themeMode.val){P0_Boot.s33.vals[13]=sys_pid;P0_Boot.s33.vals[15]=P0_Boot.themeMode.val;P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=1;}
+u33start=0;u33end=0;
+if(sys_pid==0){u33start=0;u33end=11;}
+if(sys_pid==1){u33start=11;u33end=32;}
+if(sys_pid==2){u33start=32;u33end=59;}
+if(sys_pid==3){u33start=59;u33end=73;}
+if(sys_pid==4){u33start=73;u33end=82;}
+if(sys_pid==5){u33start=82;u33end=94;}
+if(sys_pid==6){u33start=94;u33end=105;}
+if(sys_pid==7){u33start=105;u33end=120;}
+if(sys_pid==8){u33start=120;u33end=140;}
+if(sys_pid==1){HMI33Field11();P0_Boot.s33.vals[40]=P0_Boot.s33.vals[40]+1;}if(sys_pid==1){HMI33Field24();P0_Boot.s33.vals[40]=P0_Boot.s33.vals[40]+1;}if(sys_pid==8){HMI33Field125();P0_Boot.s33.vals[40]=P0_Boot.s33.vals[40]+1;}if(sys_pid==8){HMI33Field127();P0_Boot.s33.vals[40]=P0_Boot.s33.vals[40]+1;}if(P0_Boot.s33.vals[14]<u33start || P0_Boot.s33.vals[14]>=u33end){P0_Boot.s33.vals[14]=u33start;}
+if(P0_Boot.s33.vals[27]==0 && u33end>u33start){
+for(u33n=0;u33n<4;u33n++){
+if(P0_Boot.s33.vals[14]<70){if(P0_Boot.s33.vals[14]<35){if(P0_Boot.s33.vals[14]<17){if(P0_Boot.s33.vals[14]<8){if(P0_Boot.s33.vals[14]<4){if(P0_Boot.s33.vals[14]<2){if(P0_Boot.s33.vals[14]<1){HMI33Field0();}else{HMI33Field1();}}else{if(P0_Boot.s33.vals[14]<3){HMI33Field2();}else{HMI33Field3();}}}else{if(P0_Boot.s33.vals[14]<6){if(P0_Boot.s33.vals[14]<5){HMI33Field4();}else{HMI33Field5();}}else{if(P0_Boot.s33.vals[14]<7){HMI33Field6();}else{HMI33Field7();}}}}else{if(P0_Boot.s33.vals[14]<12){if(P0_Boot.s33.vals[14]<10){if(P0_Boot.s33.vals[14]<9){HMI33Field8();}else{HMI33Field9();}}else{if(P0_Boot.s33.vals[14]<11){HMI33Field10();}else{HMI33Field11();}}}else{if(P0_Boot.s33.vals[14]<14){if(P0_Boot.s33.vals[14]<13){HMI33Field12();}else{HMI33Field13();}}else{if(P0_Boot.s33.vals[14]<15){HMI33Field14();}else{if(P0_Boot.s33.vals[14]<16){HMI33Field15();}else{HMI33Field16();}}}}}}else{if(P0_Boot.s33.vals[14]<26){if(P0_Boot.s33.vals[14]<21){if(P0_Boot.s33.vals[14]<19){if(P0_Boot.s33.vals[14]<18){HMI33Field17();}else{HMI33Field18();}}else{if(P0_Boot.s33.vals[14]<20){HMI33Field19();}else{HMI33Field20();}}}else{if(P0_Boot.s33.vals[14]<23){if(P0_Boot.s33.vals[14]<22){HMI33Field21();}else{HMI33Field22();}}else{if(P0_Boot.s33.vals[14]<24){HMI33Field23();}else{if(P0_Boot.s33.vals[14]<25){HMI33Field24();}else{HMI33Field25();}}}}}else{if(P0_Boot.s33.vals[14]<30){if(P0_Boot.s33.vals[14]<28){if(P0_Boot.s33.vals[14]<27){HMI33Field26();}else{HMI33Field27();}}else{if(P0_Boot.s33.vals[14]<29){HMI33Field28();}else{HMI33Field29();}}}else{if(P0_Boot.s33.vals[14]<32){if(P0_Boot.s33.vals[14]<31){HMI33Field30();}else{HMI33Field31();}}else{if(P0_Boot.s33.vals[14]<33){HMI33Field32();}else{if(P0_Boot.s33.vals[14]<34){HMI33Field33();}else{HMI33Field34();}}}}}}}else{if(P0_Boot.s33.vals[14]<52){if(P0_Boot.s33.vals[14]<43){if(P0_Boot.s33.vals[14]<39){if(P0_Boot.s33.vals[14]<37){if(P0_Boot.s33.vals[14]<36){HMI33Field35();}else{HMI33Field36();}}else{if(P0_Boot.s33.vals[14]<38){HMI33Field37();}else{HMI33Field38();}}}else{if(P0_Boot.s33.vals[14]<41){if(P0_Boot.s33.vals[14]<40){HMI33Field39();}else{HMI33Field40();}}else{if(P0_Boot.s33.vals[14]<42){HMI33Field41();}else{HMI33Field42();}}}}else{if(P0_Boot.s33.vals[14]<47){if(P0_Boot.s33.vals[14]<45){if(P0_Boot.s33.vals[14]<44){HMI33Field43();}else{HMI33Field44();}}else{if(P0_Boot.s33.vals[14]<46){HMI33Field45();}else{HMI33Field46();}}}else{if(P0_Boot.s33.vals[14]<49){if(P0_Boot.s33.vals[14]<48){HMI33Field47();}else{HMI33Field48();}}else{if(P0_Boot.s33.vals[14]<50){HMI33Field49();}else{if(P0_Boot.s33.vals[14]<51){HMI33Field50();}else{HMI33Field51();}}}}}}else{if(P0_Boot.s33.vals[14]<61){if(P0_Boot.s33.vals[14]<56){if(P0_Boot.s33.vals[14]<54){if(P0_Boot.s33.vals[14]<53){HMI33Field52();}else{HMI33Field53();}}else{if(P0_Boot.s33.vals[14]<55){HMI33Field54();}else{HMI33Field55();}}}else{if(P0_Boot.s33.vals[14]<58){if(P0_Boot.s33.vals[14]<57){HMI33Field56();}else{HMI33Field57();}}else{if(P0_Boot.s33.vals[14]<59){HMI33Field134();}else{if(P0_Boot.s33.vals[14]<60){HMI33Field58();}else{HMI33Field59();}}}}}else{if(P0_Boot.s33.vals[14]<65){if(P0_Boot.s33.vals[14]<63){if(P0_Boot.s33.vals[14]<62){HMI33Field60();}else{HMI33Field61();}}else{if(P0_Boot.s33.vals[14]<64){HMI33Field62();}else{HMI33Field63();}}}else{if(P0_Boot.s33.vals[14]<67){if(P0_Boot.s33.vals[14]<66){HMI33Field64();}else{HMI33Field65();}}else{if(P0_Boot.s33.vals[14]<68){HMI33Field66();}else{if(P0_Boot.s33.vals[14]<69){HMI33Field67();}else{HMI33Field68();}}}}}}}}else{if(P0_Boot.s33.vals[14]<105){if(P0_Boot.s33.vals[14]<87){if(P0_Boot.s33.vals[14]<78){if(P0_Boot.s33.vals[14]<74){if(P0_Boot.s33.vals[14]<72){if(P0_Boot.s33.vals[14]<71){HMI33Field69();}else{HMI33Field70();}}else{if(P0_Boot.s33.vals[14]<73){HMI33Field135();}else{HMI33Field71();}}}else{if(P0_Boot.s33.vals[14]<76){if(P0_Boot.s33.vals[14]<75){HMI33Field72();}else{HMI33Field73();}}else{if(P0_Boot.s33.vals[14]<77){HMI33Field74();}else{HMI33Field75();}}}}else{if(P0_Boot.s33.vals[14]<82){if(P0_Boot.s33.vals[14]<80){if(P0_Boot.s33.vals[14]<79){HMI33Field76();}else{HMI33Field77();}}else{if(P0_Boot.s33.vals[14]<81){HMI33Field78();}else{HMI33Field136();}}}else{if(P0_Boot.s33.vals[14]<84){if(P0_Boot.s33.vals[14]<83){HMI33Field79();}else{HMI33Field80();}}else{if(P0_Boot.s33.vals[14]<85){HMI33Field81();}else{if(P0_Boot.s33.vals[14]<86){HMI33Field82();}else{HMI33Field83();}}}}}}else{if(P0_Boot.s33.vals[14]<96){if(P0_Boot.s33.vals[14]<91){if(P0_Boot.s33.vals[14]<89){if(P0_Boot.s33.vals[14]<88){HMI33Field84();}else{HMI33Field85();}}else{if(P0_Boot.s33.vals[14]<90){HMI33Field86();}else{HMI33Field87();}}}else{if(P0_Boot.s33.vals[14]<93){if(P0_Boot.s33.vals[14]<92){HMI33Field88();}else{HMI33Field89();}}else{if(P0_Boot.s33.vals[14]<94){HMI33Field137();}else{if(P0_Boot.s33.vals[14]<95){HMI33Field90();}else{HMI33Field91();}}}}}else{if(P0_Boot.s33.vals[14]<100){if(P0_Boot.s33.vals[14]<98){if(P0_Boot.s33.vals[14]<97){HMI33Field92();}else{HMI33Field93();}}else{if(P0_Boot.s33.vals[14]<99){HMI33Field94();}else{HMI33Field95();}}}else{if(P0_Boot.s33.vals[14]<102){if(P0_Boot.s33.vals[14]<101){HMI33Field96();}else{HMI33Field97();}}else{if(P0_Boot.s33.vals[14]<103){HMI33Field98();}else{if(P0_Boot.s33.vals[14]<104){HMI33Field99();}else{HMI33Field138();}}}}}}}else{if(P0_Boot.s33.vals[14]<122){if(P0_Boot.s33.vals[14]<113){if(P0_Boot.s33.vals[14]<109){if(P0_Boot.s33.vals[14]<107){if(P0_Boot.s33.vals[14]<106){HMI33Field100();}else{HMI33Field101();}}else{if(P0_Boot.s33.vals[14]<108){HMI33Field102();}else{HMI33Field103();}}}else{if(P0_Boot.s33.vals[14]<111){if(P0_Boot.s33.vals[14]<110){HMI33Field104();}else{HMI33Field105();}}else{if(P0_Boot.s33.vals[14]<112){HMI33Field106();}else{HMI33Field107();}}}}else{if(P0_Boot.s33.vals[14]<117){if(P0_Boot.s33.vals[14]<115){if(P0_Boot.s33.vals[14]<114){HMI33Field108();}else{HMI33Field109();}}else{if(P0_Boot.s33.vals[14]<116){HMI33Field110();}else{HMI33Field111();}}}else{if(P0_Boot.s33.vals[14]<119){if(P0_Boot.s33.vals[14]<118){HMI33Field112();}else{HMI33Field113();}}else{if(P0_Boot.s33.vals[14]<120){HMI33Field139();}else{if(P0_Boot.s33.vals[14]<121){HMI33Field114();}else{HMI33Field115();}}}}}}else{if(P0_Boot.s33.vals[14]<131){if(P0_Boot.s33.vals[14]<126){if(P0_Boot.s33.vals[14]<124){if(P0_Boot.s33.vals[14]<123){HMI33Field116();}else{HMI33Field117();}}else{if(P0_Boot.s33.vals[14]<125){HMI33Field118();}else{HMI33Field119();}}}else{if(P0_Boot.s33.vals[14]<128){if(P0_Boot.s33.vals[14]<127){HMI33Field120();}else{HMI33Field121();}}else{if(P0_Boot.s33.vals[14]<129){HMI33Field122();}else{if(P0_Boot.s33.vals[14]<130){HMI33Field123();}else{HMI33Field124();}}}}}else{if(P0_Boot.s33.vals[14]<135){if(P0_Boot.s33.vals[14]<133){if(P0_Boot.s33.vals[14]<132){HMI33Field125();}else{HMI33Field126();}}else{if(P0_Boot.s33.vals[14]<134){HMI33Field127();}else{HMI33Field128();}}}else{if(P0_Boot.s33.vals[14]<137){if(P0_Boot.s33.vals[14]<136){HMI33Field129();}else{HMI33Field130();}}else{if(P0_Boot.s33.vals[14]<138){HMI33Field131();}else{if(P0_Boot.s33.vals[14]<139){HMI33Field132();}else{HMI33Field133();}}}}}}}}P0_Boot.s33.vals[14]=P0_Boot.s33.vals[14]+1;if(P0_Boot.s33.vals[14]>=u33end){P0_Boot.s33.vals[14]=u33start;}P0_Boot.s33.vals[40]=P0_Boot.s33.vals[40]+1;}}if(sys_pid==0 && P0_Boot.s33.vals[17]==1){HMI33Theme0();}if(sys_pid==1 && P0_Boot.s33.vals[17]==1){HMI33Theme1();}if(sys_pid==2 && P0_Boot.s33.vals[17]==1){HMI33Theme2();}if(sys_pid==3 && P0_Boot.s33.vals[17]==1){HMI33Theme3();}if(sys_pid==4 && P0_Boot.s33.vals[17]==1){HMI33Theme4();}if(sys_pid==5 && P0_Boot.s33.vals[17]==1){HMI33Theme5();}if(sys_pid==6 && P0_Boot.s33.vals[17]==1){HMI33Theme6();}if(sys_pid==7 && P0_Boot.s33.vals[17]==1){HMI33Theme7();}if(sys_pid==8 && P0_Boot.s33.vals[17]==1){HMI33Theme8();}

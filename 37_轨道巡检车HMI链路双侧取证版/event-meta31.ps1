@@ -1,0 +1,3 @@
+﻿. (Join-Path $PSScriptRoot 'vp-reflect.ps1')
+$io=[Activator]::CreateInstance($vp.GetType('blFUmdHRIKgcqLnrHkXULnrUGQNn'));$proj=$io.rqkGbDgDKWruWOpLfoxBcumhVTMG([string](Join-Path $PSScriptRoot '17_轨道巡检车.pix'))
+foreach($c in $proj.Layers[1].Elements|Where-Object Name -in @('openDiag','themeToggle')){Write-Output $c.Name;foreach($e in $c.Events){$e|Format-List *;$e.GetType().GetFields($flags)|ForEach-Object {Write-Output ($_.Name+'='+$_.GetValue($e))}}}

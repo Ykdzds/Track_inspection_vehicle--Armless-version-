@@ -1,0 +1,18 @@
+﻿{
+  "Level": "配套台架调试版",
+  "SoftwareRegression": {
+    "Passed": 22,
+    "Failed": 0
+  },
+  "PIXCompile": "passed",
+  "F407BuildVariants": 6,
+  "F407BuildErrors": 0,
+  "F407BuildWarnings": 0,
+  "HostDisplayMaxMs": 171.3391,
+  "HostDisplaySteadyMaxMs": 34.9316,
+  "ScreenTimingAcceptance": "pending",
+  "BenchAcceptance": "pending",
+  "VehicleAcceptance": "pending",
+  "Baseline": "f33b011a753c6a923345d06ea7b7c773c6ec9883",
+  "Branch": "fix/hmi33-scheduling-session"
+}

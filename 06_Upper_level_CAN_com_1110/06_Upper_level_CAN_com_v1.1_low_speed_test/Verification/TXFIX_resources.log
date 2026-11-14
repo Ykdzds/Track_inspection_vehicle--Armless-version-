@@ -1,0 +1,9 @@
+Flash load bytes=46932; reserve begins=0x0800F800; headroom=16556
+RAM region bytes=19968; total=20480; headroom=512
+ProtocolTask allocated=1280; known-depth=176; margin=1104
+LogTask allocated=2560; known-depth=128; margin=2432
+OledTask allocated=1024; known-depth=128; margin=896
+PeriodicTask allocated=512; known-depth=24; margin=488
+HealthTask allocated=512; known-depth=72; margin=440
+KeyTask allocated=640; known-depth=8; margin=632
+Static estimates include unknown call paths; not a measured runtime stack high-water mark.

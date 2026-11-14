@@ -1,0 +1,2 @@
+PASS IRQ/DMA integration: unique BSP handlers; UART5 DMA retained; LCD DMA2 Stream3 Channel3 IRQ6; nine DMA requests.
+PASS NRF配置：SPI2 DMA1 Stream3/4 Channel0；保留USART DMA；无阻塞等待或运动写调用。

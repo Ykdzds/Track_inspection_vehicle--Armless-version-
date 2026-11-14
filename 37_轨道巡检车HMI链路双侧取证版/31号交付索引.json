@@ -1,0 +1,61 @@
+{
+  "Version": 31,
+  "CompletedSoftware": true,
+  "PhysicalAcceptanceComplete": false,
+  "Compile": {
+    "CompiledAt": "2026-11-02T01:04:19.1514756+08:00",
+    "PIX": "17_轨道巡检车.pix",
+    "PIX_SHA256": "3F5036682E64260158CB2B06A038D60C08CA4FD69DFF54A87FA7FC50DECF95CD",
+    "BIN": "17_轨道巡检车.pix.bin",
+    "BIN_SHA256": "C3DF66EE9F36C810EBBE667148A8FBEBC0B3F64455713B5136225A7FB2A613F6",
+    "BIN_Length": 2346054,
+    "NewBinary": true,
+    "PhysicalCommunicationVerified": false,
+    "MotionVerified": false
+  },
+  "FinalVerification": {
+    "GUIClosedAndReopened": true,
+    "ModelIdenticalAfterReopen": true,
+    "PIXHashMatchesCompile": true,
+    "BINHashMatchesCompile": true,
+    "BINLength": 2346054,
+    "ConservativeFlashBytes": 4000000,
+    "ReservePercent": 41.3486,
+    "PhysicalCapacityRead": false
+  },
+  "Regression": {
+    "Original": 477,
+    "ReadonlyDisplay": 39,
+    "IndependentGroups": 6,
+    "NativeSliderEvents": 6402,
+    "NativeHitChecks": 16005,
+    "NativePageStates": 108
+  },
+  "Protection": {
+    "Files": 2520,
+    "Changed": []
+  },
+  "Presentation": {
+    "MinContrast": 4.597608100003052,
+    "TextChecks": 2403,
+    "Issues": []
+  },
+  "SliderIdMigration": {
+    "Name": "rpmSlider",
+    "From": 22,
+    "To": 36,
+    "Reason": "VP numeric-ID z-order; original input surface over transparent read-only text"
+  },
+  "Artifacts": [
+    "17_轨道巡检车.pix",
+    "17_轨道巡检车.pix.bin",
+    "31号交付说明.md",
+    "31号回归报告.md",
+    "31号烧录与实屏验收.md",
+    "运行核验/31号实施_20261101/九页日夜总览.png",
+    "运行核验/31号实施_20261101/P8典型速度与极值.png",
+    "运行核验/31号实施_20261101/P8滑块五点与跨零.png",
+    "运行核验/31号实施_20261101/30到31控件差异.csv",
+    "运行核验/31号实施_20261101/30到31事件差异.json"
+  ]
+}

@@ -1,0 +1,11 @@
+﻿{
+    "CompiledAt":  "2026-11-02T01:04:19.1514756+08:00",
+    "PIX":  "17_轨道巡检车.pix",
+    "PIX_SHA256":  "3F5036682E64260158CB2B06A038D60C08CA4FD69DFF54A87FA7FC50DECF95CD",
+    "BIN":  "17_轨道巡检车.pix.bin",
+    "BIN_SHA256":  "C3DF66EE9F36C810EBBE667148A8FBEBC0B3F64455713B5136225A7FB2A613F6",
+    "BIN_Length":  2346054,
+    "NewBinary":  true,
+    "PhysicalCommunicationVerified":  false,
+    "MotionVerified":  false
+}

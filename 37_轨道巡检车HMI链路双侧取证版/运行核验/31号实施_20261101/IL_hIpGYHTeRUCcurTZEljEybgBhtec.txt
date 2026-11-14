@@ -1,0 +1,71 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 newobj Void .ctor()
+0005 stloc.0 
+0006 ldloc.0 
+0007 ldarg.1 
+0008 stfld Int32 MtXvPAtTGJbJsffIILIExLuiuhqp
+000D ldc.i4 -1840585727
+0012 ldc.i4 -1720790667
+0017 xor 
+0018 dup 
+0019 stloc.2 
+001A ldc.i4.7 
+001B rem.un 
+001C switch 7
+003D br 161
+0042 ldarg.0 
+0043 ldfld Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+0048 callvirt System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixLayer] get_Layers()
+004D ldloc.0 
+004E ldftn Boolean TrEhDJViwoZVcmlsDJAgGVKlkUfQ(Visual_PIX.Model.PixLayer)
+0054 newobj Void .ctor(System.Object, IntPtr)
+0059 call Visual_PIX.Model.PixLayer FirstOrDefault[PixLayer](System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixLayer], System.Func`2[Visual_PIX.Model.PixLayer,System.Boolean])
+005E stloc.1 
+005F ldloc.2 
+0060 ldc.i4 -1963020529
+0065 mul 
+0066 ldc.i4 1992022603
+006B xor 
+006C br.s -92
+006E ret 
+006F ldloc.2 
+0070 ldc.i4 1446869696
+0075 mul 
+0076 ldc.i4 -126091319
+007B xor 
+007C br.s -108
+007E ldarg.0 
+007F ldloc.1 
+0080 call Void kdXRPxNCPpRyEPMZWkfuEAccRoHC(Visual_PIX.Model.PixLayer)
+0085 ldc.i4 -1800060437
+008A br.s -122
+008C ldloc.1 
+008D brfalse.s 8
+008F ldc.i4 -1214315715
+0094 dup 
+0095 br.s 6
+0097 ldc.i4 -615922695
+009C dup 
+009D pop 
+009E ldloc.2 
+009F ldc.i4 -347416310
+00A4 mul 
+00A5 xor 
+00A6 br -153
+00AB ldarg.0 
+00AC ldfld nIOHBNJSBEvEGZhnUgCweVEuyhxP ItcMBGubhOpYrCscHlAgmlqbfROcA
+00B1 call System.String get_Page_0_does_not_exist()
+00B6 ldloc.0 
+00B7 ldfld Int32 MtXvPAtTGJbJsffIILIExLuiuhqp
+00BC box System.Int32
+00C1 call System.String ⁬⁬⁫‍‬‎⁯‫‮‬‍‪‭‌‫‏⁯‮⁬‍⁭‫‮‮‮‏⁮‮‌⁭⁭‮‫‌​​⁬‮‎⁫‮(System.String, System.Object)
+00C6 call System.String get_Page_turning_error()
+00CB callvirt System.Threading.Tasks.Task yeLAVTfsrCQrGxIoIwtLXJMrzwwH(System.String, System.String)
+00D0 pop 
+00D1 ldloc.2 
+00D2 ldc.i4 -1530370222
+00D7 mul 
+00D8 ldc.i4 253328591
+00DD xor 
+00DE br -209
+00E3 ret 

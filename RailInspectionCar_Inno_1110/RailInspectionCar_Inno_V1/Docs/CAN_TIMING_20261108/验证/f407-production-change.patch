@@ -1,0 +1,752 @@
+diff --git a/APP/HMI/app_hmi_arm3.c b/APP/HMI/app_hmi_arm3.c
+index 0651751..e9438d1 100644
+--- a/APP/HMI/app_hmi_arm3.c
++++ b/APP/HMI/app_hmi_arm3.c
+@@ -13,6 +13,7 @@ static void p32(uint16_t *p,uint32_t v){p[0]=(uint16_t)(v>>16);p[1]=(uint16_t)v;
+ static bool fresh(uint32_t seq,uint32_t now){return (seq==h.snapshot_seq && now-h.snapshot_at<=200U)||(seq==h.previous_seq && now-h.previous_at<=200U);}
+ static uint8_t submit(app_arm3_intent_t *in,uint32_t now,uint32_t *op){in->source=3U;in->session=h.session;in->sequence=++h.submit_seq;if(!in->sequence)return 7U;return app_arm3_submit(in,now,op);}
+ void app_hmi_arm3_init(uint32_t boot){memset(&h,0,sizeof(h));h.boot=boot;h.snapshot_at=UINT32_MAX-100U;}
++uint32_t app_hmi_arm3_snapshot_time(void){return h.snapshot_at;}
+ static void result(uint32_t input,uint16_t cmd,uint8_t status,uint32_t op,uint32_t now){
+  memset(h.result,0,sizeof(h.result));p32(h.result,h.boot);p32(h.result+2,h.session);p32(h.result+4,input);h.result[6]=cmd;h.result[7]=status;p32(h.result+8,op);h.result[10]=status?2U:0U;h.result[11]=status;p32(h.result+18,now);if(status)p32(h.result+20,now);h.result[30]=3U;h.result[31]=1U;
+ }
+diff --git a/APP/HMI/app_hmi_arm3.h b/APP/HMI/app_hmi_arm3.h
+index b10b200..8855dad 100644
+--- a/APP/HMI/app_hmi_arm3.h
++++ b/APP/HMI/app_hmi_arm3.h
+@@ -4,6 +4,8 @@
+ #include <stdbool.h>
+ void app_hmi_arm3_init(uint32_t boot);
+ void app_hmi_arm3_service(uint32_t now_ms);
++/* CAN task only: origin shared by the six cached display windows. */
++uint32_t app_hmi_arm3_snapshot_time(void);
+ bool app_hmi_arm3_write(uint16_t start,uint16_t count,const uint16_t *words,uint32_t now_ms);
+ bool app_hmi_arm3_read(uint16_t start,uint16_t count,uint16_t *words,uint32_t now_ms);
+ #endif
+diff --git a/APP/HMI/app_hmi_link_diag.c b/APP/HMI/app_hmi_link_diag.c
+index 36427f0..f1108e2 100644
+--- a/APP/HMI/app_hmi_link_diag.c
++++ b/APP/HMI/app_hmi_link_diag.c
+@@ -846,12 +846,18 @@ static uint8_t print_periodic(uint32_t now)
+         while(health_source<APP_LINK_CHANNELS) {
+             source=health_source;
+             if(!enabled(source) || source==APP_LINK_SYNC) {++health_source;health_page=1U;continue;}
+-            /* CAN bus phase 2 is emitted once even with both routes enabled. */
+-            if(source==APP_LINK_CAN_ARM && health_page==2U && enabled(APP_LINK_CAN_SERVO)) {
++            /* CAN bus/timing are shared; emit them once with both routes. */
++            if(source==APP_LINK_CAN_ARM && health_page>=2U && enabled(APP_LINK_CAN_SERVO)) {
+                 ++health_source;health_page=1U;continue;
+             }
++            if(source==APP_LINK_CAN_RAW &&
++               (enabled(APP_LINK_CAN_SERVO) || enabled(APP_LINK_CAN_ARM))) {
++                ++health_source;health_page=1U;continue;
++            }
++            if(source==APP_LINK_CAN_RAW && health_page==1U)health_page=2U;
+             if(!print_projection(source,health_page,1U))return 1U;
+-            if(++health_page > (source==APP_LINK_REMOTE?5U:source==APP_LINK_SYNC?1U:2U)) {
++            if(++health_page > (source==APP_LINK_REMOTE?5U:
++                (source==APP_LINK_CAN_SERVO || source==APP_LINK_CAN_ARM || source==APP_LINK_CAN_RAW)?3U:2U)) {
+                 ++health_source;health_page=1U;
+             }
+             return 1U;
+diff --git a/APP/app_arm3.c b/APP/app_arm3.c
+index a546c06..5af3ea3 100644
+--- a/APP/app_arm3.c
++++ b/APP/app_arm3.c
+@@ -343,6 +343,7 @@ void app_arm3_link(uint32_t lower,uint32_t upper,uint16_t token,bool ready,
+         generation_change();force_transport_lock();}
+     s.ready=ready && token && token!=65535U;s.peer_caps=caps;
+ }
++bool app_arm3_negotiated(void){return s.negotiated;}
+ bool app_arm3_work_locked(void){return s.work_lock;}
+ bool app_arm3_profile_enabled(void){return s.platform.profile_enabled || s.ever_enabled;}
+ uint32_t app_arm3_capabilities(void)
+diff --git a/APP/app_arm3.h b/APP/app_arm3.h
+index 971f549..2cbbd82 100644
+--- a/APP/app_arm3.h
++++ b/APP/app_arm3.h
+@@ -95,6 +95,8 @@ bool app_arm3_prepare_record(can_protocol_record_t *record,
+     uint32_t constructed_ms,uint32_t now_ms);
+ void app_arm3_build_safety(can_protocol_record_t *record,uint32_t now_ms);
+ void app_arm3_snapshot(app_arm3_snapshot_t *snapshot,uint32_t now_ms);
++/* CAN-task-only scalar; does not build a full display/safety snapshot. */
++bool app_arm3_negotiated(void);
+ bool app_arm3_work_locked(void);
+ bool app_arm3_profile_enabled(void);
+ uint32_t app_arm3_capabilities(void);
+diff --git a/APP/app_arm3_port.c b/APP/app_arm3_port.c
+index 279da3e..6afb028 100644
+--- a/APP/app_arm3_port.c
++++ b/APP/app_arm3_port.c
+@@ -21,15 +21,23 @@ static uint32_t zero_since;
+ static bool zero_seen;
+ static app_can_status_input_t chassis;
+ static app_arm3_platform_t platform;
+-typedef struct {uint16_t command[24],edit[24],result[32],global[64],side[2][64];uint8_t ack[2][32];uint32_t at;app_arm3_port_status_t status;bool valid;} display_t;
++typedef struct {uint16_t command[24],edit[24],result[32],global[64],side[2][64];uint8_t ack[2][32];uint32_t at,hmi_at;app_arm3_port_status_t status;bool valid;} display_t;
+ static display_t display[2];static volatile uint8_t published;
+-static void display_update(uint32_t now)
++void app_arm3_port_display_service(uint32_t now, void (*progress)(void))
+ {
+  uint8_t next=(uint8_t)(published^1U);display_t *d=&display[next];
+- (void)app_hmi_arm3_read(0x0500U,24U,d->command,now);(void)app_hmi_arm3_read(0x0520U,24U,d->edit,now);
+- (void)app_hmi_arm3_read(0x0540U,32U,d->result,now);(void)app_hmi_arm3_read(0x0580U,64U,d->global,now);
+- (void)app_hmi_arm3_read(0x05C0U,64U,d->side[0],now);(void)app_hmi_arm3_read(0x0600U,64U,d->side[1],now);
+- (void)app_arm3_remote_ack(0x8BU,d->ack[0],now);(void)app_arm3_remote_ack(0x8CU,d->ack[1],now);d->at=now;
++ if(display[published].valid && (uint32_t)(now-display[published].at)<20U)return;
++ /* Keep the capture origin at the start, never at publication: elapsed task
++  * preemption must remain visible to readers. No partial page is published. */
++ (void)app_hmi_arm3_read(0x0500U,24U,d->command,now);if(progress)progress();
++ (void)app_hmi_arm3_read(0x0520U,24U,d->edit,now);if(progress)progress();
++ (void)app_hmi_arm3_read(0x0540U,32U,d->result,now);if(progress)progress();
++ (void)app_hmi_arm3_read(0x0580U,64U,d->global,now);if(progress)progress();
++ (void)app_hmi_arm3_read(0x05C0U,64U,d->side[0],now);if(progress)progress();
++ (void)app_hmi_arm3_read(0x0600U,64U,d->side[1],now);if(progress)progress();
++ d->hmi_at=app_hmi_arm3_snapshot_time();
++ (void)app_arm3_remote_ack(0x8BU,d->ack[0],now);if(progress)progress();
++ (void)app_arm3_remote_ack(0x8CU,d->ack[1],now);if(progress)progress();d->at=now;
+  /* Only the CAN business task may read the manager's mutable state. */
+  app_arm3_snapshot(&d->status.arm,now);d->status.platform=platform;
+  d->status.captured_ms=now;d->status.age_ms=0U;
+@@ -122,12 +130,13 @@ bool app_arm3_port_hmi_write(uint16_t start,uint16_t n,const uint16_t *v,uint32_
+  head=(uint8_t)((head+1U)%16U);++count;ok=true;}else stop_pending=true;taskEXIT_CRITICAL();return ok;}
+ static uint32_t aged(uint32_t value,uint32_t elapsed)
+ {return value==UINT32_MAX || value>UINT32_MAX-elapsed?UINT32_MAX:value+elapsed;}
+-static void age_words(uint16_t *values,uint16_t start,uint16_t n,uint16_t address,uint32_t elapsed)
++static void age_words(uint16_t *values,const uint16_t *source,uint16_t base,uint16_t start,uint16_t n,uint16_t address,uint32_t elapsed)
+ {
+  uint32_t value;
+- if(address<start || (uint32_t)address+1U>=(uint32_t)start+n)return;
+- value=((uint32_t)values[address-start]<<16U)|values[address-start+1U];value=aged(value,elapsed);
+- values[address-start]=(uint16_t)(value>>16U);values[address-start+1U]=(uint16_t)value;
++ if((uint32_t)address+1U<start || address>=(uint32_t)start+n)return;
++ value=((uint32_t)source[address-base]<<16U)|source[address-base+1U];value=aged(value,elapsed);
++ if(address>=start)values[address-start]=(uint16_t)(value>>16U);
++ if((uint32_t)address+1U<(uint32_t)start+n)values[address-start+1U]=(uint16_t)value;
+ }
+ bool app_arm3_port_hmi_read(uint16_t start,uint16_t n,uint16_t *v,uint32_t now)
+ {
+@@ -140,10 +149,12 @@ bool app_arm3_port_hmi_read(uint16_t start,uint16_t n,uint16_t *v,uint32_t now)
+  else if(start>=0x05C0U && start<0x0600U){src=d->side[0];base=0x05C0U;len=64U;}
+  else if(start>=0x0600U && start<0x0640U){src=d->side[1];base=0x0600U;len=64U;}
+  if(!src || (uint32_t)(start-base)+n>len){taskEXIT_CRITICAL();return false;}
+- memcpy(v,src+(start-base),n*2U);elapsed=now-d->at;taskEXIT_CRITICAL();
+- if(base==0x0580U){age_words(v,start,n,0x058AU,elapsed);age_words(v,start,n,0x05ACU,elapsed);age_words(v,start,n,0x05AEU,elapsed);}
+- else if(base==0x05C0U || base==0x0600U)age_words(v,start,n,(uint16_t)(base+14U),elapsed);
+- else if(base==0x0540U)age_words(v,start,n,0x055CU,elapsed);
++ memcpy(v,src+(start-base),n*2U);elapsed=now-d->hmi_at;
++ /* Half-word reads use the full cached age for carry and saturation. */
++ if(base==0x0580U){age_words(v,src,base,start,n,0x058AU,elapsed);age_words(v,src,base,start,n,0x05ACU,elapsed);age_words(v,src,base,start,n,0x05AEU,elapsed);}
++ else if(base==0x05C0U || base==0x0600U)age_words(v,src,base,start,n,(uint16_t)(base+14U),elapsed);
++ else if(base==0x0540U)age_words(v,src,base,start,n,0x055CU,elapsed);
++ taskEXIT_CRITICAL();
+  return true;
+ }
+ bool app_arm3_port_ack(uint8_t type,uint8_t frame[32],uint32_t now)
+@@ -196,5 +207,5 @@ void app_arm3_port_service(uint32_t now)
+  else (void)app_hmi_arm3_write(current.start,24U,current.words,now);
+  app_arm3_input_delay(0U);
+  }
+- app_arm3_inputs_service(now);app_hmi_arm3_service(now);app_arm3_service(now);display_update(now);
++ app_arm3_inputs_service(now);app_hmi_arm3_service(now);app_arm3_service(now);
+ }
+diff --git a/APP/app_arm3_port.h b/APP/app_arm3_port.h
+index 523bde0..abd00c6 100644
+--- a/APP/app_arm3_port.h
++++ b/APP/app_arm3_port.h
+@@ -13,6 +13,9 @@ struct app_arm3_port_status;
+ #endif
+ void app_arm3_port_init(uint32_t boot);
+ void app_arm3_port_service(uint32_t now);
++/* CAN task only. Bounded display steps, at most once per 20 ms. The optional
++ * callback advances transport only; it must not re-enter the port/manager. */
++void app_arm3_port_display_service(uint32_t now, void (*progress)(void));
+ bool app_arm3_port_remote(const uint8_t frame[32],uint32_t now);
+ bool app_arm3_port_hmi_write(uint16_t start,uint16_t count,const uint16_t *values,uint32_t now);
+ bool app_arm3_port_hmi_read(uint16_t start,uint16_t count,uint16_t *values,uint32_t now);
+diff --git a/APP/app_can.c b/APP/app_can.c
+index 8733903..4fbc900 100644
+--- a/APP/app_can.c
++++ b/APP/app_can.c
+@@ -60,6 +60,17 @@ static uint32_t s_arm_urgent_built, s_arm_link_errors;
+ static uint8_t s_arm_tx_priority;
+ static uint32_t s_arm_tx_built;
+ 
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++/* Observer scalars only; wire timestamps are captured by BSP, not task time. */
++static struct {
++    uint32_t service_at, service_gap_max, tx_processed_at, tx_delay_max;
++    uint32_t segment_ready_at, segment_delay_max, record_duration_max;
++    uint32_t critical_duration_max, critical_gap_max[4], last_failure_at;
++    uint32_t failures, failure_reason, failure_processed_at;
++    bool service_seen, segment_ready;
++} s_timing;
++#endif
++
+ #if APP_LINK_DIAG_ACTIVE && APP_CAN_DEBUG_ENABLED
+ static uint8_t s_log_lines;
+ static uint32_t s_log_window, s_log_skipped;
+@@ -113,6 +124,17 @@ static bool send_frame(void *context, uint16_t id, const uint8_t data[8],
+     frame.timestamp_ms = HAL_GetTick();
+     memcpy(frame.data, data, 8U);
+     if (!bsp_can_send(&frame, cookie, deadline)) return false;
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++    if (id >= 0x300U && id <= 0x302U && s_timing.segment_ready) {
++        /* A cancelled record may leave a ready marker. A new START is not
++         * the continuation of that old record. */
++        if(id!=0x300U){
++            uint32_t delay = frame.timestamp_ms - s_timing.segment_ready_at;
++            if (delay > s_timing.segment_delay_max) s_timing.segment_delay_max = delay;
++        }
++        s_timing.segment_ready = false;
++    }
++#endif
+     log_frame(&frame, 3U);
+     return true;
+ }
+@@ -214,8 +236,8 @@ static void control_link_update(void)
+     taskEXIT_CRITICAL();
+     app_arm3_link(s_link.lower_boot_id,s_link.upper_boot_id,s_link.token,s_link.phase==CAN_LINK_READY,
+         capability.valid?can_protocol_read_u32(capability.payload+8U):0U,HAL_GetTick());
+-    {app_arm3_snapshot_t arm;app_arm3_snapshot(&arm,HAL_GetTick());
+-     can_link_arm3_profile(&s_link,arm.negotiated);app_can_control_arm3_revision(arm.negotiated);}
++    {bool negotiated=app_arm3_negotiated();
++     can_link_arm3_profile(&s_link,negotiated);app_can_control_arm3_revision(negotiated);}
+     app_can_control_link(s_link.token, s_link.generation, s_link.upper_boot_id,
+         s_link.last_heartbeat_ms, s_link.phase == CAN_LINK_READY, strategy);
+ }
+@@ -372,6 +394,19 @@ static bool arm_prepare(void *context,can_protocol_record_t *record,uint32_t bui
+ static void arm_record_complete(void *context,const can_protocol_record_t *record,uint32_t now)
+ {
+     (void)context;
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++    {
++        static const uint8_t critical[4] = {0x11U,0x25U,0x13U,0x53U};
++        uint32_t duration = now-s_link.record_started_ms; unsigned i;
++        if(duration>s_timing.record_duration_max)s_timing.record_duration_max=duration;
++        for(i=0U;i<4U;++i)if(record->type==critical[i]){
++            uint32_t gap=now-s_link.critical_completed_ms[i];
++            if(duration>s_timing.critical_duration_max)s_timing.critical_duration_max=duration;
++            if(s_link.critical_completed_ms[i] && gap>s_timing.critical_gap_max[i])s_timing.critical_gap_max[i]=gap;
++        }
++        s_timing.segment_ready=false;
++    }
++#endif
+ #if APP_LINK_DIAG_ACTIVE && APP_CAN_ARM_DIAG_ENABLED
+     if(record->type==0x54U || record->type==0x56U || record->type==0x57U || record->type==0x5FU)
+         app_link_diag_record(APP_LINK_CAN_ARM,0x208U,now,record->type,record->sequence,
+@@ -380,6 +415,35 @@ static void arm_record_complete(void *context,const can_protocol_record_t *recor
+ #endif
+     app_arm3_record_transmitted(record,now);
+ }
++static void record_failed(void *context,uint8_t reason,uint32_t now)
++{
++    (void)context;
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++    uint32_t w[16];uint8_t source;
++    s_timing.last_failure_at=now;++s_timing.failures;s_timing.failure_reason=reason;
++    s_timing.failure_processed_at=HAL_GetTick();s_timing.segment_ready=false;
++    w[0]=now;w[1]=reason | ((uint32_t)s_link.record.type<<8U) | ((uint32_t)s_link.record_index<<16U);
++    w[2]=s_link.record.sequence | ((uint32_t)s_link.record.length<<16U);w[3]=s_link.record_cookie;
++    w[4]=s_link.record_started_ms;w[5]=s_link.record_built_ms;w[6]=s_link.record_start_tx_ms;w[7]=s_link.record_last_tx_ms;
++    w[8]=s_timing.tx_processed_at;w[9]=HAL_GetTick();w[10]=s_link.generation;w[11]=s_link.token;
++    w[12]=s_link.record_active | ((uint32_t)s_link.record_pending<<1U) | ((uint32_t)s_link.record_cancelled<<2U) |
++        ((uint32_t)s_link.record_has_payload<<3U) | ((uint32_t)s_link.record_retries<<8U);
++    w[13]=s_link.record_deadline_ms;w[14]=s_timing.service_gap_max;w[15]=s_timing.tx_delay_max;
++    if(reason==2U){ /* Payload preparation precedes allocation of a TX identity. */
++        w[1]=reason | ((uint32_t)s_link.record.type<<8U) | 0xFFFF0000UL;
++        w[3]=w[4]=w[6]=w[7]=UINT32_MAX;w[12]=0U;
++    }
++    for(source=APP_LINK_CAN_SERVO;source<=APP_LINK_CAN_ARM;++source){
++        if((source==APP_LINK_CAN_SERVO && !APP_CAN_SERVO_DIAG_ENABLED) ||
++           (source==APP_LINK_CAN_ARM && !APP_CAN_ARM_DIAG_ENABLED))continue;
++        app_link_diag_record(source,0x111U,w[0],w[1],w[2],w[3],w[4],w[7]);
++        app_link_diag_freeze(source,0x111U,w,16U);
++    }
++#else
++    (void)reason;(void)now;
++#endif
++}
++
+ static void arm_service(uint32_t now)
+ {
+     unsigned i;
+@@ -461,74 +525,124 @@ static void publish_status(uint32_t now)
+     taskEXIT_CRITICAL();
+ }
+ 
++typedef struct {
++    uint32_t spent_cycles;
++    uint8_t results, submitted;
++} can_fast_budget_t;
++
++/* Independent from maintenance wall time. No waiting and at most three actual
++ * submissions/results per task pass, even when called between display steps. */
++static void fast_service_run(can_fast_budget_t *quota,uint32_t cycle_budget,bool allow_send)
++{
++    bsp_can_tx_result_t result;
++    uint32_t started=DWT->CYCCNT;
++    unsigned steps;
++    for(steps=0U;steps<6U;++steps){
++        uint32_t before;bool progress=false;
++        if(quota->spent_cycles+(uint32_t)(DWT->CYCCNT-started)>=cycle_budget)break;
++        if(quota->results<3U && bsp_can_take_tx_result(&result)){
++            uint32_t processed=HAL_GetTick();
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++            uint32_t old_index=s_link.record_index;
++            bool record_match=s_link.record_active && s_link.record_pending && s_link.record_cookie==result.cookie;
++            uint32_t delay=processed-result.frame.timestamp_ms;
++            s_timing.tx_processed_at=processed;
++            if(delay>s_timing.tx_delay_max)s_timing.tx_delay_max=delay;
++#endif
++            can_link_tx_result(&s_link,result.cookie,result.success,result.frame.timestamp_ms);
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++            if(record_match && result.success && s_link.record_active && s_link.record_index>old_index){
++                s_timing.segment_ready_at=result.frame.timestamp_ms;s_timing.segment_ready=true;
++            }
++#endif
++            log_frame(&result.frame,result.success?1U:2U);
++            ++quota->results;progress=true;
++            (void)processed;
++        }
++        if(quota->spent_cycles+(uint32_t)(DWT->CYCCNT-started)>=cycle_budget)break;
++        if(allow_send && quota->submitted<3U && bsp_can_ready()){
++            before=s_link.submitted_count;
++            can_link_service(&s_link,HAL_GetTick());
++            if(before!=s_link.submitted_count){++quota->submitted;progress=true;}
++        }
++        if(!progress)break;
++    }
++    quota->spent_cycles+=(uint32_t)(DWT->CYCCNT-started);
++}
++
++static void fast_service(can_fast_budget_t *quota,uint32_t cycle_budget)
++{ fast_service_run(quota,cycle_budget,true); }
++
++/* Non-reentrant CAN-task-only adapter; the pointer is valid only while the
++ * presentation service runs, and never escapes to an ISR or another task. */
++static can_fast_budget_t *s_display_quota;
++static void display_progress(void)
++{
++    if(s_display_quota)fast_service(s_display_quota,SystemCoreClock/5000U);
++}
++
+ static void can_task(void *argument)
+ {
+     bsp_can_frame_t frame;
+-    bsp_can_tx_result_t result;
+     bsp_can_stats_t bus;
+-    uint32_t now, start_cycles, budget, count, result_count, last_dropped = 0U;
++    uint32_t now,start_cycles,budget,count,result_count,last_dropped=0U;
+     app_can_control_result_t control_result;
+     (void)argument;
+-    bsp_can_init(xTaskGetCurrentTaskHandle(), HAL_GetTick());
+-    /* 保留已有CYCCNT值，只开启计数供本任务进行有界处理。 */
+-    CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+-    DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+-    budget = SystemCoreClock / 5000U;
+-    for (;;)
+-    {
+-        now = HAL_GetTick();
+-        (void)monotonic(now);
+-        bsp_can_service(now);
+-        bsp_can_get_stats(&bus);
+-        if (bus.rx_dropped != last_dropped)
+-        { app_can_control_safety(); app_arm3_transport_fault(now); last_dropped = bus.rx_dropped; }
+-        if (s_transport_generation != bus.generation)
+-        {
+-            app_arm3_transport_fault(now);
+-            s_transport_generation = bus.generation;
+-            can_link_transport_reset(&s_link, now);
+-            s_ready_generation = 0U;
+-        }
+-        for (count = 0U; count < 3U && bsp_can_take_tx_result(&result); ++count)
+-        {
+-            can_link_tx_result(&s_link, result.cookie, result.success, result.frame.timestamp_ms);
+-            log_frame(&result.frame, result.success ? 1U : 2U);
++    bsp_can_init(xTaskGetCurrentTaskHandle(),HAL_GetTick());
++    CoreDebug->DEMCR|=CoreDebug_DEMCR_TRCENA_Msk;
++    DWT->CTRL|=DWT_CTRL_CYCCNTENA_Msk;
++    budget=SystemCoreClock/5000U;
++    for(;;){
++        can_fast_budget_t quota={0U,0U,0U};
++        now=HAL_GetTick();(void)monotonic(now);
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++        if(s_timing.service_seen){uint32_t gap=now-s_timing.service_at;
++            if(gap>s_timing.service_gap_max)s_timing.service_gap_max=gap;}
++        s_timing.service_seen=true;s_timing.service_at=now;
++#endif
++        bsp_can_service(now);bsp_can_get_stats(&bus);
++        if(bus.rx_dropped!=last_dropped){app_can_control_safety();app_arm3_transport_fault(now);last_dropped=bus.rx_dropped;}
++        if(s_transport_generation!=bus.generation){
++            app_arm3_transport_fault(now);s_transport_generation=bus.generation;
++            can_link_transport_reset(&s_link,now);s_ready_generation=0U;
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++            s_timing.segment_ready=false;
++#endif
+         }
+-        start_cycles = DWT->CYCCNT;
+-        for (count = 0U; count < 8U && bsp_can_receive(&frame); ++count)
+-        {
+-            uint32_t maximum_age = frame.id >= 0x310U ? 200U : APP_CAN_LINK_TIMEOUT_MS;
+-            now = HAL_GetTick();
+-            if ((uint32_t)(now - frame.timestamp_ms) > maximum_age)
+-                ++s_stale_rx;
+-            else
+-            {
+-                log_frame(&frame, 0U);
+-                can_link_receive(&s_link, frame.id, frame.data, frame.timestamp_ms);
+-            }
+-            if ((uint32_t)(DWT->CYCCNT - start_cycles) >= budget) break;
++        /* Consume queued heartbeat/STOP frames before checking protocol
++         * deadlines, preserving the receive-before-timeout boundary. */
++        fast_service_run(&quota,budget,false);
++        start_cycles=DWT->CYCCNT;
++        for(count=0U;count<8U && bsp_can_receive(&frame);++count){
++            uint32_t maximum_age=frame.id>=0x310U?200U:APP_CAN_LINK_TIMEOUT_MS;
++            now=HAL_GetTick();
++            if((uint32_t)(now-frame.timestamp_ms)>maximum_age)++s_stale_rx;
++            else{log_frame(&frame,0U);can_link_receive(&s_link,frame.id,frame.data,frame.timestamp_ms);}
++            if((uint32_t)(DWT->CYCCNT-start_cycles)>=budget){++count;break;}
+         }
+-        now = HAL_GetTick();
+-        if (!s_collected || (uint32_t)(now - s_collect_ms) >= 10U) collect(now);
++        /* Each maintenance step is bracketed by the same bounded TX budget. */
++        fast_service(&quota,budget);
++        now=HAL_GetTick();
++        if(!s_collected || (uint32_t)(now-s_collect_ms)>=10U)collect(now);
++        fast_service(&quota,budget);
+         control_link_update();
+-        arm_service(now);
+-        for (result_count = 0U; result_count < 4U && app_can_control_take_result(&control_result); ++result_count)
+-            if (control_result.link_generation == s_link.generation && control_result.link_token == s_link.token)
+-                can_link_control_result(&s_link, control_result.sequence, control_result.command,
+-                    control_result.result, control_result.phase, control_result.detail, now);
+-        if (bsp_can_ready())
+-        {
+-            now = HAL_GetTick();
+-            schedule(now);
+-            can_link_service(&s_link, HAL_GetTick());
+-        }
+-        publish_status(now);
+-        /* 洪泛时强制阻塞一Tick，让低优先级CLI和显示任务继续执行。 */
+-        if (count >= 8U || (uint32_t)(DWT->CYCCNT - start_cycles) >= budget)
+-            vTaskDelay(1U);
+-        else
+-            (void)ulTaskNotifyTake(pdTRUE,
+-                pdMS_TO_TICKS(2U) != 0U ? pdMS_TO_TICKS(2U) : 1U);
++        arm_service(HAL_GetTick());
++        fast_service(&quota,budget);
++        for(result_count=0U;result_count<4U && app_can_control_take_result(&control_result);++result_count)
++            if(control_result.link_generation==s_link.generation && control_result.link_token==s_link.token)
++                can_link_control_result(&s_link,control_result.sequence,control_result.command,
++                    control_result.result,control_result.phase,control_result.detail,HAL_GetTick());
++        now=HAL_GetTick();
++        if(bsp_can_ready())schedule(now);
++        fast_service(&quota,budget);
++        /* Presentation is incremental; safety and input maintenance above is
++         * never throttled by the 20 ms publication cadence. */
++        s_display_quota=&quota;
++        app_arm3_port_display_service(HAL_GetTick(),display_progress);
++        s_display_quota=NULL;
++        publish_status(HAL_GetTick());
++        if(count>=8U)vTaskDelay(1U);
++        else(void)ulTaskNotifyTake(pdTRUE,pdMS_TO_TICKS(2U)!=0U?pdMS_TO_TICKS(2U):1U);
+     }
+ }
+ #endif
+@@ -538,6 +652,9 @@ void app_can_init(void)
+     memset(&s_public, 0, sizeof(s_public));
+ #if APP_CAN_ENABLED
+     s_snapshot_supported = false;
++#if APP_LINK_DIAG_ACTIVE && (APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED)
++    memset(&s_timing,0,sizeof(s_timing));
++#endif
+ #endif
+     can_upper_init(&s_upper);
+     can_arm_init(&s_arm);
+@@ -557,6 +674,7 @@ void app_can_init(void)
+         callbacks.publish_upper = publish_upper;
+         callbacks.invalidate_upper = invalidate_upper;
+         callbacks.record_complete = arm_record_complete;
++        callbacks.record_failure = record_failed;
+         callbacks.prepare_payload = arm_prepare;
+         callbacks.describe = describe;
+ #if APP_CAN_CONTROL_ENABLED
+@@ -842,6 +960,23 @@ void app_can_diag_snapshot(app_link_diag_snapshot_t *out,uint8_t source,uint8_t
+     uint32_t *w;
+     if(!out)return;
+     out->count=0U;w=out->words;
++    if(phase==3U){
++#if APP_CAN_ENABLED
++        taskENTER_CRITICAL();out->sampled_ms=HAL_GetTick();
++        w[0]=s_timing.service_gap_max;w[1]=s_timing.tx_delay_max;w[2]=s_timing.segment_delay_max;
++        w[3]=s_timing.record_duration_max;w[4]=s_timing.critical_duration_max;
++        memcpy(w+5U,s_timing.critical_gap_max,sizeof(s_timing.critical_gap_max));
++        w[9]=s_timing.failures;w[10]=s_timing.failure_reason;w[11]=s_timing.last_failure_at;
++        w[12]=s_timing.failure_processed_at;w[13]=s_timing.tx_processed_at;
++        w[14]=s_link.record.type | ((uint32_t)s_link.record_index<<8U) |
++            ((uint32_t)s_link.record_pending<<24U) | ((uint32_t)s_link.record_cancelled<<25U);
++        w[15]=s_link.record.sequence | ((uint32_t)s_link.record.length<<16U);
++        w[16]=s_link.record_started_ms;w[17]=s_link.record_last_tx_ms;w[18]=s_link.submitted_count;
++        out->count=19U;taskEXIT_CRITICAL();return;
++#else
++        out->sampled_ms=HAL_GetTick();return;
++#endif
++    }
+     if(phase==0U || phase==1U){
+         if(source==APP_LINK_CAN_SERVO)out->count=app_can_control_diag_words(w,phase,&out->sampled_ms);
+         else if(source==APP_LINK_CAN_ARM)out->count=app_arm3_port_diag_words(w,phase,&out->sampled_ms);
+diff --git a/APP/app_can_control.c b/APP/app_can_control.c
+index 7b25800..c7cd358 100644
+--- a/APP/app_can_control.c
++++ b/APP/app_can_control.c
+@@ -115,6 +115,18 @@ static void other_stop_start(app_control_owner_t owner, uint32_t received, bool
+     uint32_t sequence, uint16_t command);
+ 
+ #if APP_LINK_DIAG_ACTIVE && APP_CAN_SERVO_DIAG_ENABLED
++static uint32_t s_diag_stop_repeated, s_diag_stop_event, s_diag_stop_received, s_diag_stop_key;
++/* Relate the original wire identity to the normalized global stop. An active
++ * command is serviced repeatedly; only a new event/request gets an EVENT. */
++static void control_diag_stop_identity(uint32_t received, uint16_t sequence,
++                                       uint16_t command, uint8_t requester)
++{
++    uint32_t key=(uint32_t)sequence | ((uint32_t)command<<16U);
++    if(s_diag_stop_event==s.stop_generation && s_diag_stop_received==received && s_diag_stop_key==key)return;
++    s_diag_stop_event=s.stop_generation;s_diag_stop_received=received;s_diag_stop_key=key;
++    app_link_diag_record(APP_LINK_CAN_SERVO,0x10CU,received,HAL_GetTick(),
++        s.stop_generation,key,requester,s_diag_stop_repeated);
++}
+ /* Diagnostic evidence only: neither dequeues a business result nor refreshes a lease. */
+ static void control_diag_wire(uint16_t kind, uint16_t why, const uint8_t data[8],
+                               uint32_t received, bool accepted)
+@@ -146,6 +158,7 @@ static void control_diag_stop(uint16_t kind, uint32_t why)
+     app_link_diag_freeze(APP_LINK_CAN_SERVO,kind,w,16U);
+ }
+ #else
++#define control_diag_stop_identity(received,sequence,command,requester) ((void)0)
+ #define control_diag_wire(kind,why,data,received,accepted) ((void)(why))
+ #define control_diag_stop(kind,why) ((void)0)
+ #endif
+@@ -245,7 +258,13 @@ static void begin_stop_rate(uint8_t reason, double deceleration)
+     unsigned axis; double maximum = 0.0;
+     app_control_stop_t event;
+     if (app_control_arbiter_owner() != APP_CONTROL_OWNER_CAN) return;
+-    control_diag_stop(0x105U,(uint32_t)reason | (s_stop_started?0x100U:0U));
++    /* Keep all business submissions and upgrades. Suppress only repeated
++     * evidence from the same in-progress stop, including a retained cmd5. */
++    if(!s_stop_started || deceleration>s.stop_deceleration || (reason==1U && s.stop_reason!=1U))
++        control_diag_stop(0x105U,(uint32_t)reason | (s_stop_started?0x100U:0U));
++#if APP_LINK_DIAG_ACTIVE && APP_CAN_SERVO_DIAG_ENABLED
++    else ++s_diag_stop_repeated;
++#endif
+     (void)app_control_arbiter_submit_global_stop(reason == 1U ?
+         APP_CONTROL_OWNER_REMOTE : APP_CONTROL_OWNER_CAN, reason == 1U ? 5U : reason,
+         (uint16_t)(deceleration * 1000.0 + 0.5), 0U, 0x10U);
+@@ -619,6 +638,7 @@ static void control_request(void)
+         if (app_control_arbiter_owner() != APP_CONTROL_OWNER_CAN)
+         { result(command == 4U ? 0U : 3U, 3U, 0U); return; }
+         begin_stop_rate(5U, command == 5U && p == 1 ? APP_CAN_QUICK_STOP_DECEL_MPS2 : APP_CAN_NORMAL_STOP_DECEL_MPS2);
++        control_diag_stop_identity(s_active.received,s_active.data[0],0x110U,APP_CONTROL_OWNER_CAN);
+         if (s_stop_started) result(0U, 2U, 0U);
+         if (s.state == CAN_CONTROL_DONE) result(0U, 3U, 0U);
+         return;
+@@ -657,6 +677,9 @@ void app_can_control_init(const can_identity_t *identity)
+     if(!s_preserve_bindings){memset(s_bindings,0,sizeof(s_bindings)); s_binding_id=s_stop_process_id=0U;
+     s_binding_token=0U; s_binding_cursor=0U; s_arm3_revision=false; memset(s_used_stop_sequences,0,sizeof(s_used_stop_sequences));}
+     s_active_valid = s_batch_active = s_stop_started = s_reverse = s_reverse_zero = s_priority_pending = false;
++#if APP_LINK_DIAG_ACTIVE && APP_CAN_SERVO_DIAG_ENABLED
++    s_diag_stop_repeated=s_diag_stop_event=s_diag_stop_received=s_diag_stop_key=0U;
++#endif
+     s_stop_ramp_initialized = false;
+     s_force_zero = s_other_active = false; s_axis_turn = 0U;
+     app_normal_ramp_boundary(&s_normal_clock, HAL_GetTick());
+@@ -958,6 +981,7 @@ void app_can_control_pre_service(void)
+     {
+         begin_stop_rate(arbiter_stop.requester == APP_CONTROL_OWNER_REMOTE ? 1U : 5U,
+             (double)arbiter_stop.deceleration_mm_s2 / 1000.0);
++        /* The retained global event already owns its true first requester. */
+     }
+     /* 先作废运动权限，再让底层事务调度；不能等到普通请求处理阶段。 */
+     binding_refresh_all(now);
+@@ -980,7 +1004,8 @@ void app_can_control_pre_service(void)
+         if (app_control_arbiter_owner() == APP_CONTROL_OWNER_NONE)
+             app_control_arbiter_cancel_pending();
+         if (app_control_arbiter_owner() == APP_CONTROL_OWNER_CAN)
+-        { begin_stop_rate(5U, stop_data[4] == 1U ? APP_CAN_QUICK_STOP_DECEL_MPS2 : APP_CAN_NORMAL_STOP_DECEL_MPS2); }
++        { begin_stop_rate(5U, stop_data[4] == 1U ? APP_CAN_QUICK_STOP_DECEL_MPS2 : APP_CAN_NORMAL_STOP_DECEL_MPS2);
++          control_diag_stop_identity(event_ms,s.stop_sequence,0x080U,APP_CONTROL_OWNER_CAN); }
+         else other_stop_start(app_control_arbiter_owner(), event_ms, stop_data[4] == 1U,
+             s.stop_sequence, 0x080U);
+     }
+@@ -995,6 +1020,7 @@ void app_can_control_pre_service(void)
+         {
+             begin_stop_rate(5U, quick ? APP_CAN_QUICK_STOP_DECEL_MPS2 :
+                 APP_CAN_NORMAL_STOP_DECEL_MPS2);
++            control_diag_stop_identity(request.received,request.data[0],0x110U,APP_CONTROL_OWNER_CAN);
+         }
+         else if (quick)
+         {
+@@ -1448,6 +1474,14 @@ uint8_t app_can_control_diag_words(uint32_t *w,uint8_t phase,uint32_t *sampled_m
+         w[12]=v->zero_mask | ((uint32_t)v->failed_mask<<8U) | ((uint32_t)v->stop_owner<<16U) | ((uint32_t)v->cross_stop_result<<24U);
+         w[13]=v->sync.pair_reject_count;w[14]=v->sync.pair_valid_count;
+         n=15U;
++#if APP_LINK_DIAG_ACTIVE && APP_CAN_SERVO_DIAG_ENABLED
++#if APP_CAN_CONTROL_ENABLED
++        w[15]=s_diag_stop_repeated;
++#else
++        w[15]=0U;
++#endif
++        n=16U;
++#endif
+     }
+     taskEXIT_CRITICAL();return n;
+ }
+diff --git a/APP/app_link_diag.h b/APP/app_link_diag.h
+index 7c80c05..2e4822f 100644
+--- a/APP/app_link_diag.h
++++ b/APP/app_link_diag.h
+@@ -4,7 +4,7 @@
+ #include "app_config.h"
+ 
+ #define APP_LINK_DIAG_ENABLED (APP_HMI_LINK_DIAG_ENABLED || APP_NRF_DIAGNOSTIC_ENABLED || APP_CAN_SERVO_DIAG_ENABLED || APP_CAN_ARM_DIAG_ENABLED || APP_SERVO_RS485_DIAG_ENABLED || APP_CAN_DEBUG_ENABLED || APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED)
+-#define APP_LINK_DIAG_IMPLEMENTATION "link5-boot-r2"
++#define APP_LINK_DIAG_IMPLEMENTATION "link5-can-r3"
+ #if APP_LINK_DIAG_ENABLED && (defined(__CC_ARM) || defined(__arm__) || defined(APP_LINK_DIAG_TEST) || defined(APP_HMI_LINK_DIAG_TEST))
+ #define APP_LINK_DIAG_ACTIVE 1
+ #else
+diff --git a/Protocol/CAN/can_link.c b/Protocol/CAN/can_link.c
+index aae2b33..2a58c4e 100644
+--- a/Protocol/CAN/can_link.c
++++ b/Protocol/CAN/can_link.c
+@@ -14,6 +14,13 @@ static bool reached(uint32_t now_ms, uint32_t deadline_ms)
+     return (int32_t)(now_ms - deadline_ms) >= 0;
+ }
+ 
++/* Codes preserve the producer branch; no deadline or retry policy changes. */
++static void record_failure(can_link_t *link, uint8_t reason, uint32_t now_ms)
++{
++    if (link->callbacks.record_failure != NULL)
++        link->callbacks.record_failure(link->callbacks.context, reason, now_ms);
++}
++
+ static bool newer8(uint8_t value, uint8_t previous)
+ {
+     uint8_t delta = (uint8_t)(value - previous);
+@@ -147,6 +154,7 @@ static bool retain_action(can_link_t *link, uint32_t now_ms)
+         if (!item->used && !slot) slot=item;
+     }
+     if (!slot || reached(now_ms,link->record_deadline_ms)) {
++        record_failure(link, 1U, now_ms);
+         ++link->record_failed; return false;
+     }
+     slot->record=link->record;slot->created_ms=link->record_created_ms;
+@@ -617,6 +625,7 @@ static bool begin_record(can_link_t *link, uint32_t now_ms)
+         link->record_priority = link->payload_queue[queued].priority;
+         link->payload_queue[queued].used = false;
+         if(link->callbacks.prepare_payload && !link->callbacks.prepare_payload(link->callbacks.context,&link->record,link->record_built_ms,now_ms)){
++            record_failure(link, 2U, now_ms);
+             if(link->record.type==0x53U)++link->start_budget_failed;
+             else ++link->payload_dropped;
+             return false;
+@@ -719,6 +728,7 @@ static bool begin_record(can_link_t *link, uint32_t now_ms)
+     link->record_built_ms = now_ms;
+ selected_payload:
+     link->record_start_tx_ms = 0U;
++    link->record_last_tx_ms = 0U;
+     link->record_active = true;
+     link->record_cancelled = false;
+     link->record_pending = link->record_started = false;
+@@ -734,10 +744,12 @@ static bool send_record(can_link_t *link, uint32_t now_ms)
+     uint32_t cookie;
+     if (link->record_pending) return false;
+     if (link->record_active && link->record_has_payload && reached(now_ms,link->record_deadline_ms)) {
++        record_failure(link, 3U, now_ms);
+         link->record_active=false; ++link->record_failed;
+     }
+     if (link->record_active && !link->record_started && link->arm3_profile &&
+         timed_arm_record(link->record.type) && (uint32_t)(now_ms-link->record_built_ms) > 20U) {
++        record_failure(link, 4U, now_ms);
+         link->record_active = false; ++link->start_budget_failed;
+     }
+     if (!link->record_active && !begin_record(link, now_ms)) return false;
+@@ -748,6 +760,7 @@ static bool send_record(can_link_t *link, uint32_t now_ms)
+         link->record_has_payload ? link->record_deadline_ms :
+         link->record_started ? link->record_started_ms + 200U : now_ms + 200U))
+     {
++        ++link->submitted_count;
+         link->record_cookie = cookie;
+         link->record_pending = true;
+         if (!link->record_started)
+@@ -763,6 +776,7 @@ static bool send_record(can_link_t *link, uint32_t now_ms)
+ static uint8_t basic_priority(const can_link_basic_t *slot)
+ {
+     if (slot->id == 0x185U || slot->id == 0x106U) return 0U;
++    if (slot->id == 0x186U || slot->id == 0x187U) return 1U;
+     if ((slot->id == 0x120U || slot->id == 0x121U) &&
+         slot->data[1] >= 4U && slot->data[1] <= 7U) return 1U;
+     return 2U;
+@@ -797,6 +811,7 @@ static bool send_basic(can_link_t *link, uint32_t now_ms)
+     cookie = ++link->cookie_counter;
+     if (!link->callbacks.send(link->callbacks.context, slot->id, slot->data,
+                               cookie, slot->deadline_ms)) return false;
++    ++link->submitted_count;
+     slot->cookie = cookie;
+     slot->pending = true;
+     link->basic_cursor = (uint8_t)((selected + 1U) % CAN_LINK_BASIC_SLOTS);
+@@ -850,6 +865,7 @@ void can_link_service(can_link_t *link, uint32_t now_ms)
+         ((uint32_t)(now_ms - link->record_started_ms) >= 200U ||
+          (link->record_has_payload && reached(now_ms,link->record_deadline_ms))))
+     {
++        record_failure(link, 5U, now_ms);
+         link->record_cancelled = true;
+         if (link->record_pending && link->callbacks.cancel != NULL)
+             link->callbacks.cancel(link->callbacks.context, link->record_cookie);
+@@ -913,22 +929,26 @@ void can_link_tx_result(can_link_t *link, uint32_t cookie, bool success,
+             return;
+         }
+         if (link->record_has_payload && reached(now_ms,link->record_deadline_ms)) {
++            record_failure(link, 6U, now_ms);
+             link->record_active=false; ++link->record_failed; return;
+         }
+         if (!success)
+         {
+             if (++link->record_retries > 2U)
+             {
++                record_failure(link, 7U, now_ms);
+                 link->record_active = false;
+                 ++link->record_failed;
+                 if (link->query_record) end_query(link, 9U, now_ms);
+             }
+             return;
+         }
++        link->record_last_tx_ms = now_ms;
+         if (link->record_index == 0U) {
+             link->record_start_tx_ms = now_ms;
+             if (link->arm3_profile && timed_arm_record(link->record.type) &&
+                 (uint32_t)(now_ms - link->record_built_ms) > 20U) {
++                record_failure(link, 8U, now_ms);
+                 link->record_active = false; ++link->start_budget_failed;
+                 if (!link->record_has_payload) (void)can_link_request_record(link, link->record.type);
+                 return;
+diff --git a/Protocol/CAN/can_link.h b/Protocol/CAN/can_link.h
+index f1e23e8..b05e9d6 100644
+--- a/Protocol/CAN/can_link.h
++++ b/Protocol/CAN/can_link.h
+@@ -38,6 +38,8 @@ typedef struct
+     void (*invalidate_upper)(void *context);
+     bool (*prepare_payload)(void *context,can_protocol_record_t *record,uint32_t built_ms,uint32_t now_ms);
+     void (*record_complete)(void *context,const can_protocol_record_t *record,uint32_t completed_ms);
++    /* Observation only: called before failed-record state is cleared. */
++    void (*record_failure)(void *context, uint8_t reason, uint32_t observed_ms);
+     void (*describe)(void *context, uint8_t *work_mode, uint8_t *owner);
+     uint8_t (*submit_control)(void *context, const uint8_t data[8], uint32_t sample_ms, uint32_t generation);
+     bool (*submit_speed)(void *context, const uint8_t data[8], uint32_t sample_ms);
+@@ -92,6 +94,7 @@ typedef struct
+     can_protocol_reassembly_t reassembly;
+     can_link_payload_t payload_queue[CAN_LINK_PAYLOAD_SLOTS + CAN_LINK_URGENT_SLOTS];
+     uint32_t record_cookie, record_started_ms, record_built_ms, record_start_tx_ms;
++    uint32_t submitted_count, record_last_tx_ms;
+     uint32_t record_created_ms, record_deadline_ms;
+     uint8_t record_priority;
+     uint32_t payload_dropped, start_budget_failed;

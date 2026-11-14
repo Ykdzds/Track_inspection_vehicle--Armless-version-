@@ -1,0 +1,20 @@
+﻿[
+    {
+        "MsPerRender":  17.79,
+        "Case":  "NoNewFrame",
+        "Renders":  100,
+        "Ms":  1779
+    },
+    {
+        "MsPerRender":  27.42,
+        "Case":  "StatusEach150ms",
+        "Renders":  100,
+        "Ms":  2742
+    },
+    {
+        "MsPerRender":  27.53,
+        "Case":  "AllRegionsEach50ms",
+        "Renders":  100,
+        "Ms":  2753
+    }
+]

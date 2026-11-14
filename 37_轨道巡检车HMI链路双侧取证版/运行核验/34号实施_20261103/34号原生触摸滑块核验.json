@@ -1,0 +1,10 @@
+﻿{
+    "Engine":  "Visual-PIX native compiled events and native hit model",
+    "PhysicalVerified":  false,
+    "SliderChecks":  12804,
+    "HitChecks":  21,
+    "LifecycleChecks":  9,
+    "Failures":  [
+
+                 ]
+}

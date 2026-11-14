@@ -1,0 +1,1 @@
+PASS real UART5 DMA -> Modbus diagnostic sink -> USART1 text, both pages and no motion path

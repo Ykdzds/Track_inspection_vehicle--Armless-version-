@@ -1,0 +1,165 @@
+✖ missing slider callback is compensated by sampled control value (104.5242ms)
+✖ candidate captured during initial zero confirmation is retained (50.0204ms)
+✖ preview follows every thumb position at a fixed 12px gap (13.8715ms)
+✖ transport loss retries exactly the same emergency request without another touch (52.006ms)
+✖ release-only emergency is a fallback and down/up is one intent (49.9307ms)
+✖ page lifecycle and reload preserve target, session and restored thumb (724.4866ms)
+✔ emergency inserted after a status reply prevents the next nonzero write (31.3531ms)
+✔ a lost callback while unauthorized never becomes a target after new authorization (35.5382ms)
+✔ offline and 600ms blocking still stop and cannot replay old target (70.9491ms)
+✔ rapid changes coalesce to the last target and preserve serial ownership (29.3965ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 4
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1354.6382
+
+✖ failing tests:
+
+test at hmi34.test.cjs:6:1
+✖ missing slider callback is compensated by sampled control value (104.5242ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 700
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:6:147)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.start (node:internal/test_runner/test:1177:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 700,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi34.test.cjs:7:1
+✖ candidate captured during initial zero confirmation is retained (50.0204ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1100
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:7:169)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1100,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi34.test.cjs:8:1
+✖ preview follows every thumb position at a fixed 12px gap (13.8715ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  540 !== 68
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:8:261)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 540,
+    expected: 68,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi34.test.cjs:9:1
+✖ transport loss retries exactly the same emergency request without another touch (52.006ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    Buffer(57) [Uint8Array] [
+      1,
+      16,
+      1,
+      0,
+  ...
+      0,
+  +   5,
+  -   6,
+      0,
+      16,
+      0,
+      0,
+      0,
+  ...
+      90,
+  +   17,
+  -   165,
+      69
+    ]
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:9:217)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: <Buffer 01 10 01 00 00 18 30 48 4d 00 01 12 34 56 78 00 00 00 00 00 00 00 05 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ... 7 more bytes>,
+    expected: <Buffer 01 10 01 00 00 18 30 48 4d 00 01 12 34 56 78 00 00 00 00 00 00 00 06 00 10 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ... 7 more bytes>,
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at hmi34.test.cjs:10:1
+✖ release-only emergency is a fallback and down/up is one intent (49.9307ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:10:287)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi34.test.cjs:11:1
+✖ page lifecycle and reload preserve target, session and restored thumb (724.4866ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1600 !== 2400
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:11:392)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1600,
+    expected: 2400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

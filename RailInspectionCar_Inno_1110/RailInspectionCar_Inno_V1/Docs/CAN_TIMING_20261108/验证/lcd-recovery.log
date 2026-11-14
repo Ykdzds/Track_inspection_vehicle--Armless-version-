@@ -1,0 +1,4 @@
+PASS production LCD transport: prelaunch/DMA/tail races, one deadline, tick wrap, HT/TC/error priority, lost IRQ, quarantine/recovery, lifetime evidence
+PASS LCD 380 glyphs: identical pixel order/color bytes, <=640-byte batches, buffer guards and clipping
+PASS LCD cached production formatter: independent 16/20px rows, unchanged rows suppressed, changed span and old-text erasure
+PASS production LCD recovery: pre-scheduler safety, coherent start/finish events, no periodic flood, backoff 2/4/8/10s, page clear, failed frame/rebuild

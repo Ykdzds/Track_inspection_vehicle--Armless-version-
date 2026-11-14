@@ -1,0 +1,6 @@
+﻿. (Join-Path $PSScriptRoot 'native-run31.ps1')
+[Windows.Application]::ResourceAssembly=$vp
+foreach($file31 in @('resource/buttontheme.xaml','resource/textboxtheme.xaml','resource/checkboxtheme.xaml','resource/appdictionary.xaml','resource/pixcontroldatatemplate.xaml','resource/pixcontroldatatemplatedebug.xaml')){try{$rd31=[Windows.ResourceDictionary]::new();$rd31.GetType().GetProperty('Source').SetValue($rd31,[Uri]('pack://application:,,,/Visual-PIX;component/'+$file31),$null);[Windows.Application]::Current.Resources.MergedDictionaries.Add($rd31);Write-Output ('LOADED '+$file31)}catch{Write-Output ('DICT '+$_.Exception.Message)}}
+try{$v31=[Activator]::CreateInstance($vp.GetType('Visual_PIX.Modules.Home.Views.DebugView'));$v31.DataContext=$d;Write-Output 'VIEW OK'}catch{$ex31=$_.Exception;while($ex31){Write-Output $ex31.Message;$ex31=$ex31.InnerException}}
+[Enum]::GetValues($vp.GetType('Visual_PIX.Controls.Gravity'))|ForEach-Object {Write-Output ($_.'value__'.ToString()+' '+$_.ToString())}
+[Environment]::Exit(0)

@@ -1,0 +1,11 @@
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at eCfhZgaqnCWRmRCMEqRYkhNNRGIk.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at eCfhZgaqnCWRmRCMEqRYkhNNRGIk.Convert(Object[] values, Type targetType, Object parameter, CultureInfo culture)
+Method invocation failed because [System.Object[]] does not contain a method named 'op_Addition'.
+At D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\native-verify31.ps1:56 char:2
++  $hitXs31=@([int]$hint31.X+1,[int]$hint31.X+96,[int]$hint31.X+191,25, ...
++  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (op_Addition:String) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MethodNotFound
+ 

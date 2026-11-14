@@ -1,0 +1,6 @@
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS LCD=0 configuration hmi_only: BOOT/CONFIG/FIRST/MEM, no LCD getter calls, 6000B/s budget
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS LCD=0 configuration rs485_only: BOOT/CONFIG/FIRST/MEM, no LCD getter calls, 6000B/s budget
+PASS shared logger: disabled routes, standalone BOOT/FIRST/MEM, worst widths, immutable first, backpressure, 6000B/s and periodic fairness
+PASS LCD=0 configuration five_and_legacy: BOOT/CONFIG/FIRST/MEM, no LCD getter calls, 6000B/s budget

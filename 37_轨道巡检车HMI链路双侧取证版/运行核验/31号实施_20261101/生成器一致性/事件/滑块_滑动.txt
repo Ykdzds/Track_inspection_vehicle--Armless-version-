@@ -1,0 +1,28 @@
+int ui31Slider;
+int ui31Rpm;
+int ui31Thumb;
+int ui31Abs;
+int ui31Milli;
+int ui31Whole;
+int ui31Frac;
+if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==1 && P8_ServoControl.h13.vals[32]==0 && P8_ServoControl.h13.vals[138]==0 && P8_ServoControl.h13.vals[116]==0){P8_ServoControl.h13.vals[10]=P8_ServoControl.rpmSlider.val-1600;}
+
+// UI31_SLIDER_HINT: never writes motion state.
+ui31Slider=P8_ServoControl.rpmSlider.val;
+ui31Rpm=ui31Slider-1600;
+ui31Thumb=24+ui31Slider*944/3200;
+if(ui31Rpm>0){P8_ServoControl.sliderSpeedHint.x=ui31Thumb-204;P8_ServoControl.sliderSpeedHint.txtHorAgn=2;}
+else{P8_ServoControl.sliderSpeedHint.x=ui31Thumb+44;P8_ServoControl.sliderSpeedHint.txtHorAgn=0;}
+ui31Abs=ui31Rpm;
+if(ui31Abs<0){ui31Abs=0-ui31Abs;}
+ui31Milli=ui31Abs*13+(ui31Abs*768794+5000000)/10000000;
+ui31Whole=ui31Milli/1000;
+ui31Frac=ui31Milli-ui31Whole*1000;
+P8_ServoControl.sliderSpeedHint.txt="预览：";
+if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==1 && P8_ServoControl.h13.vals[32]==0 && P8_ServoControl.h13.vals[138]==0 && P8_ServoControl.h13.vals[116]==0){P8_ServoControl.sliderSpeedHint.txt="设定：";}
+if(ui31Rpm<0){P8_ServoControl.sliderSpeedHint.txt=P8_ServoControl.sliderSpeedHint.txt+"-";}
+P8_ServoControl.sliderSpeedHint.txt=P8_ServoControl.sliderSpeedHint.txt+intToString(ui31Whole)+".";
+if(ui31Frac<100){P8_ServoControl.sliderSpeedHint.txt=P8_ServoControl.sliderSpeedHint.txt+"0";}
+if(ui31Frac<10){P8_ServoControl.sliderSpeedHint.txt=P8_ServoControl.sliderSpeedHint.txt+"0";}
+P8_ServoControl.sliderSpeedHint.txt=P8_ServoControl.sliderSpeedHint.txt+intToString(ui31Frac)+"km/h";
+P8_ServoControl.sliderSpeedHint.fontColor=P0_Boot.themeInk.val;

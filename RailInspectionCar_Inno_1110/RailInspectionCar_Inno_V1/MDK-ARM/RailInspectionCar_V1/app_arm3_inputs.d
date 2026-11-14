@@ -1,0 +1,9 @@
+railinspectioncar_v1\app_arm3_inputs.o: ../APP/app_arm3_inputs.c
+railinspectioncar_v1\app_arm3_inputs.o: ../APP/app_arm3_inputs.h
+railinspectioncar_v1\app_arm3_inputs.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+railinspectioncar_v1\app_arm3_inputs.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdbool.h
+railinspectioncar_v1\app_arm3_inputs.o: ../APP/app_arm3.h
+railinspectioncar_v1\app_arm3_inputs.o: ../Protocol/CAN/can_arm3.h
+railinspectioncar_v1\app_arm3_inputs.o: ../Protocol/CAN/can_protocol.h
+railinspectioncar_v1\app_arm3_inputs.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\limits.h
+railinspectioncar_v1\app_arm3_inputs.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\string.h

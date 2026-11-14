@@ -1,0 +1,30 @@
+✔ final PIX array lengths and a single enabled 50ms timer (1.3692ms)
+✔ healthy navigation and rendering consume wall time, target read/write serialized (175.344ms)
+✔ releasing ordinary authorization key cannot cancel a newly authorized session (34.2653ms)
+✔ 300ms stall clears old target; later manual authorization starts at zero (134.297ms)
+✔ 600ms host stall advances controller TTL independently (64.3912ms)
+✔ emergency generation survives all local states and historical stop candidates (127.3446ms)
+✔ wrong station, short frame and wrong function never renew nonzero target (88.7341ms)
+✔ repeat authorization after completed stop never settles an old stop (307.6672ms)
+✔ display refreshes only visible page, max six fields, and retains last numeric history (33.7075ms)
+✔ all nine pages and themes navigate with bounded arrays (189.1552ms)
+✔ CRC rejection and no callback cannot renew target or erase history (112.8902ms)
+✔ 100ms blocking can continue; 300/600ms cannot replay a nonzero target (129.7971ms)
+✔ 1000 page switches with theme changes retain session and bounded transactions (727.1124ms)
+✔ controller reboot clears old identity cache and never restores motion (71.4695ms)
+✔ position partial/expired samples hold values and baseline change invalidates only mileage (71.9375ms)
+✔ signed -1 and zero are valid speed cache values; sentinel retains preceding value (28.3048ms)
+✔ first invalid speed remains unknown; ten seconds without any frame retains business values (50.8693ms)
+✔ stop settlement and a newer emergency in the same event boundary keep the emergency generation (26.0458ms)
+✔ reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization (37.6523ms)
+✔ negative, zero and speed bounds have explicit valid cache semantics (71.3631ms)
+✔ backward snapshot high word is rejected without depending on host integer overflow (30.2538ms)
+✔ snapshot uint32 wrap advances while backward master clock rejects renewal (61.9196ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2709.6598

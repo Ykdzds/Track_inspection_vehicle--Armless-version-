@@ -1,0 +1,12 @@
+[
+  "--c99",
+  "-E",
+  "--cpu",
+  "Cortex-M4.fp.sp",
+  "-D__MICROLIB",
+  "-DUSE_HAL_DRIVER",
+  "-DSTM32F407xx",
+  "-I",
+  "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\APP",
+  "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_SRAM_20261108\\验证\\source-default\\source-default-probe.c"
+]

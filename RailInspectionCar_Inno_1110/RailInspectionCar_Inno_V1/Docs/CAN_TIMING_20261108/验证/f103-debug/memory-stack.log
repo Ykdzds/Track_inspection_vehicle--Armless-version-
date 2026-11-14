@@ -1,0 +1,11 @@
+SRAM=18416/20480 free=2064 bytes; includes static stacks, heap and MSP
+Flash end=0x0800DAEC <= 0x0800F800
+ProtocolTask: allocated=1280 graph+callbacks+context=832 margin=448
+PeriodicTask: allocated=416 graph+callbacks+context=152 margin=264
+OledTask: allocated=1024 graph+callbacks+context=592 margin=432
+HealthTask: allocated=400 graph+callbacks+context=136 margin=264
+KeyTask: allocated=400 graph+callbacks+context=136 margin=264
+LogTask: allocated=2208 graph+callbacks+context=1512 margin=696
+prvIdleTask: allocated=512 graph+context=152 margin=360; no application timer/idle callbacks configured
+prvTimerTask: allocated=1024 graph+context=312 margin=712; no application timer/idle callbacks configured
+Runtime historical stack minimum >=256 bytes remains a hardware release requirement

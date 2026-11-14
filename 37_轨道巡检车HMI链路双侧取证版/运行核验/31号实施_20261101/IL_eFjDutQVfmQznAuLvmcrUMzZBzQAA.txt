@@ -1,0 +1,9 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 ldarg.0 
+0001 ldfld System.Threading.SynchronizationContext ZaVjfOHnWnoFkLFOzuNMcrnkBwTVA
+0006 ldarg.0 
+0007 ldftn Void OtVjArmuLvWsZpNnEldbVScbODEX(System.Object)
+000D newobj Void .ctor(System.Object, IntPtr)
+0012 ldarg.1 
+0013 call Void ‪​‍⁮‌⁯⁭‌‌⁬⁬‏⁬⁯‏​‫​⁯⁭‌⁬⁬⁭‍‪⁯⁯‪‌⁭⁬⁪‏⁪‬‬⁪⁬⁯‮(System.Threading.SynchronizationContext, System.Threading.SendOrPostCallback, System.Object)
+0018 ret 

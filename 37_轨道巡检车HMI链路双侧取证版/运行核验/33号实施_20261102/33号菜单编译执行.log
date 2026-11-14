@@ -1,0 +1,18 @@
+0 0
+1 P0_Boot
+2 Image
+3 -460545
+4 a2bdfd98-537a-4b8c-9dcc-e2d647accac1
+5 
+6 
+7 
+8 
+总长度为 3068134 字节（总计 2.93 MB；文件 579.37 KB；资源 2.36 MB）
+编译成功
+
+P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=1;P0_Boot.s33.vals[13]=0-1;
+if(P0_Boot.themeMode.val==0){P0_Boot.bgImg=61;}else{P0_Boot.bgImg=106;}
+
+P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=1;P0_Boot.s33.vals[13]=0-1;
+if(P0_Boot.themeMode.val==0){P0_Boot.bgImg=61;}else{P0_Boot.bgImg=106;}
+

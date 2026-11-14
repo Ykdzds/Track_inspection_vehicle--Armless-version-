@@ -1,0 +1,273 @@
+// UI31_THEME: presentation properties only.
+if(P0_Boot.themeMode.val==0){
+P0_Boot.themeInk.val=-15719366;
+P0_Boot.themeMuted.val=-12429715;
+P0_Boot.themeGood.val=-15438781;
+P0_Boot.themeWarn.val=-7714048;
+P0_Boot.themeFault.val=-4971752;
+P3_Position.bgImg=user.image.Day_P3_Position;
+P3_Position.axis1Position.bgColor=-919812;
+if(P3_Position.axis1Position.fontColor==-15438781 || P3_Position.axis1Position.fontColor==-10624850){P3_Position.axis1Position.fontColor=-15438781;}
+else if(P3_Position.axis1Position.fontColor==-7714048 || P3_Position.axis1Position.fontColor==-14490){P3_Position.axis1Position.fontColor=-7714048;}
+else if(P3_Position.axis1Position.fontColor==-4971752 || P3_Position.axis1Position.fontColor==-39558){P3_Position.axis1Position.fontColor=-4971752;}
+else if(P3_Position.axis1Position.fontColor==-12429715 || P3_Position.axis1Position.fontColor==-5653552){P3_Position.axis1Position.fontColor=-12429715;}
+else if(P3_Position.axis1Position.fontColor==-16750426 || P3_Position.axis1Position.fontColor==-14494738){P3_Position.axis1Position.fontColor=-16750426;}
+else{P3_Position.axis1Position.fontColor=-15719366;}
+P3_Position.positionTitle.bgColor=-1;
+if(P3_Position.positionTitle.fontColor==-15438781 || P3_Position.positionTitle.fontColor==-10624850){P3_Position.positionTitle.fontColor=-15438781;}
+else if(P3_Position.positionTitle.fontColor==-7714048 || P3_Position.positionTitle.fontColor==-14490){P3_Position.positionTitle.fontColor=-7714048;}
+else if(P3_Position.positionTitle.fontColor==-4971752 || P3_Position.positionTitle.fontColor==-39558){P3_Position.positionTitle.fontColor=-4971752;}
+else if(P3_Position.positionTitle.fontColor==-12429715 || P3_Position.positionTitle.fontColor==-5653552){P3_Position.positionTitle.fontColor=-12429715;}
+else if(P3_Position.positionTitle.fontColor==-16750426 || P3_Position.positionTitle.fontColor==-14494738){P3_Position.positionTitle.fontColor=-16750426;}
+else{P3_Position.positionTitle.fontColor=-15719366;}
+P3_Position.axis2Position.bgColor=-919812;
+if(P3_Position.axis2Position.fontColor==-15438781 || P3_Position.axis2Position.fontColor==-10624850){P3_Position.axis2Position.fontColor=-15438781;}
+else if(P3_Position.axis2Position.fontColor==-7714048 || P3_Position.axis2Position.fontColor==-14490){P3_Position.axis2Position.fontColor=-7714048;}
+else if(P3_Position.axis2Position.fontColor==-4971752 || P3_Position.axis2Position.fontColor==-39558){P3_Position.axis2Position.fontColor=-4971752;}
+else if(P3_Position.axis2Position.fontColor==-12429715 || P3_Position.axis2Position.fontColor==-5653552){P3_Position.axis2Position.fontColor=-12429715;}
+else if(P3_Position.axis2Position.fontColor==-16750426 || P3_Position.axis2Position.fontColor==-14494738){P3_Position.axis2Position.fontColor=-16750426;}
+else{P3_Position.axis2Position.fontColor=-15719366;}
+P3_Position.startupDisplacement.bgColor=-919812;
+if(P3_Position.startupDisplacement.fontColor==-15438781 || P3_Position.startupDisplacement.fontColor==-10624850){P3_Position.startupDisplacement.fontColor=-15438781;}
+else if(P3_Position.startupDisplacement.fontColor==-7714048 || P3_Position.startupDisplacement.fontColor==-14490){P3_Position.startupDisplacement.fontColor=-7714048;}
+else if(P3_Position.startupDisplacement.fontColor==-4971752 || P3_Position.startupDisplacement.fontColor==-39558){P3_Position.startupDisplacement.fontColor=-4971752;}
+else if(P3_Position.startupDisplacement.fontColor==-12429715 || P3_Position.startupDisplacement.fontColor==-5653552){P3_Position.startupDisplacement.fontColor=-12429715;}
+else if(P3_Position.startupDisplacement.fontColor==-16750426 || P3_Position.startupDisplacement.fontColor==-14494738){P3_Position.startupDisplacement.fontColor=-16750426;}
+else{P3_Position.startupDisplacement.fontColor=-15719366;}
+P3_Position.startupTravel.bgColor=-919812;
+if(P3_Position.startupTravel.fontColor==-15438781 || P3_Position.startupTravel.fontColor==-10624850){P3_Position.startupTravel.fontColor=-15438781;}
+else if(P3_Position.startupTravel.fontColor==-7714048 || P3_Position.startupTravel.fontColor==-14490){P3_Position.startupTravel.fontColor=-7714048;}
+else if(P3_Position.startupTravel.fontColor==-4971752 || P3_Position.startupTravel.fontColor==-39558){P3_Position.startupTravel.fontColor=-4971752;}
+else if(P3_Position.startupTravel.fontColor==-12429715 || P3_Position.startupTravel.fontColor==-5653552){P3_Position.startupTravel.fontColor=-12429715;}
+else if(P3_Position.startupTravel.fontColor==-16750426 || P3_Position.startupTravel.fontColor==-14494738){P3_Position.startupTravel.fontColor=-16750426;}
+else{P3_Position.startupTravel.fontColor=-15719366;}
+P3_Position.segmentTravel.bgColor=-919812;
+if(P3_Position.segmentTravel.fontColor==-15438781 || P3_Position.segmentTravel.fontColor==-10624850){P3_Position.segmentTravel.fontColor=-15438781;}
+else if(P3_Position.segmentTravel.fontColor==-7714048 || P3_Position.segmentTravel.fontColor==-14490){P3_Position.segmentTravel.fontColor=-7714048;}
+else if(P3_Position.segmentTravel.fontColor==-4971752 || P3_Position.segmentTravel.fontColor==-39558){P3_Position.segmentTravel.fontColor=-4971752;}
+else if(P3_Position.segmentTravel.fontColor==-12429715 || P3_Position.segmentTravel.fontColor==-5653552){P3_Position.segmentTravel.fontColor=-12429715;}
+else if(P3_Position.segmentTravel.fontColor==-16750426 || P3_Position.segmentTravel.fontColor==-14494738){P3_Position.segmentTravel.fontColor=-16750426;}
+else{P3_Position.segmentTravel.fontColor=-15719366;}
+P3_Position.axisPositionDiff.bgColor=-919812;
+if(P3_Position.axisPositionDiff.fontColor==-15438781 || P3_Position.axisPositionDiff.fontColor==-10624850){P3_Position.axisPositionDiff.fontColor=-15438781;}
+else if(P3_Position.axisPositionDiff.fontColor==-7714048 || P3_Position.axisPositionDiff.fontColor==-14490){P3_Position.axisPositionDiff.fontColor=-7714048;}
+else if(P3_Position.axisPositionDiff.fontColor==-4971752 || P3_Position.axisPositionDiff.fontColor==-39558){P3_Position.axisPositionDiff.fontColor=-4971752;}
+else if(P3_Position.axisPositionDiff.fontColor==-12429715 || P3_Position.axisPositionDiff.fontColor==-5653552){P3_Position.axisPositionDiff.fontColor=-12429715;}
+else if(P3_Position.axisPositionDiff.fontColor==-16750426 || P3_Position.axisPositionDiff.fontColor==-14494738){P3_Position.axisPositionDiff.fontColor=-16750426;}
+else{P3_Position.axisPositionDiff.fontColor=-15719366;}
+P3_Position.positionValid.bgColor=-919812;
+if(P3_Position.positionValid.fontColor==-15438781 || P3_Position.positionValid.fontColor==-10624850){P3_Position.positionValid.fontColor=-15438781;}
+else if(P3_Position.positionValid.fontColor==-7714048 || P3_Position.positionValid.fontColor==-14490){P3_Position.positionValid.fontColor=-7714048;}
+else if(P3_Position.positionValid.fontColor==-4971752 || P3_Position.positionValid.fontColor==-39558){P3_Position.positionValid.fontColor=-4971752;}
+else if(P3_Position.positionValid.fontColor==-12429715 || P3_Position.positionValid.fontColor==-5653552){P3_Position.positionValid.fontColor=-12429715;}
+else if(P3_Position.positionValid.fontColor==-16750426 || P3_Position.positionValid.fontColor==-14494738){P3_Position.positionValid.fontColor=-16750426;}
+else{P3_Position.positionValid.fontColor=-15719366;}
+P3_Position.mileageValid.bgColor=-919812;
+if(P3_Position.mileageValid.fontColor==-15438781 || P3_Position.mileageValid.fontColor==-10624850){P3_Position.mileageValid.fontColor=-15438781;}
+else if(P3_Position.mileageValid.fontColor==-7714048 || P3_Position.mileageValid.fontColor==-14490){P3_Position.mileageValid.fontColor=-7714048;}
+else if(P3_Position.mileageValid.fontColor==-4971752 || P3_Position.mileageValid.fontColor==-39558){P3_Position.mileageValid.fontColor=-4971752;}
+else if(P3_Position.mileageValid.fontColor==-12429715 || P3_Position.mileageValid.fontColor==-5653552){P3_Position.mileageValid.fontColor=-12429715;}
+else if(P3_Position.mileageValid.fontColor==-16750426 || P3_Position.mileageValid.fontColor==-14494738){P3_Position.mileageValid.fontColor=-16750426;}
+else{P3_Position.mileageValid.fontColor=-15719366;}
+P3_Position.positionIncomplete.bgColor=-919812;
+if(P3_Position.positionIncomplete.fontColor==-15438781 || P3_Position.positionIncomplete.fontColor==-10624850){P3_Position.positionIncomplete.fontColor=-15438781;}
+else if(P3_Position.positionIncomplete.fontColor==-7714048 || P3_Position.positionIncomplete.fontColor==-14490){P3_Position.positionIncomplete.fontColor=-7714048;}
+else if(P3_Position.positionIncomplete.fontColor==-4971752 || P3_Position.positionIncomplete.fontColor==-39558){P3_Position.positionIncomplete.fontColor=-4971752;}
+else if(P3_Position.positionIncomplete.fontColor==-12429715 || P3_Position.positionIncomplete.fontColor==-5653552){P3_Position.positionIncomplete.fontColor=-12429715;}
+else if(P3_Position.positionIncomplete.fontColor==-16750426 || P3_Position.positionIncomplete.fontColor==-14494738){P3_Position.positionIncomplete.fontColor=-16750426;}
+else{P3_Position.positionIncomplete.fontColor=-15719366;}
+P3_Position.positionBaseline.bgColor=-919812;
+if(P3_Position.positionBaseline.fontColor==-15438781 || P3_Position.positionBaseline.fontColor==-10624850){P3_Position.positionBaseline.fontColor=-15438781;}
+else if(P3_Position.positionBaseline.fontColor==-7714048 || P3_Position.positionBaseline.fontColor==-14490){P3_Position.positionBaseline.fontColor=-7714048;}
+else if(P3_Position.positionBaseline.fontColor==-4971752 || P3_Position.positionBaseline.fontColor==-39558){P3_Position.positionBaseline.fontColor=-4971752;}
+else if(P3_Position.positionBaseline.fontColor==-12429715 || P3_Position.positionBaseline.fontColor==-5653552){P3_Position.positionBaseline.fontColor=-12429715;}
+else if(P3_Position.positionBaseline.fontColor==-16750426 || P3_Position.positionBaseline.fontColor==-14494738){P3_Position.positionBaseline.fontColor=-16750426;}
+else{P3_Position.positionBaseline.fontColor=-15719366;}
+P3_Position.positionSample.bgColor=-919812;
+if(P3_Position.positionSample.fontColor==-15438781 || P3_Position.positionSample.fontColor==-10624850){P3_Position.positionSample.fontColor=-15438781;}
+else if(P3_Position.positionSample.fontColor==-7714048 || P3_Position.positionSample.fontColor==-14490){P3_Position.positionSample.fontColor=-7714048;}
+else if(P3_Position.positionSample.fontColor==-4971752 || P3_Position.positionSample.fontColor==-39558){P3_Position.positionSample.fontColor=-4971752;}
+else if(P3_Position.positionSample.fontColor==-12429715 || P3_Position.positionSample.fontColor==-5653552){P3_Position.positionSample.fontColor=-12429715;}
+else if(P3_Position.positionSample.fontColor==-16750426 || P3_Position.positionSample.fontColor==-14494738){P3_Position.positionSample.fontColor=-16750426;}
+else{P3_Position.positionSample.fontColor=-15719366;}
+P3_Position.positionAge.bgColor=-919812;
+if(P3_Position.positionAge.fontColor==-15438781 || P3_Position.positionAge.fontColor==-10624850){P3_Position.positionAge.fontColor=-15438781;}
+else if(P3_Position.positionAge.fontColor==-7714048 || P3_Position.positionAge.fontColor==-14490){P3_Position.positionAge.fontColor=-7714048;}
+else if(P3_Position.positionAge.fontColor==-4971752 || P3_Position.positionAge.fontColor==-39558){P3_Position.positionAge.fontColor=-4971752;}
+else if(P3_Position.positionAge.fontColor==-12429715 || P3_Position.positionAge.fontColor==-5653552){P3_Position.positionAge.fontColor=-12429715;}
+else if(P3_Position.positionAge.fontColor==-16750426 || P3_Position.positionAge.fontColor==-14494738){P3_Position.positionAge.fontColor=-16750426;}
+else{P3_Position.positionAge.fontColor=-15719366;}
+P3_Position.lostInterval.bgColor=-919812;
+if(P3_Position.lostInterval.fontColor==-15438781 || P3_Position.lostInterval.fontColor==-10624850){P3_Position.lostInterval.fontColor=-15438781;}
+else if(P3_Position.lostInterval.fontColor==-7714048 || P3_Position.lostInterval.fontColor==-14490){P3_Position.lostInterval.fontColor=-7714048;}
+else if(P3_Position.lostInterval.fontColor==-4971752 || P3_Position.lostInterval.fontColor==-39558){P3_Position.lostInterval.fontColor=-4971752;}
+else if(P3_Position.lostInterval.fontColor==-12429715 || P3_Position.lostInterval.fontColor==-5653552){P3_Position.lostInterval.fontColor=-12429715;}
+else if(P3_Position.lostInterval.fontColor==-16750426 || P3_Position.lostInterval.fontColor==-14494738){P3_Position.lostInterval.fontColor=-16750426;}
+else{P3_Position.lostInterval.fontColor=-15719366;}
+P3_Position.mileageNote.bgColor=-919812;
+if(P3_Position.mileageNote.fontColor==-15438781 || P3_Position.mileageNote.fontColor==-10624850){P3_Position.mileageNote.fontColor=-15438781;}
+else if(P3_Position.mileageNote.fontColor==-7714048 || P3_Position.mileageNote.fontColor==-14490){P3_Position.mileageNote.fontColor=-7714048;}
+else if(P3_Position.mileageNote.fontColor==-4971752 || P3_Position.mileageNote.fontColor==-39558){P3_Position.mileageNote.fontColor=-4971752;}
+else if(P3_Position.mileageNote.fontColor==-12429715 || P3_Position.mileageNote.fontColor==-5653552){P3_Position.mileageNote.fontColor=-12429715;}
+else if(P3_Position.mileageNote.fontColor==-16750426 || P3_Position.mileageNote.fontColor==-14494738){P3_Position.mileageNote.fontColor=-16750426;}
+else{P3_Position.mileageNote.fontColor=-15719366;}
+P3_Position.mileageNoteTail.bgColor=-919812;
+if(P3_Position.mileageNoteTail.fontColor==-15438781 || P3_Position.mileageNoteTail.fontColor==-10624850){P3_Position.mileageNoteTail.fontColor=-15438781;}
+else if(P3_Position.mileageNoteTail.fontColor==-7714048 || P3_Position.mileageNoteTail.fontColor==-14490){P3_Position.mileageNoteTail.fontColor=-7714048;}
+else if(P3_Position.mileageNoteTail.fontColor==-4971752 || P3_Position.mileageNoteTail.fontColor==-39558){P3_Position.mileageNoteTail.fontColor=-4971752;}
+else if(P3_Position.mileageNoteTail.fontColor==-12429715 || P3_Position.mileageNoteTail.fontColor==-5653552){P3_Position.mileageNoteTail.fontColor=-12429715;}
+else if(P3_Position.mileageNoteTail.fontColor==-16750426 || P3_Position.mileageNoteTail.fontColor==-14494738){P3_Position.mileageNoteTail.fontColor=-16750426;}
+else{P3_Position.mileageNoteTail.fontColor=-15719366;}
+P3_Position.positionBack.bgImg=user.image.Day_nav_normal_152x52;
+P3_Position.positionBack.pbgImg=user.image.Day_nav_pressed_152x52;
+P3_Position.positionBack.dbgImg=user.image.Day_nav_disabled_152x52;
+P3_Position.positionBack.fontColor=-15719366;
+P3_Position.positionSync.bgImg=user.image.Day_nav_normal_152x52;
+P3_Position.positionSync.pbgImg=user.image.Day_nav_pressed_152x52;
+P3_Position.positionSync.dbgImg=user.image.Day_nav_disabled_152x52;
+P3_Position.positionSync.fontColor=-15719366;
+P3_Position.positionAlarm.bgImg=user.image.Day_nav_normal_152x52;
+P3_Position.positionAlarm.pbgImg=user.image.Day_nav_pressed_152x52;
+P3_Position.positionAlarm.dbgImg=user.image.Day_nav_disabled_152x52;
+P3_Position.positionAlarm.fontColor=-15719366;
+P3_Position.servoEntry.bgImg=user.image.Day_primary_normal_152x52;
+P3_Position.servoEntry.pbgImg=user.image.Day_primary_pressed_152x52;
+P3_Position.servoEntry.dbgImg=user.image.Day_primary_disabled_152x52;
+P3_Position.servoEntry.fontColor=-1;
+}
+if(P0_Boot.themeMode.val!=0){
+P0_Boot.themeInk.val=-1182209;
+P0_Boot.themeMuted.val=-5653552;
+P0_Boot.themeGood.val=-10624850;
+P0_Boot.themeWarn.val=-14490;
+P0_Boot.themeFault.val=-39558;
+P3_Position.bgImg=user.image.Night_P3_Position;
+P3_Position.axis1Position.bgColor=-15457221;
+if(P3_Position.axis1Position.fontColor==-15438781 || P3_Position.axis1Position.fontColor==-10624850){P3_Position.axis1Position.fontColor=-10624850;}
+else if(P3_Position.axis1Position.fontColor==-7714048 || P3_Position.axis1Position.fontColor==-14490){P3_Position.axis1Position.fontColor=-14490;}
+else if(P3_Position.axis1Position.fontColor==-4971752 || P3_Position.axis1Position.fontColor==-39558){P3_Position.axis1Position.fontColor=-39558;}
+else if(P3_Position.axis1Position.fontColor==-12429715 || P3_Position.axis1Position.fontColor==-5653552){P3_Position.axis1Position.fontColor=-5653552;}
+else if(P3_Position.axis1Position.fontColor==-16750426 || P3_Position.axis1Position.fontColor==-14494738){P3_Position.axis1Position.fontColor=-14494738;}
+else{P3_Position.axis1Position.fontColor=-1182209;}
+P3_Position.positionTitle.bgColor=-16051162;
+if(P3_Position.positionTitle.fontColor==-15438781 || P3_Position.positionTitle.fontColor==-10624850){P3_Position.positionTitle.fontColor=-10624850;}
+else if(P3_Position.positionTitle.fontColor==-7714048 || P3_Position.positionTitle.fontColor==-14490){P3_Position.positionTitle.fontColor=-14490;}
+else if(P3_Position.positionTitle.fontColor==-4971752 || P3_Position.positionTitle.fontColor==-39558){P3_Position.positionTitle.fontColor=-39558;}
+else if(P3_Position.positionTitle.fontColor==-12429715 || P3_Position.positionTitle.fontColor==-5653552){P3_Position.positionTitle.fontColor=-5653552;}
+else if(P3_Position.positionTitle.fontColor==-16750426 || P3_Position.positionTitle.fontColor==-14494738){P3_Position.positionTitle.fontColor=-14494738;}
+else{P3_Position.positionTitle.fontColor=-1182209;}
+P3_Position.axis2Position.bgColor=-15457221;
+if(P3_Position.axis2Position.fontColor==-15438781 || P3_Position.axis2Position.fontColor==-10624850){P3_Position.axis2Position.fontColor=-10624850;}
+else if(P3_Position.axis2Position.fontColor==-7714048 || P3_Position.axis2Position.fontColor==-14490){P3_Position.axis2Position.fontColor=-14490;}
+else if(P3_Position.axis2Position.fontColor==-4971752 || P3_Position.axis2Position.fontColor==-39558){P3_Position.axis2Position.fontColor=-39558;}
+else if(P3_Position.axis2Position.fontColor==-12429715 || P3_Position.axis2Position.fontColor==-5653552){P3_Position.axis2Position.fontColor=-5653552;}
+else if(P3_Position.axis2Position.fontColor==-16750426 || P3_Position.axis2Position.fontColor==-14494738){P3_Position.axis2Position.fontColor=-14494738;}
+else{P3_Position.axis2Position.fontColor=-1182209;}
+P3_Position.startupDisplacement.bgColor=-15457221;
+if(P3_Position.startupDisplacement.fontColor==-15438781 || P3_Position.startupDisplacement.fontColor==-10624850){P3_Position.startupDisplacement.fontColor=-10624850;}
+else if(P3_Position.startupDisplacement.fontColor==-7714048 || P3_Position.startupDisplacement.fontColor==-14490){P3_Position.startupDisplacement.fontColor=-14490;}
+else if(P3_Position.startupDisplacement.fontColor==-4971752 || P3_Position.startupDisplacement.fontColor==-39558){P3_Position.startupDisplacement.fontColor=-39558;}
+else if(P3_Position.startupDisplacement.fontColor==-12429715 || P3_Position.startupDisplacement.fontColor==-5653552){P3_Position.startupDisplacement.fontColor=-5653552;}
+else if(P3_Position.startupDisplacement.fontColor==-16750426 || P3_Position.startupDisplacement.fontColor==-14494738){P3_Position.startupDisplacement.fontColor=-14494738;}
+else{P3_Position.startupDisplacement.fontColor=-1182209;}
+P3_Position.startupTravel.bgColor=-15457221;
+if(P3_Position.startupTravel.fontColor==-15438781 || P3_Position.startupTravel.fontColor==-10624850){P3_Position.startupTravel.fontColor=-10624850;}
+else if(P3_Position.startupTravel.fontColor==-7714048 || P3_Position.startupTravel.fontColor==-14490){P3_Position.startupTravel.fontColor=-14490;}
+else if(P3_Position.startupTravel.fontColor==-4971752 || P3_Position.startupTravel.fontColor==-39558){P3_Position.startupTravel.fontColor=-39558;}
+else if(P3_Position.startupTravel.fontColor==-12429715 || P3_Position.startupTravel.fontColor==-5653552){P3_Position.startupTravel.fontColor=-5653552;}
+else if(P3_Position.startupTravel.fontColor==-16750426 || P3_Position.startupTravel.fontColor==-14494738){P3_Position.startupTravel.fontColor=-14494738;}
+else{P3_Position.startupTravel.fontColor=-1182209;}
+P3_Position.segmentTravel.bgColor=-15457221;
+if(P3_Position.segmentTravel.fontColor==-15438781 || P3_Position.segmentTravel.fontColor==-10624850){P3_Position.segmentTravel.fontColor=-10624850;}
+else if(P3_Position.segmentTravel.fontColor==-7714048 || P3_Position.segmentTravel.fontColor==-14490){P3_Position.segmentTravel.fontColor=-14490;}
+else if(P3_Position.segmentTravel.fontColor==-4971752 || P3_Position.segmentTravel.fontColor==-39558){P3_Position.segmentTravel.fontColor=-39558;}
+else if(P3_Position.segmentTravel.fontColor==-12429715 || P3_Position.segmentTravel.fontColor==-5653552){P3_Position.segmentTravel.fontColor=-5653552;}
+else if(P3_Position.segmentTravel.fontColor==-16750426 || P3_Position.segmentTravel.fontColor==-14494738){P3_Position.segmentTravel.fontColor=-14494738;}
+else{P3_Position.segmentTravel.fontColor=-1182209;}
+P3_Position.axisPositionDiff.bgColor=-15457221;
+if(P3_Position.axisPositionDiff.fontColor==-15438781 || P3_Position.axisPositionDiff.fontColor==-10624850){P3_Position.axisPositionDiff.fontColor=-10624850;}
+else if(P3_Position.axisPositionDiff.fontColor==-7714048 || P3_Position.axisPositionDiff.fontColor==-14490){P3_Position.axisPositionDiff.fontColor=-14490;}
+else if(P3_Position.axisPositionDiff.fontColor==-4971752 || P3_Position.axisPositionDiff.fontColor==-39558){P3_Position.axisPositionDiff.fontColor=-39558;}
+else if(P3_Position.axisPositionDiff.fontColor==-12429715 || P3_Position.axisPositionDiff.fontColor==-5653552){P3_Position.axisPositionDiff.fontColor=-5653552;}
+else if(P3_Position.axisPositionDiff.fontColor==-16750426 || P3_Position.axisPositionDiff.fontColor==-14494738){P3_Position.axisPositionDiff.fontColor=-14494738;}
+else{P3_Position.axisPositionDiff.fontColor=-1182209;}
+P3_Position.positionValid.bgColor=-15457221;
+if(P3_Position.positionValid.fontColor==-15438781 || P3_Position.positionValid.fontColor==-10624850){P3_Position.positionValid.fontColor=-10624850;}
+else if(P3_Position.positionValid.fontColor==-7714048 || P3_Position.positionValid.fontColor==-14490){P3_Position.positionValid.fontColor=-14490;}
+else if(P3_Position.positionValid.fontColor==-4971752 || P3_Position.positionValid.fontColor==-39558){P3_Position.positionValid.fontColor=-39558;}
+else if(P3_Position.positionValid.fontColor==-12429715 || P3_Position.positionValid.fontColor==-5653552){P3_Position.positionValid.fontColor=-5653552;}
+else if(P3_Position.positionValid.fontColor==-16750426 || P3_Position.positionValid.fontColor==-14494738){P3_Position.positionValid.fontColor=-14494738;}
+else{P3_Position.positionValid.fontColor=-1182209;}
+P3_Position.mileageValid.bgColor=-15457221;
+if(P3_Position.mileageValid.fontColor==-15438781 || P3_Position.mileageValid.fontColor==-10624850){P3_Position.mileageValid.fontColor=-10624850;}
+else if(P3_Position.mileageValid.fontColor==-7714048 || P3_Position.mileageValid.fontColor==-14490){P3_Position.mileageValid.fontColor=-14490;}
+else if(P3_Position.mileageValid.fontColor==-4971752 || P3_Position.mileageValid.fontColor==-39558){P3_Position.mileageValid.fontColor=-39558;}
+else if(P3_Position.mileageValid.fontColor==-12429715 || P3_Position.mileageValid.fontColor==-5653552){P3_Position.mileageValid.fontColor=-5653552;}
+else if(P3_Position.mileageValid.fontColor==-16750426 || P3_Position.mileageValid.fontColor==-14494738){P3_Position.mileageValid.fontColor=-14494738;}
+else{P3_Position.mileageValid.fontColor=-1182209;}
+P3_Position.positionIncomplete.bgColor=-15457221;
+if(P3_Position.positionIncomplete.fontColor==-15438781 || P3_Position.positionIncomplete.fontColor==-10624850){P3_Position.positionIncomplete.fontColor=-10624850;}
+else if(P3_Position.positionIncomplete.fontColor==-7714048 || P3_Position.positionIncomplete.fontColor==-14490){P3_Position.positionIncomplete.fontColor=-14490;}
+else if(P3_Position.positionIncomplete.fontColor==-4971752 || P3_Position.positionIncomplete.fontColor==-39558){P3_Position.positionIncomplete.fontColor=-39558;}
+else if(P3_Position.positionIncomplete.fontColor==-12429715 || P3_Position.positionIncomplete.fontColor==-5653552){P3_Position.positionIncomplete.fontColor=-5653552;}
+else if(P3_Position.positionIncomplete.fontColor==-16750426 || P3_Position.positionIncomplete.fontColor==-14494738){P3_Position.positionIncomplete.fontColor=-14494738;}
+else{P3_Position.positionIncomplete.fontColor=-1182209;}
+P3_Position.positionBaseline.bgColor=-15457221;
+if(P3_Position.positionBaseline.fontColor==-15438781 || P3_Position.positionBaseline.fontColor==-10624850){P3_Position.positionBaseline.fontColor=-10624850;}
+else if(P3_Position.positionBaseline.fontColor==-7714048 || P3_Position.positionBaseline.fontColor==-14490){P3_Position.positionBaseline.fontColor=-14490;}
+else if(P3_Position.positionBaseline.fontColor==-4971752 || P3_Position.positionBaseline.fontColor==-39558){P3_Position.positionBaseline.fontColor=-39558;}
+else if(P3_Position.positionBaseline.fontColor==-12429715 || P3_Position.positionBaseline.fontColor==-5653552){P3_Position.positionBaseline.fontColor=-5653552;}
+else if(P3_Position.positionBaseline.fontColor==-16750426 || P3_Position.positionBaseline.fontColor==-14494738){P3_Position.positionBaseline.fontColor=-14494738;}
+else{P3_Position.positionBaseline.fontColor=-1182209;}
+P3_Position.positionSample.bgColor=-15457221;
+if(P3_Position.positionSample.fontColor==-15438781 || P3_Position.positionSample.fontColor==-10624850){P3_Position.positionSample.fontColor=-10624850;}
+else if(P3_Position.positionSample.fontColor==-7714048 || P3_Position.positionSample.fontColor==-14490){P3_Position.positionSample.fontColor=-14490;}
+else if(P3_Position.positionSample.fontColor==-4971752 || P3_Position.positionSample.fontColor==-39558){P3_Position.positionSample.fontColor=-39558;}
+else if(P3_Position.positionSample.fontColor==-12429715 || P3_Position.positionSample.fontColor==-5653552){P3_Position.positionSample.fontColor=-5653552;}
+else if(P3_Position.positionSample.fontColor==-16750426 || P3_Position.positionSample.fontColor==-14494738){P3_Position.positionSample.fontColor=-14494738;}
+else{P3_Position.positionSample.fontColor=-1182209;}
+P3_Position.positionAge.bgColor=-15457221;
+if(P3_Position.positionAge.fontColor==-15438781 || P3_Position.positionAge.fontColor==-10624850){P3_Position.positionAge.fontColor=-10624850;}
+else if(P3_Position.positionAge.fontColor==-7714048 || P3_Position.positionAge.fontColor==-14490){P3_Position.positionAge.fontColor=-14490;}
+else if(P3_Position.positionAge.fontColor==-4971752 || P3_Position.positionAge.fontColor==-39558){P3_Position.positionAge.fontColor=-39558;}
+else if(P3_Position.positionAge.fontColor==-12429715 || P3_Position.positionAge.fontColor==-5653552){P3_Position.positionAge.fontColor=-5653552;}
+else if(P3_Position.positionAge.fontColor==-16750426 || P3_Position.positionAge.fontColor==-14494738){P3_Position.positionAge.fontColor=-14494738;}
+else{P3_Position.positionAge.fontColor=-1182209;}
+P3_Position.lostInterval.bgColor=-15457221;
+if(P3_Position.lostInterval.fontColor==-15438781 || P3_Position.lostInterval.fontColor==-10624850){P3_Position.lostInterval.fontColor=-10624850;}
+else if(P3_Position.lostInterval.fontColor==-7714048 || P3_Position.lostInterval.fontColor==-14490){P3_Position.lostInterval.fontColor=-14490;}
+else if(P3_Position.lostInterval.fontColor==-4971752 || P3_Position.lostInterval.fontColor==-39558){P3_Position.lostInterval.fontColor=-39558;}
+else if(P3_Position.lostInterval.fontColor==-12429715 || P3_Position.lostInterval.fontColor==-5653552){P3_Position.lostInterval.fontColor=-5653552;}
+else if(P3_Position.lostInterval.fontColor==-16750426 || P3_Position.lostInterval.fontColor==-14494738){P3_Position.lostInterval.fontColor=-14494738;}
+else{P3_Position.lostInterval.fontColor=-1182209;}
+P3_Position.mileageNote.bgColor=-15457221;
+if(P3_Position.mileageNote.fontColor==-15438781 || P3_Position.mileageNote.fontColor==-10624850){P3_Position.mileageNote.fontColor=-10624850;}
+else if(P3_Position.mileageNote.fontColor==-7714048 || P3_Position.mileageNote.fontColor==-14490){P3_Position.mileageNote.fontColor=-14490;}
+else if(P3_Position.mileageNote.fontColor==-4971752 || P3_Position.mileageNote.fontColor==-39558){P3_Position.mileageNote.fontColor=-39558;}
+else if(P3_Position.mileageNote.fontColor==-12429715 || P3_Position.mileageNote.fontColor==-5653552){P3_Position.mileageNote.fontColor=-5653552;}
+else if(P3_Position.mileageNote.fontColor==-16750426 || P3_Position.mileageNote.fontColor==-14494738){P3_Position.mileageNote.fontColor=-14494738;}
+else{P3_Position.mileageNote.fontColor=-1182209;}
+P3_Position.mileageNoteTail.bgColor=-15457221;
+if(P3_Position.mileageNoteTail.fontColor==-15438781 || P3_Position.mileageNoteTail.fontColor==-10624850){P3_Position.mileageNoteTail.fontColor=-10624850;}
+else if(P3_Position.mileageNoteTail.fontColor==-7714048 || P3_Position.mileageNoteTail.fontColor==-14490){P3_Position.mileageNoteTail.fontColor=-14490;}
+else if(P3_Position.mileageNoteTail.fontColor==-4971752 || P3_Position.mileageNoteTail.fontColor==-39558){P3_Position.mileageNoteTail.fontColor=-39558;}
+else if(P3_Position.mileageNoteTail.fontColor==-12429715 || P3_Position.mileageNoteTail.fontColor==-5653552){P3_Position.mileageNoteTail.fontColor=-5653552;}
+else if(P3_Position.mileageNoteTail.fontColor==-16750426 || P3_Position.mileageNoteTail.fontColor==-14494738){P3_Position.mileageNoteTail.fontColor=-14494738;}
+else{P3_Position.mileageNoteTail.fontColor=-1182209;}
+P3_Position.positionBack.bgImg=user.image.Night_nav_normal_152x52;
+P3_Position.positionBack.pbgImg=user.image.Night_nav_pressed_152x52;
+P3_Position.positionBack.dbgImg=user.image.Night_nav_disabled_152x52;
+P3_Position.positionBack.fontColor=-1182209;
+P3_Position.positionSync.bgImg=user.image.Night_nav_normal_152x52;
+P3_Position.positionSync.pbgImg=user.image.Night_nav_pressed_152x52;
+P3_Position.positionSync.dbgImg=user.image.Night_nav_disabled_152x52;
+P3_Position.positionSync.fontColor=-1182209;
+P3_Position.positionAlarm.bgImg=user.image.Night_nav_normal_152x52;
+P3_Position.positionAlarm.pbgImg=user.image.Night_nav_pressed_152x52;
+P3_Position.positionAlarm.dbgImg=user.image.Night_nav_disabled_152x52;
+P3_Position.positionAlarm.fontColor=-1182209;
+P3_Position.servoEntry.bgImg=user.image.Night_primary_normal_152x52;
+P3_Position.servoEntry.pbgImg=user.image.Night_primary_pressed_152x52;
+P3_Position.servoEntry.dbgImg=user.image.Night_primary_disabled_152x52;
+P3_Position.servoEntry.fontColor=-1;
+}

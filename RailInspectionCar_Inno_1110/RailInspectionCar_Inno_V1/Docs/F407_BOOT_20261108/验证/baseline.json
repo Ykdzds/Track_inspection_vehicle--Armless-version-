@@ -1,0 +1,31 @@
+{
+  "Commit": "0080780b1cb690c1e30008ebeba43dfadbdc901c",
+  "Map": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_BOOT_20261108\\验证\\baseline\\RailInspectionCar_V1.map",
+  "MapSha256": "1B32A120289C9435F0DBAB7F257EF68F869B8439E64A364641F9BB1114030FC4",
+  "Ram": {
+    "PhysicalRam": 167512,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Capacity": 65536,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 101888,
+        "Capacity": 114688,
+        "Free": 12800
+      },
+      "RW_IRAM2": {
+        "Bytes": 3088,
+        "Capacity": 15872,
+        "Free": 12784
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Capacity": 512,
+        "Free": 0
+      }
+    }
+  },
+  "MaximumSameMacroGrowthBytes": 256
+}

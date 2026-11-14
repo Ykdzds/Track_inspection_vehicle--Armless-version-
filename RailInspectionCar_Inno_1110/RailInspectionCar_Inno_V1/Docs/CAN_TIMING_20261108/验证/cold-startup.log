@@ -1,0 +1,1 @@
+PASS real cold startup/guard/bus: ER994 single/dual/none, lost ACK, stopped disable, manual authorization, other fault/moving/refused/delayed/offline/stale, reset isolation, wrap, no preflight motion writes

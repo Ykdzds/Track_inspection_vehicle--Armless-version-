@@ -1,0 +1,9 @@
+PASS K5 recovery with unrelated previous stop counter
+PASS first-completed snapshot; distinct per-axis receptions; safety lock resets confirmations
+PASS stale/history/owner/nonzero/disabled/conflicting phases/hard failure/session guards
+PASS observation timeout; real debounced K1 -> bounded read-only verification -> active grant
+PASS verification timeout drops active authorization intent; late success never grants
+PASS missing stop event never fabricates release success
+PASS event equality/rollback/wrap, 0x11/0x13 ordering, cancellation cannot leave a grant intent
+PASS K1 during confirmed ongoing stop never arms recovery/grant, even after observation timeout
+PASS transient feedback revokes motion and requests bounded stop; only confirmed release permits a fresh K1 grant

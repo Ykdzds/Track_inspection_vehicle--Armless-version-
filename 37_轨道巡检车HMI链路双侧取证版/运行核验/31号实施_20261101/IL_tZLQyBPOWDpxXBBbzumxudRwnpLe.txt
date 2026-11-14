@@ -1,0 +1,10 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 ldarg.0 
+0001 ldarg.0 
+0002 ldfld System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixControl] eddDJwnEAZBHVEpYXjPMAxdDwiqwb
+0007 ldc.r8 0
+0010 ldc.r8 0
+0019 ldarg.1 
+001A ldarg.2 
+001B call System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] fevGAyJoPVrvDGgIeqFkMsHwoPhoA(System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl], Double, Double, Double, Double)
+0020 ret 

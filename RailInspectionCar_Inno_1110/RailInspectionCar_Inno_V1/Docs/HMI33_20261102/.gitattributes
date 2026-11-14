@@ -1,0 +1,5 @@
+# Preserve SHA256 evidence bytes and original generated whitespace.
+* -text whitespace=cr-at-eol
+*.log -whitespace
+*.patch -whitespace
+*.diff -whitespace

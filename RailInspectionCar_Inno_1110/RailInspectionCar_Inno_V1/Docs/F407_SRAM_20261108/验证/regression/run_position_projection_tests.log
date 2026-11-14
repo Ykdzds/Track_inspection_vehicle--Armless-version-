@@ -1,0 +1,15 @@
+PASS position disabled: no accumulation, no reset, no control writes
+PASS position disabled: no accumulation, no reset, no control writes
+PASS position: full-mode mileage, resets, wraps, discontinuity, pairing and gates
+PASS position: full-mode mileage, resets, wraps, discontinuity, pairing and gates
+PASS production narrow position getter: selected/unselected, invalid/stale, signed, wrap, no I/O
+PASS position disabled: no accumulation, no reset, no control writes
+PASS position disabled: no accumulation, no reset, no control writes
+PASS position: full-mode mileage, resets, wraps, discontinuity, pairing and gates
+PASS position: full-mode mileage, resets, wraps, discontinuity, pairing and gates
+PASS production narrow position getter: selected/unselected, invalid/stale, signed, wrap, no I/O
+PASS position disabled: no accumulation, no reset, no control writes
+PASS position disabled: no accumulation, no reset, no control writes
+PASS position: full-mode mileage, resets, wraps, discontinuity, pairing and gates
+PASS position: full-mode mileage, resets, wraps, discontinuity, pairing and gates
+PASS production narrow position getter: selected/unselected, invalid/stale, signed, wrap, no I/O

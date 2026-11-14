@@ -1,0 +1,17 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 call System.String get_Script_execution_error()
+0005 pop 
+0006 ldarg.0 
+0007 call GGiFOibEIBtEwjjDZFJIEPbGFJeR XVOAuUCzIqdoDaMCjRLoGdlbEhmcc()
+000C call System.String aydxwojDcImqVcudWVXThfMHhBzN(GGiFOibEIBtEwjjDZFJIEPbGFJeR)
+0011 stloc.0 
+0012 ldarg.0 
+0013 ldc.i4 838222044
+0018 br.s 0
+001A call System.String ⁮‍‍⁬‏‏‮‪⁫‫‍​⁪‌​⁪⁬‎‍⁮⁯⁭⁬⁮‎‭‏⁯‍‪‮‫​‫‎⁭⁯‭⁭⁯‮[String](Int32)
+001F ldloc.0 
+0020 call Int32 PIelkOUhacjMVJCEyhEmohrCdjDsA()
+0025 box System.Int32
+002A call System.String ‮‎⁬‪‫‍‍⁬‫‌⁬‍‮⁮⁪⁫⁫‮⁭‎‍⁭⁬⁪‬‏‍⁮⁭‍‌​‮⁭‏‎⁭⁫‮‬‮(System.String, System.Object, System.Object)
+002F call Void aJlMJTeBHKRtzPCvqyAPpBTZQIxX(System.String)
+0034 ret 

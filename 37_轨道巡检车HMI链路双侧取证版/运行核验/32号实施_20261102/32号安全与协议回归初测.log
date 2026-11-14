@@ -1,0 +1,488 @@
+✔ 固定读帧与CRC向量 (2.3292ms)
+✔ 完整24字申请帧及特殊字序 (0.6243ms)
+✔ RPM边界及保留参数 (0.9953ms)
+✔ 重复目标不续期且旧序号拒绝 (0.7201ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1306.1493ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (503.8392ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2322.1492ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1099.3831ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1047.9217ms)
+✔ 只读固件不能授权 (665.5782ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4448ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2765ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2246ms)
+✔ 元数据持续丢失也轮询全部旧区，失败重试不超过每500ms一次 (1799.3876ms)
+✔ 50ms应答和全局显示联合负载下目标与状态均不超过200ms (10266.6221ms)
+✖ R2已确认但基础区未读不再误报主控没有回复 (164.2007ms)
+✔ 独立急停不会被随后返回意图覆盖 (288.2298ms)
+✔ 只读诊断模式只读B5或B5加B7，不授权 (657.0787ms)
+✔ 回调拒因记录含实际站号与在途上下文，失败不覆盖缓存 (122.1145ms)
+✔ 授权交叉确认后的第一条目标必须为零 (145.4718ms)
+✔ Default同步读失败立即统计，不等待独立回调看门狗 (192.0604ms)
+✔ 离页与急停同拍仍优先急停，不被自动释放降级 (290.1369ms)
+✔ 运行中进入只读诊断先撤权，不能保留后台运动 (304.4626ms)
+✖ 全局P8显示段与独立显示源保持一致 (5.537ms)
+✔ 正常授权全局显示负载下辅助区不超过原2秒失效门槛 (6739.3354ms)
+✔ 固定读帧与CRC向量 (1.9235ms)
+✔ 完整24字申请帧及特殊字序 (0.8802ms)
+✔ RPM边界及保留参数 (2.1186ms)
+✔ 重复目标不续期且旧序号拒绝 (2.2792ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1271.1286ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (470.6466ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2344.3795ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1105.4646ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1048.4451ms)
+✔ 只读固件不能授权 (655.2672ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.479ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3877ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.3092ms)
+✔ 授权ACK丢失先查询业务，不并发新申请 (332.6691ms)
+✔ 29号申请未决返回不撤销申请，确认后首目标为零 (456.5726ms)
+✔ 停车中急停升级，停止缓存滑动 (1601.2891ms)
+✔ 失联撤销本地授权，重连不恢复旧目标 (934.2918ms)
+✔ 他源占用拒绝授权，但全局急停不获取运动权 (458.696ms)
+✔ 屏重启先读取高位序号，申请不回退 (255.4589ms)
+✔ 同boot跨会话继续递增 (549.0148ms)
+✔ 29号离开页面后台持续维护有效运动会话 (642.2101ms)
+✔ 心跳不能替代新目标 (0.2723ms)
+✔ 序号末端先释放且不回绕 (422.2547ms)
+✔ 错误中断不刷新任何状态年龄 (371.125ms)
+✔ 缓存快照冻结触发撤权而不是永远在线 (535.2104ms)
+✔ 持久停车成功可确认释放，不要求观察ownerNONE (631.2532ms)
+✔ 空闲安全无动作急停成功且可再次授权 (534.8892ms)
+✔ 空闲急停成功回执不能替代请求后推进的状态快照 (467.8885ms)
+✔ 固定读帧与CRC向量 (2.6477ms)
+✔ 完整24字申请帧及特殊字序 (0.7886ms)
+✔ RPM边界及保留参数 (1.2437ms)
+✔ 重复目标不续期且旧序号拒绝 (1.8988ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1259.8578ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (478.551ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2336.7097ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1081.5044ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1027.4513ms)
+✔ 只读固件不能授权 (644.0913ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.8398ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.456ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.6277ms)
+✔ Default不进入Buffer后台派发，不产生R1/R3在途竞争 (1971.9191ms)
+✔ 同步超时立即结束事务，不遗留后台读取次数 (346.745ms)
+✔ 同步单事务模型保持目标状态及全部旧区刷新预算 (6180.6503ms)
+✔ Default服务源码不再触发Buffer后台读或异步写 (310.2337ms)
+✔ 滑块未授权也可见，但拖动不能写入运动目标 (455.3174ms)
+✔ 已否决的1ms配置不进入交付，Buffer保持停用默认值 (1.0759ms)
+✔ 同步读取站号错误不提交任何缓存 (149.1663ms)
+✔ 同步读取功能码错误不提交任何缓存 (133.8011ms)
+✔ 同步读取短载荷错误不提交任何缓存 (123.0461ms)
+✔ 同步读取字节数错误不提交任何缓存 (130.668ms)
+✔ 错误10H回执地址或数量不能标记ACK成功，结果查询仍能恢复 (525.4148ms)
+✔ Default中断只能计数，不读取旧Buffer字段或改变会话 (250.0189ms)
+✔ 最新178请求和64完整响应均CRC正确，仍缺元数据和辅助请求 (65.2713ms)
+✔ 真实新B0与B7载荷按Default前缀偏移进入缓存而不串区 (265.7794ms)
+✔ 同步服务生成源完整一致，避免模板与实际绑定漂移 (9.4041ms)
+✖ P2可拍摄同步返回值长度站号和功能码，便于区分超时与字段拒收 (314.2509ms)
+✔ 固定读帧与CRC向量 (3.8073ms)
+✔ 完整24字申请帧及特殊字序 (0.8419ms)
+✔ RPM边界及保留参数 (1.076ms)
+✔ 重复目标不续期且旧序号拒绝 (1.1466ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1272.9979ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (489.9207ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2291.963ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1110.6067ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1086.4537ms)
+✔ 只读固件不能授权 (692.0631ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.5496ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3486ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2293ms)
+✔ 固定读帧与CRC向量 (2.9063ms)
+✔ 完整24字申请帧及特殊字序 (0.6904ms)
+✔ RPM边界及保留参数 (0.885ms)
+✔ 重复目标不续期且旧序号拒绝 (0.8621ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1290.6231ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (498.6238ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2301.7166ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1117.9034ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1065.2527ms)
+✔ 只读固件不能授权 (682.8319ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4634ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3817ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2541ms)
+✔ 22号无本地令牌全局停车 owner=1 历史成功=false (2233.9622ms)
+✔ 22号无本地令牌全局停车 owner=1 历史成功=true (3126.6915ms)
+✔ 22号无本地令牌全局停车 owner=2 历史成功=false (2550.1537ms)
+✔ 22号无本地令牌全局停车 owner=2 历史成功=true (2755.5318ms)
+✔ 22号无本地令牌全局停车 owner=3 历史成功=false (1578.9311ms)
+✔ 22号无本地令牌全局停车 owner=3 历史成功=true (2207.4025ms)
+✔ 22号空闲停车反馈不安全不能伪造成功 enable (614.199ms)
+✔ 22号空闲停车反馈不安全不能伪造成功 lock (626.4655ms)
+✔ 22号空闲停车反馈不安全不能伪造成功 speed (606.6779ms)
+✔ 固定读帧与CRC向量 (2.0796ms)
+✔ 完整24字申请帧及特殊字序 (0.524ms)
+✔ RPM边界及保留参数 (0.9248ms)
+✔ 重复目标不续期且旧序号拒绝 (0.7483ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1305.1235ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (504.2423ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2289.0187ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1107.3617ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1068.8431ms)
+✔ 只读固件不能授权 (692.6076ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4607ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.405ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2586ms)
+✖ 23号三源只读监测 owner=1 (1033.3417ms)
+✖ 23号三源只读监测 owner=2 (931.3419ms)
+✖ 23号三源只读监测 owner=3 (1022.7334ms)
+✔ 23号显示脚本字模覆盖，不借历史证据声明新字存在 (20.2837ms)
+✔ 23号本轮PIX/BIN及事件读回证据独立且匹配 (15.2573ms)
+✔ 固定读帧与CRC向量 (1.7888ms)
+✔ 完整24字申请帧及特殊字序 (0.6384ms)
+✔ RPM边界及保留参数 (1.0985ms)
+✔ 重复目标不续期且旧序号拒绝 (0.6517ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1296.7377ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (496.0239ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2312.3811ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1057.0224ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1058.1118ms)
+✔ 只读固件不能授权 (697.6178ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.5795ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.5051ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.3019ms)
+✔ 25 single status exception recovers before expiry without release (756.728ms)
+✔ 25 single status timeout recovers before expiry without release (675.7944ms)
+✔ 25 continuous exception revokes at unchanged 300ms gate and retains evidence (597.1448ms)
+✔ 25 continuous timeout revokes at unchanged 300ms gate and retains evidence (561.3928ms)
+✔ 25 continuous frozen revokes at unchanged 300ms gate and retains evidence (613.2912ms)
+✔ 25 ten minute simulated idle authorization keeps first target zero and supports new movement (34277.6635ms)
+✔ 25 metadata expiry and master revoke are independently diagnosed (566.0376ms)
+✔ 固定读帧与CRC向量 (3.2564ms)
+✔ 完整24字申请帧及特殊字序 (0.9482ms)
+✔ RPM边界及保留参数 (2.4052ms)
+✔ 重复目标不续期且旧序号拒绝 (0.8879ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1260.7825ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (515.8252ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2360.2506ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1104.1338ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1055ms)
+✔ 只读固件不能授权 (701.7819ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.5455ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3154ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.162ms)
+✔ 26 实际按钮与事务服务生成恢复帧，幂等，恢复完成保持未授权 (846.8628ms)
+✔ 26 等待健康、资格不足、冻结快照、版本及零generation均拒绝且不排队 (2040.5583ms)
+✔ 26 排队后generation变化或状态过期，发送前再次拒绝 (699.4352ms)
+✔ 26 恢复期间不发送授权速度释放，身份和结果轮询持续 (687.7502ms)
+✔ 26 普通加速不显示换向，reverse边沿后加速并退出 (1204.9418ms)
+✖ 26 停车成功提示覆盖左轴右轴双轴，陈旧速度不能显示零 (1329.5975ms)
+✔ 26 主控恢复失败显示真实恢复原因，不能用恢复动作授权 (379.6934ms)
+✔ 26 主控恢复初始化清除结果槽，仍按本次generation的新鲜恢复状态完成 (534.7119ms)
+✔ 26 已失败恢复拒绝新的普通授权 (434.1176ms)
+✔ 26 实际PIX中文资源读回覆盖所有当前提示 (8.1386ms)
+{"scenario":"29 navigation simulated","rpm":-100,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+✔ 固定读帧与CRC向量 (2.5388ms)
+✔ 完整24字申请帧及特殊字序 (1.2127ms)
+✔ RPM边界及保留参数 (1.4745ms)
+✔ 重复目标不续期且旧序号拒绝 (0.9129ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (1230.3941ms)
+✔ 授权前滑动无效，新滑动只保存最新目标 (506.2645ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (2317.5723ms)
+✔ 主控重启清会话与旧目标，不自动授权 (1087.8366ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (1052.3907ms)
+✔ 只读固件不能授权 (674.8863ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.6507ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.5411ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.389ms)
+✔ 29 cross-page 120s/page target=-100 (46475.9838ms)
+✔ 29 cross-page 120s/page target=0 (37696.6532ms)
+✔ 29 cross-page 120s/page target=100 (38500.8823ms)
+✔ 29 repeated navigation and view reload axis=1 (482.5456ms)
+✔ 29 repeated navigation and view reload axis=2 (468.1784ms)
+✔ 29 repeated navigation and view reload axis=3 (468.7653ms)
+✔ 29 authorization pending navigates immediately and completes at zero (188.1339ms)
+✔ 29 cancel survives navigation and does not force delayed page jump (647.1918ms)
+✔ 29 estop survives navigation and does not force delayed page jump (621.8973ms)
+✔ 29 background K5 stop and fresh reauthorization (646.5034ms)
+✔ 29 background PB10 stop and fresh reauthorization (647.2816ms)
+✔ 29 background offline invalidates old motion (656.5416ms)
+✔ 29 background frozen invalidates old motion (584.449ms)
+✔ 29 background boot invalidates old motion (587.4888ms)
+✔ 29 read-only navigation never acquires other owner=2 (181.0798ms)
+✔ 29 read-only navigation never acquires other owner=3 (178.2505ms)
+✔ 29 all fault states allow navigation without changing control state (99.2171ms)
+ℹ tests 208
+ℹ suites 0
+ℹ pass 201
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 136273.6508
+
+✖ failing tests:
+
+test at hmi13-audit-repair.test.cjs:29:1
+✖ R2已确认但基础区未读不再误报主控没有回复 (164.2007ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /R2正常，基础区未更新/. Input:
+  
+  '控制器通信：正常'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi13-audit-repair.test.cjs:31:31)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '控制器通信：正常',
+    expected: /R2正常，基础区未更新/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi13-audit-repair.test.cjs:70:1
+✖ 全局P8显示段与独立显示源保持一致 (5.537ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'P8_ServoControl.linkStatus.txt=P0_Boot.ui32Text.get(112);}\n' +
+  +   'if(P8_ServoControl.linkStatus.fontColor!=u32color){P8_ServoControl.linkStatus.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[112]>0 && P8_ServoControl.linkStatus.font!=P0_Boot.ui32Font.vals[112]){P8_ServoControl.linkStatus.font=P0_Boot.ui32Font.vals[112];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[113]==0){P0_Boot.ui32Text.set(113,"控制源：未知");P0_Boot.ui32Color.vals[113]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[113]=8;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[113]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[113]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[113]]==u32now) || P0_Boot.ui32Field.vals[113]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[113];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.ownerStatus.txt!=P0_Boot.ui32Text.get(113)){P8_ServoControl.ownerStatus.txt=P0_Boot.ui32Text.get(113);}\n' +
+  +   'if(P8_ServoControl.ownerStatus.fontColor!=u32color){P8_ServoControl.ownerStatus.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[113]>0 && P8_ServoControl.ownerStatus.font!=P0_Boot.ui32Font.vals[113]){P8_ServoControl.ownerStatus.font=P0_Boot.ui32Font.vals[113];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[114]==0){P0_Boot.ui32Text.set(114,"故障恢复");P0_Boot.ui32Color.vals[114]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[114]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[114]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[114]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[114]]==u32now) || P0_Boot.ui32Field.vals[114]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[114];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.recoveryButton.txt!=P0_Boot.ui32Text.get(114)){P8_ServoControl.recoveryButton.txt=P0_Boot.ui32Text.get(114);}\n' +
+  +   'if(P8_ServoControl.recoveryButton.fontColor!=u32color){P8_ServoControl.recoveryButton.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[114]>0 && P8_ServoControl.recoveryButton.font!=P0_Boot.ui32Font.vals[114]){P8_ServoControl.recoveryButton.font=P0_Boot.ui32Font.vals[114];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[115]==0){P0_Boot.ui32Text.set(115,"恢复详情：--");P0_Boot.ui32Color.vals[115]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[115]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[115]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[115]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[115]]==u32now) || P0_Boot.ui32Field.vals[115]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[115];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.recoveryDetail.txt!=P0_Boot.ui32Text.get(115)){P8_ServoControl.recoveryDetail.txt=P0_Boot.ui32Text.get(115);}\n' +
+  +   'if(P8_ServoControl.recoveryDetail.fontColor!=u32color){P8_ServoControl.recoveryDetail.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[115]>0 && P8_ServoControl.recoveryDetail.font!=P0_Boot.ui32Font.vals[115]){P8_ServoControl.recoveryDetail.font=P0_Boot.ui32Font.vals[115];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[116]==0){P0_Boot.ui32Text.set(116,"等待有效数据");P0_Boot.ui32Color.vals[116]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[116]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[116]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[116]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[116]]==u32now) || P0_Boot.ui32Field.vals[116]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[116];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.recoveryStatus.txt!=P0_Boot.ui32Text.get(116)){P8_ServoControl.recoveryStatus.txt=P0_Boot.ui32Text.get(116);}\n' +
+  +   'if(P8_ServoControl.recoveryStatus.fontColor!=u32color){P8_ServoControl.recoveryStatus.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[116]>0 && P8_ServoControl.recoveryStatus.font!=P0_Boot.ui32Font.vals[116]){P8_ServoControl.recoveryStatus.font=P0_Boot.ui32Font.vals[116];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[117]==0){P0_Boot.ui32Text.set(117,"右轴实际：--rpm|--m/s|--km/h");P0_Boot.ui32Color.vals[117]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[117]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[117]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[117]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[117]]==u32now) || P0_Boot.ui32Field.vals[117]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[117];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.rightActual.txt!=P0_Boot.ui32Text.get(117)){P8_ServoControl.rightActual.txt=P0_Boot.ui32Text.get(117);}\n' +
+  +   'if(P8_ServoControl.rightActual.fontColor!=u32color){P8_ServoControl.rightActual.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[117]>0 && P8_ServoControl.rightActual.font!=P0_Boot.ui32Font.vals[117]){P8_ServoControl.rightActual.font=P0_Boot.ui32Font.vals[117];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[118]==0){P0_Boot.ui32Text.set(118,"右轴使能：未知");P0_Boot.ui32Color.vals[118]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[118]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[118]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[118]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[118]]==u32now) || P0_Boot.ui32Field.vals[118]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[118];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.rightEnable.txt!=P0_Boot.ui32Text.get(118)){P8_ServoControl.rightEnable.txt=P0_Boot.ui32Text.get(118);}\n' +
+  +   'if(P8_ServoControl.rightEnable.fontColor!=u32color){P8_ServoControl.rightEnable.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[118]>0 && P8_ServoControl.rightEnable.font!=P0_Boot.ui32Font.vals[118]){P8_ServoControl.rightEnable.font=P0_Boot.ui32Font.vals[118];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[119]==0){P0_Boot.ui32Text.set(119,"执行输出：--rpm|--m/s|--km/h");P0_Boot.ui32Color.vals[119]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[119]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[119]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[119]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[119]]==u32now) || P0_Boot.ui32Field.vals[119]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[119];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.rightOutput.txt!=P0_Boot.ui32Text.get(119)){P8_ServoControl.rightOutput.txt=P0_Boot.ui32Text.get(119);}\n' +
+  +   'if(P8_ServoControl.rightOutput.fontColor!=u32color){P8_ServoControl.rightOutput.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[119]>0 && P8_ServoControl.rightOutput.font!=P0_Boot.ui32Font.vals[119]){P8_ServoControl.rightOutput.font=P0_Boot.ui32Font.vals[119];}\n' +
+  +   '}\n' +
+  +   'if(P0_Boot.ui32Field.vals[120]==0){P0_Boot.ui32Text.set(120,"最终目标：--rpm|--m/s|--km/h");P0_Boot.ui32Color.vals[120]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[120]=9;}\n' +
+  +   'if(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[120]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[120]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[120]]==u32now) || P0_Boot.ui32Field.vals[120]==0 || u32reset==1){\n' +
+  +   'u32color=P0_Boot.ui32Color.vals[120];\n' +
+  +   'if(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\n' +
+  +   'else if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\n' +
+  +   'else if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\n' +
+  +   'else if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\n' +
+  +   'else{u32color=P0_Boot.themeInk.val;}\n' +
+  +   'if(P8_ServoControl.rightTarget.txt!=P0_Boot.ui32Text.get(120)){P8_ServoControl.rightTarget.txt=P0_Boot.ui32Text.get(120);}\n' +
+  +   'if(P8_ServoControl.rightTarget.fontColor!=u32color){P8_ServoControl.rightTarget.fontColor=u32color;}\n' +
+  +   'if(P0_Boot.ui32Font.vals[120]>0 && P8_ServoControl.rightTarget.font!=P0_Boot.ui32Fo'... 6782 more characters
+  - ''
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi13-audit-repair.test.cjs:70:317)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'P8_ServoControl.linkStatus.txt=P0_Boot.ui32Text.get(112);}\nif(P8_ServoControl.linkStatus.fontColor!=u32color){P8_ServoControl.linkStatus.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[112]>0 && P8_ServoControl.linkStatus.font!=P0_Boot.ui32Font.vals[112]){P8_ServoControl.linkStatus.font=P0_Boot.ui32Font.vals[112];}\n}\nif(P0_Boot.ui32Field.vals[113]==0){P0_Boot.ui32Text.set(113,"控制源：未知");P0_Boot.ui32Color.vals[113]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[113]=8;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[113]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[113]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[113]]==u32now) || P0_Boot.ui32Field.vals[113]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[113];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.ownerStatus.txt!=P0_Boot.ui32Text.get(113)){P8_ServoControl.ownerStatus.txt=P0_Boot.ui32Text.get(113);}\nif(P8_ServoControl.ownerStatus.fontColor!=u32color){P8_ServoControl.ownerStatus.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[113]>0 && P8_ServoControl.ownerStatus.font!=P0_Boot.ui32Font.vals[113]){P8_ServoControl.ownerStatus.font=P0_Boot.ui32Font.vals[113];}\n}\nif(P0_Boot.ui32Field.vals[114]==0){P0_Boot.ui32Text.set(114,"故障恢复");P0_Boot.ui32Color.vals[114]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[114]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[114]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[114]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[114]]==u32now) || P0_Boot.ui32Field.vals[114]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[114];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.recoveryButton.txt!=P0_Boot.ui32Text.get(114)){P8_ServoControl.recoveryButton.txt=P0_Boot.ui32Text.get(114);}\nif(P8_ServoControl.recoveryButton.fontColor!=u32color){P8_ServoControl.recoveryButton.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[114]>0 && P8_ServoControl.recoveryButton.font!=P0_Boot.ui32Font.vals[114]){P8_ServoControl.recoveryButton.font=P0_Boot.ui32Font.vals[114];}\n}\nif(P0_Boot.ui32Field.vals[115]==0){P0_Boot.ui32Text.set(115,"恢复详情：--");P0_Boot.ui32Color.vals[115]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[115]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[115]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[115]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[115]]==u32now) || P0_Boot.ui32Field.vals[115]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[115];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.recoveryDetail.txt!=P0_Boot.ui32Text.get(115)){P8_ServoControl.recoveryDetail.txt=P0_Boot.ui32Text.get(115);}\nif(P8_ServoControl.recoveryDetail.fontColor!=u32color){P8_ServoControl.recoveryDetail.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[115]>0 && P8_ServoControl.recoveryDetail.font!=P0_Boot.ui32Font.vals[115]){P8_ServoControl.recoveryDetail.font=P0_Boot.ui32Font.vals[115];}\n}\nif(P0_Boot.ui32Field.vals[116]==0){P0_Boot.ui32Text.set(116,"等待有效数据");P0_Boot.ui32Color.vals[116]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[116]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[116]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[116]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[116]]==u32now) || P0_Boot.ui32Field.vals[116]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[116];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.recoveryStatus.txt!=P0_Boot.ui32Text.get(116)){P8_ServoControl.recoveryStatus.txt=P0_Boot.ui32Text.get(116);}\nif(P8_ServoControl.recoveryStatus.fontColor!=u32color){P8_ServoControl.recoveryStatus.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[116]>0 && P8_ServoControl.recoveryStatus.font!=P0_Boot.ui32Font.vals[116]){P8_ServoControl.recoveryStatus.font=P0_Boot.ui32Font.vals[116];}\n}\nif(P0_Boot.ui32Field.vals[117]==0){P0_Boot.ui32Text.set(117,"右轴实际：--rpm|--m/s|--km/h");P0_Boot.ui32Color.vals[117]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[117]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[117]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[117]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[117]]==u32now) || P0_Boot.ui32Field.vals[117]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[117];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.rightActual.txt!=P0_Boot.ui32Text.get(117)){P8_ServoControl.rightActual.txt=P0_Boot.ui32Text.get(117);}\nif(P8_ServoControl.rightActual.fontColor!=u32color){P8_ServoControl.rightActual.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[117]>0 && P8_ServoControl.rightActual.font!=P0_Boot.ui32Font.vals[117]){P8_ServoControl.rightActual.font=P0_Boot.ui32Font.vals[117];}\n}\nif(P0_Boot.ui32Field.vals[118]==0){P0_Boot.ui32Text.set(118,"右轴使能：未知");P0_Boot.ui32Color.vals[118]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[118]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[118]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[118]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[118]]==u32now) || P0_Boot.ui32Field.vals[118]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[118];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.rightEnable.txt!=P0_Boot.ui32Text.get(118)){P8_ServoControl.rightEnable.txt=P0_Boot.ui32Text.get(118);}\nif(P8_ServoControl.rightEnable.fontColor!=u32color){P8_ServoControl.rightEnable.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[118]>0 && P8_ServoControl.rightEnable.font!=P0_Boot.ui32Font.vals[118]){P8_ServoControl.rightEnable.font=P0_Boot.ui32Font.vals[118];}\n}\nif(P0_Boot.ui32Field.vals[119]==0){P0_Boot.ui32Text.set(119,"执行输出：--rpm|--m/s|--km/h");P0_Boot.ui32Color.vals[119]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[119]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[119]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[119]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[119]]==u32now) || P0_Boot.ui32Field.vals[119]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[119];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.rightOutput.txt!=P0_Boot.ui32Text.get(119)){P8_ServoControl.rightOutput.txt=P0_Boot.ui32Text.get(119);}\nif(P8_ServoControl.rightOutput.fontColor!=u32color){P8_ServoControl.rightOutput.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[119]>0 && P8_ServoControl.rightOutput.font!=P0_Boot.ui32Font.vals[119]){P8_ServoControl.rightOutput.font=P0_Boot.ui32Font.vals[119];}\n}\nif(P0_Boot.ui32Field.vals[120]==0){P0_Boot.ui32Text.set(120,"最终目标：--rpm|--m/s|--km/h");P0_Boot.ui32Color.vals[120]=P0_Boot.themeMuted.val;P0_Boot.ui32Font.vals[120]=9;}\nif(sys_pid==P8_ServoControl.id || (P0_Boot.ui32Candidate.vals[120]==1 && P0_Boot.ui32Source.vals[P0_Boot.ui32CandidateSource.vals[120]]==1 && P0_Boot.ui32SourceAt.vals[P0_Boot.ui32CandidateSource.vals[120]]==u32now) || P0_Boot.ui32Field.vals[120]==0 || u32reset==1){\nu32color=P0_Boot.ui32Color.vals[120];\nif(u32color==-15438781 || u32color==-10624850){u32color=P0_Boot.themeGood.val;}\nelse if(u32color==-7714048 || u32color==-14490){u32color=P0_Boot.themeWarn.val;}\nelse if(u32color==-4971752 || u32color==-39558){u32color=P0_Boot.themeFault.val;}\nelse if(u32color==-12429715 || u32color==-5653552){u32color=P0_Boot.themeMuted.val;}\nelse{u32color=P0_Boot.themeInk.val;}\nif(P8_ServoControl.rightTarget.txt!=P0_Boot.ui32Text.get(120)){P8_ServoControl.rightTarget.txt=P0_Boot.ui32Text.get(120);}\nif(P8_ServoControl.rightTarget.fontColor!=u32color){P8_ServoControl.rightTarget.fontColor=u32color;}\nif(P0_Boot.ui32Font.vals[120]>0 && P8_ServoControl.rightTarget.font!=P0_Boot.ui32Fo'... 6782 more characters,
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13-native-dispatch.test.cjs:145:1
+✖ P2可拍摄同步返回值长度站号和功能码，便于区分超时与字段拒收 (314.2509ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '轴2I/V：--'
+  - 'HMI RET：-1 LEN：129'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi13-native-dispatch.test.cjs:151:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '轴2I/V：--',
+    expected: 'HMI RET：-1 LEN：129',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi23-snapshot.test.cjs:11:32
+✖ 23号三源只读监测 owner=1 (1033.3417ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /S\d+:\d+/. Input:
+  
+  '通信：正常 / R2接口匹配'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi23-snapshot.test.cjs:29:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '通信：正常 / R2接口匹配',
+    expected: /S\d+:\d+/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi23-snapshot.test.cjs:11:32
+✖ 23号三源只读监测 owner=2 (931.3419ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /S\d+:\d+/. Input:
+  
+  '通信：正常 / R2接口匹配'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi23-snapshot.test.cjs:29:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '通信：正常 / R2接口匹配',
+    expected: /S\d+:\d+/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi23-snapshot.test.cjs:11:32
+✖ 23号三源只读监测 owner=3 (1022.7334ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /S\d+:\d+/. Input:
+  
+  '通信：正常 / R2接口匹配'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi23-snapshot.test.cjs:29:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '通信：正常 / R2接口匹配',
+    expected: /S\d+:\d+/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi26-recovery.test.cjs:31:1
+✖ 26 停车成功提示覆盖左轴右轴双轴，陈旧速度不能显示零 (1329.5975ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /--/. Input:
+  
+  '左轴实际：0rpm|0.000m/s|0.000km/h'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\32_轨道巡检车状态显示稳定修复版\hmi26-recovery.test.cjs:32:302)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '左轴实际：0rpm|0.000m/s|0.000km/h',
+    expected: /--/,
+    operator: 'match',
+    diff: 'simple'
+  }

@@ -1,0 +1,2 @@
+. (Join-Path $PSScriptRoot 'pix-ui.ps1')
+Nodes|Where-Object {$_.Current.ControlType -eq [System.Windows.Automation.ControlType]::Document -and $_.GetSupportedPatterns().ProgrammaticName -contains 'TextPatternIdentifiers.Pattern'}|ForEach-Object {$_.GetCurrentPattern([System.Windows.Automation.TextPattern]::Pattern).DocumentRange.GetText(-1)}|Where-Object {$_.Length -lt 20000}

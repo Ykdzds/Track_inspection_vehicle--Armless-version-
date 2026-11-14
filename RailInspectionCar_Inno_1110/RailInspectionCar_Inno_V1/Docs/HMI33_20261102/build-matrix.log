@@ -1,0 +1,90 @@
+PASS hmi_control_axis_1_hold_0_hmi_1_readonly_0 : 0 errors, 0 warnings; log=C:\Users\15056\AppData\Local\Temp\hmi_control_axis_1_hold_0_hmi_1_readonly_0.log
+PASS Flash region: end=0x0804E318 < 0x080E0000
+PASS stack motion_task : allocated=3072 depth=2128 margin=944 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2696 margin=376 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=768 depth=512 margin=256 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3328 depth=2456 margin=872 bytes
+PASS stack lcd_task : allocated=3584 depth=3176 margin=408 bytes
+PASS stack iwdg_task : allocated=3072 depth=680 margin=2392 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1240 margin=1832 bytes
+PASS stack hmi_task : allocated=3072 depth=608 margin=2464 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=848 margin=2224 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。
+PASS hmi_control_axis_1_hold_1_hmi_1_readonly_0 : 0 errors, 0 warnings; log=C:\Users\15056\AppData\Local\Temp\hmi_control_axis_1_hold_1_hmi_1_readonly_0.log
+PASS Flash region: end=0x0804E338 < 0x080E0000
+PASS stack motion_task : allocated=3072 depth=2128 margin=944 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2696 margin=376 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=768 depth=512 margin=256 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3328 depth=2456 margin=872 bytes
+PASS stack lcd_task : allocated=3584 depth=3176 margin=408 bytes
+PASS stack iwdg_task : allocated=3072 depth=680 margin=2392 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1240 margin=1832 bytes
+PASS stack hmi_task : allocated=3072 depth=608 margin=2464 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=848 margin=2224 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。
+PASS hmi_control_axis_2_hold_0_hmi_1_readonly_0 : 0 errors, 0 warnings; log=C:\Users\15056\AppData\Local\Temp\hmi_control_axis_2_hold_0_hmi_1_readonly_0.log
+PASS Flash region: end=0x0804E318 < 0x080E0000
+PASS stack motion_task : allocated=3072 depth=2128 margin=944 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2696 margin=376 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=768 depth=512 margin=256 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3328 depth=2456 margin=872 bytes
+PASS stack lcd_task : allocated=3584 depth=3176 margin=408 bytes
+PASS stack iwdg_task : allocated=3072 depth=680 margin=2392 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1240 margin=1832 bytes
+PASS stack hmi_task : allocated=3072 depth=608 margin=2464 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=848 margin=2224 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。
+PASS hmi_control_axis_2_hold_1_hmi_1_readonly_0 : 0 errors, 0 warnings; log=C:\Users\15056\AppData\Local\Temp\hmi_control_axis_2_hold_1_hmi_1_readonly_0.log
+PASS Flash region: end=0x0804E338 < 0x080E0000
+PASS stack motion_task : allocated=3072 depth=2128 margin=944 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2696 margin=376 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=768 depth=512 margin=256 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3328 depth=2456 margin=872 bytes
+PASS stack lcd_task : allocated=3584 depth=3176 margin=408 bytes
+PASS stack iwdg_task : allocated=3072 depth=680 margin=2392 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1240 margin=1832 bytes
+PASS stack hmi_task : allocated=3072 depth=608 margin=2464 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=848 margin=2224 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。
+PASS hmi_control_axis_3_hold_0_hmi_1_readonly_0 : 0 errors, 0 warnings; log=C:\Users\15056\AppData\Local\Temp\hmi_control_axis_3_hold_0_hmi_1_readonly_0.log
+PASS Flash region: end=0x0804E310 < 0x080E0000
+PASS stack motion_task : allocated=3072 depth=2128 margin=944 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2696 margin=376 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=768 depth=512 margin=256 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3328 depth=2456 margin=872 bytes
+PASS stack lcd_task : allocated=3584 depth=3176 margin=408 bytes
+PASS stack iwdg_task : allocated=3072 depth=680 margin=2392 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1240 margin=1832 bytes
+PASS stack hmi_task : allocated=3072 depth=608 margin=2464 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=848 margin=2224 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。
+PASS hmi_control_axis_3_hold_1_hmi_1_readonly_0 : 0 errors, 0 warnings; log=C:\Users\15056\AppData\Local\Temp\hmi_control_axis_3_hold_1_hmi_1_readonly_0.log
+PASS Flash region: end=0x0804E330 < 0x080E0000
+PASS stack motion_task : allocated=3072 depth=2128 margin=944 bytes
+PASS stack servo_comm_task : allocated=3072 depth=2696 margin=376 bytes
+PASS stack health_task : allocated=2048 depth=1528 margin=520 bytes
+PASS stack key_task : allocated=768 depth=512 margin=256 bytes
+PASS stack status_task : allocated=768 depth=168 margin=600 bytes
+PASS stack cli_task : allocated=3328 depth=2456 margin=872 bytes
+PASS stack lcd_task : allocated=3584 depth=3176 margin=408 bytes
+PASS stack iwdg_task : allocated=3072 depth=680 margin=2392 bytes
+PASS stack nrf_task : allocated=3072 depth=808 margin=2264 bytes
+PASS stack modbus_bus_task : allocated=3072 depth=1240 margin=1832 bytes
+PASS stack hmi_task : allocated=3072 depth=608 margin=2464 bytes
+PASS stack can_task with callbacks : allocated=3072 depth=848 margin=2224 bytes
+静态调用图不能替代实物栈高水位测试；函数指针、递归及中断现场仍需实测。

@@ -1,0 +1,15 @@
+{
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\22_轨道巡检车UART5三源全局快速停车版",
+  "Reopened": true,
+  "PIX": "4D49E19F25F7990E9D4CCCC6F38D8272496C31D018F9D6E66A7B82FC790BA230",
+  "StateArrayLength": 161,
+  "StateArrayMaxIndex": 160,
+  "AuthorizeControlType": "TOGGLE_BUTTON",
+  "Mode": "Default",
+  "RxBuffer": "255",
+  "Master": "On",
+  "BufferPollEnabled": false,
+  "ReadbackOnly": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

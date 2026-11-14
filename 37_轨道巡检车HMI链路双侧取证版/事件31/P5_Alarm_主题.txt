@@ -1,0 +1,217 @@
+// UI31_THEME: presentation properties only.
+if(P0_Boot.themeMode.val==0){
+P0_Boot.themeInk.val=-15719366;
+P0_Boot.themeMuted.val=-12429715;
+P0_Boot.themeGood.val=-15438781;
+P0_Boot.themeWarn.val=-7714048;
+P0_Boot.themeFault.val=-4971752;
+P5_Alarm.bgImg=user.image.Day_P5_Alarm;
+P5_Alarm.alarmLevel.bgColor=-919812;
+if(P5_Alarm.alarmLevel.fontColor==-15438781 || P5_Alarm.alarmLevel.fontColor==-10624850){P5_Alarm.alarmLevel.fontColor=-15438781;}
+else if(P5_Alarm.alarmLevel.fontColor==-7714048 || P5_Alarm.alarmLevel.fontColor==-14490){P5_Alarm.alarmLevel.fontColor=-7714048;}
+else if(P5_Alarm.alarmLevel.fontColor==-4971752 || P5_Alarm.alarmLevel.fontColor==-39558){P5_Alarm.alarmLevel.fontColor=-4971752;}
+else if(P5_Alarm.alarmLevel.fontColor==-12429715 || P5_Alarm.alarmLevel.fontColor==-5653552){P5_Alarm.alarmLevel.fontColor=-12429715;}
+else if(P5_Alarm.alarmLevel.fontColor==-16750426 || P5_Alarm.alarmLevel.fontColor==-14494738){P5_Alarm.alarmLevel.fontColor=-16750426;}
+else{P5_Alarm.alarmLevel.fontColor=-15719366;}
+P5_Alarm.alarmTitle.bgColor=-1;
+if(P5_Alarm.alarmTitle.fontColor==-15438781 || P5_Alarm.alarmTitle.fontColor==-10624850){P5_Alarm.alarmTitle.fontColor=-15438781;}
+else if(P5_Alarm.alarmTitle.fontColor==-7714048 || P5_Alarm.alarmTitle.fontColor==-14490){P5_Alarm.alarmTitle.fontColor=-7714048;}
+else if(P5_Alarm.alarmTitle.fontColor==-4971752 || P5_Alarm.alarmTitle.fontColor==-39558){P5_Alarm.alarmTitle.fontColor=-4971752;}
+else if(P5_Alarm.alarmTitle.fontColor==-12429715 || P5_Alarm.alarmTitle.fontColor==-5653552){P5_Alarm.alarmTitle.fontColor=-12429715;}
+else if(P5_Alarm.alarmTitle.fontColor==-16750426 || P5_Alarm.alarmTitle.fontColor==-14494738){P5_Alarm.alarmTitle.fontColor=-16750426;}
+else{P5_Alarm.alarmTitle.fontColor=-15719366;}
+P5_Alarm.alarmCode.bgColor=-919812;
+if(P5_Alarm.alarmCode.fontColor==-15438781 || P5_Alarm.alarmCode.fontColor==-10624850){P5_Alarm.alarmCode.fontColor=-15438781;}
+else if(P5_Alarm.alarmCode.fontColor==-7714048 || P5_Alarm.alarmCode.fontColor==-14490){P5_Alarm.alarmCode.fontColor=-7714048;}
+else if(P5_Alarm.alarmCode.fontColor==-4971752 || P5_Alarm.alarmCode.fontColor==-39558){P5_Alarm.alarmCode.fontColor=-4971752;}
+else if(P5_Alarm.alarmCode.fontColor==-12429715 || P5_Alarm.alarmCode.fontColor==-5653552){P5_Alarm.alarmCode.fontColor=-12429715;}
+else if(P5_Alarm.alarmCode.fontColor==-16750426 || P5_Alarm.alarmCode.fontColor==-14494738){P5_Alarm.alarmCode.fontColor=-16750426;}
+else{P5_Alarm.alarmCode.fontColor=-15719366;}
+P5_Alarm.alarmSource.bgColor=-919812;
+if(P5_Alarm.alarmSource.fontColor==-15438781 || P5_Alarm.alarmSource.fontColor==-10624850){P5_Alarm.alarmSource.fontColor=-15438781;}
+else if(P5_Alarm.alarmSource.fontColor==-7714048 || P5_Alarm.alarmSource.fontColor==-14490){P5_Alarm.alarmSource.fontColor=-7714048;}
+else if(P5_Alarm.alarmSource.fontColor==-4971752 || P5_Alarm.alarmSource.fontColor==-39558){P5_Alarm.alarmSource.fontColor=-4971752;}
+else if(P5_Alarm.alarmSource.fontColor==-12429715 || P5_Alarm.alarmSource.fontColor==-5653552){P5_Alarm.alarmSource.fontColor=-12429715;}
+else if(P5_Alarm.alarmSource.fontColor==-16750426 || P5_Alarm.alarmSource.fontColor==-14494738){P5_Alarm.alarmSource.fontColor=-16750426;}
+else{P5_Alarm.alarmSource.fontColor=-15719366;}
+P5_Alarm.alarmActive.bgColor=-919812;
+if(P5_Alarm.alarmActive.fontColor==-15438781 || P5_Alarm.alarmActive.fontColor==-10624850){P5_Alarm.alarmActive.fontColor=-15438781;}
+else if(P5_Alarm.alarmActive.fontColor==-7714048 || P5_Alarm.alarmActive.fontColor==-14490){P5_Alarm.alarmActive.fontColor=-7714048;}
+else if(P5_Alarm.alarmActive.fontColor==-4971752 || P5_Alarm.alarmActive.fontColor==-39558){P5_Alarm.alarmActive.fontColor=-4971752;}
+else if(P5_Alarm.alarmActive.fontColor==-12429715 || P5_Alarm.alarmActive.fontColor==-5653552){P5_Alarm.alarmActive.fontColor=-12429715;}
+else if(P5_Alarm.alarmActive.fontColor==-16750426 || P5_Alarm.alarmActive.fontColor==-14494738){P5_Alarm.alarmActive.fontColor=-16750426;}
+else{P5_Alarm.alarmActive.fontColor=-15719366;}
+P5_Alarm.alarmEmergency.bgColor=-919812;
+if(P5_Alarm.alarmEmergency.fontColor==-15438781 || P5_Alarm.alarmEmergency.fontColor==-10624850){P5_Alarm.alarmEmergency.fontColor=-15438781;}
+else if(P5_Alarm.alarmEmergency.fontColor==-7714048 || P5_Alarm.alarmEmergency.fontColor==-14490){P5_Alarm.alarmEmergency.fontColor=-7714048;}
+else if(P5_Alarm.alarmEmergency.fontColor==-4971752 || P5_Alarm.alarmEmergency.fontColor==-39558){P5_Alarm.alarmEmergency.fontColor=-4971752;}
+else if(P5_Alarm.alarmEmergency.fontColor==-12429715 || P5_Alarm.alarmEmergency.fontColor==-5653552){P5_Alarm.alarmEmergency.fontColor=-12429715;}
+else if(P5_Alarm.alarmEmergency.fontColor==-16750426 || P5_Alarm.alarmEmergency.fontColor==-14494738){P5_Alarm.alarmEmergency.fontColor=-16750426;}
+else{P5_Alarm.alarmEmergency.fontColor=-15719366;}
+P5_Alarm.alarmStopResult.bgColor=-919812;
+if(P5_Alarm.alarmStopResult.fontColor==-15438781 || P5_Alarm.alarmStopResult.fontColor==-10624850){P5_Alarm.alarmStopResult.fontColor=-15438781;}
+else if(P5_Alarm.alarmStopResult.fontColor==-7714048 || P5_Alarm.alarmStopResult.fontColor==-14490){P5_Alarm.alarmStopResult.fontColor=-7714048;}
+else if(P5_Alarm.alarmStopResult.fontColor==-4971752 || P5_Alarm.alarmStopResult.fontColor==-39558){P5_Alarm.alarmStopResult.fontColor=-4971752;}
+else if(P5_Alarm.alarmStopResult.fontColor==-12429715 || P5_Alarm.alarmStopResult.fontColor==-5653552){P5_Alarm.alarmStopResult.fontColor=-12429715;}
+else if(P5_Alarm.alarmStopResult.fontColor==-16750426 || P5_Alarm.alarmStopResult.fontColor==-14494738){P5_Alarm.alarmStopResult.fontColor=-16750426;}
+else{P5_Alarm.alarmStopResult.fontColor=-15719366;}
+P5_Alarm.alarmSequence.bgColor=-919812;
+if(P5_Alarm.alarmSequence.fontColor==-15438781 || P5_Alarm.alarmSequence.fontColor==-10624850){P5_Alarm.alarmSequence.fontColor=-15438781;}
+else if(P5_Alarm.alarmSequence.fontColor==-7714048 || P5_Alarm.alarmSequence.fontColor==-14490){P5_Alarm.alarmSequence.fontColor=-7714048;}
+else if(P5_Alarm.alarmSequence.fontColor==-4971752 || P5_Alarm.alarmSequence.fontColor==-39558){P5_Alarm.alarmSequence.fontColor=-4971752;}
+else if(P5_Alarm.alarmSequence.fontColor==-12429715 || P5_Alarm.alarmSequence.fontColor==-5653552){P5_Alarm.alarmSequence.fontColor=-12429715;}
+else if(P5_Alarm.alarmSequence.fontColor==-16750426 || P5_Alarm.alarmSequence.fontColor==-14494738){P5_Alarm.alarmSequence.fontColor=-16750426;}
+else{P5_Alarm.alarmSequence.fontColor=-15719366;}
+P5_Alarm.alarmEventTime.bgColor=-919812;
+if(P5_Alarm.alarmEventTime.fontColor==-15438781 || P5_Alarm.alarmEventTime.fontColor==-10624850){P5_Alarm.alarmEventTime.fontColor=-15438781;}
+else if(P5_Alarm.alarmEventTime.fontColor==-7714048 || P5_Alarm.alarmEventTime.fontColor==-14490){P5_Alarm.alarmEventTime.fontColor=-7714048;}
+else if(P5_Alarm.alarmEventTime.fontColor==-4971752 || P5_Alarm.alarmEventTime.fontColor==-39558){P5_Alarm.alarmEventTime.fontColor=-4971752;}
+else if(P5_Alarm.alarmEventTime.fontColor==-12429715 || P5_Alarm.alarmEventTime.fontColor==-5653552){P5_Alarm.alarmEventTime.fontColor=-12429715;}
+else if(P5_Alarm.alarmEventTime.fontColor==-16750426 || P5_Alarm.alarmEventTime.fontColor==-14494738){P5_Alarm.alarmEventTime.fontColor=-16750426;}
+else{P5_Alarm.alarmEventTime.fontColor=-15719366;}
+P5_Alarm.alarmExtra.bgColor=-919812;
+if(P5_Alarm.alarmExtra.fontColor==-15438781 || P5_Alarm.alarmExtra.fontColor==-10624850){P5_Alarm.alarmExtra.fontColor=-15438781;}
+else if(P5_Alarm.alarmExtra.fontColor==-7714048 || P5_Alarm.alarmExtra.fontColor==-14490){P5_Alarm.alarmExtra.fontColor=-7714048;}
+else if(P5_Alarm.alarmExtra.fontColor==-4971752 || P5_Alarm.alarmExtra.fontColor==-39558){P5_Alarm.alarmExtra.fontColor=-4971752;}
+else if(P5_Alarm.alarmExtra.fontColor==-12429715 || P5_Alarm.alarmExtra.fontColor==-5653552){P5_Alarm.alarmExtra.fontColor=-12429715;}
+else if(P5_Alarm.alarmExtra.fontColor==-16750426 || P5_Alarm.alarmExtra.fontColor==-14494738){P5_Alarm.alarmExtra.fontColor=-16750426;}
+else{P5_Alarm.alarmExtra.fontColor=-15719366;}
+P5_Alarm.alarmFaultSummary.bgColor=-919812;
+if(P5_Alarm.alarmFaultSummary.fontColor==-15438781 || P5_Alarm.alarmFaultSummary.fontColor==-10624850){P5_Alarm.alarmFaultSummary.fontColor=-15438781;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-7714048 || P5_Alarm.alarmFaultSummary.fontColor==-14490){P5_Alarm.alarmFaultSummary.fontColor=-7714048;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-4971752 || P5_Alarm.alarmFaultSummary.fontColor==-39558){P5_Alarm.alarmFaultSummary.fontColor=-4971752;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-12429715 || P5_Alarm.alarmFaultSummary.fontColor==-5653552){P5_Alarm.alarmFaultSummary.fontColor=-12429715;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-16750426 || P5_Alarm.alarmFaultSummary.fontColor==-14494738){P5_Alarm.alarmFaultSummary.fontColor=-16750426;}
+else{P5_Alarm.alarmFaultSummary.fontColor=-15719366;}
+P5_Alarm.alarmHistory.bgColor=-919812;
+if(P5_Alarm.alarmHistory.fontColor==-15438781 || P5_Alarm.alarmHistory.fontColor==-10624850){P5_Alarm.alarmHistory.fontColor=-15438781;}
+else if(P5_Alarm.alarmHistory.fontColor==-7714048 || P5_Alarm.alarmHistory.fontColor==-14490){P5_Alarm.alarmHistory.fontColor=-7714048;}
+else if(P5_Alarm.alarmHistory.fontColor==-4971752 || P5_Alarm.alarmHistory.fontColor==-39558){P5_Alarm.alarmHistory.fontColor=-4971752;}
+else if(P5_Alarm.alarmHistory.fontColor==-12429715 || P5_Alarm.alarmHistory.fontColor==-5653552){P5_Alarm.alarmHistory.fontColor=-12429715;}
+else if(P5_Alarm.alarmHistory.fontColor==-16750426 || P5_Alarm.alarmHistory.fontColor==-14494738){P5_Alarm.alarmHistory.fontColor=-16750426;}
+else{P5_Alarm.alarmHistory.fontColor=-15719366;}
+P5_Alarm.alarmBack.bgImg=user.image.Day_nav_normal_152x52;
+P5_Alarm.alarmBack.pbgImg=user.image.Day_nav_pressed_152x52;
+P5_Alarm.alarmBack.dbgImg=user.image.Day_nav_disabled_152x52;
+P5_Alarm.alarmBack.fontColor=-15719366;
+P5_Alarm.alarmSync.bgImg=user.image.Day_nav_normal_152x52;
+P5_Alarm.alarmSync.pbgImg=user.image.Day_nav_pressed_152x52;
+P5_Alarm.alarmSync.dbgImg=user.image.Day_nav_disabled_152x52;
+P5_Alarm.alarmSync.fontColor=-15719366;
+P5_Alarm.alarmExtension.bgImg=user.image.Day_nav_normal_152x52;
+P5_Alarm.alarmExtension.pbgImg=user.image.Day_nav_pressed_152x52;
+P5_Alarm.alarmExtension.dbgImg=user.image.Day_nav_disabled_152x52;
+P5_Alarm.alarmExtension.fontColor=-15719366;
+P5_Alarm.servoEntry.bgImg=user.image.Day_primary_normal_152x52;
+P5_Alarm.servoEntry.pbgImg=user.image.Day_primary_pressed_152x52;
+P5_Alarm.servoEntry.dbgImg=user.image.Day_primary_disabled_152x52;
+P5_Alarm.servoEntry.fontColor=-1;
+}
+if(P0_Boot.themeMode.val!=0){
+P0_Boot.themeInk.val=-1182209;
+P0_Boot.themeMuted.val=-5653552;
+P0_Boot.themeGood.val=-10624850;
+P0_Boot.themeWarn.val=-14490;
+P0_Boot.themeFault.val=-39558;
+P5_Alarm.bgImg=user.image.Night_P5_Alarm;
+P5_Alarm.alarmLevel.bgColor=-15457221;
+if(P5_Alarm.alarmLevel.fontColor==-15438781 || P5_Alarm.alarmLevel.fontColor==-10624850){P5_Alarm.alarmLevel.fontColor=-10624850;}
+else if(P5_Alarm.alarmLevel.fontColor==-7714048 || P5_Alarm.alarmLevel.fontColor==-14490){P5_Alarm.alarmLevel.fontColor=-14490;}
+else if(P5_Alarm.alarmLevel.fontColor==-4971752 || P5_Alarm.alarmLevel.fontColor==-39558){P5_Alarm.alarmLevel.fontColor=-39558;}
+else if(P5_Alarm.alarmLevel.fontColor==-12429715 || P5_Alarm.alarmLevel.fontColor==-5653552){P5_Alarm.alarmLevel.fontColor=-5653552;}
+else if(P5_Alarm.alarmLevel.fontColor==-16750426 || P5_Alarm.alarmLevel.fontColor==-14494738){P5_Alarm.alarmLevel.fontColor=-14494738;}
+else{P5_Alarm.alarmLevel.fontColor=-1182209;}
+P5_Alarm.alarmTitle.bgColor=-16051162;
+if(P5_Alarm.alarmTitle.fontColor==-15438781 || P5_Alarm.alarmTitle.fontColor==-10624850){P5_Alarm.alarmTitle.fontColor=-10624850;}
+else if(P5_Alarm.alarmTitle.fontColor==-7714048 || P5_Alarm.alarmTitle.fontColor==-14490){P5_Alarm.alarmTitle.fontColor=-14490;}
+else if(P5_Alarm.alarmTitle.fontColor==-4971752 || P5_Alarm.alarmTitle.fontColor==-39558){P5_Alarm.alarmTitle.fontColor=-39558;}
+else if(P5_Alarm.alarmTitle.fontColor==-12429715 || P5_Alarm.alarmTitle.fontColor==-5653552){P5_Alarm.alarmTitle.fontColor=-5653552;}
+else if(P5_Alarm.alarmTitle.fontColor==-16750426 || P5_Alarm.alarmTitle.fontColor==-14494738){P5_Alarm.alarmTitle.fontColor=-14494738;}
+else{P5_Alarm.alarmTitle.fontColor=-1182209;}
+P5_Alarm.alarmCode.bgColor=-15457221;
+if(P5_Alarm.alarmCode.fontColor==-15438781 || P5_Alarm.alarmCode.fontColor==-10624850){P5_Alarm.alarmCode.fontColor=-10624850;}
+else if(P5_Alarm.alarmCode.fontColor==-7714048 || P5_Alarm.alarmCode.fontColor==-14490){P5_Alarm.alarmCode.fontColor=-14490;}
+else if(P5_Alarm.alarmCode.fontColor==-4971752 || P5_Alarm.alarmCode.fontColor==-39558){P5_Alarm.alarmCode.fontColor=-39558;}
+else if(P5_Alarm.alarmCode.fontColor==-12429715 || P5_Alarm.alarmCode.fontColor==-5653552){P5_Alarm.alarmCode.fontColor=-5653552;}
+else if(P5_Alarm.alarmCode.fontColor==-16750426 || P5_Alarm.alarmCode.fontColor==-14494738){P5_Alarm.alarmCode.fontColor=-14494738;}
+else{P5_Alarm.alarmCode.fontColor=-1182209;}
+P5_Alarm.alarmSource.bgColor=-15457221;
+if(P5_Alarm.alarmSource.fontColor==-15438781 || P5_Alarm.alarmSource.fontColor==-10624850){P5_Alarm.alarmSource.fontColor=-10624850;}
+else if(P5_Alarm.alarmSource.fontColor==-7714048 || P5_Alarm.alarmSource.fontColor==-14490){P5_Alarm.alarmSource.fontColor=-14490;}
+else if(P5_Alarm.alarmSource.fontColor==-4971752 || P5_Alarm.alarmSource.fontColor==-39558){P5_Alarm.alarmSource.fontColor=-39558;}
+else if(P5_Alarm.alarmSource.fontColor==-12429715 || P5_Alarm.alarmSource.fontColor==-5653552){P5_Alarm.alarmSource.fontColor=-5653552;}
+else if(P5_Alarm.alarmSource.fontColor==-16750426 || P5_Alarm.alarmSource.fontColor==-14494738){P5_Alarm.alarmSource.fontColor=-14494738;}
+else{P5_Alarm.alarmSource.fontColor=-1182209;}
+P5_Alarm.alarmActive.bgColor=-15457221;
+if(P5_Alarm.alarmActive.fontColor==-15438781 || P5_Alarm.alarmActive.fontColor==-10624850){P5_Alarm.alarmActive.fontColor=-10624850;}
+else if(P5_Alarm.alarmActive.fontColor==-7714048 || P5_Alarm.alarmActive.fontColor==-14490){P5_Alarm.alarmActive.fontColor=-14490;}
+else if(P5_Alarm.alarmActive.fontColor==-4971752 || P5_Alarm.alarmActive.fontColor==-39558){P5_Alarm.alarmActive.fontColor=-39558;}
+else if(P5_Alarm.alarmActive.fontColor==-12429715 || P5_Alarm.alarmActive.fontColor==-5653552){P5_Alarm.alarmActive.fontColor=-5653552;}
+else if(P5_Alarm.alarmActive.fontColor==-16750426 || P5_Alarm.alarmActive.fontColor==-14494738){P5_Alarm.alarmActive.fontColor=-14494738;}
+else{P5_Alarm.alarmActive.fontColor=-1182209;}
+P5_Alarm.alarmEmergency.bgColor=-15457221;
+if(P5_Alarm.alarmEmergency.fontColor==-15438781 || P5_Alarm.alarmEmergency.fontColor==-10624850){P5_Alarm.alarmEmergency.fontColor=-10624850;}
+else if(P5_Alarm.alarmEmergency.fontColor==-7714048 || P5_Alarm.alarmEmergency.fontColor==-14490){P5_Alarm.alarmEmergency.fontColor=-14490;}
+else if(P5_Alarm.alarmEmergency.fontColor==-4971752 || P5_Alarm.alarmEmergency.fontColor==-39558){P5_Alarm.alarmEmergency.fontColor=-39558;}
+else if(P5_Alarm.alarmEmergency.fontColor==-12429715 || P5_Alarm.alarmEmergency.fontColor==-5653552){P5_Alarm.alarmEmergency.fontColor=-5653552;}
+else if(P5_Alarm.alarmEmergency.fontColor==-16750426 || P5_Alarm.alarmEmergency.fontColor==-14494738){P5_Alarm.alarmEmergency.fontColor=-14494738;}
+else{P5_Alarm.alarmEmergency.fontColor=-1182209;}
+P5_Alarm.alarmStopResult.bgColor=-15457221;
+if(P5_Alarm.alarmStopResult.fontColor==-15438781 || P5_Alarm.alarmStopResult.fontColor==-10624850){P5_Alarm.alarmStopResult.fontColor=-10624850;}
+else if(P5_Alarm.alarmStopResult.fontColor==-7714048 || P5_Alarm.alarmStopResult.fontColor==-14490){P5_Alarm.alarmStopResult.fontColor=-14490;}
+else if(P5_Alarm.alarmStopResult.fontColor==-4971752 || P5_Alarm.alarmStopResult.fontColor==-39558){P5_Alarm.alarmStopResult.fontColor=-39558;}
+else if(P5_Alarm.alarmStopResult.fontColor==-12429715 || P5_Alarm.alarmStopResult.fontColor==-5653552){P5_Alarm.alarmStopResult.fontColor=-5653552;}
+else if(P5_Alarm.alarmStopResult.fontColor==-16750426 || P5_Alarm.alarmStopResult.fontColor==-14494738){P5_Alarm.alarmStopResult.fontColor=-14494738;}
+else{P5_Alarm.alarmStopResult.fontColor=-1182209;}
+P5_Alarm.alarmSequence.bgColor=-15457221;
+if(P5_Alarm.alarmSequence.fontColor==-15438781 || P5_Alarm.alarmSequence.fontColor==-10624850){P5_Alarm.alarmSequence.fontColor=-10624850;}
+else if(P5_Alarm.alarmSequence.fontColor==-7714048 || P5_Alarm.alarmSequence.fontColor==-14490){P5_Alarm.alarmSequence.fontColor=-14490;}
+else if(P5_Alarm.alarmSequence.fontColor==-4971752 || P5_Alarm.alarmSequence.fontColor==-39558){P5_Alarm.alarmSequence.fontColor=-39558;}
+else if(P5_Alarm.alarmSequence.fontColor==-12429715 || P5_Alarm.alarmSequence.fontColor==-5653552){P5_Alarm.alarmSequence.fontColor=-5653552;}
+else if(P5_Alarm.alarmSequence.fontColor==-16750426 || P5_Alarm.alarmSequence.fontColor==-14494738){P5_Alarm.alarmSequence.fontColor=-14494738;}
+else{P5_Alarm.alarmSequence.fontColor=-1182209;}
+P5_Alarm.alarmEventTime.bgColor=-15457221;
+if(P5_Alarm.alarmEventTime.fontColor==-15438781 || P5_Alarm.alarmEventTime.fontColor==-10624850){P5_Alarm.alarmEventTime.fontColor=-10624850;}
+else if(P5_Alarm.alarmEventTime.fontColor==-7714048 || P5_Alarm.alarmEventTime.fontColor==-14490){P5_Alarm.alarmEventTime.fontColor=-14490;}
+else if(P5_Alarm.alarmEventTime.fontColor==-4971752 || P5_Alarm.alarmEventTime.fontColor==-39558){P5_Alarm.alarmEventTime.fontColor=-39558;}
+else if(P5_Alarm.alarmEventTime.fontColor==-12429715 || P5_Alarm.alarmEventTime.fontColor==-5653552){P5_Alarm.alarmEventTime.fontColor=-5653552;}
+else if(P5_Alarm.alarmEventTime.fontColor==-16750426 || P5_Alarm.alarmEventTime.fontColor==-14494738){P5_Alarm.alarmEventTime.fontColor=-14494738;}
+else{P5_Alarm.alarmEventTime.fontColor=-1182209;}
+P5_Alarm.alarmExtra.bgColor=-15457221;
+if(P5_Alarm.alarmExtra.fontColor==-15438781 || P5_Alarm.alarmExtra.fontColor==-10624850){P5_Alarm.alarmExtra.fontColor=-10624850;}
+else if(P5_Alarm.alarmExtra.fontColor==-7714048 || P5_Alarm.alarmExtra.fontColor==-14490){P5_Alarm.alarmExtra.fontColor=-14490;}
+else if(P5_Alarm.alarmExtra.fontColor==-4971752 || P5_Alarm.alarmExtra.fontColor==-39558){P5_Alarm.alarmExtra.fontColor=-39558;}
+else if(P5_Alarm.alarmExtra.fontColor==-12429715 || P5_Alarm.alarmExtra.fontColor==-5653552){P5_Alarm.alarmExtra.fontColor=-5653552;}
+else if(P5_Alarm.alarmExtra.fontColor==-16750426 || P5_Alarm.alarmExtra.fontColor==-14494738){P5_Alarm.alarmExtra.fontColor=-14494738;}
+else{P5_Alarm.alarmExtra.fontColor=-1182209;}
+P5_Alarm.alarmFaultSummary.bgColor=-15457221;
+if(P5_Alarm.alarmFaultSummary.fontColor==-15438781 || P5_Alarm.alarmFaultSummary.fontColor==-10624850){P5_Alarm.alarmFaultSummary.fontColor=-10624850;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-7714048 || P5_Alarm.alarmFaultSummary.fontColor==-14490){P5_Alarm.alarmFaultSummary.fontColor=-14490;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-4971752 || P5_Alarm.alarmFaultSummary.fontColor==-39558){P5_Alarm.alarmFaultSummary.fontColor=-39558;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-12429715 || P5_Alarm.alarmFaultSummary.fontColor==-5653552){P5_Alarm.alarmFaultSummary.fontColor=-5653552;}
+else if(P5_Alarm.alarmFaultSummary.fontColor==-16750426 || P5_Alarm.alarmFaultSummary.fontColor==-14494738){P5_Alarm.alarmFaultSummary.fontColor=-14494738;}
+else{P5_Alarm.alarmFaultSummary.fontColor=-1182209;}
+P5_Alarm.alarmHistory.bgColor=-15457221;
+if(P5_Alarm.alarmHistory.fontColor==-15438781 || P5_Alarm.alarmHistory.fontColor==-10624850){P5_Alarm.alarmHistory.fontColor=-10624850;}
+else if(P5_Alarm.alarmHistory.fontColor==-7714048 || P5_Alarm.alarmHistory.fontColor==-14490){P5_Alarm.alarmHistory.fontColor=-14490;}
+else if(P5_Alarm.alarmHistory.fontColor==-4971752 || P5_Alarm.alarmHistory.fontColor==-39558){P5_Alarm.alarmHistory.fontColor=-39558;}
+else if(P5_Alarm.alarmHistory.fontColor==-12429715 || P5_Alarm.alarmHistory.fontColor==-5653552){P5_Alarm.alarmHistory.fontColor=-5653552;}
+else if(P5_Alarm.alarmHistory.fontColor==-16750426 || P5_Alarm.alarmHistory.fontColor==-14494738){P5_Alarm.alarmHistory.fontColor=-14494738;}
+else{P5_Alarm.alarmHistory.fontColor=-1182209;}
+P5_Alarm.alarmBack.bgImg=user.image.Night_nav_normal_152x52;
+P5_Alarm.alarmBack.pbgImg=user.image.Night_nav_pressed_152x52;
+P5_Alarm.alarmBack.dbgImg=user.image.Night_nav_disabled_152x52;
+P5_Alarm.alarmBack.fontColor=-1182209;
+P5_Alarm.alarmSync.bgImg=user.image.Night_nav_normal_152x52;
+P5_Alarm.alarmSync.pbgImg=user.image.Night_nav_pressed_152x52;
+P5_Alarm.alarmSync.dbgImg=user.image.Night_nav_disabled_152x52;
+P5_Alarm.alarmSync.fontColor=-1182209;
+P5_Alarm.alarmExtension.bgImg=user.image.Night_nav_normal_152x52;
+P5_Alarm.alarmExtension.pbgImg=user.image.Night_nav_pressed_152x52;
+P5_Alarm.alarmExtension.dbgImg=user.image.Night_nav_disabled_152x52;
+P5_Alarm.alarmExtension.fontColor=-1182209;
+P5_Alarm.servoEntry.bgImg=user.image.Night_primary_normal_152x52;
+P5_Alarm.servoEntry.pbgImg=user.image.Night_primary_pressed_152x52;
+P5_Alarm.servoEntry.dbgImg=user.image.Night_primary_disabled_152x52;
+P5_Alarm.servoEntry.fontColor=-1;
+}

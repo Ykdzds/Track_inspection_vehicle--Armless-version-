@@ -1,0 +1,11 @@
+{
+  "ProtectedFiles": 1217,
+  "Changed": [],
+  "ChangedEvents": [
+    [
+      "P0_Boot",
+      "refreshTick"
+    ]
+  ],
+  "DisplayBindingMatches": true
+}

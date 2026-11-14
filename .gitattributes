@@ -1,0 +1,2 @@
+# Preserve the exact source, firmware and verification-evidence bytes.
+* -text

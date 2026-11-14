@@ -1,0 +1,15 @@
+{
+  "Project": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\23_轨道巡检车UART5统一状态快照版",
+  "Reopened": true,
+  "PIX": "CB3979F16351925B80ABAB8E9033754A87599C2700D46CA046C079E3B803087B",
+  "StateArrayLength": 161,
+  "StateArrayMaxIndex": 160,
+  "AuthorizeControlType": "TOGGLE_BUTTON",
+  "Mode": "Default",
+  "RxBuffer": "255",
+  "Master": "On",
+  "BufferPollEnabled": false,
+  "ReadbackOnly": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

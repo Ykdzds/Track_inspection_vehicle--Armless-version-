@@ -1,0 +1,226 @@
+[
+  {
+    "runner": "Tests/run_hmi_state_window_tests.ps1",
+    "exit": 0,
+    "seconds": 4.569,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_state_window_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_state_tests.ps1",
+    "exit": 0,
+    "seconds": 47.044,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_state_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_snapshot_freshness_tests.ps1",
+    "exit": 0,
+    "seconds": 6.672,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_snapshot_freshness_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_modbus_tests.ps1",
+    "exit": 0,
+    "seconds": 2.276,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_modbus_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_control_tests.ps1",
+    "exit": 0,
+    "seconds": 16.8,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_control_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 6.367,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_link_diag_tests-recheck.log",
+    "history": [
+      {
+        "runner": "Tests/run_hmi_link_diag_tests.ps1",
+        "exit": 0,
+        "seconds": 2.984,
+        "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_link_diag_tests.log"
+      }
+    ],
+    "reason": "Final shared-producer sampling; explicit HMI enable in diagnostic fixtures; preserved upgrade requester"
+  },
+  {
+    "runner": "Tests/run_hmi_link_wire_tests.ps1",
+    "exit": 0,
+    "seconds": 5.463,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_link_wire_tests-recheck.log",
+    "history": [
+      {
+        "runner": "Tests/run_hmi_link_wire_tests.ps1",
+        "exit": 0,
+        "seconds": 2.363,
+        "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_link_wire_tests.log"
+      }
+    ],
+    "reason": "Final shared-producer sampling; explicit HMI enable in diagnostic fixtures; preserved upgrade requester"
+  },
+  {
+    "runner": "Tests/run_hmi_diag_hook_tests.ps1",
+    "exit": 0,
+    "seconds": 4.685,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_diag_hook_tests-recheck.log",
+    "history": [
+      {
+        "runner": "Tests/run_hmi_diag_hook_tests.ps1",
+        "exit": 0,
+        "seconds": 2.123,
+        "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_diag_hook_tests.log"
+      }
+    ],
+    "reason": "Final shared-producer sampling; explicit HMI enable in diagnostic fixtures; preserved upgrade requester"
+  },
+  {
+    "runner": "Tests/run_system_snapshot_tests.ps1",
+    "exit": 0,
+    "seconds": 3.164,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_system_snapshot_tests.log"
+  },
+  {
+    "runner": "Tests/run_hmi_remote_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 24.99,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_hmi_remote_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_hmi_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 18.143,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_can_hmi_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_joint_tests.ps1",
+    "exit": 0,
+    "seconds": 4.626,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_arm3_joint_tests.log"
+  },
+  {
+    "runner": "Tests/run_lcd_recovery_tests.ps1",
+    "exit": 0,
+    "seconds": 5.317,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_lcd_recovery_tests.log"
+  },
+  {
+    "runner": "Tests/run_normal_timing_tests.ps1",
+    "exit": 0,
+    "seconds": 66.602,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_normal_timing_tests.log"
+  },
+  {
+    "runner": "Tests/run_runtime_metrics_tests.ps1",
+    "exit": 0,
+    "seconds": 2.366,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_runtime_metrics_tests.log"
+  },
+  {
+    "runner": "Tests/run_production_guard_tests.ps1",
+    "exit": 0,
+    "seconds": 5.826,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_production_guard_tests.log"
+  },
+  {
+    "runner": "Tests/check_irq_dma_integration.ps1",
+    "exit": 0,
+    "seconds": 2.146,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\check_irq_dma_integration.log"
+  },
+  {
+    "runner": "Tests/check_usart1_dma.ps1",
+    "exit": 0,
+    "seconds": 1.89,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\check_usart1_dma.log"
+  },
+  {
+    "runner": "Tests/check_nrf_dma.ps1",
+    "exit": 0,
+    "seconds": 2.086,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\check_nrf_dma.log"
+  },
+  {
+    "runner": "Tests/run_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 81.506,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_link_diag_tests-recheck.log",
+    "history": [
+      {
+        "runner": "Tests/run_link_diag_tests.ps1",
+        "exit": 0,
+        "seconds": 79.502,
+        "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_link_diag_tests.log"
+      }
+    ],
+    "reason": "Final shared-producer sampling; explicit HMI enable in diagnostic fixtures; preserved upgrade requester"
+  },
+  {
+    "runner": "Tests/run_remote_link_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 18.321,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_remote_link_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_link_can_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 15.267,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_link_can_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_rs485_diag_tests.ps1",
+    "exit": 0,
+    "seconds": 13.346,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_rs485_diag_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_control_tests.ps1",
+    "exit": 0,
+    "seconds": 46.628,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_can_control_tests.log"
+  },
+  {
+    "runner": "Tests/run_can_protocol_tests.ps1",
+    "exit": 0,
+    "seconds": 30.298,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_can_protocol_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_tests.ps1",
+    "exit": 0,
+    "seconds": 2.013,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_arm3_tests.log"
+  },
+  {
+    "runner": "Tests/run_arm3_port_tests.ps1",
+    "exit": 0,
+    "seconds": 2.098,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_arm3_port_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_core_tests.ps1",
+    "exit": 0,
+    "seconds": 62.8,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_current_core_tests.log"
+  },
+  {
+    "runner": "Tests/run_current_watchdog_tests.ps1",
+    "exit": 0,
+    "seconds": 88.556,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\run_current_watchdog_tests.log"
+  },
+  {
+    "runner": "python -B Tests/test_link5_log_analyzer.py",
+    "exit": 0,
+    "log": "Docs\\F407_Link5_20261107\\验证\\regression\\log-analyzer.log",
+    "history": [
+      {
+        "runner": "python -B Tests/test_link5_log_analyzer.py",
+        "exit": 0,
+        "log": "Docs\\F407_Link5_20261107\\验证\\regression\\log-analyzer.log"
+      }
+    ],
+    "seconds": 1.066,
+    "reason": "Final public stop namespace 3E6/3E7/3E8 and 3F0 init evidence"
+  }
+]

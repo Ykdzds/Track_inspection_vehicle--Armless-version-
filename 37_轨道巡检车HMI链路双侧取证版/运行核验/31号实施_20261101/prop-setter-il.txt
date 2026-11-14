@@ -1,0 +1,19 @@
+aYpMtokpWAkqgeBrSaqgrYNfrSMS
+Exception calling "Invoke" with "2" argument(s): "找不到属性 0"
+0000 ldarg.0 
+0001 ldarg.1 
+0002 call LHNDqqIicLDDptgwnLaDrksySGEp EgubmsgfiWxbKnTGpkWscrqzcUNb(System.Object, Byte)
+0007 dup 
+0008 ldarg.0 
+0009 callvirt Boolean BCFEQNdGTgDuezmedYIbDzWqoQuF(System.Object)
+000E brtrue.s 22
+0010 call System.String get_Can_not_set_property_0()
+0015 ldarg.1 
+0016 box System.Byte
+001B call System.String ‌⁬‪⁯⁯⁯⁯‫‎‬⁫⁯​​⁯⁯‫⁪⁫‮‬‪⁬‭‏⁯⁫⁪‍⁪‎‍​⁭⁯‮⁫​‌⁯‮(System.String, System.Object)
+0020 call System.Exception ​⁫⁪‭‭‏‏⁪⁬⁯‏⁯‫​‪⁮⁬⁮‏⁮‌‪‏‭​​‫‬‍‏‌‬⁪‭‪‍​⁫‌⁯‮(System.String)
+0025 throw 
+0026 ldarg.0 
+0027 ldarg.2 
+0028 callvirt Void FUIibCofYrPbHvHqwGcsiwKDVknc(System.Object, System.Object)
+002D ret 

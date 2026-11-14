@@ -1,0 +1,177 @@
+{
+  "Cases": 21,
+  "MaxTargetGapMs": 150,
+  "MaxStatusGapMs": 150,
+  "MaximumInflight": 1,
+  "Physical": false,
+  "Rows": [
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 1,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 2,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 3,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 4,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 5,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 6,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": -100,
+      "page": 7,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 1,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 2,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 3,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 4,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 5,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 6,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 0,
+      "page": 7,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 1,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 2,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 3,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 4,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 5,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 6,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    },
+    {
+      "scenario": "29 navigation simulated",
+      "rpm": 100,
+      "page": 7,
+      "durationMs": 120000,
+      "targetGapMs": 150,
+      "statusGapMs": 150
+    }
+  ]
+}

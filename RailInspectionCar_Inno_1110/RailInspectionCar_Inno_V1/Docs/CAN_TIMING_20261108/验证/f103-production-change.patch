@@ -1,0 +1,367 @@
+diff --git a/APP/can_upper_config.h b/APP/can_upper_config.h
+index 094c1df..a2f9655 100644
+--- a/APP/can_upper_config.h
++++ b/APP/can_upper_config.h
+@@ -1,12 +1,12 @@
+ #ifndef CAN_UPPER_CONFIG_H
+ #define CAN_UPPER_CONFIG_H
+ #ifndef UPPER_USART1_DEBUG_ENABLE
+-#define UPPER_USART1_DEBUG_ENABLE 0U
++#define UPPER_USART1_DEBUG_ENABLE 1U
+ #endif
+ #if UPPER_USART1_DEBUG_ENABLE != 0U && UPPER_USART1_DEBUG_ENABLE != 1U
+ #error UPPER_USART1_DEBUG_ENABLE_must_be_zero_or_one
+ #endif
+-#define UPPER_BUILD_ID "PB10REL_20261031"
++#define UPPER_BUILD_ID "CANAGE_20261108_R1"
+ #define UPPER_PROTOCOL_STACK_WORDS 320U
+ #define UPPER_PERIODIC_STACK_WORDS 104U
+ /* Static call-graph check: LogTask uses up to 1608 bytes in raw mode; 552
+diff --git a/APP/can_upper_control.c b/APP/can_upper_control.c
+index 8c2d921..6b52590 100644
+--- a/APP/can_upper_control.c
++++ b/APP/can_upper_control.c
+@@ -1,6 +1,66 @@
+ #include "can_upper_control.h"
+ #include <string.h>
+ 
++#if UPPER_USART1_DEBUG_ENABLE
++static UpperStopFirst_t stop_first;
++typedef char StopFirstBudget[(sizeof(stop_first) <= 80U) ? 1 : -1];
++const UpperStopFirst_t *UpperControl_StopFirst(void) { return &stop_first; }
++void UpperControl_StopFirstSent(uint8_t page)
++{
++    if (!stop_first.pending || page != stop_first.page) return;
++    if (++stop_first.page >= 3U) {
++        stop_first.pending = 0U;
++        if(stop_first.armed==2U)stop_first.armed=1U;
++    }
++}
++static void StopFirstArm(void)
++{
++    /* A new grant cannot erase an unprinted decision. */
++    if (!stop_first.pending) { memset(&stop_first, 0, sizeof(stop_first)); stop_first.armed = 1U; }
++    else stop_first.armed=2U; /* Arm the new authorization after old output completes. */
++}
++void UpperControl_CaptureStop(UpperControl_t *control, const UpperProtocol_t *protocol,
++    UpperStopSource_t source, uint16_t detail, uint8_t key_event, uint8_t key_mask,
++    uint32_t event_at, uint32_t now)
++{
++    const UpperSnapshot_t *s = &protocol->snapshot;
++    const UpperRecord_t *r = UpperControl_Record(s, 0x11U);
++    unsigned axis;
++    if (stop_first.armed!=1U) { if (stop_first.merged != 0xFFFFFFFFUL) ++stop_first.merged; return; }
++    stop_first.at = now; stop_first.event_at = event_at;
++    stop_first.merged=0U;
++    stop_first.lower_boot = s->lower_boot_id; stop_first.upper_boot = s->upper_boot_id;
++    stop_first.control_age = r ? now-r->timestamp : 0xFFFFFFFFUL;
++    stop_first.heartbeat_age = s->heartbeat_seen ? now-s->heartbeat_at : 0xFFFFFFFFUL;
++    stop_first.flags = r ? Upper_ReadU32(r->payload+12U) : 0U;
++    stop_first.control_generation = r ? Upper_ReadU32(r->payload) : 0U;
++    stop_first.link_token = s->link_token; stop_first.motion_token = control->motion_token;
++    stop_first.control_sequence = r ? r->sequence : 0U;
++    stop_first.speed_sequence = control->speed_sequence; stop_first.detail = detail;
++    stop_first.stop_request=source==UPPER_STOP_AUTO_UNSAFE ? 0xFFFFU :
++        source==UPPER_STOP_UI_QUICK ? (uint16_t)(control->stop_sequence+1U) :
++        (uint16_t)(uint8_t)(control->request_sequence+1U);
++    stop_first.target_rpm = control->target_rpm; stop_first.target_mm_s = control->target_mm_s;
++    stop_first.source = (uint8_t)source;
++    stop_first.recovery = source==UPPER_STOP_AUTO_CONTROL ? 7U : source==UPPER_STOP_AUTO_AXIS ? 8U : source==UPPER_STOP_AUTO_UNSAFE ? 9U : 0U;
++    stop_first.state = (uint8_t)control->state; stop_first.owner = s->control_source;
++    stop_first.life = s->lifecycle; stop_first.axes = s->axes;
++    stop_first.key_event = key_event; stop_first.key_mask = key_mask;
++    stop_first.validity = (uint8_t)((r && r->valid ? 1U : 0U) |
++        (r && Upper_RecordFresh(s,r,now) && (uint32_t)(now-r->timestamp)<UPPER_CONTROL_MAX_AGE_MS ? 2U : 0U) |
++        (s->heartbeat_seen ? 64U : 0U));
++    for (axis=0U;axis<2U;++axis) {
++        const UpperBasic_t *b=&s->basic[6U+axis];
++        stop_first.axis_age[axis]=b->valid ? now-b->timestamp : 0xFFFFFFFFUL;
++        stop_first.axis_flags[axis]=b->data[0]; stop_first.axis_mode[axis]=b->data[1];
++        stop_first.axis_fault[axis]=Upper_ReadU16(b->data+4U);
++        if(b->valid)stop_first.validity|=(uint8_t)(4U<<axis);
++        if(Upper_BasicFresh(s,(uint8_t)(6U+axis),now))stop_first.validity|=(uint8_t)(16U<<axis);
++    }
++    stop_first.page=0U; stop_first.armed=0U;
++    stop_first.pending=1U; /* Publish after the immutable payload is complete. */
++}
++#endif
+ 
+ #if UPPER_CAN_MOTION_ENABLED
+ static void Put16(uint8_t *data, uint16_t value) { data[0] = (uint8_t)value; data[1] = (uint8_t)(value >> 8); }
+@@ -189,6 +249,9 @@ void UpperControl_Init(UpperControl_t *control, UpperSend_t send, void *user)
+     control->send = send; control->user = user;
+     control->state = SIM_LINK_NOT_READY;
+     control->stop_result = 255U;
++#if UPPER_USART1_DEBUG_ENABLE
++    memset(&stop_first,0,sizeof(stop_first)); stop_first.armed=1U;
++#endif
+ }
+ 
+ #if UPPER_CAN_MOTION_ENABLED
+@@ -281,6 +344,9 @@ static void Prepare(UpperControl_t *control, UpperProtocol_t *protocol, uint32_t
+ static void BeginPreparation(UpperControl_t *control, UpperProtocol_t *protocol, uint32_t now)
+ {
+     const UpperSnapshot_t *snapshot = &protocol->snapshot;
++#if UPPER_USART1_DEBUG_ENABLE
++    StopFirstArm();
++#endif
+     control->link_token = snapshot->link_token; control->lower_boot = snapshot->lower_boot_id; control->upper_boot = snapshot->upper_boot_id;
+     control->prepare_at = now; control->motion_token = 0U; control->request_active = 0U;
+     control->query_attempts = control->query_result = control->query_phase = 0U; control->query_detail = 0U;
+@@ -747,7 +813,12 @@ void UpperControl_Tick(UpperControl_t *control, UpperProtocol_t *protocol, uint3
+     if (control->state == SIM_AUTH_REQUESTED)
+     {
+         if ((uint32_t)(now - control->request_at) >= UPPER_COMMAND_TIMEOUT_MS)
+-        { UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, now); control->detail = 112U; return; }
++        {
++#if UPPER_USART1_DEBUG_ENABLE
++            UpperControl_CaptureStop(control,protocol,UPPER_STOP_AUTH_TIMEOUT,112U,0xFFU,0U,now,now);
++#endif
++            UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, now); control->detail = 112U; return;
++        }
+         if (control->accepted && control->completed && Fresh(snapshot, record, now) &&
+             (int32_t)(record->timestamp - control->request_at) >= 0 && record->payload[6] == 4U &&
+             (flags & 8U) && !(flags & 512U) && Upper_ReadU16(record->payload + 4U) != 0U &&
+@@ -826,6 +897,9 @@ void UpperControl_Tick(UpperControl_t *control, UpperProtocol_t *protocol, uint3
+             if ((snapshot->axes & (1U << axis)) && Upper_BasicFresh(snapshot, (uint8_t)(6U + axis), now) &&
+                 ((data[0] & 31U) != 31U || (data[0] & 32U) || data[1] != 2U || Upper_ReadU16(data + 4U)))
+             {
++#if UPPER_USART1_DEBUG_ENABLE
++                UpperControl_CaptureStop(control,protocol,UPPER_STOP_AUTO_UNSAFE,116U,0xFFU,0U,now,now);
++#endif
+                 Fail(control, 116U);
+                 control->recovery_hard = control->recovery_required = 1U;
+                 control->recovery_reason = 9U;
+@@ -833,6 +907,10 @@ void UpperControl_Tick(UpperControl_t *control, UpperProtocol_t *protocol, uint3
+             }
+         }
+         control->recovery_reason = !Fresh(snapshot, record, now) ? 7U : 8U;
++#if UPPER_USART1_DEBUG_ENABLE
++        UpperControl_CaptureStop(control,protocol,control->recovery_reason==7U ?
++            UPPER_STOP_AUTO_CONTROL : UPPER_STOP_AUTO_AXIS,116U,0xFFU,0U,now,now);
++#endif
+         UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, now);
+         control->detail = 116U;
+         control->recovery_required = 1U;
+@@ -854,7 +932,12 @@ void UpperControl_Tick(UpperControl_t *control, UpperProtocol_t *protocol, uint3
+         uint16_t seen_sequence = Upper_ReadU16(record->payload + 20U);
+         const UpperBasic_t *runtime = &snapshot->basic[8];
+         if ((uint32_t)(now - control->request_at) >= UPPER_FIRST_ZERO_TIMEOUT_MS)
+-        { UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, now); control->detail = 118U; return; }
++        {
++#if UPPER_USART1_DEBUG_ENABLE
++            UpperControl_CaptureStop(control,protocol,UPPER_STOP_ZERO_TIMEOUT,118U,0xFFU,0U,now,now);
++#endif
++            UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, now); control->detail = 118U; return;
++        }
+         if (control->zero_sent && control->tx_seen && (uint16_t)(seen_sequence - control->first_zero_sequence) < 32768U &&
+             Upper_ReadU16(record->payload + 22U) < UPPER_TARGET_LEASE_MS &&
+             record->timestamp != control->last_zero_record &&
+diff --git a/APP/can_upper_control.h b/APP/can_upper_control.h
+index cb30af9..f519f0b 100644
+--- a/APP/can_upper_control.h
++++ b/APP/can_upper_control.h
+@@ -4,6 +4,28 @@
+ #include "can_upper_tx.h"
+ typedef enum { SIM_IDLE, SIM_LINK_NOT_READY, SIM_AUTH_REQUESTED, SIM_AUTHORIZED_WAIT_ZERO, SIM_AUTHORIZED_ZERO, SIM_RUNNING, SIM_STOP_REQUESTED, SIM_STOPPING, SIM_STOPPED_RELEASED, SIM_FAULT, SIM_AUTH_PREPARING, SIM_CROSS_SOURCE_STOP, SIM_RECOVERY_VERIFY } UpperControlState_t;
+ typedef enum { UPPER_INTENT_AUTHORIZE, UPPER_INTENT_APPLY, UPPER_INTENT_STOP, UPPER_INTENT_RELEASE, UPPER_INTENT_QUICK_STOP } UpperIntent_t;
++
++#if UPPER_USART1_DEBUG_ENABLE
++/* One immutable scene, independent of the lossy ordinary log queue. Ages are
++ * elapsed local milliseconds at the decision, not reconstructed at print time. */
++typedef enum { UPPER_STOP_AUTO_CONTROL = 1, UPPER_STOP_AUTO_AXIS,
++    UPPER_STOP_AUTO_UNSAFE, UPPER_STOP_UI_NORMAL, UPPER_STOP_UI_QUICK,
++    UPPER_STOP_UI_RELEASE, UPPER_STOP_AUTH_TIMEOUT, UPPER_STOP_ZERO_TIMEOUT } UpperStopSource_t;
++typedef struct
++{
++    uint32_t at, event_at, lower_boot, upper_boot;
++    uint32_t control_age, axis_age[2], heartbeat_age, flags, control_generation;
++    uint32_t merged;
++    uint16_t link_token, motion_token, control_sequence, speed_sequence, detail;
++    int16_t target_rpm, target_mm_s;
++    uint16_t axis_fault[2], stop_request;
++    uint8_t source, recovery, state, validity, owner, life, axes;
++    uint8_t key_event, key_mask, axis_flags[2], axis_mode[2];
++    volatile uint8_t pending, page, armed;
++} UpperStopFirst_t;
++const UpperStopFirst_t *UpperControl_StopFirst(void);
++void UpperControl_StopFirstSent(uint8_t page);
++#endif
+ typedef struct
+ {
+     uint32_t age;
+@@ -57,6 +79,11 @@ typedef struct
+     /* Last failed release predicate. Frozen on timeout; reset by the next stop intent. */
+     UpperStopVerify_t stop_verify;
+ } UpperControl_t;
++#if UPPER_USART1_DEBUG_ENABLE
++void UpperControl_CaptureStop(UpperControl_t *control, const UpperProtocol_t *protocol,
++    UpperStopSource_t source, uint16_t detail, uint8_t key_event, uint8_t key_mask,
++    uint32_t event_at, uint32_t now);
++#endif
+ void UpperControl_Init(UpperControl_t *control, UpperSend_t send, void *user);
+ void UpperControl_Intent(UpperControl_t *control, UpperProtocol_t *protocol, UpperIntent_t intent, int16_t rpm, uint32_t now);
+ void UpperControl_Receive(UpperControl_t *control, const UpperProtocol_t *protocol, uint16_t id, const uint8_t data[8], uint32_t received, uint32_t now);
+diff --git a/APP/can_upper_task.c b/APP/can_upper_task.c
+index bdcecce..ba23cc8 100644
+--- a/APP/can_upper_task.c
++++ b/APP/can_upper_task.c
+@@ -477,11 +477,43 @@ static void PeriodicTask(void *argument)
+ }
+ 
+ #if UPPER_USART1_DEBUG_ENABLE
+-static void SerialWrite(const char *text)
++static uint8_t SerialWrite(const char *text)
+ {
+     uint16_t length = (uint16_t)strlen(text);
+-    if (HAL_UART_Transmit(&huart1, (uint8_t *)text, length, 100U) != HAL_OK) uart_errors++;
+-    else log_uart_bytes += length;
++    if (HAL_UART_Transmit(&huart1, (uint8_t *)text, length, 100U) != HAL_OK) { uart_errors++; return 0U; }
++    log_uart_bytes += length;
++    return 1U;
++}
++
++/* Only the producer creates this scene. It remains immutable until every page
++ * was accepted by USART1; ordinary queue pressure cannot evict it. */
++static uint8_t LogStopFirst(char *text, uint32_t capacity)
++{
++    const UpperStopFirst_t *f=UpperControl_StopFirst();
++    uint8_t page;
++    int length;
++    if(!f->pending)return 0U;
++    page=f->page;
++    if(page==0U)length=snprintf(text,capacity,
++        "STOP_FIRST v=1 at=%lu part=0 source=%u recovery=%u detail=%u state=%u event_at=%lu key=%u/%02X boot=%08lX/%08lX token=%u/%u target=%d/%d\r\n",
++        (unsigned long)f->at,f->source,f->recovery,f->detail,f->state,(unsigned long)f->event_at,
++        f->key_event,f->key_mask,(unsigned long)f->lower_boot,(unsigned long)f->upper_boot,
++        f->link_token,f->motion_token,f->target_rpm,f->target_mm_s);
++    else if(page==1U)length=snprintf(text,capacity,
++        "STOP_FIRST v=1 at=%lu part=1 valid=%02X ctrl_age=%lu axis_age=%lu/%lu hb_age=%lu ctrl_seq=%u speed_seq=%u gen=%lu flags=%08lX owner=%u life=%u axes=%u\r\n",
++        (unsigned long)f->at,f->validity,(unsigned long)f->control_age,
++        (unsigned long)f->axis_age[0],(unsigned long)f->axis_age[1],(unsigned long)f->heartbeat_age,
++        f->control_sequence,f->speed_sequence,(unsigned long)f->control_generation,
++        (unsigned long)f->flags,f->owner,f->life,f->axes);
++    else length=snprintf(text,capacity,
++        "STOP_FIRST v=1 at=%lu part=2 axis_flags=%02X/%02X mode=%u/%u fault=%u/%u stop_req=%u merged=%lu\r\n",
++        (unsigned long)f->at,f->axis_flags[0],f->axis_flags[1],f->axis_mode[0],f->axis_mode[1],
++        f->axis_fault[0],f->axis_fault[1],f->stop_request,(unsigned long)f->merged);
++    if(length>0 && (uint32_t)length<capacity && SerialWrite(text)) {
++        /* Only metadata acknowledgement is atomic; formatting/UART wait stay outside. */
++        taskENTER_CRITICAL(); UpperControl_StopFirstSent(page); taskEXIT_CRITICAL();
++    }
++    return 1U;
+ }
+ 
+ static void WriteHex64(const uint8_t *data, char *text)
+@@ -714,6 +746,7 @@ static void LogTask(void *argument)
+     for (;;)
+     {
+         task_heartbeat[TASK_LOG] = HAL_GetTick();
++        (void)LogStopFirst(text,sizeof(text));
+         if (xQueueReceive(log_queue, &message, pdMS_TO_TICKS(50U)) == pdPASS)
+         {
+             LogMessage(&message);
+diff --git a/APP/can_upper_ui.c b/APP/can_upper_ui.c
+index 62ef295..dd02687 100644
+--- a/APP/can_upper_ui.c
++++ b/APP/can_upper_ui.c
+@@ -9,13 +9,15 @@ static UpperUiEvent_t events[8];
+ static volatile uint8_t event_head, event_tail;
+ static volatile uint32_t quick_written, quick_read, normal_written, normal_read;
+ static uint32_t quick_at, normal_at;
++static uint8_t quick_mask, normal_mask;
+ static void PushEvent(UpperUiEventType_t type, int16_t rpm, uint32_t now)
+ {
+     uint8_t next = (uint8_t)((event_head + 1U) & 7U);
+-    if (type == UPPER_UI_EVENT_QUICK_STOP) { quick_at = now; ++quick_written; return; }
+-    if (type == UPPER_UI_EVENT_STOP) { normal_at = now; ++normal_written; return; }
++    if (type == UPPER_UI_EVENT_QUICK_STOP) { quick_at = now; quick_mask = stable_mask; ++quick_written; return; }
++    if (type == UPPER_UI_EVENT_STOP) { normal_at = now; normal_mask = stable_mask; ++normal_written; return; }
+     if (next == event_tail) return;
+-    events[event_head].type = type; events[event_head].rpm = rpm; events[event_head].at = now; event_head = next;
++    events[event_head].type = type; events[event_head].rpm = rpm; events[event_head].key_mask = stable_mask;
++    events[event_head].at = now; event_head = next;
+ }
+ void UpperUi_Init(void)
+ {
+@@ -24,6 +26,7 @@ void UpperUi_Init(void)
+     memset(changed_at, 0, sizeof(changed_at)); memset(pressed_at, 0, sizeof(pressed_at));
+     event_head = event_tail = 0U;
+     quick_written = quick_read = normal_written = normal_read = 0U;
++    quick_mask = normal_mask = 0U;
+ }
+ void UpperUi_NotifyState(UpperControlState_t state)
+ {
+@@ -74,12 +77,12 @@ uint8_t UpperUi_GetEvent(UpperUiEvent_t *event)
+     if (quick_written != quick_read)
+     {
+         quick_read = quick_written; normal_read = normal_written; event_tail = event_head;
+-        event->type = UPPER_UI_EVENT_QUICK_STOP; event->rpm = 0; event->at = quick_at; return 1U;
++        event->type = UPPER_UI_EVENT_QUICK_STOP; event->rpm = 0; event->key_mask=quick_mask; event->at = quick_at; return 1U;
+     }
+     if (normal_written != normal_read)
+     {
+         normal_read = normal_written; event_tail = event_head;
+-        event->type = UPPER_UI_EVENT_STOP; event->rpm = 0; event->at = normal_at; return 1U;
++        event->type = UPPER_UI_EVENT_STOP; event->rpm = 0; event->key_mask=normal_mask; event->at = normal_at; return 1U;
+     }
+     if (event_head == event_tail) return 0U;
+     *event = events[event_tail]; event_tail = (uint8_t)((event_tail + 1U) & 7U); return 1U;
+@@ -96,6 +99,9 @@ static void ConsumeEvents(UpperControl_t *control, UpperProtocol_t *protocol, ui
+     uint8_t stopped = 0U;
+     while (UpperUi_GetEvent(&event))
+     {
++#if UPPER_USART1_DEBUG_ENABLE
++        uint32_t event_at=event.at;
++#endif
+         if (sampled)
+         {
+             if (event.type != UPPER_UI_EVENT_QUICK_STOP && event.type != UPPER_UI_EVENT_STOP &&
+@@ -103,15 +109,30 @@ static void ConsumeEvents(UpperControl_t *control, UpperProtocol_t *protocol, ui
+             event.at = now;
+         }
+         if (event.type == UPPER_UI_EVENT_QUICK_STOP)
+-        { UpperControl_Intent(control, protocol, UPPER_INTENT_QUICK_STOP, 0, event.at); stopped = 1U; }
++        {
++#if UPPER_USART1_DEBUG_ENABLE
++            UpperControl_CaptureStop(control,protocol,UPPER_STOP_UI_QUICK,0U,(uint8_t)event.type,event.key_mask,event_at,event.at);
++#endif
++            UpperControl_Intent(control, protocol, UPPER_INTENT_QUICK_STOP, 0, event.at); stopped = 1U;
++        }
+         else if (event.type == UPPER_UI_EVENT_STOP)
+-        { UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, event.at); stopped = 1U; }
++        {
++#if UPPER_USART1_DEBUG_ENABLE
++            UpperControl_CaptureStop(control,protocol,UPPER_STOP_UI_NORMAL,0U,(uint8_t)event.type,event.key_mask,event_at,event.at);
++#endif
++            UpperControl_Intent(control, protocol, UPPER_INTENT_STOP, 0, event.at); stopped = 1U;
++        }
+         else if (stopped) continue;
+         else if (event.type == UPPER_UI_EVENT_K1_LONG)
+         {
+             if (control->state == SIM_IDLE || control->state == SIM_STOPPED_RELEASED || control->state == SIM_CROSS_SOURCE_STOP ||
+                 (control->state == SIM_FAULT && control->detail == 115U)) UpperControl_Intent(control, protocol, UPPER_INTENT_AUTHORIZE, 0, event.at);
+-            else UpperControl_Intent(control, protocol, UPPER_INTENT_RELEASE, 0, event.at);
++            else {
++#if UPPER_USART1_DEBUG_ENABLE
++                UpperControl_CaptureStop(control,protocol,UPPER_STOP_UI_RELEASE,0U,(uint8_t)event.type,event.key_mask,event_at,event.at);
++#endif
++                UpperControl_Intent(control, protocol, UPPER_INTENT_RELEASE, 0, event.at);
++            }
+         }
+         else if (event.type == UPPER_UI_EVENT_APPLY) UpperControl_Intent(control, protocol, UPPER_INTENT_APPLY, event.rpm, event.at);
+     }
+diff --git a/APP/can_upper_ui.h b/APP/can_upper_ui.h
+index 699ab7f..2391e63 100644
+--- a/APP/can_upper_ui.h
++++ b/APP/can_upper_ui.h
+@@ -26,7 +26,8 @@ typedef struct
+     uint32_t stop_verify_mask;
+ } UpperUiView_t;
+ typedef enum { UPPER_UI_EVENT_PAGE, UPPER_UI_EVENT_SELECT, UPPER_UI_EVENT_STOP, UPPER_UI_EVENT_K1_LONG, UPPER_UI_EVENT_APPLY, UPPER_UI_EVENT_QUICK_STOP } UpperUiEventType_t;
+-typedef struct { UpperUiEventType_t type; int16_t rpm; uint32_t at; } UpperUiEvent_t;
++/* ARMCC uses a one-byte enum here: keep key_mask in its alignment gap. */
++typedef struct { UpperUiEventType_t type; uint8_t key_mask; int16_t rpm; uint32_t at; } UpperUiEvent_t;
+ void UpperUi_Init(void);
+ void UpperUi_ScanKeys(uint32_t now, uint8_t pressed_mask, UpperControl_t *control, UpperProtocol_t *protocol);
+ void UpperUi_ScanKeysOnly(uint32_t now, uint8_t pressed_mask);

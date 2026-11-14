@@ -1,0 +1,5 @@
+file,samples,wheel_error_rms_rad_s,wheel_error_p95_rad_s,wheel_error_peak_rad_s
+dynamic_model_0.csv,600,0.4176188129357125,0.5773516,0.6141357
+dynamic_model_1.csv,600,0.26466689526780657,0.3717604,0.3895159
+dynamic_model_2.csv,600,0.23123069813629457,0.3320694,0.380043
+dynamic_model_3.csv,600,0.20039145078314122,0.2926674,0.3303146

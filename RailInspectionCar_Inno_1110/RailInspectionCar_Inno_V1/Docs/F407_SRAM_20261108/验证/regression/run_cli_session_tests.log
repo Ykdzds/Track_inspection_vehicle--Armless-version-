@@ -1,0 +1,42 @@
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI production: runtime axis/three modes/POR restore/nonPOR/priority/K5/timeout/fault gates/external ramp
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI production: runtime axis/three modes/POR restore/nonPOR/priority/K5/timeout/fault gates/external ramp
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI production: runtime axis/three modes/POR restore/nonPOR/priority/K5/timeout/fault gates/external ramp
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS CLI session: disabled/readonly cannot authorize
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS servo diagnostic: addresses, low-word-first, signed scaling, range and independent failures
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch

@@ -1,0 +1,5 @@
+#include <assert.h>
+#include <stdio.h>
+#include "app_control_arbiter.h"
+uint32_t HAL_GetTick(void){return 0;}
+int main(void){uint32_t ticket,generation=0;app_control_arbiter_init();assert(app_control_arbiter_parameter_begin());assert(!app_control_arbiter_parameter_begin());assert(app_control_arbiter_parameter_locked());assert(!app_control_arbiter_submit(APP_CONTROL_OWNER_HMI,3));assert(!app_control_arbiter_request(APP_CONTROL_OWNER_HMI,3,&generation));app_control_arbiter_service();assert(!app_control_arbiter_owner());app_control_arbiter_parameter_end();ticket=app_control_arbiter_submit(APP_CONTROL_OWNER_HMI,3);assert(ticket);assert(!app_control_arbiter_parameter_begin());app_control_arbiter_service();assert(!app_control_arbiter_parameter_begin());assert(app_control_arbiter_poll(ticket,&generation)==1);assert(app_control_arbiter_request(APP_CONTROL_OWNER_HMI,3,&generation));app_control_arbiter_release(APP_CONTROL_OWNER_HMI);assert(app_control_arbiter_parameter_begin());app_control_arbiter_parameter_end();puts("PASS parameter lock: pending/granted/current owner exclusion, all acquisition paths and release");return 0;}

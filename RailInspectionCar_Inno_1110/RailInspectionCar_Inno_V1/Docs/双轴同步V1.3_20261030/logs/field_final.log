@@ -1,0 +1,428 @@
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=0 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=0 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=0 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=0 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=0 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=1 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=1 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=1 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=1 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=1 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=2 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=2 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=2 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=2 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=2 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=3 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=3 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=3 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=3 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=4 mode=3 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=0 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=0 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=0 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=0 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=0 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=1 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=1 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=1 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=1 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=1 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=2 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=2 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=2 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=2 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=2 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=3 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=3 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=3 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=3 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=8 mode=3 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=0 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=0 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=0 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=0 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=0 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=1 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=1 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=1 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=1 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=1 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=2 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=2 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=2 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=2 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=2 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=3 target=0 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=3 target=100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=3 target=-100 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=3 target=400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+LCD_RELEASE diag=12 mode=3 target=-400 owner=0 life=1 phase=4 result=0 upper=RELEASED err=0
+AUTH state=4 detail=0 token=101 F4=3 seq=130 zeroobs=2
+LCD warning release/regrant: failures=0 / 60
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+READY upper=4 lower=4 caps=1 errs=0 owner=0 flags=404
+AUTH state=4 detail=0 token=100 F4=3 seq=3 zeroobs=2
+PASS LCD warnings plus real diagnostic/stale feedback/safety lock/servo fault: 48 cases still block release and reauthorization
+REVERSAL axis=1 sync=0 delay=30 sign=-1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=1 sync=0 delay=30 sign=1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=1 sync=0 delay=60 sign=-1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=1 sync=0 delay=60 sign=1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=1 sync=0 delay=100 sign=-1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=1 sync=0 delay=100 sign=1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=1 sync=0 delay=60 sign=-1 zero=8610 theory=8488 zero_to_700=17060
+REVERSAL axis=1 sync=0 delay=60 sign=1 zero=8610 theory=8488 zero_to_700=17060
+interruption scenario=0 sign=-1 target=0 actual=0 base=0
+interruption scenario=1 sign=-1 target=-400 actual=-400 base=-400
+interruption scenario=2 sign=-1 target=400 actual=400 base=400
+interruption scenario=0 sign=1 target=0 actual=0 base=0
+interruption scenario=1 sign=1 target=400 actual=400 base=400
+interruption scenario=2 sign=1 target=-400 actual=-400 base=-400
+PASS reversal interruptions: both directions; neutral, restored direction, changed opposite target, K5, link loss and estop supersede ramp
+REVERSAL axis=1 sync=1 delay=30 sign=-1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=1 sync=1 delay=30 sign=1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=1 sync=1 delay=60 sign=-1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=1 sync=1 delay=60 sign=1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=1 sync=1 delay=100 sign=-1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=1 sync=1 delay=100 sign=1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=1 sync=1 delay=60 sign=-1 zero=8610 theory=8488 zero_to_700=17060
+REVERSAL axis=1 sync=1 delay=60 sign=1 zero=8610 theory=8488 zero_to_700=17060
+interruption scenario=0 sign=-1 target=0 actual=0 base=0
+interruption scenario=1 sign=-1 target=-400 actual=-400 base=-400
+interruption scenario=2 sign=-1 target=400 actual=400 base=400
+interruption scenario=0 sign=1 target=0 actual=0 base=0
+interruption scenario=1 sign=1 target=400 actual=400 base=400
+interruption scenario=2 sign=1 target=-400 actual=-400 base=-400
+PASS reversal interruptions: both directions; neutral, restored direction, changed opposite target, K5, link loss and estop supersede ramp
+REVERSAL axis=2 sync=0 delay=30 sign=-1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=2 sync=0 delay=30 sign=1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=2 sync=0 delay=60 sign=-1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=2 sync=0 delay=60 sign=1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=2 sync=0 delay=100 sign=-1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=2 sync=0 delay=100 sign=1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=2 sync=0 delay=60 sign=-1 zero=8610 theory=8488 zero_to_700=17060
+REVERSAL axis=2 sync=0 delay=60 sign=1 zero=8610 theory=8488 zero_to_700=17060
+interruption scenario=0 sign=-1 target=0 actual=0 base=0
+interruption scenario=1 sign=-1 target=-400 actual=-400 base=-400
+interruption scenario=2 sign=-1 target=400 actual=400 base=400
+interruption scenario=0 sign=1 target=0 actual=0 base=0
+interruption scenario=1 sign=1 target=400 actual=400 base=400
+interruption scenario=2 sign=1 target=-400 actual=-400 base=-400
+PASS reversal interruptions: both directions; neutral, restored direction, changed opposite target, K5, link loss and estop supersede ramp
+REVERSAL axis=2 sync=1 delay=30 sign=-1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=2 sync=1 delay=30 sign=1 zero=8530 theory=8488 zero_to_700=16970
+REVERSAL axis=2 sync=1 delay=60 sign=-1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=2 sync=1 delay=60 sign=1 zero=8590 theory=8488 zero_to_700=17000
+REVERSAL axis=2 sync=1 delay=100 sign=-1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=2 sync=1 delay=100 sign=1 zero=8610 theory=8488 zero_to_700=17120
+REVERSAL axis=2 sync=1 delay=60 sign=-1 zero=8610 theory=8488 zero_to_700=17060
+REVERSAL axis=2 sync=1 delay=60 sign=1 zero=8610 theory=8488 zero_to_700=17060
+interruption scenario=0 sign=-1 target=0 actual=0 base=0
+interruption scenario=1 sign=-1 target=-400 actual=-400 base=-400
+interruption scenario=2 sign=-1 target=400 actual=400 base=400
+interruption scenario=0 sign=1 target=0 actual=0 base=0
+interruption scenario=1 sign=1 target=400 actual=400 base=400
+interruption scenario=2 sign=1 target=-400 actual=-400 base=-400
+PASS reversal interruptions: both directions; neutral, restored direction, changed opposite target, K5, link loss and estop supersede ramp
+REVERSAL axis=3 sync=0 delay=30 sign=-1 zero=8590 theory=8488 zero_to_700=17130
+REVERSAL axis=3 sync=0 delay=30 sign=1 zero=8590 theory=8488 zero_to_700=17130
+REVERSAL axis=3 sync=0 delay=60 sign=-1 zero=8650 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=0 delay=60 sign=1 zero=8650 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=0 delay=100 sign=-1 zero=8810 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=0 delay=100 sign=1 zero=8810 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=0 delay=60 sign=-1 zero=8710 theory=8488 zero_to_700=17160
+REVERSAL axis=3 sync=0 delay=60 sign=1 zero=8710 theory=8488 zero_to_700=17160
+interruption scenario=0 sign=-1 target=0 actual=0 base=0
+interruption scenario=1 sign=-1 target=-400 actual=-400 base=-400
+interruption scenario=2 sign=-1 target=400 actual=400 base=400
+interruption scenario=0 sign=1 target=0 actual=0 base=0
+interruption scenario=1 sign=1 target=400 actual=400 base=400
+interruption scenario=2 sign=1 target=-400 actual=-400 base=-400
+PASS reversal interruptions: both directions; neutral, restored direction, changed opposite target, K5, link loss and estop supersede ramp
+REVERSAL axis=3 sync=1 delay=30 sign=-1 zero=8590 theory=8488 zero_to_700=17130
+REVERSAL axis=3 sync=1 delay=30 sign=1 zero=8590 theory=8488 zero_to_700=17130
+REVERSAL axis=3 sync=1 delay=60 sign=-1 zero=8650 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=1 delay=60 sign=1 zero=8650 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=1 delay=100 sign=-1 zero=8810 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=1 delay=100 sign=1 zero=8810 theory=8488 zero_to_700=17220
+REVERSAL axis=3 sync=1 delay=60 sign=-1 zero=8710 theory=8488 zero_to_700=17160
+REVERSAL axis=3 sync=1 delay=60 sign=1 zero=8710 theory=8488 zero_to_700=17160
+interruption scenario=0 sign=-1 target=0 actual=0 base=0
+interruption scenario=1 sign=-1 target=-400 actual=-400 base=-400
+interruption scenario=2 sign=-1 target=400 actual=400 base=400
+interruption scenario=0 sign=1 target=0 actual=0 base=0
+interruption scenario=1 sign=1 target=400 actual=400 base=400
+interruption scenario=2 sign=1 target=-400 actual=-400 base=-400
+PASS reversal interruptions: both directions; neutral, restored direction, changed opposite target, K5, link loss and estop supersede ramp

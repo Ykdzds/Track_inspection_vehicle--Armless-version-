@@ -1,0 +1,19 @@
+C:\Users\15056\AppData\Local\Temp\hmi21_old_joint.c:104:13: warning: 'test_delayed_feedback' defined but not used [-Wunused-function]
+ static void test_delayed_feedback(void)
+             ^
+C:\Users\15056\AppData\Local\Temp\hmi21_old_joint.c:115:13: warning: 'test_wait_and_failure' defined but not used [-Wunused-function]
+ static void test_wait_and_failure(unsigned scenario)
+             ^
+C:\Users\15056\AppData\Local\Temp\hmi21_old_joint.c:158:13: warning: 'test_owner_change' defined but not used [-Wunused-function]
+ static void test_owner_change(app_control_owner_t owner)
+             ^
+C:\Users\15056\AppData\Local\Temp\hmi21_old_joint.c:181:13: warning: 'test_radio_history' defined but not used [-Wunused-function]
+ static void test_radio_history(void)
+             ^
+Assertion failed!
+
+Program: C:\Users\15056\AppData\Local\Temp\rail_hmi21_old.exe
+File: C:\Users\15056\AppData\Local\Temp\hmi21_old_joint.c, Line 94
+
+Expression: app_control_arbiter_lock_reason() == APP_CONTROL_LOCK_NONE
+旧版预期失败退出码=3

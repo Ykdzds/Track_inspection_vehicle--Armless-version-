@@ -1,0 +1,12 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 newobj Void .ctor()
+0005 dup 
+0006 ldarg.0 
+0007 stfld Visual_PIX.Modules.Home.ViewModels.DebugViewModel KlfNMexCflBJYCMmDkOYOqhUwLTS
+000C dup 
+000D ldarg.1 
+000E stfld Visual_PIX.Model.PixLayer LkqDTJFjzIbBFUaXsCQureqWUpeD
+0013 ldftn Void bBWgDhHonTfFlgYaAZdrSUCCprnoB()
+0019 newobj Void .ctor(System.Object, IntPtr)
+001E call Void OcceGnFOtjKeEFNqskXZPkNCvJCgA(System.Action)
+0023 ret 

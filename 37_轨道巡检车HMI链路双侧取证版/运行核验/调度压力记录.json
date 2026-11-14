@@ -1,0 +1,11 @@
+{
+  "evidence": "50ms理想事件等价执行；每事务50ms内模拟应答；不是Visual-PIX实屏或UART抓帧",
+  "durationMs": 120000,
+  "targetFrames": 893,
+  "targetMaxGapMs": 150,
+  "statusReads": 893,
+  "statusMaxGapMs": 150,
+  "maximumInflight": 1,
+  "state": 3,
+  "physicalValidated": false
+}

@@ -1,0 +1,37 @@
+{
+  "Commit": "a2c49d354a1c61a1636eda2d91d2398337ab5688",
+  "Map": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1\\Docs\\F407_Link5_20261107\\验证\\alloff\\RailInspectionCar_V1.map",
+  "MapSha256": "6831CB7E1EC89BEBB64E3DA49A87225CAF564E3C8F977FD21881538BE09DAE21",
+  "Ram": {
+    "PhysicalRam": 175136,
+    "CcmRam": 62024,
+    "OrdinaryRam": 113112,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Capacity": 65536,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 105712,
+        "Capacity": 114688,
+        "Free": 8976
+      },
+      "RW_IRAM2": {
+        "Bytes": 6888,
+        "Capacity": 15872,
+        "Free": 8984
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Capacity": 512,
+        "Free": 0
+      }
+    }
+  },
+  "UserReferencePhysicalRam": 175136,
+  "UserReferenceCcmRam": 62024,
+  "HeapStaticBytes": 49152,
+  "HeapSavingsAreNotAddedToLinkerSavings": true,
+  "ArchivedSourceDigest": "8D24A3758F71C6625C0067DA7E50B6BD35DCE70FC73C4699FAF91B7EAF04627E"
+}

@@ -1,0 +1,92 @@
+Void .ctor()
+Visual_PIX.Model.PixProject oodfNPLAxbyaExfTYHvUSPTMDXsX()
+Void oazxMRVUUBKlmbwIlsSPsRGpthCc(Visual_PIX.Model.PixProject)
+System.Object txILKHTCSwSOqJqyxUzZQcgnHUJC(System.Object)
+System.Object zplZnuriNfcjGcomvzojTRJiRIxUA(System.Object)
+System.Collections.Generic.List`1[Visual_PIX.Model.ImageData] mzhbWoFMTPXyvINGbThKAPlhIRLV()
+Visual_PIX.Model.PixProject heyCDxpkqfwhPhGiBNmtICJzFqhCA
+Exception calling "Invoke" with "2" argument(s): "Specified cast is not valid."
+zplZnuriNfcjGcomvzojTRJiRIxUA 48bdab99-148c-4886-a855-1a3f1505a0a2 -> -1
+txILKHTCSwSOqJqyxUzZQcgnHUJC 105 -> 
+zplZnuriNfcjGcomvzojTRJiRIxUA 105 -> -1
+hwFuBrKVDGDISdBdcjIylLmgZOWK
+0000 ldarg.1 
+0001 unbox.any System.Int32
+0006 stloc.0 
+0007 ldc.i4 -1594626223
+000C ldc.i4 -1270008407
+0011 xor 
+0012 dup 
+0013 stloc.2 
+0014 ldc.i4.5 
+0015 rem.un 
+0016 switch 5
+002F br.s 103
+0031 ldarg.0 
+0032 call System.Collections.Generic.List`1[Visual_PIX.Model.ImageData] mzhbWoFMTPXyvINGbThKAPlhIRLV()
+0037 stloc.1 
+0038 ldloc.1 
+0039 callvirt Int32 get_Count()
+003E ldloc.0 
+003F blt.s 8
+0041 ldc.i4 -848695345
+0046 dup 
+0047 br.s 6
+0049 ldc.i4 -1227082829
+004E dup 
+004F pop 
+0050 ldloc.2 
+0051 ldc.i4 614513632
+0056 mul 
+0057 xor 
+0058 br.s -78
+005A ldloc.1 
+005B ldloc.0 
+005C ldc.i4.1 
+005D sub 
+005E callvirt Visual_PIX.Model.ImageData get_Item(Int32)
+0063 callvirt System.String get_Id()
+0068 ret 
+0069 ldloc.2 
+006A ldc.i4 -1225079138
+006F mul 
+0070 ldc.i4 1197826675
+0075 xor 
+0076 br.s -108
+0078 ldloc.0 
+0079 ldc.i4.0 
+007A bgt.s 8
+007C ldc.i4 -984306451
+0081 dup 
+0082 br.s 6
+0084 ldc.i4 -512986537
+0089 dup 
+008A pop 
+008B ldloc.2 
+008C ldc.i4 1520038549
+0091 mul 
+0092 xor 
+0093 br -140
+0098 ldnull 
+0099 ret 
+hwFuBrKVDGDISdBdcjIylLmgZOWK
+0000 newobj Void .ctor()
+0005 stloc.0 
+0006 ldloc.0 
+0007 ldarg.1 
+0008 stfld System.Object JTEdgCccqqMlgmYanNzkuVUjxyiNA
+000D ldc.i4 1205875667
+0012 ldc.i4 1090241050
+0017 xor 
+0018 dup 
+0019 stloc.3 
+001A ldc.i4.5 
+001B rem.un 
+001C switch 5
+0035 br.s 102
+0037 ldarg.0 
+0038 call System.Collections.Generic.List`1[Visual_PIX.Model.ImageData] mzhbWoFMTPXyvINGbThKAPlhIRLV()
+003D stloc.1 
+003E ldloc.1 
+003F ldloc.0 
+bad 64 -506

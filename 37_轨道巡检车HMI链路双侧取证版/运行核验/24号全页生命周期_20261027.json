@@ -1,0 +1,110 @@
+[
+  {
+    "Page": "P0_Boot",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P0_Boot",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P1_Main",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P1_Main",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P2_Diag",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P2_Diag",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P3_Position",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P3_Position",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P4_Info",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P4_Info",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P5_Alarm",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P5_Alarm",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P6_Sync",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P6_Sync",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P7_System_Ext",
+    "Event": "加载页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P7_System_Ext",
+    "Event": "离开页面",
+    "Script": "",
+    "Matches": true
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Event": "加载页面",
+    "Script": "if(P8_ServoControl.h13.vals[2]!=3){P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P8_ServoControl.h13.vals[32]=0;}\n",
+    "Matches": true
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Event": "离开页面",
+    "Script": "if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[11]=3;}if(P8_ServoControl.h13.vals[2]==2){P8_ServoControl.h13.vals[11]=16;}P8_ServoControl.h13.vals[10]=0;\n",
+    "Matches": true
+  }
+]

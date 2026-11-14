@@ -1,0 +1,86 @@
+[
+  {
+    "Name": "APP_CHASSIS_LCD_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(1U)"
+  },
+  {
+    "Name": "APP_DEBUG_CLI_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_TUNE_UART_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_SERVO_PULSE_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_UART_RX_ACTIVE",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(APP_DEBUG_CLI_ENABLED || APP_TUNE_UART_ENABLED)"
+  },
+  {
+    "Name": "APP_CLI_SERVO_ACTIVE",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(APP_DEBUG_CLI_ENABLED && APP_SERVO_CLI_DEBUG_ENABLED)"
+  },
+  {
+    "Name": "APP_CAN_DEBUG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_CAN_SERVO_DIAG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_CAN_ARM_DIAG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_SERVO_RS485_DIAG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_HMI_LINK_DIAG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_SERVO_CLI_DEBUG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  },
+  {
+    "Name": "APP_NRF_DIAGNOSTIC_ENABLED",
+    "Directive": "define",
+    "Path": "APP\\app_config.h",
+    "Expression": "(0U)"
+  }
+]

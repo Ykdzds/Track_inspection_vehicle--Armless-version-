@@ -1,0 +1,278 @@
+[
+  {
+    "Object": "aimtor_servo.o",
+    "ObjectSha256": "4764420A741BB1B8EC3E423C7A24CCEA3C484AA80456920938196DD50ACD90FC",
+    "DependencySha256": "50C60BB480AFBB1ED16DE9B9C70D543A91D3FEB49DED15CD515AC6AE02ACFB58",
+    "TraceSha256": "3A1FC085CCD3EC30626DED1CFFBFFCB3DA3F667CA256FC25BD09D2CA3EF91C02",
+    "MacroRecords": [
+      {
+        "Name": "APP_CHASSIS_LCD_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_DEBUG_CLI_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_TUNE_UART_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_CLI_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_PULSE_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_HMI_LINK_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_NRF_DIAGNOSTIC_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_SERVO_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_ARM_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_RS485_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_CAN_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      }
+    ],
+    "ActualValuesVerified": true
+  },
+  {
+    "Object": "app_rtos_create.o",
+    "ObjectSha256": "967BEA14540FE7A7EBDD03EC698E27CCF5125CD87DA48F0E70F9ACD416520F71",
+    "DependencySha256": "60E974B58049DEB98650378303638920552D5B2446A75F18BB24F8ACADBE3F34",
+    "TraceSha256": "3A1FC085CCD3EC30626DED1CFFBFFCB3DA3F667CA256FC25BD09D2CA3EF91C02",
+    "MacroRecords": [
+      {
+        "Name": "APP_CHASSIS_LCD_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_DEBUG_CLI_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_TUNE_UART_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_CLI_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_PULSE_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_HMI_LINK_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_NRF_DIAGNOSTIC_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_SERVO_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_ARM_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_RS485_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_CAN_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      }
+    ],
+    "ActualValuesVerified": true
+  },
+  {
+    "Object": "debug_uart.o",
+    "ObjectSha256": "683B680E8F74BD42E6964854ED4234E66D65225442F9CABDF39A62CE4BB58273",
+    "DependencySha256": "0221BAF7DBF8895073E811ABC9AC2EC2DA343743DAED2966E2E154AF23CEC6A4",
+    "TraceSha256": "3A1FC085CCD3EC30626DED1CFFBFFCB3DA3F667CA256FC25BD09D2CA3EF91C02",
+    "MacroRecords": [
+      {
+        "Name": "APP_CHASSIS_LCD_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_DEBUG_CLI_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_TUNE_UART_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_CLI_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_PULSE_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_HMI_LINK_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_NRF_DIAGNOSTIC_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_SERVO_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_ARM_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_RS485_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_CAN_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      }
+    ],
+    "ActualValuesVerified": true
+  },
+  {
+    "Object": "app_hmi_link_diag.o",
+    "ObjectSha256": "AF01C11649FA7F7FB4DABD45D4D2895A91B4D002832C3B6D57C8882AFD4FF08B",
+    "DependencySha256": "8BFC4F86012DEF0AD9C2AABCFCBD700C86E63C3AABEE09C894FEF6697F8BD390",
+    "TraceSha256": "3A1FC085CCD3EC30626DED1CFFBFFCB3DA3F667CA256FC25BD09D2CA3EF91C02",
+    "MacroRecords": [
+      {
+        "Name": "APP_CHASSIS_LCD_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_DEBUG_CLI_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_TUNE_UART_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_CLI_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_PULSE_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_HMI_LINK_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_NRF_DIAGNOSTIC_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_SERVO_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_CAN_ARM_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_SERVO_RS485_DIAG_ENABLED",
+        "Directive": "define",
+        "Expression": "1"
+      },
+      {
+        "Name": "APP_CAN_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      },
+      {
+        "Name": "APP_REMOTE_SERVO_SYNC_DEBUG_ENABLED",
+        "Directive": "define",
+        "Expression": "0"
+      }
+    ],
+    "ActualValuesVerified": true
+  }
+]

@@ -1,0 +1,350 @@
+{
+  "baseline_head": "a2c49d354a1c61a1636eda2d91d2398337ab5688",
+  "implementation_committed": false,
+  "push_performed": false,
+  "tracked_diff_sha256": "CBEE0079C6920ABA0230332F58394E42E51402F35C77154753B651E60CEBD488",
+  "files": [
+    {
+      "path": "APP/HMI/app_hmi_link_diag.c",
+      "sha256": "C3676414BB2CCB8CA2BA915C8AAB9D988E351F46C91824A28C309B179725245F"
+    },
+    {
+      "path": "APP/HMI/app_hmi_snapshot.c",
+      "sha256": "23E10B7C810AD6072DDE6C3D483D03D05C33A2526C989A22A0E0BA5FA1261511"
+    },
+    {
+      "path": "APP/HMI/app_hmi_state.c",
+      "sha256": "FCD334FF711671CA95387C6D8B20F88B4E641E76EF4685AA0BA8CE2971DBFCFA"
+    },
+    {
+      "path": "APP/HMI/app_hmi_state.h",
+      "sha256": "05461C5E0A508BC10351B02C3ACD180C9088FA4F3613EDD0863088EDE5B4BF1E"
+    },
+    {
+      "path": "APP/app_cli_servo_session.c",
+      "sha256": "ACE44799BCE988F6EF93A0DF538877D66D0823AFC924C162EEC9E24C7F638C9A"
+    },
+    {
+      "path": "APP/app_config.h",
+      "sha256": "A2117FAD0FA2F2D5CC7445EF1508165BD9D366664AB8B546DC83354AA80B66CC"
+    },
+    {
+      "path": "APP/app_debug_cli.c",
+      "sha256": "169D77B2DCE57DA28D6CA2659061933BA7ABC25A404037FC841C951311B72753"
+    },
+    {
+      "path": "APP/app_debug_cli.h",
+      "sha256": "2E155F0B7F692A2905B98A23F2CC72613C73B77F9265DE3C0D5F67BFE012DEBF"
+    },
+    {
+      "path": "APP/app_lcd_show.c",
+      "sha256": "1F503A917D064DC4C6904C6826A648C4DC11593D7AC67D535E03F74D4CD02004"
+    },
+    {
+      "path": "APP/app_position_monitor.c",
+      "sha256": "4DF68EDB41D0ACE4765731FCAC2BD8FB584C2139A7E7C981D45AC9947BFD047D"
+    },
+    {
+      "path": "APP/app_remote_servo.c",
+      "sha256": "FD20CC000984229D7C4ECBF4720FD40967A3BE758F21144D57ACE53E90FEABD9"
+    },
+    {
+      "path": "APP/app_remote_servo.h",
+      "sha256": "86545D7CF737A6BFEC785F7517BAF6F13176D13CD4D3818FA33DC1E54D1DF7A7"
+    },
+    {
+      "path": "APP/app_rtos_create.c",
+      "sha256": "295D2484A2D7E37FF9372A3BC8A027ED98B5299F429546BD0A45D72146270F75"
+    },
+    {
+      "path": "APP/app_rtos_task.c",
+      "sha256": "295AF4571A777E5EFB44F848B2DC66775B633AA9A794C373E97F488315ABCAF9"
+    },
+    {
+      "path": "APP/app_tune_cli.c",
+      "sha256": "4A124216222AD3103302DF6FD4A0D931ACE3A6B68FDA9F652EE17AE9B2F64ADA"
+    },
+    {
+      "path": "APP/app_tune_cli.h",
+      "sha256": "E0EE41CD37043CD94D7F0ED8190C93EB7FF18A62B83CAD6B1CC36A0E080E2FB0"
+    },
+    {
+      "path": "APP/app_tune_diagnostics.c",
+      "sha256": "B973933B78E89B59DEA28337B9C3FD20AE81966679EED94BD837801562A9B022"
+    },
+    {
+      "path": "APP/motion_control.c",
+      "sha256": "0A0470A0F6DCCD394F5E3A3C8D9689F083B5622188F7E07D28D20103B4881CF1"
+    },
+    {
+      "path": "APP/servo_debug_control.c",
+      "sha256": "68E2A47A77BD22537A4359B772FC68DF962AD742128AC677409C094401508F48"
+    },
+    {
+      "path": "APP/servo_debug_control.h",
+      "sha256": "1C689C80658EB2A16CBA2250C0AFE0B1AAE57616815BEC25BC32FC08D8E5FCF9"
+    },
+    {
+      "path": "BSP/DEBUG_UART/debug_uart.c",
+      "sha256": "18EDE6B183F931C03E1117AF0A48FB1A1273A341DDDF6575D898106F0C587B5B"
+    },
+    {
+      "path": "BSP/SERVO_PULSE/servo_pulse.c",
+      "sha256": "1929314DE33DE6C18363B87468688F9717D33DFFF6901761D09374803F23D0F5"
+    },
+    {
+      "path": "BSP/SPI_LCD/bsp_lcd.c",
+      "sha256": "C47714296A1F0B8A78681C1033947E22FB762F055CB3A8D7AEB6E372AB3CE704"
+    },
+    {
+      "path": "BSP/SPI_LCD/lcd_core.c",
+      "sha256": "201B9D937A930AE97EC30EE68C70F72BC9B50F8E4E3FBA9E2F5C3104B609D54F"
+    },
+    {
+      "path": "BSP/SPI_LCD/lcd_font.c",
+      "sha256": "910D288475B5779A90A221F706F9F3699845F0C4529383343EA167383C8FF761"
+    },
+    {
+      "path": "BSP/SPI_LCD/lcd_port.c",
+      "sha256": "543672595A35406BF7D8E5DC90DDAB83FEF01BB50716A06B406AC1DE6BD1B3D7"
+    },
+    {
+      "path": "Core/Inc/spi.h",
+      "sha256": "CBB4B32C2FA3F939022E188AEF1215122037F358C2DD363D42942D05E762ADB2"
+    },
+    {
+      "path": "Core/Inc/tim.h",
+      "sha256": "E6A31B2590A0C019460DB1B72A0FFE091F661F3AB2114E5D9E340FBC65193FD6"
+    },
+    {
+      "path": "Core/Src/dma.c",
+      "sha256": "A57B8DEA166E84C159A73FCB66A9153071601E11828DB73342A44993282B6B87"
+    },
+    {
+      "path": "Core/Src/gpio.c",
+      "sha256": "22E3EA627F3E57FE0FFB6F842DA32E38968D7A14418E00AE24CF65070A4C6F43"
+    },
+    {
+      "path": "Core/Src/main.c",
+      "sha256": "72D8E01245B12645026CDB2DDFE49C0A3972E451EAB6C85F2F857530F8F34BAD"
+    },
+    {
+      "path": "Core/Src/spi.c",
+      "sha256": "EA918D6AEB4B42D8D820FC08B98F190E12C25522C12BA4FBFD84EA1460F2FCD4"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_it.c",
+      "sha256": "9DAAB2DE3851A242D9F2C85BD2CAEFE19317BB8ECFCBC6E10758C023D6FBB5CD"
+    },
+    {
+      "path": "Core/Src/tim.c",
+      "sha256": "FB7813F1CF45EA61A9FB166AF45437F38F6B4EA59793FF02765ECAF7D1CEAF55"
+    },
+    {
+      "path": "Device/aimtor_servo.c",
+      "sha256": "DB7AE422F2118B903C89A2E9C3F16339A58FF9985F786E435BF1256ECF576E17"
+    },
+    {
+      "path": "Device/aimtor_servo.h",
+      "sha256": "0876C195C8A618F89D60459F4DC17814B5E91A6929E3888CA684992A2C2E6F8A"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/.gitignore",
+      "sha256": "672758277CC94C3AC8049D8E8F857E3570374F47B15331C264A319CC3713D9A9"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/CLI维护配置说明.md",
+      "sha256": "130603B201A4585DE51462CF3952A6B87814BC88B9E64FAD0A36677127EDEF63"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/HMI与位置缓存说明.md",
+      "sha256": "9E65A9FF270541D4E0E19C385ECCB023BBB85BC8C5C234E03FA7FFF7FEFB91D7"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/LCD与脉冲裁剪说明.md",
+      "sha256": "7F957C37892232DF6C09E00C071B40F8441383DFA4B81A8E967CB185B4333331"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/README.md",
+      "sha256": "B7BA7195562EED120ACF8D642690B9A853CB2BA81CC58641705E992E360F1B14"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/build.ps1",
+      "sha256": "D42D081D0463C344BD41C1F23CBD20C7E6C7F621C0FA72EFD68573D7AC9C0E3E"
+    },
+    {
+      "path": "Docs/F407_SRAM_20261108/build_source_default.ps1",
+      "sha256": "6945485F3EC874C90F04FC60963B75DB72A9494D5FE36602DB5B1F1737536B22"
+    },
+    {
+      "path": "Tests/aimtor_position_projection_test_unit.c",
+      "sha256": "0AC61D4862FD9A81E4113AA399CA9507265F460DFC32A67A63554A27A16F2B60"
+    },
+    {
+      "path": "Tests/build_cli_session.ps1",
+      "sha256": "673C87544A305417386E15A1A6D15FE63741B9F9B46478F0D0A75FFB5A5CE0CC"
+    },
+    {
+      "path": "Tests/check_irq_dma_integration.ps1",
+      "sha256": "2B40CB5817997B25C14B71A399E6250050E3DE07C1D410CFEB2CCF1156890C5D"
+    },
+    {
+      "path": "Tests/check_task_stack.ps1",
+      "sha256": "3EB6C8687DCDAB8C32A408F3763FE6AD07867F43AF98408E2B83AE1B9B76CC72"
+    },
+    {
+      "path": "Tests/check_tune_memory.ps1",
+      "sha256": "06777ACD122BF46DFF915F7C1E9E133CBB74F2982F9BC66340ADCD4AFD7AAC70"
+    },
+    {
+      "path": "Tests/report_sram_profiles.py",
+      "sha256": "2FA6D85EDEA8D9C944D047BBDC6F0BB05C9F014960BC7C8DC3B1CBE063F6C24F"
+    },
+    {
+      "path": "Tests/run_cli_profile_tests.ps1",
+      "sha256": "36C628F0FD30D1B3FB21837B3B10F32AD987AA326FFAE9BDE55773F9BA89D169"
+    },
+    {
+      "path": "Tests/run_cli_session_tests.ps1",
+      "sha256": "B3795309238653F552EFF518E4289E9DD785D562BF3952570140DDE4A028F195"
+    },
+    {
+      "path": "Tests/run_current_core_tests.ps1",
+      "sha256": "395EDDC4E20E75FA918100681002FB6581BF06485F86FD519812D6E6012E7DF9"
+    },
+    {
+      "path": "Tests/run_current_diagnostic_tests.ps1",
+      "sha256": "E77B56AF913CB9D275D28AC13D1D730D6AB9151D6895EA211D81B5A745C73A0D"
+    },
+    {
+      "path": "Tests/run_debug_uart_tests.ps1",
+      "sha256": "9889626AC3E31861B068D7D744957D2ECEBFC8FF727111E87ABA2FB2DD737C39"
+    },
+    {
+      "path": "Tests/run_disabled_diag_tests.ps1",
+      "sha256": "A7167D9A8BFDDF5E77059E57BC323D21A6E5FD2451E7164378FD5BC4955380B1"
+    },
+    {
+      "path": "Tests/run_disabled_local_feature_tests.ps1",
+      "sha256": "35BD1AA58F10CE2BEB44E70E80BFA7E13C46EFB454BBDE81348AC48C57B1065A"
+    },
+    {
+      "path": "Tests/run_lcd_batch_tests.ps1",
+      "sha256": "98486081A3BF776C4B4010E83FBC99D8DA826AD670CC40D42EEA0F0EB8A8465D"
+    },
+    {
+      "path": "Tests/run_lcd_recovery_tests.ps1",
+      "sha256": "014ADEFF366D3592ACCE241B9EC76D52B5DAABB618772D74B45737B8744A3A80"
+    },
+    {
+      "path": "Tests/run_position_projection_tests.ps1",
+      "sha256": "8F87067B0C16B2868960AD9F4F7508F9DE802DA1442BB252289696034D76DDD9"
+    },
+    {
+      "path": "Tests/run_ramp_driver_tests.ps1",
+      "sha256": "FF30708B67726E3D15165F9E59F76862A9392177404054FABADAE10272173B89"
+    },
+    {
+      "path": "Tests/run_rs485_diag_tests.ps1",
+      "sha256": "2430203BCD5814DD82A18A7AACF28E983E3B50A30B14809DCC9D7426A661D81D"
+    },
+    {
+      "path": "Tests/run_safety_stop_tests.ps1",
+      "sha256": "57BEB0CF8B93245F7A9CCD287BB9AAE8780BCD2E1F69DB1E09B01BBC3E265680"
+    },
+    {
+      "path": "Tests/run_servo_diagnostic_tests.ps1",
+      "sha256": "5E528B9C6B259EA94C3C69183BCA768FDEAB24DCF324EA13FB0BF9C60478731B"
+    },
+    {
+      "path": "Tests/run_sram_regression.py",
+      "sha256": "F611CD5247700B9DC8603B334AAD8AEE5FECD267E939E49011AAC5E33988E220"
+    },
+    {
+      "path": "Tests/run_sync_storage_tests.ps1",
+      "sha256": "F303C8619F49756B6224FF5B6BF3A3A16BBA5C6EA430FAD0D76812FC961E3D5A"
+    },
+    {
+      "path": "Tests/run_tests.ps1",
+      "sha256": "A98591698C46AF76AFFEB55187EDC750C3DBAD4A4CFDE5C403EDDD8C61A7FC01"
+    },
+    {
+      "path": "Tests/run_tune_diagnostics_tests.ps1",
+      "sha256": "B0C82100F4F707C7639812575290A41EB0A59F0F3AF82FC6583AC761785895BD"
+    },
+    {
+      "path": "Tests/run_tune_tests.ps1",
+      "sha256": "D4430CE40D3873B184A38A632ED5F7DBFA42D279D6B49893E7A60B55BF4BCEB1"
+    },
+    {
+      "path": "Tests/test_cli_session_disabled.c",
+      "sha256": "1FBED3D7AAB441106F60504CBC100A1E3C9BB37332DF91852E96A4C6C4B9858F"
+    },
+    {
+      "path": "Tests/test_cli_worker_profile.c",
+      "sha256": "9E8EFC721E758CE7D20A34C351C38C263C2364A3F3B1E43FAE50C38F4ACF4623"
+    },
+    {
+      "path": "Tests/test_core.c",
+      "sha256": "E01F9AF5F7C645A6D96E4FC0BED7E8B9028C2859846FD15FA3620CE5D8AAADFB"
+    },
+    {
+      "path": "Tests/test_debug_uart_logging_only.c",
+      "sha256": "CF38ECA9473350E598C33DE809AFA8A2F4970C775B6D1E5666B61CD6823F28AE"
+    },
+    {
+      "path": "Tests/test_disabled_local_features.c",
+      "sha256": "A5530C539E2D47ECB0B98DA5F7ABDBBF5696A200FD0BF3C958D240942406106B"
+    },
+    {
+      "path": "Tests/test_hmi_link_diag.c",
+      "sha256": "8AAEE1960C311986D36BB4A0B4CB3A772C756EF4E216312E520BAE18E9E50A68"
+    },
+    {
+      "path": "Tests/test_hmi_snapshot_freshness.c",
+      "sha256": "4CF62248C681890A918E6771DD0C0247A936EEE847BB4B84A5AF6749C18F5666"
+    },
+    {
+      "path": "Tests/test_hmi_state_windows.c",
+      "sha256": "7B5ECB63238848BCC8864C746B4619166F7FCEB46AB655505588C8C093C5C437"
+    },
+    {
+      "path": "Tests/test_link_diag.c",
+      "sha256": "682248776B8BD37B6FE776DCCF92A91E7AAC6AEBB95491DC04A19B3C3021B7BB"
+    },
+    {
+      "path": "Tests/test_position_monitor.c",
+      "sha256": "DAD818E3D73305015651F59C22B4FDBA687D42E5C07F3059771DCDE031F78506"
+    },
+    {
+      "path": "Tests/test_position_projection.c",
+      "sha256": "B7E20F08E0B00290ABE40585F9A892EDFDE45C73766097C222A50D19133A1934"
+    },
+    {
+      "path": "Tests/test_production_guards.c",
+      "sha256": "4F61AF23AF4BF4F5F7F992154DD05FD6F13F9126002B34F56FBD0D5BC8FC1C42"
+    },
+    {
+      "path": "Tests/test_remote_link_diag.c",
+      "sha256": "97BEE0B031A870E0534EFDF4EC7EC874699754120301C2ADA5A1171C33FC73B9"
+    },
+    {
+      "path": "Tests/test_system_snapshot.c",
+      "sha256": "F0D4F3A5198DBF76DE4ACAFFF9068552278C7E4C38427C053F1C30260C397FD9"
+    },
+    {
+      "path": "Tests/test_tune.c",
+      "sha256": "B237198979B27481AA8D070F3DAE722012324968D248B3A5F676D683ADFE3932"
+    },
+    {
+      "path": "Tests/test_tune_worker.c",
+      "sha256": "C7DCE30786BD2EFE5A09C3059E21DD1E5CE82D35BFB87BE7F64C406F63116BF9"
+    },
+    {
+      "path": "Tests/tune_bridge.c",
+      "sha256": "B5BABCC96800CA8DE7BA9A2674941D68FD5F5888E735B8DBC080BECC3CA3D27C"
+    }
+  ],
+  "production_source_digest": "04A4BEACD4FB44F1FE72EC48F82D74806FBBCF9D4F4F6A867550BCC41BC7302B",
+  "hardware_acceptance": "pending"
+}

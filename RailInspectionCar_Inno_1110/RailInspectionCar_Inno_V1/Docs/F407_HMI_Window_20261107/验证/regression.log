@@ -1,0 +1,1957 @@
+
+RUN state_window
+COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_state_window_tests.ps1
+START 2026-11-07T20:12:43.805661+08:00
+& : The term 'D:\Dev-C++杞欢--钃濇ˉ鏉瘮璧涚幆澧僜Dev-Cpp\MinGW64\bin\gcc.exe' is not recognized as the name of a cmdlet, functio
+n, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is
+ correct and try again.
+At D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_state_window_tests.ps1:7 char:7
++     & $Compiler -std=c99 -O1 -Wall -Wextra -Werror -finstrument-funct ...
++       ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (D:\Dev-C++杞欢--...W64\bin\gcc.exe:String) [], ParentContainsErrorRecord 
+   Exception
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+EXIT 1
+END 2026-11-07T20:12:44.722718+08:00
+
+ENVIRONMENT RETRY: PowerShell 7 and explicit Compiler; first failure occurred before compilation.
+
+RUN state_window
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_state_window_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:14:03.807187+08:00
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS HMI windows: 134356 isolated requests; all legal subranges, exact detail footprint, no cross-window dependency, paired<=1, const reads and alarm maintenance
+
+EXIT 0
+END 2026-11-07T20:14:07.089116+08:00
+
+RUN state
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_state_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:14:07.090604+08:00
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:10 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:12 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:13 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:15 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:17 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:19 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:21 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:23 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:25 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:27 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:28 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:14:30 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+
+EXIT 0
+END 2026-11-07T20:14:32.787653+08:00
+
+RUN snapshot_freshness
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_snapshot_freshness_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:14:32.788421+08:00
+PASS all state windows: one source copy, 100/101ms normal/wrap, pure alarms, no full cache, latest successful sequence
+PASS invalid requests bypass copy/encoder; sticky first rejection and explicit ACK; result area independent
+PASS atomic failed-copy evidence survives immediate Health publication; no retry/substitution
+PASS all windows: postcopy and postencode expiry, copied metadata retained, response withheld, no retry/new-source substitution
+PASS idle maintenance: one alarm observation per50ms, no catch-up/full builder or transaction metadata reuse
+PASS queued/partial request priority; request arriving during bounded maintenance survives for immediate next service
+PASS 200us budget preserves queued request FIFO across service calls without extra sleep
+PASS last-byte to UART TC timing, DWT wrap and recovery generation isolation
+PASS snapshot diag sizeof=136, alarm sizeof=32; no new task/buffer/allocation
+PASS all state windows: one source copy, 100/101ms normal/wrap, pure alarms, no full cache, latest successful sequence
+PASS invalid requests bypass copy/encoder; sticky first rejection and explicit ACK; result area independent
+PASS atomic failed-copy evidence survives immediate Health publication; no retry/substitution
+PASS all windows: postcopy and postencode expiry, copied metadata retained, response withheld, no retry/new-source substitution
+PASS idle maintenance: one alarm observation per50ms, no catch-up/full builder or transaction metadata reuse
+PASS queued/partial request priority; request arriving during bounded maintenance survives for immediate next service
+PASS 200us budget preserves queued request FIFO across service calls without extra sleep
+PASS last-byte to UART TC timing, DWT wrap and recovery generation isolation
+PASS snapshot diag sizeof=136, alarm sizeof=32; no new task/buffer/allocation
+
+EXIT 0
+END 2026-11-07T20:14:36.293388+08:00
+
+RUN modbus
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_modbus_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:14:36.294109+08:00
+PASS HMI Modbus: CRC, 03H, complete 10H mailbox and rejection
+
+EXIT 0
+END 2026-11-07T20:14:37.545429+08:00
+
+RUN control
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_control_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:14:37.546070+08:00
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=0 readonly=1
+PASS HMI trace: fixed ring wrap, current sequence, timing maximum, first anomaly and reset
+PASS new authorization publishes current phase, retains historical stop
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI degraded: session retained, no increase, resume jump or reversal
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=1 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=1 readonly=1
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=0 readonly=1
+PASS HMI trace: fixed ring wrap, current sequence, timing maximum, first anomaly and reset
+PASS new authorization publishes current phase, retains historical stop
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI degraded: session retained, no increase, resume jump or reversal
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=2 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=1 readonly=1
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=0 readonly=1
+PASS HMI trace: fixed ring wrap, current sequence, timing maximum, first anomaly and reset
+PASS new authorization publishes current phase, retains historical stop
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI degraded: session retained, no increase, resume jump or reversal
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=3 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=1 readonly=1
+
+EXIT 0
+END 2026-11-07T20:14:55.878793+08:00
+
+RUN link_diag
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_link_diag_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:14:55.880194+08:00
+PASS HMI link diagnostics disabled: no runtime dependencies/output
+PASS snapshot/LCD immutable pending, blocked emit retry, priority, merge and one line/s
+PASS slow transactions: 40/50ms boundaries, wrap, immutable two-page retry, priority and merge
+PASS normal 70 events/s for 60 s after 504000 prior events at uptime 2 h: 4200/4200 events, max 6000 B/s, no FIFO/UART loss
+PASS HMI link diagnostics: first cause, FIFO/UART congestion, rate budget, screen pages, memory and boot
+
+EXIT 0
+END 2026-11-07T20:15:03.354147+08:00
+
+RUN link_wire
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_link_wire_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:15:03.355326+08:00
+PASS real transaction stages/TC: 96 words, delayed task, TX busy correlation, immutable source metadata
+PASS real UART5 DMA -> Modbus diagnostic sink -> USART1 text, both pages and no motion path
+
+EXIT 0
+END 2026-11-07T20:15:08.742227+08:00
+
+RUN diag_hook
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_diag_hook_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:15:08.743390+08:00
+PASS production HMI hooks: first TTL cause, cross-source upgrade, completion, reauthorization and unchanged 499/500 boundary
+
+EXIT 0
+END 2026-11-07T20:15:13.726781+08:00
+
+RUN system_snapshot
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_system_snapshot_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:15:13.727957+08:00
+PASS unified snapshot: cadence, projections, owners, revoke, stale, recovery; size=4296 bytes
+
+EXIT 0
+END 2026-11-07T20:15:18.731176+08:00
+
+RUN hmi_remote_joint
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_remote_joint_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:15:18.732446+08:00
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=1 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=1 sync=1
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=2 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=2 sync=1
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=3 sync=0
+PASS joint repeated K5 across HMI release: no extra writes, hold or safety lock; one acquire restores zero
+PASS joint matrix axis=3 sync=1
+
+EXIT 0
+END 2026-11-07T20:15:50.089280+08:00
+
+RUN can_hmi_joint
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_can_hmi_joint_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:15:50.090684+08:00
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=0 stop=4 reason=12 emergency=0 elapsed=110 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/configured telemetry
+PASS PB10 -> direct HMI fresh grant, old session/sequence cannot restore target
+PASS PB10 interrupted by real recovery finalizes FAILED_SAFETY without unlocking
+PASS CAN/HMI/remote joint axis=1
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=0 stop=4 reason=12 emergency=0 elapsed=110 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/configured telemetry
+PASS PB10 -> direct HMI fresh grant, old session/sequence cannot restore target
+PASS PB10 interrupted by real recovery finalizes FAILED_SAFETY without unlocking
+PASS CAN/HMI/remote joint axis=2
+PASS real HMI/remote/CAN services: K5 repeat, telemetry, one-acquire recovery and mutual exclusion
+PASS CAN global quick -> real HMI stop/release/current 0x11/0x13 -> CAN regrant
+REMOTE quick phase=4 result=0 owner=0 remote=0 stop=4 reason=12 emergency=0 elapsed=120 timeout=2073
+PASS CAN global quick -> real REMOTE stop/release/configured telemetry
+PASS PB10 -> direct HMI fresh grant, old session/sequence cannot restore target
+PASS PB10 interrupted by real recovery finalizes FAILED_SAFETY without unlocking
+PASS CAN/HMI/remote joint axis=3
+
+EXIT 0
+END 2026-11-07T20:16:12.218016+08:00
+
+RUN arm3_joint
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_arm3_joint_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:16:12.219700+08:00
+test_f407_terminal_cache_cannot_be_replaced_by_late_progress (__main__.JointTests.test_f407_terminal_cache_cannot_be_replaced_by_late_progress) ... ok
+test_manifest_configuration_dual_transport_proof_and_owner (__main__.JointTests.test_manifest_configuration_dual_transport_proof_and_owner) ... ok
+test_old_wire_stop_replay_does_not_interrupt_new_jog (__main__.JointTests.test_old_wire_stop_replay_does_not_interrupt_new_jog) ... ok
+test_one_failed_side_of_dual_motion_stops_both (__main__.JointTests.test_one_failed_side_of_dual_motion_stops_both) ... ok
+test_owner_release_requires_fresh_dual_transport_proofs (__main__.JointTests.test_owner_release_requires_fresh_dual_transport_proofs) ... ok
+test_pc_owner_query_uses_same_f407_arbiter (__main__.JointTests.test_pc_owner_query_uses_same_f407_arbiter) ... ok
+test_preset_six_axis_light_and_stop_real_results (__main__.JointTests.test_preset_six_axis_light_and_stop_real_results) ... ok
+test_remote_jog_pulses_and_input_loss_stop (__main__.JointTests.test_remote_jog_pulses_and_input_loss_stop) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.411s
+
+OK
+
+EXIT 0
+END 2026-11-07T20:16:15.987709+08:00
+
+RUN lcd_recovery
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_lcd_recovery_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:16:15.988891+08:00
+PASS production LCD transport: prelaunch/DMA/tail races, one deadline, tick wrap, HT/TC/error priority, lost IRQ, quarantine/recovery, lifetime evidence
+PASS LCD 380 glyphs: identical pixel order/color bytes, <=640-byte batches, buffer guards and clipping
+PASS LCD cached production formatter: independent 16/20px rows, unchanged rows suppressed, changed span and old-text erasure
+PASS production LCD recovery: pre-scheduler safety, coherent start/finish events, no periodic flood, backoff 2/4/8/10s, page clear, failed frame/rebuild
+
+EXIT 0
+END 2026-11-07T20:16:21.091949+08:00
+
+RUN normal_timing
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_normal_timing_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:16:21.093242+08:00
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12134 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6098 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24254 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12158 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38774 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19418 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6208 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38914 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19508 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12214 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6158 theory_ms=6054.1
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12208 theory_ms=12108.2
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38864 theory_ms=38746.3
+source=1 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19558 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12254 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6248 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24374 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12248 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38894 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19568 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12254 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6248 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24374 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12248 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38894 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19568 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12414 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6408 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12408 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39014 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19608 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12414 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6408 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12408 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39014 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19608 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12314 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6358 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12308 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38994 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19758 theory_ms=19373.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12314 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6358 theory_ms=6054.1
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12308 theory_ms=12108.2
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38994 theory_ms=38746.3
+source=1 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19758 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12194 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6128 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24314 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12188 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38834 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19448 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12254 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6248 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24374 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12248 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38894 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19568 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12254 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6248 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24374 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12248 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38894 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19568 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12414 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6408 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12408 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39014 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19608 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12414 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6408 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12408 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39014 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19608 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12314 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6358 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12308 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38994 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19758 theory_ms=19373.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12314 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6358 theory_ms=6054.1
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24414 theory_ms=24216.4
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12308 theory_ms=12108.2
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38994 theory_ms=38746.3
+source=1 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19758 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24230 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=2 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24310 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38830 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24310 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38830 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24370 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38890 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19570 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24370 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38890 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19570 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24410 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39010 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19610 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24410 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39010 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19610 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6360 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24340 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38850 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19760 theory_ms=19373.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6360 theory_ms=6054.1
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24340 theory_ms=24216.4
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38850 theory_ms=38746.3
+source=2 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19760 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24310 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38830 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24310 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38830 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24370 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38890 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19570 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24370 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12250 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38890 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19570 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24410 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39010 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19610 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24410 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12410 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39010 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19610 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6360 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24340 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38850 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19760 theory_ms=19373.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6360 theory_ms=6054.1
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24340 theory_ms=24216.4
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12310 theory_ms=12108.2
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38850 theory_ms=38746.3
+source=2 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19760 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=1 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=1 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=2 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12140 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6100 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24260 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12160 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38780 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19420 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12220 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6210 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38920 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19510 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6160 theory_ms=6054.1
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24350 theory_ms=24216.4
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12210 theory_ms=12108.2
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=2 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19560 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12200 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6130 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24320 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12190 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38840 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19450 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12260 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24380 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19570 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12260 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24380 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12250 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=38900 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19570 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12420 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24420 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12410 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39020 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19610 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12420 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24420 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12410 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39020 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19610 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=12450 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6360 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=24550 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12310 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=39000 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19760 theory_ms=19373.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=12450 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6360 theory_ms=6054.1
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=24550 theory_ms=24216.4
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=12310 theory_ms=12108.2
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=39000 theory_ms=38746.3
+source=3 axes=3 sync=0 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=19760 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12380 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24620 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12370 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39440 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19750 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12380 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6250 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24620 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12370 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39440 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=30 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19750 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=12620 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6370 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=24980 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12490 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=39620 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19810 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=12620 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6370 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=24980 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12490 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=39620 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=19810 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=500 last_ack_ms=13020 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=1000 last_ack_ms=25690 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12610 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=1600 last_ack_ms=40670 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=20010 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=500 target=-500 last_ack_ms=13020 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=500 target=0 last_ack_ms=6410 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1000 target=-1000 last_ack_ms=25690 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1000 target=0 last_ack_ms=12610 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=0 from_abs=1600 target=-1600 last_ack_ms=40670 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=100 jitter=0 phase=1 from_abs=1600 target=0 last_ack_ms=20010 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=500 last_ack_ms=13750 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6810 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=1000 last_ack_ms=26900 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=13350 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=1600 last_ack_ms=42650 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=21460 theory_ms=19373.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=500 target=-500 last_ack_ms=13750 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=500 target=0 last_ack_ms=6810 theory_ms=6054.1
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1000 target=-1000 last_ack_ms=26900 theory_ms=24216.4
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1000 target=0 last_ack_ms=13350 theory_ms=12108.2
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=0 from_abs=1600 target=-1600 last_ack_ms=42650 theory_ms=38746.3
+source=3 axes=3 sync=1 per_axis_delay=60 jitter=1 phase=1 from_abs=1600 target=0 last_ack_ms=21460 theory_ms=19373.2
+
+EXIT 0
+END 2026-11-07T20:18:01.337910+08:00
+
+RUN runtime_metrics
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_runtime_metrics_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:18:01.340167+08:00
+PASS runtime counter wrap, long suspension, saturation, maximum and invalid slots
+
+EXIT 0
+END 2026-11-07T20:18:04.836995+08:00
+
+RUN production_guard
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_production_guard_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:18:04.838546+08:00
+PASS production guards: pulse/position blocked, motion gate, stale queue revoked, failure silence, legacy recovery excluded
+
+EXIT 0
+END 2026-11-07T20:18:09.013318+08:00
+
+RUN irq_dma_integration
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\check_irq_dma_integration.ps1
+START 2026-11-07T20:18:09.014081+08:00
+PASS IRQ/DMA integration: unique BSP handlers; UART5 DMA retained; LCD DMA2 Stream3 Channel3 IRQ6; nine DMA requests.
+
+EXIT 0
+END 2026-11-07T20:18:10.527194+08:00
+
+RUN usart1_dma
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\check_usart1_dma.ps1
+START 2026-11-07T20:18:10.528697+08:00
+PASS USART1 RX DMA2S2 circular / TX DMA2S7 normal, priority 6; USART2 priority 5, bounded task parser and asynchronous recovery
+
+EXIT 0
+END 2026-11-07T20:18:11.826288+08:00
+
+RUN nrf_dma
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\check_nrf_dma.ps1
+START 2026-11-07T20:18:11.827880+08:00
+PASS IRQ/DMA integration: unique BSP handlers; UART5 DMA retained; LCD DMA2 Stream3 Channel3 IRQ6; nine DMA requests.
+PASS NRF配置：SPI2 DMA1 Stream3/4 Channel0；保留USART DMA；无阻塞等待或运动写调用。
+
+EXIT 0
+END 2026-11-07T20:18:13.015407+08:00
+
+ENCODING RESOLUTION VERIFICATION: new state_window runner has UTF-8 BOM; original Windows PowerShell defaults, no explicit Compiler.
+COMMAND powershell.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_state_window_tests.ps1
+START 2026-11-07T20:18:48.121159+08:00
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS HMI windows: 134356 isolated requests; all legal subranges, exact detail footprint, no cross-window dependency, paired<=1, const reads and alarm maintenance
+
+EXIT 0
+END 2026-11-07T20:18:50.576838+08:00
+
+FINAL INCLUDE CHANGE RECHECK state
+SOURCE SHA256 APP/HMI/app_hmi.c 3b7310fdee8110ffcac4e7674342fc169ffcdaeab91015b0a677f4cbbae1a577
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_state_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:19:22.587151+08:00
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS shared boot identity: once per boot, partial write skipped, full/corrupt fail closed; CAN independent
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:32 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:36 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:40 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:44 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:47 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:51 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=1 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:19:56 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:20:00 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:20:04 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:20:07 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:20:09 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+PASS DMA protocol: eight regions, CRC, lengths, 57-byte mailbox, 133-byte response, no ISR motion
+PASS DMA boundaries: split IDLE, no false timer boundary, HT/TC duplicate, wrap, queued frames, task binding
+PASS early quiet ISR evidence is counted without changing framing behavior
+PASS diagnostic address validates pages and bypasses motion even in read-only builds
+PASS DMA recovery: startup/config, asynchronous Abort, timeout fallback, stale callback, epochs, RX/TX isolation, overflow, idle
+PASS production cadence: 500 phase pairs x normal/wrap, zero rejected reads; legacy rejected=0; stopped producer rejected
+hmi control owner=0 generation=0 session=0 state=0 flags=0000 age=0 seq=0 target=0 output=0,0 sync=0 correction=0 error=0
+hmi stop event=0 owner=0 reason=0 phase=0 decel=0 elapsed=0 timeout=0 zero=0 enabled=0 result=0 error=0
+hmi transport=uart5-dma-r1 build=Nov  7 2026_20:20:12 rx=DMA_CIRCULAR tx=DMA_NORMAL
+hmi readonly=0 boot=1 identity_valid=1 identity_result=0 last_read=600
+hmi requests=600 responses=600 exceptions=0 crc=0 frame=0 partial=0 overflow=0 tx_busy=0 tx_errors=0
+hmi uptime_ms=117052 request_age_ms=190 service_max_ms=190 delay_max_cycles=310800 clock_hz=168000000
+hmi rx_bytes=4800 callbacks=618 dequeued=4800 queue=0 ignored=0 armed=1 arm_fail=0 arm_result=0
+hmi rx_errors=0 last_error=00000000 ore=0 fe=0 ne=0 pe=0
+hmi tx_frames=600 callbacks=600 active=0 timeout=0 max_ms=0
+hmi rx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi tx_recovery=0 reason=0 epoch=0 attempt=0 ok=0 fail=0 abort=0
+hmi gState=00000020 RxState=00000022 ErrorCode=00000000 rx_count=512 tx_count=0
+hmi irq=600 SR_irq_history=00000000 SR_error_history=00000000 CR1=00000010 CR3=00000041
+hmi region=0 requests=0 responses=0
+hmi region=1 requests=0 responses=0
+hmi region=2 requests=0 responses=0
+hmi region=3 requests=0 responses=0
+hmi region=4 requests=0 responses=0
+hmi region=5 requests=300 responses=300
+hmi region=6 requests=300 responses=300
+hmi dma starts=1 result=0 rx_irq=18 tx_irq=600 idle=600 ht=9 tc=9 raw=4800 boundaries=600
+hmi dma rx_ndtr=320 tx_ndtr=53 rx_cr=00000101 tx_cr=00000000 rx_error=00000000 tx_error=00000000
+hmi dma queue_max=8 events=0 event_max=2 event_overflow=0 dropped=0 tx_dropped=0 tx_dma_done=600
+hmi dma rx_abort_done=0 tx_abort_done=0 rx_abort_timeout=0 tx_abort_timeout=0 rx_last_ms=116860 tx_last_ms=116862 parse_max_cycles=0 capture_max_cycles=0
+PASS DMA integration: no servo, 168MHz 120s, Tick/CYCCNT wrap, immutable protocol
+
+EXIT 0
+END 2026-11-07T20:20:14.507419+08:00
+
+FINAL INCLUDE CHANGE RECHECK snapshot_freshness
+SOURCE SHA256 APP/HMI/app_hmi.c 3b7310fdee8110ffcac4e7674342fc169ffcdaeab91015b0a677f4cbbae1a577
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_snapshot_freshness_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:20:14.509094+08:00
+PASS all state windows: one source copy, 100/101ms normal/wrap, pure alarms, no full cache, latest successful sequence
+PASS invalid requests bypass copy/encoder; sticky first rejection and explicit ACK; result area independent
+PASS atomic failed-copy evidence survives immediate Health publication; no retry/substitution
+PASS all windows: postcopy and postencode expiry, copied metadata retained, response withheld, no retry/new-source substitution
+PASS idle maintenance: one alarm observation per50ms, no catch-up/full builder or transaction metadata reuse
+PASS queued/partial request priority; request arriving during bounded maintenance survives for immediate next service
+PASS 200us budget preserves queued request FIFO across service calls without extra sleep
+PASS last-byte to UART TC timing, DWT wrap and recovery generation isolation
+PASS snapshot diag sizeof=136, alarm sizeof=32; no new task/buffer/allocation
+PASS all state windows: one source copy, 100/101ms normal/wrap, pure alarms, no full cache, latest successful sequence
+PASS invalid requests bypass copy/encoder; sticky first rejection and explicit ACK; result area independent
+PASS atomic failed-copy evidence survives immediate Health publication; no retry/substitution
+PASS all windows: postcopy and postencode expiry, copied metadata retained, response withheld, no retry/new-source substitution
+PASS idle maintenance: one alarm observation per50ms, no catch-up/full builder or transaction metadata reuse
+PASS queued/partial request priority; request arriving during bounded maintenance survives for immediate next service
+PASS 200us budget preserves queued request FIFO across service calls without extra sleep
+PASS last-byte to UART TC timing, DWT wrap and recovery generation isolation
+PASS snapshot diag sizeof=136, alarm sizeof=32; no new task/buffer/allocation
+
+EXIT 0
+END 2026-11-07T20:20:19.021829+08:00
+
+FINAL INCLUDE CHANGE RECHECK link_wire
+SOURCE SHA256 APP/HMI/app_hmi.c 3b7310fdee8110ffcac4e7674342fc169ffcdaeab91015b0a677f4cbbae1a577
+COMMAND C:\Users\15056\.cache\codex-runtimes\codex-primary-runtime\dependencies\native\powershell\pwsh.exe -NoProfile -ExecutionPolicy Bypass -File D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\5.工程代码\RailInspectionCar_Inno_V1\Tests\run_hmi_link_wire_tests.ps1 -Compiler D:\Dev-C++软件--蓝桥杯比赛环境\Dev-Cpp\MinGW64\bin\gcc.exe
+START 2026-11-07T20:20:19.023118+08:00
+PASS real transaction stages/TC: 96 words, delayed task, TX busy correlation, immutable source metadata
+PASS real UART5 DMA -> Modbus diagnostic sink -> USART1 text, both pages and no motion path
+
+EXIT 0
+END 2026-11-07T20:20:21.560646+08:00
+
+FINAL PRODUCTION DIGEST
+BASE GIT HEAD 3eaa1fa367a8e1b0b55da5732ef29589fbe12dd5
+3b7310fdee8110ffcac4e7674342fc169ffcdaeab91015b0a677f4cbbae1a577  APP/HMI/app_hmi.c
+13cecff802676a1d01694574328cbb44d38150b6f1be6c6e829686600ec7713e  APP/HMI/app_hmi.h
+b53eefa919ede22051195384c18e74812720bca74d510078d9bac0df0c91a524  APP/HMI/app_hmi_link_diag.c
+80d822b8408038e6a99f4e6917d63d2d0be326d9473a626f50d6e8d1e968a82d  APP/HMI/app_hmi_link_diag.h
+4d14c50913d8559a1bd1c49f65e4bacb99007166c3081c7a08670de7a0d173ec  APP/HMI/app_hmi_snapshot.c
+6da2ae5d8d8614ee955bfa2eb433695b3a8e32fb660c0b1f98d957371c5aacad  APP/HMI/app_hmi_snapshot.h
+e272d74cb999f1ca321efee55c077b6de6c0e89f00edba6fda2d9b9732fb41fd  APP/HMI/app_hmi_state.c
+315febf8c5b53400c75b0e3644213bc0832ab003094dc6c031c55ded0cf26c77  APP/HMI/app_hmi_state.h
+8ab47a713ce6e58d2d6daae5ffbbe6c1b4cfdc1563d8c5b0faffcd55e7c06611  APP/app_rtos_create.c
+8c2f2e7a131b8265a57a94d7bd0420923ae6c342d0c991db54eb49e2a8b284f9  APP/app_rtos_task.c
+01b965e15d44e9ce85065140638bd7225a00fb6e005b4deb0b68084a7b9c71bf  BSP/HMI_UART/bsp_hmi_uart.c
+82836c2d8d826155fc3ba1a4bd793d7826911568fc1fd63ebffdc6b1db661afe  BSP/HMI_UART/bsp_hmi_uart.h
+AGGREGATE SHA256 6cd32ee75ac46863479d31173da460f97782b68701da265659ad83c08bef2ffc

@@ -1,0 +1,630 @@
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+PASS communication reset/regrant: old inboxes rejected, K5 reset only, disabled preparation, CAN/HMI/REMOTE explicit regrant and zero targets
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+IDLE recovery=0 owner=5 phase=0 hmi_error=0 emergency=0
+IDLE recovery=1 owner=1 phase=4 hmi_error=0 emergency=0
+IDLE recovery=2 owner=2 phase=4 hmi_error=0 emergency=0
+IDLE-REJECT recovery=0 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=0 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=0 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=1 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=2 scenario=2 owner=0 lock=0
+PASS K5 recovery axis=1
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+PASS communication reset/regrant: old inboxes rejected, K5 reset only, disabled preparation, CAN/HMI/REMOTE explicit regrant and zero targets
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=24 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=23 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=15 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+IDLE recovery=0 owner=5 phase=0 hmi_error=0 emergency=0
+IDLE recovery=1 owner=1 phase=4 hmi_error=0 emergency=0
+IDLE recovery=2 owner=2 phase=4 hmi_error=0 emergency=0
+IDLE-REJECT recovery=0 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=0 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=0 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=1 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=2 scenario=2 owner=0 lock=0
+PASS K5 recovery axis=2
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token
+PASS wrong/late event, wrong axes, invalid hold, pending new K5 cannot consume old completion
+PASS genuine arbiter safety takeover cannot be cleared by CAN K5 completion
+PASS CAN owner -> real remote K5 -> stop/release -> regrant
+PASS communication reset/regrant: old inboxes rejected, K5 reset only, disabled preparation, CAN/HMI/REMOTE explicit regrant and zero targets
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=22 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=13 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=21 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=22 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=13 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=21 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=22 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=13 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=21 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=0 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=1 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=0 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=4 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=22 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=13 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=1 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=0 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+HMI-RECOVER session=7 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=1 result=3 lock=0 phase=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=21 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=2 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+HMI-RECOVER session=14 owner=1 lock=0 error=0 emergency=0
+MATRIX owner=2 source=3 result=3 lock=0 phase=4 emergency=0
+IDLE recovery=0 owner=5 phase=0 hmi_error=0 emergency=0
+IDLE recovery=1 owner=1 phase=4 hmi_error=0 emergency=0
+IDLE recovery=2 owner=2 phase=4 hmi_error=0 emergency=0
+IDLE-REJECT recovery=0 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=0 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=0 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=1 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=1 scenario=2 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=0 owner=0 lock=0
+IDLE-REJECT recovery=2 scenario=1 owner=0 lock=4
+IDLE-REJECT recovery=2 scenario=2 owner=0 lock=0
+PASS K5 recovery axis=3
+PASS 100 cycles: real debounced K1 -> grant -> first zero -> +/-100rpm -> real remote K5/repeat -> CAN executor -> encoded CRC records -> F103 release -> new token

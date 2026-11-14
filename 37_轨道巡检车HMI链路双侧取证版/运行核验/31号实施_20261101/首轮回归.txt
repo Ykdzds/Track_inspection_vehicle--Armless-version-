@@ -1,0 +1,1830 @@
+✔ 被动工具支持分片133字节回复和启动字节，不关联等长回复地址 (3.4837ms)
+✔ 坏CRC及截断不计有效响应，后续完整帧可恢复 (2.5179ms)
+✔ 全部只读区覆盖与10分钟窗口只描述采集，不自动实屏放行 (1.991ms)
+✔ 目标负数范围、57字节邮箱和采集间隔正确识别 (1.3342ms)
+✔ 同记录多帧明确标记采集时间精度不足，异常回复单独列出 (0.58ms)
+✔ 拒绝缺时间、非法HEX及倒退时钟，不从无时间抓包推导实时预算 (0.5512ms)
+✔ 最新实物原始帧可被扫描，但人工合成时间轴不作为实物时序证据 (8.1374ms)
+✔ 真实重开记录确认主站角色，并绑定当前PIX哈希 (6.4613ms)
+✔ 当前可见中文提示全部在真实字体编辑器字模清单中 (9.8402ms)
+✔ 本轮核心事件、解析副本和全页面生命周期证据完整 (5.8361ms)
+✔ 真实八区读回保持单次调度前提，不依赖可见列序号 (0.7492ms)
+✔ 本次编译产物与交付哈希一致，不冒充实物通过 (5.7453ms)
+✔ 真实PIX操作控件与页面事件读回核验完整 (5.4683ms)
+✔ 17号使用扩容后的授权刷新保护位，13号通信基线逐项未变 (87.9459ms)
+✔ 19号回退基线逐文件哈希未变且20号未扩展线协议 (103.6424ms)
+✔ 20号实物回退基线304文件逐项未变 (99.8298ms)
+✔ 固定读帧与CRC向量 (2.0678ms)
+✔ 完整24字申请帧及特殊字序 (0.5371ms)
+✔ RPM边界及保留参数 (0.7943ms)
+✔ 重复目标不续期且旧序号拒绝 (0.8231ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (282.7089ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (11.0753ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (399.1075ms)
+✔ 主控重启清会话与旧目标，不自动授权 (211.2748ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (209.9428ms)
+✔ 只读固件不能授权 (131.2162ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3802ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2647ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2181ms)
+✔ 元数据持续丢失也轮询全部旧区，失败重试不超过每500ms一次 (281.6407ms)
+✔ 50ms应答和全局显示联合负载下目标与状态均不超过200ms (2169.0148ms)
+✔ R2已确认但基础区未读不再误报主控没有回复 (43.8134ms)
+✔ 独立急停不会被随后返回意图覆盖 (94.4362ms)
+✔ 只读诊断模式只读B5或B5加B7，不授权 (137.1518ms)
+✔ 回调拒因记录含实际站号与在途上下文，失败不覆盖缓存 (40.8273ms)
+✔ 授权交叉确认后的第一条目标必须为零 (52.9596ms)
+✔ Default同步读失败立即统计，不等待独立回调看门狗 (21.5072ms)
+✔ 离页与急停同拍仍优先急停，不被自动释放降级 (87.1637ms)
+✔ 运行中进入只读诊断先撤权，不能保留后台运动 (77.5557ms)
+✔ 全局P8显示段与独立显示源保持一致 (2.7258ms)
+✔ 正常授权全局显示负载下辅助区不超过原2秒失效门槛 (2193.0206ms)
+✔ 固定读帧与CRC向量 (2.5597ms)
+✔ 完整24字申请帧及特殊字序 (0.708ms)
+✔ RPM边界及保留参数 (0.9787ms)
+✔ 重复目标不续期且旧序号拒绝 (0.6282ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (286.5201ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.7787ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (393.2482ms)
+✔ 主控重启清会话与旧目标，不自动授权 (208.6191ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (207.6118ms)
+✔ 只读固件不能授权 (129.0905ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4078ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2605ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1827ms)
+✔ 真实抓包97帧CRC、53/133长度、身份与快照推进 (1.6202ms)
+✔ 参考收集器分片、循环边界等价切片及粘连不损坏真实帧 (14.1794ms)
+✔ 参考收集器错CRC和短帧作废，排空后不更新残帧 (0.7185ms)
+✔ 真实载荷经严格回调脚本进入元数据及64字状态缓存 (67.8635ms)
+✔ 诊断页交替显示明确HMI本地与主控统计，不混淆CRC来源 (101.962ms)
+✔ 固定读帧与CRC向量 (2.3439ms)
+✔ 完整24字申请帧及特殊字序 (0.7742ms)
+✔ RPM边界及保留参数 (0.973ms)
+✔ 重复目标不续期且旧序号拒绝 (1.2254ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (286.4951ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (7.4399ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (385.0456ms)
+✔ 主控重启清会话与旧目标，不自动授权 (219.2275ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (203.1611ms)
+✔ 只读固件不能授权 (126.2279ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3641ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3723ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2137ms)
+✔ 授权ACK丢失先查询业务，不并发新申请 (61.7398ms)
+✔ 29号申请未决返回不撤销申请，确认后首目标为零 (100.6108ms)
+✖ 停车中急停升级，停止缓存滑动 (121.1361ms)
+✔ 失联撤销本地授权，重连不恢复旧目标 (160.9719ms)
+✔ 他源占用拒绝授权，但全局急停不获取运动权 (107.5741ms)
+✔ 屏重启先读取高位序号，申请不回退 (60.6924ms)
+✔ 同boot跨会话继续递增 (127.5594ms)
+✔ 29号离开页面后台持续维护有效运动会话 (145.6258ms)
+✔ 心跳不能替代新目标 (0.3612ms)
+✔ 序号末端先释放且不回绕 (107.1043ms)
+✔ 错误中断不刷新任何状态年龄 (43.8577ms)
+✔ 缓存快照冻结触发撤权而不是永远在线 (80.7449ms)
+✔ 持久停车成功可确认释放，不要求观察ownerNONE (97.4155ms)
+✔ 空闲安全无动作急停成功且可再次授权 (111.7677ms)
+✔ 空闲急停成功回执不能替代请求后推进的状态快照 (95.4919ms)
+✔ 固定读帧与CRC向量 (1.8372ms)
+✔ 完整24字申请帧及特殊字序 (0.7419ms)
+✔ RPM边界及保留参数 (0.9018ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5887ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (245.5714ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.68ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (378.6024ms)
+✔ 主控重启清会话与旧目标，不自动授权 (211.6183ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (197.8115ms)
+✔ 只读固件不能授权 (111.9559ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3468ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2163ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1715ms)
+✔ 本次现场210请求和68完整回复CRC正确，但元数据和辅助区完全缺失 (1.0542ms)
+✔ 真实B0回复经匹配回调提交全部64字及区域有效标志 (6.1129ms)
+✔ B0与B7等长迟到回复不能污染对方缓存或刷新有效年龄 (13.7997ms)
+✔ 错误站号地址数量仍拒收，不以修复通信为由放松关联检查 (24.7359ms)
+✔ 调度采用非负空闲哨兵和固定区域时间戳，空闲时所有只读区有界推进 (426.8808ms)
+✔ 固定读帧与CRC向量 (1.756ms)
+✔ 完整24字申请帧及特殊字序 (0.7148ms)
+✔ RPM边界及保留参数 (0.8269ms)
+✔ 重复目标不续期且旧序号拒绝 (0.4809ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (236.024ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (7.2203ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (400.652ms)
+✔ 主控重启清会话与旧目标，不自动授权 (210.8057ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (198.6042ms)
+✔ 只读固件不能授权 (126.8046ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.522ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2893ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.234ms)
+✔ 控制期间状态读取最大150ms，目标刷新最大200ms (277.3712ms)
+✔ 元数据丢失恢复含100ms排空且0460仍有界轮询，不能开放控制 (127.8976ms)
+✔ 元数据丢失恢复后重新确认身份，不自动申请授权 (130.5977ms)
+✔ 回调bcaddr失配不释放事务、不刷新状态缓存 (43.8654ms)
+✔ 回调bdindex失配不释放事务、不刷新状态缓存 (43.9957ms)
+✔ 回调bdaddr失配不释放事务、不刷新状态缓存 (47.2383ms)
+✔ 回调bdcount失配不释放事务、不刷新状态缓存 (45.0443ms)
+✔ 控制状态读取超时后清目标，恢复响应不自动重新授权 (177.3485ms)
+✔ 只读主页与控制页往返不停止全局状态查询 (240.8538ms)
+✔ 固定读帧与CRC向量 (2.1013ms)
+✔ 完整24字申请帧及特殊字序 (0.5698ms)
+✔ RPM边界及保留参数 (0.8124ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5517ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (247.1353ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.6451ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (380.632ms)
+✔ 主控重启清会话与旧目标，不自动授权 (230.9144ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (204.3249ms)
+✔ 只读固件不能授权 (128.5154ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3424ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3491ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1506ms)
+✔ Default不进入Buffer后台派发，不产生R1/R3在途竞争 (406.2731ms)
+✔ 同步超时立即结束事务，不遗留后台读取次数 (17.8545ms)
+✔ 同步单事务模型保持目标状态及全部旧区刷新预算 (1141.8022ms)
+✔ Default服务源码不再触发Buffer后台读或异步写 (68.3921ms)
+✔ 滑块未授权也可见，但拖动不能写入运动目标 (101.5463ms)
+✔ 已否决的1ms配置不进入交付，Buffer保持停用默认值 (0.5959ms)
+✔ 同步读取站号错误不提交任何缓存 (13.0707ms)
+✔ 同步读取功能码错误不提交任何缓存 (12.2367ms)
+✔ 同步读取短载荷错误不提交任何缓存 (17.1378ms)
+✔ 同步读取字节数错误不提交任何缓存 (10.6301ms)
+✔ 错误10H回执地址或数量不能标记ACK成功，结果查询仍能恢复 (119.2608ms)
+✔ Default中断只能计数，不读取旧Buffer字段或改变会话 (80.1277ms)
+✔ 最新178请求和64完整响应均CRC正确，仍缺元数据和辅助请求 (1.9577ms)
+✔ 真实新B0与B7载荷按Default前缀偏移进入缓存而不串区 (55.6178ms)
+✔ 同步服务生成源完整一致，避免模板与实际绑定漂移 (7.6451ms)
+✔ P2可拍摄同步返回值长度站号和功能码，便于区分超时与字段拒收 (89.4081ms)
+✔ 固定读帧与CRC向量 (3.3535ms)
+✔ 完整24字申请帧及特殊字序 (0.6879ms)
+✔ RPM边界及保留参数 (1.1057ms)
+✔ 重复目标不续期且旧序号拒绝 (0.7141ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (239.8803ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.0183ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (355.4094ms)
+✔ 主控重启清会话与旧目标，不自动授权 (208.9628ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (215.2711ms)
+✔ 只读固件不能授权 (130.4949ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4095ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2589ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1742ms)
+✔ 固定读帧与CRC向量 (2.152ms)
+✔ 完整24字申请帧及特殊字序 (0.588ms)
+✔ RPM边界及保留参数 (0.8429ms)
+✔ 重复目标不续期且旧序号拒绝 (0.882ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (236.726ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8343ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (367.2294ms)
+✔ 主控重启清会话与旧目标，不自动授权 (222.2647ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (194.3036ms)
+✔ 只读固件不能授权 (118.111ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3642ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.256ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.221ms)
+✔ 双态首次按下授权、连续刷新不自行撤销、再次弹起取消；程序事件=false (193.3499ms)
+✔ 双态首次按下授权、连续刷新不自行撤销、再次弹起取消；程序事件=true (180.81ms)
+✔ 新授权确认后不先等旧页，第一目标必须0且确认后100ms内提交 (63.3451ms)
+✔ 授权准备延迟时结果与状态交替，不被辅助区抢占或重复申请 (87.3588ms)
+✔ 准备未决时再次点击走独立急停，不能迟到自动授权 (103.3747ms)
+✔ 停车成功后重复急停保持幂等，一次授权恢复并可返回主页 (399.6524ms)
+✔ 控件刷新保护位不处理程序按下弹起，真实滑动只在授权后有效 (88.8118ms)
+✔ 按F4实际状态字典，租期与年龄不冒充最后序号 (68.3375ms)
+✔ 旧显示脚本的0到1反复切换可触发取消，新显示不重复切换 (87.71ms)
+✔ 固定读帧与CRC向量 (1.9784ms)
+✔ 完整24字申请帧及特殊字序 (0.4917ms)
+✔ RPM边界及保留参数 (0.8078ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5113ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (215.4255ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.0146ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (382.9615ms)
+✔ 主控重启清会话与旧目标，不自动授权 (193.2194ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (198.0106ms)
+✔ 只读固件不能授权 (112.011ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3021ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2414ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.5486ms)
+✔ K5跨源停车并一次授权恢复 axis=1 rpm=100 (326.7892ms)
+✔ K5跨源停车并一次授权恢复 axis=1 rpm=-100 (348.5503ms)
+✔ K5跨源停车并一次授权恢复 axis=2 rpm=100 (319.5792ms)
+✔ K5跨源停车并一次授权恢复 axis=2 rpm=-100 (308.5846ms)
+✔ K5跨源停车并一次授权恢复 axis=3 rpm=100 (360.9294ms)
+✔ K5跨源停车并一次授权恢复 axis=3 rpm=-100 (333.7432ms)
+✔ 减速中重复K5与屏端急停和返回 1次 (270.8304ms)
+✔ 减速中重复K5与屏端急停和返回 5次 (320.2574ms)
+✔ 减速中重复K5与屏端急停和返回 20次 (320.8043ms)
+✔ 首次收到的K5事件已完成仍正确收尾 (130.1797ms)
+✔ 授权时的历史成功不能当成本次停车 (80.5046ms)
+✔ 不得用异常事件解除锁存 错误owner (336.5481ms)
+✔ 不得用异常事件解除锁存 错误boot (276.5584ms)
+✔ 不得用异常事件解除锁存 反馈无效 (362.4559ms)
+✔ 不得用异常事件解除锁存 使能关闭 (322.4124ms)
+✔ 不得用异常事件解除锁存 实际非零 (311.8496ms)
+✔ 不得用异常事件解除锁存 安全锁 (294.8573ms)
+✔ 不得用异常事件解除锁存 失败事件 (301.9726ms)
+✔ 快照冻结不能确认新出现的完成事件 (288.9714ms)
+✔ 本次成功后遥控占用允许只读返回且不能抢占 (368.4771ms)
+✔ 关联事件被覆盖后不推断成功，用户急停采用session0重新确认 (163.9559ms)
+✔ 19号短时显示缓存不参与跨源停车完成判定 (151.2719ms)
+✔ 屏端先释放后K5覆盖请求序号仍按同事件完成 (314.5159ms)
+✔ 屏端先急停后K5到达不依赖本地请求序号 (289.2578ms)
+✔ 固定读帧与CRC向量 (2.1754ms)
+✔ 完整24字申请帧及特殊字序 (1.344ms)
+✔ RPM边界及保留参数 (0.8648ms)
+✔ 重复目标不续期且旧序号拒绝 (0.514ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (249.6843ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8715ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (377.5999ms)
+✔ 主控重启清会话与旧目标，不自动授权 (203.854ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (227.6737ms)
+✔ 只读固件不能授权 (140.2968ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.5833ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2692ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1466ms)
+✔ 21号同事件重复K5跨释放边界 1次 (350.8895ms)
+✔ 21号同事件重复K5跨释放边界 5次 (335.3079ms)
+✔ 21号同事件重复K5跨释放边界 20次 (393.9975ms)
+✔ 21号完成后迟到旧拒绝不能重新锁存 (328.8773ms)
+✔ 21号完成后同boot真实安全锁不能沿用历史成功 (309.8998ms)
+✔ 21号未知后安全急停仍有独立投递且不直接恢复授权 (352.6003ms)
+✔ 21号新boot清除已完成跨源标记 (460.2238ms)
+✔ 固定读帧与CRC向量 (1.7185ms)
+✔ 完整24字申请帧及特殊字序 (0.578ms)
+✔ RPM边界及保留参数 (0.9734ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5665ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (257.0892ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (8.5223ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (367.3092ms)
+✔ 主控重启清会话与旧目标，不自动授权 (209.0233ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (194.138ms)
+✔ 只读固件不能授权 (125.088ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.55ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3945ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.8447ms)
+✔ 22号无本地令牌全局停车 owner=1 历史成功=false (461.3292ms)
+✔ 22号无本地令牌全局停车 owner=1 历史成功=true (725.3978ms)
+✔ 22号无本地令牌全局停车 owner=2 历史成功=false (512.3762ms)
+✔ 22号无本地令牌全局停车 owner=2 历史成功=true (701.8196ms)
+✔ 22号无本地令牌全局停车 owner=3 历史成功=false (431.5133ms)
+✔ 22号无本地令牌全局停车 owner=3 历史成功=true (690.3612ms)
+✔ 22号空闲停车反馈不安全不能伪造成功 enable (177.3067ms)
+✔ 22号空闲停车反馈不安全不能伪造成功 lock (199.7247ms)
+✔ 22号空闲停车反馈不安全不能伪造成功 speed (199.8263ms)
+✔ 固定读帧与CRC向量 (1.5585ms)
+✔ 完整24字申请帧及特殊字序 (1.0308ms)
+✔ RPM边界及保留参数 (1.1083ms)
+✔ 重复目标不续期且旧序号拒绝 (0.8514ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (251.932ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8976ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (355.5894ms)
+✔ 主控重启清会话与旧目标，不自动授权 (195.7288ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (187.4122ms)
+✔ 只读固件不能授权 (126.3093ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.482ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3552ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.2693ms)
+✖ 23号三源只读监测 owner=1 (215.0573ms)
+✖ 23号三源只读监测 owner=2 (209.2626ms)
+✖ 23号三源只读监测 owner=3 (197.921ms)
+✖ 23号显示脚本字模覆盖，不借历史证据声明新字存在 (16.0894ms)
+✔ 23号本轮PIX/BIN及事件读回证据独立且匹配 (11.0622ms)
+✔ 固定读帧与CRC向量 (1.539ms)
+✔ 完整24字申请帧及特殊字序 (0.4624ms)
+✔ RPM边界及保留参数 (0.7566ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5011ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (243.8294ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.1773ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (355.8258ms)
+✔ 主控重启清会话与旧目标，不自动授权 (266.6664ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (199.9854ms)
+✔ 只读固件不能授权 (133.5091ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3424ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2785ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1796ms)
+✔ 25 single status exception recovers before expiry without release (135.0201ms)
+✔ 25 single status timeout recovers before expiry without release (132.813ms)
+✔ 25 continuous exception revokes at unchanged 300ms gate and retains evidence (87.9594ms)
+✔ 25 continuous timeout revokes at unchanged 300ms gate and retains evidence (83.9875ms)
+✔ 25 continuous frozen revokes at unchanged 300ms gate and retains evidence (119.6531ms)
+✔ 25 ten minute simulated idle authorization keeps first target zero and supports new movement (10132.071ms)
+✔ 25 metadata expiry and master revoke are independently diagnosed (165.3473ms)
+✔ 固定读帧与CRC向量 (1.8108ms)
+✔ 完整24字申请帧及特殊字序 (0.5156ms)
+✔ RPM边界及保留参数 (0.7814ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5502ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (247.0691ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (7.1244ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (351.6675ms)
+✔ 主控重启清会话与旧目标，不自动授权 (213.6793ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (186.2812ms)
+✔ 只读固件不能授权 (142.6705ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.4536ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2709ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1697ms)
+✔ 26 实际按钮与事务服务生成恢复帧，幂等，恢复完成保持未授权 (176.8375ms)
+✔ 26 等待健康、资格不足、冻结快照、版本及零generation均拒绝且不排队 (519.5493ms)
+✔ 26 排队后generation变化或状态过期，发送前再次拒绝 (189.6551ms)
+✔ 26 恢复期间不发送授权速度释放，身份和结果轮询持续 (186.1287ms)
+✔ 26 普通加速不显示换向，reverse边沿后加速并退出 (254.4223ms)
+✔ 26 停车成功提示覆盖左轴右轴双轴，陈旧速度不能显示零 (601.6657ms)
+✔ 26 主控恢复失败显示真实恢复原因，不能用恢复动作授权 (99.3082ms)
+✔ 26 主控恢复初始化清除结果槽，仍按本次generation的新鲜恢复状态完成 (117.6579ms)
+✔ 26 已失败恢复拒绝新的普通授权 (115.4903ms)
+✔ 26 实际PIX中文资源读回覆盖所有当前提示 (3.8264ms)
+✔ 固定读帧与CRC向量 (1.7835ms)
+✔ 完整24字申请帧及特殊字序 (0.444ms)
+✔ RPM边界及保留参数 (0.6698ms)
+✔ 重复目标不续期且旧序号拒绝 (0.4676ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (243.1201ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8788ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (379.5925ms)
+✔ 主控重启清会话与旧目标，不自动授权 (244.2263ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (217.0902ms)
+✔ 只读固件不能授权 (125.3622ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.285ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3006ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1614ms)
+✔ 27 CAN PB10 0x080, transient reply loss, reauthorize axis=1 rpm=-449 (355.604ms)
+✔ 27 CAN PB10 0x080, transient reply loss, reauthorize axis=1 rpm=449 (372.7268ms)
+✔ 27 CAN PB10 0x080, transient reply loss, reauthorize axis=2 rpm=-449 (323.6857ms)
+✔ 27 CAN PB10 0x080, transient reply loss, reauthorize axis=2 rpm=449 (317.4972ms)
+✔ 27 CAN PB10 0x080, transient reply loss, reauthorize axis=3 rpm=-449 (377.3649ms)
+✔ 27 CAN PB10 0x080, transient reply loss, reauthorize axis=3 rpm=449 (331.4479ms)
+✔ 27 first communication cause survives subsequent errors and stale speeds remain unknown (113.4775ms)
+✔ 固定读帧与CRC向量 (1.4087ms)
+✔ 完整24字申请帧及特殊字序 (0.4915ms)
+✔ RPM边界及保留参数 (0.7236ms)
+✔ 重复目标不续期且旧序号拒绝 (0.4621ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (248.2533ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.0893ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (399.4153ms)
+✔ 主控重启清会话与旧目标，不自动授权 (210.2586ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (201.5603ms)
+✔ 只读固件不能授权 (144.6897ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3802ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2684ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1654ms)
+✔ 28 PB10 missed association source=1 axis=1 (147.3012ms)
+✔ 28 PB10 missed association source=2 axis=1 (166.8874ms)
+✔ 28 PB10 missed association source=4 axis=1 (175.7333ms)
+✔ 28 PB10 missed association source=1 axis=2 (137.1525ms)
+✔ 28 PB10 missed association source=2 axis=2 (144.7827ms)
+✔ 28 PB10 missed association source=4 axis=2 (144.1876ms)
+✔ 28 PB10 missed association source=1 axis=3 (169.019ms)
+✔ 28 PB10 missed association source=2 axis=3 (170.4639ms)
+✔ 28 PB10 missed association source=4 axis=3 (164.774ms)
+✔ 28 PB10 release denies lock (136.9436ms)
+✔ 28 PB10 release denies recovery (146.7807ms)
+✔ 28 PB10 release denies error (146.1688ms)
+✔ 28 PB10 release denies speed (155.0815ms)
+✔ 28 PB10 release denies stale (148.5707ms)
+✔ 28 PB10 release denies disabled (140.1334ms)
+✔ 28 PB10 release denies active (150.8047ms)
+✔ 28 PB10 release denies failed (145.8667ms)
+✔ 28 PB10 release denies frozen (124.6518ms)
+✔ 28 PB10 release denies boot (131.9533ms)
+✔ 29 actual reopened PIX event scripts match current sources (16.6383ms)
+✔ 29 reopened properties retain timer, global slider and navigation geometry (3.5231ms)
+✔ 29 compiled binary and project match actual VP compile evidence (2.3858ms)
+✔ 29 new visible text uses existing Chinese glyphs (0.7515ms)
+{"scenario":"29 navigation simulated","rpm":-100,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":-100,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":0,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":1,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":2,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":3,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":4,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":5,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":6,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+{"scenario":"29 navigation simulated","rpm":100,"page":7,"durationMs":120000,"targetGapMs":150,"statusGapMs":150}
+✔ 固定读帧与CRC向量 (2.0779ms)
+✔ 完整24字申请帧及特殊字序 (0.5926ms)
+✔ RPM边界及保留参数 (0.7863ms)
+✔ 重复目标不续期且旧序号拒绝 (0.5746ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (246.5325ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (8.706ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (391.8888ms)
+✔ 主控重启清会话与旧目标，不自动授权 (221.3335ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (196.205ms)
+✔ 只读固件不能授权 (109.5013ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.3179ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.2667ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1524ms)
+✔ 29 cross-page 120s/page target=-100 (12410.3323ms)
+✔ 29 cross-page 120s/page target=0 (11244.3536ms)
+✔ 29 cross-page 120s/page target=100 (11247.9111ms)
+✔ 29 repeated navigation and view reload axis=1 (178.9677ms)
+✔ 29 repeated navigation and view reload axis=2 (204.7681ms)
+✔ 29 repeated navigation and view reload axis=3 (189.7216ms)
+✔ 29 authorization pending navigates immediately and completes at zero (62.1269ms)
+✔ 29 cancel survives navigation and does not force delayed page jump (225.8765ms)
+✔ 29 estop survives navigation and does not force delayed page jump (222.46ms)
+✔ 29 background K5 stop and fresh reauthorization (228.0132ms)
+✔ 29 background PB10 stop and fresh reauthorization (244.3288ms)
+✔ 29 background offline invalidates old motion (179.6454ms)
+✔ 29 background frozen invalidates old motion (190.6436ms)
+✔ 29 background boot invalidates old motion (215.4737ms)
+✔ 29 read-only navigation never acquires other owner=2 (77.6935ms)
+✔ 29 read-only navigation never acquires other owner=3 (69.1034ms)
+✔ 29 all fault states allow navigation without changing control state (46.5748ms)
+✖ 30 新PIX/BIN与本次VP实际编译证据一致 (4.7989ms)
+✔ 30 实际字模覆盖全部控件文本及全部事件字面量 (26.2396ms)
+✔ 30 九页触摸范围均在画布内且互不重叠 (12.8877ms)
+✔ 30 36组字体宽高核验通过、保护基线未变 (1347.769ms)
+✔ 固定读帧与CRC向量 (2.8422ms)
+✔ 完整24字申请帧及特殊字序 (0.5366ms)
+✔ RPM边界及保留参数 (0.9287ms)
+✔ 重复目标不续期且旧序号拒绝 (0.7573ms)
+✔ 授权后周期发零，滑块不动仍刷新，唯一在途 (274.7649ms)
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.6744ms)
+✔ 29号返回主页保持会话和目标，显式释放才停车 (340.3713ms)
+✔ 主控重启清会话与旧目标，不自动授权 (192.2229ms)
+✔ 左右双轴不用改屏协议，未参与不显示零 (177.6858ms)
+✔ 只读固件不能授权 (117.7098ms)
+✔ 错CRC、错站和短邮箱不更新模拟器 (0.444ms)
+✔ 恢复申请使用session=0和generation且重复按键只提交一次 (0.3777ms)
+✔ generation不匹配拒绝恢复且状态区保留恢复字段 (0.1774ms)
+✖ 30 rpm三单位同源 0 (1.6892ms)
+✖ 30 rpm三单位同源 1 (1.1803ms)
+✖ 30 rpm三单位同源 -1 (1.4199ms)
+✖ 30 rpm三单位同源 100 (1.2668ms)
+✖ 30 rpm三单位同源 -100 (1.2344ms)
+✖ 30 rpm三单位同源 1600 (1.5537ms)
+✖ 30 rpm三单位同源 -1600 (0.8833ms)
+✖ 30 实际三单位同步失效 snapshot (1.0226ms)
+✖ 30 实际三单位同步失效 heartbeat (1.3264ms)
+✖ 30 实际三单位同步失效 age (0.8574ms)
+✖ 30 实际三单位同步失效 sentinel (0.8427ms)
+✖ 30 实际三单位同步失效 bit (0.8053ms)
+✖ 30 实际三单位同步失效 axis (1.3804ms)
+✖ 30 线速度源三单位 0/0 (1.1957ms)
+✖ 30 线速度源三单位 0/1 (0.8278ms)
+✖ 30 线速度源三单位 0/-1 (0.82ms)
+✖ 30 线速度源三单位 0/100 (0.7977ms)
+✖ 30 线速度源三单位 0/-100 (0.7693ms)
+✖ 30 线速度源三单位 0/32766 (0.8482ms)
+✖ 30 线速度源三单位 0/-32768 (0.7799ms)
+✖ 30 线速度源三单位 2/0 (0.7258ms)
+✖ 30 线速度源三单位 2/1 (0.7408ms)
+✖ 30 线速度源三单位 2/-1 (0.7404ms)
+✖ 30 线速度源三单位 2/100 (1.6288ms)
+✖ 30 线速度源三单位 2/-100 (0.8253ms)
+✖ 30 线速度源三单位 2/32766 (0.7607ms)
+✖ 30 线速度源三单位 2/-32768 (0.7365ms)
+✖ 30 线速度源三单位 3/0 (0.7679ms)
+✖ 30 线速度源三单位 3/1 (0.6769ms)
+✖ 30 线速度源三单位 3/-1 (1.8513ms)
+✖ 30 线速度源三单位 3/100 (1.7677ms)
+✖ 30 线速度源三单位 3/-100 (1.1248ms)
+✖ 30 线速度源三单位 3/32766 (4.5267ms)
+✖ 30 线速度源三单位 3/-32768 (1.6936ms)
+✖ 30 线速度源三单位 4/0 (1.0585ms)
+✖ 30 线速度源三单位 4/1 (0.9406ms)
+✖ 30 线速度源三单位 4/-1 (0.803ms)
+✖ 30 线速度源三单位 4/100 (0.9461ms)
+✖ 30 线速度源三单位 4/-100 (0.9789ms)
+✖ 30 线速度源三单位 4/32766 (0.7083ms)
+✖ 30 线速度源三单位 4/-32768 (0.8122ms)
+✖ 30 原控件和非展示属性、原事件及页面跳转完全保留 (22.2077ms)
+✔ 30 相同模拟工况下29/30控制数组和逐字节发送帧相同 (1465.1484ms)
+ℹ tests 477
+ℹ suites 0
+ℹ pass 411
+ℹ fail 66
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 51957.7174
+
+✖ failing tests:
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (11.0753ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.7787ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (7.4399ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13-failures.test.cjs:5:1
+✖ 停车中急停升级，停止缓存滑动 (121.1361ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13-failures.test.cjs:5:334)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.68ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (7.2203ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.6451ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.0183ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8343ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.0146ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8715ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (8.5223ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8976ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi23-snapshot.test.cjs:11:32
+✖ 23号三源只读监测 owner=1 (215.0573ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /100 rpm\n0\.363 m\/s \| 1\.308 km\/h/. Input:
+  
+  '主控接受：100rpm|0.363m/s|1.308km/h'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi23-snapshot.test.cjs:28:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '主控接受：100rpm|0.363m/s|1.308km/h',
+    expected: /100 rpm\n0\.363 m\/s \| 1\.308 km\/h/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi23-snapshot.test.cjs:11:32
+✖ 23号三源只读监测 owner=2 (209.2626ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /27\.5 rpm\n0\.100 m\/s \| 0\.360 km\/h/. Input:
+  
+  '整车目标：等效转速27.5rpm|0.100m/s|0.360km/h'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi23-snapshot.test.cjs:28:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '整车目标：等效转速27.5rpm|0.100m/s|0.360km/h',
+    expected: /27\.5 rpm\n0\.100 m\/s \| 0\.360 km\/h/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi23-snapshot.test.cjs:11:32
+✖ 23号三源只读监测 owner=3 (197.921ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /27\.5 rpm\n0\.100 m\/s \| 0\.360 km\/h/. Input:
+  
+  '整车目标：等效转速27.5rpm|0.100m/s|0.360km/h'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi23-snapshot.test.cjs:28:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '整车目标：等效转速27.5rpm|0.100m/s|0.360km/h',
+    expected: /27\.5 rpm\n0\.100 m\/s \| 0\.360 km\/h/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at hmi23-snapshot.test.cjs:35:1
+✖ 23号显示脚本字模覆盖，不借历史证据声明新字存在 (16.0894ms)
+  AssertionError [ERR_ASSERTION]: 全局计龄刷新.txt:预
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi23-snapshot.test.cjs:40:63)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.1773ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (7.1244ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.8788ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (9.0893ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (8.706ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-artifact.test.cjs:7:1
+✖ 30 新PIX/BIN与本次VP实际编译证据一致 (4.7989ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '4BF785C264BEDA3FEF8E182AA36EA26BF350360EEE330E69E178E6EC7914CC88'
+  - '592E8F6BA6EC315EB9183C74CBFE2FD474F226EE1D144DED6BE080C14186E5C3'
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-artifact.test.cjs:8:69)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.start (node:internal/test_runner/test:1177:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '4BF785C264BEDA3FEF8E182AA36EA26BF350360EEE330E69E178E6EC7914CC88',
+    expected: '592E8F6BA6EC315EB9183C74CBFE2FD474F226EE1D144DED6BE080C14186E5C3',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at hmi13.test.cjs:58:1
+✖ 授权前滑动无效，新滑动只保存最新目标 (6.6744ms)
+  evalmachine.<anonymous>:1
+  int ui31Slider;
+      ^^^^^^^^^^
+  
+  SyntaxError: Unexpected identifier 'ui31Slider'
+      at new Script (node:vm:117:7)
+      at createScript (node:vm:269:10)
+      at Object.runInContext (node:vm:300:10)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi13.test.cjs:58:177)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 0 (1.6892ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 1 (1.1803ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 -1 (1.4199ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 100 (1.2668ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 -100 (1.2344ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 1600 (1.5537ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:23:47
+✖ 30 rpm三单位同源 -1600 (0.8833ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:24:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:35:74
+✖ 30 实际三单位同步失效 snapshot (1.0226ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:36:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:35:74
+✖ 30 实际三单位同步失效 heartbeat (1.3264ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:36:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:35:74
+✖ 30 实际三单位同步失效 age (0.8574ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:36:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:35:74
+✖ 30 实际三单位同步失效 sentinel (0.8427ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:36:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:35:74
+✖ 30 实际三单位同步失效 bit (0.8053ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:36:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:35:74
+✖ 30 实际三单位同步失效 axis (1.3804ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:36:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/0 (1.1957ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/1 (0.8278ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/-1 (0.82ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/100 (0.7977ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/-100 (0.7693ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/32766 (0.8482ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 0/-32768 (0.7799ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/0 (0.7258ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/1 (0.7408ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/-1 (0.7404ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/100 (1.6288ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/-100 (0.8253ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/32766 (0.7607ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 2/-32768 (0.7365ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/0 (0.7679ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/1 (0.6769ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/-1 (1.8513ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/100 (1.7677ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/-100 (1.1248ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/32766 (4.5267ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 3/-32768 (1.6936ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/0 (1.0585ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/1 (0.9406ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/-1 (0.803ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/100 (0.9461ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/-100 (0.9789ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/32766 (0.7083ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:40:80
+✖ 30 线速度源三单位 4/-32768 (0.8122ms)
+  evalmachine.<anonymous>:8
+  P8_ServoControl.leftTarget.font=user.font.UI31_24;
+                                  ^
+  
+  ReferenceError: user is not defined
+      at evalmachine.<anonymous>:8:33
+      at Script.runInContext (node:vm:149:12)
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:42:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi30-display.test.cjs:45:1
+✖ 30 原控件和非展示属性、原事件及页面跳转完全保留 (22.2077ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  ... Skipped lines
+  
+  + 'int i;\n' +
+  - 'int ui31Slider;\n' +
+  -   'int ui31Rpm;\n' +
+  -   'int ui31Thumb;\n' +
+  -   'int i;\n' +
+      'int speedValue;\n' +
+      'int positionValue;\n' +
+      'int eventSeconds;\n' +
+      'int eventRemainder;\n' +
+      'int eventQuotient;\n' +
+  ...
+      'if(sys_pid==P7_System_Ext.id){\n' +
+  +   '    P7_System_Ext.batteryState.fontColor=-5653552;P7_System_Ext.batteryState.txt="电池状态：未知";\n' +
+  +   '    P7_System_Ext.batteryPercent.fontColor=-5653552;P7_System_Ext.batteryPercent.txt="电池电量：未知";\n' +
+  +   '    P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：未知";\n' +
+  +   '    P7_System_Ext.positioningAccuracy.fontColor=-5653552;P7_System_Ext.positioningAccuracy.txt="定位精度：未知";\n' +
+  +   '    P7_System_Ext.positioningX.fontColor=-5653552;P7_System_Ext.positioningX.txt="定位X：未知";\n' +
+  +   '    P7_System_Ext.positioningY.fontColor=-5653552;P7_System_Ext.positioningY.txt="定位Y：未知";\n' +
+  +   '    P7_System_Ext.armState.fontColor=-5653552;P7_System_Ext.armState.txt="机械臂状态：未知";\n' +
+  +   '    P7_System_Ext.lightingState.fontColor=-5653552;P7_System_Ext.lightingState.txt="照明状态：未知";\n' +
+  +   '    P7_System_Ext.cameraState.fontColor=-5653552;P7_System_Ext.cameraState.txt="摄像状态：未知";\n' +
+  +   '    P7_System_Ext.acquisitionState.fontColor=-5653552;P7_System_Ext.acquisitionState.txt="数据采集：未知";\n' +
+  +   '    P7_System_Ext.storageState.fontColor=-5653552;P7_System_Ext.storageState.txt="存储状态：未知";\n' +
+  +   '    P7_System_Ext.extensionComm.fontColor=-5653552;P7_System_Ext.extensionComm.txt="扩展通信：未知";\n' +
+  +   '    P7_System_Ext.extensionFault.fontColor=-5653552;P7_System_Ext.extensionFault.txt="扩展故障：未知";\n' +
+  +   '    P7_System_Ext.extensionReadonly.fontColor=-5653552;P7_System_Ext.extensionReadonly.txt="未接入模块：未知";\n' +
+  -   '    P7_System_Ext.batteryState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryState.txt="电池状态：未知";\n' +
+  -   '    P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryPercent.txt="电池电量：未知";\n' +
+  -   '    P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：未知";\n' +
+  -   '    P7_System_Ext.positioningAccuracy.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningAccuracy.txt="定位精度：未知";\n' +
+  -   '    P7_System_Ext.positioningX.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningX.txt="定位X：未知";\n' +
+  -   '    P7_System_Ext.positioningY.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningY.txt="定位Y：未知";\n' +
+  -   '    P7_System_Ext.armState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.armState.txt="机械臂状态：未知";\n' +
+  -   '    P7_System_Ext.lightingState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.lightingState.txt="照明状态：未知";\n' +
+  -   '    P7_System_Ext.cameraState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.cameraState.txt="摄像状态：未知";\n' +
+  -   '    P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.acquisitionState.txt="数据采集：未知";\n' +
+  -   '    P7_System_Ext.storageState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.storageState.txt="存储状态：未知";\n' +
+  -   '    P7_System_Ext.extensionComm.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionComm.txt="扩展通信：未知";\n' +
+  -   '    P7_System_Ext.extensionFault.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionFault.txt="扩展故障：未知";\n' +
+  -   '    P7_System_Ext.extensionReadonly.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionReadonly.txt="未接入模块：未知";\n' +
+      'if(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){\n' +
+      '        if((rawRegs.vals[194] & 8)==0){\n' +
+  +   '            P7_System_Ext.batteryState.fontColor=-5653552;P7_System_Ext.batteryState.txt="电池状态：未配置";\n' +
+  +   '            P7_System_Ext.batteryPercent.fontColor=-5653552;P7_System_Ext.batteryPercent.txt="电池电量：未配置";\n' +
+  -   '            P7_System_Ext.batteryState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryState.txt="电池状态：未配置";\n' +
+  -   '            P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryPercent.txt="电池电量：未配置";\n' +
+      '        }\n' +
+      '        if((rawRegs.vals[194] & 16)==0){\n' +
+  +   '            P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：未配置";\n' +
+  +   '            P7_System_Ext.positioningAccuracy.fontColor=-5653552;P7_System_Ext.positioningAccuracy.txt="定位精度：未配置";\n' +
+  +   '            P7_System_Ext.positioningX.fontColor=-5653552;P7_System_Ext.positioningX.txt="定位X：未配置";\n' +
+  +   '            P7_System_Ext.positioningY.fontColor=-5653552;P7_System_Ext.positioningY.txt="定位Y：未配置";\n' +
+  -   '            P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：未配置";\n' +
+  -   '            P7_System_Ext.positioningAccuracy.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningAccuracy.txt="定位精度：未配置";\n' +
+  -   '            P7_System_Ext.positioningX.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningX.txt="定位X：未配置";\n' +
+  -   '            P7_System_Ext.positioningY.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningY.txt="定位Y：未配置";\n' +
+      '        }\n' +
+  +   '        if((rawRegs.vals[194] & 32)==0){P7_System_Ext.armState.fontColor=-5653552;P7_System_Ext.armState.txt="机械臂状态：未配置";}\n' +
+  +   '        if((rawRegs.vals[194] & 64)==0){P7_System_Ext.lightingState.fontColor=-5653552;P7_System_Ext.lightingState.txt="照明状态：未配置";}\n' +
+  +   '        if((rawRegs.vals[194] & 128)==0){P7_System_Ext.acquisitionState.fontColor=-5653552;P7_System_Ext.acquisitionState.txt="数据采集：未配置";}\n' +
+  +   '        if((rawRegs.vals[194] & 256)==0){P7_System_Ext.cameraState.fontColor=-5653552;P7_System_Ext.cameraState.txt="摄像状态：未配置";}\n' +
+  +   '        if((rawRegs.vals[194] & 512)==0){P7_System_Ext.storageState.fontColor=-5653552;P7_System_Ext.storageState.txt="存储状态：未配置";}\n' +
+  +   '        if((rawRegs.vals[194] & 1024)==0){P7_System_Ext.extensionComm.fontColor=-5653552;P7_System_Ext.extensionComm.txt="扩展通信：未配置";}\n' +
+  +   '        P7_System_Ext.extensionReadonly.fontColor=-5653552;P7_System_Ext.extensionReadonly.txt="未接入模块：未配置";\n' +
+  +   '        if((rawRegs.vals[194] & 2040)==0){P7_System_Ext.extensionFault.fontColor=-5653552;P7_System_Ext.extensionFault.txt="扩展故障：未配置";}\n' +
+  -   '        if((rawRegs.vals[194] & 32)==0){P7_System_Ext.armState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.armState.txt="机械臂状态：未配置";}\n' +
+  -   '        if((rawRegs.vals[194] & 64)==0){P7_System_Ext.lightingState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.lightingState.txt="照明状态：未配置";}\n' +
+  -   '        if((rawRegs.vals[194] & 128)==0){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.acquisitionState.txt="数据采集：未配置";}\n' +
+  -   '        if((rawRegs.vals[194] & 256)==0){P7_System_Ext.cameraState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.cameraState.txt="摄像状态：未配置";}\n' +
+  -   '        if((rawRegs.vals[194] & 512)==0){P7_System_Ext.storageState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.storageState.txt="存储状态：未配置";}\n' +
+  -   '        if((rawRegs.vals[194] & 1024)==0){P7_System_Ext.extensionComm.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionComm.txt="扩展通信：未配置";}\n' +
+  -   '        P7_System_Ext.extensionReadonly.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionReadonly.txt="未接入模块：未配置";\n' +
+  -   '        if((rawRegs.vals[194] & 2040)==0){P7_System_Ext.extensionFault.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionFault.txt="扩展故障：未配置";}\n' +
+      '        if(regionValid.vals[3]==1 && regionBadRun.vals[3]<10 && rawRegs.vals[172]==1){\n' +
+      '            if((rawRegs.vals[194] & 8)!=0){\n' +
+      '                if(rawRegs.vals[160]==0){\n' +
+  +   '                    P7_System_Ext.batteryState.fontColor=-5653552;P7_System_Ext.batteryState.txt="电池状态：未接入";\n' +
+  +   '                    P7_System_Ext.batteryPercent.fontColor=-5653552;P7_System_Ext.batteryPercent.txt="电池电量：未接入";\n' +
+  -   '                    P7_System_Ext.batteryState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryState.txt="电池状态：未接入";\n' +
+  -   '                    P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryPercent.txt="电池电量：未接入";\n' +
+      '                }\n' +
+  +   '                if(rawRegs.vals[160]==1){P7_System_Ext.batteryState.fontColor=-10624850;P7_System_Ext.batteryState.txt="电池状态：正常";}\n' +
+  +   '                if(rawRegs.vals[160]==2){P7_System_Ext.batteryState.fontColor=-14490;P7_System_Ext.batteryState.txt="电池状态：低电";}\n' +
+  +   '                if(rawRegs.vals[160]==3){P7_System_Ext.batteryState.fontColor=-39558;P7_System_Ext.batteryState.txt="电池状态：故障";}\n' +
+  -   '                if(rawRegs.vals[160]==1){P7_System_Ext.batteryState.fontColor=P0_Boot.themeGood.val;P7_System_Ext.batteryState.txt="电池状态：正常";}\n' +
+  -   '                if(rawRegs.vals[160]==2){P7_System_Ext.batteryState.fontColor=P0_Boot.themeWarn.val;P7_System_Ext.batteryState.txt="电池状态：低电";}\n' +
+  -   '                if(rawRegs.vals[160]==3){P7_System_Ext.batteryState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.batteryState.txt="电池状态：故障";}\n' +
+      '                if(rawRegs.vals[160]>=1 && rawRegs.vals[160]<=3 && rawRegs.vals[161]<=100){\n' +
+  +   '                    P7_System_Ext.batteryPercent.fontColor=-1182209;P7_System_Ext.batteryPercent.txt="电池电量："+intToString(rawRegs.vals[161])+"%";\n' +
+  -   '                    P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeInk.val;P7_System_Ext.batteryPercent.txt="电池电量："+intToString(rawRegs.vals[161])+"%";\n' +
+      '                }\n' +
+      '            }\n' +
+      '            if((rawRegs.vals[194] & 16)!=0){\n' +
+  +   '                P7_System_Ext.positioningX.fontColor=-5653552;P7_System_Ext.positioningX.txt="定位X：无效";\n' +
+  +   '                P7_System_Ext.positioningY.fontColor=-5653552;P7_System_Ext.positioningY.txt="定位Y：无效";\n' +
+  +   '                if(rawRegs.vals[162]==0){P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：未接入";}\n' +
+  +   '                if(rawRegs.vals[162]==1){P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：无效";}\n' +
+  +   '                if(rawRegs.vals[162]==3){P7_System_Ext.positioningState.fontColor=-39558;P7_System_Ext.positioningState.txt="定位状态：故障";}\n' +
+  -   '                P7_System_Ext.positioningX.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningX.txt="定位X：无效";\n' +
+  -   '                P7_System_Ext.positioningY.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningY.txt="定位Y：无效";\n' +
+  -   '                if(rawRegs.vals[162]==0){P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：未接入";}\n' +
+  -   '                if(rawRegs.vals[162]==1){P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：无效";}\n' +
+  -   '                if(rawRegs.vals[162]==3){P7_System_Ext.positioningState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.positioningState.txt="定位状态：故障";}\n' +
+      '                if(rawRegs.vals[162]==2){\n' +
+  +   '                    P7_System_Ext.positioningState.fontColor=-1182209;P7_System_Ext.positioningState.txt="定位状态：有效";\n' +
+  +   '                    if(rawRegs.vals[163]!=65535){P7_System_Ext.positioningAccuracy.fontColor=-1182209;P7_System_Ext.positioningAccuracy.txt="定位精度："+intToString(rawRegs.vals[163])+" mm";}\n' +
+  -   '                    P7_System_Ext.positioningState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningState.txt="定位状态：有效";\n' +
+  -   '                    if(rawRegs.vals[163]!=65535){P7_System_Ext.positioningAccuracy.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningAccuracy.txt="定位精度："+intToString(rawRegs.vals[163])+" mm";}\n' +
+      '                    // 正式协议是本地坐标，不能冒称经纬度。\n' +
+      '                    positionValue=rawRegs.vals[164];\n' +
+      '                    if(positionValue>=32768){positionValue=positionValue-65536;}\n' +
+      '                    positionValue=positionValue*65536+rawRegs.vals[165];\n' +
+  +   '                    P7_System_Ext.positioningX.fontColor=-1182209;P7_System_Ext.positioningX.txt="定位X："+intToString(positionValue)+" mm";\n' +
+  -   '                    P7_System_Ext.positioningX.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningX.txt="定位X："+intToString(positionValue)+" mm";\n' +
+      '                    positionValue=rawRegs.vals[166];\n' +
+      '                    if(positionValue>=32768){positionValue=positionValue-65536;}\n' +
+      '                    positionValue=positionValue*65536+rawRegs.vals[167];\n' +
+  +   '                    P7_System_Ext.positioningY.fontColor=-1182209;P7_System_Ext.positioningY.txt="定位Y："+intToString(positionValue)+" mm";\n' +
+  -   '                    P7_System_Ext.positioningY.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningY.txt="定位Y："+intToString(positionValue)+" mm";\n' +
+      '                }\n' +
+      '            }\n' +
+      '            if((rawRegs.vals[194] & 32)!=0){\n' +
+  +   '                if(rawRegs.vals[168]==0){P7_System_Ext.armState.fontColor=-5653552;P7_System_Ext.armState.txt="机械臂状态：未接入";}\n' +
+  +   '                if(rawRegs.vals[168]==1){P7_System_Ext.armState.fontColor=-1182209;P7_System_Ext.armState.txt="机械臂状态：待机";}\n' +
+  +   '                if(rawRegs.vals[168]==2){P7_System_Ext.armState.fontColor=-1182209;P7_System_Ext.armState.txt="机械臂状态：工作";}\n' +
+  +   '                if(rawRegs.vals[168]==3){P7_System_Ext.armState.fontColor=-39558;P7_System_Ext.armState.txt="机械臂状态：故障";}\n' +
+  -   '                if(rawRegs.vals[168]==0){P7_System_Ext.armState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.armState.txt="机械臂状态：未接入";}\n' +
+  -   '                if(rawRegs.vals[168]==1){P7_System_Ext.armState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.armState.txt="机械臂状态：待机";}\n' +
+  -   '                if(rawRegs.vals[168]==2){P7_System_Ext.armState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.armState.txt="机械臂状态：工作";}\n' +
+  -   '                if(rawRegs.vals[168]==3){P7_System_Ext.armState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.armState.txt="机械臂状态：故障";}\n' +
+      '            }\n' +
+      '            if((rawRegs.vals[194] & 64)!=0){\n' +
+  +   '                if(rawRegs.vals[169]==0){P7_System_Ext.lightingState.fontColor=-5653552;P7_System_Ext.lightingState.txt="照明状态：未接入";}\n' +
+  +   '                if(rawRegs.vals[169]==1){P7_System_Ext.lightingState.fontColor=-1182209;P7_System_Ext.lightingState.txt="照明状态：关闭";}\n' +
+  +   '                if(rawRegs.vals[169]==2){P7_System_Ext.lightingState.fontColor=-1182209;P7_System_Ext.lightingState.txt="照明状态：开启";}\n' +
+  +   '                if(rawRegs.vals[169]==3){P7_System_Ext.lightingState.fontColor=-39558;P7_System_Ext.lightingState.txt="照明状态：故障";}\n' +
+  -   '                if(rawRegs.vals[169]==0){P7_System_Ext.lightingState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.lightingState.txt="照明状态：未接入";}\n' +
+  -   '                if(rawRegs.vals[169]==1){P7_System_Ext.lightingState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.lightingState.txt="照明状态：关闭";}\n' +
+  -   '                if(rawRegs.vals[169]==2){P7_System_Ext.lightingState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.lightingState.txt="照明状态：开启";}\n' +
+  -   '                if(rawRegs.vals[169]==3){P7_System_Ext.lightingState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.lightingState.txt="照明状态：故障";}\n' +
+      '            }\n' +
+      '            if((rawRegs.vals[194] & 128)!=0){\n' +
+  +   '                if(rawRegs.vals[170]==0){P7_System_Ext.acquisitionState.fontColor=-5653552;P7_System_Ext.acquisitionState.txt="数据采集：未接入";}\n' +
+  +   '                if(rawRegs.vals[170]==1){P7_System_Ext.acquisitionState.fontColor=-1182209;P7_System_Ext.acquisitionState.txt="数据采集：待机";}\n' +
+  +   '                if(rawRegs.vals[170]==2){P7_System_Ext.acquisitionState.fontColor=-1182209;P7_System_Ext.acquisitionState.txt="数据采集：采集";}\n' +
+  +   '                if(rawRegs.vals[170]==3){P7_System_Ext.acquisitionState.fontColor=-39558;P7_System_Ext.acquisitionState.txt="数据采集：故障";}\n' +
+  +   '            }\n' +
+  +   '            if((rawRegs.vals[194] & 248)!=0){P7_System_Ext.extensionFault.fontColor=-1182209;P7_System_Ext.extensionFault.txt="扩展故障位图："+intToString(rawRegs.vals[171]);}\n' +
+  +   '        }\n' +
+  +   '        // 摄像与通信位于索引4，不借用外围区的新鲜度。\n' +
+  +   '        if(rawRegs.vals[179]==1){\n' +
+  +   '            if((rawRegs.vals[194] & 256)!=0){\n' +
+  +   '                if(rawRegs.vals[176]==0){P7_System_Ext.cameraState.fontColor=-5653552;P7_System_Ext.cameraState.txt="摄像状态：未接入";}\n' +
+  +   '                if(rawRegs.vals[176]==1){P7_System_Ext.cameraState.fontColor=-1182209;P7_System_Ext.cameraState.txt="摄像状态：待机";}\n' +
+  +   '                if(rawRegs.vals[176]==2){P7_System_Ext.cameraState.fontColor=-1182209;P7_System_Ext.cameraSta'... 81961 more characters
+  -   '                if(rawRegs.vals[170]==0){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.acquisitionState.txt="数据采集：未接入";}\n' +
+  -   '                if(rawRegs.vals[170]==1){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.acquisitionState.txt="数据采集：待机";}\n' +
+  -   '                if(rawRegs.vals[170]==2){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.acquisitionState.txt="数据采集：采集";}\n' +
+  -   '                if(rawRe'... 89587 more characters
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题切换版\hmi30-display.test.cjs:52:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'int i;\nint speedValue;\nint positionValue;\nint eventSeconds;\nint eventRemainder;\nint eventQuotient;\nint formalProtocol;\nint baseDisplayFresh;\nint uiAxis;\nint uiBit;\nint uiValue;\nint uiOffset;\n// 先维护年龄，再刷新各页，过期判定在同一拍生效。\nif(metaSeen.vals[0]==1){\n    if(metaAge.vals[0]<65535){metaAge.vals[0]=metaAge.vals[0]+1;}\n    if(metaAge.vals[0]>=10){metaValid.vals[0]=0;}\n}\n\nif(metaSeen.vals[0]==0){metaValid.vals[0]=0;}\nfor(i=0;i<5;i++){\n    if(regionAge.vals[i]<65535){\n        regionAge.vals[i]=regionAge.vals[i]+1;\n    }\n    if(regionSeen.vals[i]==0 || regionAge.vals[i]>=10){\n        regionValid.vals[i]=0;\n        regionGoodRun.vals[i]=0;\n    }\n}\n// 已确认的协议身份可用于基础监控，当前明确不兼容响应具有否决权。\nformalProtocol=0;\nif(P8_ServoControl.h13.vals[0]==1 && P8_ServoControl.h13.vals[47]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[22]>=3000){metaValid.vals[0]=0;}\nif(regionSeen.vals[4]==1 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1){formalProtocol=1;}\nif(metaSeen.vals[0]==1 && metaRegs.vals[0]==21065 && metaRegs.vals[1]==1){formalProtocol=1;}\nif(regionValid.vals[4]==1 && (rawRegs.vals[192]!=21065 || rawRegs.vals[193]!=1)){formalProtocol=0;}\nif(metaSeen.vals[0]==1 && metaAge.vals[0]<10 && (metaRegs.vals[0]!=21065 || metaRegs.vals[1]!=1)){formalProtocol=0;}\n// 主页/P0仅使用独立的显示缓存窗口；该变量不能参与授权、目标、急停或停车判定。\nbaseDisplayFresh=0;\nif(regionSeen.vals[0]==1 && regionAge.vals[0]<60 && regionBadRun.vals[0]<10 && formalProtocol==1){baseDisplayFresh=1;}\n// 各模块由自身能力位和所属快照控制，不把未接入解释为正常。\nif(sys_pid==P7_System_Ext.id){\n    P7_System_Ext.batteryState.fontColor=-5653552;P7_System_Ext.batteryState.txt="电池状态：未知";\n    P7_System_Ext.batteryPercent.fontColor=-5653552;P7_System_Ext.batteryPercent.txt="电池电量：未知";\n    P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：未知";\n    P7_System_Ext.positioningAccuracy.fontColor=-5653552;P7_System_Ext.positioningAccuracy.txt="定位精度：未知";\n    P7_System_Ext.positioningX.fontColor=-5653552;P7_System_Ext.positioningX.txt="定位X：未知";\n    P7_System_Ext.positioningY.fontColor=-5653552;P7_System_Ext.positioningY.txt="定位Y：未知";\n    P7_System_Ext.armState.fontColor=-5653552;P7_System_Ext.armState.txt="机械臂状态：未知";\n    P7_System_Ext.lightingState.fontColor=-5653552;P7_System_Ext.lightingState.txt="照明状态：未知";\n    P7_System_Ext.cameraState.fontColor=-5653552;P7_System_Ext.cameraState.txt="摄像状态：未知";\n    P7_System_Ext.acquisitionState.fontColor=-5653552;P7_System_Ext.acquisitionState.txt="数据采集：未知";\n    P7_System_Ext.storageState.fontColor=-5653552;P7_System_Ext.storageState.txt="存储状态：未知";\n    P7_System_Ext.extensionComm.fontColor=-5653552;P7_System_Ext.extensionComm.txt="扩展通信：未知";\n    P7_System_Ext.extensionFault.fontColor=-5653552;P7_System_Ext.extensionFault.txt="扩展故障：未知";\n    P7_System_Ext.extensionReadonly.fontColor=-5653552;P7_System_Ext.extensionReadonly.txt="未接入模块：未知";\nif(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){\n        if((rawRegs.vals[194] & 8)==0){\n            P7_System_Ext.batteryState.fontColor=-5653552;P7_System_Ext.batteryState.txt="电池状态：未配置";\n            P7_System_Ext.batteryPercent.fontColor=-5653552;P7_System_Ext.batteryPercent.txt="电池电量：未配置";\n        }\n        if((rawRegs.vals[194] & 16)==0){\n            P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：未配置";\n            P7_System_Ext.positioningAccuracy.fontColor=-5653552;P7_System_Ext.positioningAccuracy.txt="定位精度：未配置";\n            P7_System_Ext.positioningX.fontColor=-5653552;P7_System_Ext.positioningX.txt="定位X：未配置";\n            P7_System_Ext.positioningY.fontColor=-5653552;P7_System_Ext.positioningY.txt="定位Y：未配置";\n        }\n        if((rawRegs.vals[194] & 32)==0){P7_System_Ext.armState.fontColor=-5653552;P7_System_Ext.armState.txt="机械臂状态：未配置";}\n        if((rawRegs.vals[194] & 64)==0){P7_System_Ext.lightingState.fontColor=-5653552;P7_System_Ext.lightingState.txt="照明状态：未配置";}\n        if((rawRegs.vals[194] & 128)==0){P7_System_Ext.acquisitionState.fontColor=-5653552;P7_System_Ext.acquisitionState.txt="数据采集：未配置";}\n        if((rawRegs.vals[194] & 256)==0){P7_System_Ext.cameraState.fontColor=-5653552;P7_System_Ext.cameraState.txt="摄像状态：未配置";}\n        if((rawRegs.vals[194] & 512)==0){P7_System_Ext.storageState.fontColor=-5653552;P7_System_Ext.storageState.txt="存储状态：未配置";}\n        if((rawRegs.vals[194] & 1024)==0){P7_System_Ext.extensionComm.fontColor=-5653552;P7_System_Ext.extensionComm.txt="扩展通信：未配置";}\n        P7_System_Ext.extensionReadonly.fontColor=-5653552;P7_System_Ext.extensionReadonly.txt="未接入模块：未配置";\n        if((rawRegs.vals[194] & 2040)==0){P7_System_Ext.extensionFault.fontColor=-5653552;P7_System_Ext.extensionFault.txt="扩展故障：未配置";}\n        if(regionValid.vals[3]==1 && regionBadRun.vals[3]<10 && rawRegs.vals[172]==1){\n            if((rawRegs.vals[194] & 8)!=0){\n                if(rawRegs.vals[160]==0){\n                    P7_System_Ext.batteryState.fontColor=-5653552;P7_System_Ext.batteryState.txt="电池状态：未接入";\n                    P7_System_Ext.batteryPercent.fontColor=-5653552;P7_System_Ext.batteryPercent.txt="电池电量：未接入";\n                }\n                if(rawRegs.vals[160]==1){P7_System_Ext.batteryState.fontColor=-10624850;P7_System_Ext.batteryState.txt="电池状态：正常";}\n                if(rawRegs.vals[160]==2){P7_System_Ext.batteryState.fontColor=-14490;P7_System_Ext.batteryState.txt="电池状态：低电";}\n                if(rawRegs.vals[160]==3){P7_System_Ext.batteryState.fontColor=-39558;P7_System_Ext.batteryState.txt="电池状态：故障";}\n                if(rawRegs.vals[160]>=1 && rawRegs.vals[160]<=3 && rawRegs.vals[161]<=100){\n                    P7_System_Ext.batteryPercent.fontColor=-1182209;P7_System_Ext.batteryPercent.txt="电池电量："+intToString(rawRegs.vals[161])+"%";\n                }\n            }\n            if((rawRegs.vals[194] & 16)!=0){\n                P7_System_Ext.positioningX.fontColor=-5653552;P7_System_Ext.positioningX.txt="定位X：无效";\n                P7_System_Ext.positioningY.fontColor=-5653552;P7_System_Ext.positioningY.txt="定位Y：无效";\n                if(rawRegs.vals[162]==0){P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：未接入";}\n                if(rawRegs.vals[162]==1){P7_System_Ext.positioningState.fontColor=-5653552;P7_System_Ext.positioningState.txt="定位状态：无效";}\n                if(rawRegs.vals[162]==3){P7_System_Ext.positioningState.fontColor=-39558;P7_System_Ext.positioningState.txt="定位状态：故障";}\n                if(rawRegs.vals[162]==2){\n                    P7_System_Ext.positioningState.fontColor=-1182209;P7_System_Ext.positioningState.txt="定位状态：有效";\n                    if(rawRegs.vals[163]!=65535){P7_System_Ext.positioningAccuracy.fontColor=-1182209;P7_System_Ext.positioningAccuracy.txt="定位精度："+intToString(rawRegs.vals[163])+" mm";}\n                    // 正式协议是本地坐标，不能冒称经纬度。\n                    positionValue=rawRegs.vals[164];\n                    if(positionValue>=32768){positionValue=positionValue-65536;}\n                    positionValue=positionValue*65536+rawRegs.vals[165];\n                    P7_System_Ext.positioningX.fontColor=-1182209;P7_System_Ext.positioningX.txt="定位X："+intToString(positionValue)+" mm";\n                    positionValue=rawRegs.vals[166];\n                    if(positionValue>=32768){positionValue=positionValue-65536;}\n                    positionValue=positionValue*65536+rawRegs.vals[167];\n                    P7_System_Ext.positioningY.fontColor=-1182209;P7_System_Ext.positioningY.txt="定位Y："+intToString(positionValue)+" mm";\n                }\n            }\n            if((rawRegs.vals[194] & 32)!=0){\n                if(rawRegs.vals[168]==0){P7_System_Ext.armState.fontColor=-5653552;P7_System_Ext.armState.txt="机械臂状态：未接入";}\n                if(rawRegs.vals[168]==1){P7_System_Ext.armState.fontColor=-1182209;P7_System_Ext.armState.txt="机械臂状态：待机";}\n                if(rawRegs.vals[168]==2){P7_System_Ext.armState.fontColor=-1182209;P7_System_Ext.armState.txt="机械臂状态：工作";}\n                if(rawRegs.vals[168]==3){P7_System_Ext.armState.fontColor=-39558;P7_System_Ext.armState.txt="机械臂状态：故障";}\n            }\n            if((rawRegs.vals[194] & 64)!=0){\n                if(rawRegs.vals[169]==0){P7_System_Ext.lightingState.fontColor=-5653552;P7_System_Ext.lightingState.txt="照明状态：未接入";}\n                if(rawRegs.vals[169]==1){P7_System_Ext.lightingState.fontColor=-1182209;P7_System_Ext.lightingState.txt="照明状态：关闭";}\n                if(rawRegs.vals[169]==2){P7_System_Ext.lightingState.fontColor=-1182209;P7_System_Ext.lightingState.txt="照明状态：开启";}\n                if(rawRegs.vals[169]==3){P7_System_Ext.lightingState.fontColor=-39558;P7_System_Ext.lightingState.txt="照明状态：故障";}\n            }\n            if((rawRegs.vals[194] & 128)!=0){\n                if(rawRegs.vals[170]==0){P7_System_Ext.acquisitionState.fontColor=-5653552;P7_System_Ext.acquisitionState.txt="数据采集：未接入";}\n                if(rawRegs.vals[170]==1){P7_System_Ext.acquisitionState.fontColor=-1182209;P7_System_Ext.acquisitionState.txt="数据采集：待机";}\n                if(rawRegs.vals[170]==2){P7_System_Ext.acquisitionState.fontColor=-1182209;P7_System_Ext.acquisitionState.txt="数据采集：采集";}\n                if(rawRegs.vals[170]==3){P7_System_Ext.acquisitionState.fontColor=-39558;P7_System_Ext.acquisitionState.txt="数据采集：故障";}\n            }\n            if((rawRegs.vals[194] & 248)!=0){P7_System_Ext.extensionFault.fontColor=-1182209;P7_System_Ext.extensionFault.txt="扩展故障位图："+intToString(rawRegs.vals[171]);}\n        }\n        // 摄像与通信位于索引4，不借用外围区的新鲜度。\n        if(rawRegs.vals[179]==1){\n            if((rawRegs.vals[194] & 256)!=0){\n                if(rawRegs.vals[176]==0){P7_System_Ext.cameraState.fontColor=-5653552;P7_System_Ext.cameraState.txt="摄像状态：未接入";}\n                if(rawRegs.vals[176]==1){P7_System_Ext.cameraState.fontColor=-1182209;P7_System_Ext.cameraState.txt="摄像状态：待机";}\n                if(rawRegs.vals[176]==2){P7_System_Ext.cameraState.fontColor=-1182209;P7_System_Ext.cameraSta'... 81961 more characters,
+    expected: 'int ui31Slider;\nint ui31Rpm;\nint ui31Thumb;\nint i;\nint speedValue;\nint positionValue;\nint eventSeconds;\nint eventRemainder;\nint eventQuotient;\nint formalProtocol;\nint baseDisplayFresh;\nint uiAxis;\nint uiBit;\nint uiValue;\nint uiOffset;\n// 先维护年龄，再刷新各页，过期判定在同一拍生效。\nif(metaSeen.vals[0]==1){\n    if(metaAge.vals[0]<65535){metaAge.vals[0]=metaAge.vals[0]+1;}\n    if(metaAge.vals[0]>=10){metaValid.vals[0]=0;}\n}\n\nif(metaSeen.vals[0]==0){metaValid.vals[0]=0;}\nfor(i=0;i<5;i++){\n    if(regionAge.vals[i]<65535){\n        regionAge.vals[i]=regionAge.vals[i]+1;\n    }\n    if(regionSeen.vals[i]==0 || regionAge.vals[i]>=10){\n        regionValid.vals[i]=0;\n        regionGoodRun.vals[i]=0;\n    }\n}\n// 已确认的协议身份可用于基础监控，当前明确不兼容响应具有否决权。\nformalProtocol=0;\nif(P8_ServoControl.h13.vals[0]==1 && P8_ServoControl.h13.vals[47]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[22]>=3000){metaValid.vals[0]=0;}\nif(regionSeen.vals[4]==1 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1){formalProtocol=1;}\nif(metaSeen.vals[0]==1 && metaRegs.vals[0]==21065 && metaRegs.vals[1]==1){formalProtocol=1;}\nif(regionValid.vals[4]==1 && (rawRegs.vals[192]!=21065 || rawRegs.vals[193]!=1)){formalProtocol=0;}\nif(metaSeen.vals[0]==1 && metaAge.vals[0]<10 && (metaRegs.vals[0]!=21065 || metaRegs.vals[1]!=1)){formalProtocol=0;}\n// 主页/P0仅使用独立的显示缓存窗口；该变量不能参与授权、目标、急停或停车判定。\nbaseDisplayFresh=0;\nif(regionSeen.vals[0]==1 && regionAge.vals[0]<60 && regionBadRun.vals[0]<10 && formalProtocol==1){baseDisplayFresh=1;}\n// 各模块由自身能力位和所属快照控制，不把未接入解释为正常。\nif(sys_pid==P7_System_Ext.id){\n    P7_System_Ext.batteryState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryState.txt="电池状态：未知";\n    P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryPercent.txt="电池电量：未知";\n    P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：未知";\n    P7_System_Ext.positioningAccuracy.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningAccuracy.txt="定位精度：未知";\n    P7_System_Ext.positioningX.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningX.txt="定位X：未知";\n    P7_System_Ext.positioningY.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningY.txt="定位Y：未知";\n    P7_System_Ext.armState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.armState.txt="机械臂状态：未知";\n    P7_System_Ext.lightingState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.lightingState.txt="照明状态：未知";\n    P7_System_Ext.cameraState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.cameraState.txt="摄像状态：未知";\n    P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.acquisitionState.txt="数据采集：未知";\n    P7_System_Ext.storageState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.storageState.txt="存储状态：未知";\n    P7_System_Ext.extensionComm.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionComm.txt="扩展通信：未知";\n    P7_System_Ext.extensionFault.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionFault.txt="扩展故障：未知";\n    P7_System_Ext.extensionReadonly.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionReadonly.txt="未接入模块：未知";\nif(formalProtocol==1 && regionValid.vals[4]==1 && regionBadRun.vals[4]<10 && rawRegs.vals[192]==21065 && rawRegs.vals[193]==1 && rawRegs.vals[194]!=65535){\n        if((rawRegs.vals[194] & 8)==0){\n            P7_System_Ext.batteryState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryState.txt="电池状态：未配置";\n            P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryPercent.txt="电池电量：未配置";\n        }\n        if((rawRegs.vals[194] & 16)==0){\n            P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：未配置";\n            P7_System_Ext.positioningAccuracy.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningAccuracy.txt="定位精度：未配置";\n            P7_System_Ext.positioningX.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningX.txt="定位X：未配置";\n            P7_System_Ext.positioningY.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningY.txt="定位Y：未配置";\n        }\n        if((rawRegs.vals[194] & 32)==0){P7_System_Ext.armState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.armState.txt="机械臂状态：未配置";}\n        if((rawRegs.vals[194] & 64)==0){P7_System_Ext.lightingState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.lightingState.txt="照明状态：未配置";}\n        if((rawRegs.vals[194] & 128)==0){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.acquisitionState.txt="数据采集：未配置";}\n        if((rawRegs.vals[194] & 256)==0){P7_System_Ext.cameraState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.cameraState.txt="摄像状态：未配置";}\n        if((rawRegs.vals[194] & 512)==0){P7_System_Ext.storageState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.storageState.txt="存储状态：未配置";}\n        if((rawRegs.vals[194] & 1024)==0){P7_System_Ext.extensionComm.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionComm.txt="扩展通信：未配置";}\n        P7_System_Ext.extensionReadonly.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionReadonly.txt="未接入模块：未配置";\n        if((rawRegs.vals[194] & 2040)==0){P7_System_Ext.extensionFault.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.extensionFault.txt="扩展故障：未配置";}\n        if(regionValid.vals[3]==1 && regionBadRun.vals[3]<10 && rawRegs.vals[172]==1){\n            if((rawRegs.vals[194] & 8)!=0){\n                if(rawRegs.vals[160]==0){\n                    P7_System_Ext.batteryState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryState.txt="电池状态：未接入";\n                    P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.batteryPercent.txt="电池电量：未接入";\n                }\n                if(rawRegs.vals[160]==1){P7_System_Ext.batteryState.fontColor=P0_Boot.themeGood.val;P7_System_Ext.batteryState.txt="电池状态：正常";}\n                if(rawRegs.vals[160]==2){P7_System_Ext.batteryState.fontColor=P0_Boot.themeWarn.val;P7_System_Ext.batteryState.txt="电池状态：低电";}\n                if(rawRegs.vals[160]==3){P7_System_Ext.batteryState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.batteryState.txt="电池状态：故障";}\n                if(rawRegs.vals[160]>=1 && rawRegs.vals[160]<=3 && rawRegs.vals[161]<=100){\n                    P7_System_Ext.batteryPercent.fontColor=P0_Boot.themeInk.val;P7_System_Ext.batteryPercent.txt="电池电量："+intToString(rawRegs.vals[161])+"%";\n                }\n            }\n            if((rawRegs.vals[194] & 16)!=0){\n                P7_System_Ext.positioningX.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningX.txt="定位X：无效";\n                P7_System_Ext.positioningY.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningY.txt="定位Y：无效";\n                if(rawRegs.vals[162]==0){P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：未接入";}\n                if(rawRegs.vals[162]==1){P7_System_Ext.positioningState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.positioningState.txt="定位状态：无效";}\n                if(rawRegs.vals[162]==3){P7_System_Ext.positioningState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.positioningState.txt="定位状态：故障";}\n                if(rawRegs.vals[162]==2){\n                    P7_System_Ext.positioningState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningState.txt="定位状态：有效";\n                    if(rawRegs.vals[163]!=65535){P7_System_Ext.positioningAccuracy.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningAccuracy.txt="定位精度："+intToString(rawRegs.vals[163])+" mm";}\n                    // 正式协议是本地坐标，不能冒称经纬度。\n                    positionValue=rawRegs.vals[164];\n                    if(positionValue>=32768){positionValue=positionValue-65536;}\n                    positionValue=positionValue*65536+rawRegs.vals[165];\n                    P7_System_Ext.positioningX.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningX.txt="定位X："+intToString(positionValue)+" mm";\n                    positionValue=rawRegs.vals[166];\n                    if(positionValue>=32768){positionValue=positionValue-65536;}\n                    positionValue=positionValue*65536+rawRegs.vals[167];\n                    P7_System_Ext.positioningY.fontColor=P0_Boot.themeInk.val;P7_System_Ext.positioningY.txt="定位Y："+intToString(positionValue)+" mm";\n                }\n            }\n            if((rawRegs.vals[194] & 32)!=0){\n                if(rawRegs.vals[168]==0){P7_System_Ext.armState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.armState.txt="机械臂状态：未接入";}\n                if(rawRegs.vals[168]==1){P7_System_Ext.armState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.armState.txt="机械臂状态：待机";}\n                if(rawRegs.vals[168]==2){P7_System_Ext.armState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.armState.txt="机械臂状态：工作";}\n                if(rawRegs.vals[168]==3){P7_System_Ext.armState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.armState.txt="机械臂状态：故障";}\n            }\n            if((rawRegs.vals[194] & 64)!=0){\n                if(rawRegs.vals[169]==0){P7_System_Ext.lightingState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.lightingState.txt="照明状态：未接入";}\n                if(rawRegs.vals[169]==1){P7_System_Ext.lightingState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.lightingState.txt="照明状态：关闭";}\n                if(rawRegs.vals[169]==2){P7_System_Ext.lightingState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.lightingState.txt="照明状态：开启";}\n                if(rawRegs.vals[169]==3){P7_System_Ext.lightingState.fontColor=P0_Boot.themeFault.val;P7_System_Ext.lightingState.txt="照明状态：故障";}\n            }\n            if((rawRegs.vals[194] & 128)!=0){\n                if(rawRegs.vals[170]==0){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeMuted.val;P7_System_Ext.acquisitionState.txt="数据采集：未接入";}\n                if(rawRegs.vals[170]==1){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.acquisitionState.txt="数据采集：待机";}\n                if(rawRegs.vals[170]==2){P7_System_Ext.acquisitionState.fontColor=P0_Boot.themeInk.val;P7_System_Ext.acquisitionState.txt="数据采集：采集";}\n                if(rawRe'... 89587 more characters,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

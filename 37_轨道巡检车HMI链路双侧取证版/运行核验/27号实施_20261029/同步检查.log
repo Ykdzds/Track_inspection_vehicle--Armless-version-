@@ -1,0 +1,418 @@
+TAP version 13
+# Subtest: 固定读帧与CRC向量
+ok 1 - 固定读帧与CRC向量
+  ---
+  duration_ms: 2.4646
+  type: 'test'
+  ...
+# Subtest: 完整24字申请帧及特殊字序
+ok 2 - 完整24字申请帧及特殊字序
+  ---
+  duration_ms: 0.8808
+  type: 'test'
+  ...
+# Subtest: RPM边界及保留参数
+ok 3 - RPM边界及保留参数
+  ---
+  duration_ms: 0.4937
+  type: 'test'
+  ...
+# Subtest: 重复目标不续期且旧序号拒绝
+ok 4 - 重复目标不续期且旧序号拒绝
+  ---
+  duration_ms: 1.4129
+  type: 'test'
+  ...
+# Subtest: 授权后周期发零，滑块不动仍刷新，唯一在途
+ok 5 - 授权后周期发零，滑块不动仍刷新，唯一在途
+  ---
+  duration_ms: 149.6326
+  type: 'test'
+  ...
+# Subtest: 授权前滑动无效，新滑动只保存最新目标
+ok 6 - 授权前滑动无效，新滑动只保存最新目标
+  ---
+  duration_ms: 51.4855
+  type: 'test'
+  ...
+# Subtest: 释放后回中并返回，不继续发送旧目标
+ok 7 - 释放后回中并返回，不继续发送旧目标
+  ---
+  duration_ms: 145.9423
+  type: 'test'
+  ...
+# Subtest: 主控重启清会话与旧目标，不自动授权
+ok 8 - 主控重启清会话与旧目标，不自动授权
+  ---
+  duration_ms: 117.1594
+  type: 'test'
+  ...
+# Subtest: 左右双轴不用改屏协议，未参与不显示零
+ok 9 - 左右双轴不用改屏协议，未参与不显示零
+  ---
+  duration_ms: 108.9841
+  type: 'test'
+  ...
+# Subtest: 只读固件不能授权
+ok 10 - 只读固件不能授权
+  ---
+  duration_ms: 71.1385
+  type: 'test'
+  ...
+# Subtest: 错CRC、错站和短邮箱不更新模拟器
+ok 11 - 错CRC、错站和短邮箱不更新模拟器
+  ---
+  duration_ms: 0.2171
+  type: 'test'
+  ...
+# Subtest: 恢复申请使用session=0和generation且重复按键只提交一次
+ok 12 - 恢复申请使用session=0和generation且重复按键只提交一次
+  ---
+  duration_ms: 0.1507
+  type: 'test'
+  ...
+# Subtest: generation不匹配拒绝恢复且状态区保留恢复字段
+ok 13 - generation不匹配拒绝恢复且状态区保留恢复字段
+  ---
+  duration_ms: 0.1154
+  type: 'test'
+  ...
+# Subtest: 元数据持续丢失也轮询全部旧区，失败重试不超过每500ms一次
+ok 14 - 元数据持续丢失也轮询全部旧区，失败重试不超过每500ms一次
+  ---
+  duration_ms: 168.058
+  type: 'test'
+  ...
+# Subtest: 50ms应答和全局显示联合负载下目标与状态均不超过200ms
+ok 15 - 50ms应答和全局显示联合负载下目标与状态均不超过200ms
+  ---
+  duration_ms: 1331.0508
+  type: 'test'
+  ...
+# Subtest: R2已确认但基础区未读不再误报主控没有回复
+ok 16 - R2已确认但基础区未读不再误报主控没有回复
+  ---
+  duration_ms: 23.9577
+  type: 'test'
+  ...
+# Subtest: 独立急停不会被随后返回意图覆盖
+ok 17 - 独立急停不会被随后返回意图覆盖
+  ---
+  duration_ms: 47.4364
+  type: 'test'
+  ...
+# Subtest: 只读诊断模式只读B5或B5加B7，不授权
+ok 18 - 只读诊断模式只读B5或B5加B7，不授权
+  ---
+  duration_ms: 65.7499
+  type: 'test'
+  ...
+# Subtest: 回调拒因记录含实际站号与在途上下文，失败不覆盖缓存
+ok 19 - 回调拒因记录含实际站号与在途上下文，失败不覆盖缓存
+  ---
+  duration_ms: 23.3567
+  type: 'test'
+  ...
+# Subtest: 授权交叉确认后的第一条目标必须为零
+ok 20 - 授权交叉确认后的第一条目标必须为零
+  ---
+  duration_ms: 23.5994
+  type: 'test'
+  ...
+# Subtest: Default同步读失败立即统计，不等待独立回调看门狗
+ok 21 - Default同步读失败立即统计，不等待独立回调看门狗
+  ---
+  duration_ms: 10.2523
+  type: 'test'
+  ...
+# Subtest: 离页与急停同拍仍优先急停，不被自动释放降级
+ok 22 - 离页与急停同拍仍优先急停，不被自动释放降级
+  ---
+  duration_ms: 46.9586
+  type: 'test'
+  ...
+# Subtest: 运行中进入只读诊断先撤权，不能保留后台运动
+ok 23 - 运行中进入只读诊断先撤权，不能保留后台运动
+  ---
+  duration_ms: 40.8426
+  type: 'test'
+  ...
+# Subtest: 全局P8显示段与独立显示源保持一致
+ok 24 - 全局P8显示段与独立显示源保持一致
+  ---
+  duration_ms: 1.6424
+  type: 'test'
+  ...
+# Subtest: 正常授权全局显示负载下辅助区不超过原2秒失效门槛
+ok 25 - 正常授权全局显示负载下辅助区不超过原2秒失效门槛
+  ---
+  duration_ms: 1157.5837
+  type: 'test'
+  ...
+# Subtest: 固定读帧与CRC向量
+ok 26 - 固定读帧与CRC向量
+  ---
+  duration_ms: 2.5937
+  type: 'test'
+  ...
+# Subtest: 完整24字申请帧及特殊字序
+ok 27 - 完整24字申请帧及特殊字序
+  ---
+  duration_ms: 0.857
+  type: 'test'
+  ...
+# Subtest: RPM边界及保留参数
+ok 28 - RPM边界及保留参数
+  ---
+  duration_ms: 0.4773
+  type: 'test'
+  ...
+# Subtest: 重复目标不续期且旧序号拒绝
+ok 29 - 重复目标不续期且旧序号拒绝
+  ---
+  duration_ms: 1.4163
+  type: 'test'
+  ...
+# Subtest: 授权后周期发零，滑块不动仍刷新，唯一在途
+ok 30 - 授权后周期发零，滑块不动仍刷新，唯一在途
+  ---
+  duration_ms: 146.5776
+  type: 'test'
+  ...
+# Subtest: 授权前滑动无效，新滑动只保存最新目标
+ok 31 - 授权前滑动无效，新滑动只保存最新目标
+  ---
+  duration_ms: 49.8688
+  type: 'test'
+  ...
+# Subtest: 释放后回中并返回，不继续发送旧目标
+ok 32 - 释放后回中并返回，不继续发送旧目标
+  ---
+  duration_ms: 153.3592
+  type: 'test'
+  ...
+# Subtest: 主控重启清会话与旧目标，不自动授权
+ok 33 - 主控重启清会话与旧目标，不自动授权
+  ---
+  duration_ms: 116.9778
+  type: 'test'
+  ...
+# Subtest: 左右双轴不用改屏协议，未参与不显示零
+ok 34 - 左右双轴不用改屏协议，未参与不显示零
+  ---
+  duration_ms: 105.8796
+  type: 'test'
+  ...
+# Subtest: 只读固件不能授权
+ok 35 - 只读固件不能授权
+  ---
+  duration_ms: 70.7479
+  type: 'test'
+  ...
+# Subtest: 错CRC、错站和短邮箱不更新模拟器
+ok 36 - 错CRC、错站和短邮箱不更新模拟器
+  ---
+  duration_ms: 0.4068
+  type: 'test'
+  ...
+# Subtest: 恢复申请使用session=0和generation且重复按键只提交一次
+ok 37 - 恢复申请使用session=0和generation且重复按键只提交一次
+  ---
+  duration_ms: 0.2089
+  type: 'test'
+  ...
+# Subtest: generation不匹配拒绝恢复且状态区保留恢复字段
+ok 38 - generation不匹配拒绝恢复且状态区保留恢复字段
+  ---
+  duration_ms: 0.1325
+  type: 'test'
+  ...
+# Subtest: 25 single status exception recovers before expiry without release
+ok 39 - 25 single status exception recovers before expiry without release
+  ---
+  duration_ms: 72.6839
+  type: 'test'
+  ...
+# Subtest: 25 single status timeout recovers before expiry without release
+ok 40 - 25 single status timeout recovers before expiry without release
+  ---
+  duration_ms: 81.5532
+  type: 'test'
+  ...
+# Subtest: 25 continuous exception revokes at unchanged 300ms gate and retains evidence
+ok 41 - 25 continuous exception revokes at unchanged 300ms gate and retains evidence
+  ---
+  duration_ms: 57.8506
+  type: 'test'
+  ...
+# Subtest: 25 continuous timeout revokes at unchanged 300ms gate and retains evidence
+ok 42 - 25 continuous timeout revokes at unchanged 300ms gate and retains evidence
+  ---
+  duration_ms: 55.0131
+  type: 'test'
+  ...
+# Subtest: 25 continuous frozen revokes at unchanged 300ms gate and retains evidence
+ok 43 - 25 continuous frozen revokes at unchanged 300ms gate and retains evidence
+  ---
+  duration_ms: 75.6936
+  type: 'test'
+  ...
+# Subtest: 25 ten minute simulated idle authorization keeps first target zero and supports new movement
+ok 44 - 25 ten minute simulated idle authorization keeps first target zero and supports new movement
+  ---
+  duration_ms: 5698.4441
+  type: 'test'
+  ...
+# Subtest: 25 metadata expiry and master revoke are independently diagnosed
+ok 45 - 25 metadata expiry and master revoke are independently diagnosed
+  ---
+  duration_ms: 116.0792
+  type: 'test'
+  ...
+# Subtest: 固定读帧与CRC向量
+ok 46 - 固定读帧与CRC向量
+  ---
+  duration_ms: 1.4664
+  type: 'test'
+  ...
+# Subtest: 完整24字申请帧及特殊字序
+ok 47 - 完整24字申请帧及特殊字序
+  ---
+  duration_ms: 0.316
+  type: 'test'
+  ...
+# Subtest: RPM边界及保留参数
+ok 48 - RPM边界及保留参数
+  ---
+  duration_ms: 0.453
+  type: 'test'
+  ...
+# Subtest: 重复目标不续期且旧序号拒绝
+ok 49 - 重复目标不续期且旧序号拒绝
+  ---
+  duration_ms: 0.3348
+  type: 'test'
+  ...
+# Subtest: 授权后周期发零，滑块不动仍刷新，唯一在途
+ok 50 - 授权后周期发零，滑块不动仍刷新，唯一在途
+  ---
+  duration_ms: 135.9023
+  type: 'test'
+  ...
+# Subtest: 授权前滑动无效，新滑动只保存最新目标
+ok 51 - 授权前滑动无效，新滑动只保存最新目标
+  ---
+  duration_ms: 52.1648
+  type: 'test'
+  ...
+# Subtest: 释放后回中并返回，不继续发送旧目标
+ok 52 - 释放后回中并返回，不继续发送旧目标
+  ---
+  duration_ms: 143.0994
+  type: 'test'
+  ...
+# Subtest: 主控重启清会话与旧目标，不自动授权
+ok 53 - 主控重启清会话与旧目标，不自动授权
+  ---
+  duration_ms: 113.4245
+  type: 'test'
+  ...
+# Subtest: 左右双轴不用改屏协议，未参与不显示零
+ok 54 - 左右双轴不用改屏协议，未参与不显示零
+  ---
+  duration_ms: 111.946
+  type: 'test'
+  ...
+# Subtest: 只读固件不能授权
+ok 55 - 只读固件不能授权
+  ---
+  duration_ms: 72.8512
+  type: 'test'
+  ...
+# Subtest: 错CRC、错站和短邮箱不更新模拟器
+ok 56 - 错CRC、错站和短邮箱不更新模拟器
+  ---
+  duration_ms: 0.2625
+  type: 'test'
+  ...
+# Subtest: 恢复申请使用session=0和generation且重复按键只提交一次
+ok 57 - 恢复申请使用session=0和generation且重复按键只提交一次
+  ---
+  duration_ms: 0.281
+  type: 'test'
+  ...
+# Subtest: generation不匹配拒绝恢复且状态区保留恢复字段
+ok 58 - generation不匹配拒绝恢复且状态区保留恢复字段
+  ---
+  duration_ms: 0.141
+  type: 'test'
+  ...
+# Subtest: 26 实际按钮与事务服务生成恢复帧，幂等，恢复完成保持未授权
+ok 59 - 26 实际按钮与事务服务生成恢复帧，幂等，恢复完成保持未授权
+  ---
+  duration_ms: 100.8096
+  type: 'test'
+  ...
+# Subtest: 26 等待健康、资格不足、冻结快照、版本及零generation均拒绝且不排队
+ok 60 - 26 等待健康、资格不足、冻结快照、版本及零generation均拒绝且不排队
+  ---
+  duration_ms: 338.1791
+  type: 'test'
+  ...
+# Subtest: 26 排队后generation变化或状态过期，发送前再次拒绝
+ok 61 - 26 排队后generation变化或状态过期，发送前再次拒绝
+  ---
+  duration_ms: 116.1961
+  type: 'test'
+  ...
+# Subtest: 26 恢复期间不发送授权速度释放，身份和结果轮询持续
+ok 62 - 26 恢复期间不发送授权速度释放，身份和结果轮询持续
+  ---
+  duration_ms: 106.401
+  type: 'test'
+  ...
+# Subtest: 26 普通加速不显示换向，reverse边沿后加速并退出
+ok 63 - 26 普通加速不显示换向，reverse边沿后加速并退出
+  ---
+  duration_ms: 151.6104
+  type: 'test'
+  ...
+# Subtest: 26 停车成功提示覆盖左轴右轴双轴，陈旧速度不能显示零
+ok 64 - 26 停车成功提示覆盖左轴右轴双轴，陈旧速度不能显示零
+  ---
+  duration_ms: 343.7567
+  type: 'test'
+  ...
+# Subtest: 26 主控恢复失败显示真实恢复原因，不能用恢复动作授权
+ok 65 - 26 主控恢复失败显示真实恢复原因，不能用恢复动作授权
+  ---
+  duration_ms: 76.6006
+  type: 'test'
+  ...
+# Subtest: 26 主控恢复初始化清除结果槽，仍按本次generation的新鲜恢复状态完成
+ok 66 - 26 主控恢复初始化清除结果槽，仍按本次generation的新鲜恢复状态完成
+  ---
+  duration_ms: 84.2376
+  type: 'test'
+  ...
+# Subtest: 26 已失败恢复拒绝新的普通授权
+ok 67 - 26 已失败恢复拒绝新的普通授权
+  ---
+  duration_ms: 65.2325
+  type: 'test'
+  ...
+# Subtest: 26 实际PIX中文资源读回覆盖所有当前提示
+ok 68 - 26 实际PIX中文资源读回覆盖所有当前提示
+  ---
+  duration_ms: 4.6273
+  type: 'test'
+  ...
+1..68
+# tests 68
+# suites 0
+# pass 68
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6947.2749

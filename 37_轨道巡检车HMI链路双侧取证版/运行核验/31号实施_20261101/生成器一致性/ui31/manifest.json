@@ -1,0 +1,525 @@
+{
+  "palettes": {
+    "Day": {
+      "bg": "#FFFFFF",
+      "card": "#F1F6FC",
+      "edge": "#9AAFC4",
+      "ink": "#10243A",
+      "muted": "#42566D",
+      "accent": "#0068A6",
+      "good": "#146C43",
+      "warn": "#8A4B00",
+      "fault": "#B42318",
+      "track": "#DCE8F3",
+      "thumb": "#146C43",
+      "decor": "#E9F0F8",
+      "nav": "#DCE9F5",
+      "navPress": "#BCD4E9",
+      "primary": "#0068A6",
+      "primaryPress": "#005385",
+      "danger": "#B42318",
+      "dangerPress": "#8E1B13",
+      "disabled": "#D0D9E2"
+    },
+    "Night": {
+      "bg": "#0B1426",
+      "card": "#14243B",
+      "edge": "#263E59",
+      "ink": "#EDF5FF",
+      "muted": "#A9BBD0",
+      "accent": "#22D3EE",
+      "good": "#5DE0AE",
+      "warn": "#FFC766",
+      "fault": "#FF657A",
+      "track": "#253D56",
+      "thumb": "#5DE0AE",
+      "decor": "#102138",
+      "nav": "#1C3552",
+      "navPress": "#285476",
+      "primary": "#17648D",
+      "primaryPress": "#1A7195",
+      "danger": "#AF2940",
+      "dangerPress": "#D43C52",
+      "disabled": "#303E51"
+    }
+  },
+  "updates": {
+    "P1_Main": {
+      "P1_Title": {
+        "X": 24,
+        "Y": 12,
+        "Width": 344,
+        "Height": 40
+      }
+    },
+    "P8_ServoControl": {
+      "leftActual": {
+        "X": 32,
+        "Y": 112,
+        "Width": 456,
+        "Height": 32,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "左轴实际：--rpm|--m/s|--km/h"
+      },
+      "leftTarget": {
+        "X": 32,
+        "Y": 146,
+        "Width": 456,
+        "Height": 30,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "最终目标：--rpm|--m/s|--km/h"
+      },
+      "leftOutput": {
+        "X": 32,
+        "Y": 180,
+        "Width": 456,
+        "Height": 30,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "执行输出：--rpm|--m/s|--km/h"
+      },
+      "leftEnable": {
+        "X": 32,
+        "Y": 214,
+        "Width": 456,
+        "Height": 28,
+        "FontSize31": 24,
+        "WordWrap": false
+      },
+      "leftActualUnits": {
+        "Visbile": false,
+        "Text": ""
+      },
+      "rightActual": {
+        "X": 536,
+        "Y": 112,
+        "Width": 456,
+        "Height": 32,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "右轴实际：--rpm|--m/s|--km/h"
+      },
+      "rightTarget": {
+        "X": 536,
+        "Y": 146,
+        "Width": 456,
+        "Height": 30,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "最终目标：--rpm|--m/s|--km/h"
+      },
+      "rightOutput": {
+        "X": 536,
+        "Y": 180,
+        "Width": 456,
+        "Height": 30,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "执行输出：--rpm|--m/s|--km/h"
+      },
+      "rightEnable": {
+        "X": 536,
+        "Y": 214,
+        "Width": 456,
+        "Height": 28,
+        "FontSize31": 24,
+        "WordWrap": false
+      },
+      "rightActualUnits": {
+        "Visbile": false,
+        "Text": ""
+      },
+      "commonTarget": {
+        "X": 32,
+        "Y": 252,
+        "Width": 456,
+        "Height": 32,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "设定：0rpm|0.000m/s|0.000km/h"
+      },
+      "acceptedTarget": {
+        "X": 536,
+        "Y": 252,
+        "Width": 456,
+        "Height": 32,
+        "FontSize31": 24,
+        "WordWrap": false,
+        "Text": "主控接受：--rpm|--m/s|--km/h"
+      },
+      "rpmSlider": {
+        "X": 24,
+        "Y": 296,
+        "Width": 976,
+        "Height": 48
+      },
+      "sliderScale": {
+        "X": 32,
+        "Y": 344,
+        "Width": 280,
+        "Height": 22,
+        "FontSize31": 20
+      },
+      "sliderZero": {
+        "X": 506,
+        "Y": 344,
+        "Width": 32,
+        "Height": 22,
+        "FontSize31": 20
+      },
+      "sliderPositive": {
+        "X": 812,
+        "Y": 344,
+        "Width": 188,
+        "Height": 22,
+        "FontSize31": 20
+      },
+      "authorityStatus": {
+        "X": 24,
+        "Y": 370,
+        "Width": 976,
+        "Height": 30,
+        "FontSize31": 24
+      },
+      "stopStatus": {
+        "X": 24,
+        "Y": 404,
+        "Width": 476,
+        "Height": 30,
+        "FontSize31": 24
+      },
+      "recoveryStatus": {
+        "X": 536,
+        "Y": 404,
+        "Width": 464,
+        "Height": 30,
+        "FontSize31": 24
+      },
+      "recoveryDetail": {
+        "X": 24,
+        "Y": 438,
+        "Width": 976,
+        "Height": 30,
+        "FontSize31": 24
+      },
+      "errorStatus": {
+        "X": 24,
+        "Y": 472,
+        "Width": 976,
+        "Height": 48,
+        "FontSize31": 24
+      },
+      "controlTitle": {
+        "Text": "伺服控制 / 31"
+      }
+    }
+  },
+  "add": [
+    {
+      "Page": "P0_Boot",
+      "Name": "themeMode",
+      "Type": "VarCtrl",
+      "IsGlobal": true,
+      "Int": 0
+    },
+    {
+      "Page": "P0_Boot",
+      "Name": "themeInk",
+      "Type": "VarCtrl",
+      "IsGlobal": true,
+      "Int": 0
+    },
+    {
+      "Page": "P0_Boot",
+      "Name": "themeMuted",
+      "Type": "VarCtrl",
+      "IsGlobal": true,
+      "Int": 0
+    },
+    {
+      "Page": "P0_Boot",
+      "Name": "themeGood",
+      "Type": "VarCtrl",
+      "IsGlobal": true,
+      "Int": 0
+    },
+    {
+      "Page": "P0_Boot",
+      "Name": "themeWarn",
+      "Type": "VarCtrl",
+      "IsGlobal": true,
+      "Int": 0
+    },
+    {
+      "Page": "P0_Boot",
+      "Name": "themeFault",
+      "Type": "VarCtrl",
+      "IsGlobal": true,
+      "Int": 0
+    },
+    {
+      "Page": "P1_Main",
+      "Name": "themeToggle",
+      "Type": "ButtonCtrl",
+      "IsGlobal": false,
+      "X": 384,
+      "Y": 4,
+      "Width": 176,
+      "Height": 52,
+      "FontSize31": 24,
+      "Text": "日间 / 切夜间"
+    },
+    {
+      "Page": "P8_ServoControl",
+      "Name": "sliderSpeedHint",
+      "Type": "TextCtrl",
+      "IsGlobal": true,
+      "X": 540,
+      "Y": 308,
+      "Width": 192,
+      "Height": 24,
+      "FontSize31": 24,
+      "Text": "预览：0.000km/h",
+      "Enable": false,
+      "WordWrap": false
+    }
+  ],
+  "boxes": {
+    "P0_Boot": [
+      [
+        24,
+        140,
+        1000,
+        312
+      ],
+      [
+        24,
+        322,
+        1000,
+        484
+      ],
+      [
+        24,
+        496,
+        1000,
+        564
+      ]
+    ],
+    "P1_Main": [
+      [
+        16,
+        104,
+        504,
+        216
+      ],
+      [
+        520,
+        104,
+        1008,
+        216
+      ],
+      [
+        16,
+        228,
+        504,
+        316
+      ],
+      [
+        520,
+        228,
+        1008,
+        316
+      ],
+      [
+        16,
+        328,
+        504,
+        508
+      ],
+      [
+        520,
+        328,
+        1008,
+        508
+      ]
+    ],
+    "P2_Diag": [
+      [
+        16,
+        64,
+        504,
+        524
+      ],
+      [
+        520,
+        64,
+        1008,
+        524
+      ]
+    ],
+    "P3_Position": [
+      [
+        16,
+        80,
+        504,
+        138
+      ],
+      [
+        520,
+        80,
+        1008,
+        138
+      ],
+      [
+        16,
+        146,
+        1008,
+        298
+      ],
+      [
+        16,
+        306,
+        504,
+        460
+      ],
+      [
+        520,
+        306,
+        1008,
+        460
+      ],
+      [
+        16,
+        466,
+        1008,
+        524
+      ]
+    ],
+    "P4_Info": [
+      [
+        16,
+        74,
+        1008,
+        438
+      ],
+      [
+        16,
+        446,
+        1008,
+        524
+      ]
+    ],
+    "P5_Alarm": [
+      [
+        16,
+        80,
+        1008,
+        246
+      ],
+      [
+        16,
+        258,
+        1008,
+        398
+      ],
+      [
+        16,
+        402,
+        1008,
+        454
+      ],
+      [
+        16,
+        466,
+        1008,
+        516
+      ]
+    ],
+    "P6_Sync": [
+      [
+        16,
+        80,
+        1008,
+        136
+      ],
+      [
+        16,
+        146,
+        1008,
+        304
+      ],
+      [
+        16,
+        320,
+        1008,
+        464
+      ],
+      [
+        16,
+        474,
+        1008,
+        520
+      ]
+    ],
+    "P7_System_Ext": [
+      [
+        16,
+        78,
+        1008,
+        132
+      ],
+      [
+        16,
+        142,
+        1008,
+        248
+      ],
+      [
+        16,
+        258,
+        1008,
+        422
+      ],
+      [
+        16,
+        432,
+        1008,
+        496
+      ]
+    ],
+    "P8_ServoControl": [
+      [
+        16,
+        110,
+        504,
+        244
+      ],
+      [
+        520,
+        110,
+        1008,
+        244
+      ],
+      [
+        16,
+        248,
+        504,
+        288
+      ],
+      [
+        520,
+        248,
+        1008,
+        288
+      ]
+    ]
+  },
+  "mechanics": {
+    "diameter_m": 0.185,
+    "gear_ratio": 2.6666666666666665,
+    "rpm_to_mps": 0.0036324665057131987,
+    "rpm_to_kmh": 0.013076879420567516
+  }
+}

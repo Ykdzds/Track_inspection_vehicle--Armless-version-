@@ -1,0 +1,85 @@
+✔ final PIX array lengths and a single enabled 50ms timer (0.8198ms)
+✔ healthy navigation and rendering consume wall time, target read/write serialized (118.6166ms)
+✔ releasing ordinary authorization key cannot cancel a newly authorized session (23.7645ms)
+✔ 300ms stall clears old target; later manual authorization starts at zero (92.5975ms)
+✔ 600ms host stall advances controller TTL independently (52.7256ms)
+✔ emergency generation survives all local states and historical stop candidates (118.9877ms)
+✔ wrong station, short frame and wrong function never renew nonzero target (72.59ms)
+✖ repeat authorization after completed stop never settles an old stop (142.4496ms)
+✔ display refreshes only visible page, max six fields, and retains last numeric history (30.9314ms)
+✔ all nine pages and themes navigate with bounded arrays (118.6382ms)
+✖ CRC rejection and no callback cannot renew target or erase history (22.4359ms)
+✔ 100ms blocking can continue; 300/600ms cannot replay a nonzero target (99.5509ms)
+✔ 1000 page switches with theme changes retain session and bounded transactions (512.5684ms)
+✔ controller reboot clears old identity cache and never restores motion (55.6605ms)
+✔ position partial/expired samples hold values and baseline change invalidates only mileage (54.7534ms)
+✔ signed -1 and zero are valid speed cache values; sentinel retains preceding value (23.1009ms)
+✔ first invalid speed remains unknown; ten seconds without any frame retains business values (37.1038ms)
+✖ stop settlement and a newer emergency in the same event boundary keep the emergency generation (22.8065ms)
+✔ reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization (33.6869ms)
+✔ negative, zero and speed bounds have explicit valid cache semantics (58.364ms)
+✔ backward snapshot high word is rejected without depending on host integer overflow (24.4218ms)
+✔ snapshot uint32 wrap advances while backward master clock rejects renewal (50.6711ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 19
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1877.7652
+
+✖ failing tests:
+
+test at hmi34-inherited.test.cjs:10:1
+✖ repeat authorization after completed stop never settles an old stop (142.4496ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.h[2]===1||r.h[2]===5)
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34-inherited.test.cjs:10:192)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at hmi34-inherited.test.cjs:14:1
+✖ CRC rejection and no callback cannot renew target or erase history (22.4359ms)
+  TypeError: r.setCrcBad is not a function
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34-inherited.test.cjs:14:198)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7)
+
+test at hmi34-inherited.test.cjs:24:1
+✖ stop settlement and a newer emergency in the same event boundary keep the emergency generation (22.8065ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34-inherited.test.cjs:24:292)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

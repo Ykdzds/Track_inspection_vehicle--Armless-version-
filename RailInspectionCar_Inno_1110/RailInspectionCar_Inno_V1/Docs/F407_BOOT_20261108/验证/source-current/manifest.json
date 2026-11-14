@@ -1,0 +1,86 @@
+{
+  "Variant": "source-current",
+  "Configuration": {
+    "Variant": "source-current",
+    "Defines": [
+      "USE_HAL_DRIVER",
+      "STM32F407xx"
+    ],
+    "Values": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "NoLcd": false,
+    "DebugCli": false,
+    "TuneUart": false,
+    "ServoCli": false,
+    "Pulse": false,
+    "NoUartRx": true,
+    "DiagnosticEnabled": true,
+    "UsesUnmodifiedSourceConfiguration": true
+  },
+  "Head": "474a40971cf415041239a81854e4e2dab1ba1ad5",
+  "TrackedChanges": [
+    " M APP/app_rtos_task.c",
+    " M \"BSP/NRF24L01/NRF24L01_\\344\\275\\277\\347\\224\\250\\350\\257\\264\\346\\230\\216.md\"",
+    " M Tests/board_key_mocks/main.h",
+    " M Tests/test_board_key_startup.c"
+  ],
+  "SourceDigest": "AF4BB1866D987E4AFBB744D472652A0A8F4C22A26D9253DAFC7DDBD1183B5E53",
+  "Started": "2026-11-08T19:01:33.4477391+08:00",
+  "Completed": "2026-11-08T19:03:07.8431047+08:00",
+  "Exit": 0,
+  "Errors": 0,
+  "Warnings": 0,
+  "PhysicalRam": 167724,
+  "SameMacroComparison": true,
+  "DeltaSameMacroBaseline": 212,
+  "ActualObjectMacroEvidence": true,
+  "Ram": {
+    "PhysicalRam": 167724,
+    "Regions": {
+      "RW_CCM": {
+        "Bytes": 62024,
+        "Capacity": 65536,
+        "Free": 3512
+      },
+      "RW_IRAM1": {
+        "Bytes": 102000,
+        "Capacity": 114688,
+        "Free": 12688
+      },
+      "RW_IRAM2": {
+        "Bytes": 3188,
+        "Capacity": 15872,
+        "Free": 12684
+      },
+      "RETAINED_FAULT": {
+        "Bytes": 512,
+        "Capacity": 512,
+        "Free": 0
+      }
+    }
+  },
+  "Hashes": {
+    "RailInspectionCar_V1.hex": "1AA0FBF1891D51114FC3E9DF5B7AFEA9135A7072AE3ED265AFCD502FE7F1A30B",
+    "RailInspectionCar_V1.axf": "67B1DEFF8324E31A8969E5E82338F1D54E6BB8BDFD918DF27B8137FA28C3A602",
+    "RailInspectionCar_V1.map": "DA470C4384853AB675756BFCDC2FD75146C8A74ED188EA6AC68F3AA558C116CF",
+    "RailInspectionCar_V1.htm": "D36FB168808C183C4E03B3212499C364B28004E26091C258F4B1D52534FC2D34",
+    "keil-rebuild.log": "FAB5B0AB6B6B82C07F9E1F22D988208286357B43148B3101C3DD52C327716C45",
+    "project.uvprojx.snapshot": "E34114D077148D352D4D391691764F8BCE23ADDA9C537050BFEBC394EF81EDA3",
+    "configuration.json": "AB35C5C14E26F8CD6F8259DC9587BD161DFE39F3AEDAAB9C640F61CF33B55E35",
+    "memory-stack.log": "028B82F8DFECADEF457B2EE60205175412A8D6BC12DDDA4A3FDB9DF11F943195",
+    "object-macro-evidence.json": "27A5FDC72F6C01F9DDDCBC05A3A80EEDADEE3FAFEEEC4B338B906A28D2801D46"
+  },
+  "HardwareAcceptance": "pending"
+}

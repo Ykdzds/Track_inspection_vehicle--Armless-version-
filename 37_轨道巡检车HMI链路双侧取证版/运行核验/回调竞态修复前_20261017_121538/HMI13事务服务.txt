@@ -1,0 +1,201 @@
+int hIndex;
+int hCommand;
+int hSelected;
+int hPeriod;
+int hCandidate;
+int hValue;
+int hParamHigh;
+int hParamLow;
+int hResultMatches;
+int hStopEventMatches;
+int hFresh;
+int hAge;
+int hDueTarget;
+int hDueStatus;
+int hMetaPeriod;
+// 非导航离页也必须撤权，通信服务不能依赖控制页可见。
+if(sys_pid!=P8_ServoControl.id && P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[11]=3;P8_ServoControl.h13.vals[10]=0;}
+if(sys_pid!=P8_ServoControl.id && P8_ServoControl.h13.vals[2]==2){P8_ServoControl.h13.vals[11]=16;P8_ServoControl.h13.vals[10]=0;}
+if(P8_ServoControl.h13.vals[132]>0 && P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[11]=3;P8_ServoControl.h13.vals[10]=0;}
+if(P8_ServoControl.h13.vals[116]==1){P8_ServoControl.h13.vals[11]=16;P8_ServoControl.h13.vals[10]=0;}
+// 长期运行时平移本地相对时间，避免有符号毫秒计数溢出。
+if(P8_ServoControl.h13.vals[1]>1000000000){
+    P8_ServoControl.h13.vals[1]=P8_ServoControl.h13.vals[1]-500000000;
+    for(hIndex=18;hIndex<=22;hIndex++){P8_ServoControl.h13.vals[hIndex]=P8_ServoControl.h13.vals[hIndex]-500000000;}
+    P8_ServoControl.h13.vals[25]=P8_ServoControl.h13.vals[25]-500000000;P8_ServoControl.h13.vals[29]=P8_ServoControl.h13.vals[29]-500000000;
+    for(hIndex=48;hIndex<56;hIndex++){P8_ServoControl.h13.vals[hIndex]=P8_ServoControl.h13.vals[hIndex]-500000000;}
+    P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[73]-500000000;P8_ServoControl.h13.vals[95]=P8_ServoControl.h13.vals[95]-500000000;
+    P8_ServoControl.h13.vals[134]=P8_ServoControl.h13.vals[134]-500000000;P8_ServoControl.h13.vals[118]=P8_ServoControl.h13.vals[118]-500000000;P8_ServoControl.h13.vals[107]=P8_ServoControl.h13.vals[107]-500000000;
+}
+// 本事件是唯一发送者；安装版定时器单位10ms且最小5，候选节拍50ms。
+if(P8_ServoControl.h13.vals[0]==0){
+    P8_ServoControl.h13.vals[0]=1;P8_ServoControl.h13.vals[89]=50;P8_ServoControl.h13.vals[1]=0;P8_ServoControl.h13.vals[2]=0;P8_ServoControl.h13.vals[25]=0-100;
+    for(hIndex=0;hIndex<8;hIndex++){P0_Boot.mod.modbusBufferSetReadCount(hIndex,0);}
+    P8_ServoControl.h13.vals[48]=0-2000;P8_ServoControl.h13.vals[49]=0-2000;P8_ServoControl.h13.vals[50]=0-2000;P8_ServoControl.h13.vals[51]=0-2000;
+    P8_ServoControl.h13.vals[52]=0-2000;P8_ServoControl.h13.vals[53]=0-2000;P8_ServoControl.h13.vals[54]=0-2000;P8_ServoControl.h13.vals[55]=0-2000;
+    P8_ServoControl.h13.vals[134]=0-500;P8_ServoControl.h13.vals[135]=1;
+}
+P8_ServoControl.h13.vals[1]=P8_ServoControl.h13.vals[1]+P8_ServoControl.h13.vals[89];
+if(P8_ServoControl.h13.vals[96]<65535){P8_ServoControl.h13.vals[96]=P8_ServoControl.h13.vals[96]+1;}
+// 以收到的元数据冻结身份，重启后不恢复运动或旧序号。
+if(P8_ServoControl.h13.vals[47]==1 && P0_Boot.metaRegs.vals[0]==21065 && P0_Boot.metaRegs.vals[1]==1){
+    if(P8_ServoControl.h13.vals[74]==0 || P8_ServoControl.h13.vals[4]!=P0_Boot.metaRegs.vals[4] || P8_ServoControl.h13.vals[5]!=P0_Boot.metaRegs.vals[5]){
+        P8_ServoControl.h13.vals[4]=P0_Boot.metaRegs.vals[4];P8_ServoControl.h13.vals[5]=P0_Boot.metaRegs.vals[5];P8_ServoControl.h13.vals[74]=1;
+        P8_ServoControl.h13.vals[2]=0;P8_ServoControl.h13.vals[3]=0;P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[8]=0;P8_ServoControl.h13.vals[9]=0;
+        P8_ServoControl.h13.vals[11]=0;P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[68]=0;P8_ServoControl.h13.vals[31]=0;
+        P8_ServoControl.h13.vals[20]=0;P8_ServoControl.h13.vals[86]=0;P8_ServoControl.h13.vals[75]=0;P8_ServoControl.h13.vals[137]=0;P8_ServoControl.h13.vals[138]=0;
+        P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P8_ServoControl.h13.vals[32]=0;
+    }
+}
+// 即使重复读到了相同缓存，也不能把冻结快照当作持续更新。
+if(P8_ServoControl.h13.vals[24]==1){
+    P8_ServoControl.h13.vals[24]=0;
+    if(P8_ServoControl.h13Status.vals[0]==21325 && P8_ServoControl.h13Status.vals[1]==2 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5] && P8_ServoControl.h13.vals[74]==1){
+        if(P8_ServoControl.h13.vals[86]==0 || P8_ServoControl.h13Status.vals[4]!=P8_ServoControl.h13.vals[70] || P8_ServoControl.h13Status.vals[5]!=P8_ServoControl.h13.vals[71]){
+            P8_ServoControl.h13.vals[70]=P8_ServoControl.h13Status.vals[4];P8_ServoControl.h13.vals[71]=P8_ServoControl.h13Status.vals[5];P8_ServoControl.h13.vals[73]=P8_ServoControl.h13.vals[1];
+        }
+        P8_ServoControl.h13.vals[86]=1;
+        P8_ServoControl.h13.vals[30]=P8_ServoControl.h13Status.vals[36];
+        if(P8_ServoControl.h13Status.vals[16]>P8_ServoControl.h13.vals[8] || (P8_ServoControl.h13Status.vals[16]==P8_ServoControl.h13.vals[8] && P8_ServoControl.h13Status.vals[17]>P8_ServoControl.h13.vals[9])){P8_ServoControl.h13.vals[8]=P8_ServoControl.h13Status.vals[16];P8_ServoControl.h13.vals[9]=P8_ServoControl.h13Status.vals[17];}
+        if(P8_ServoControl.h13.vals[2]==0){P8_ServoControl.h13.vals[2]=1;}
+        if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[21]>P8_ServoControl.h13.vals[95] && (P8_ServoControl.h13Status.vals[8]!=1 || (P8_ServoControl.h13Status.vals[11]&2)==0 || P8_ServoControl.h13Status.vals[12]!=P8_ServoControl.h13.vals[6] || P8_ServoControl.h13Status.vals[13]!=P8_ServoControl.h13.vals[7])){
+            P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;P8_ServoControl.h13.vals[30]=P8_ServoControl.h13Status.vals[36];
+        }
+}else{P8_ServoControl.h13.vals[86]=0;P8_ServoControl.h13.vals[131]=P8_ServoControl.h13.vals[131]+1;}
+}
+P8_ServoControl.h13.vals[3]=0;
+if(P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13.vals[47]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[22]<3000 && P0_Boot.metaRegs.vals[0]==21065 && P0_Boot.metaRegs.vals[1]==1 && P0_Boot.metaRegs.vals[3]==2 && (P0_Boot.metaRegs.vals[2]&240)==240 && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[73]<300 && (P8_ServoControl.h13Status.vals[11]&128)!=0){P8_ServoControl.h13.vals[3]=1;}
+if(P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==0){
+    P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;
+    if(P8_ServoControl.h13.vals[74]==1){P8_ServoControl.h13.vals[11]=3;}
+}
+if(P8_ServoControl.h13.vals[137]==1 && P8_ServoControl.h13.vals[26]==1 && P8_ServoControl.h13.vals[2]==2){P8_ServoControl.h13.vals[23]=1;}
+if(P8_ServoControl.h13.vals[23]==1){
+    P8_ServoControl.h13.vals[23]=0;hResultMatches=0;
+    if(P8_ServoControl.h13Result.vals[0]==P8_ServoControl.h13.vals[5] && P8_ServoControl.h13Result.vals[1]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Result.vals[4]==P8_ServoControl.h13.vals[28] && P8_ServoControl.h13Result.vals[5]==P8_ServoControl.h13.vals[27] && P8_ServoControl.h13Result.vals[6]==P8_ServoControl.h13.vals[26] && P8_ServoControl.h13.vals[26]!=0){
+        if(P8_ServoControl.h13.vals[26]==1 || P8_ServoControl.h13.vals[26]==16 || (P8_ServoControl.h13Result.vals[2]==P8_ServoControl.h13.vals[93] && P8_ServoControl.h13Result.vals[3]==P8_ServoControl.h13.vals[92])){hResultMatches=1;}
+    }
+    if(hResultMatches==1){
+        if(P8_ServoControl.h13Result.vals[7]==3){
+            if(P8_ServoControl.h13.vals[26]==1 && (P8_ServoControl.h13Result.vals[2]!=0 || P8_ServoControl.h13Result.vals[3]!=0) && P8_ServoControl.h13.vals[2]==2 && P8_ServoControl.h13.vals[11]!=16){
+                P8_ServoControl.h13.vals[137]=1;
+            }
+            if(P8_ServoControl.h13.vals[137]==1 && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[21]>P8_ServoControl.h13.vals[29] && P8_ServoControl.h13Status.vals[8]==1 && (P8_ServoControl.h13Status.vals[11]&6)==2 && P8_ServoControl.h13Status.vals[12]==P8_ServoControl.h13Result.vals[3] && P8_ServoControl.h13Status.vals[13]==P8_ServoControl.h13Result.vals[2]){
+                P8_ServoControl.h13.vals[6]=P8_ServoControl.h13Result.vals[3];P8_ServoControl.h13.vals[7]=P8_ServoControl.h13Result.vals[2];P8_ServoControl.h13.vals[2]=3;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[30]=0;P8_ServoControl.h13.vals[25]=P8_ServoControl.h13.vals[1]-100;P8_ServoControl.h13.vals[95]=P8_ServoControl.h13.vals[1];
+                P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P8_ServoControl.h13.vals[32]=0;P8_ServoControl.h13.vals[26]=0;
+                P8_ServoControl.h13.vals[137]=0;P8_ServoControl.h13.vals[138]=1;
+            }
+            if(P8_ServoControl.h13.vals[26]==3 || P8_ServoControl.h13.vals[26]==16){if(P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13Status.vals[53]==3 && P8_ServoControl.h13.vals[20]==1 && P8_ServoControl.h13Status.vals[2]==P8_ServoControl.h13.vals[4] && P8_ServoControl.h13Status.vals[3]==P8_ServoControl.h13.vals[5] && (P8_ServoControl.h13Status.vals[48]!=P8_ServoControl.h13.vals[34] || P8_ServoControl.h13Status.vals[49]!=P8_ServoControl.h13.vals[35]) && P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[36] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[37] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[38]){P8_ServoControl.h13.vals[81]=1;}}
+            if(P8_ServoControl.h13.vals[26]==16 && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[21]>P8_ServoControl.h13.vals[29] && P8_ServoControl.h13Status.vals[8]==0 && P8_ServoControl.h13Status.vals[53]!=3){P8_ServoControl.h13.vals[83]=1;}
+        }
+        if(P8_ServoControl.h13Result.vals[7]>=4){
+            P8_ServoControl.h13.vals[30]=P8_ServoControl.h13Result.vals[8];
+            if(P8_ServoControl.h13.vals[26]==1){P8_ServoControl.h13.vals[137]=0;P8_ServoControl.h13.vals[2]=1;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;}
+            else{P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;}
+        }
+    }
+}
+// 单槽结果可能被迟到拒绝覆盖；停车事件以新事件及本请求关联补偿。
+if(P8_ServoControl.h13.vals[68]==1 && P8_ServoControl.h13.vals[86]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[21]<300){
+    hStopEventMatches=0;
+    if((P8_ServoControl.h13Status.vals[48]!=P8_ServoControl.h13.vals[34] || P8_ServoControl.h13Status.vals[49]!=P8_ServoControl.h13.vals[35]) && P8_ServoControl.h13Status.vals[50]==P8_ServoControl.h13.vals[36] && P8_ServoControl.h13Status.vals[51]==P8_ServoControl.h13.vals[37] && P8_ServoControl.h13Status.vals[52]==P8_ServoControl.h13.vals[38]){hStopEventMatches=1;}
+    if(hStopEventMatches==1 && P8_ServoControl.h13Status.vals[53]==3){P8_ServoControl.h13.vals[81]=1;}
+    if(hStopEventMatches==1 && P8_ServoControl.h13Status.vals[53]>=4){P8_ServoControl.h13.vals[30]=P8_ServoControl.h13Status.vals[36];P8_ServoControl.h13.vals[2]=7;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[83]=1;}
+}
+if(P8_ServoControl.h13.vals[81]==1){
+    P8_ServoControl.h13.vals[81]=0;P8_ServoControl.h13.vals[2]=5;P8_ServoControl.h13.vals[6]=0;P8_ServoControl.h13.vals[7]=0;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[26]=0;P8_ServoControl.h13.vals[68]=0;P8_ServoControl.h13.vals[31]=0;P8_ServoControl.h13.vals[83]=0;
+    P8_ServoControl.h13.vals[32]=1;P8_ServoControl.rpmSlider.val=1600;P8_ServoControl.h13.vals[32]=0;
+    if(P8_ServoControl.h13.vals[12]==1){P8_ServoControl.h13.vals[12]=0;showPage(P1_Main.id);}
+}
+// 申请未知不能视为拒绝后再次申请，改为无令牌停车消除幽灵授权。
+if(P8_ServoControl.h13.vals[26]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[29]>2300){P8_ServoControl.h13.vals[11]=16;P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[31]=1;P8_ServoControl.h13.vals[10]=0;}
+if(P8_ServoControl.h13.vals[11]==4){
+    P8_ServoControl.h13.vals[11]=0;
+    if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[12]=1;P8_ServoControl.h13.vals[11]=3;}
+    else{
+        if(P8_ServoControl.h13.vals[2]==2){P8_ServoControl.h13.vals[12]=1;if(P8_ServoControl.h13.vals[26]==0){P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[2]=1;showPage(P1_Main.id);P8_ServoControl.h13.vals[12]=0;}else{P8_ServoControl.h13.vals[11]=16;}}
+        else{if(P8_ServoControl.h13.vals[2]==4){P8_ServoControl.h13.vals[12]=1;}else{showPage(P1_Main.id);}}
+    }
+}
+if(P8_ServoControl.h13.vals[11]==1){
+    P8_ServoControl.h13.vals[11]=0;
+    if((P8_ServoControl.h13.vals[2]==1 || P8_ServoControl.h13.vals[2]==5) && P8_ServoControl.h13.vals[3]==1 && P8_ServoControl.h13.vals[26]==0 && P8_ServoControl.h13.vals[68]==0 && P8_ServoControl.h13.vals[75]==0 && P8_ServoControl.h13.vals[132]==0 && P8_ServoControl.h13.vals[116]==0){P8_ServoControl.h13.vals[39]=1;P8_ServoControl.h13.vals[2]=2;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[30]=0;}
+}
+if(P8_ServoControl.h13.vals[11]==3 || P8_ServoControl.h13.vals[11]==16){
+    hCommand=P8_ServoControl.h13.vals[11];P8_ServoControl.h13.vals[11]=0;P8_ServoControl.h13.vals[10]=0;
+    if(hCommand==16 || P8_ServoControl.h13.vals[6]!=0 || P8_ServoControl.h13.vals[7]!=0){
+        if(P8_ServoControl.h13.vals[39]!=16 && (P8_ServoControl.h13.vals[38]!=16 || P8_ServoControl.h13.vals[68]==0)){
+            P8_ServoControl.h13.vals[39]=hCommand;P8_ServoControl.h13.vals[2]=4;
+            if(P8_ServoControl.h13.vals[68]==0){P8_ServoControl.h13.vals[34]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[35]=P8_ServoControl.h13Status.vals[49];}
+            P8_ServoControl.h13.vals[26]=0;
+            P8_ServoControl.h13.vals[137]=0;P8_ServoControl.h13.vals[138]=0;
+        }
+    }
+}
+if(P8_ServoControl.h13.vals[13]==1 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[18]>=80){
+    P8_ServoControl.h13.vals[13]=0;P8_ServoControl.h13.vals[19]=P8_ServoControl.h13.vals[1]+100;P8_ServoControl.h13.vals[77]=P8_ServoControl.h13.vals[77]+1;P8_ServoControl.h13.vals[45]=2;P8_ServoControl.h13.vals[130]=P8_ServoControl.h13.vals[130]+1;
+    if(P8_ServoControl.h13.vals[14]==2){P8_ServoControl.h13.vals[31]=1;}
+}
+if(P8_ServoControl.h13.vals[13]==0 && P8_ServoControl.h13.vals[1]>=P8_ServoControl.h13.vals[19] && P8_ServoControl.h13.vals[80]==0){
+    P8_ServoControl.h13.vals[80]=1;hCommand=0;hSelected=8;
+    if(P8_ServoControl.h13.vals[39]!=0 && P8_ServoControl.h13.vals[74]==1 && P8_ServoControl.h13.vals[86]==1){hCommand=P8_ServoControl.h13.vals[39];}
+    hDueTarget=P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[25];hDueStatus=P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[55];
+    hMetaPeriod=2000;if(P8_ServoControl.h13.vals[47]==0 || P8_ServoControl.h13.vals[45]!=0){hMetaPeriod=500;}
+    if(hCommand==0 && P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==1 && (P8_ServoControl.h13.vals[138]==1 || hDueTarget>=150)){hCommand=33;}
+    if(hCommand==0 && hDueStatus>=150){hSelected=7;}
+    if(hCommand==0 && hSelected==8 && P8_ServoControl.h13.vals[26]!=0 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[54]>=100){hSelected=6;}
+    if(hCommand==0 && hSelected==8 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[48]>=500){hSelected=0;}
+    if(hCommand==0 && hSelected==8 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[53]>=hMetaPeriod){hSelected=5;}
+    if(hCommand==0 && hSelected==8 && P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[134]>=300){hSelected=P8_ServoControl.h13.vals[135];}
+    if(hCommand==0 && hSelected==8 && P8_ServoControl.h13.vals[2]==3 && P8_ServoControl.h13.vals[3]==1 && hDueTarget>=100){hCommand=33;}
+    if(hCommand==0 && hSelected==8 && hDueStatus>=100){hSelected=7;}
+    if(P8_ServoControl.h13.vals[132]>0 && hCommand!=3 && hCommand!=16){hCommand=0;hSelected=8;if(P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[53]>=500){hSelected=5;}else{if(P8_ServoControl.h13.vals[132]==2 && hDueStatus>=100){hSelected=7;}}}
+    if(hCommand!=0 && P8_ServoControl.h13.vals[75]==0){
+        if(hCommand==33 && P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]>=65534){hCommand=3;P8_ServoControl.h13.vals[2]=4;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[34]=P8_ServoControl.h13Status.vals[48];P8_ServoControl.h13.vals[35]=P8_ServoControl.h13Status.vals[49];}
+        if(P8_ServoControl.h13.vals[8]==65535 && P8_ServoControl.h13.vals[9]==65535){P8_ServoControl.h13.vals[75]=1;P8_ServoControl.h13.vals[2]=6;P8_ServoControl.h13.vals[10]=0;P8_ServoControl.h13.vals[30]=12;}
+        else{
+            P8_ServoControl.h13.vals[9]=P8_ServoControl.h13.vals[9]+1;if(P8_ServoControl.h13.vals[9]>65535){P8_ServoControl.h13.vals[9]=0;P8_ServoControl.h13.vals[8]=P8_ServoControl.h13.vals[8]+1;}
+            for(hIndex=0;hIndex<48;hIndex++){P8_ServoControl.h13Tx.valbs[hIndex]=(byte)(0);}
+            P8_ServoControl.h13Tx.valbs[0]=(byte)(72);P8_ServoControl.h13Tx.valbs[1]=(byte)(77);P8_ServoControl.h13Tx.valbs[3]=(byte)(1);
+            P8_ServoControl.h13Tx.valbs[4]=(byte)(P8_ServoControl.h13.vals[4]/256);P8_ServoControl.h13Tx.valbs[5]=(byte)(P8_ServoControl.h13.vals[4]&255);P8_ServoControl.h13Tx.valbs[6]=(byte)(P8_ServoControl.h13.vals[5]/256);P8_ServoControl.h13Tx.valbs[7]=(byte)(P8_ServoControl.h13.vals[5]&255);
+            if(hCommand!=1 && !(hCommand==16 && (P8_ServoControl.h13.vals[2]!=3 || P8_ServoControl.h13.vals[31]==1))){
+                P8_ServoControl.h13Tx.valbs[8]=(byte)(P8_ServoControl.h13.vals[6]/256);P8_ServoControl.h13Tx.valbs[9]=(byte)(P8_ServoControl.h13.vals[6]&255);P8_ServoControl.h13Tx.valbs[10]=(byte)(P8_ServoControl.h13.vals[7]/256);P8_ServoControl.h13Tx.valbs[11]=(byte)(P8_ServoControl.h13.vals[7]&255);
+            }
+            P8_ServoControl.h13Tx.valbs[12]=(byte)(P8_ServoControl.h13.vals[8]/256);P8_ServoControl.h13Tx.valbs[13]=(byte)(P8_ServoControl.h13.vals[8]&255);P8_ServoControl.h13Tx.valbs[14]=(byte)(P8_ServoControl.h13.vals[9]/256);P8_ServoControl.h13Tx.valbs[15]=(byte)(P8_ServoControl.h13.vals[9]&255);
+            P8_ServoControl.h13Tx.valbs[17]=(byte)(hCommand);P8_ServoControl.h13Tx.valbs[45]=(byte)(2);P8_ServoControl.h13Tx.valbs[46]=(byte)(165);P8_ServoControl.h13Tx.valbs[47]=(byte)(90);
+            if(hCommand==33){
+                P8_ServoControl.h13.vals[138]=0;
+                hParamHigh=0;hParamLow=P8_ServoControl.h13.vals[10];if(hParamLow<0){hParamHigh=65535;hParamLow=hParamLow+65536;}
+                P8_ServoControl.h13Tx.valbs[20]=(byte)(hParamHigh/256);P8_ServoControl.h13Tx.valbs[21]=(byte)(hParamHigh&255);P8_ServoControl.h13Tx.valbs[22]=(byte)(hParamLow/256);P8_ServoControl.h13Tx.valbs[23]=(byte)(hParamLow&255);
+                P8_ServoControl.h13Tx.valbs[34]=(byte)(1);P8_ServoControl.h13Tx.valbs[35]=(byte)(244);
+                P8_ServoControl.h13.vals[67]=P8_ServoControl.h13.vals[1]-P8_ServoControl.h13.vals[25];if(P8_ServoControl.h13.vals[67]>P8_ServoControl.h13.vals[66]){P8_ServoControl.h13.vals[66]=P8_ServoControl.h13.vals[67];}P8_ServoControl.h13.vals[25]=P8_ServoControl.h13.vals[1];
+            }else{
+                P8_ServoControl.h13.vals[26]=hCommand;P8_ServoControl.h13.vals[27]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[28]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[29]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[92]=P8_ServoControl.h13.vals[6];P8_ServoControl.h13.vals[93]=P8_ServoControl.h13.vals[7];
+                if(hCommand==3 || hCommand==16){P8_ServoControl.h13.vals[68]=1;P8_ServoControl.h13.vals[36]=P8_ServoControl.h13.vals[8];P8_ServoControl.h13.vals[37]=P8_ServoControl.h13.vals[9];P8_ServoControl.h13.vals[38]=hCommand;}
+            }
+            P8_ServoControl.h13.vals[39]=0;P8_ServoControl.h13.vals[13]=1;P8_ServoControl.h13.vals[14]=2;P8_ServoControl.h13.vals[16]=256;P8_ServoControl.h13.vals[17]=24;P8_ServoControl.h13.vals[18]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[46]=hCommand;P8_ServoControl.h13.vals[90]=0;P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+            if(hCommand==16){P8_ServoControl.h13.vals[116]=0;}
+            P0_Boot.mod.modbusBufferSends(1,16,256,24,P8_ServoControl.h13Tx.valbs,0,50);
+        }
+    }
+    if(hCommand==0 && hSelected<8){
+        if(hSelected>=1 && hSelected<=4){P8_ServoControl.h13.vals[134]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[135]=hSelected%4+1;}
+        P8_ServoControl.h13.vals[15]=hSelected;P8_ServoControl.h13.vals[16]=0;P8_ServoControl.h13.vals[17]=64;
+        if(hSelected==1){P8_ServoControl.h13.vals[16]=80;P8_ServoControl.h13.vals[17]=32;}if(hSelected==2){P8_ServoControl.h13.vals[16]=112;P8_ServoControl.h13.vals[17]=32;}
+        if(hSelected==3){P8_ServoControl.h13.vals[16]=144;P8_ServoControl.h13.vals[17]=32;}if(hSelected==4){P8_ServoControl.h13.vals[16]=176;P8_ServoControl.h13.vals[17]=32;}
+        if(hSelected==5){P8_ServoControl.h13.vals[16]=512;P8_ServoControl.h13.vals[17]=24;}if(hSelected==6){P8_ServoControl.h13.vals[16]=288;P8_ServoControl.h13.vals[17]=20;}if(hSelected==7){P8_ServoControl.h13.vals[16]=1120;P8_ServoControl.h13.vals[17]=64;}
+        P8_ServoControl.h13.vals[97]=hSelected;P8_ServoControl.h13.vals[98]=P8_ServoControl.h13.vals[16];P8_ServoControl.h13.vals[99]=P8_ServoControl.h13.vals[17];
+        if(hSelected==0){P8_ServoControl.h13.vals[48]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==1){P8_ServoControl.h13.vals[49]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==2){P8_ServoControl.h13.vals[50]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==3){P8_ServoControl.h13.vals[51]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==4){P8_ServoControl.h13.vals[52]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==5){P8_ServoControl.h13.vals[53]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==6){P8_ServoControl.h13.vals[54]=P8_ServoControl.h13.vals[1];}
+        if(hSelected==7){P8_ServoControl.h13.vals[55]=P8_ServoControl.h13.vals[1];}
+        P8_ServoControl.h13.vals[82]=(hSelected+1)%8;
+        P8_ServoControl.h13.vals[13]=1;P8_ServoControl.h13.vals[14]=1;P8_ServoControl.h13.vals[18]=P8_ServoControl.h13.vals[1];P8_ServoControl.h13.vals[78]=P8_ServoControl.h13.vals[78]+1;
+        P0_Boot.mod.modbusBufferSetReadCount(hSelected,1);
+    }
+    P8_ServoControl.h13.vals[80]=0;
+}

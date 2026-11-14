@@ -1,0 +1,49 @@
+✔ final PIX array lengths and a single enabled 50ms timer (1.1438ms)
+✔ healthy navigation and rendering consume wall time, target read/write serialized (158.2839ms)
+✔ releasing ordinary authorization key cannot cancel a newly authorized session (29.864ms)
+✔ 300ms stall clears old target; later manual authorization starts at zero (139.261ms)
+✔ 600ms host stall advances controller TTL independently (70.4582ms)
+✔ emergency generation survives all local states and historical stop candidates (143.8475ms)
+✔ wrong station, short frame and wrong function never renew nonzero target (98.6606ms)
+✔ repeat authorization after completed stop never settles an old stop (433.7892ms)
+✔ display refreshes only visible page, max six fields, and retains last numeric history (40.7101ms)
+✔ all nine pages and themes navigate with bounded arrays (193.6467ms)
+✔ CRC rejection and no callback cannot renew target or erase history (125.5331ms)
+✔ 100ms blocking can continue; 300/600ms cannot replay a nonzero target (142.3091ms)
+✔ 1000 page switches with theme changes retain session and bounded transactions (765.9259ms)
+✔ controller reboot clears old identity cache and never restores motion (71.7328ms)
+✔ position partial/expired samples hold values and baseline change invalidates only mileage (78.8514ms)
+✔ signed -1 and zero are valid speed cache values; sentinel retains preceding value (33.0636ms)
+✔ first invalid speed remains unknown; ten seconds without any frame retains business values (50.3928ms)
+✔ stop settlement and a newer emergency in the same event boundary keep the emergency generation (30.3537ms)
+✔ reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization (39.394ms)
+✔ negative, zero and speed bounds have explicit valid cache semantics (78.3357ms)
+✖ backward snapshot high word is rejected without depending on host integer overflow (36.8152ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 20
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2897.1716
+
+✖ failing tests:
+
+test at hmi33.test.cjs:52:1
+✖ backward snapshot high word is rejected without depending on host integer overflow (36.8152ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: 3
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\33_轨道巡检车调度与会话稳定修复版\hmi33.test.cjs:52:201)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 3,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

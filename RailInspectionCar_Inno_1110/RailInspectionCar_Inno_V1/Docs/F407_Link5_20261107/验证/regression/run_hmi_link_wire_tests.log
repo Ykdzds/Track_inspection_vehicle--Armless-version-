@@ -1,0 +1,2 @@
+PASS real transaction stages/TC: 96 words, delayed task, TX busy correlation, immutable source metadata
+PASS real UART5 DMA -> Modbus diagnostic sink -> USART1 text, both pages and no motion path

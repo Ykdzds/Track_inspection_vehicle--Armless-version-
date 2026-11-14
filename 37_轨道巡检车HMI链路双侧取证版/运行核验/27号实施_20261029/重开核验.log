@@ -1,0 +1,15 @@
+重开全文核验 P8_ServoControl/recoveryButton/按下事件
+重开全文核验 P8_ServoControl/recoveryButton/弹起事件
+重开全文核验 P8_ServoControl/h13Service/定时事件
+重开全文核验 P8_ServoControl/authorize/按下事件
+重开全文核验 P8_ServoControl/authorize/弹起事件
+重开全文核验 P8_ServoControl/estop/按下事件
+重开全文核验 P8_ServoControl/backHome/弹起事件
+重开全文核验 P8_ServoControl/rpmSlider/值改变事件
+重开全文核验 P8_ServoControl/P8_ServoControl/加载页面
+重开全文核验 P8_ServoControl/P8_ServoControl/离开页面
+重开全文核验 P1_Main/servoEntry/按下事件
+重开全文核验 P1_Main/servoEntry/弹起事件
+重开全文核验 P0_Boot/refreshTick/定时事件
+重开全文核验 P0_Boot/mod/数据接收
+27号工程重开读回完成

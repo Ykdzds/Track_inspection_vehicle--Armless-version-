@@ -1,0 +1,28 @@
+PASS CAN protocol encoding, CRC, reassembly and rollover
+PASS query saturation reserves execution-result slots and prioritizes heartbeat/results
+PASS ARM3 immutable queue, stop/revoke reserve, chassis fairness and real TX_OK start budget
+PASS ARM3 periodic permit preserves immutable action/deadline/order and stop discards it after cookie drain
+PASS new heartbeat / older service sample, exact timeout and tick wrap
+PASS CAN control callback routing: async completion, duplicate, speed and unhealthy-session stop
+PASS query flood: stop bypasses rate limit; incomplete results cannot be evicted
+PASS CAN link handshake, query completion, flood, cancellation and rollover
+PASS CAN identity revision, partial programming, corruption and exhaustion
+PASS CAN upper cache reserved bits, atomic rejection, age, rollover and RK producer
+PASS CAN arm summary, joint cache, result, config invalidation and age
+PASS diagnostic severity: 32 bits, raw telemetry retained, LCD summary stable, real faults/locks retained
+PASS CAN control snapshots: own token/sync/target, historical stop cannot override remote
+PASS HMI ownership: explicit mapping, preparing/zero/running, no CAN token or stale authorization
+PASS HMI stop: K5 event association, active stop beats history, zero/enable/release checks and failure
+PASS HMI sync: owner selection, fresh sample pairing, reserved source bits and unknown outputs
+PASS CAN status validity, unknowns, configuration, sample matching and recovery history
+PASS CAN disabled: no Flash identity write and no CAN task creation
+PASS CAN disabled: no Flash identity write and no CAN task creation
+PASS CAN HMI collection and active 50ms / idle stop-history scheduling
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection
+PASS CAN HMI collection and active 50ms / idle stop-history scheduling
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection
+PASS CAN HMI collection and active 50ms / idle stop-history scheduling
+PASS CAN APP production: scheduling, reconnect, Tick wrap, task failure, 8 RX/3 TX budget, flood yielding and stale rejection
+PASS CAN BSP delayed IRQ/empty mailbox not terminal, abort-success race uses actual TXOK, cancelled transaction consumed once
+PASS CAN BSP production: filters, RX64/priority, invalid frames, three mailboxes, buffer ownership, timeout, wrap and Bus-off
+PASS CAN handshake/query/rejection/upper vectors: C:\Users\15056\AppData\Local\Temp\rail_can_vectors_checked.md

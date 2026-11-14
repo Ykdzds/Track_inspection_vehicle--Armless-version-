@@ -1,0 +1,29 @@
+{
+  "CompiledAt": "2026-11-01T19:14:08.5909493+08:00",
+  "PIX": "17_轨道巡检车.pix",
+  "PIX_SHA256": "592E8F6BA6EC315EB9183C74CBFE2FD474F226EE1D144DED6BE080C14186E5C3",
+  "BIN": "17_轨道巡检车.pix.bin",
+  "BIN_SHA256": "8C703BC5261732058574D15F74F616FE697277E6CA52A32D594B672B2B6420D7",
+  "BIN_Length": 1061075,
+  "NewBinary": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "NominalMinimumFlashBytes": 4000000,
+  "MinimumFlashBudgetSource": "本地SANY-WS-VS10规格书第16页：4–32M FLASH；按最低4MB保守预算",
+  "BudgetRemainingPercent": 73.47,
+  "BudgetIsPhysicalReadback": false,
+  "Pages": 9,
+  "ControlCounts": [
+    32,
+    29,
+    36,
+    20,
+    12,
+    16,
+    16,
+    19,
+    35
+  ],
+  "PhysicalAcceptance": "待用户实屏验收",
+  "EvidenceFolder": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\30_轨道巡检车全界面科技风优化版\\运行核验\\30号实施_20261101"
+}

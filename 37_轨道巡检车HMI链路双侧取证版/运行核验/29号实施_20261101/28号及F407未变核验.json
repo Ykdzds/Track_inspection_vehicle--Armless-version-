@@ -1,0 +1,19 @@
+{
+  "HMI28": {
+    "Root": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\2.硬件资料\\7.三易串口触摸屏10.1寸\\用户代码\\28_轨道巡检车CAN链路与三端授权修复版",
+    "Files": 413,
+    "Changed": [],
+    "Unchanged": true,
+    "Added": [],
+    "Missing": [],
+    "ExactFileSetMatch": true
+  },
+  "F407": {
+    "Root": "D:\\wtzn_sx_\\同济大学-轨道巡检车\\同济大学轨道巡检车协作资料\\5.工程代码\\RailInspectionCar_Inno_V1",
+    "Files": 378,
+    "Changed": [],
+    "Unchanged": true
+  },
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false
+}

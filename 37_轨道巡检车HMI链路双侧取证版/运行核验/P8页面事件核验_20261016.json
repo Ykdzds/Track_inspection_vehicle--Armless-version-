@@ -1,0 +1,12 @@
+[
+  {
+    "Event": "加载页面",
+    "Source": "事件/P8_加载.txt",
+    "Matches": true
+  },
+  {
+    "Event": "离开页面",
+    "Source": "事件/P8_离开.txt",
+    "Matches": true
+  }
+]

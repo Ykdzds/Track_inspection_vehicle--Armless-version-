@@ -1,0 +1,3 @@
+PASS unified snapshot: optional record, freshness, pages and reset
+PASS motion guard: ACK not grant, current token, zero-first, stale response, boot, repeat stop, invalid config
+PASS protocol/UI: config conversion, 0x53 CRC, timeout, capability gate, debounce, pages, select does not move

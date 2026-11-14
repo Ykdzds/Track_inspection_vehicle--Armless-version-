@@ -1,0 +1,9 @@
+railinspectioncar_v1\lcd_core.o: ..\BSP\SPI_LCD\lcd_core.c
+railinspectioncar_v1\lcd_core.o: ../APP/app_config.h
+railinspectioncar_v1\lcd_core.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+railinspectioncar_v1\lcd_core.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+railinspectioncar_v1\lcd_core.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
+railinspectioncar_v1\lcd_core.o: ..\BSP\SPI_LCD\lcd.h
+railinspectioncar_v1\lcd_core.o: ..\BSP\SPI_LCD\lcd_port.h
+railinspectioncar_v1\lcd_core.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdbool.h
+railinspectioncar_v1\lcd_core.o: ..\BSP\SPI_LCD\lcd_font.h

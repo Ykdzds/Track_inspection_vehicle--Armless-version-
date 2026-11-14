@@ -1,0 +1,10 @@
+remote_control\remote_display.o: ..\APP\remote_display.c
+remote_control\remote_display.o: ..\APP\remote_display.h
+remote_control\remote_display.o: ..\APP\remote_status_model.h
+remote_control\remote_display.o: ..\APP\remote_status_protocol.h
+remote_control\remote_display.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdint.h
+remote_control\remote_display.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stddef.h
+remote_control\remote_display.o: ../BSP/OLED/OLED_Text.h
+remote_control\remote_display.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdio.h
+remote_control\remote_display.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\stdarg.h
+remote_control\remote_display.o: D:\NewMDK5.36\ARM\ARMCC\Bin\..\include\string.h

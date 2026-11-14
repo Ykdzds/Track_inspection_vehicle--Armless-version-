@@ -1,0 +1,4 @@
+UNCHANGED APP/can_bus.c
+UNCHANGED APP/can_upper_protocol.c
+UNCHANGED APP/can_upper_control.c
+UNCHANGED DigitalElectronicseCode.ioc

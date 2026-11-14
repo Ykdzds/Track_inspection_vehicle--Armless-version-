@@ -1,0 +1,640 @@
+
+
+IsPng                       : True
+Locked                      : False
+Data                        : {137, 80, 78, 71...}
+Id                          : eb54fed7-32d3-417a-8b1e-66bb40b2e6b1
+Name                        : danger_disabled_152x52
+Index                       : 0
+Extension                   : .png
+FlashSize                   : 0
+EnablePropertyChanged       : True
+EnablePropertyValueChanged  : True
+EnablePropertyValueChanging : True
+
+
+
+
+
+IsPng                       : False
+Locked                      : False
+Data                        : {255, 216, 255, 224...}
+Id                          : 66ec9ce6-fff9-4a5d-abc8-c40a96826b10
+Name                        : Day_P1_Main
+Index                       : 61
+Extension                   : .jpg
+FlashSize                   : 0
+EnablePropertyChanged       : True
+EnablePropertyValueChanged  : True
+EnablePropertyValueChanging : True
+
+
+
+System.String MinimumVpVersion
+System.String Name
+System.String ScreenId
+Visual_PIX.Controls.ShowDirect ShowMode
+Byte RotateMode
+Boolean EnableSendCoordinate
+Boolean EnableSendTick
+Boolean EnableSendCommandHandleResult
+Boolean GenerateHeadFile
+Boolean GenerateBinaryFile
+Byte Baudrate
+System.IO.Ports.Parity Parity
+System.IO.Ports.StopBits StopBits
+Byte Lightness
+Int32 NoSerialportDataSleepTime
+Int32 NoTouchSleepTime
+Boolean WeekOnSerialportDataReceived
+Boolean WeekOnTouched
+Byte CommandResultReturnMode
+Byte TickAddValue
+Int32 CRC16Polynomial
+mTnGeGdRDgCRwSDUfsZockhcRwXz Encode
+Int32 UserFlashSize
+Byte CANBaudrate
+Int32 CANMask
+Int32 CANFilter
+TEwaOoCxnlOvpFrQfGsuldDLSylnA ModbusDeviceType
+Byte ModbusClientAddress
+Byte SerialPortRecieveTimeout
+System.String UserMethodCode
+DldMuANwYmFhcldBHwRvgwawkxfQ ExtendModuleType
+YWfwvoqKdsZmnqCOMbrTpHsxRSOR ExtendInterfaceType
+Boolean WatchDog
+UxUnkuOGUcBGuFawLtMabRHIhttT SleepMode
+Int32 StartPageId
+Byte TouchBuzzerMode
+Byte TouchBuzzerTone
+Byte TouchBuzzerVolume
+jromASRovApKxyPMsYkRJWvGbTHi SystemPriority
+System.String Pwd
+ZZMnkvUEVPBgEFvLjKUPhGVYpqsEb Firmware
+System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixLayer] Layers
+System.Collections.Generic.List`1[Visual_PIX.Model.ImageData] Images
+System.Collections.Generic.List`1[Visual_PIX.Model.GifImageData] GifImages
+System.Collections.Generic.List`1[Visual_PIX.Model.PixelFont] FontList
+System.Collections.Generic.List`1[Visual_PIX.Model.FontData] Fonts
+System.Collections.Generic.List`1[Visual_PIX.Model.AudioData] Audios
+System.Collections.Generic.List`1[Visual_PIX.Model.VideoData] Videos
+System.Collections.Generic.List`1[Visual_PIX.Model.KeyboardData] Keyboards
+Visual_PIX.Model.PixMultiLangPack MultiLangPack
+Boolean EnablePropertyChanged
+Boolean EnablePropertyValueChanged
+Boolean EnablePropertyValueChanging
+
+
+Font                        : Visual_PIX.Model.PixelFont
+Id                          : c38ec8ff-f13e-43e1-b2d5-01f42c72021e
+Name                        : UI31_24
+Index                       : 9
+Extension                   : 
+FlashSize                   : 0
+EnablePropertyChanged       : True
+EnablePropertyValueChanged  : True
+EnablePropertyValueChanging : True
+
+
+
+Visual_PIX.Properties.Resources
+Visual_PIX.Modules.Home.Views.DebugView
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+Visual_PIX.Model.Keyboards.PresetResource
+Visual_PIX.Model.Keyboards.PresetResources
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+Boolean ⁫⁮‮‌‬‬‍‏⁪‏⁬‫⁯‭⁯‏‏​‮‮⁫‬⁪⁮‎‫⁯‭‌⁮⁬‏⁬​⁪⁯⁮⁫‍⁪‮(System.String)
+System.IO.FileInfo ⁮⁪⁮‌⁪‍‪⁬‪⁬‏‎​‭⁫⁬‏‭‫⁭‫‍⁫⁭⁯‌⁯‍​‬‎‫⁪‮⁮⁮⁮​⁮‍‮(System.String)
+Int64 ⁯‌‎‫⁫⁫⁮‫‫⁪⁭⁬⁯​⁫‏⁭​‬‎‬⁫‮​‪⁬‍‍⁭⁬‍⁪⁬‪⁯‪‍‍​‮‮(System.IO.FileInfo)
+System.IO.StreamReader ‎‌‏‎‏⁭​⁪‫⁮⁪‮‫⁪‏‎‎⁪⁫‏⁬‮​⁪‌​‫⁬​​‬‏‫​‬‮‏‎⁭⁯‮(System.String, System.Text.Encoding)
+System.String ⁭‏⁫‭⁪‬‮‏‍‫​‭⁭‪⁭⁯‭​​‭‌‍⁬‪⁫‍⁮⁬​‫⁫‎‍‪‌⁫‫‮‫⁪‮(System.IO.TextReader)
+System.IO.FileStream ​‭⁫‎‬‍⁯‬⁪‏⁯‎⁪⁮⁯‪‎⁮⁮⁯‭⁮‎‮⁭‪‭‮⁫‏‮⁫‏⁭​‎‎‍⁮‭‮(System.String, System.IO.FileMode)
+Void ⁮‮⁯‍‬⁬‎‮⁫‬‌‬‎‮​‮‏‎‏‫‮‫⁯‪‮‌‏⁪⁪‪⁮⁮⁯⁭‎⁫⁫‮⁬‏‮(System.IO.Stream, Int64)
+Int64 ‌​​‭⁪⁭‍​‎​‭‏⁮⁪⁭‮‪⁪‪‪‮‪⁯⁮⁫‫​‍​⁯‫‮⁫⁭​​‍‪‪‮‮(System.IO.Stream)
+Int32 ‫‍‮⁭‎‪‍⁯⁮‬‬⁮‍‎‏‌‏‬‮‮‭⁮‮‍‍‌‫‪‭‪⁫‫‎‌⁮‌⁪⁪⁯⁮‮(System.IO.Stream)
+Void ⁬‭⁮‮‬⁬⁮⁯⁮‮‬‮⁮⁭⁬⁮‪⁭​⁮⁮‪‫⁯‭‎‭‬​‪⁮‬‬‫‬⁮⁫⁫‫‮‮(System.IO.Stream, Byte[], Int32, Int32)
+Void ⁭⁪‫‍⁪⁭​⁭‮‏‍⁬‌⁭⁮‬⁬⁪⁭‭​‏⁮‭⁫‌‏​⁯‎‍‪​‍⁯⁮⁬‎‪‌‮(System.String, System.Collections.Generic.IEnumerable`1[System.String], System.Text.Encoding)
+Void ‍‬⁫‪⁭‮​‏‮⁫‮⁫‎⁭‪⁪‭‍‬‪⁫⁭‪⁬⁬‭⁬⁪‏‪‪‮‌⁯‍‮⁮‭⁭‪‮(System.String, System.String)
+Void ⁯‭⁮‬‫‫‬‪⁬⁫‪‮‪⁮‎⁭⁮⁯⁯‪⁭‬‌⁯⁮‪‬⁮‏‍‫‭⁪‮‮⁯​⁭⁭⁪‮(System.String)
+Int32 ‎⁯⁬‪‍‪⁫​⁬⁯‫‎⁭⁯⁬​‪‍⁭‬⁮⁫‭‏‍‎​‭‎‌‏‭⁫‍‎​‌⁫‌⁪‮(System.String, System.String, Int32)
+System.String ⁬‎‎‍⁬‮⁬⁫‌‮⁪⁬‪‏‏⁯‫⁯‍‎‭⁯⁯⁮‮⁪⁮‭⁭⁬‌​‭⁯⁫​‭‮‌⁪‮(System.String)
+System.String ‬‪‏‌⁭‪⁬‮‪‫⁪⁪⁬‭⁫‭‬‬‮​‌⁬‏‍‌​​‏​‭‮⁮‍⁯⁪⁫‏‭‮⁫‮(System.String, System.String, System.String)
+Double ‬‪⁯‏⁪⁬‫‮‏‭‮⁬​‫⁫‍⁬⁫⁬‌‬‬⁬‏⁬⁪‮‬‪⁫‎⁭⁫‎‪⁬‏‮‮⁯‮(Double)
+Double ​‫⁪‪‏‍⁬‬‬‪⁪​‮‬‬‏‪⁬⁫‍‏‮​‍‬‫‫‌‫‏‌⁫​‏⁮⁯⁯‍‫‍‮(Double)
+Double ⁭‭‍⁯‏⁬‫‌‌⁪‭‫‍‪‏⁯‮⁮‭‍​⁫⁮⁭‌‬‬⁯‫‬⁭⁪⁯⁮⁬⁬‏‭‬‭‮(Double)
+Double ⁪‌⁪⁪⁬⁫⁯‌‮⁪⁯‭⁪‏​⁮⁪​⁫‪‌‪⁪⁮⁫⁬‮⁪​⁫‍‬⁪⁪‏‭⁫‮‫‎‮(Double)
+Double ​⁪⁬‬‬‌⁮‎‮⁫‭‪‏⁬​‌‮⁭⁪⁯⁭‬‬‎‎⁭‫⁫‍⁫‌⁮‏⁮⁯⁮​‮⁭⁪‮(Double)
+Double ‫⁬⁪⁭⁮‎‭⁯‍⁫⁪​⁭⁫‮‫⁯‪‮⁮‬⁫⁭‏⁭⁮⁮⁬⁫‬‏⁭‮⁭‏⁫⁯‪⁯⁪‮(Double)
+Double ‏⁯⁮‍‍‪⁯‬‍⁭‭‪⁫⁭⁭‎‪⁫⁪‍‫​⁬⁪‮⁫‪⁫⁮⁪‭‫⁫⁭⁫⁯‌‏‏‭‮(Double, Int32)
+Double ⁯‎‌⁯⁯‌‮‌‮‬⁪⁮⁭⁭⁭⁮⁪⁮⁭⁭⁫⁮‫‭⁬‫‎⁫⁪‫‌⁮‌‫​‫⁮⁯⁪⁫‮(Double)
+Single ‪⁫‬⁭‍‌⁯⁯‪‎⁬‏‎⁭⁪⁬⁫⁯⁮​⁯⁭⁮⁭‍‭‫‌⁫⁯‎​‮⁭‫⁭⁮‌‮‮(Single)
+Void ‬‭⁯‪⁬‎⁯‍‫‬⁯⁭‫‏⁬‏‪‮‮⁭‫‏⁫‎‍​‬‮‫‪‎‍‏‮‍⁪⁯⁭‫‮(Int32)
+System.String ‮⁮‫​‭⁭⁭​‪‭⁯⁬‭​⁮‏‮‮‍⁭⁯‌‍⁯‬⁮​‌‌‭⁭⁬‍⁭⁪‮⁭‬⁫‌‮(System.String, Int32, System.String)
+Int32 ‌‬⁫⁮‍‍⁯⁬⁫‍‮‬⁮​‫‍‏‍⁫‍‮⁯‏⁫⁪‫⁮‮‬‪⁮‫⁫‬‌⁮‬‏‍⁭‮(Int32, Int32)
+System.String ‍⁪‭⁯‬​‎‫⁫‮‎‍​‪⁭‍⁪⁯‮‫⁪⁬‍⁬‮‍⁫‍‬⁬‍‍⁬‏⁯‫‮⁯‫‍‮(System.String, Int32, Int32)
+Boolean ‏⁯⁬‫‪⁫‫‫​‎‌‬‌​​⁬‌‌⁪‍‍‭‏‬‏⁭‎⁫‪⁪‮‍​⁫‮‪‌⁬​⁭‮(System.String, System.String)
+Char ‌‮‫‎‫⁮‫⁭‎⁪‌⁯‫⁮⁪‪‭‭⁫​⁮‬‫⁮‪‮‏⁫⁬⁮‫⁫​⁯‌‎​‏‫‮‮(System.String, Int32)
+System.String ‫‏⁯‪‫​⁮‪‮‬⁭⁫​‮​‪⁬⁫⁬‭‭⁭‫‎‪⁯⁫‌‭‬‍⁯‫⁬⁫‌‌⁬‪⁬‮(Char, Int32)
+System.String ⁪‭⁪‬‬⁮‌⁭‌⁪‪‪⁬‌⁪‏‬⁪‪‪‬⁭⁭‬⁬⁫‏‏‎⁬‮⁭⁭‫⁬⁫⁪‬​‪‮(System.String)
+System.Text.StringBuilder ‪‌‏​⁮⁮⁯‍‏⁫⁭‎⁪‍⁪⁭⁪‮‫‏​‏‪⁫‬⁮‮‏‎​‪⁫‎‮⁫⁮⁬⁯‬‍‮(System.Text.StringBuilder, System.String)
+System.String ‎‌‌⁬⁮‪‭⁮‪‍‮⁯⁪‪⁯​⁮‍⁫⁭⁮‮⁭‎‏⁬⁯‫​‎‏‎‌⁭‌‪‬‬​‮‮(Char[])
+Double ​‪⁮‏‪‌⁫‏​⁪‮⁭‪‏⁯⁭‍‬‌‮⁮​‮⁬⁮‪⁭‪‌⁯‍‏⁬‭‮⁯‭‏⁮‌‮(Double)
+Double ‮‮‏⁪‏⁪‭‌⁫‮‬⁮‬‬‬‎​‫⁭⁮⁭‬‫‍⁯‏⁬​⁫‬⁮⁬‭‌‏‏‪⁭⁮‎‮(Double)
+Double ⁯‬‌⁫‬‬⁯⁫‭‮‬⁮‍⁫‮‎‪⁯‫⁪‌‭‫‫‏‭‫⁭‏‏⁫⁮‪⁯⁬‫‍⁫⁮⁯‮(Double, Double)
+Double ‏‎‭⁬‌⁯‍‮​‮‮‪‮⁮⁪⁮⁬⁪⁪‭​⁭‍⁯⁮‬​‍⁮​⁫‪‪⁫⁪‭⁪‬‌⁯‮(Double)
+System.String ‫⁪⁬‮⁬‫‭‫⁫‏⁭‍‪⁫‍‬‏‮‬‮‌‎‌⁪⁫‪⁮‪‮‫⁯‏‏‭‍‬‏‮⁪‫‮(System.String)
+System.String ⁯⁬⁫‍⁯‫⁭⁬‫‬⁫‍‪‍⁮‬‫​​⁪‎‍‍‫⁭‏‬‪‬‮⁪‎‌⁪⁮‏‌‏‌⁪‮(System.String)
+Boolean ‭‌‌‍​‪⁬​⁯⁭‏⁪‫⁪⁯‌⁭‏⁫⁭⁯⁫‬‫‬⁭⁫‍‫‪‍‌​‮⁮⁭⁪‌⁭⁬‮(System.String)
+System.String ‪⁪⁮​‮‮⁮​‮‬‍⁫‫​‬‏‫‍⁭‬‏‮‭‪⁭‫⁬⁯‍⁫‪⁭⁮‮⁭⁭⁯⁫‏⁭‮(System.String)
+Boolean ‫‎⁭‭⁯‮‎⁬‎‌⁭‎⁬‭⁯⁪‌‏‍‌‮‪⁭‎‎⁭​⁭⁪‫⁯⁪‫‎‮‬‎⁬‫⁫‮(System.String)
+System.IO.DirectoryInfo ⁪⁬‬‍⁪‎⁬‭⁬⁭‮‌​⁭‫‪⁮‬‎‭⁯⁬⁫​‏⁪⁭‏⁬‭‬‍⁪‏‌‎‭‎‬⁬‮(System.String)
+Int32 ‮‮⁭‏‌⁪‪⁮‍‬‌⁯‏‫‭‮‫‌⁮⁯​‏​⁫‬⁮‪‫‪​‬⁫⁫⁮​‌‪‬‍‮(System.Object)
+System.String ‎⁯‍⁫⁫‫‮​⁮⁫‫‪⁮⁯‌⁮‎⁫‏‮⁪‏‌‎‍‮‫‌‬‌‫⁯​⁬‭‏‭‌‫‌‮()
+Boolean ⁯‬⁭⁪⁬‭‪⁭​⁪⁯‏⁮‍‬⁫⁮‬‫‫‪⁭⁯‌⁬⁯‪⁫⁮⁫⁭‪‬‮‌⁯‭‭⁪‪‮(System.String, System.String)
+Void ‍⁪‫‭⁯⁬⁮⁬‎⁯‎‫⁮‫⁪‌⁮⁭‌⁭​‪⁯‏‌⁭​⁫‏‏‏‍​‏⁮​‫‭⁮‪‮(System.String)
+System.String[] ⁮‌‬⁬‭⁬‎‬⁫⁯​​‏​‎‫⁬‬​‍‫‮‌‬⁮‫⁪‬⁭‍⁭⁫‮‫⁬⁮‌⁬⁭‌‮(System.String, Char[])
+System.IO.InvalidDataException ​⁭‬⁫‭⁭⁬⁭⁭​‎⁭‫⁪‪‎⁮‍‫⁯‬‪‏⁫‍⁬‪‮​‫‬‍⁬‎⁪‮​​⁭‮(System.String)
+Boolean ⁪‪⁫⁬‏⁭​⁪⁬‎⁫⁭‭‌‌‏‭⁫‬⁭‍⁬⁫⁪‎‮‏‬‫‫‬⁭‮‎⁬‭‫‏​⁭‮(System.String, System.String)
+Boolean ​‪‭‮‪⁭‌⁭‭⁯‏‎‮‫‌⁬⁫​‭‭‍⁯‍‫⁭⁭‮‌⁭​‌⁭⁮‮⁯‌‪‌⁬⁭‮(System.String, System.String, System.StringComparison)
+System.String ‪⁭⁮⁭⁭‬⁪‎‫‪⁯‫⁭⁫‫‌‪‎‏‮‫‏‍‏‍⁪‪‍‎⁪‌‮‎⁯‎⁮⁪⁬‫‫‮(System.String, System.String[])
+System.Object uDLrkfIbxNaPoGWcXTNzSSxzjVajA()
+Void OEgIUwbDuDEdkhqyHeYjJraQnLBIc(System.Object)
+System.Object XwzWIEUxhWbOICFYzdrdEfqImqVcA()
+Void gSVVhspkNZxEuuRnWAFzoDyyaTddA(System.Object)
+System.Object TmLDwAyEuEvtegKDlaXwfLbzLMOG()
+Void WtxZbzLiNfUpUyUUaFeHrDYEXFwT(System.Object)
+System.Object rAirXwHhWaUpYsEOyCjbYmglkXdr()
+System.Object uetkrswuyoCjrocmqViItkHDMCHW()
+Void DkJcAtFGUyCxJHkqAuhJxJQQXaJE(System.Object)
+System.Object WacXfAeeCQqGBIhzXlxDKrWhejSC()
+Void IYlSwVhcGPnZZLrLYlWUhctZYGon(System.Object)
+System.Object OjnehNxZkloKNudEenciXSerWZgJ()
+Void fxOFKJcerpXqYdBlGhuOmExxHBWj(System.Object)
+System.Object fAaZTIiMJdAhWDdYhESNItWXznji()
+Void jOPFsDvjjqjFrhIjQozVkdltWUqc(System.Object)
+System.Object VTOSFLYcimPuCmuahLOfQFMQpSfb()
+Void EUaQsaRRarLHIjuiDlXcTYfvIpdv(System.Object)
+System.Windows.Input.ICommand nAvsQbqIhsSXoktQULSJtEZUYxJt()
+Void PFVQHjxwpSGbYJCpatxeKpFXemPP(System.Windows.Input.ICommand)
+Boolean MgnFAUytscCArVmbudiyNpfnxtmx()
+Void set_AppendNewLine(Boolean)
+bghOfvrVYYkkWWKrnFQRkvHmBgIj RlFILUQupFcaQRxgEcmUWluKdyAf()
+Void RWNFGekccKnTZPRkFPmTtmJscKgs(bghOfvrVYYkkWWKrnFQRkvHmBgIj)
+qPKDtUfTXoEQyAiGJXwstFKkVrlBB NITGmdxWmGCxTvBZTCVrCRTRRFIuA()
+Void FsbWgCpgnipZPIElZzPvldDfbNix(qPKDtUfTXoEQyAiGJXwstFKkVrlBB)
+qPKDtUfTXoEQyAiGJXwstFKkVrlBB BtvQhyNsDCRYoWxbcRuJubVZTxzc()
+Void hVIjIFTbJOgNkKvbqoaVeQlkNaBJc(qPKDtUfTXoEQyAiGJXwstFKkVrlBB)
+Boolean lAqukyjVLweCmwDlddluHbECYajB(System.Object)
+Void jIedkBKoBwvDpDJQQJYPSODUCept(System.Object)
+Void koOopBWjeVHzygaGLKHRgiwEHFJkb(Byte[])
+Void oXSByQBYRlXcCSTYtkvGTQGDPWCq(Byte[])
+Void cFPFbMhAqOijQePKjWNvvKvtfkOA(Byte[], Boolean)
+Void AWeGSQRgiDzZUoGnBwRqhcPHtQaf(System.Collections.Generic.IEnumerable`1[System.Byte])
+Void QYynEqysqnIivJAhCkgvsrOMAnPT(Byte)
+Int32 OIjcIHRyhxfFvWSwtjPiqbIhHoVgA(Byte[])
+Void KsJeJlEspnnvischFUoefuutxxA(Byte[])
+Void GjksVRrqgwguOKqYnXHKAioajpVR(Byte, Byte, Byte, Byte[])
+Int32 qBhFeklXQsjwHSfVgNoGCZtBLdZn(Byte[])
+Void kuGTASkiNaeihzfjlFlKMzncSgxg(Byte[])
+Void OpsDvoGCJtWYgbdVCFoAUBZpRydS()
+Void NGdgrnMuuanHTfeBWmhghUCzKTrU(System.Object)
+Boolean YsrYjLaWevwSwqdKZUnoLqWTQfFy(System.Object)
+Void uEEqyTLVgTLJqJnhGoqmYNLqKMOJ(System.Object)
+Boolean cOdERtuMkSiqyCbwdXxGQpfnPMjM(System.Object)
+Void sFUKIVxHEpddAdtyBXfTSnDXLqVr(System.Object)
+Void ohdJuGwIFkFLiDkpAzGsqmHJlYKAA(System.Object, YkdcihWmZbMejPBWMTAgiJsYJxGo)
+zFzHRvlWUafCnNMVoxEuwfCSUeaW EeuSjlKbBgMfoBtgXRFwvRcGrZfm()
+Void lSuLHhaWsTJAKCEXqGuaNXZMsXku(zFzHRvlWUafCnNMVoxEuwfCSUeaW)
+Void QbqyMopoOIRwzNfBgXiaYdzqpEch(System.Collections.Generic.List`1[System.Byte])
+mrBaqDIFdokgxjGabopuxnxbnwEU XsJySHEvvhAhMqZeewsgomJlmEfD()
+Void ePpZwmftxvKzfMgFbjKDJHWfWIsF(Byte[])
+Void vTZAdREnDsIzrUwhzNhGJWLtUtuIA(Byte[])
+Void BdGzcdzCuMAzQfYOGYuRIzmGnMPkA(System.String[])
+Void AoBuGnTCYfNEZMEiHtENhmRSTxpu(System.String[])
+Void lFWKIDPkGeBfVgYbMnCtVMRNbkVfb(System.String[])
+Void bzdAafnyrcvkphRRcUagyewVCVPBA(Visual_PIX.Model.PixControl)
+Void idWLEVURqJvDGcItXoZDnadXfxPx(System.String[])
+Void cjutpXEiPwgcaQKrYKpWbEhxzHAe(System.String[])
+Void AvKFRZPhuAxCbuJWfZCDENnbJYso(System.String[])
+Void SkvJACmSkAikiddqnEImFrrvpUPMA(System.String, Byte[])
+System.Object lfyFIPhSGtaKnDHrRRcViiFbbspJ(System.String)
+System.Object IIqfozEwRBcRVaPpgYdgCdfvokNyb(System.String)
+Boolean BAuedTDfIkbdUdWNADGVsHEYyPkp(System.String)
+Boolean WdQEmixFOgpFKomobjZOdvtNRLRW(System.String)
+Boolean FjqNybyOiYxtCUAGgfTvKUDbWkwd(System.String)
+Boolean RFlNoKSZlzYnHmGImuDNSGyxEHiw(System.String)
+Boolean cvZuYQJUftjktmkcXkcHsWNgNDuU(System.String)
+Void wuhmIGQacgbZFbnSZJkhrBaKMIlaA(System.String[])
+Void hlrmipYZkpjqrNfGvxknBwyCoGto(System.String[])
+System.Collections.Generic.List`1[ICSharpCode.AvalonEdit.CodeCompletion.ICompletionData] LniEjRQCfYfJWjxlublmtFkbeHtg(dBYhRrKQdnrVRhVntLBkeOCmVoPkA)
+System.Text.Encoding rPvwqmMLBkGwnKBTQjjCRcYUiwZj()
+Boolean LUUVQMlaylIQCQrwIuTQxSnDeLlK(System.Object)
+Boolean pxBeFBCgEBDStfbeKtDlDrGZvILs(System.Object)
+Boolean CSugrlMyHhLpQAsLCCLTugbcjNoS(System.Object)
+Boolean eczVatwfwNaWMKXdusckEIQRnJzO(System.Object)
+Void lIBEApkyphFvXBkwQFFAzPbicOep(Byte[])
+Void HbPGZdRqzMTQXKLuHZuNGjTANobH(System.Object)
+Boolean XjFTvMJgECEwIPjwzvSoLalMXIOn(Visual_PIX.Model.PixLayer)
+Void OtVjArmuLvWsZpNnEldbVScbODEX(System.Object)
+Void pDKNZNBBtDBBkbMVnLpEgeGrWzKgA(System.Object)
+Boolean AJIsIlnDxkKntuLbTSubvyzbsMpG()
+Void nrXrMzaqDvwXYZhUiUoWFDmpSuyt(System.Object)
+System.Delegate ‭⁪‫‬⁯⁪‫⁯‬⁯⁮‫‌⁫⁬⁫‭‏⁮‬⁭‮‮⁯‬⁫‭‫⁭‭‮⁭⁫⁯​‍⁬‎⁬⁪‮(System.Delegate, System.Delegate)
+System.Delegate ‭⁭⁪‏⁮‮⁪⁫‫‭‌​⁯⁮⁫​‮‪⁪⁫⁪‮⁭⁫‪‌⁬⁬‌‏‌⁬‫‏⁫‮‏⁮⁫‮‮(System.Delegate, System.Delegate)
+System.Random ​‫‌‌⁮‍‏‌‎‫⁮⁯‍‮⁮⁮⁮‎‎‎⁬​‬‮‌‮⁭‎⁪⁬‪‌⁮‬‮⁮‮‎⁫‬‮()
+System.Threading.SynchronizationContext ‪‭‪⁭‭⁭⁭⁫​‍‫⁭⁪⁯‍⁫⁫‏⁪⁮‌⁬⁪‍‭‭​‮⁭⁯‌⁭‬⁭⁬‮​⁬‫‬‮()
+Gemini.Framework.RelayCommand ‎‌‬‮⁭‌⁬⁬​​‬​⁫⁬​‌‏‌‮‏⁫​‍‬‪‬‪‍⁬‮⁯‬⁪‪‫⁫⁪⁫‏‬‮(System.Action`1[System.Object], System.Predicate`1[System.Object])
+Gemini.Framework.RelayCommand ⁮‮⁫⁫⁮‏⁮⁮⁮‭⁪‫⁯‮⁫⁫​‎‪⁭‮‏⁬⁯⁮‌‎‌‮‏‭‍‍‏⁬​‍​‎⁯‮(System.Action`1[System.Object])
+System.Globalization.NumberFormatInfo ​‭‎‫‎‮‮⁯‪‭‮‏‮‫​⁬⁪‎‪⁫‏‪‮​⁬‌⁬⁮​​‫⁬‫⁯⁪​‍⁪⁬‮‮()
+System.Object ‌‌⁪‭‌‎‮‬‫⁯⁬⁪​‪‫‪⁬‎⁫​‎‪​⁬⁪‌‎‏‌‭⁫‭‮⁮‫‌⁪‎‎‮(System.Globalization.NumberFormatInfo)
+Void ​‍‪‪​‬‌‬‎‌​⁫‍⁪‭‮‪‬‪⁮‬​‭⁮‭⁪‎‎⁮‫‫‮⁯⁪‎⁮‎‫‏‏‮(System.Globalization.NumberFormatInfo, System.String)
+Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+System.String ‮‎⁬‪‫‍‍⁬‫‌⁬‍‮⁮⁪⁫⁫‮⁭‎‍⁭⁬⁪‬‏‍⁮⁭‍‌​‮⁭‏‎⁭⁫‮‬‮(System.String, System.Object, System.Object)
+System.String ⁫‎⁭‮⁯​⁬⁯‪‎⁪‮⁯‍⁯‭⁫⁪⁭‫‫⁪‌⁯⁯⁪‪‍⁫‏‬​⁬‎‌‮​‌‫⁮‮(System.String[])
+System.Exception ‏‌‪⁮‌⁮⁫⁭‮‌‌⁬‬‬‮‮‌‎‬‬⁪‌⁯‏‭‏⁫​‌‮⁭⁮⁫⁯⁫‍⁭⁯‮‪‮(System.Exception)
+System.String ​‮⁪⁮⁫⁪⁮‮⁪⁪‭​⁭‎‌‌⁭‍‫‮⁭⁫‎​⁬‌‍‎⁮‏‭‎⁯⁮⁭‬⁯‫‌‍‮(System.Exception)
+System.String ‬⁬‭‮‌⁫‎‌⁫​⁫⁮‌‌‫⁮‪‪‏⁫‭⁯​‭⁪⁮⁪⁪⁯‬⁫‭‫⁭‮⁫‬⁮⁮⁪‮(System.String, System.String, System.String)
+Void ‪​‍⁮‌⁯⁭‌‌⁬⁬‏⁬⁯‏​‫​⁯⁭‌⁬⁬⁭‍‪⁯⁯‪‌⁭⁬⁪‏⁪‬‬⁪⁬⁯‮(System.Threading.SynchronizationContext, System.Threading.SendOrPostCallback, System.Object)
+System.String ‏⁫‍‏‍‌‪⁬⁬‪‬⁬‭⁮‌⁮​⁪⁭⁬‪⁯⁯‌‫‏‮⁯‮⁫‭‎‏‍‬‍‭‎‌⁫‮(System.String, System.String)
+Void ⁭‬⁭‪‌‮⁫​‎‎‮‭⁪‍‮⁬​‏⁬‏‪​‍‍‭‪⁯‫‎⁪⁬‫‭⁮⁬‌⁮‌⁮‭‮(System.Threading.Timer)
+System.Type ‍⁫⁭⁯⁫​⁫⁬‬‌⁬‪⁯⁪⁪⁯​‭⁫⁪‏⁮‬‏‬‪‮⁫⁯‎‫‏⁬‫⁮‫‎⁮⁭‍‮(System.RuntimeTypeHandle)
+System.Linq.Expressions.ConstantExpression ​​⁮‬‎⁯⁬‫‏⁭⁫‎‏‮‎‭‏​‭⁯​‌‮⁯‭​⁫‬‬‪⁯⁭‭‌⁯⁫⁮‭‮‫‮(System.Object, System.Type)
+System.Reflection.MethodBase ‎⁫⁪⁪⁪‌‎⁪‫‮⁯‭⁪‮‮⁪⁯‍‌‮⁫⁪‎‏​‌‍⁫⁭‮‌‏‭‪‫‌​‪⁯⁬‮(System.RuntimeMethodHandle)
+System.Linq.Expressions.MemberExpression ‌‬⁮‬⁬‌⁮‎‫‫‌‬⁮​‭‮‮⁪⁫‫⁪‮‪⁭⁯‬⁪⁮‮‭‪⁯⁭‏⁪‫​‏‪⁪‮(System.Linq.Expressions.Expression, System.Reflection.MethodInfo)
+Void ⁬‌‍⁯‭‏‪‌‍‎⁪⁬‬​‎⁭‍⁫‭⁯⁭‍‫⁪‎‭​⁫⁫⁬⁫⁬⁬‌⁭‎‏⁬‍‫‮(Caliburn.Micro.PropertyChangedBase, System.String)
+System.String ⁬⁬⁫‍‬‎⁯‫‮‬‍‪‭‌‫‏⁯‮⁬‍⁭‫‮‮‮‏⁮‮‌⁭⁭‮‫‌​​⁬‮‎⁫‮(System.String, System.Object)
+Double ‏⁭⁯‍‪‫​⁮‌⁬⁫⁪⁪‭​‪⁪⁪‏‌‭⁯‮⁪⁫⁮‫‪⁮‪⁭‪‬⁮⁫‮‏‬​‎‮(Double)
+Int32 ‍⁭‌⁪‏⁬⁪‎‍‫⁮‍‬‍‬‪‮⁪‬‍‍‫‪‫⁪‬‪‬⁮‍⁯⁪‬‬⁯‏⁬⁯‏‬‮(Int32)
+Void ‍‮‫⁫⁯‭‪‮‮⁬⁭⁪‎‭⁭‏⁪‮⁮⁬⁫⁮​‎‌‪‎‬⁪‍‫⁮​‭‪‬‫‌⁭‬‮(System.Threading.SynchronizationContext, System.Threading.SendOrPostCallback, System.Object)
+System.Type ‭‌⁮‍‭​⁯​⁭⁯‮‌‌‮‮⁬⁯⁫⁬‭‌⁮‌⁫​‮⁬⁭‍⁯‬​⁯⁪‏⁭‎‌​‍‮(System.Object)
+Boolean ‫‌⁬‬⁪⁪⁭‮‮‪‫‪‭‌‏‌‌⁮‌⁫‬⁫‎⁫⁬⁫⁬⁯‪‬⁭‭‍​⁪⁪⁯⁭‏‍‮(System.Type, System.Type)
+Int32 ‭⁯‍⁭⁫⁬‍‏‍‬⁭‏‎‬​⁭⁪⁭‏‫⁮​‌⁭⁭‮‪⁭⁮‬​‮​‮⁯⁮‎⁪⁫‎‮(System.Random, Int32, Int32)
+Char[] ​‎⁪‬‎⁭⁬‪‎‫⁬⁭‏⁮​⁪‮‫‎⁯‫‭⁮‌‭‫‪⁭⁮‍⁫‬‌‪‫‍⁬‫⁬⁫‮(System.String)
+Int32 ‫⁭‮‏⁬​‎⁭⁫‌⁭⁬‭‫⁮⁬‏‬‏⁮‬‬‏⁭⁮‭‮⁪‮⁮‪‍‌⁭‍⁪‮⁪⁪‍‮(System.String)
+System.String ‭‍⁫⁭‭⁬⁯‎‌‎‪⁬⁫‏‪⁫⁯‬⁯⁭⁮‭‭‫‫⁯⁮‬‌‫‮​‭​⁪⁫​‬‭‫‮(System.String, Int32, Int32)
+System.String ‭‪‬⁫‫‎‬​⁫⁫⁭‎‎‮​‬‮‬‮⁭⁫‏‮⁬⁮⁭‬⁪​‮‍⁯⁪⁭‭⁫‬‭‎‎‮(System.String, Int32)
+System.String ‏⁪‮⁯⁭⁮‏⁯⁮⁮⁭​⁮⁮‌‮‮⁫‮‌⁮‭​⁮‏‎‫‬‬‍‪‮⁯⁯‎‎⁪‏⁬⁬‮(System.String, System.String, System.String, System.String)
+System.Text.StringBuilder ⁮‪‏⁫‮⁭‎‮‭⁯⁬​⁭‌‭‏‏⁬‌‎‪​⁯‬‬‪‍⁫⁯⁫‫‫‮⁮⁮‬‍⁮⁬⁬‮()
+System.Text.StringBuilder ‍⁬⁬⁮⁬‏⁯‪‫‮⁫⁭‪‮‎‍‮‪⁬​⁪⁬‭‮⁯⁪‫​‫‏‍‍‌⁪‎⁭‎⁬‏‍‮(System.Text.StringBuilder, Char)
+System.String ‍‮⁫⁫⁪‭‌‪‏⁮‍‬⁪‭‬‪‫‪‫‎‬​‎‍‍‍‎‬​‫‌‮‫‌‏‬‌⁬‍‏‮(System.Object)
+Void ⁭‎⁯‌‮‮‬‍‍​‪⁮‬‏‮⁪‎⁫⁪‌‎⁪‭‮‬⁮‌‮⁭⁯‭⁫⁮‫⁬​⁫‪‍‏‮(System.Array, System.Array, Int32)
+Void ​‫‌⁯⁯⁮​‭⁭​​‍‬‬⁮‮⁮‍⁬‬⁮‫⁪⁬‮‌‎‭‌‭⁪‫‪​⁪⁭‪⁪⁪‬‮(System.Array)
+Void ‪‍‪‌⁭‏‏‎‪⁪‌‌‏⁯‍⁬‪​‮‫‍⁫‌⁯‏⁫⁮‎‬⁮‪‬‏⁭‪‌‎‌⁬‍‮(System.Array, Int32, Int32)
+Void ⁬‪​⁬‭⁯⁮⁫‪‌‎⁮⁮‌‏‫⁪‏‎⁫‍‏‎⁯⁯⁮⁬‬‎‬‭⁫⁭‌‎⁪⁪‪‌‭‮(System.Array, Int32, System.Array, Int32, Int32)
+System.String ‫‪‫⁬‍‌‍‌⁭‏‫​‏⁫‭‪‍⁬⁫‏‭⁭‎‍‍⁮⁫‭⁮‭‎‭‎‫​⁯⁫⁯‮⁭‮()
+System.String ⁮‫‭⁯⁪‏⁪⁪‫⁯‌‭‍‭⁫‭⁯‏‮⁬‪⁬⁬‫‮‍‍⁬‬‬‬⁪​‌‬‮‫‫⁪‮‮(System.String, System.String)
+System.Object zcxWhDYLHzBtLAwABjjWarCYGNVD(System.Collections.Generic.List`1[System.Object])
+System.Object nXbgMTyNqKWLzjPihycEbTalWUeb(System.Collections.Generic.List`1[System.Object])
+System.Object StydDYCzkIQpZtDlkVoFUErBatOBA(System.Collections.Generic.List`1[System.Object])
+System.Object RFfDWEbAkZKTNNpygnuqZpumArRQA(System.Collections.Generic.List`1[System.Object])
+Void AVfTAHunAIuViZcDKtlHBDzieycG(System.Collections.Generic.List`1[System.Object])
+System.Object zspCdxgkMareGtnTToQBJYqGrIwmA(System.Collections.Generic.List`1[System.Object])
+System.Object YiXbXOVinaDjeeanUxsnBbqWUrdb(System.Collections.Generic.List`1[System.Object])
+Int32 OORwbIXduHJwgVegbzSpoGaliNAkA(Byte[], Int32)
+System.Object uxPuqIpRPFozhGEhiRrUyNFzvlRy(System.Collections.Generic.List`1[System.Object])
+System.Object UJUFoNKhKRczBBDSvnqatdpeexLm(System.Collections.Generic.List`1[System.Object])
+System.Object EeEERzbMCdtuTdzOGTELwdxFxhrVB(System.Collections.Generic.List`1[System.Object])
+System.Object wmXgTfkPCwioeSqWHXFHrzVNKVsh(System.Collections.Generic.List`1[System.Object])
+System.Object tilNHKnzwydVSgNeTFJqEIIJsrBI(System.Collections.Generic.List`1[System.Object])
+System.Object TgJcQrguDvcWCcpdejskdXsBDDuDA(System.Collections.Generic.List`1[System.Object])
+System.Object IBPboosBFaizNFdZJndTTGcHJHpKA(System.Collections.Generic.List`1[System.Object])
+Void cTAFwOSBwZIiVjgKLyxKrpZeFxiu(System.Collections.Generic.List`1[System.Object])
+System.Object jOVduNMVNkQaBXwCHQVwFvVBZnah(System.Collections.Generic.List`1[System.Object])
+Void ICazjzjDnLDaGKdLvhMtnHXPQcSi(System.Collections.Generic.List`1[System.Object])
+System.Object hQBGcNuCqpdzLOrfLAdtfjVkgUOe(System.Collections.Generic.List`1[System.Object])
+Void KdFoxmPmvQjQAnELWKRPcDgiAUip(System.Collections.Generic.List`1[System.Object])
+Void czEeHVLJxlcFQIEXUeZVVRbWMzt(System.Collections.Generic.List`1[System.Object])
+Void nyvcPytFknJSdmtlIaziRiCvQVXr(System.Collections.Generic.List`1[System.Object])
+Void LXYNgszLYEXgXUUXNRopWXnFAMjV(System.Collections.Generic.List`1[System.Object])
+Void xlgIaZKOSHLgbWCeLNYfCiSJCIRo(System.Collections.Generic.List`1[System.Object])
+System.Object wSidnTYlSggYuNnlWdlJslImbmP(System.Collections.Generic.List`1[System.Object])
+Int32 aUCWsSPNDUctZMbffKeSPTrBKism(Byte, Byte, TKirIwKYPGGkyTrfpHOYywJgFRuG, Byte, Int32)
+System.Object xVSoitQuSkuSKnBikdHwrNEzlWPr(System.Collections.Generic.List`1[System.Object])
+Int32 rLjDEERzFziiWyAhUAxYeQGWmAorA(Byte, Byte, UInt16, UInt16, Int32)
+System.Object cjcYbpeHsetzzRxkeFgcwZUHINhv(System.Collections.Generic.List`1[System.Object])
+Int32 uZZtaxNlUMPVDWyRPuDtuXqwbmIH(Byte, Byte, UInt16, UInt16, Int32)
+System.Object emgrjlCImWdYNJrMAOqxrqGDbPQf(System.Collections.Generic.List`1[System.Object])
+Int32 QxznxYdTmCaDEbDkkjbbscRFFIRb(Byte, Byte, UInt16, UInt16, TKirIwKYPGGkyTrfpHOYywJgFRuG, Byte, Int32)
+Void FZMkFYDKryxWXmoQXmigMTKRCBMi()
+System.Object XmISdRIubBTvSOSMGqiRLUAxpnrV(System.Collections.Generic.List`1[System.Object])
+System.Object HMyYnparBvFeLUcmfDHaDxLrjkMC(System.Collections.Generic.List`1[System.Object])
+System.Object zAKJFCCHxjOlpcfuEeeZFwbtgvEjA(System.Collections.Generic.List`1[System.Object])
+System.Object xtnNrEtQnpqacYxkCsLWWXCwEvax(System.Collections.Generic.List`1[System.Object])
+System.Object jNOvuDBframbCMoVhVnGgBEzJyTb(System.Collections.Generic.List`1[System.Object])
+System.Object qrgbsXfiwEWrqvSJxpBATKhyjEIFb(System.Collections.Generic.List`1[System.Object])
+System.Object tfWaBKebJfodVddmgHqltWpBPHYRB(System.Collections.Generic.List`1[System.Object])
+System.Object JVwEbUHhfZivlZCduoraDAHbfvdo(System.Collections.Generic.List`1[System.Object])
+System.Object QabgoMSocRuzepFNmqZsWZssExbN(System.Collections.Generic.List`1[System.Object])
+System.Object HYHgGDjvAPSfsuhqcQMKYWycBLsO(System.Collections.Generic.List`1[System.Object])
+System.Object yGUamFcezFxBFCCdoKzKtdmFASACb(System.Collections.Generic.List`1[System.Object])
+System.Object dMCPgplWYEYDOiWZntYvprKrpXBB(System.Collections.Generic.List`1[System.Object])
+System.Object qswvbLVJTIDcdlHTPCaRzqnBXONR(System.Collections.Generic.List`1[System.Object])
+System.Object WWfTBGVeDtfDUyfEpKgXsTAfFNyF(System.Collections.Generic.List`1[System.Object])
+System.Object RMDpohkeThAbNnQLBrcHuErgYrY(System.Collections.Generic.List`1[System.Object])
+System.Object JNMUDopTdItCgaGuyurLWGWuFZlM(System.Collections.Generic.List`1[System.Object])
+System.Object qrEOqPdkwjFaKCXBDGJdytnxaXvHA(System.Collections.Generic.List`1[System.Object])
+System.Object CvqWOVsHaDGyuDWjbmCyfXWdcZHv(System.Collections.Generic.List`1[System.Object])
+System.Object HmqhYuBtLEyOSunkbEWPUAoPkSsB(System.Collections.Generic.List`1[System.Object])
+System.Object McyhLKZCnHKwwebUslBoIcaWHhkKA(System.Collections.Generic.List`1[System.Object])
+System.Object nZLHuzXrZWdkFYtAvSGkbvHjDjEO(System.Collections.Generic.List`1[System.Object])
+System.Object BlecgVSVbTfhYjwzWIRPfjbkptLL(System.Collections.Generic.List`1[System.Object])
+System.Object fTHJfxvgnWAbrXhDzeTBIuaRjyHFA(System.Collections.Generic.List`1[System.Object])
+Void OcoDTqznZCjdilJmQHGliZdTKjDSA(System.Collections.Generic.List`1[System.Object])
+System.Object rUrweexUFhqMttwbvwSCkxIncUop(System.Collections.Generic.List`1[System.Object])
+System.Object WgdsauONCrmQXyiOOGCdhJlplYxP(System.Collections.Generic.List`1[System.Object])
+System.Object fKqMzfACxAtfmEoNcGyKhDgvNBWo(System.Collections.Generic.List`1[System.Object])
+System.Object QlMqPYwiyJGvCCyKQpPSaldJkbBmA(System.Collections.Generic.List`1[System.Object])
+System.Object gphkhCSJPeciDGFoIPAwEbwICOpfB(System.Collections.Generic.List`1[System.Object])
+Void DxXgSgHwtjHNjFEEQfPRtWfZBXJq(System.Collections.Generic.List`1[System.Object])
+Void iVKlcJMKWxoZiujMaHyOKCTpBCjV(System.Collections.Generic.List`1[System.Object])
+System.Object wHoeCLHKePfxqLdYfnAqbVSYNekw(System.Collections.Generic.List`1[System.Object])
+System.Object YEmLCAJrkphXGpVRQsMuHvRPrsAu(System.Collections.Generic.List`1[System.Object])
+System.Object TXsAjqBerxoXdKXTnrvhhNkDqHcP(System.Collections.Generic.List`1[System.Object])
+System.Object ACjhOWENzTmSpdsRQcwhGTJdlKdn(System.Collections.Generic.List`1[System.Object])
+System.Object rEAfSzJWpfettMTlkgvxyyTgEefw(System.Collections.Generic.List`1[System.Object])
+System.Object ZuDEyYePOzfkcyKsrMhnfsaNDhsuA(System.Collections.Generic.List`1[System.Object])
+System.Object kZxCGvFzzoYvehInXetLXrVFDltKA(System.Collections.Generic.List`1[System.Object])
+System.Object eusceJBwrJIxcnpriSKdefzVIKldb(System.Collections.Generic.List`1[System.Object])
+Void MMMDaFDcacAfIuYlspGJFGimBoZeA(System.Collections.Generic.List`1[System.Object])
+Void DKygERCacxafszhmBfgAgDikzFPp(System.Collections.Generic.List`1[System.Object])
+Void QOqJbPzfAqCbIKioePclwjKPjmCb(System.Collections.Generic.List`1[System.Object])
+Void QoOzliufrSQhJHqdxycHNrYKFmLd(System.Collections.Generic.List`1[System.Object])
+Void QSUteLOBygmbcbJmRMTyjoKrVqnB(System.Collections.Generic.List`1[System.Object])
+System.Object jbMCvtkBVrcoecfqHcLTIaLnPajEb(System.Collections.Generic.List`1[System.Object])
+Void yHrbeDjmGsnYSNUmFjpTyxycIHgZ(System.Collections.Generic.List`1[System.Object])
+System.Object gsAQZjIAHMjaZTLQcYOCuuNXqasT(System.Collections.Generic.List`1[System.Object])
+Void rUmDhIjLgsGqCMBGEznmcXbyewHdb(System.Collections.Generic.List`1[System.Object])
+System.Object MIbaQMVjItqsNkBkcJFedmbTxAWu(System.Collections.Generic.List`1[System.Object])
+System.Object NhdZSbaIFzgYKgNsSIIQJwMedyAcb(System.Collections.Generic.List`1[System.Object])
+System.Object YDBIwpCZtFhGyDbgbizGhssqcISC(System.Collections.Generic.List`1[System.Object])
+System.Object hOXrHEFyANjlIvMpDdJHlMMUJHHg(System.Collections.Generic.List`1[System.Object])
+System.Object qppfpZDssfeZkFGYhsnsNjdEThBZd(System.Collections.Generic.List`1[System.Object])
+System.Object gZeHCnfeBybLCCuiFjOCOEeVvncT(System.Collections.Generic.List`1[System.Object])
+System.Object SNlOPEHhOvGYaRzdTumgmnbOdfUk(System.Collections.Generic.List`1[System.Object])
+System.Object AAARKMSbBChxOPkrirzsXQYrAtZb(System.Collections.Generic.List`1[System.Object])
+System.Object KBcKPOwYClpeqSBjCyTINAOfuVOK(System.Collections.Generic.List`1[System.Object])
+System.Object fJZnkRPbEcdVtrFngpFuAgQAszpU(System.Collections.Generic.List`1[System.Object])
+System.Object YKzdckksStOqvWwrUbPLEyucloOz(System.Collections.Generic.List`1[System.Object])
+System.Object lGOyiamvLDvORSNASFImGREjboE(System.Collections.Generic.List`1[System.Object])
+Void CgwveBWTRmflmyHuVwUIvNRzmBpB(System.Collections.Generic.List`1[System.Object])
+System.Object DuyGMEzhbUSbyilmOcjAHjjpjUPsA(System.Collections.Generic.List`1[System.Object])
+System.Object UawPuYlDozuoiqkgioUjndZoEKmw(System.Collections.Generic.List`1[System.Object])
+Void NjWyolEKpfgARbmzyIhUWGDNRcAfb(System.Collections.Generic.List`1[System.Object])
+Void slciYnsnENEMuWaieUxgIcSNYRAG(System.Collections.Generic.List`1[System.Object])
+Void uuzDwkagvAxCfjuFjsYJAfLCouRfB(System.Collections.Generic.List`1[System.Object])
+System.Object kbiSZbISmsqjlDkIiROXkvQFpkce(System.Collections.Generic.List`1[System.Object])
+System.Object kRCXsQrJeMUDwDchxFIpKjkvvxafA(System.Collections.Generic.List`1[System.Object])
+Void mgRJNKVtNOinMZLeTDQRdfnSHhguA(System.Collections.Generic.List`1[System.Object])
+Void McyMoekYFJQeIilhhHIjjfuGqWIvA(System.Collections.Generic.List`1[System.Object])
+Void ArsAPrynvaYMjBdGFQyacgEhuBZp(System.Collections.Generic.List`1[System.Object])
+Void BgbyMjPoEikhGqZrcFigElRMCqtz(System.Collections.Generic.List`1[System.Object])
+Void sQKTQEcBsBZnrDxHbApLxOJjDLrw(System.Collections.Generic.List`1[System.Object])
+Void pwtimRcaHiloXEUroJZvJBeBBvWh(System.Collections.Generic.List`1[System.Object])
+System.Object yHlgAGfyZbDsKRDWrrkfKHTsbezYA(System.Collections.Generic.List`1[System.Object])
+System.Object ewQbgcouLllDDBJEMArSFEDhBVcIA(System.Collections.Generic.List`1[System.Object])
+System.Object kDMpWYRzQOmaRjmioGMDbmhtqKNRA(System.Collections.Generic.List`1[System.Object])
+Void JywuXpXZjsgiqxJOzoedehItFMrk(System.Collections.Generic.List`1[System.Object])
+System.Object dJsCkmsKdMcPnhEzyvTROPBBYekBA(System.Collections.Generic.List`1[System.Object])
+System.Object jMffgETkYwAJAEQqJSoqnDdWNbTRA(System.Collections.Generic.List`1[System.Object])
+Void eufsIkQAHRijdIhdjmSEuLHUYZzqA(System.Collections.Generic.List`1[System.Object])
+Void WWualmPTZMyDXuwXkAmFHuJZdgyC(System.Collections.Generic.List`1[System.Object])
+Void sQpIqUVpQNqtLZOPbHvciQkkdodBA(System.Collections.Generic.List`1[System.Object])
+Void JDuMVzFASlCCWpbyNrRaEHeCkyNN(System.Collections.Generic.List`1[System.Object])
+Void RyBkewDGZGnuXvVFlKuzwIUyxRmo(System.Collections.Generic.List`1[System.Object])
+Void LfvHRMbOdCQCAvCsClEDMDYKklefA(Int32)
+Void TmoNMeGNwkDnuMxGVlkBSDdEvjFi(System.String)
+Int32 vnzwZSEcJSFicvrSTtMYbHIDoMnb(Byte, Byte, Byte[], Int32)
+Boolean YWAcMZJrCkHidCKKflXZqzRLbefrB(Int32, System.Func`1[System.Boolean])
+sINkyFwRclLqBsRmQchqlTPcSPeC LkoJfQGCDCSaKLMIrGlhVLWPlLJA(Byte)
+Void dZesOdwhDnKsklrVXQsyYbYJneXB(Byte, System.Object)
+System.Object VQdSvmwQWptqHkttDQcIjcxEioOP(Byte)
+Void VqpvOVHudWSDNyleTQLiMGbPdsCq(System.Object)
+System.Object KfBpQGSMKuamtdqSSLxijjKlKGmcA()
+Void sjcMqgafmXdlACmkMatdgkfjspnIB(System.Object)
+Void ndilqdIbvKKvZsXGvBwtoCQcwTmd(System.Action`1[HgWAkoCqeSSjSNFFRXqsUWQzCspiA])
+Void MBMyCfONRLEyNaBFvgMBPIbHamOaA(System.Action`1[HgWAkoCqeSSjSNFFRXqsUWQzCspiA])
+Void tGmvgyvHCKbKsMKTiXiAqNMLrOeo(Int32, Int32)
+Void nZnvyadtmeNQvThWpMurpUgDKlLu(Visual_PIX.Model.Controls.KeyboardCtrl)
+Void TWRBwqfGnOwdkgNNeWBtzIMxWPvd(Visual_PIX.Model.Controls.KeyboardCtrl)
+Void BhFriRWoSPLBizdlpEdNFrGxeGnC(Visual_PIX.Model.Controls.VideoCtrl)
+Void cOJOVgDSImrkHfwIUwITooyPDSmKA(Visual_PIX.Model.Controls.AudioCtrl)
+Void HbyhnshXjsIJZRMujxjkFeSWTToM(Visual_PIX.Model.PixProject)
+Void TBtIGjOXZYvgPSwrwNYFMvkEfgOV(GGiFOibEIBtEwjjDZFJIEPbGFJeR, System.Exception)
+Void aJlMJTeBHKRtzPCvqyAPpBTZQIxX(System.String)
+System.String HrAkWkQsitelnNeioFSYRsHnfNez(System.Exception)
+Void ogYolGhPwvQoPVAgjjVedDvLJwPw()
+System.String aydxwojDcImqVcudWVXThfMHhBzN(GGiFOibEIBtEwjjDZFJIEPbGFJeR)
+Void HjwdUmdfwKkqbOuQtlKjClFpAuYJ(Byte[])
+Void uhkbnTVLPHhkDdfxyeskiUUKobMkA(rGSQMnBljBHaLbQwBFqqGvKDmbYY, Byte, System.String, System.Func`2[System.Object,System.Boolean])
+System.Collections.Generic.List`1[Visual_PIX.Model.ImageData] cDRPbJFCeVdbkMYbQDGZUOanHZgBA()
+Int32 VLYVmGAJyDKNDfpolekfYSxhOsfX(System.String)
+System.String RnVSVtlDYzdWCDIgbviiGKJQgxuaA(Int32)
+Void UjVcysTAZemDTujPLsqtRHriUQGg(System.Object)
+Void oEJzKyWkmMrDKqvFcoRJpWcdPjbp()
+Int32 DPtHiwceETgUlBUHkTSTEeefEAEEA()
+Void set_Width(Int32)
+Int32 mUyeCfzWAjpqlbvHjIQlleHfjViGA()
+Void set_Height(Int32)
+Int32 OWkpeYRgZljUSvaWEYGCtHoPhCzL()
+Void set_Bright(Int32)
+System.String ZbviNFdFXSeAiXkxpHsWklOVagiS()
+Void set_Status(System.String)
+Visual_PIX.Model.PixLayer OBENdtxFEdfMoJyIAyESpVWShdIRA()
+Void DwptzAbneuVTGAMVpapKJdhOMaajA(Visual_PIX.Model.PixLayer)
+System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixControl] JcPwbbiirlKPKSfFtefEfULHCvCU()
+Boolean vdoACshDPKNckmJwwQCISzWtHbeH()
+Void HjIfmqKegjKkjGqZFdIlGZyGNZBJd(Boolean)
+Boolean VgQMlBLYRZuPrVkYDyMKmYVStGHr()
+Void LaBgnuOyRYyawRgMIKxpojZUatqn(Boolean)
+Boolean WjOGoikADgQexwtjCrGxmPgPfgKZ()
+Void bmWtmeydSKHWtlqjpHYigAfmUyJq(Boolean)
+Boolean taPEuuGAchxZDqsAqkKqoaNTUAai()
+Void CkcYfxdFLADBQrDXOZJyUASAhGae(Boolean)
+Boolean eUDPCBubKqsArhGFDiInuyxwqQll()
+Void quQshHNCBZHQxCchIJnlWyCsrocl(Boolean)
+Boolean sieeWhNlnCIKteFgGadkNOdArGWYA()
+Void cLCBqRClQVGEiFHFJBoGhsTOheGSA(Boolean)
+Gemini.Framework.RelayCommand BCckuSnuXkoikFbtoYiYCbNOzkZJ()
+Gemini.Framework.RelayCommand WCTbRfyldcUDKGhtGMkfrBKdjIBf()
+Gemini.Framework.RelayCommand uGeCwiaitDClWzfidNcdocnPHlyU()
+Void kBTBhKWmScdXEcgGYCEBJmcJuesP()
+Void eKGznedwjVnzJkapnFVoBayVjaQK(Boolean)
+Void GWveiZrDlgReiZtoXnywriPVFXAT()
+Void miboVyWKWMJbOXvkhcNuCyKdUHNm()
+Void eFjDutQVfmQznAuLvmcrUMzZBzQAA(System.Object)
+Void pRchHsgpxqvBOEDclLliSYtUUUOY(System.Object)
+Void hIpGYHTeRUCcurTZEljEybgBhtec(Int32)
+Void EewnmhjHfBrustcXCFquhTPNXSz(System.String)
+Void kdXRPxNCPpRyEPMZWkfuEAccRoHC(Visual_PIX.Model.PixLayer)
+Void MNeLHQVhqhitzLoJKFvEeYLGnFjJA(Visual_PIX.Model.PixLayer)
+Void UfMielyXDjRTUMggupgMVPHmiMdJ(Visual_PIX.Model.PixControl, Int32)
+Void bLdCGgfwERLlHNLtvDneMWXssPlH(Int32, Int32)
+Void BlonFGjajYudmSgKcPxpfCQUShxe()
+Void ZYgqWTVsMtWYvUbyKqZpuiLQLKuS(Visual_PIX.Model.PixLayer)
+System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] tZLQyBPOWDpxXBBbzumxudRwnpLe(Double, Double)
+System.Collections.Generic.List`1[Visual_PIX.Model.PixControl] fevGAyJoPVrvDGgIeqFkMsHwoPhoA(System.Collections.Generic.IEnumerable`1[Visual_PIX.Model.PixControl], Double, Double, Double, Double)
+Void aONpSgRZvypzbvbLORbXPmMREXwl(Double, Double)
+Void TQjvHtSVHCisnjIrrbQSKGrHNJuvA(Double, Double)
+Void wUbundzWAOGhoujqSvmPZpwXBVAz(Double, Double)
+Void fpiNrdekbDqOpPAhcxVSyPmwYEDL(Int16, Int16, Byte)
+Void xSdbBYEwZtZImwSCvlSqkqxweatib(Double, Double, System.Collections.Generic.List`1[Visual_PIX.Model.Controls.CtrlEvent])
+Boolean vvSIfLvpazDHaGTDrHCKmErkXjuS(Visual_PIX.Model.Controls.CtrlEvent, System.Collections.Generic.List`1[Visual_PIX.Model.Controls.CtrlEvent])
+Void OlutqcbjlalcfnFPcMxhQEoWogWM(Int32, Int32)
+Void PcTxsgRqnkwnYTpsMxLycblfNJto(System.Nullable`1[System.Int32])
+Boolean vcTgiokcCdATxRevCoyEMhZAMudHA(Int32, Int32, Int32, Int32, Int32, Int32, Int32, Int32)
+Visual_PIX.Model.PixLayer rfSaINhUyfJOaBFvQhNDVVlpeXqAA(Byte)
+Visual_PIX.Model.PixControl XNztpRNKugbhywpKtjhvCfMNErPqA(Byte, Byte)
+System.Object ffcsOGTfuQfGtERVwKEuoaUCSlsAA(Byte[])
+Void lKSVcfPctXJoDpbJFEpSHSFJrhWUA(Byte[], System.Object)
+Void ueluZbdksUsjbRVYyuAtthjFKoJy(Byte[], System.Object)
+Void gkBCgNaSJencUPdTbgLLRaqyRqycA(Int32, Int32, Int32, Int32)
+System.Object czIgNGppvWLeerJdmdalatjAhFALA(Int32, Int32, Int32, Int32)
+Void zpfDJwHPCYoQMlxqiezLxMDgQMFNA(Int32, Int32, Int32, System.Object, Int32)
+Visual_PIX.Model.PixLayer FcoARocaEeUqkSHpcbPWHAruFpcbb(Byte)
+Visual_PIX.Model.PixControl qTtNUhdWlCrDCSxSlptUiFPhBKsm(Byte, Byte)
+System.Object UOtigEWRksjbVqaXarRRQcpisUup(Byte, Byte)
+Void nGOfWEDvLEzhuyXboYhJFhMrBxVx(Byte, Byte, System.Object)
+System.Object BYtgVDGjRNAPnYIYFmJyLvoHnqLg(Byte, Byte, Byte)
+Void FrBhSaUqTjnyNmVndcZbfgAVvLDj(Byte, Byte, Byte, System.Object)
+System.Object EXqmZIMbNvdfXTsLwVxaoAHDEcvu(Byte[], Int32)
+Void XSsEqMDFPTcDsVYucXrufROqaifjA(Byte[], Int32, System.Object)
+Void ZcWfuqgCRMjcTFJIMHsjDCGazboCc(Byte[], Int32, System.Object)
+System.Object wcILdiCXhlfWrhEbdHfXbNZYVoPk(Byte, Byte, Byte, Int32)
+Void BHzgogsYfzoBmSauYeVHEevJlIaK(Byte, Byte, Byte, Int32, System.Object)
+Boolean oawFhoJueFREIhuZsjYYdEDXhOFeA(Byte, Int32)
+System.Object EGCTupJkMicNSvMQWyVMJeTgcrXZ(Int32, System.Collections.Generic.List`1[System.Object])
+Void SVRMQhyNmwGDzaXOJthnWyggmPES(Int32, System.Collections.Generic.List`1[System.Object])
+System.Object XbZHTGbLPjClkYQBLcCyoqHMjVKrA(fyFXllgcCizqEFJEbkVfeezKdFxF, System.Collections.Generic.List`1[System.Object])
+Void ttSykNbpWLeTfLbFKtJaUJCyNoTo(CiOEhxSRmhIBEDpBpXeJqpkMQgCVA, System.Collections.Generic.List`1[System.Object])
+System.Object KZQZyiAvPrMtjEpjdvfUHiQBlhbx(Byte[], System.Collections.Generic.List`1[System.Object])
+System.Object YtDfpKaLOtSnxBseozeLoDbUPsSRA(Byte[], System.Collections.Generic.List`1[System.Object])
+Void BYZcDtphmlQwhKxivEnPQysOCZdQ(Byte[], System.Collections.Generic.List`1[System.Object])
+Void XrcMIfFQuBdhWHAbInksnHlBYpxH(Byte[], System.Collections.Generic.List`1[System.Object])
+System.Object WfvGrcZfeTiFwhmqWlkCCKEZwFNN(Byte, Byte, Byte, System.Collections.Generic.List`1[System.Object])
+System.Object ohtOBlDclBGQESOxbLOKhWgvulqP(Byte, Byte, System.Collections.Generic.List`1[System.Object])
+Void OdAOusFLdXwSHAHpXDqQoREkGeVB(System.Action)
+Void MvbkFoSjUQvVInjDGQCgqZuOjykH(System.Action)
+Boolean nvPetomIOVZtQjCgPGLMKTxTGEuM(Byte[], Int32)
+Void VXviRFFJdVtmBBGqlnlUvnYObgPq(System.Object)
+Void oLBBdevVMihfoBOocEBNvAyfmmDB(Int32, System.Collections.Generic.List`1[System.Object], System.Type[])
+Void haRNQGaeJxSenZeKepnHqlEaIani(Int32, System.Collections.Generic.List`1[System.Object], System.Type)
+Void MEByciyvSbxXPfXDAMTCWWReWvFF(System.Collections.Generic.List`1[System.Object])
+System.Object WBEbELpLcupBqJvpusGuSJgUxBhM(System.Collections.Generic.List`1[System.Object])
+Void hPMNGEoycGIzSIiIbtNerNZjOXFv(System.Collections.Generic.List`1[System.Object])
+Void IKadHEWjWVGSCGxrhoOPoQmzWeGh(System.Collections.Generic.List`1[System.Object])
+Void svAFeFKxKNjiqnirkKDlQHvgAVnqA(System.String)
+Void kGEfevwfyorkgkKxCBGpiOcUAAjeb(System.Collections.Generic.List`1[System.Object])
+Void yjZTpXgiAHLHwKxiMCPIVKvcMfQo(TKirIwKYPGGkyTrfpHOYywJgFRuG, Int32, Int32)
+System.Object lBWMFFnbxrzEQHoQnRsoPlqlHdHw(System.Collections.Generic.List`1[System.Object])
+System.Object bYkefIFaprJvMLNPjqcNSFdloHYF(System.Collections.Generic.List`1[System.Object])
+System.Object ZARESQlnmHNjtMbUAQAVHEYeYBVv(System.Collections.Generic.List`1[System.Object])
+System.Object yNlOLgAKAFAMBfWYJDnGKIDJOeQN(System.Collections.Generic.List`1[System.Object])
+System.Object LvTjlfvyKktceFThvxwVLUGfzeYH(System.Collections.Generic.List`1[System.Object])
+System.Object fOuorapRMzwZwVYJCUdmTaivbBfx(System.Collections.Generic.List`1[System.Object])
+nIOHBNJSBEvEGZhnUgCweVEuyhxP ItcMBGubhOpYrCscHlAgmlqbfROcA
+KDnGdSSdSNBFsXILJbUWofJWOaRc xcKCqGKVdGwdllyJnsMNnVOWDrSp
+jsuTmVglDhctIkruMRDQkHAPLAAn RgxxhdlzvwRtMfNXZRMcrqosIkiKA
+Visual_PIX.Model.PixProject EgErvQLbNxVTVEjeyfsODMZZZGgcA
+Visual_PIX.Model.PixProject WMyjeJwGLkXDvVoFwhNgLDbbBMpjA
+Visual_PIX.Model.PixLayer sptlnwNEeWINytssvYStiACLjpKx
+vWqunIoBFMcloKOPZTyJEOAqvASh sDlddhdvtEqqvSUzMPOBpMqGtvaHA
+System.Collections.ObjectModel.ObservableCollection`1[Visual_PIX.Model.PixControl] eddDJwnEAZBHVEpYXjPMAxdDwiqwb
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixLayer]] FYPgzghjrjdfafFbeoXyZnjdoDpXb
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+WMMTteqeyYCkqnhBoFERwxSZZaZu] rwjNaJQpoUjcsdiYgWBdFWXxIrlB
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+WMMTteqeyYCkqnhBoFERwxSZZaZu] ucxAFPcQCaISpGyFBbKbHfxCFRQZb
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.Controls.SerialPortCtrl]] bUVVizBGIhwLWrvoGaiwKlpyrbau
+Int32 CrGwyUoODPWQHpmFIhGlbThsDshEA
+Int32 HczwnDdLPKRjrQGkecKmJWTxQlbU
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+sINkyFwRclLqBsRmQchqlTPcSPeC] GJuMpdFoPxGtWEZmpkOdQOZEoLkeb
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+CiOEhxSRmhIBEDpBpXeJqpkMQgCVA] qVolvqwEQweKPAVCMzKxEdEsNecjA
+System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+fyFXllgcCizqEFJEbkVfeezKdFxF] cLKFaLuRyzhogDBRExMtZpRpfGsM
+System.Collections.Generic.List`1[Visual_PIX.Model.Controls.CtrlEvent] KVOEVCArHOepntEjOEPRrEQWZAWW
+System.Collections.Generic.List`1[Visual_PIX.Model.Controls.CtrlEvent] JjMtCatuWOGHBeqNnduuFpZOWEVeA
+System.Threading.SynchronizationContext ZaVjfOHnWnoFkLFOzuNMcrnkBwTVA
+bghOfvrVYYkkWWKrnFQRkvHmBgIj aOUupshcanqlhdMUKnZEPWasskvq
+qPKDtUfTXoEQyAiGJXwstFKkVrlBB LBEEnYGzGMcdDASDwnjNNCZIwciR
+qPKDtUfTXoEQyAiGJXwstFKkVrlBB hkVPhPgZpnWQuiWmLMSXwsgKVxct
+System.Collections.Generic.List`1[System.Byte] zRfLboUynMriiWjrksnwHsMOicUe
+System.Collections.Generic.List`1[System.Byte] pLZwDNfVykfkfuHXgaPtAezMIcahb
+acTHfBEBNMyEloeTCqLboyujrSolA QdnCdWHpJzQFGOVDWECnPtAhVPNq
+acTHfBEBNMyEloeTCqLboyujrSolA dkYHpLIPyhbjgabPUQEdpYwxFZQfA
+aTLceynNFzACiCUEqrEtzRhmWpAfA PPRLRnHMnVKXipEmkfXQyVxKDBxc
+zzSYjNKTxGeYtZqEwYDhybeKKwbV lVtLshYAmkLKWmPXgEJZTfJaJauw
+dVCFMyeASmWwysclSgTVOKrFAGNg KkeOSmLBrKofiXJbPMwDKIDUkZo
+dYrfRNYCGEHCmkUrXnOwQDFqqlmw MdpVLpOcewdRtEPHejsxfuZethDeb
+UGPogEWdNuktLDWYfARKVLNiLKIC NNlsFUsKedxxHVVEmqXoQotlXzGg
+JjIZQANfaeQlyRKzjOaWqOAACnYs SXrxfHCFDQxtBFIZlmSvByCPgecl
+ntraBHFZUMMZwJcLrcmwsskuRyAZ erlVlCmGYfnnzLHkGhnUJmqNgiKc
+KEGcIZfhOyeywJPRtODXtnqhvapH wONHwBhvmxqCHiwtEphqilBLGUyD
+System.Random TSdGNUQjffBDzswwHGptYOBUCIKhA
+XYsUOGGTaHQGvCnrZgdqDgrJKgkK WndpFyVAgsMQMRpOZdLuJUazUiwrA
+ukpGhcJVUSpWnMyyWZhEpTtGvjTSA oYRCJaEcVEwvxkiziKthMprOZnURA
+mrBaqDIFdokgxjGabopuxnxbnwEU sJNipoWkAGPsGZQuQRuTTKSvEYyt
+DQJoPATkXjjOxmaIucwJFIuurzNnA bqnqsxIZKrwEWsiLYdCIBAeSAwmZA
+WhZyfBhTnsDGhOWcTddebFPqrFnR nrHkUPOFujIUbIkjNCKFIolEPNhIb
+FZumREwkyOvZBucdZGKnCjeuFzMsA AnfCcbJaXxIgngETHyHBZwPCOtZyb
+wxsaZIMFqZBvGcmWjFYRfsvBDvxNb uKQcKgkVJhPNaSWiFCdMkEABBhvEb
+Boolean pwjIUvyiDmFVRxlZQytlKDwEAyyi
+Boolean uqWlAjbVDmuUBJmVYrcCBBHvvxVk
+Byte[] eWuCTEVKShiYlcRBLCYCDWOqYZoB
+RowqbZNlqPGaeHnrdDTyrotRoPSEA rzQbZEQdbOonLsceRpnRCcUssVVm
+yApeiNAQRPEgKnhNmBbMbaEdNCcE LgafZYHJmIZxLIWxZOSPiGDSYWjZ
+flhJLtNsjCGlyXAbxijvAphxOrqTA pcnwGTCEKxJgdKUdMmDcxqtUqbmk
+muhsuPUUYUBUDnFLdzGCqGKzmmNO KuSGNdzNVgVGfEyDSUYnBooPbpVL
+IUVAhbaRdMDxkDOrjNITqNIPxVcmb BOsbGTBVddQfTVJmHplzsiIDavrJ
+qUMLTsdWACDtaCzcSzvrNtwCPVkD EjPFstEXQdLrxcCtvtxbNwZcbdmO
+Boolean vweOVpICwkwEhsFLjRgPrLyjBpBiA
+System.String bJZhJfOSbDOhkoRjUmSZwBdvxwlc
+Int16 sepCaAdTCfulOlfiuCbSJmyxREmq
+Int16 xWizEmrhFBnCPoiopMxUsXscynJj
+Boolean ghHtlsBecfcftsEBBcZReixkfRgjA
+Int32 TpADYNhPdJxGHRjCVqYfdGewsKQV
+Int32 mwBoHoIAhHHPJZNSwsJyPVXCWAlI
+Int32 umDrAQiQPhaEwayIugTeIzcotROi
+System.Globalization.NumberFormatInfo HDvpVSrjUtpjhMUgzCqCCWsxcKKo
+Int32 DozcmoBDutdkDoJYppuRDiVXOOiaA
+Int32 KGbbpOiZzjIRtqCGwDcXtHcmaHavA
+System.String WjVlIcMqoSGfQDkhZpYOIgtpiLig
+System.Collections.Generic.List`1[System.String] BBLYIVcgmApjnlSElGZdacQwrRhf
+Int32 SMggkYgJGbLMcxhSIGWOqEmOLypcb
+System.DateTime FYLpKzEPqtNcmxtpfbgTiMjlkkWC
+System.DateTime JrOxIXFseQeSSginicweunhEpPFu
+System.DateTime gVahlAWtZNuFssjFHPOzCluAgmvb
+System.Action`1[HgWAkoCqeSSjSNFFRXqsUWQzCspiA] UOZTQYTcBlXNovngJbzcRWYLLupx
+Gemini.Framework.RelayCommand VZpmIoVhJLyZBBFPmgdxfykwJvNtA
+Gemini.Framework.RelayCommand ObdExwiZVshwFRSlontyqBpQOJnN
+Gemini.Framework.RelayCommand KjilzIkqnRKJaEDLHgChAofAycrDA
+System.Windows.Input.ICommand dFmMViZnXipFFTcrIzuPzmIRBqVE
+zFzHRvlWUafCnNMVoxEuwfCSUeaW xxBNylEtjRaabFwTKDNWzAHscIpt
+Boolean kcGcSAWLHHQHrOLVptfMZScApEJV
+Boolean rNfeHmikpYxatSIcktCGbfagpgPPA
+Boolean TFAFjbFYvConcMsQbFIEFkQEQNMEA
+Boolean sgxqpaOgHoqjzXyHrnfCtJGZJDim
+Boolean FlspXzpawGPZTmVOjoOGPXUMbOmT
+Boolean jQxivTHuhFxWXWiaiCQKlwMOFqGs
+Boolean zdKTTzrpfGxEqbwjpDhpBnrSnOuJ
+Boolean jEocMMBzkoGrcUJlQNpKAmqqhMIWA
+Boolean hMCxtvepUauuZihRVGpCaofKRGNzA
+Visual_PIX.Model.ImageData
+Boolean get_IsPng()
+Void set_IsPng(Boolean)
+Boolean get_Locked()
+Void set_Locked(Boolean)
+Byte[] get_Data()
+Void set_Data(Byte[])
+Byte[] GetDisplayData()
+System.Windows.Media.Imaging.BitmapImage GetDisplayBitmapImage()
+System.String ToString()
+Void ClearCache()
+System.String ⁬‫⁫⁭‬‌⁯‍⁬‬⁭‪‮⁫‭⁬⁯‭⁪‎‭‭‍‪‬‬⁫⁬⁭⁮‬‎‌‭‪‬​⁮⁮⁭‮(System.String, System.String, System.String)
+System.Windows.Media.Imaging.BitmapImage _displayBitmapImage
+Byte[] _displayData
+Byte[] _data
+Boolean <IsPng>k__BackingField
+Boolean <Locked>k__BackingField
+Visual_PIX.Model.FontData
+Visual_PIX.Model.PixelFont get_Font()
+Void set_Font(Visual_PIX.Model.PixelFont)
+Visual_PIX.Model.PixelFont _font

@@ -1,0 +1,18 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel+GGiFOibEIBtEwjjDZFJIEPbGFJeR
+0000 ldsfld WDCCljbQoDLEpNyDFCvSzTvzFkEJ pmGzNnBVDrhIzmtwBzLxaeWzNLJJ
+0005 ldarg.0 
+0006 ldnull 
+0007 ldnull 
+0008 callvirt Void xfMOzLiONBJtjEBvkWnPmuRfMCUy(System.Action, System.Object, System.Action`1[System.Exception])
+000D ldsfld System.Action <>9__5_0
+0012 dup 
+0013 brtrue.s 23
+0015 pop 
+0016 ldsfld NfNJcfiPtMfdIWohklFiOotVewTZ <>9
+001B ldftn Void oLwYzYrvkNRDiNGyuQFItVIvkrfV()
+0021 newobj Void .ctor(System.Object, IntPtr)
+0026 dup 
+0027 stsfld System.Action <>9__5_0
+002C call System.Threading.Tasks.Task ⁮‮⁪‎‭⁬‌⁫‍‫⁭‭‌‫​‏⁫‍⁪‎‍⁬⁫⁬​‪‫⁪⁭‪⁭‭​‎⁪‌‫‬⁬‭‮(System.Action)
+0031 pop 
+0032 ret 

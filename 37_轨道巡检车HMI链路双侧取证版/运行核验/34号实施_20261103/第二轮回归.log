@@ -1,0 +1,41 @@
+✔ missing slider callback is compensated by sampled control value (46.8744ms)
+✔ candidate captured during initial zero confirmation is retained (34.7347ms)
+✖ preview follows every thumb position at a fixed 12px gap (20.3135ms)
+✔ transport loss retries exactly the same emergency request without another touch (35.8822ms)
+✔ release-only emergency is a fallback and down/up is one intent (59.9883ms)
+✔ page lifecycle and reload preserve target, session and restored thumb (726.3922ms)
+✔ emergency inserted after a status reply prevents the next nonzero write (30.8731ms)
+✔ a lost callback while unauthorized never becomes a target after new authorization (37.8472ms)
+✔ offline and 600ms blocking still stop and cannot replay old target (85.7601ms)
+✔ rapid changes coalesce to the last target and preserve serial ownership (30.8668ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1210.7785
+
+✖ failing tests:
+
+test at hmi34.test.cjs:8:1
+✖ preview follows every thumb position at a fixed 12px gap (20.3135ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  540 !== 304
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:8:261)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 540,
+    expected: 304,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

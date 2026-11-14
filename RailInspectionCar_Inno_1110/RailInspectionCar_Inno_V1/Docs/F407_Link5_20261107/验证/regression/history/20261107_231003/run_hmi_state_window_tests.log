@@ -1,0 +1,2 @@
+PASS HMI state production: six regions, validity, sources, paired velocity, sync, unknowns and Tick wrap
+PASS HMI windows: 134356 isolated requests; all legal subranges, exact detail footprint, no cross-window dependency, paired<=1, const reads and alarm maintenance

@@ -1,0 +1,14 @@
+PASS delayed full cache: fresh critical read, independent full expiry, source-based cadence, pure alarm
+PASS source 100/101ms boundary, parameter/range validation, sticky first rejection and explicit ACK
+PASS atomic failed-read metadata survives immediate Health publication, including no-source state
+PASS encoding preemption: stale copied source rejected after encoding; no retry or fabricated timestamp
+PASS queued and partial request priority over full background encoding
+PASS request last byte to UART TC timing, DWT wrap, recovery generation isolation
+PASS snapshot diag sizeof=124, no new task/buffer/allocation
+PASS delayed full cache: fresh critical read, independent full expiry, source-based cadence, pure alarm
+PASS source 100/101ms boundary, parameter/range validation, sticky first rejection and explicit ACK
+PASS atomic failed-read metadata survives immediate Health publication, including no-source state
+PASS encoding preemption: stale copied source rejected after encoding; no retry or fabricated timestamp
+PASS queued and partial request priority over full background encoding
+PASS request last byte to UART TC timing, DWT wrap, recovery generation isolation
+PASS snapshot diag sizeof=124, no new task/buffer/allocation

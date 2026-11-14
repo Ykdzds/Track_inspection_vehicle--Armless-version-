@@ -1,0 +1,30 @@
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=0 readonly=1
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI degraded: session retained, no increase, resume jump or reversal
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=1 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=1 enabled=1 readonly=1
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=0 readonly=1
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI degraded: session retained, no increase, resume jump or reversal
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=2 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=2 enabled=1 readonly=1
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=0 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=0 readonly=1
+PASS K5 cross-source stop: repeat deadline, late speed, screen upgrade, release and reauthorize
+PASS HMI degraded: session retained, no increase, resume jump or reversal
+PASS HMI control state machine: acquire, speed, heartbeat, sequence, arbitration, timeout, stop and safety takeover
+PASS HMI control host test: axis=3 enabled=1 readonly=0
+PASS HMI disabled/readonly rejects authorization
+PASS HMI control host test: axis=3 enabled=1 readonly=1

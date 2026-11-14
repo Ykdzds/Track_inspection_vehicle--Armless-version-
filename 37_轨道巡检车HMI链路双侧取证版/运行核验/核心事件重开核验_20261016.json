@@ -1,0 +1,47 @@
+[
+  {
+    "Page": "P8_ServoControl",
+    "Control": "h13Service",
+    "Source": "HMI13事务服务.txt",
+    "Matches": true,
+    "Properties": [
+      "5",
+      "True",
+      "True",
+      "h13Service",
+      "False",
+      "True",
+      "5"
+    ]
+  },
+  {
+    "Page": "P0_Boot",
+    "Control": "mod",
+    "Source": "Modbus中断只读解析.txt",
+    "Matches": true,
+    "Properties": [
+      "13",
+      "True",
+      "mod",
+      "False",
+      "Buffer",
+      "255",
+      "13   mod   Modbus 解析器"
+    ]
+  },
+  {
+    "Page": "P0_Boot",
+    "Control": "refreshTick",
+    "Source": "全局计龄刷新.txt",
+    "Matches": true,
+    "Properties": [
+      "19",
+      "True",
+      "True",
+      "refreshTick",
+      "False",
+      "True",
+      "20"
+    ]
+  }
+]

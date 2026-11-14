@@ -1,0 +1,28 @@
+✔ final PIX array lengths and a single enabled 50ms timer (5.1597ms)
+✔ healthy navigation and rendering consume wall time, target read/write serialized (676.687ms)
+✔ releasing ordinary authorization key cannot cancel a newly authorized session (123.3289ms)
+✔ 300ms stall clears old target; later manual authorization starts at zero (472.8371ms)
+✔ 600ms host stall advances controller TTL independently (337.028ms)
+✔ emergency generation survives all local states and historical stop candidates (420.5546ms)
+✔ wrong station, short frame and wrong function never renew nonzero target (331.2692ms)
+✔ repeat authorization after completed stop never settles an old stop (1846.7709ms)
+✔ display refreshes only visible page, max six fields, and retains last numeric history (267.9307ms)
+✔ all nine pages and themes navigate with bounded arrays (860.8468ms)
+✔ CRC rejection and no callback cannot renew target or erase history (494.9892ms)
+✔ 100ms blocking can continue; 300/600ms cannot replay a nonzero target (401.738ms)
+✔ 1000 page switches with theme changes retain session and bounded transactions (4765.7962ms)
+✔ controller reboot clears old identity cache and never restores motion (797.6269ms)
+✔ position partial/expired samples hold values and baseline change invalidates only mileage (712.9114ms)
+✔ signed -1 and zero are valid speed cache values; sentinel retains preceding value (849.5888ms)
+✔ first invalid speed remains unknown; ten seconds without any frame retains business values (602.324ms)
+✔ stop settlement and a newer emergency in the same event boundary keep the emergency generation (413.002ms)
+✔ reordered snapshots do not renew a target and an advanced later snapshot permits only manual reauthorization (226.355ms)
+✔ negative, zero and speed bounds have explicit valid cache semantics (588.4725ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15472.7971

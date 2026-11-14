@@ -1,0 +1,4 @@
+int initIndex;
+for(initIndex=0;initIndex<180;initIndex++){P8_ServoControl.h13.vals[initIndex]=0;}
+P8_ServoControl.h13.vals[125]=0;P8_ServoControl.h13.vals[126]=0;P8_ServoControl.h13.vals[127]=0;P8_ServoControl.h13.vals[128]=0;P8_ServoControl.h13.vals[129]=0;P8_ServoControl.h13.vals[133]=0;P8_ServoControl.h13.vals[136]=0;
+for(initIndex=0;initIndex<8;initIndex++){P0_Boot.mod.modbusBufferSetReadCount(initIndex,0);}

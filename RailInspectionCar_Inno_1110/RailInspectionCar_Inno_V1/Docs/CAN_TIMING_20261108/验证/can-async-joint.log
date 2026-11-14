@@ -1,0 +1,2 @@
+PASS async production fast path: frames=11871 ctrl_gap=140 axis_gap=102/104 single_record_inflight=1
+PASS F103 real stale feedback still requests ordinary STOP after asynchronous transport silence

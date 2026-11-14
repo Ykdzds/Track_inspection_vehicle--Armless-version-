@@ -1,0 +1,94 @@
+Visual_PIX.Modules.Home.ViewModels.DebugViewModel
+0000 newobj Void .ctor()
+0005 stloc.0 
+0006 ldc.i4 151008984
+000B ldc.i4 1473923542
+0010 xor 
+0011 dup 
+0012 stloc.s 4
+0014 ldc.i4.4 
+0015 rem.un 
+0016 switch 4
+002B br.s 46
+002D ldloc.0 
+002E ldarg.2 
+002F stfld Int32 eXXrfpBMZhGFNwbBFAtXEFMHkAmHb
+0034 ldloc.s 4
+0036 ldc.i4 1374567686
+003B mul 
+003C ldc.i4 -1871466521
+0041 xor 
+0042 br.s -57
+0044 ldloc.0 
+0045 ldarg.1 
+0046 stfld Visual_PIX.Model.PixControl MdGvfzvOJSDvgAHepInDgBisIMujA
+004B ldloc.s 4
+004D ldc.i4 2009085093
+0052 mul 
+0053 ldc.i4 395067492
+0058 xor 
+0059 br.s -80
+005B ldarg.0 
+005C ldfld System.Collections.Generic.List`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] iCwfvIbOGIlaphtxvrbKIAKaOJKt
+0061 ldloc.0 
+0062 ldftn Boolean znAEETjhOfbbQSjglnAuZfWZEkmXA(rGSQMnBljBHaLbQwBFqqGvKDmbYY)
+0068 newobj Void .ctor(System.Object, IntPtr)
+006D call System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] Where[rGSQMnBljBHaLbQwBFqqGvKDmbYY](System.Collections.Generic.IEnumerable`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]], System.Func`2[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl],System.Boolean])
+0072 callvirt System.Collections.Generic.IEnumerator`1[Visual_PIX.Modules.Home.ViewModels.DebugViewModel+rGSQMnBljBHaLbQwBFqqGvKDmbYY[Visual_PIX.Model.PixControl]] GetEnumerator()
+0077 stloc.1 
+0078 br.s 92
+007A ldloc.1 
+007B callvirt rGSQMnBljBHaLbQwBFqqGvKDmbYY get_Current()
+0080 stloc.2 
+0081 ldloc.2 
+0082 callvirt Void hZdosMBvwFVGKyUJvqqtdcFwUVQd()
+0087 leave.s 77
+0089 stloc.3 
+008A ldc.i4 1785929428
+008F ldc.i4 1473923542
+0094 xor 
+0095 dup 
+0096 stloc.s 4
+0098 ldc.i4.3 
+0099 rem.un 
+009A switch 3
+00AB br.s 39
+00AD ldarg.0 
+00AE ldfld nIOHBNJSBEvEGZhnUgCweVEuyhxP ItcMBGubhOpYrCscHlAgmlqbfROcA
+00B3 ldloc.3 
+00B4 call System.String ​‮⁪⁮⁫⁪⁮‮⁪⁪‭​⁭‎‌‌⁭‍‫‮⁭⁫‎​⁬‌‍‎⁮‏‭‎⁯⁮⁭‬⁯‫‌‍‮(System.Exception)
+00B9 call System.String get_Script_execution_error()
+00BE callvirt System.Threading.Tasks.Task yeLAVTfsrCQrGxIoIwtLXJMrzwwH(System.String, System.String)
+00C3 pop 
+00C4 ldloc.s 4
+00C6 ldc.i4 1812800423
+00CB mul 
+00CC ldc.i4 -1596853838
+00D1 xor 
+00D2 br.s -69
+00D4 leave.s 0
+00D6 ldloc.1 
+00D7 call Boolean ⁪⁮‌⁭⁬‫‭⁮⁮⁮‫⁮⁫‏⁬‭⁪⁭⁭‪⁮‍⁫⁭⁬‌‪​‌‎‬‬‏‍‬⁭‌‌‭⁫‮(System.Collections.IEnumerator)
+00DC brtrue.s -100
+00DE leave.s 61
+00E0 ldloc.1 
+00E1 brfalse.s 57
+00E3 ldc.i4 1090940601
+00E8 ldc.i4 1473923542
+00ED xor 
+00EE dup 
+00EF stloc.s 4
+00F1 ldc.i4.3 
+00F2 rem.un 
+00F3 switch 3
+0104 br.s 22
+0106 ldloc.1 
+0107 call Void ​‫‎‮⁫‏⁯‮‌‭‍⁪‌‪‍‌⁯‫⁯‪‏​‎‌‭‭⁯‎‮‮⁬‌‏‌‬‌‎⁯⁪‏‮(System.IDisposable)
+010C ldloc.s 4
+010E ldc.i4 -1500450683
+0113 mul 
+0114 ldc.i4 1716463398
+0119 xor 
+011A br.s -52
+011C endfinally 
+011D ret 

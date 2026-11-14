@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: 固定读帧与CRC向量
+ok 1 - 固定读帧与CRC向量
+  ---
+  duration_ms: 1.0351
+  type: 'test'
+  ...
+# Subtest: 完整24字申请帧及特殊字序
+ok 2 - 完整24字申请帧及特殊字序
+  ---
+  duration_ms: 0.3383
+  type: 'test'
+  ...
+# Subtest: RPM边界及保留参数
+ok 3 - RPM边界及保留参数
+  ---
+  duration_ms: 0.4719
+  type: 'test'
+  ...
+# Subtest: 重复目标不续期且旧序号拒绝
+ok 4 - 重复目标不续期且旧序号拒绝
+  ---
+  duration_ms: 0.3534
+  type: 'test'
+  ...
+# Subtest: 授权后周期发零，滑块不动仍刷新，唯一在途
+ok 5 - 授权后周期发零，滑块不动仍刷新，唯一在途
+  ---
+  duration_ms: 121.87
+  type: 'test'
+  ...
+# Subtest: 授权前滑动无效，新滑动只保存最新目标
+ok 6 - 授权前滑动无效，新滑动只保存最新目标
+  ---
+  duration_ms: 50.2009
+  type: 'test'
+  ...
+# Subtest: 释放后回中并返回，不继续发送旧目标
+ok 7 - 释放后回中并返回，不继续发送旧目标
+  ---
+  duration_ms: 136.7128
+  type: 'test'
+  ...
+# Subtest: 主控重启清会话与旧目标，不自动授权
+ok 8 - 主控重启清会话与旧目标，不自动授权
+  ---
+  duration_ms: 121.7198
+  type: 'test'
+  ...
+# Subtest: 左右双轴不用改屏协议，未参与不显示零
+ok 9 - 左右双轴不用改屏协议，未参与不显示零
+  ---
+  duration_ms: 119.9689
+  type: 'test'
+  ...
+# Subtest: 只读固件不能授权
+ok 10 - 只读固件不能授权
+  ---
+  duration_ms: 82.9235
+  type: 'test'
+  ...
+# Subtest: 错CRC、错站和短邮箱不更新模拟器
+ok 11 - 错CRC、错站和短邮箱不更新模拟器
+  ---
+  duration_ms: 0.2506
+  type: 'test'
+  ...
+# Subtest: 恢复申请使用session=0和generation且重复按键只提交一次
+ok 12 - 恢复申请使用session=0和generation且重复按键只提交一次
+  ---
+  duration_ms: 0.1632
+  type: 'test'
+  ...
+# Subtest: generation不匹配拒绝恢复且状态区保留恢复字段
+ok 13 - generation不匹配拒绝恢复且状态区保留恢复字段
+  ---
+  duration_ms: 0.0987
+  type: 'test'
+  ...
+# Subtest: 27 CAN PB10 0x080, transient reply loss, reauthorize axis=1 rpm=-449
+ok 14 - 27 CAN PB10 0x080, transient reply loss, reauthorize axis=1 rpm=-449
+  ---
+  duration_ms: 218.1772
+  type: 'test'
+  ...
+# Subtest: 27 CAN PB10 0x080, transient reply loss, reauthorize axis=1 rpm=449
+ok 15 - 27 CAN PB10 0x080, transient reply loss, reauthorize axis=1 rpm=449
+  ---
+  duration_ms: 304.9474
+  type: 'test'
+  ...
+# Subtest: 27 CAN PB10 0x080, transient reply loss, reauthorize axis=2 rpm=-449
+ok 16 - 27 CAN PB10 0x080, transient reply loss, reauthorize axis=2 rpm=-449
+  ---
+  duration_ms: 322.9209
+  type: 'test'
+  ...
+# Subtest: 27 CAN PB10 0x080, transient reply loss, reauthorize axis=2 rpm=449
+ok 17 - 27 CAN PB10 0x080, transient reply loss, reauthorize axis=2 rpm=449
+  ---
+  duration_ms: 368.5277
+  type: 'test'
+  ...
+# Subtest: 27 CAN PB10 0x080, transient reply loss, reauthorize axis=3 rpm=-449
+ok 18 - 27 CAN PB10 0x080, transient reply loss, reauthorize axis=3 rpm=-449
+  ---
+  duration_ms: 328.7953
+  type: 'test'
+  ...
+# Subtest: 27 CAN PB10 0x080, transient reply loss, reauthorize axis=3 rpm=449
+ok 19 - 27 CAN PB10 0x080, transient reply loss, reauthorize axis=3 rpm=449
+  ---
+  duration_ms: 197.217
+  type: 'test'
+  ...
+# Subtest: 27 first communication cause survives subsequent errors and stale speeds remain unknown
+ok 20 - 27 first communication cause survives subsequent errors and stale speeds remain unknown
+  ---
+  duration_ms: 70.7718
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2551.1894

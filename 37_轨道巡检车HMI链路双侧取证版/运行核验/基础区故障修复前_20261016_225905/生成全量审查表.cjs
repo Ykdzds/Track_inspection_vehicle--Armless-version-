@@ -1,0 +1,8 @@
+'use strict';
+const fs=require('node:fs');const path=require('node:path');
+const root=__dirname;
+const audit=JSON.parse(fs.readFileSync(path.join(root,'运行核验/全页面对象与事件审计_20261016.json'),'utf8').replace(/^\uFEFF/,''));
+const scopes={P0_Boot:'启动、全局缓存、唯一解析器、全局计龄',P1_Main:'基础状态B0与独立R2链路；导航不授权',P2_Diag:'B0/B1/B4逐轴诊断；HMI本地计数单独标识',P3_Position:'B2/B4原始位置与里程；授权不清里程',P4_Info:'版本、元数据B5、能力与boot',P5_Alarm:'B3/B4当前故障、历史事件；未知不等于无故障',P6_Sync:'B2/B4只读显示主控同步，不计算补偿',P7_System_Ext:'B4能力位；未提供字段未知/未配置',P8_ServoControl:'B5/B6/B7；主动授权、共同rpm、关联停车'};
+let text='# 全页面、控件与事件审查表（2026-10-16）\n\n来源：Visual-PIX真实UIA读回。以下列出全部对象，包括隐藏数组、解析器与定时器；原始事件全文见同目录JSON。该记录是编辑器审查，不是实屏运行证据。\n\n';
+for(const page of audit){const objects=[...new Map(page.Controls.map(control=>[control.Name,control])).values()];text+='## '+page.Page+'（'+objects.length+'个对象）\n\n审查范围：'+scopes[page.Page]+'。\n\n|对象|数据来源与生命周期|权限/触发|非空事件|问题/修复/验证|\n|---|---|---|---|---|\n';for(const object of objects){const events=object.Events.filter(event=>event.Script.trim());const action=events.some(event=>/h13.vals\[11\]|modbusBufferSends/.test(event.Script));const type=object.Label.split(/\s+/).slice(2).join(' ');let note='保留；静态读回，运行显示待实屏';if(object.Name==='servoEntry')note='发现按下/弹起重复导航；本轮清空按下，仅弹起';if(object.Name==='mod')note='严格回调匹配+现场拒因；原生RX待实屏';if(object.Name==='h13Service')note='唯一事务发送者；调度/超时/授权停车回归';if(object.Name==='refreshTick')note='主页不再用B0单独断言未回复；全页显示回归';text+='|'+object.Name+'|'+type+'；'+(object.Properties.includes('True')?'含可见或全局属性，详见JSON':'详见JSON')+'|'+(action?'运动意图/业务；由服务串行执行':events.length?'事件触发或只读导航':'只读/配置')+'|'+events.map(event=>event.Name).join('<br>')+'|'+note+'|\n';}text+='\n';}
+fs.writeFileSync(path.join(root,'运行核验/全页面控件事件审查表_20261016.md'),text);

@@ -1,0 +1,1 @@
+if(P8_ServoControl.h13.vals[2]==3){P8_ServoControl.h13.vals[11]=3;}if(P8_ServoControl.h13.vals[2]==2){P8_ServoControl.h13.vals[11]=16;}P8_ServoControl.h13.vals[10]=0;

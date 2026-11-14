@@ -1,0 +1,7 @@
+{
+  "Evidence": "Saved PIX native event states + embedded bitmap resources; not physical screenshots",
+  "States": 18,
+  "TextChecks": 390,
+  "MinContrast": 5.947726987623851,
+  "Issues": []
+}

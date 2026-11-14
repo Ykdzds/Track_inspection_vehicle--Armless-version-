@@ -1,0 +1,5 @@
+PASS asynchronous gap=1 control_age=109 axis_age=99 record_duration=31 commits=334
+PASS asynchronous gap=2 control_age=157 axis_age=99 record_duration=63 commits=211
+PASS asynchronous transport across millisecond wrap
+PASS delayed task progression: hardware TX_OK does not imply a complete fresh record; F103 requests STOP
+PASS genuine stale control/axis samples retain original STOP protection

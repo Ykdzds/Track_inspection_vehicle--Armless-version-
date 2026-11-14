@@ -1,0 +1,12 @@
+PASS communication/recovery: per-axis/item 1-5 timeout/CRC/context, dedup/cancel/busy, exact age/wrap, 1000ms reset, two-phase recovery/no replay, preparation failure
+PASS safety stop: time ramp, pulse ramp, stale/timeout/CRC, enable feedback failure, fresh zero confirmation, true fault, deadline, no replay, manual preemption
+PASS communication/recovery: per-axis/item 1-5 timeout/CRC/context, dedup/cancel/busy, exact age/wrap, 1000ms reset, two-phase recovery/no replay, preparation failure
+PASS safety stop: time ramp, pulse ramp, stale/timeout/CRC, enable feedback failure, fresh zero confirmation, true fault, deadline, no replay, manual preemption
+PASS communication/recovery: per-axis/item 1-5 timeout/CRC/context, dedup/cancel/busy, exact age/wrap, 1000ms reset, two-phase recovery/no replay, preparation failure
+PASS safety stop: time ramp, pulse ramp, stale/timeout/CRC, enable feedback failure, fresh zero confirmation, true fault, deadline, no replay, manual preemption
+PASS communication/recovery: per-axis/item 1-5 timeout/CRC/context, dedup/cancel/busy, exact age/wrap, 1000ms reset, two-phase recovery/no replay, preparation failure
+PASS safety stop: time ramp, pulse ramp, stale/timeout/CRC, enable feedback failure, fresh zero confirmation, true fault, deadline, no replay, manual preemption
+PASS communication/recovery: per-axis/item 1-5 timeout/CRC/context, dedup/cancel/busy, exact age/wrap, 1000ms reset, two-phase recovery/no replay, preparation failure
+PASS safety stop: time ramp, pulse ramp, stale/timeout/CRC, enable feedback failure, fresh zero confirmation, true fault, deadline, no replay, manual preemption
+PASS communication/recovery: per-axis/item 1-5 timeout/CRC/context, dedup/cancel/busy, exact age/wrap, 1000ms reset, two-phase recovery/no replay, preparation failure
+PASS safety stop: time ramp, pulse ramp, stale/timeout/CRC, enable feedback failure, fresh zero confirmation, true fault, deadline, no replay, manual preemption

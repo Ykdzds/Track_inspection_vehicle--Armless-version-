@@ -1,0 +1,56 @@
+Visual_PIX.Model.PixProject
+0000 ldarg.0 
+0001 call Boolean IsHorizontal()
+0006 brtrue.s 61
+0008 ldc.i4 -423841801
+000D ldc.i4 -588975304
+0012 xor 
+0013 dup 
+0014 stloc.0 
+0015 ldc.i4.3 
+0016 rem.un 
+0017 switch 3
+0028 br.s 27
+002A ldarg.0 
+002B call RpgRniqBlWjCFiSagdbuqoKvDXsaA get_Screen()
+0030 callvirt Int32 MJxBTjHpPsYMRTJqMtrxKZoQmIpMA()
+0035 ret 
+0036 ldloc.0 
+0037 ldc.i4 491506302
+003C mul 
+003D ldc.i4 -442191772
+0042 xor 
+0043 br.s -56
+0045 ldarg.0 
+0046 call RpgRniqBlWjCFiSagdbuqoKvDXsaA get_Screen()
+004B callvirt Int32 UweDLMFkqEQaXVEHYQvlQicUFKAAA()
+0050 ret 
+
+
+PSMessageDetails      : 
+Exception             : System.Management.Automation.MethodInvocationException: Exception calling "Invoke" with "2" arg
+                        ument(s): "Object reference not set to an instance of an object." ---> System.NullReferenceExce
+                        ption: Object reference not set to an instance of an object.
+                           at Visual_PIX.Model.PixProject.GetActualScreenWidth()
+                           at Visual_PIX.Modules.Home.ViewModels.DebugViewModel.HbyhnshXjsIJZRMujxjkFeSWTToM(PixProject
+                         )
+                           --- End of inner exception stack trace ---
+                           at System.Management.Automation.ExceptionHandlingOps.CheckActionPreference(FunctionContext f
+                        uncContext, Exception exception)
+                           at System.Management.Automation.Interpreter.ActionCallInstruction`2.Run(InterpretedFrame fra
+                        me)
+                           at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedF
+                        rame frame)
+                           at System.Management.Automation.Interpreter.EnterTryCatchFinallyInstruction.Run(InterpretedF
+                        rame frame)
+TargetObject          : 
+CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+FullyQualifiedErrorId : NullReferenceException
+ErrorDetails          : 
+InvocationInfo        : System.Management.Automation.InvocationInfo
+ScriptStackTrace      : at <ScriptBlock>, D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\31_轨道巡检车日夜双主题
+                        切换版\native-run31.ps1: line 8
+PipelineIterationInfo : {}
+
+
+

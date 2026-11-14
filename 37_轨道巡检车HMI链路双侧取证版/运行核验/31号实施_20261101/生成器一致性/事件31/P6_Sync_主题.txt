@@ -1,0 +1,217 @@
+// UI31_THEME: presentation properties only.
+if(P0_Boot.themeMode.val==0){
+P0_Boot.themeInk.val=-15719366;
+P0_Boot.themeMuted.val=-12429715;
+P0_Boot.themeGood.val=-15438781;
+P0_Boot.themeWarn.val=-7714048;
+P0_Boot.themeFault.val=-4971752;
+P6_Sync.bgImg=user.image.Day_P6_Sync;
+P6_Sync.syncTitle.bgColor=-1;
+if(P6_Sync.syncTitle.fontColor==-15438781 || P6_Sync.syncTitle.fontColor==-10624850){P6_Sync.syncTitle.fontColor=-15438781;}
+else if(P6_Sync.syncTitle.fontColor==-7714048 || P6_Sync.syncTitle.fontColor==-14490){P6_Sync.syncTitle.fontColor=-7714048;}
+else if(P6_Sync.syncTitle.fontColor==-4971752 || P6_Sync.syncTitle.fontColor==-39558){P6_Sync.syncTitle.fontColor=-4971752;}
+else if(P6_Sync.syncTitle.fontColor==-12429715 || P6_Sync.syncTitle.fontColor==-5653552){P6_Sync.syncTitle.fontColor=-12429715;}
+else if(P6_Sync.syncTitle.fontColor==-16750426 || P6_Sync.syncTitle.fontColor==-14494738){P6_Sync.syncTitle.fontColor=-16750426;}
+else{P6_Sync.syncTitle.fontColor=-15719366;}
+P6_Sync.syncMacro.bgColor=-919812;
+if(P6_Sync.syncMacro.fontColor==-15438781 || P6_Sync.syncMacro.fontColor==-10624850){P6_Sync.syncMacro.fontColor=-15438781;}
+else if(P6_Sync.syncMacro.fontColor==-7714048 || P6_Sync.syncMacro.fontColor==-14490){P6_Sync.syncMacro.fontColor=-7714048;}
+else if(P6_Sync.syncMacro.fontColor==-4971752 || P6_Sync.syncMacro.fontColor==-39558){P6_Sync.syncMacro.fontColor=-4971752;}
+else if(P6_Sync.syncMacro.fontColor==-12429715 || P6_Sync.syncMacro.fontColor==-5653552){P6_Sync.syncMacro.fontColor=-12429715;}
+else if(P6_Sync.syncMacro.fontColor==-16750426 || P6_Sync.syncMacro.fontColor==-14494738){P6_Sync.syncMacro.fontColor=-16750426;}
+else{P6_Sync.syncMacro.fontColor=-15719366;}
+P6_Sync.syncState.bgColor=-919812;
+if(P6_Sync.syncState.fontColor==-15438781 || P6_Sync.syncState.fontColor==-10624850){P6_Sync.syncState.fontColor=-15438781;}
+else if(P6_Sync.syncState.fontColor==-7714048 || P6_Sync.syncState.fontColor==-14490){P6_Sync.syncState.fontColor=-7714048;}
+else if(P6_Sync.syncState.fontColor==-4971752 || P6_Sync.syncState.fontColor==-39558){P6_Sync.syncState.fontColor=-4971752;}
+else if(P6_Sync.syncState.fontColor==-12429715 || P6_Sync.syncState.fontColor==-5653552){P6_Sync.syncState.fontColor=-12429715;}
+else if(P6_Sync.syncState.fontColor==-16750426 || P6_Sync.syncState.fontColor==-14494738){P6_Sync.syncState.fontColor=-16750426;}
+else{P6_Sync.syncState.fontColor=-15719366;}
+P6_Sync.syncActualDiff.bgColor=-919812;
+if(P6_Sync.syncActualDiff.fontColor==-15438781 || P6_Sync.syncActualDiff.fontColor==-10624850){P6_Sync.syncActualDiff.fontColor=-15438781;}
+else if(P6_Sync.syncActualDiff.fontColor==-7714048 || P6_Sync.syncActualDiff.fontColor==-14490){P6_Sync.syncActualDiff.fontColor=-7714048;}
+else if(P6_Sync.syncActualDiff.fontColor==-4971752 || P6_Sync.syncActualDiff.fontColor==-39558){P6_Sync.syncActualDiff.fontColor=-4971752;}
+else if(P6_Sync.syncActualDiff.fontColor==-12429715 || P6_Sync.syncActualDiff.fontColor==-5653552){P6_Sync.syncActualDiff.fontColor=-12429715;}
+else if(P6_Sync.syncActualDiff.fontColor==-16750426 || P6_Sync.syncActualDiff.fontColor==-14494738){P6_Sync.syncActualDiff.fontColor=-16750426;}
+else{P6_Sync.syncActualDiff.fontColor=-15719366;}
+P6_Sync.syncEffectiveError.bgColor=-919812;
+if(P6_Sync.syncEffectiveError.fontColor==-15438781 || P6_Sync.syncEffectiveError.fontColor==-10624850){P6_Sync.syncEffectiveError.fontColor=-15438781;}
+else if(P6_Sync.syncEffectiveError.fontColor==-7714048 || P6_Sync.syncEffectiveError.fontColor==-14490){P6_Sync.syncEffectiveError.fontColor=-7714048;}
+else if(P6_Sync.syncEffectiveError.fontColor==-4971752 || P6_Sync.syncEffectiveError.fontColor==-39558){P6_Sync.syncEffectiveError.fontColor=-4971752;}
+else if(P6_Sync.syncEffectiveError.fontColor==-12429715 || P6_Sync.syncEffectiveError.fontColor==-5653552){P6_Sync.syncEffectiveError.fontColor=-12429715;}
+else if(P6_Sync.syncEffectiveError.fontColor==-16750426 || P6_Sync.syncEffectiveError.fontColor==-14494738){P6_Sync.syncEffectiveError.fontColor=-16750426;}
+else{P6_Sync.syncEffectiveError.fontColor=-15719366;}
+P6_Sync.syncCompensation.bgColor=-919812;
+if(P6_Sync.syncCompensation.fontColor==-15438781 || P6_Sync.syncCompensation.fontColor==-10624850){P6_Sync.syncCompensation.fontColor=-15438781;}
+else if(P6_Sync.syncCompensation.fontColor==-7714048 || P6_Sync.syncCompensation.fontColor==-14490){P6_Sync.syncCompensation.fontColor=-7714048;}
+else if(P6_Sync.syncCompensation.fontColor==-4971752 || P6_Sync.syncCompensation.fontColor==-39558){P6_Sync.syncCompensation.fontColor=-4971752;}
+else if(P6_Sync.syncCompensation.fontColor==-12429715 || P6_Sync.syncCompensation.fontColor==-5653552){P6_Sync.syncCompensation.fontColor=-12429715;}
+else if(P6_Sync.syncCompensation.fontColor==-16750426 || P6_Sync.syncCompensation.fontColor==-14494738){P6_Sync.syncCompensation.fontColor=-16750426;}
+else{P6_Sync.syncCompensation.fontColor=-15719366;}
+P6_Sync.syncPairValid.bgColor=-919812;
+if(P6_Sync.syncPairValid.fontColor==-15438781 || P6_Sync.syncPairValid.fontColor==-10624850){P6_Sync.syncPairValid.fontColor=-15438781;}
+else if(P6_Sync.syncPairValid.fontColor==-7714048 || P6_Sync.syncPairValid.fontColor==-14490){P6_Sync.syncPairValid.fontColor=-7714048;}
+else if(P6_Sync.syncPairValid.fontColor==-4971752 || P6_Sync.syncPairValid.fontColor==-39558){P6_Sync.syncPairValid.fontColor=-4971752;}
+else if(P6_Sync.syncPairValid.fontColor==-12429715 || P6_Sync.syncPairValid.fontColor==-5653552){P6_Sync.syncPairValid.fontColor=-12429715;}
+else if(P6_Sync.syncPairValid.fontColor==-16750426 || P6_Sync.syncPairValid.fontColor==-14494738){P6_Sync.syncPairValid.fontColor=-16750426;}
+else{P6_Sync.syncPairValid.fontColor=-15719366;}
+P6_Sync.syncRejectReason.bgColor=-919812;
+if(P6_Sync.syncRejectReason.fontColor==-15438781 || P6_Sync.syncRejectReason.fontColor==-10624850){P6_Sync.syncRejectReason.fontColor=-15438781;}
+else if(P6_Sync.syncRejectReason.fontColor==-7714048 || P6_Sync.syncRejectReason.fontColor==-14490){P6_Sync.syncRejectReason.fontColor=-7714048;}
+else if(P6_Sync.syncRejectReason.fontColor==-4971752 || P6_Sync.syncRejectReason.fontColor==-39558){P6_Sync.syncRejectReason.fontColor=-4971752;}
+else if(P6_Sync.syncRejectReason.fontColor==-12429715 || P6_Sync.syncRejectReason.fontColor==-5653552){P6_Sync.syncRejectReason.fontColor=-12429715;}
+else if(P6_Sync.syncRejectReason.fontColor==-16750426 || P6_Sync.syncRejectReason.fontColor==-14494738){P6_Sync.syncRejectReason.fontColor=-16750426;}
+else{P6_Sync.syncRejectReason.fontColor=-15719366;}
+P6_Sync.syncSkew.bgColor=-919812;
+if(P6_Sync.syncSkew.fontColor==-15438781 || P6_Sync.syncSkew.fontColor==-10624850){P6_Sync.syncSkew.fontColor=-15438781;}
+else if(P6_Sync.syncSkew.fontColor==-7714048 || P6_Sync.syncSkew.fontColor==-14490){P6_Sync.syncSkew.fontColor=-7714048;}
+else if(P6_Sync.syncSkew.fontColor==-4971752 || P6_Sync.syncSkew.fontColor==-39558){P6_Sync.syncSkew.fontColor=-4971752;}
+else if(P6_Sync.syncSkew.fontColor==-12429715 || P6_Sync.syncSkew.fontColor==-5653552){P6_Sync.syncSkew.fontColor=-12429715;}
+else if(P6_Sync.syncSkew.fontColor==-16750426 || P6_Sync.syncSkew.fontColor==-14494738){P6_Sync.syncSkew.fontColor=-16750426;}
+else{P6_Sync.syncSkew.fontColor=-15719366;}
+P6_Sync.syncAxis1Age.bgColor=-919812;
+if(P6_Sync.syncAxis1Age.fontColor==-15438781 || P6_Sync.syncAxis1Age.fontColor==-10624850){P6_Sync.syncAxis1Age.fontColor=-15438781;}
+else if(P6_Sync.syncAxis1Age.fontColor==-7714048 || P6_Sync.syncAxis1Age.fontColor==-14490){P6_Sync.syncAxis1Age.fontColor=-7714048;}
+else if(P6_Sync.syncAxis1Age.fontColor==-4971752 || P6_Sync.syncAxis1Age.fontColor==-39558){P6_Sync.syncAxis1Age.fontColor=-4971752;}
+else if(P6_Sync.syncAxis1Age.fontColor==-12429715 || P6_Sync.syncAxis1Age.fontColor==-5653552){P6_Sync.syncAxis1Age.fontColor=-12429715;}
+else if(P6_Sync.syncAxis1Age.fontColor==-16750426 || P6_Sync.syncAxis1Age.fontColor==-14494738){P6_Sync.syncAxis1Age.fontColor=-16750426;}
+else{P6_Sync.syncAxis1Age.fontColor=-15719366;}
+P6_Sync.syncAxis2Age.bgColor=-919812;
+if(P6_Sync.syncAxis2Age.fontColor==-15438781 || P6_Sync.syncAxis2Age.fontColor==-10624850){P6_Sync.syncAxis2Age.fontColor=-15438781;}
+else if(P6_Sync.syncAxis2Age.fontColor==-7714048 || P6_Sync.syncAxis2Age.fontColor==-14490){P6_Sync.syncAxis2Age.fontColor=-7714048;}
+else if(P6_Sync.syncAxis2Age.fontColor==-4971752 || P6_Sync.syncAxis2Age.fontColor==-39558){P6_Sync.syncAxis2Age.fontColor=-4971752;}
+else if(P6_Sync.syncAxis2Age.fontColor==-12429715 || P6_Sync.syncAxis2Age.fontColor==-5653552){P6_Sync.syncAxis2Age.fontColor=-12429715;}
+else if(P6_Sync.syncAxis2Age.fontColor==-16750426 || P6_Sync.syncAxis2Age.fontColor==-14494738){P6_Sync.syncAxis2Age.fontColor=-16750426;}
+else{P6_Sync.syncAxis2Age.fontColor=-15719366;}
+P6_Sync.syncReadonly.bgColor=-919812;
+if(P6_Sync.syncReadonly.fontColor==-15438781 || P6_Sync.syncReadonly.fontColor==-10624850){P6_Sync.syncReadonly.fontColor=-15438781;}
+else if(P6_Sync.syncReadonly.fontColor==-7714048 || P6_Sync.syncReadonly.fontColor==-14490){P6_Sync.syncReadonly.fontColor=-7714048;}
+else if(P6_Sync.syncReadonly.fontColor==-4971752 || P6_Sync.syncReadonly.fontColor==-39558){P6_Sync.syncReadonly.fontColor=-4971752;}
+else if(P6_Sync.syncReadonly.fontColor==-12429715 || P6_Sync.syncReadonly.fontColor==-5653552){P6_Sync.syncReadonly.fontColor=-12429715;}
+else if(P6_Sync.syncReadonly.fontColor==-16750426 || P6_Sync.syncReadonly.fontColor==-14494738){P6_Sync.syncReadonly.fontColor=-16750426;}
+else{P6_Sync.syncReadonly.fontColor=-15719366;}
+P6_Sync.syncBack.bgImg=user.image.Day_nav_normal_152x52;
+P6_Sync.syncBack.pbgImg=user.image.Day_nav_pressed_152x52;
+P6_Sync.syncBack.dbgImg=user.image.Day_nav_disabled_152x52;
+P6_Sync.syncBack.fontColor=-15719366;
+P6_Sync.syncAlarm.bgImg=user.image.Day_nav_normal_152x52;
+P6_Sync.syncAlarm.pbgImg=user.image.Day_nav_pressed_152x52;
+P6_Sync.syncAlarm.dbgImg=user.image.Day_nav_disabled_152x52;
+P6_Sync.syncAlarm.fontColor=-15719366;
+P6_Sync.syncExtension.bgImg=user.image.Day_nav_normal_152x52;
+P6_Sync.syncExtension.pbgImg=user.image.Day_nav_pressed_152x52;
+P6_Sync.syncExtension.dbgImg=user.image.Day_nav_disabled_152x52;
+P6_Sync.syncExtension.fontColor=-15719366;
+P6_Sync.servoEntry.bgImg=user.image.Day_primary_normal_152x52;
+P6_Sync.servoEntry.pbgImg=user.image.Day_primary_pressed_152x52;
+P6_Sync.servoEntry.dbgImg=user.image.Day_primary_disabled_152x52;
+P6_Sync.servoEntry.fontColor=-1;
+}
+if(P0_Boot.themeMode.val!=0){
+P0_Boot.themeInk.val=-1182209;
+P0_Boot.themeMuted.val=-5653552;
+P0_Boot.themeGood.val=-10624850;
+P0_Boot.themeWarn.val=-14490;
+P0_Boot.themeFault.val=-39558;
+P6_Sync.bgImg=user.image.Night_P6_Sync;
+P6_Sync.syncTitle.bgColor=-16051162;
+if(P6_Sync.syncTitle.fontColor==-15438781 || P6_Sync.syncTitle.fontColor==-10624850){P6_Sync.syncTitle.fontColor=-10624850;}
+else if(P6_Sync.syncTitle.fontColor==-7714048 || P6_Sync.syncTitle.fontColor==-14490){P6_Sync.syncTitle.fontColor=-14490;}
+else if(P6_Sync.syncTitle.fontColor==-4971752 || P6_Sync.syncTitle.fontColor==-39558){P6_Sync.syncTitle.fontColor=-39558;}
+else if(P6_Sync.syncTitle.fontColor==-12429715 || P6_Sync.syncTitle.fontColor==-5653552){P6_Sync.syncTitle.fontColor=-5653552;}
+else if(P6_Sync.syncTitle.fontColor==-16750426 || P6_Sync.syncTitle.fontColor==-14494738){P6_Sync.syncTitle.fontColor=-14494738;}
+else{P6_Sync.syncTitle.fontColor=-1182209;}
+P6_Sync.syncMacro.bgColor=-15457221;
+if(P6_Sync.syncMacro.fontColor==-15438781 || P6_Sync.syncMacro.fontColor==-10624850){P6_Sync.syncMacro.fontColor=-10624850;}
+else if(P6_Sync.syncMacro.fontColor==-7714048 || P6_Sync.syncMacro.fontColor==-14490){P6_Sync.syncMacro.fontColor=-14490;}
+else if(P6_Sync.syncMacro.fontColor==-4971752 || P6_Sync.syncMacro.fontColor==-39558){P6_Sync.syncMacro.fontColor=-39558;}
+else if(P6_Sync.syncMacro.fontColor==-12429715 || P6_Sync.syncMacro.fontColor==-5653552){P6_Sync.syncMacro.fontColor=-5653552;}
+else if(P6_Sync.syncMacro.fontColor==-16750426 || P6_Sync.syncMacro.fontColor==-14494738){P6_Sync.syncMacro.fontColor=-14494738;}
+else{P6_Sync.syncMacro.fontColor=-1182209;}
+P6_Sync.syncState.bgColor=-15457221;
+if(P6_Sync.syncState.fontColor==-15438781 || P6_Sync.syncState.fontColor==-10624850){P6_Sync.syncState.fontColor=-10624850;}
+else if(P6_Sync.syncState.fontColor==-7714048 || P6_Sync.syncState.fontColor==-14490){P6_Sync.syncState.fontColor=-14490;}
+else if(P6_Sync.syncState.fontColor==-4971752 || P6_Sync.syncState.fontColor==-39558){P6_Sync.syncState.fontColor=-39558;}
+else if(P6_Sync.syncState.fontColor==-12429715 || P6_Sync.syncState.fontColor==-5653552){P6_Sync.syncState.fontColor=-5653552;}
+else if(P6_Sync.syncState.fontColor==-16750426 || P6_Sync.syncState.fontColor==-14494738){P6_Sync.syncState.fontColor=-14494738;}
+else{P6_Sync.syncState.fontColor=-1182209;}
+P6_Sync.syncActualDiff.bgColor=-15457221;
+if(P6_Sync.syncActualDiff.fontColor==-15438781 || P6_Sync.syncActualDiff.fontColor==-10624850){P6_Sync.syncActualDiff.fontColor=-10624850;}
+else if(P6_Sync.syncActualDiff.fontColor==-7714048 || P6_Sync.syncActualDiff.fontColor==-14490){P6_Sync.syncActualDiff.fontColor=-14490;}
+else if(P6_Sync.syncActualDiff.fontColor==-4971752 || P6_Sync.syncActualDiff.fontColor==-39558){P6_Sync.syncActualDiff.fontColor=-39558;}
+else if(P6_Sync.syncActualDiff.fontColor==-12429715 || P6_Sync.syncActualDiff.fontColor==-5653552){P6_Sync.syncActualDiff.fontColor=-5653552;}
+else if(P6_Sync.syncActualDiff.fontColor==-16750426 || P6_Sync.syncActualDiff.fontColor==-14494738){P6_Sync.syncActualDiff.fontColor=-14494738;}
+else{P6_Sync.syncActualDiff.fontColor=-1182209;}
+P6_Sync.syncEffectiveError.bgColor=-15457221;
+if(P6_Sync.syncEffectiveError.fontColor==-15438781 || P6_Sync.syncEffectiveError.fontColor==-10624850){P6_Sync.syncEffectiveError.fontColor=-10624850;}
+else if(P6_Sync.syncEffectiveError.fontColor==-7714048 || P6_Sync.syncEffectiveError.fontColor==-14490){P6_Sync.syncEffectiveError.fontColor=-14490;}
+else if(P6_Sync.syncEffectiveError.fontColor==-4971752 || P6_Sync.syncEffectiveError.fontColor==-39558){P6_Sync.syncEffectiveError.fontColor=-39558;}
+else if(P6_Sync.syncEffectiveError.fontColor==-12429715 || P6_Sync.syncEffectiveError.fontColor==-5653552){P6_Sync.syncEffectiveError.fontColor=-5653552;}
+else if(P6_Sync.syncEffectiveError.fontColor==-16750426 || P6_Sync.syncEffectiveError.fontColor==-14494738){P6_Sync.syncEffectiveError.fontColor=-14494738;}
+else{P6_Sync.syncEffectiveError.fontColor=-1182209;}
+P6_Sync.syncCompensation.bgColor=-15457221;
+if(P6_Sync.syncCompensation.fontColor==-15438781 || P6_Sync.syncCompensation.fontColor==-10624850){P6_Sync.syncCompensation.fontColor=-10624850;}
+else if(P6_Sync.syncCompensation.fontColor==-7714048 || P6_Sync.syncCompensation.fontColor==-14490){P6_Sync.syncCompensation.fontColor=-14490;}
+else if(P6_Sync.syncCompensation.fontColor==-4971752 || P6_Sync.syncCompensation.fontColor==-39558){P6_Sync.syncCompensation.fontColor=-39558;}
+else if(P6_Sync.syncCompensation.fontColor==-12429715 || P6_Sync.syncCompensation.fontColor==-5653552){P6_Sync.syncCompensation.fontColor=-5653552;}
+else if(P6_Sync.syncCompensation.fontColor==-16750426 || P6_Sync.syncCompensation.fontColor==-14494738){P6_Sync.syncCompensation.fontColor=-14494738;}
+else{P6_Sync.syncCompensation.fontColor=-1182209;}
+P6_Sync.syncPairValid.bgColor=-15457221;
+if(P6_Sync.syncPairValid.fontColor==-15438781 || P6_Sync.syncPairValid.fontColor==-10624850){P6_Sync.syncPairValid.fontColor=-10624850;}
+else if(P6_Sync.syncPairValid.fontColor==-7714048 || P6_Sync.syncPairValid.fontColor==-14490){P6_Sync.syncPairValid.fontColor=-14490;}
+else if(P6_Sync.syncPairValid.fontColor==-4971752 || P6_Sync.syncPairValid.fontColor==-39558){P6_Sync.syncPairValid.fontColor=-39558;}
+else if(P6_Sync.syncPairValid.fontColor==-12429715 || P6_Sync.syncPairValid.fontColor==-5653552){P6_Sync.syncPairValid.fontColor=-5653552;}
+else if(P6_Sync.syncPairValid.fontColor==-16750426 || P6_Sync.syncPairValid.fontColor==-14494738){P6_Sync.syncPairValid.fontColor=-14494738;}
+else{P6_Sync.syncPairValid.fontColor=-1182209;}
+P6_Sync.syncRejectReason.bgColor=-15457221;
+if(P6_Sync.syncRejectReason.fontColor==-15438781 || P6_Sync.syncRejectReason.fontColor==-10624850){P6_Sync.syncRejectReason.fontColor=-10624850;}
+else if(P6_Sync.syncRejectReason.fontColor==-7714048 || P6_Sync.syncRejectReason.fontColor==-14490){P6_Sync.syncRejectReason.fontColor=-14490;}
+else if(P6_Sync.syncRejectReason.fontColor==-4971752 || P6_Sync.syncRejectReason.fontColor==-39558){P6_Sync.syncRejectReason.fontColor=-39558;}
+else if(P6_Sync.syncRejectReason.fontColor==-12429715 || P6_Sync.syncRejectReason.fontColor==-5653552){P6_Sync.syncRejectReason.fontColor=-5653552;}
+else if(P6_Sync.syncRejectReason.fontColor==-16750426 || P6_Sync.syncRejectReason.fontColor==-14494738){P6_Sync.syncRejectReason.fontColor=-14494738;}
+else{P6_Sync.syncRejectReason.fontColor=-1182209;}
+P6_Sync.syncSkew.bgColor=-15457221;
+if(P6_Sync.syncSkew.fontColor==-15438781 || P6_Sync.syncSkew.fontColor==-10624850){P6_Sync.syncSkew.fontColor=-10624850;}
+else if(P6_Sync.syncSkew.fontColor==-7714048 || P6_Sync.syncSkew.fontColor==-14490){P6_Sync.syncSkew.fontColor=-14490;}
+else if(P6_Sync.syncSkew.fontColor==-4971752 || P6_Sync.syncSkew.fontColor==-39558){P6_Sync.syncSkew.fontColor=-39558;}
+else if(P6_Sync.syncSkew.fontColor==-12429715 || P6_Sync.syncSkew.fontColor==-5653552){P6_Sync.syncSkew.fontColor=-5653552;}
+else if(P6_Sync.syncSkew.fontColor==-16750426 || P6_Sync.syncSkew.fontColor==-14494738){P6_Sync.syncSkew.fontColor=-14494738;}
+else{P6_Sync.syncSkew.fontColor=-1182209;}
+P6_Sync.syncAxis1Age.bgColor=-15457221;
+if(P6_Sync.syncAxis1Age.fontColor==-15438781 || P6_Sync.syncAxis1Age.fontColor==-10624850){P6_Sync.syncAxis1Age.fontColor=-10624850;}
+else if(P6_Sync.syncAxis1Age.fontColor==-7714048 || P6_Sync.syncAxis1Age.fontColor==-14490){P6_Sync.syncAxis1Age.fontColor=-14490;}
+else if(P6_Sync.syncAxis1Age.fontColor==-4971752 || P6_Sync.syncAxis1Age.fontColor==-39558){P6_Sync.syncAxis1Age.fontColor=-39558;}
+else if(P6_Sync.syncAxis1Age.fontColor==-12429715 || P6_Sync.syncAxis1Age.fontColor==-5653552){P6_Sync.syncAxis1Age.fontColor=-5653552;}
+else if(P6_Sync.syncAxis1Age.fontColor==-16750426 || P6_Sync.syncAxis1Age.fontColor==-14494738){P6_Sync.syncAxis1Age.fontColor=-14494738;}
+else{P6_Sync.syncAxis1Age.fontColor=-1182209;}
+P6_Sync.syncAxis2Age.bgColor=-15457221;
+if(P6_Sync.syncAxis2Age.fontColor==-15438781 || P6_Sync.syncAxis2Age.fontColor==-10624850){P6_Sync.syncAxis2Age.fontColor=-10624850;}
+else if(P6_Sync.syncAxis2Age.fontColor==-7714048 || P6_Sync.syncAxis2Age.fontColor==-14490){P6_Sync.syncAxis2Age.fontColor=-14490;}
+else if(P6_Sync.syncAxis2Age.fontColor==-4971752 || P6_Sync.syncAxis2Age.fontColor==-39558){P6_Sync.syncAxis2Age.fontColor=-39558;}
+else if(P6_Sync.syncAxis2Age.fontColor==-12429715 || P6_Sync.syncAxis2Age.fontColor==-5653552){P6_Sync.syncAxis2Age.fontColor=-5653552;}
+else if(P6_Sync.syncAxis2Age.fontColor==-16750426 || P6_Sync.syncAxis2Age.fontColor==-14494738){P6_Sync.syncAxis2Age.fontColor=-14494738;}
+else{P6_Sync.syncAxis2Age.fontColor=-1182209;}
+P6_Sync.syncReadonly.bgColor=-15457221;
+if(P6_Sync.syncReadonly.fontColor==-15438781 || P6_Sync.syncReadonly.fontColor==-10624850){P6_Sync.syncReadonly.fontColor=-10624850;}
+else if(P6_Sync.syncReadonly.fontColor==-7714048 || P6_Sync.syncReadonly.fontColor==-14490){P6_Sync.syncReadonly.fontColor=-14490;}
+else if(P6_Sync.syncReadonly.fontColor==-4971752 || P6_Sync.syncReadonly.fontColor==-39558){P6_Sync.syncReadonly.fontColor=-39558;}
+else if(P6_Sync.syncReadonly.fontColor==-12429715 || P6_Sync.syncReadonly.fontColor==-5653552){P6_Sync.syncReadonly.fontColor=-5653552;}
+else if(P6_Sync.syncReadonly.fontColor==-16750426 || P6_Sync.syncReadonly.fontColor==-14494738){P6_Sync.syncReadonly.fontColor=-14494738;}
+else{P6_Sync.syncReadonly.fontColor=-1182209;}
+P6_Sync.syncBack.bgImg=user.image.Night_nav_normal_152x52;
+P6_Sync.syncBack.pbgImg=user.image.Night_nav_pressed_152x52;
+P6_Sync.syncBack.dbgImg=user.image.Night_nav_disabled_152x52;
+P6_Sync.syncBack.fontColor=-1182209;
+P6_Sync.syncAlarm.bgImg=user.image.Night_nav_normal_152x52;
+P6_Sync.syncAlarm.pbgImg=user.image.Night_nav_pressed_152x52;
+P6_Sync.syncAlarm.dbgImg=user.image.Night_nav_disabled_152x52;
+P6_Sync.syncAlarm.fontColor=-1182209;
+P6_Sync.syncExtension.bgImg=user.image.Night_nav_normal_152x52;
+P6_Sync.syncExtension.pbgImg=user.image.Night_nav_pressed_152x52;
+P6_Sync.syncExtension.dbgImg=user.image.Night_nav_disabled_152x52;
+P6_Sync.syncExtension.fontColor=-1182209;
+P6_Sync.servoEntry.bgImg=user.image.Night_primary_normal_152x52;
+P6_Sync.servoEntry.pbgImg=user.image.Night_primary_pressed_152x52;
+P6_Sync.servoEntry.dbgImg=user.image.Night_primary_disabled_152x52;
+P6_Sync.servoEntry.fontColor=-1;
+}

@@ -1,0 +1,46 @@
+PASS monotonic rejects old samples and extends real wrap
+CAN transport step=300us loss=0 frames/s=1785 failures=0
+ type=11 count=400 max_gap=90ms
+ type=12 count=40 max_gap=513ms
+ type=13 count=200 max_gap=102ms
+ type=20 count=134 max_gap=176ms
+ type=21 count=134 max_gap=175ms
+ type=22 count=134 max_gap=176ms
+ type=23 count=397 max_gap=106ms
+ type=24 count=20 max_gap=1000ms
+ type=25 count=400 max_gap=91ms
+ type=26 count=50 max_gap=405ms
+ type=27 count=50 max_gap=405ms
+ type=53 count=200 max_gap=102ms
+ snapshot receiver total age max=109ms
+ F103 decoded records=2109 rejected=0 record_errors=0 retried_frames=0
+CAN transport step=2000us loss=0 frames/s=500 failures=0
+ type=11 count=136 max_gap=200ms
+ type=12 count=8 max_gap=2504ms
+ type=13 count=135 max_gap=200ms
+ type=20 count=8 max_gap=2504ms
+ type=21 count=8 max_gap=2622ms
+ type=22 count=8 max_gap=2502ms
+ type=23 count=8 max_gap=2502ms
+ type=24 count=8 max_gap=2502ms
+ type=25 count=136 max_gap=200ms
+ type=26 count=8 max_gap=2502ms
+ type=27 count=8 max_gap=2502ms
+ type=53 count=80 max_gap=298ms
+ snapshot receiver total age max=274ms
+ F103 decoded records=543 rejected=0 record_errors=0 retried_frames=0
+CAN transport step=300us loss=1 frames/s=1787 failures=0
+ type=11 count=400 max_gap=90ms
+ type=12 count=40 max_gap=513ms
+ type=13 count=200 max_gap=102ms
+ type=20 count=134 max_gap=176ms
+ type=21 count=134 max_gap=175ms
+ type=22 count=134 max_gap=176ms
+ type=23 count=397 max_gap=106ms
+ type=24 count=20 max_gap=1000ms
+ type=25 count=400 max_gap=91ms
+ type=26 count=50 max_gap=405ms
+ type=27 count=50 max_gap=406ms
+ type=53 count=200 max_gap=102ms
+ snapshot receiver total age max=109ms
+ F103 decoded records=2109 rejected=0 record_errors=0 retried_frames=35

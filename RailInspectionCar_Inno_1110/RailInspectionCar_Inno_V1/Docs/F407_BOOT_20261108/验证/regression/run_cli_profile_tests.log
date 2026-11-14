@@ -1,0 +1,10 @@
+PASS disabled CLI session: neutral valid status, no authorization, real external STOP and recovery gate
+PASS disabled CLI session: neutral valid status, no authorization, real external STOP and recovery gate
+PASS production CLI worker: D/T dispatch, shared TX, Flash, diagnostics and bounded RX
+PASS production CLI worker: D/T dispatch, shared TX, Flash, diagnostics and bounded RX
+PASS production CLI worker: D/T dispatch, shared TX, Flash, diagnostics and bounded RX
+PASS production CLI worker: D/T dispatch, shared TX, Flash, diagnostics and bounded RX
+PASS logging-only USART1: no RX DMA/state, retained TX output/retry/recovery
+PASS tune CRC, binary wire sizes, atomic commit, idempotency, conflicts, boot/version validation, finite values, lease and restart defaults
+PASS D0/T1: actual tune protocol suite through production RX parser and shared worker
+PASS CLI profile matrix and disabled-storage object assertions

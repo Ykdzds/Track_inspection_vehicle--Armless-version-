@@ -1,0 +1,6 @@
+Assertion failed!
+
+Program: C:\Users\15056\AppData\Local\Temp\f103_bus.exe
+File: Tests/test_f103_bus.c, Line 44
+
+Expression: !CanBus_GetTxResult(&frame, &success)

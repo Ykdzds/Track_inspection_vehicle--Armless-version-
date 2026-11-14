@@ -1,0 +1,2 @@
+[18500,256,0,1,2,169,16,0,1,131,1,1120,64,8,0,48,4660,22136,0,9,0,11,0,2]
+PASS exact FC83/02: reason2 site169 validity16 addr1 fc131 rxLen1 -> protective STOP -> state5

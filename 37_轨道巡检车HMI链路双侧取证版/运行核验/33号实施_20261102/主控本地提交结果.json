@@ -1,0 +1,9 @@
+{
+  "Commit": "124d25ac87e968beb0324f89ebb3c66caa6c4b0d",
+  "Branch": "fix/hmi33-scheduling-session",
+  "Baseline": "f33b011a753c6a923345d06ea7b7c773c6ec9883",
+  "WorkingTreeClean": true,
+  "PushPerformed": false,
+  "PhysicalFlashPerformed": false,
+  "Message": "fix: 修复HMI新会话停车状态并增加33号联动诊断"
+}

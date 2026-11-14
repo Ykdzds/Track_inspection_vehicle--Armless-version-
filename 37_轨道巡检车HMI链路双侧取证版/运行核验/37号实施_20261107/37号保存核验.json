@@ -1,0 +1,34 @@
+﻿{
+    "SavedReopened":  true,
+    "FunctionsMatch":  true,
+    "GlobalMatches":  true,
+    "TimerInterval":  5,
+    "TimerUnitMs":  10,
+    "Arrays":  [
+                   {
+                       "Name":  "d37",
+                       "Length":  48,
+                       "Type":  "Int",
+                       "ActualIntLength":  48
+                   },
+                   {
+                       "Name":  "d37c",
+                       "Length":  32,
+                       "Type":  "Int",
+                       "ActualIntLength":  32
+                   },
+                   {
+                       "Name":  "d37raw",
+                       "Length":  18,
+                       "Type":  "Int",
+                       "ActualIntLength":  18
+                   },
+                   {
+                       "Name":  "d37Tx",
+                       "Length":  48,
+                       "Type":  "Byte",
+                       "ActualIntLength":  48
+                   }
+               ],
+    "HardwareVerified":  false
+}

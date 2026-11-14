@@ -1,0 +1,58 @@
+[
+  {
+    "Page": "P8_ServoControl",
+    "Control": "authorize",
+    "Event": "按下事件",
+    "Source": "事件/授权_按下.txt",
+    "Matches": true,
+    "SHA256": "A25762B9955AC1D61217F9B16570ACBAD8F84DCC6407BDD936542BCEA29EF8CB"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "authorize",
+    "Event": "弹起事件",
+    "Source": "事件/授权_弹起.txt",
+    "Matches": true,
+    "SHA256": "E15EB0881B898FAFD7EA4CC35F2F10CEDFB2D3B64735F53A0E5FF390FB88B3E2"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "estop",
+    "Event": "按下事件",
+    "Source": "事件/急停_按下.txt",
+    "Matches": true,
+    "SHA256": "70E48552095F8336B16389D83EACA7295C19F358F3C614DDA3505ACAF317E3D2"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "backHome",
+    "Event": "弹起事件",
+    "Source": "事件/返回_弹起.txt",
+    "Matches": true,
+    "SHA256": "7129A6CC586C42495736659F44A94889E56A90761FC6BB2F8A49280A928353F4"
+  },
+  {
+    "Page": "P8_ServoControl",
+    "Control": "rpmSlider",
+    "Event": "值改变事件",
+    "Source": "事件/滑块_滑动.txt",
+    "Matches": true,
+    "SHA256": "98C5AE4642590FE47A31C3DE522413FE0E791A524423DAAE12365DD6159D7EB3"
+  },
+  {
+    "Page": "P1_Main",
+    "Control": "servoEntry",
+    "Event": "按下事件",
+    "Source": "事件/主页入口_按下.txt",
+    "Matches": true,
+    "SHA256": "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+  },
+  {
+    "Page": "P1_Main",
+    "Control": "servoEntry",
+    "Event": "弹起事件",
+    "Source": "事件/主页入口_弹起.txt",
+    "Matches": true,
+    "SHA256": "9F64EA98AFA33402C63CF12084A24717AB0A54F3CD3883CFD907FDE129FC9B07"
+  }
+]

@@ -1,0 +1,4 @@
+PASS HMI link diagnostics disabled: no runtime dependencies/output
+PASS snapshot/LCD immutable pending, blocked emit retry, priority, merge and one line/s
+PASS normal 70 events/s for 60 s after 504000 prior events at uptime 2 h: 4200/4200 events, max 5995 B/s, no FIFO/UART loss
+PASS HMI link diagnostics: first cause, FIFO/UART congestion, rate budget, screen pages, memory and boot

@@ -1,0 +1,4 @@
+PASS production startup wire=0ms: phases37/123+jitter1..3, parameter/readback ordering, dual safety/config/zero/hold, authorization gate, wrap, stale refresh, fixed deadline, nonzero, bad proof, runtime age
+PASS production startup wire=6ms: phases37/123+jitter1..3, parameter/readback ordering, dual safety/config/zero/hold, authorization gate, wrap, stale refresh, fixed deadline, nonzero, bad proof, runtime age
+PASS production startup wire=8ms: phases37/123+jitter1..3, parameter/readback ordering, dual safety/config/zero/hold, authorization gate, wrap, stale refresh, fixed deadline, nonzero, bad proof, runtime age
+PASS production startup wire=10ms: phases37/123+jitter1..3, parameter/readback ordering, dual safety/config/zero/hold, authorization gate, wrap, stale refresh, fixed deadline, nonzero, bad proof, runtime age

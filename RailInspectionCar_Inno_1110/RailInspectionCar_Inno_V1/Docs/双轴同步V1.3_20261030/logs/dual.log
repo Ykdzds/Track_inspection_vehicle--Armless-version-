@@ -1,0 +1,28 @@
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS dual-axis optional-mode and mechanical configuration gate
+PASS analytic OTG: 10000 randomized moving-state replans, exact terminal and bounded jerk
+PASS clock continuity, bounded stall, bracketed interpolation, validity hold and original-age expiry
+PASS joint final-axis acceleration/jerk, saturation, random targets, zero monotonicity and stale generation
+PASS monotonic wrap, deadline, late batch, lower-layer changed write, timestamp disorder and fault invalidation
+MODEL ONLY sync=0 S=0 PI=0 wheel_error_RMS=0.4176188 rad/s samples=600
+PASS analytic OTG: 10000 randomized moving-state replans, exact terminal and bounded jerk
+PASS clock continuity, bounded stall, bracketed interpolation, validity hold and original-age expiry
+PASS joint final-axis acceleration/jerk, saturation, random targets, zero monotonicity and stale generation
+PASS monotonic wrap, deadline, late batch, lower-layer changed write, timestamp disorder and fault invalidation
+MODEL ONLY sync=1 S=0 PI=0 wheel_error_RMS=0.2646669 rad/s samples=600
+PASS analytic OTG: 10000 randomized moving-state replans, exact terminal and bounded jerk
+PASS clock continuity, bounded stall, bracketed interpolation, validity hold and original-age expiry
+PASS joint final-axis acceleration/jerk, saturation, random targets, zero monotonicity and stale generation
+PASS monotonic wrap, deadline, late batch, lower-layer changed write, timestamp disorder and fault invalidation
+MODEL ONLY sync=1 S=1 PI=0 wheel_error_RMS=0.2312307 rad/s samples=600
+PASS analytic OTG: 10000 randomized moving-state replans, exact terminal and bounded jerk
+PASS clock continuity, bounded stall, bracketed interpolation, validity hold and original-age expiry
+PASS joint final-axis acceleration/jerk, saturation, random targets, zero monotonicity and stale generation
+PASS monotonic wrap, deadline, late batch, lower-layer changed write, timestamp disorder and fault invalidation
+MODEL ONLY sync=1 S=1 PI=1 wheel_error_RMS=0.2003915 rad/s samples=600

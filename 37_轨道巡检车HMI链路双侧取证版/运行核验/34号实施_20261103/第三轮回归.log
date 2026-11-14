@@ -1,0 +1,18 @@
+✔ missing slider callback is compensated by sampled control value (45.0503ms)
+✔ candidate captured during initial zero confirmation is retained (31.737ms)
+✔ preview follows every thumb position at a fixed 12px gap (24.1124ms)
+✔ transport loss retries exactly the same emergency request without another touch (34.1385ms)
+✔ release-only emergency is a fallback and down/up is one intent (48.7694ms)
+✔ page lifecycle and reload preserve target, session and restored thumb (691.5251ms)
+✔ emergency inserted after a status reply prevents the next nonzero write (33.0282ms)
+✔ a lost callback while unauthorized never becomes a target after new authorization (35.5999ms)
+✔ offline and 600ms blocking still stop and cannot replay old target (77.2079ms)
+✔ rapid changes coalesce to the last target and preserve serial ownership (33.488ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1157.9692

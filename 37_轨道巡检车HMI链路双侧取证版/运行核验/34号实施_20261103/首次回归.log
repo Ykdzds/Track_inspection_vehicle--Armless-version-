@@ -1,0 +1,62 @@
+✔ missing slider callback is compensated by sampled control value (43.7135ms)
+✔ candidate captured during initial zero confirmation is retained (27.7995ms)
+✖ preview follows every thumb position at a fixed 12px gap (18.4499ms)
+✔ transport loss retries exactly the same emergency request without another touch (28.9088ms)
+✔ release-only emergency is a fallback and down/up is one intent (46.0276ms)
+✖ page lifecycle and reload preserve target, session and restored thumb (656.5094ms)
+✔ emergency inserted after a status reply prevents the next nonzero write (28.6762ms)
+✔ a lost callback while unauthorized never becomes a target after new authorization (32.9911ms)
+✔ offline and 600ms blocking still stop and cannot replay old target (67.5233ms)
+✔ rapid changes coalesce to the last target and preserve serial ownership (28.1293ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 8
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1080.5976
+
+✖ failing tests:
+
+test at hmi34.test.cjs:8:1
+✖ preview follows every thumb position at a fixed 12px gap (18.4499ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(hint.txt.includes(((v-1600)*.01307687942057).toFixed(3)))
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:8:308)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at hmi34.test.cjs:11:1
+✖ page lifecycle and reload preserve target, session and restored thumb (656.5094ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1600 !== 2400
+  
+      at TestContext.<anonymous> (D:\wtzn_sx_\同济大学-轨道巡检车\同济大学轨道巡检车协作资料\2.硬件资料\7.三易串口触摸屏10.1寸\用户代码\34_轨道巡检车跨页运行与触控响应修复版\hmi34.test.cjs:11:392)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1306:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:897:18)
+      at Test.postRun (node:internal/test_runner/test:1447:19)
+      at Test.run (node:internal/test_runner/test:1372:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:897:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1600,
+    expected: 2400,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

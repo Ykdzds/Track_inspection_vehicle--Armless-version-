@@ -1,0 +1,37 @@
+{
+  "StaticArrayReferences": 9292,
+  "Arrays": {
+    "P0_Boot.rawRegs": 208,
+    "P0_Boot.regionSeen": 5,
+    "P0_Boot.regionAge": 5,
+    "P0_Boot.regionFails": 5,
+    "P0_Boot.regionValid": 5,
+    "P0_Boot.regionGoodRun": 5,
+    "P0_Boot.regionBadRun": 5,
+    "P0_Boot.bootState": 5,
+    "P0_Boot.metaRegs": 24,
+    "P0_Boot.arr25": 10,
+    "P0_Boot.arr26": 10,
+    "P0_Boot.arr27": 10,
+    "P0_Boot.metaSeen": 1,
+    "P0_Boot.metaAge": 1,
+    "P0_Boot.metaValid": 1,
+    "P0_Boot.metaBadRun": 1,
+    "P0_Boot.s33": 64,
+    "P0_Boot.dRaw": 208,
+    "P0_Boot.dStatus": 96,
+    "P0_Boot.dField": 140,
+    "P0_Boot.dRev": 9,
+    "P0_Boot.dStamp": 1260,
+    "P0_Boot.dLocal": 8,
+    "P8_ServoControl.h13": 180,
+    "P8_ServoControl.h13Status": 96,
+    "P8_ServoControl.h13Result": 20,
+    "P8_ServoControl.h13Tx": 48
+  },
+  "SingleSerialWriter": [
+    "P0_Boot.refreshTick"
+  ],
+  "Errors": [],
+  "HardwareVerified": false
+}

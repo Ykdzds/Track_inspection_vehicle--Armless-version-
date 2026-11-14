@@ -1,0 +1,23 @@
+{
+  "CapturedAt": "2026-10-17T14:29:20.4186369+08:00",
+  "Project": "17_轨道巡检车UART5伺服授权联调版",
+  "Mode": "Default",
+  "Protocol": "HMI13-R2",
+  "PIX": "17_轨道巡检车.pix",
+  "PIX_SHA256": "FFFC1C84F0C2AB03BB5487EFCEE385E5E1D57435DDF783843FEB55C0AE332F5D",
+  "BIN": "17_轨道巡检车.pix.bin",
+  "BIN_Length": 223339,
+  "BIN_SHA256": "3A9DA2DB143B81E13F45635A4F1036BC9DBC51366E124BA5DB304E173CA00D9D",
+  "Compile": "运行核验/全量修复VisualPIX编译日志_20261016.txt",
+  "EventBindings": 12,
+  "StateArrayLength": 161,
+  "BusinessTestExecutions": 157,
+  "LegacyDisplayTests": 33,
+  "BusinessTestLog": "运行核验/17号全部业务回归.txt",
+  "LegacyTestLog": "运行核验/17号旧页只读回归.txt",
+  "UserReportedBaseline13CommunicationWorking": true,
+  "Baseline13Unchanged": true,
+  "PhysicalCommunicationVerified": false,
+  "MotionVerified": false,
+  "Notes": "13号通信基线未改；17号新BIN尚未下载实屏；授权零速、真实刷新间隔及低速停车验收待完成"
+}

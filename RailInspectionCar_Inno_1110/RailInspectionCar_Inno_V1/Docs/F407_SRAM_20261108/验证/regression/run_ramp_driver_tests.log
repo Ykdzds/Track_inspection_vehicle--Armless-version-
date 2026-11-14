@@ -1,0 +1,92 @@
+MEASURE production HMI 0->500: 12264 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=500
+MEASURE production HMI 0->1000: 24360 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1000
+MEASURE production HMI 0->1600: 38920 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1600
+MEASURE production HMI 0->-500: 12264 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-500
+MEASURE production HMI 0->-1000: 24360 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1000
+MEASURE production HMI 0->-1600: 38920 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1600
+PASS production PB10 HMI stop with 25ms replies -> fresh session at zero
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+MEASURE production HMI 0->500: 12238 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=500
+MEASURE production HMI 0->1000: 24446 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1000
+MEASURE production HMI 0->1600: 38894 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1600
+MEASURE production HMI 0->-500: 12238 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-500
+MEASURE production HMI 0->-1000: 24446 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1000
+MEASURE production HMI 0->-1600: 38894 ms axis=1
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1600
+PASS production PB10 HMI stop with 25ms replies -> fresh session at zero
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+MEASURE production HMI 0->500: 12264 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=500
+MEASURE production HMI 0->1000: 24360 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1000
+MEASURE production HMI 0->1600: 38920 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1600
+MEASURE production HMI 0->-500: 12264 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-500
+MEASURE production HMI 0->-1000: 24360 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1000
+MEASURE production HMI 0->-1600: 38920 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1600
+PASS production PB10 HMI stop with 25ms replies -> fresh session at zero
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+MEASURE production HMI 0->500: 12238 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=500
+MEASURE production HMI 0->1000: 24446 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1000
+MEASURE production HMI 0->1600: 38894 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=1600
+MEASURE production HMI 0->-500: 12238 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-500
+MEASURE production HMI 0->-1000: 24446 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1000
+MEASURE production HMI 0->-1600: 38894 ms axis=2
+driver clock max=3 clip=0 drop=0 batch_max=112 internal=-1600
+PASS production PB10 HMI stop with 25ms replies -> fresh session at zero
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS stop polling: permission revoked, paired feedback retained, no background borrowing, release retires mask
+MEASURE production HMI 0->500: 12600 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=463 internal=500
+MEASURE production HMI 0->1000: 24696 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=463 internal=1000
+MEASURE production HMI 0->1600: 39480 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=463 internal=1600
+MEASURE production HMI 0->-500: 12600 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=463 internal=-500
+MEASURE production HMI 0->-1000: 24696 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=463 internal=-1000
+MEASURE production HMI 0->-1600: 39480 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=463 internal=-1600
+PASS production PB10 HMI stop with 25ms replies -> fresh session at zero
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch
+PASS stop polling: permission revoked, paired feedback retained, no background borrowing, release retires mask
+MEASURE production HMI 0->500: 12914 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=448 internal=500
+MEASURE production HMI 0->1000: 25010 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=448 internal=1000
+MEASURE production HMI 0->1600: 39346 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=448 internal=1600
+MEASURE production HMI 0->-500: 12914 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=448 internal=-500
+MEASURE production HMI 0->-1000: 25010 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=448 internal=-1000
+MEASURE production HMI 0->-1600: 39346 ms axis=3
+driver clock max=3 clip=0 drop=0 batch_max=448 internal=-1600
+PASS production PB10 HMI stop with 25ms replies -> fresh session at zero
+PASS HMI production driver: prepare/rpm/sync/async ACK/zero-enable/release/cross-source CLI
+PASS HMI production safety: stale feedback, no premature disable, no old target, fresh zero then fault latch

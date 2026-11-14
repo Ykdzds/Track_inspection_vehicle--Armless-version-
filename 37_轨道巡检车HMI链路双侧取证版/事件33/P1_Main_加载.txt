@@ -1,0 +1,2 @@
+﻿P0_Boot.s33.vals[14]=0;P0_Boot.s33.vals[16]=0;P0_Boot.s33.vals[17]=1;P0_Boot.s33.vals[13]=0-1;
+if(P0_Boot.themeMode.val==0){P1_Main.bgImg=user.image.Day_P1_Main;}else{P1_Main.bgImg=user.image.Night_P1_Main;}

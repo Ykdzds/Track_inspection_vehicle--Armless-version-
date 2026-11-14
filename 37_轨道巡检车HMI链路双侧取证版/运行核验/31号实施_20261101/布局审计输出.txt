@@ -1,0 +1,9 @@
+{
+  "Evidence": "Native VP event states + embedded bitmap resources and PixelFonts; not physical screenshots",
+  "States": 108,
+  "TextChecks": 2403,
+  "MinContrast": 4.597608100003052,
+  "Issues": [],
+  "ProtectedFiles": 2520,
+  "ProtectedChanged": []
+}
